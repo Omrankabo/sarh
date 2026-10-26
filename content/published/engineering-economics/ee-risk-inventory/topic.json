@@ -1,0 +1,1265 @@
+{
+  "id": "ee-risk-inventory",
+  "family": "ee-transfer",
+  "title": {
+    "en": "Uncertainty, break-even sensitivity and inventory",
+    "ar": "عدم اليقين وحساسية التعادل والمخزون"
+  },
+  "summary": {
+    "en": "Supplementary FE/PE practice: describe uncertain outcomes, compare expected cash values, test assumptions and balance ordering against holding cost.",
+    "ar": "تدريب إضافي لـ FE و PE: صف النتائج غير اليقينية وقارن القيم النقدية المتوقعة واختبر الفروض ووازن الطلب والتخزين."
+  },
+  "outcomes": [
+    {
+      "en": "A probability describes possibilities, not a promised average",
+      "ar": "الاحتمال يصف الممكن لا متوسطًا مضمونًا"
+    },
+    {
+      "en": "Discount inside each scenario before comparing",
+      "ar": "اخصم داخل كل حالة قبل المقارنة"
+    },
+    {
+      "en": "Sensitivity asks how much error the decision can tolerate",
+      "ar": "تسأل الحساسية عما يتحمله القرار من خطأ"
+    },
+    {
+      "en": "EOQ balances ordering and holding",
+      "ar": "توازن الكمية الاقتصادية الطلب والتخزين"
+    },
+    {
+      "en": "Finish with a decision audit, not a memorized answer",
+      "ar": "اختم بتدقيق القرار لا بجواب محفوظ"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-probability"
+  ],
+  "concepts": [
+    {
+      "id": "ee-risk-inventory-s01-concept",
+      "title": {
+        "en": "A probability describes possibilities, not a promised average",
+        "ar": "الاحتمال يصف الممكن لا متوسطًا مضمونًا"
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s02-concept",
+      "title": {
+        "en": "Discount inside each scenario before comparing",
+        "ar": "اخصم داخل كل حالة قبل المقارنة"
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s03-concept",
+      "title": {
+        "en": "Sensitivity asks how much error the decision can tolerate",
+        "ar": "تسأل الحساسية عما يتحمله القرار من خطأ"
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s04-concept",
+      "title": {
+        "en": "EOQ balances ordering and holding",
+        "ar": "توازن الكمية الاقتصادية الطلب والتخزين"
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s05-concept",
+      "title": {
+        "en": "Finish with a decision audit, not a memorized answer",
+        "ar": "اختم بتدقيق القرار لا بجواب محفوظ"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-risk-inventory-s01",
+      "title": {
+        "en": "A probability describes possibilities, not a promised average",
+        "ar": "الاحتمال يصف الممكن لا متوسطًا مضمونًا"
+      },
+      "predict": {
+        "en": "Is expected cost necessarily an amount that the project can actually realize?",
+        "ar": "هل التكلفة المتوقعة مبلغ يتحقق فعليًا بالضرورة؟"
+      },
+      "options": [
+        {
+          "en": "No; it is a weighted average of possible outcomes.",
+          "ar": "لا؛ هي متوسط مرجح للنتائج الممكنة."
+        },
+        {
+          "en": "Yes; every project realizes its mathematical expectation.",
+          "ar": "نعم؛ يحقق كل مشروع متوسطه الرياضي."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; it is a weighted average of possible outcomes. Probability arithmetic needs a model of how the events relate.",
+        "ar": "لا؛ هي متوسط مرجح للنتائج الممكنة. يحتاج حساب الاحتمال نموذجًا لعلاقة الأحداث."
+      },
+      "explain": {
+        "en": "A contractor may face a dry season or a rainy season with different costs. List mutually exclusive outcomes, their probabilities and the cash dates. Probabilities for an exhaustive scenario set sum to one. Expected cost is a weighted average for comparison; a single project may realize a costly outcome rather than that average. Dependence matters when combining multiple risks, so multiplying probabilities requires an independence assumption or conditional information.",
+        "ar": "قد يواجه المقاول موسمًا جافًا أو ممطرًا، ولكل منهما تكلفة. عرّف الحالات المتنافية واحتمالاتها وتواريخها؛ مجموع احتمالات الحالات الشاملة واحد. التكلفة المتوقعة متوسط مرجح للمقارنة، وقد لا تكون تكلفة أي حالة فعلية. وعند دمج أخطار متعددة تحتاج معرفة ارتباطها؛ فلا يكفي ضرب الاحتمالات من غير فرض استقلال أو احتمال شرطي."
+      },
+      "formula": "E[C]=Σ ps Cs; Σ ps=1",
+      "symbols": {
+        "en": "ps is a probability between 0 and 1; Cs is scenario cost at a common date.",
+        "ar": "ps احتمال بين صفر وواحد و Cs تكلفة الحالة في تاريخ مشترك."
+      },
+      "assumptions": {
+        "en": "Exhaustive mutually exclusive scenarios with defensible probabilities.",
+        "ar": "حالات شاملة متنافية واحتمالات مبررة."
+      },
+      "example": {
+        "en": "Cost 10000 with probability 0.7 and 20000 with probability 0.3.",
+        "ar": "تكلفة 10000 باحتمال 0.7 أو 20000 باحتمال 0.3."
+      },
+      "calculation": {
+        "en": "Expectedcost=0.7×10000+0.3×20000=13000, but neither scenario costs 13000.",
+        "ar": "المتوقع=0.7×10000+0.3×20000=13000؛ ولا تكلف أي حالة 13000."
+      },
+      "interpret": {
+        "en": "Probability arithmetic needs a model of how the events relate.",
+        "ar": "يحتاج حساب الاحتمال نموذجًا لعلاقة الأحداث."
+      },
+      "check": {
+        "prompt": {
+          "en": "Two failure probabilities are 0.1 each, but dependence is unknown. Can their joint probability be asserted as 0.01?",
+          "ar": "احتمال كل من عطلين 0.1 والارتباط مجهول. هل نجزم بأن المشترك 0.01؟"
+        },
+        "answer": {
+          "en": "No;0.01 requires independence or equivalent conditional evidence.",
+          "ar": "لا؛ يحتاج ذلك استقلالًا أو دليلًا شرطيًا مكافئًا."
+        }
+      },
+      "diagram": "econ-decision",
+      "concepts": [
+        "ee-risk-inventory-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 16,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-risk-inventory-s02",
+      "title": {
+        "en": "Discount inside each scenario before comparing",
+        "ar": "اخصم داخل كل حالة قبل المقارنة"
+      },
+      "predict": {
+        "en": "Does expected PW=0 mean every scenario breaks even?",
+        "ar": "هل الحالية المتوقعة صفر تعني أن كل حالة متعادلة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; probability removes scenario variation.",
+          "ar": "نعم؛ يزيل الاحتمال اختلاف النتائج."
+        },
+        {
+          "en": "No; favorable and unfavorable outcomes can average to zero.",
+          "ar": "لا؛ قد يتوسط الربح والخسارة إلى صفر."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; favorable and unfavorable outcomes can average to zero. Averaging uncertain outcomes does not remove resource constraints.",
+        "ar": "لا؛ قد يتوسط الربح والخسارة إلى صفر. لا يزيل متوسط النتائج غير اليقينية قيود الموارد."
+      },
+      "explain": {
+        "en": "A good outcome may arrive at a different time from a bad outcome. Compute each scenario’s PW at the chosen rate, then weight those present values. At a fixed deterministic discount rate, expectation and discounting commute because both are linear in cash amounts. That fact does not eliminate risk preference, financing limits or uncertainty in the discount rate itself. State what the expected-worth rule leaves out.",
+        "ar": "قد تقع نتائج الحالات في أزمنة مختلفة. احسب حالية كل حالة بالمعدل المحدد ثم زنها باحتمالها. عند معدل معلوم ثابت يتبادل التوقع والخصم لخطية العمليتين في المبالغ. لا يلغي ذلك تفضيل المخاطرة أو حدود التمويل أو عدم يقين المعدل نفسه؛ فقد يكون المتوقع موجبًا لكن بعض الخسائر خارج قدرة المالك."
+      },
+      "formula": "E[PW]=Σ ps PWscenario,s",
+      "symbols": {
+        "en": "Every scenario’s cash flows must be dated and valued with the same specified discount model.",
+        "ar": "تؤرخ تدفقات كل حالة وتقيّم بنموذج الخصم نفسه."
+      },
+      "assumptions": {
+        "en": "Risk-neutral expected-worth comparison at a fixed rate; not a guarantee or full risk assessment.",
+        "ar": "مقارنة متوقعة محايدة للمخاطرة بمعدل ثابت، وليست ضمانًا أو تحليل خطر كاملًا."
+      },
+      "example": {
+        "en": "Cost 1000 now. Year 1 receipt is 1500 with 0.6 probability or 500 with 0.4. Discount 10%.",
+        "ar": "تكلفة 1000 الآن؛ مقبوض 1 يساوي 1500 باحتمال 0.6 أو 500 باحتمال 0.4، والمعدل 10%."
+      },
+      "calculation": {
+        "en": "Expected receipt=1100; expected PW=−1000+1100/1.1=0. Individual scenario PW differs.",
+        "ar": "المقبوض المتوقع 1100؛ والحالية المتوقعة−1000+1100/1.1=0، مع اختلاف نتائج الحالات."
+      },
+      "interpret": {
+        "en": "Averaging uncertain outcomes does not remove resource constraints.",
+        "ar": "لا يزيل متوسط النتائج غير اليقينية قيود الموارد."
+      },
+      "check": {
+        "prompt": {
+          "en": "A high expected PW comes with a possible loss beyond the owner’s available funds. Is expected PW alone a complete decision?",
+          "ar": "حالية متوقعة عالية مع خسارة ممكنة أكبر من التمويل المتاح. هل يكفي المتوسط؟"
+        },
+        "answer": {
+          "en": "No; consider the stated financing and risk constraints too.",
+          "ar": "لا؛ افحص قيود التمويل والمخاطرة أيضًا."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-risk-inventory-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 16,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-risk-inventory-s03",
+      "title": {
+        "en": "Sensitivity asks how much error the decision can tolerate",
+        "ar": "تسأل الحساسية عما يتحمله القرار من خطأ"
+      },
+      "predict": {
+        "en": "Does a break-even threshold tell you the probability of reaching it?",
+        "ar": "هل يحدد حد التعادل احتمال بلوغه؟"
+      },
+      "options": [
+        {
+          "en": "No; probability requires an additional uncertainty model.",
+          "ar": "لا؛ يحتاج الاحتمال نموذجًا إضافيًا لعدم اليقين."
+        },
+        {
+          "en": "Yes; every threshold is automatically a50%probability.",
+          "ar": "نعم؛ كل حد يعني احتمال 50%."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; probability requires an additional uncertainty model. Sensitivity and probability answer related but different questions.",
+        "ar": "لا؛ يحتاج الاحتمال نموذجًا إضافيًا لعدم اليقين. الحساسية والاحتمال سؤالان متصلان لكن مختلفان."
+      },
+      "explain": {
+        "en": "A forecast’s annual savings may be uncertain. Solve the same PW equation for the break-even savings instead of assuming the estimate is true. Compare the threshold with the forecast and identify which inputs are influential. One-at-a-time sensitivity is transparent but does not measure joint probability when multiple inputs move together. In a mixed exam answer, separate the algebraic threshold from the chance of achieving it.",
+        "ar": "قد لا يتحقق الوفر السنوي المتوقع. حل معادلة الحالية لإيجاد الوفر المتعادل ثم قارنه بالتوقع. وضّح المدخلات التي تقلب القرار. تحليل متغير واحد مع تثبيت غيره مفيد لكنه لا يمثل احتمال حركة متغيرات مترابطة معًا. افصل الحد الجبري الذي يكفي للجدوى عن احتمال بلوغه؛ فهما سؤالان مختلفان."
+      },
+      "formula": "A*=P/(P/A,i,n) when PW=−P+A(P/A)=0",
+      "symbols": {
+        "en": "A* is required annual saving in the same currency/year basis as A.",
+        "ar": "A* الوفر السنوي اللازم على الأساس النقدي والزمني نفسه."
+      },
+      "assumptions": {
+        "en": "Simple initial-cost and level-saving model; include salvage or later costs if present.",
+        "ar": "تكلفة أولية ووفر سنوي ثابت؛ أضف الخردة والتكاليف اللاحقة إن وجدت."
+      },
+      "example": {
+        "en": "P=1000,n=3,i=10%.",
+        "ar": "التكلفة 1000 والمدة 3 والمعدل 10%."
+      },
+      "calculation": {
+        "en": "A*=1000/(P/A,10%,3)=402.114804/year. Forecast 400 does not quite clear this threshold.",
+        "ar": "A*=1000/(P/A,10%,3)=402.114804 سنويًا؛ فالـ 400 أقل قليلًا من المطلوب."
+      },
+      "interpret": {
+        "en": "Sensitivity and probability answer related but different questions.",
+        "ar": "الحساسية والاحتمال سؤالان متصلان لكن مختلفان."
+      },
+      "check": {
+        "prompt": {
+          "en": "Revenue and operating cost both rise together. Can a one-at-a-time chart alone establish the joint probability of loss?",
+          "ar": "يتغير الإيراد والتشغيل معًا. هل يحدد رسم حساسية منفرد احتمال الخسارة المشترك؟"
+        },
+        "answer": {
+          "en": "No; their joint behavior or scenario probabilities are needed.",
+          "ar": "لا؛ نحتاج علاقتهما المشتركة أو احتمالات الحالات."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-risk-inventory-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 16,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 33,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "experiment": "npv"
+    },
+    {
+      "id": "ee-risk-inventory-s04",
+      "title": {
+        "en": "EOQ balances ordering and holding",
+        "ar": "توازن الكمية الاقتصادية الطلب والتخزين"
+      },
+      "predict": {
+        "en": "Does ordering the largest possible batch always minimize inventory cost?",
+        "ar": "هل تخفض أكبر طلبية ممكنة تكلفة المخزون دائمًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; only ordering cost exists.",
+          "ar": "نعم؛ لا توجد إلا تكلفة الطلب."
+        },
+        {
+          "en": "No; fewer orders increase average stock and holding cost.",
+          "ar": "لا؛ قلة الطلبات ترفع المخزون المتوسط وتكلفة تخزينه."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; fewer orders increase average stock and holding cost. Know which cost was omitted because it was constant, and when that assumption stops holding.",
+        "ar": "لا؛ قلة الطلبات ترفع المخزون المتوسط وتكلفة تخزينه. افهم سبب إهمال تكلفة كانت ثابتة، ومتى يسقط فرض ثباتها."
+      },
+      "explain": {
+        "en": "Large orders reduce the number of orders each year but leave more inventory on average. In the basic economic-order-quantity model, annual ordering cost is(D/Q)K and annual holding cost is(Q/2)h. Their sum is minimized at the square-root balance. Constant purchase cost independent of Q does not affect the optimum; quantity discounts would change the model. Think of two competing slopes, not a formula detached from inventory behavior.",
+        "ar": "تقل أوامر الشراء مع كبر الطلبية، لكن يزداد المخزون المتوسط. في نموذج EOQ تكلفة الطلب السنوية(D/Q)K والتخزين(Q/2)h. يصغر مجموعهما عند الجذر الذي يوازنهما. لا تدخل تكلفة شراء ثابتة للوحدة في تحديد الأمثل لأنها لا تتغير مع Q؛ أما حسم الكمية فيزيل هذا الفرض. افهم اتجاه تغير البندين قبل حفظ المعادلة."
+      },
+      "formula": "Q*=sqrt(2DK/h)",
+      "symbols": {
+        "en": "D is units/year; K CU/order; h CU/(unit·year); Q is units/order.",
+        "ar": "D طلب وحدات/سنة و K نقد/طلب و h نقد للوحدة في السنة و Q وحدات لكل طلبية."
+      },
+      "assumptions": {
+        "en": "Constant demand, instantaneous replenishment, no shortages, constant costs, no quantity discounts.",
+        "ar": "طلب ثابت وتجديد فوري ودون عجز أو حسم كمية، مع تكاليف ثابتة."
+      },
+      "example": {
+        "en": "D=10000/year,K=50/order,h=2/unit/year.",
+        "ar": "D=10000 و K=50 و h=2."
+      },
+      "calculation": {
+        "en": "Q*=sqrt(500000)≈707.106781 units. At optimum,ordering and holding costs are equal.",
+        "ar": "Q*=sqrt(2×10000×50/2)=707.106781؛ وتتساوى تكلفة الطلب والتخزين عند الأمثل."
+      },
+      "interpret": {
+        "en": "Know which cost was omitted because it was constant, and when that assumption stops holding.",
+        "ar": "افهم سبب إهمال تكلفة كانت ثابتة، ومتى يسقط فرض ثباتها."
+      },
+      "check": {
+        "prompt": {
+          "en": "A supplier offers a purchase-price discount above a batch threshold. Can the basic EOQ alone select the final order?",
+          "ar": "يعرض المورد حسم سعر بعد حد كمية. هل يكفي EOQ الأساسي للقرار؟"
+        },
+        "answer": {
+          "en": "No; compare total cost including purchase cost and feasible discount ranges.",
+          "ar": "لا؛ قارن التكلفة الكاملة مع الشراء ومجالات الحسم الممكنة."
+        }
+      },
+      "diagram": "econ-market",
+      "concepts": [
+        "ee-risk-inventory-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 17,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-risk-inventory-s05",
+      "title": {
+        "en": "Finish with a decision audit, not a memorized answer",
+        "ar": "اختم بتدقيق القرار لا بجواب محفوظ"
+      },
+      "predict": {
+        "en": "Is a number with many decimal places evidence that the model is correct?",
+        "ar": "هل كثرة المنازل العشرية دليل على صحة النموذج؟"
+      },
+      "options": [
+        {
+          "en": "No; precision cannot repair wrong dates, units or assumptions.",
+          "ar": "لا؛ لا تصلح الدقة خطأ التاريخ أو الوحدة أو الفرض."
+        },
+        {
+          "en": "Yes; more decimals guarantee more valid reasoning.",
+          "ar": "نعم؛ تضمن المنازل الكثيرة تعليلًا صحيحًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; precision cannot repair wrong dates, units or assumptions. Keep learning progress, effort and independently demonstrated performance distinct.",
+        "ar": "لا؛ لا تصلح الدقة خطأ التاريخ أو الوحدة أو الفرض. ميز تقدم التعلم والجهد عن الأداء المستقل المثبت."
+      },
+      "explain": {
+        "en": "Before accepting a final result, trace one unit of money through the model. Check the cash date, viewpoint, rate clock, quantity units, boundary values and decision question. Then alter an input and predict the effect. A sensible answer should survive that small change or explain why a threshold is crossed. Record the first wrong step in the repair notebook and retry a changed version later; repeating the same already-seen answer is not the same as transfer.",
+        "ar": "تتبع وحدة مال من منظورها وتاريخها وساعة معدلها إلى النتيجة. افحص الوحدات والنهايات والسؤال المطلوب، ثم غيّر مدخلًا وتوقع أثره. يجب أن يظل الجواب منطقيًا أو يفسر عبور حد قرار. سجل أول خطوة خاطئة في دفتر الإصلاح وأعد نسخة مختلفة لاحقًا؛ فإعادة العدد المشاهد لا تثبت نقل الفهم إلى مسألة جديدة."
+      },
+      "formula": "model → dated calculation → units → boundary check → decision",
+      "symbols": {
+        "en": "A defensible solution gives an amount, its date, its units and the assumptions used.",
+        "ar": "يعطي الحل المعلل مبلغًا وتاريخًا ووحدات وافتراضات واضحة."
+      },
+      "assumptions": {
+        "en": "Check the question asked:worth,rate,time,charge or quantity are not interchangeable outputs.",
+        "ar": "القيمة والمعدل والزمن والقسط والكمية مخرجات مختلفة؛ اقرأ ما يطلبه السؤال."
+      },
+      "example": {
+        "en": "A reported present cost is 1500 CU,but all future costs total 1200 CU with a positive rate and no initial outlay.",
+        "ar": "أبلغ متعلم حالية تكلفة 1500 رغم أن التكاليف المستقبلية الموجبة كلها 1200 مع معدل موجب ودون تكلفة أولية."
+      },
+      "calculation": {
+        "en": "For only positive future cost magnitudes,discounting must give present cost below 1200;1500 fails a boundary check.",
+        "ar": "يجب أن تقل الحالية عن 1200؛ لذلك تخفق 1500 في فحص الحدود."
+      },
+      "interpret": {
+        "en": "Keep learning progress, effort and independently demonstrated performance distinct.",
+        "ar": "ميز تقدم التعلم والجهد عن الأداء المستقل المثبت."
+      },
+      "check": {
+        "prompt": {
+          "en": "You solved a practice question after opening two hints. How should the app classify it?",
+          "ar": "حللت سؤالًا بعد تلميحين. كيف تصنف المحاولة؟"
+        },
+        "answer": {
+          "en": "Assisted practice, useful for learning but separate from independent accuracy.",
+          "ar": "بمساعدة؛ مفيدة للتعلم لكنها منفصلة عن الدقة المستقلة."
+        }
+      },
+      "diagram": "econ-decision",
+      "concepts": [
+        "ee-risk-inventory-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE15",
+          "page": 1,
+          "filename": "PPIInfo_fl_corner-FEIM2-PP04Economics.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 3,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-risk-inventory-s01-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 16,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "ps is a probability between 0 and 1; Cs is scenario cost at a common date.",
+          "ar": "ps احتمال بين صفر وواحد و Cs تكلفة الحالة في تاريخ مشترك."
+        },
+        {
+          "en": "E[C]=Σ ps Cs; Σ ps=1\nExhaustive mutually exclusive scenarios with defensible probabilities.",
+          "ar": "E[C]=Σ ps Cs; Σ ps=1\nحالات شاملة متنافية واحتمالات مبررة."
+        }
+      ],
+      "id": "ee-risk-inventory-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Is expected cost necessarily an amount that the project can actually realize?",
+        "ar": "هل التكلفة المتوقعة مبلغ يتحقق فعليًا بالضرورة؟"
+      },
+      "options": [
+        {
+          "en": "No; it is a weighted average of possible outcomes.",
+          "ar": "لا؛ هي متوسط مرجح للنتائج الممكنة."
+        },
+        {
+          "en": "Yes; every project realizes its mathematical expectation.",
+          "ar": "نعم؛ يحقق كل مشروع متوسطه الرياضي."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; it is a weighted average of possible outcomes. A contractor may face a dry season or a rainy season with different costs. List mutually exclusive outcomes, their probabilities and the cash dates. Probabilities for an exhaustive scenario set sum to one. Expected cost is a weighted average for comparison; a single project may realize a costly outcome rather than that average. Dependence matters when combining multiple risks, so multiplying probabilities requires an independence assumption or conditional information.",
+        "ar": "لا؛ هي متوسط مرجح للنتائج الممكنة. قد يواجه المقاول موسمًا جافًا أو ممطرًا، ولكل منهما تكلفة. عرّف الحالات المتنافية واحتمالاتها وتواريخها؛ مجموع احتمالات الحالات الشاملة واحد. التكلفة المتوقعة متوسط مرجح للمقارنة، وقد لا تكون تكلفة أي حالة فعلية. وعند دمج أخطار متعددة تحتاج معرفة ارتباطها؛ فلا يكفي ضرب الاحتمالات من غير فرض استقلال أو احتمال شرطي."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s01-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 16,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "ps is a probability between 0 and 1; Cs is scenario cost at a common date.",
+          "ar": "ps احتمال بين صفر وواحد و Cs تكلفة الحالة في تاريخ مشترك."
+        },
+        {
+          "en": "E[C]=Σ ps Cs; Σ ps=1\nExhaustive mutually exclusive scenarios with defensible probabilities.",
+          "ar": "E[C]=Σ ps Cs; Σ ps=1\nحالات شاملة متنافية واحتمالات مبررة."
+        }
+      ],
+      "id": "ee-risk-inventory-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Cost 4000 occurs with probability 0.8 and 9000 with 0.2. Find expected cost.",
+        "ar": "التكلفة 4000 باحتمال 0.8 و 9000 باحتمال 0.2. أوجد المتوقعة."
+      },
+      "expected": 5000,
+      "tolerance": 0.1,
+      "unit": "CU",
+      "solution": {
+        "en": "0.8×4000+0.2×9000=5000.",
+        "ar": "0.8×4000+0.2×9000=5000."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s01-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 16,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "ps is a probability between 0 and 1; Cs is scenario cost at a common date.",
+          "ar": "ps احتمال بين صفر وواحد و Cs تكلفة الحالة في تاريخ مشترك."
+        },
+        {
+          "en": "E[C]=Σ ps Cs; Σ ps=1\nExhaustive mutually exclusive scenarios with defensible probabilities.",
+          "ar": "E[C]=Σ ps Cs; Σ ps=1\nحالات شاملة متنافية واحتمالات مبررة."
+        }
+      ],
+      "id": "ee-risk-inventory-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Two failure probabilities are 0.1 each, but dependence is unknown. Can their joint probability be asserted as 0.01?",
+        "ar": "احتمال كل من عطلين 0.1 والارتباط مجهول. هل نجزم بأن المشترك 0.01؟"
+      },
+      "options": [
+        {
+          "en": "Yes; joint probabilities are always products.",
+          "ar": "نعم؛ احتمال الاجتماع حاصل ضرب دائمًا."
+        },
+        {
+          "en": "No;0.01 requires independence or equivalent conditional evidence.",
+          "ar": "لا؛ يحتاج ذلك استقلالًا أو دليلًا شرطيًا مكافئًا."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No;0.01 requires independence or equivalent conditional evidence. Probability arithmetic needs a model of how the events relate.",
+        "ar": "لا؛ يحتاج ذلك استقلالًا أو دليلًا شرطيًا مكافئًا. يحتاج حساب الاحتمال نموذجًا لعلاقة الأحداث."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s02-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 16,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Every scenario’s cash flows must be dated and valued with the same specified discount model.",
+          "ar": "تؤرخ تدفقات كل حالة وتقيّم بنموذج الخصم نفسه."
+        },
+        {
+          "en": "E[PW]=Σ ps PWscenario,s\nRisk-neutral expected-worth comparison at a fixed rate; not a guarantee or full risk assessment.",
+          "ar": "E[PW]=Σ ps PWscenario,s\nمقارنة متوقعة محايدة للمخاطرة بمعدل ثابت، وليست ضمانًا أو تحليل خطر كاملًا."
+        }
+      ],
+      "id": "ee-risk-inventory-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does expected PW=0 mean every scenario breaks even?",
+        "ar": "هل الحالية المتوقعة صفر تعني أن كل حالة متعادلة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; probability removes scenario variation.",
+          "ar": "نعم؛ يزيل الاحتمال اختلاف النتائج."
+        },
+        {
+          "en": "No; favorable and unfavorable outcomes can average to zero.",
+          "ar": "لا؛ قد يتوسط الربح والخسارة إلى صفر."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; favorable and unfavorable outcomes can average to zero. A good outcome may arrive at a different time from a bad outcome. Compute each scenario’s PW at the chosen rate, then weight those present values. At a fixed deterministic discount rate, expectation and discounting commute because both are linear in cash amounts. That fact does not eliminate risk preference, financing limits or uncertainty in the discount rate itself. State what the expected-worth rule leaves out.",
+        "ar": "لا؛ قد يتوسط الربح والخسارة إلى صفر. قد تقع نتائج الحالات في أزمنة مختلفة. احسب حالية كل حالة بالمعدل المحدد ثم زنها باحتمالها. عند معدل معلوم ثابت يتبادل التوقع والخصم لخطية العمليتين في المبالغ. لا يلغي ذلك تفضيل المخاطرة أو حدود التمويل أو عدم يقين المعدل نفسه؛ فقد يكون المتوقع موجبًا لكن بعض الخسائر خارج قدرة المالك."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s02-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 16,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Every scenario’s cash flows must be dated and valued with the same specified discount model.",
+          "ar": "تؤرخ تدفقات كل حالة وتقيّم بنموذج الخصم نفسه."
+        },
+        {
+          "en": "E[PW]=Σ ps PWscenario,s\nRisk-neutral expected-worth comparison at a fixed rate; not a guarantee or full risk assessment.",
+          "ar": "E[PW]=Σ ps PWscenario,s\nمقارنة متوقعة محايدة للمخاطرة بمعدل ثابت، وليست ضمانًا أو تحليل خطر كاملًا."
+        }
+      ],
+      "id": "ee-risk-inventory-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Cost 1000 now. Year 1 receipt is 1800 with 0.5 or 1000 with 0.5. At 12%, find expected PW.",
+        "ar": "تكلفة 1000 الآن، ومقبوض 1 إما 1800 أو 1000 باحتمال 0.5 لكل منهما. أوجد الحالية المتوقعة عند 12%."
+      },
+      "expected": 250,
+      "tolerance": 0.005,
+      "unit": "CU",
+      "solution": {
+        "en": "Expected receipt 1400; PW=−1000+1400/1.12=250.",
+        "ar": "المقبوض المتوقع 1400، والحالية−1000+1400/1.12=250."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s02-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 16,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Every scenario’s cash flows must be dated and valued with the same specified discount model.",
+          "ar": "تؤرخ تدفقات كل حالة وتقيّم بنموذج الخصم نفسه."
+        },
+        {
+          "en": "E[PW]=Σ ps PWscenario,s\nRisk-neutral expected-worth comparison at a fixed rate; not a guarantee or full risk assessment.",
+          "ar": "E[PW]=Σ ps PWscenario,s\nمقارنة متوقعة محايدة للمخاطرة بمعدل ثابت، وليست ضمانًا أو تحليل خطر كاملًا."
+        }
+      ],
+      "id": "ee-risk-inventory-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A high expected PW comes with a possible loss beyond the owner’s available funds. Is expected PW alone a complete decision?",
+        "ar": "حالية متوقعة عالية مع خسارة ممكنة أكبر من التمويل المتاح. هل يكفي المتوسط؟"
+      },
+      "options": [
+        {
+          "en": "No; consider the stated financing and risk constraints too.",
+          "ar": "لا؛ افحص قيود التمويل والمخاطرة أيضًا."
+        },
+        {
+          "en": "Yes; the largest expected number overrides feasibility.",
+          "ar": "نعم؛ يتقدم الأكبر المتوقع على الصلاحية."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; consider the stated financing and risk constraints too. Averaging uncertain outcomes does not remove resource constraints.",
+        "ar": "لا؛ افحص قيود التمويل والمخاطرة أيضًا. لا يزيل متوسط النتائج غير اليقينية قيود الموارد."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s03-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 16,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 33,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A* is required annual saving in the same currency/year basis as A.",
+          "ar": "A* الوفر السنوي اللازم على الأساس النقدي والزمني نفسه."
+        },
+        {
+          "en": "A*=P/(P/A,i,n) when PW=−P+A(P/A)=0\nSimple initial-cost and level-saving model; include salvage or later costs if present.",
+          "ar": "A*=P/(P/A,i,n) when PW=−P+A(P/A)=0\nتكلفة أولية ووفر سنوي ثابت؛ أضف الخردة والتكاليف اللاحقة إن وجدت."
+        }
+      ],
+      "id": "ee-risk-inventory-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does a break-even threshold tell you the probability of reaching it?",
+        "ar": "هل يحدد حد التعادل احتمال بلوغه؟"
+      },
+      "options": [
+        {
+          "en": "No; probability requires an additional uncertainty model.",
+          "ar": "لا؛ يحتاج الاحتمال نموذجًا إضافيًا لعدم اليقين."
+        },
+        {
+          "en": "Yes; every threshold is automatically a50%probability.",
+          "ar": "نعم؛ كل حد يعني احتمال 50%."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; probability requires an additional uncertainty model. A forecast’s annual savings may be uncertain. Solve the same PW equation for the break-even savings instead of assuming the estimate is true. Compare the threshold with the forecast and identify which inputs are influential. One-at-a-time sensitivity is transparent but does not measure joint probability when multiple inputs move together. In a mixed exam answer, separate the algebraic threshold from the chance of achieving it.",
+        "ar": "لا؛ يحتاج الاحتمال نموذجًا إضافيًا لعدم اليقين. قد لا يتحقق الوفر السنوي المتوقع. حل معادلة الحالية لإيجاد الوفر المتعادل ثم قارنه بالتوقع. وضّح المدخلات التي تقلب القرار. تحليل متغير واحد مع تثبيت غيره مفيد لكنه لا يمثل احتمال حركة متغيرات مترابطة معًا. افصل الحد الجبري الذي يكفي للجدوى عن احتمال بلوغه؛ فهما سؤالان مختلفان."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s03-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 16,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 33,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A* is required annual saving in the same currency/year basis as A.",
+          "ar": "A* الوفر السنوي اللازم على الأساس النقدي والزمني نفسه."
+        },
+        {
+          "en": "A*=P/(P/A,i,n) when PW=−P+A(P/A)=0\nSimple initial-cost and level-saving model; include salvage or later costs if present.",
+          "ar": "A*=P/(P/A,i,n) when PW=−P+A(P/A)=0\nتكلفة أولية ووفر سنوي ثابت؛ أضف الخردة والتكاليف اللاحقة إن وجدت."
+        }
+      ],
+      "id": "ee-risk-inventory-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Initialcost 5000, life 5 years, zero discount, no salvage. Find break-even annual saving.",
+        "ar": "التكلفة 5000 والعمر 5 ومعدل الخصم صفر ودون خردة. أوجد الوفر السنوي المتعادل."
+      },
+      "expected": 1000,
+      "tolerance": 0.02,
+      "unit": "CU/year",
+      "solution": {
+        "en": "Atzero,P/A=5, soA*=5000/5=1000.",
+        "ar": "عند صفر P/A=5؛ إذن A*=5000/5=1000."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s03-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 16,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 33,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A* is required annual saving in the same currency/year basis as A.",
+          "ar": "A* الوفر السنوي اللازم على الأساس النقدي والزمني نفسه."
+        },
+        {
+          "en": "A*=P/(P/A,i,n) when PW=−P+A(P/A)=0\nSimple initial-cost and level-saving model; include salvage or later costs if present.",
+          "ar": "A*=P/(P/A,i,n) when PW=−P+A(P/A)=0\nتكلفة أولية ووفر سنوي ثابت؛ أضف الخردة والتكاليف اللاحقة إن وجدت."
+        }
+      ],
+      "id": "ee-risk-inventory-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Revenue and operating cost both rise together. Can a one-at-a-time chart alone establish the joint probability of loss?",
+        "ar": "يتغير الإيراد والتشغيل معًا. هل يحدد رسم حساسية منفرد احتمال الخسارة المشترك؟"
+      },
+      "options": [
+        {
+          "en": "Yes; two independent sensitivity slopes are a probability distribution.",
+          "ar": "نعم؛ ميلا الحساسية يمثلان توزيعًا احتماليًا."
+        },
+        {
+          "en": "No; their joint behavior or scenario probabilities are needed.",
+          "ar": "لا؛ نحتاج علاقتهما المشتركة أو احتمالات الحالات."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; their joint behavior or scenario probabilities are needed. Sensitivity and probability answer related but different questions.",
+        "ar": "لا؛ نحتاج علاقتهما المشتركة أو احتمالات الحالات. الحساسية والاحتمال سؤالان متصلان لكن مختلفان."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s04-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 17,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "D is units/year; K CU/order; h CU/(unit·year); Q is units/order.",
+          "ar": "D طلب وحدات/سنة و K نقد/طلب و h نقد للوحدة في السنة و Q وحدات لكل طلبية."
+        },
+        {
+          "en": "Q*=sqrt(2 DK/h)\nConstant demand, instantaneous replenishment, no shortages, constant costs, no quantity discounts.",
+          "ar": "Q*=sqrt(2 DK/h)\nطلب ثابت وتجديد فوري ودون عجز أو حسم كمية، مع تكاليف ثابتة."
+        }
+      ],
+      "id": "ee-risk-inventory-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does ordering the largest possible batch always minimize inventory cost?",
+        "ar": "هل تخفض أكبر طلبية ممكنة تكلفة المخزون دائمًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; only ordering cost exists.",
+          "ar": "نعم؛ لا توجد إلا تكلفة الطلب."
+        },
+        {
+          "en": "No; fewer orders increase average stock and holding cost.",
+          "ar": "لا؛ قلة الطلبات ترفع المخزون المتوسط وتكلفة تخزينه."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; fewer orders increase average stock and holding cost. Large orders reduce the number of orders each year but leave more inventory on average. In the basic economic-order-quantity model, annual ordering cost is(D/Q)K and annual holding cost is(Q/2)h. Their sum is minimized at the square-root balance. Constant purchase cost independent of Q does not affect the optimum; quantity discounts would change the model. Think of two competing slopes, not a formula detached from inventory behavior.",
+        "ar": "لا؛ قلة الطلبات ترفع المخزون المتوسط وتكلفة تخزينه. تقل أوامر الشراء مع كبر الطلبية، لكن يزداد المخزون المتوسط. في نموذج EOQ تكلفة الطلب السنوية(D/Q)K والتخزين(Q/2)h. يصغر مجموعهما عند الجذر الذي يوازنهما. لا تدخل تكلفة شراء ثابتة للوحدة في تحديد الأمثل لأنها لا تتغير مع Q؛ أما حسم الكمية فيزيل هذا الفرض. افهم اتجاه تغير البندين قبل حفظ المعادلة."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s04-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 17,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "D is units/year; K CU/order; h CU/(unit·year); Q is units/order.",
+          "ar": "D طلب وحدات/سنة و K نقد/طلب و h نقد للوحدة في السنة و Q وحدات لكل طلبية."
+        },
+        {
+          "en": "Q*=sqrt(2 DK/h)\nConstant demand, instantaneous replenishment, no shortages, constant costs, no quantity discounts.",
+          "ar": "Q*=sqrt(2 DK/h)\nطلب ثابت وتجديد فوري ودون عجز أو حسم كمية، مع تكاليف ثابتة."
+        }
+      ],
+      "id": "ee-risk-inventory-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "D=3600 units/year,K=50 CU/order,h=4 CU/(unit·year). Find EOQ.",
+        "ar": "D=3600 سنويًا و K=50 و h=4. أوجد EOQ."
+      },
+      "expected": 300,
+      "tolerance": 0.006,
+      "unit": "units/order",
+      "solution": {
+        "en": "sqrt(2×3600×50/4)=300 units. Orderingcost=600/year andholdingcost=600/year.",
+        "ar": "Q*=sqrt(2×3600×50/4)=300، وتكلفة كل من الطلب والتخزين 600 سنويًا."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s04-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 17,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "D is units/year; K CU/order; h CU/(unit·year); Q is units/order.",
+          "ar": "D طلب وحدات/سنة و K نقد/طلب و h نقد للوحدة في السنة و Q وحدات لكل طلبية."
+        },
+        {
+          "en": "Q*=sqrt(2 DK/h)\nConstant demand, instantaneous replenishment, no shortages, constant costs, no quantity discounts.",
+          "ar": "Q*=sqrt(2 DK/h)\nطلب ثابت وتجديد فوري ودون عجز أو حسم كمية، مع تكاليف ثابتة."
+        }
+      ],
+      "id": "ee-risk-inventory-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A supplier offers a purchase-price discount above a batch threshold. Can the basic EOQ alone select the final order?",
+        "ar": "يعرض المورد حسم سعر بعد حد كمية. هل يكفي EOQ الأساسي للقرار؟"
+      },
+      "options": [
+        {
+          "en": "No; compare total cost including purchase cost and feasible discount ranges.",
+          "ar": "لا؛ قارن التكلفة الكاملة مع الشراء ومجالات الحسم الممكنة."
+        },
+        {
+          "en": "Yes; purchase price never affects any inventory decision.",
+          "ar": "نعم؛ سعر الشراء لا يؤثر مطلقًا في قرار المخزون."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; compare total cost including purchase cost and feasible discount ranges. Know which cost was omitted because it was constant, and when that assumption stops holding.",
+        "ar": "لا؛ قارن التكلفة الكاملة مع الشراء ومجالات الحسم الممكنة. افهم سبب إهمال تكلفة كانت ثابتة، ومتى يسقط فرض ثباتها."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s05-concept",
+      "sources": [
+        {
+          "doc": "EE15",
+          "page": 1,
+          "filename": "PPIInfo_fl_corner-FEIM2-PP04Economics.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 3,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A defensible solution gives an amount, its date, its units and the assumptions used.",
+          "ar": "يعطي الحل المعلل مبلغًا وتاريخًا ووحدات وافتراضات واضحة."
+        },
+        {
+          "en": "model → dated calculation → units → boundary check → decision\nCheck the question asked:worth,rate,time,charge or quantity are not interchangeable outputs.",
+          "ar": "model → dated calculation → units → boundary check → decision\nالقيمة والمعدل والزمن والقسط والكمية مخرجات مختلفة؛ اقرأ ما يطلبه السؤال."
+        }
+      ],
+      "id": "ee-risk-inventory-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Is a number with many decimal places evidence that the model is correct?",
+        "ar": "هل كثرة المنازل العشرية دليل على صحة النموذج؟"
+      },
+      "options": [
+        {
+          "en": "No; precision cannot repair wrong dates, units or assumptions.",
+          "ar": "لا؛ لا تصلح الدقة خطأ التاريخ أو الوحدة أو الفرض."
+        },
+        {
+          "en": "Yes; more decimals guarantee more valid reasoning.",
+          "ar": "نعم؛ تضمن المنازل الكثيرة تعليلًا صحيحًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; precision cannot repair wrong dates, units or assumptions. Before accepting a final result, trace one unit of money through the model. Check the cash date, viewpoint, rate clock, quantity units, boundary values and decision question. Then alter an input and predict the effect. A sensible answer should survive that small change or explain why a threshold is crossed. Record the first wrong step in the repair notebook and retry a changed version later; repeating the same already-seen answer is not the same as transfer.",
+        "ar": "لا؛ لا تصلح الدقة خطأ التاريخ أو الوحدة أو الفرض. تتبع وحدة مال من منظورها وتاريخها وساعة معدلها إلى النتيجة. افحص الوحدات والنهايات والسؤال المطلوب، ثم غيّر مدخلًا وتوقع أثره. يجب أن يظل الجواب منطقيًا أو يفسر عبور حد قرار. سجل أول خطوة خاطئة في دفتر الإصلاح وأعد نسخة مختلفة لاحقًا؛ فإعادة العدد المشاهد لا تثبت نقل الفهم إلى مسألة جديدة."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s05-concept",
+      "sources": [
+        {
+          "doc": "EE15",
+          "page": 1,
+          "filename": "PPIInfo_fl_corner-FEIM2-PP04Economics.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 3,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A defensible solution gives an amount, its date, its units and the assumptions used.",
+          "ar": "يعطي الحل المعلل مبلغًا وتاريخًا ووحدات وافتراضات واضحة."
+        },
+        {
+          "en": "model → dated calculation → units → boundary check → decision\nCheck the question asked:worth,rate,time,charge or quantity are not interchangeable outputs.",
+          "ar": "model → dated calculation → units → boundary check → decision\nالقيمة والمعدل والزمن والقسط والكمية مخرجات مختلفة؛ اقرأ ما يطلبه السؤال."
+        }
+      ],
+      "id": "ee-risk-inventory-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "A future receipt is 1210 CU in 2 years at 10%. A learner uses F/P instead of P/F. Give the correct present amount.",
+        "ar": "مقبوض 1210 بعد سنتين عند 10%. استخدم متعلم F/P بدل P/F. أوجد الحالية الصحيحة."
+      },
+      "expected": 1000,
+      "tolerance": 0.02,
+      "unit": "CU",
+      "solution": {
+        "en": "P=1210/1.1²=1000; check by growing 1000 backto 1210.",
+        "ar": "P=1210/1.1²=1000؛ وتحقق بتنميتها إلى 1210."
+      }
+    },
+    {
+      "concept": "ee-risk-inventory-s05-concept",
+      "sources": [
+        {
+          "doc": "EE15",
+          "page": 1,
+          "filename": "PPIInfo_fl_corner-FEIM2-PP04Economics.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 3,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A defensible solution gives an amount, its date, its units and the assumptions used.",
+          "ar": "يعطي الحل المعلل مبلغًا وتاريخًا ووحدات وافتراضات واضحة."
+        },
+        {
+          "en": "model → dated calculation → units → boundary check → decision\nCheck the question asked:worth,rate,time,charge or quantity are not interchangeable outputs.",
+          "ar": "model → dated calculation → units → boundary check → decision\nالقيمة والمعدل والزمن والقسط والكمية مخرجات مختلفة؛ اقرأ ما يطلبه السؤال."
+        }
+      ],
+      "id": "ee-risk-inventory-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "You solved a practice question after opening two hints. How should the app classify it?",
+        "ar": "حللت سؤالًا بعد تلميحين. كيف تصنف المحاولة؟"
+      },
+      "options": [
+        {
+          "en": "Independent because the final number was correct.",
+          "ar": "مستقلة لأن الناتج النهائي صحيح."
+        },
+        {
+          "en": "Assisted practice, useful for learning but separate from independent accuracy.",
+          "ar": "بمساعدة؛ مفيدة للتعلم لكنها منفصلة عن الدقة المستقلة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Assisted practice, useful for learning but separate from independent accuracy. Keep learning progress, effort and independently demonstrated performance distinct.",
+        "ar": "بمساعدة؛ مفيدة للتعلم لكنها منفصلة عن الدقة المستقلة. ميز تقدم التعلم والجهد عن الأداء المستقل المثبت."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-risk-inventory-s01-recall",
+      "concept": "ee-risk-inventory-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: A probability describes possibilities, not a promised average",
+        "ar": "اشرح: الاحتمال يصف الممكن لا متوسطًا مضمونًا"
+      },
+      "a": {
+        "en": "Probability arithmetic needs a model of how the events relate.",
+        "ar": "يحتاج حساب الاحتمال نموذجًا لعلاقة الأحداث."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s01-formula",
+      "concept": "ee-risk-inventory-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nE[C]=Σ ps Cs; Σ ps=1",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nE[C]=Σ ps Cs; Σ ps=1"
+      },
+      "a": {
+        "en": "ps is a probability between 0 and 1; Cs is scenario cost at a common date. Exhaustive mutually exclusive scenarios with defensible probabilities.",
+        "ar": "ps احتمال بين صفر وواحد و Cs تكلفة الحالة في تاريخ مشترك. حالات شاملة متنافية واحتمالات مبررة."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s01-trap",
+      "concept": "ee-risk-inventory-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; every project realizes its mathematical expectation.",
+        "ar": "يقول متعلم: نعم؛ يحقق كل مشروع متوسطه الرياضي."
+      },
+      "a": {
+        "en": "No; it is a weighted average of possible outcomes. Probability arithmetic needs a model of how the events relate.",
+        "ar": "لا؛ هي متوسط مرجح للنتائج الممكنة. يحتاج حساب الاحتمال نموذجًا لعلاقة الأحداث."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s02-recall",
+      "concept": "ee-risk-inventory-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Discount inside each scenario before comparing",
+        "ar": "اشرح: اخصم داخل كل حالة قبل المقارنة"
+      },
+      "a": {
+        "en": "Averaging uncertain outcomes does not remove resource constraints.",
+        "ar": "لا يزيل متوسط النتائج غير اليقينية قيود الموارد."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s02-formula",
+      "concept": "ee-risk-inventory-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nE[PW]=Σ ps PWscenario,s",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nE[PW]=Σ ps PWscenario,s"
+      },
+      "a": {
+        "en": "Every scenario’s cash flows must be dated and valued with the same specified discount model. Risk-neutral expected-worth comparison at a fixed rate; not a guarantee or full risk assessment.",
+        "ar": "تؤرخ تدفقات كل حالة وتقيّم بنموذج الخصم نفسه. مقارنة متوقعة محايدة للمخاطرة بمعدل ثابت، وليست ضمانًا أو تحليل خطر كاملًا."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s02-trap",
+      "concept": "ee-risk-inventory-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; probability removes scenario variation.",
+        "ar": "يقول متعلم: نعم؛ يزيل الاحتمال اختلاف النتائج."
+      },
+      "a": {
+        "en": "No; favorable and unfavorable outcomes can average to zero. Averaging uncertain outcomes does not remove resource constraints.",
+        "ar": "لا؛ قد يتوسط الربح والخسارة إلى صفر. لا يزيل متوسط النتائج غير اليقينية قيود الموارد."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s03-recall",
+      "concept": "ee-risk-inventory-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Sensitivity asks how much error the decision can tolerate",
+        "ar": "اشرح: تسأل الحساسية عما يتحمله القرار من خطأ"
+      },
+      "a": {
+        "en": "Sensitivity and probability answer related but different questions.",
+        "ar": "الحساسية والاحتمال سؤالان متصلان لكن مختلفان."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s03-formula",
+      "concept": "ee-risk-inventory-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nA*=P/(P/A,i,n) when PW=−P+A(P/A)=0",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nA*=P/(P/A,i,n) when PW=−P+A(P/A)=0"
+      },
+      "a": {
+        "en": "A* is required annual saving in the same currency/year basis as A. Simple initial-cost and level-saving model; include salvage or later costs if present.",
+        "ar": "A* الوفر السنوي اللازم على الأساس النقدي والزمني نفسه. تكلفة أولية ووفر سنوي ثابت؛ أضف الخردة والتكاليف اللاحقة إن وجدت."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s03-trap",
+      "concept": "ee-risk-inventory-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; every threshold is automatically a50%probability.",
+        "ar": "يقول متعلم: نعم؛ كل حد يعني احتمال 50%."
+      },
+      "a": {
+        "en": "No; probability requires an additional uncertainty model. Sensitivity and probability answer related but different questions.",
+        "ar": "لا؛ يحتاج الاحتمال نموذجًا إضافيًا لعدم اليقين. الحساسية والاحتمال سؤالان متصلان لكن مختلفان."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s04-recall",
+      "concept": "ee-risk-inventory-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: EOQ balances ordering and holding",
+        "ar": "اشرح: توازن الكمية الاقتصادية الطلب والتخزين"
+      },
+      "a": {
+        "en": "Know which cost was omitted because it was constant, and when that assumption stops holding.",
+        "ar": "افهم سبب إهمال تكلفة كانت ثابتة، ومتى يسقط فرض ثباتها."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s04-formula",
+      "concept": "ee-risk-inventory-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nQ*=sqrt(2 DK/h)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nQ*=sqrt(2 DK/h)"
+      },
+      "a": {
+        "en": "D is units/year; K CU/order; h CU/(unit·year); Q is units/order. Constant demand, instantaneous replenishment, no shortages, constant costs, no quantity discounts.",
+        "ar": "D طلب وحدات/سنة و K نقد/طلب و h نقد للوحدة في السنة و Q وحدات لكل طلبية. طلب ثابت وتجديد فوري ودون عجز أو حسم كمية، مع تكاليف ثابتة."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s04-trap",
+      "concept": "ee-risk-inventory-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; only ordering cost exists.",
+        "ar": "يقول متعلم: نعم؛ لا توجد إلا تكلفة الطلب."
+      },
+      "a": {
+        "en": "No; fewer orders increase average stock and holding cost. Know which cost was omitted because it was constant, and when that assumption stops holding.",
+        "ar": "لا؛ قلة الطلبات ترفع المخزون المتوسط وتكلفة تخزينه. افهم سبب إهمال تكلفة كانت ثابتة، ومتى يسقط فرض ثباتها."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s05-recall",
+      "concept": "ee-risk-inventory-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Finish with a decision audit, not a memorized answer",
+        "ar": "اشرح: اختم بتدقيق القرار لا بجواب محفوظ"
+      },
+      "a": {
+        "en": "Keep learning progress, effort and independently demonstrated performance distinct.",
+        "ar": "ميز تقدم التعلم والجهد عن الأداء المستقل المثبت."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s05-formula",
+      "concept": "ee-risk-inventory-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nmodel → dated calculation → units → boundary check → decision",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nmodel → dated calculation → units → boundary check → decision"
+      },
+      "a": {
+        "en": "A defensible solution gives an amount, its date, its units and the assumptions used. Check the question asked:worth,rate,time,charge or quantity are not interchangeable outputs.",
+        "ar": "يعطي الحل المعلل مبلغًا وتاريخًا ووحدات وافتراضات واضحة. القيمة والمعدل والزمن والقسط والكمية مخرجات مختلفة؛ اقرأ ما يطلبه السؤال."
+      }
+    },
+    {
+      "id": "ee-risk-inventory-s05-trap",
+      "concept": "ee-risk-inventory-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; more decimals guarantee more valid reasoning.",
+        "ar": "يقول متعلم: نعم؛ تضمن المنازل الكثيرة تعليلًا صحيحًا."
+      },
+      "a": {
+        "en": "No; precision cannot repair wrong dates, units or assumptions. Keep learning progress, effort and independently demonstrated performance distinct.",
+        "ar": "لا؛ لا تصلح الدقة خطأ التاريخ أو الوحدة أو الفرض. ميز تقدم التعلم والجهد عن الأداء المستقل المثبت."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE10",
+      "page": 16,
+      "filename": "Econ-PE-ProblemBk.pdf"
+    }
+  ],
+  "videoIds": [
+    "uzkc-qNVoOk",
+    "96GcUS4FieU"
+  ]
+}

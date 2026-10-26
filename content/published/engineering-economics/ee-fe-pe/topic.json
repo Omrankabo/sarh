@@ -1,0 +1,1276 @@
+{
+  "id": "ee-fe-pe",
+  "family": "ee-transfer",
+  "title": {
+    "en": "FE/PE transfer: inflation, public value and replacement",
+    "ar": "انتقال المهارة لـ FE و PE: التضخم والقيمة العامة والاستبدال"
+  },
+  "summary": {
+    "en": "Supplementary practice from the supplied FE/PE materials. Reuse the course’s cash-flow logic for inflation, benefit/cost, replacement and a stated tax model; no guaranteed exam coverage is claimed.",
+    "ar": "تدريب إضافي من مواد FE و PE المرفقة. أعد استخدام منطق التدفقات للتضخم والمنفعة للتكلفة والاستبدال ونموذج ضريبي معطى، دون ادعاء تغطية مضمونة للاختبارات."
+  },
+  "outcomes": [
+    {
+      "en": "Inflation changes the measuring ruler",
+      "ar": "يغير التضخم مسطرة القياس"
+    },
+    {
+      "en": "Benefit/cost needs a definition and a common basis",
+      "ar": "تحتاج المنفعة للتكلفة تعريفًا وأساسًا مشتركًا"
+    },
+    {
+      "en": "Replacement starts from today’s opportunity value",
+      "ar": "يبدأ الاستبدال من قيمة الفرصة اليوم"
+    },
+    {
+      "en": "A stated tax model connects depreciation to cash",
+      "ar": "يصل نموذج ضريبي معطى الإهلاك بالنقد"
+    },
+    {
+      "en": "Sensitivity can reverse a cost ranking",
+      "ar": "قد تغير الحساسية ترتيب التكاليف"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-powers"
+  ],
+  "concepts": [
+    {
+      "id": "ee-fe-pe-s01-concept",
+      "title": {
+        "en": "Inflation changes the measuring ruler",
+        "ar": "يغير التضخم مسطرة القياس"
+      }
+    },
+    {
+      "id": "ee-fe-pe-s02-concept",
+      "title": {
+        "en": "Benefit/cost needs a definition and a common basis",
+        "ar": "تحتاج المنفعة للتكلفة تعريفًا وأساسًا مشتركًا"
+      }
+    },
+    {
+      "id": "ee-fe-pe-s03-concept",
+      "title": {
+        "en": "Replacement starts from today’s opportunity value",
+        "ar": "يبدأ الاستبدال من قيمة الفرصة اليوم"
+      }
+    },
+    {
+      "id": "ee-fe-pe-s04-concept",
+      "title": {
+        "en": "A stated tax model connects depreciation to cash",
+        "ar": "يصل نموذج ضريبي معطى الإهلاك بالنقد"
+      }
+    },
+    {
+      "id": "ee-fe-pe-s05-concept",
+      "title": {
+        "en": "Sensitivity can reverse a cost ranking",
+        "ar": "قد تغير الحساسية ترتيب التكاليف"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-fe-pe-s01",
+      "title": {
+        "en": "Inflation changes the measuring ruler",
+        "ar": "يغير التضخم مسطرة القياس"
+      },
+      "predict": {
+        "en": "Is nominal minus inflation always the exact real rate?",
+        "ar": "هل طرح التضخم من الاسمي يعطي الحقيقي بدقة دائمًا؟"
+      },
+      "options": [
+        {
+          "en": "No; divide by 1+inflation for the exact relation.",
+          "ar": "لا؛ اقسم على 1+التضخم للعلاقة الدقيقة."
+        },
+        {
+          "en": "Yes; the product term is always zero.",
+          "ar": "نعم؛ حد حاصل الضرب صفر دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; divide by 1+inflation for the exact relation. Keep the purchasing-power ruler consistent on both sides.",
+        "ar": "لا؛ اقسم على 1+التضخم للعلاقة الدقيقة. حافظ على مسطرة القوة الشرائية نفسها في الطرفين."
+      },
+      "explain": {
+        "en": "An actual future currency amount includes general price change. A real amount is expressed in a chosen base-year purchasing-power unit. Either inflate the flows and discount at a compatible nominal rate, or keep real flows and use a real rate. Mixing real amounts with nominal discounting can count the effect of inflation twice. Price escalation specific to materials is not necessarily the same as general inflation.",
+        "ar": "يشمل المبلغ النقدي المستقبلي الفعلي تغير الأسعار العام؛ ويقاس الحقيقي بقوة شراء سنة أساس. إما أن تضخم التدفقات وتخصم بمعدل اسمي متوافق أو تبقيها حقيقية وتستخدم معدلًا حقيقيًا. قد يعد خلط الحقيقي بالخصم الاسمي أثر التضخم مرتين. وتصاعد سعر مادة بعينها ليس التضخم العام بالضرورة."
+      },
+      "formula": "1+inom=(1+ireal)(1+f); ireal=(inom−f)/(1+f)",
+      "symbols": {
+        "en": "f is inflation per period; nominal and real rates use that same period.",
+        "ar": "f تضخم الفترة، ويلزم أن يستخدم المعدلان الفترة نفسها."
+      },
+      "assumptions": {
+        "en": "Hypothetical given rates; consistent purchasing-power basis and no claim about current market inflation.",
+        "ar": "معدلات افتراضية معطاة وأساس قوة شراء متسق؛ دون ادعاء تضخم سوق حالي."
+      },
+      "example": {
+        "en": "Nominal rate 10%, inflation 4%.",
+        "ar": "المعدل الاسمي 10% والتضخم 4%."
+      },
+      "calculation": {
+        "en": "ireal=1.10/1.04−1≈5.769231%, not exactly 6%.",
+        "ar": "الحقيقي 5.769231% تقريبًا، وليس 6% تمامًا."
+      },
+      "interpret": {
+        "en": "Keep the purchasing-power ruler consistent on both sides.",
+        "ar": "حافظ على مسطرة القوة الشرائية نفسها في الطرفين."
+      },
+      "check": {
+        "prompt": {
+          "en": "Costs are already escalated into actual future money. Which discount basis is compatible?",
+          "ar": "صُعّدت التكاليف فعلًا إلى نقود المستقبل الاسمية. أي أساس خصم يتوافق؟"
+        },
+        "answer": {
+          "en": "A compatible nominal rate for those actual flows.",
+          "ar": "معدل اسمي متوافق مع التدفقات الفعلية."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-fe-pe-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 14,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-fe-pe-s02",
+      "title": {
+        "en": "Benefit/cost needs a definition and a common basis",
+        "ar": "تحتاج المنفعة للتكلفة تعريفًا وأساسًا مشتركًا"
+      },
+      "predict": {
+        "en": "Does the highest standalone B/C always select the correct mutually exclusive project?",
+        "ar": "هل تختار أعلى نسبة منفردة دائمًا البديل المتنافي الصحيح؟"
+      },
+      "options": [
+        {
+          "en": "Yes; a ratio has already solved every scale issue.",
+          "ar": "نعم؛ تحل النسبة كل مشكلات الحجم."
+        },
+        {
+          "en": "No; examine incremental benefits and costs when scale differs.",
+          "ar": "لا؛ افحص المنافع والتكاليف الإضافية مع اختلاف الحجم."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; examine incremental benefits and costs when scale differs. A complete model includes each consequence once, with a clear sign and category.",
+        "ar": "لا؛ افحص المنافع والتكاليف الإضافية مع اختلاف الحجم. يضم النموذج الكامل كل نتيجة مرة واحدة بإشارة وتصنيف واضحين."
+      },
+      "explain": {
+        "en": "A public project can be evaluated using discounted benefits and costs. Include disbenefits in the way the selected convention specifies, and do not count them both as negative benefits and extra costs. For mutually exclusive scale choices, a larger standalone B/C ratio is not automatically a better use of the available resources. Test the extra benefit against the extra cost under a common horizon and discount rate.",
+        "ar": "يمكن تقييم مشروع عام بمنافع وتكاليف مخصومة. أدخل الأضرار وفق الاتفاق المختار ولا تعدها منافع سالبة وتكاليف إضافية معًا. للبدائل المتنافية لا تعني أعلى نسبة منفردة أفضل استخدام للموارد دائمًا. اختبر المنفعة الإضافية مقابل التكلفة الإضافية بأفق ومعدل واحدين."
+      },
+      "formula": "B/C=PWbenefits/PWcosts; incremental ratio=ΔB/ΔC",
+      "symbols": {
+        "en": "Benefit and cost magnitudes use the same date, horizon and discount assumptions.",
+        "ar": "تستخدم مقادير المنفعة والتكلفة التاريخ والأفق وفروض الخصم نفسها."
+      },
+      "assumptions": {
+        "en": "Costs positive in the denominator, a stated disbenefit convention and relevant feasible alternatives.",
+        "ar": "تكاليف موجبة في المقام واتفاق ضرر معلن وبدائل ممكنة ذات صلة."
+      },
+      "example": {
+        "en": "A has benefits 150 and costs 100; B has benefits 240 and costs 180, in present units.",
+        "ar": "منافع A تساوي 150 وتكلفته 100؛ ومنافع B تساوي 240 وتكلفته 180 بقيم حالية."
+      },
+      "calculation": {
+        "en": "B/CA=1.5 and B/CB=1.3333; increment=(240−150)/(180−100)=1.125. The larger option can justify its extra cost despite a smaller standalone ratio.",
+        "ar": "النسبتان 1.5 و 1.3333، والإضافية 1.125؛ وقد يستحق الأكبر الإنفاق رغم نسبته المنفردة الأقل."
+      },
+      "interpret": {
+        "en": "A complete model includes each consequence once, with a clear sign and category.",
+        "ar": "يضم النموذج الكامل كل نتيجة مرة واحدة بإشارة وتصنيف واضحين."
+      },
+      "check": {
+        "prompt": {
+          "en": "An external harm is subtracted from benefits and also added to costs in the same B/C calculation. What is wrong?",
+          "ar": "طرح ضرر خارجي من المنافع وأضيف للتكاليف في حساب النسبة نفسه. ما الخلل؟"
+        },
+        "answer": {
+          "en": "The harm is double counted; use one declared convention.",
+          "ar": "عُدّ الضرر مرتين؛ استخدم اتفاقًا واحدًا معلنًا."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-fe-pe-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 13,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-fe-pe-s03",
+      "title": {
+        "en": "Replacement starts from today’s opportunity value",
+        "ar": "يبدأ الاستبدال من قيمة الفرصة اليوم"
+      },
+      "predict": {
+        "en": "Should the defender’s historical 50000 be its new investment basis for a decision made today?",
+        "ar": "هل يصبح شراء القائم التاريخي 50000 أساس استثمار قراراليوم؟"
+      },
+      "options": [
+        {
+          "en": "No; use current opportunity value and relevant future effects.",
+          "ar": "لا؛ استخدم قيمة الفرصة الحالية وآثار المستقبل."
+        },
+        {
+          "en": "Yes; historical cost can always be recovered by the right replacement decision.",
+          "ar": "نعم؛ يسترد السعر التاريخي دائمًا بقراراستبدال مناسب."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; use current opportunity value and relevant future effects. Book allocation and market opportunity are different measurements.",
+        "ar": "لا؛ استخدم قيمة الفرصة الحالية وآثار المستقبل. التوزيع الدفتري وفرصة السوق قياسان مختلفان."
+      },
+      "explain": {
+        "en": "The old machine’s historical price cannot be changed. Its market sale value today can be realized if replaced and is therefore a relevant opportunity cost of keeping it. Compare defender and challenger costs over a common service requirement. Book value matters only through separately specified accounting or tax consequences. For an economic-life search, compute equivalent annual cost for each candidate retention life including its changing salvage and operating expenses.",
+        "ar": "لا يمكن تغيير السعر التاريخي للآلة القديمة، لكن بيعها اليوم يحقق قيمة يمكن تحصيلها عند الاستبدال؛ فهي تكلفة فرصة للاحتفاظ. قارن القائم والجديد لخدمة مشتركة. وتؤثر الدفترية فقط عبر نتائج محاسبية أو ضريبية ممثلة منفصلة. للبحث عن العمر الاقتصادي احسب السنوية لكل مدة احتفاظ مع خردتها وتشغيلها المتغيرين."
+      },
+      "formula": "EUACn=[P−Sn(P/F,i,n)+PW(O&M)](A/P,i,n)",
+      "symbols": {
+        "en": "For the defender, P is current opportunity value in a keep-from-today analysis.",
+        "ar": "للأصل القائم تمثل P قيمة الفرصة الحالية في تحليل الاحتفاظ مناليوم."
+      },
+      "assumptions": {
+        "en": "Same required service and stated future costs; do not carry sunk purchase invoices into the comparison.",
+        "ar": "خدمة مطلوبة واحدة وتكاليف مستقبلية محددة؛ دون إدخال فواتير الشراء الغارقة."
+      },
+      "example": {
+        "en": "Old purchase 50000, current sale 8000, expected sale in 1 year 6000; annual O&M1000, i=10%.",
+        "ar": "شراء قديم 50000 وبيع اليوم 8000 وبعدسنة 6000 وتشغيل 1000 ومعدل 10%."
+      },
+      "calculation": {
+        "en": "One-year keep cost at year 1=8000(1.1)−6000+1000=3800.",
+        "ar": "تكلفة الاحتفاظ المكافئة عند نهايةسنة 3800."
+      },
+      "interpret": {
+        "en": "Book allocation and market opportunity are different measurements.",
+        "ar": "التوزيع الدفتري وفرصة السوق قياسان مختلفان."
+      },
+      "check": {
+        "prompt": {
+          "en": "The machine has zero book value but a sale offer of 5000 today. Is its keep opportunity cost zero?",
+          "ar": "دفترية الآلةصفرلكن عرضبيعهااليوم 5000. هل تكلفة فرصة الاحتفاظصفر؟"
+        },
+        "answer": {
+          "en": "No; keeping it forgoes the 5000 sale.",
+          "ar": "لا؛ يفوّت الاحتفاظ بيع 5000."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-fe-pe-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 12,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 25,
+          "filename": "014 Tuts.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-fe-pe-s04",
+      "title": {
+        "en": "A stated tax model connects depreciation to cash",
+        "ar": "يصل نموذج ضريبي معطى الإهلاك بالنقد"
+      },
+      "predict": {
+        "en": "Should depreciation be subtracted again after after-tax cash has already been reconstructed?",
+        "ar": "هل يطرح الإهلاك مرة أخرى بعد إعادةتكوين النقد بعدالضريبة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; every accounting expense is an independent cash outflow.",
+          "ar": "نعم؛ كل مصروف محاسبي دفع مستقل."
+        },
+        {
+          "en": "No; that would treat a noncash allocation as an extra payment.",
+          "ar": "لا؛ سيعامل توزيعًا غير نقدي كدفعة إضافية."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; that would treat a noncash allocation as an extra payment. Learning the arithmetic is distinct from verifying current tax rules.",
+        "ar": "لا؛ سيعامل توزيعًا غير نقدي كدفعة إضافية. تعلم الحساب يختلف عن التحقق من قاعدة ضريبية حالية."
+      },
+      "explain": {
+        "en": "In a simplified exam tax model, taxable operating income is revenue minus cash expense minus depreciation. Tax is that amount times a stated tax fraction, and after-tax operating cash adds depreciation back because it was not a cash expense. A MACRS-style problem should supply the recovery class, convention and percentage schedule; apply each percentage to the stated basis. The older PE booklet is not evidence of today’s tax law.",
+        "ar": "في نموذج امتحاني مبسط يكون الدخل الخاضع الإيراد ناقص المصروف النقدي والإهلاك. تضربه في النسبة الضريبية المعطاة ويعاد الإهلاك عند تكوين النقد لأنه لم يكن دفعًا. يجب أن يعطي مثال MACRS الفئة والاتفاق وجدول النسب؛ اضرب كل نسبة في الأساس. لا يثبت كتيب PE القديم قانون اليوم."
+      },
+      "formula": "TI=R−E−D; tax=τ TI; OCF=(R−E)(1−τ)+τD",
+      "symbols": {
+        "en": "R revenue, E cash operating expense, D depreciation and τ a hypothetical stated tax fraction.",
+        "ar": "R إيراد و E مصروف نقدي و D إهلاك وτ نسبة ضريبية افتراضية معطاة."
+      },
+      "assumptions": {
+        "en": "Simplified positive-taxable-income model; losses, disposal tax and jurisdiction-specific rules need separate stated assumptions.",
+        "ar": "نموذج مبسط لدخل موجب؛ وتحتاج الخسائر وضريبة التصرف وقواعد الجهة فروضًا مستقلة."
+      },
+      "example": {
+        "en": "R=10000,E=4000,D=2000,τ=25%.",
+        "ar": "الإيراد 10000 والمصروف 4000 والإهلاك 2000 والنسبة 25%."
+      },
+      "calculation": {
+        "en": "TI=4000; tax 1000; OCF=10000−4000−1000=5000. Under a supplied 32% schedule on 10000 basis, depreciation is 3200.",
+        "ar": "الدخل 4000 والضريبة 1000 والنقد 5000؛ ونسبةجدول 32%علىأساس 10000 تعطيإهلاك 3200."
+      },
+      "interpret": {
+        "en": "Learning the arithmetic is distinct from verifying current tax rules.",
+        "ar": "تعلم الحساب يختلف عن التحقق من قاعدة ضريبية حالية."
+      },
+      "check": {
+        "prompt": {
+          "en": "A source uses an old MACRS table. May the app label its percentages as verified current legal requirements?",
+          "ar": "يستخدم المصدرجدول MACRS قديمًا. هل يسمى في التطبيق متطلباتقانونيةحاليةمتحققًا منها؟"
+        },
+        "answer": {
+          "en": "No; use it as supplied exam data and identify its historical context.",
+          "ar": "لا؛ استخدمه معطى امتحانيًا وحدد سياقه التاريخي."
+        }
+      },
+      "diagram": "econ-depreciation",
+      "concepts": [
+        "ee-fe-pe-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 15,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE15",
+          "page": 5,
+          "filename": "PPIInfo_fl_corner-FEIM2-PP04Economics.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-fe-pe-s05",
+      "title": {
+        "en": "Sensitivity can reverse a cost ranking",
+        "ar": "قد تغير الحساسية ترتيب التكاليف"
+      },
+      "predict": {
+        "en": "Can the ranking of cost-only alternatives depend on discount rate?",
+        "ar": "هل قد يعتمد ترتيب بدائل التكلفة فقط على معدل الخصم؟"
+      },
+      "options": [
+        {
+          "en": "Yes; different timing can change their present-cost ordering.",
+          "ar": "نعم؛ قد تغير التواريخ المختلفة ترتيب الحالية."
+        },
+        {
+          "en": "No; cost-only ranking is always rate-independent.",
+          "ar": "لا؛ ترتيب التكاليف مستقل دائمًا عن المعدل."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Yes; different timing can change their present-cost ordering. Independent equivalence checks take precedence over an unchecked generalization.",
+        "ar": "نعم؛ قد تغير التواريخ المختلفة ترتيب الحالية. يتقدم تدقيق التكافؤ المستقل على تعميم غير مفحوص."
+      },
+      "explain": {
+        "en": "Compare alternatives at several defensible hurdle rates when timing differs. Even cost-only rankings can reverse with rate; the supplied older PE introduction overstates rate independence. A delayed cost is discounted more strongly when the rate rises. Record the rate, service assumption and switching point. Do not label an alternative “best at every rate” because it won at one trial rate.",
+        "ar": "قارن البدائل عند معدلات مبررة مختلفة عندما يختلف توقيت كلفتها. حتى ترتيب التكاليف فقط قد ينعكس مع المعدل؛ لذلك فإن تعميم المقدمة القديمة في كتيب PE أوسع مما تسمح به الرياضيات. تخصم الكلفة المؤجلة أكثر عند ارتفاع المعدل. سجل فرض الخدمة والمعدل ونقطة التحول، ولا تسمّ بديلًا الأفضل لكل المعدلات لمجرد فوزه في تجربة واحدة."
+      },
+      "formula": "crossover solves PWA(i)=PWB(i)",
+      "symbols": {
+        "en": "Use signed worth or positive cost magnitudes consistently; compare the same service.",
+        "ar": "استخدم القيمة الموقعة أو مقدار التكلفة باتساق، وبالخدمة نفسها."
+      },
+      "assumptions": {
+        "en": "Cash timing can affect ranking; safety and service constraints still apply at every rate.",
+        "ar": "يؤثر توقيت النقد في الترتيب؛ وتبقى قيود الخدمة والسلامة قائمة."
+      },
+      "example": {
+        "en": "Equal-service costs: A=1000 now; B=1500 at year 5.",
+        "ar": "A يكلف 1000 الآن و B يكلف 1500 عند 5، مع الخدمة نفسها."
+      },
+      "calculation": {
+        "en": "At 0%, A costs 1000 versus 1500. At 10%, B’s present cost=1500/1.1^5≈931.38, now less than A.",
+        "ar": "عند صفر A أرخص؛ وعند 10%حالية B=1500/1.1^5≈931.38، فيصبح B أرخص."
+      },
+      "interpret": {
+        "en": "Independent equivalence checks take precedence over an unchecked generalization.",
+        "ar": "يتقدم تدقيق التكافؤ المستقل على تعميم غير مفحوص."
+      },
+      "check": {
+        "prompt": {
+          "en": "A source answer says the cheapest cost-only alternative is unchanged at all rates. What is a sufficient correction?",
+          "ar": "يقول المصدر إن أرخص بديل لا يتغير بأي معدل. كيف تصحح التعميم؟"
+        },
+        "answer": {
+          "en": "Give a same-service dated counterexample and qualify the statement.",
+          "ar": "قدم مثالًا مؤرخًا بخدمة متساوية وقيد العبارة."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-fe-pe-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 3,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "experiment": "npv"
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-fe-pe-s01-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 14,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "f is inflation per period; nominal and real rates use that same period.",
+          "ar": "f تضخم الفترة، ويلزم أن يستخدم المعدلان الفترة نفسها."
+        },
+        {
+          "en": "1+inom=(1+ireal)(1+f); ireal=(inom−f)/(1+f)\nHypothetical given rates; consistent purchasing-power basis and no claim about current market inflation.",
+          "ar": "1+inom=(1+ireal)(1+f); ireal=(inom−f)/(1+f)\nمعدلات افتراضية معطاة وأساس قوة شراء متسق؛ دون ادعاء تضخم سوق حالي."
+        }
+      ],
+      "id": "ee-fe-pe-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Is nominal minus inflation always the exact real rate?",
+        "ar": "هل طرح التضخم من الاسمي يعطي الحقيقي بدقة دائمًا؟"
+      },
+      "options": [
+        {
+          "en": "No; divide by 1+inflation for the exact relation.",
+          "ar": "لا؛ اقسم على 1+التضخم للعلاقة الدقيقة."
+        },
+        {
+          "en": "Yes; the product term is always zero.",
+          "ar": "نعم؛ حد حاصل الضرب صفر دائمًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; divide by 1+inflation for the exact relation. An actual future currency amount includes general price change. A real amount is expressed in a chosen base-year purchasing-power unit. Either inflate the flows and discount at a compatible nominal rate, or keep real flows and use a real rate. Mixing real amounts with nominal discounting can count the effect of inflation twice. Price escalation specific to materials is not necessarily the same as general inflation.",
+        "ar": "لا؛ اقسم على 1+التضخم للعلاقة الدقيقة. يشمل المبلغ النقدي المستقبلي الفعلي تغير الأسعار العام؛ ويقاس الحقيقي بقوة شراء سنة أساس. إما أن تضخم التدفقات وتخصم بمعدل اسمي متوافق أو تبقيها حقيقية وتستخدم معدلًا حقيقيًا. قد يعد خلط الحقيقي بالخصم الاسمي أثر التضخم مرتين. وتصاعد سعر مادة بعينها ليس التضخم العام بالضرورة."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s01-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 14,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "f is inflation per period; nominal and real rates use that same period.",
+          "ar": "f تضخم الفترة، ويلزم أن يستخدم المعدلان الفترة نفسها."
+        },
+        {
+          "en": "1+inom=(1+ireal)(1+f); ireal=(inom−f)/(1+f)\nHypothetical given rates; consistent purchasing-power basis and no claim about current market inflation.",
+          "ar": "1+inom=(1+ireal)(1+f); ireal=(inom−f)/(1+f)\nمعدلات افتراضية معطاة وأساس قوة شراء متسق؛ دون ادعاء تضخم سوق حالي."
+        }
+      ],
+      "id": "ee-fe-pe-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Nominal 8%, inflation 3%. Find real rate as a percent.",
+        "ar": "الاسمي 8% والتضخم 3%. أوجد المعدل الحقيقي المئوي."
+      },
+      "expected": 4.854368932038833,
+      "tolerance": 0.005,
+      "unit": "percent",
+      "solution": {
+        "en": "ireal=(1.08/1.03−1)×100≈4.854369%.",
+        "ar": "الحقيقي 4.854369% تقريبًا."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s01-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 14,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "f is inflation per period; nominal and real rates use that same period.",
+          "ar": "f تضخم الفترة، ويلزم أن يستخدم المعدلان الفترة نفسها."
+        },
+        {
+          "en": "1+inom=(1+ireal)(1+f); ireal=(inom−f)/(1+f)\nHypothetical given rates; consistent purchasing-power basis and no claim about current market inflation.",
+          "ar": "1+inom=(1+ireal)(1+f); ireal=(inom−f)/(1+f)\nمعدلات افتراضية معطاة وأساس قوة شراء متسق؛ دون ادعاء تضخم سوق حالي."
+        }
+      ],
+      "id": "ee-fe-pe-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Costs are already escalated into actual future money. Which discount basis is compatible?",
+        "ar": "صُعّدت التكاليف فعلًا إلى نقود المستقبل الاسمية. أي أساس خصم يتوافق؟"
+      },
+      "options": [
+        {
+          "en": "A real rate without removing inflation from the flows.",
+          "ar": "معدل حقيقي دون إزالة التضخم من التدفقات."
+        },
+        {
+          "en": "A compatible nominal rate for those actual flows.",
+          "ar": "معدل اسمي متوافق مع التدفقات الفعلية."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "A compatible nominal rate for those actual flows. Keep the purchasing-power ruler consistent on both sides.",
+        "ar": "معدل اسمي متوافق مع التدفقات الفعلية. حافظ على مسطرة القوة الشرائية نفسها في الطرفين."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s02-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 13,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Benefit and cost magnitudes use the same date, horizon and discount assumptions.",
+          "ar": "تستخدم مقادير المنفعة والتكلفة التاريخ والأفق وفروض الخصم نفسها."
+        },
+        {
+          "en": "B/C=PWbenefits/PWcosts; incremental ratio=ΔB/ΔC\nCosts positive in the denominator, a stated disbenefit convention and relevant feasible alternatives.",
+          "ar": "B/C=PWbenefits/PWcosts; incremental ratio=ΔB/ΔC\nتكاليف موجبة في المقام واتفاق ضرر معلن وبدائل ممكنة ذات صلة."
+        }
+      ],
+      "id": "ee-fe-pe-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does the highest standalone B/C always select the correct mutually exclusive project?",
+        "ar": "هل تختار أعلى نسبة منفردة دائمًا البديل المتنافي الصحيح؟"
+      },
+      "options": [
+        {
+          "en": "Yes; a ratio has already solved every scale issue.",
+          "ar": "نعم؛ تحل النسبة كل مشكلات الحجم."
+        },
+        {
+          "en": "No; examine incremental benefits and costs when scale differs.",
+          "ar": "لا؛ افحص المنافع والتكاليف الإضافية مع اختلاف الحجم."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; examine incremental benefits and costs when scale differs. A public project can be evaluated using discounted benefits and costs. Include disbenefits in the way the selected convention specifies, and do not count them both as negative benefits and extra costs. For mutually exclusive scale choices, a larger standalone B/C ratio is not automatically a better use of the available resources. Test the extra benefit against the extra cost under a common horizon and discount rate.",
+        "ar": "لا؛ افحص المنافع والتكاليف الإضافية مع اختلاف الحجم. يمكن تقييم مشروع عام بمنافع وتكاليف مخصومة. أدخل الأضرار وفق الاتفاق المختار ولا تعدها منافع سالبة وتكاليف إضافية معًا. للبدائل المتنافية لا تعني أعلى نسبة منفردة أفضل استخدام للموارد دائمًا. اختبر المنفعة الإضافية مقابل التكلفة الإضافية بأفق ومعدل واحدين."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s02-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 13,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Benefit and cost magnitudes use the same date, horizon and discount assumptions.",
+          "ar": "تستخدم مقادير المنفعة والتكلفة التاريخ والأفق وفروض الخصم نفسها."
+        },
+        {
+          "en": "B/C=PWbenefits/PWcosts; incremental ratio=ΔB/ΔC\nCosts positive in the denominator, a stated disbenefit convention and relevant feasible alternatives.",
+          "ar": "B/C=PWbenefits/PWcosts; incremental ratio=ΔB/ΔC\nتكاليف موجبة في المقام واتفاق ضرر معلن وبدائل ممكنة ذات صلة."
+        }
+      ],
+      "id": "ee-fe-pe-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "PWbenefits=180000 and PWcosts=150000 CU. Find B/C.",
+        "ar": "المنافع الحالية 180000 والتكاليف 150000. أوجد النسبة."
+      },
+      "expected": 1.2,
+      "tolerance": 0.005,
+      "unit": "dimensionless",
+      "solution": {
+        "en": "180000/150000=1.2. Net present benefit=30000 under this convention.",
+        "ar": "النسبة 1.2 وصافي المنفعة 30000 وفق هذا الاتفاق."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s02-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 13,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Benefit and cost magnitudes use the same date, horizon and discount assumptions.",
+          "ar": "تستخدم مقادير المنفعة والتكلفة التاريخ والأفق وفروض الخصم نفسها."
+        },
+        {
+          "en": "B/C=PWbenefits/PWcosts; incremental ratio=ΔB/ΔC\nCosts positive in the denominator, a stated disbenefit convention and relevant feasible alternatives.",
+          "ar": "B/C=PWbenefits/PWcosts; incremental ratio=ΔB/ΔC\nتكاليف موجبة في المقام واتفاق ضرر معلن وبدائل ممكنة ذات صلة."
+        }
+      ],
+      "id": "ee-fe-pe-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "An external harm is subtracted from benefits and also added to costs in the same B/C calculation. What is wrong?",
+        "ar": "طرح ضرر خارجي من المنافع وأضيف للتكاليف في حساب النسبة نفسه. ما الخلل؟"
+      },
+      "options": [
+        {
+          "en": "The harm is double counted; use one declared convention.",
+          "ar": "عُدّ الضرر مرتين؛ استخدم اتفاقًا واحدًا معلنًا."
+        },
+        {
+          "en": "Nothing; negative effects should always count twice.",
+          "ar": "لاخلل؛ يجب عد الآثار السلبية مرتين."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "The harm is double counted; use one declared convention. A complete model includes each consequence once, with a clear sign and category.",
+        "ar": "عُدّ الضرر مرتين؛ استخدم اتفاقًا واحدًا معلنًا. يضم النموذج الكامل كل نتيجة مرة واحدة بإشارة وتصنيف واضحين."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s03-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 12,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 25,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "For the defender, P is current opportunity value in a keep-from-today analysis.",
+          "ar": "للأصل القائم تمثل P قيمة الفرصة الحالية في تحليل الاحتفاظ مناليوم."
+        },
+        {
+          "en": "EUACn=[P−Sn(P/F,i,n)+PW(O&M)](A/P,i,n)\nSame required service and stated future costs; do not carry sunk purchase invoices into the comparison.",
+          "ar": "EUACn=[P−Sn(P/F,i,n)+PW(O&M)](A/P,i,n)\nخدمة مطلوبة واحدة وتكاليف مستقبلية محددة؛ دون إدخال فواتير الشراء الغارقة."
+        }
+      ],
+      "id": "ee-fe-pe-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Should the defender’s historical 50000 be its new investment basis for a decision made today?",
+        "ar": "هل يصبح شراء القائم التاريخي 50000 أساس استثمار قراراليوم؟"
+      },
+      "options": [
+        {
+          "en": "No; use current opportunity value and relevant future effects.",
+          "ar": "لا؛ استخدم قيمة الفرصة الحالية وآثار المستقبل."
+        },
+        {
+          "en": "Yes; historical cost can always be recovered by the right replacement decision.",
+          "ar": "نعم؛ يسترد السعر التاريخي دائمًا بقراراستبدال مناسب."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; use current opportunity value and relevant future effects. The old machine’s historical price cannot be changed. Its market sale value today can be realized if replaced and is therefore a relevant opportunity cost of keeping it. Compare defender and challenger costs over a common service requirement. Book value matters only through separately specified accounting or tax consequences. For an economic-life search, compute equivalent annual cost for each candidate retention life including its changing salvage and operating expenses.",
+        "ar": "لا؛ استخدم قيمة الفرصة الحالية وآثار المستقبل. لا يمكن تغيير السعر التاريخي للآلة القديمة، لكن بيعها اليوم يحقق قيمة يمكن تحصيلها عند الاستبدال؛ فهي تكلفة فرصة للاحتفاظ. قارن القائم والجديد لخدمة مشتركة. وتؤثر الدفترية فقط عبر نتائج محاسبية أو ضريبية ممثلة منفصلة. للبحث عن العمر الاقتصادي احسب السنوية لكل مدة احتفاظ مع خردتها وتشغيلها المتغيرين."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s03-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 12,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 25,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "For the defender, P is current opportunity value in a keep-from-today analysis.",
+          "ar": "للأصل القائم تمثل P قيمة الفرصة الحالية في تحليل الاحتفاظ مناليوم."
+        },
+        {
+          "en": "EUACn=[P−Sn(P/F,i,n)+PW(O&M)](A/P,i,n)\nSame required service and stated future costs; do not carry sunk purchase invoices into the comparison.",
+          "ar": "EUACn=[P−Sn(P/F,i,n)+PW(O&M)](A/P,i,n)\nخدمة مطلوبة واحدة وتكاليف مستقبلية محددة؛ دون إدخال فواتير الشراء الغارقة."
+        }
+      ],
+      "id": "ee-fe-pe-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Current machine sale value 10000, next-year sale 7000, next-year O&M1200, i=8%. Find one-year keep cost at year 1.",
+        "ar": "بيع الآلةاليوم 10000 وبعدسنة 7000 والتشغيل 1200 ومعدل 8%. أوجد تكلفة الاحتفاظ لسنة عندنهايتها."
+      },
+      "expected": 5000,
+      "tolerance": 0.1,
+      "unit": "CU at year1",
+      "solution": {
+        "en": "10000×1.08−7000+1200=5000.",
+        "ar": "التكلفة 5000."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s03-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 12,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 25,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "For the defender, P is current opportunity value in a keep-from-today analysis.",
+          "ar": "للأصل القائم تمثل P قيمة الفرصة الحالية في تحليل الاحتفاظ مناليوم."
+        },
+        {
+          "en": "EUACn=[P−Sn(P/F,i,n)+PW(O&M)](A/P,i,n)\nSame required service and stated future costs; do not carry sunk purchase invoices into the comparison.",
+          "ar": "EUACn=[P−Sn(P/F,i,n)+PW(O&M)](A/P,i,n)\nخدمة مطلوبة واحدة وتكاليف مستقبلية محددة؛ دون إدخال فواتير الشراء الغارقة."
+        }
+      ],
+      "id": "ee-fe-pe-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "The machine has zero book value but a sale offer of 5000 today. Is its keep opportunity cost zero?",
+        "ar": "دفترية الآلةصفرلكن عرضبيعهااليوم 5000. هل تكلفة فرصة الاحتفاظصفر؟"
+      },
+      "options": [
+        {
+          "en": "Yes; a fully depreciated asset has no economic value.",
+          "ar": "نعم؛ لا قيمة اقتصادية للأصل المهلك كاملًا."
+        },
+        {
+          "en": "No; keeping it forgoes the 5000 sale.",
+          "ar": "لا؛ يفوّت الاحتفاظ بيع 5000."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; keeping it forgoes the 5000 sale. Book allocation and market opportunity are different measurements.",
+        "ar": "لا؛ يفوّت الاحتفاظ بيع 5000. التوزيع الدفتري وفرصة السوق قياسان مختلفان."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s04-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 15,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE15",
+          "page": 5,
+          "filename": "PPIInfo_fl_corner-FEIM2-PP04Economics.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "R revenue, E cash operating expense, D depreciation and τ a hypothetical stated tax fraction.",
+          "ar": "R إيراد و E مصروف نقدي و D إهلاك وτنسبةضريبةافتراضيةمعطاة."
+        },
+        {
+          "en": "TI=R−E−D; tax=τ TI; OCF=(R−E)(1−τ)+τD\nSimplified positive-taxable-income model; losses, disposal tax and jurisdiction-specific rules need separate stated assumptions.",
+          "ar": "TI=R−E−D; tax=τ TI; OCF=(R−E)(1−τ)+τD\nنموذج مبسط لدخل موجب؛ وتحتاج الخسائر وضريبة التصرف وقواعد الجهة فروضًا مستقلة."
+        }
+      ],
+      "id": "ee-fe-pe-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Should depreciation be subtracted again after after-tax cash has already been reconstructed?",
+        "ar": "هل يطرح الإهلاك مرة أخرى بعد إعادةتكوين النقد بعدالضريبة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; every accounting expense is an independent cash outflow.",
+          "ar": "نعم؛ كل مصروف محاسبي دفع مستقل."
+        },
+        {
+          "en": "No; that would treat a noncash allocation as an extra payment.",
+          "ar": "لا؛ سيعامل توزيعًا غير نقدي كدفعة إضافية."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; that would treat a noncash allocation as an extra payment. In a simplified exam tax model, taxable operating income is revenue minus cash expense minus depreciation. Tax is that amount times a stated tax fraction, and after-tax operating cash adds depreciation back because it was not a cash expense. A MACRS-style problem should supply the recovery class, convention and percentage schedule; apply each percentage to the stated basis. The older PE booklet is not evidence of today’s tax law.",
+        "ar": "لا؛ سيعامل توزيعًا غير نقدي كدفعة إضافية. في نموذج امتحاني مبسط يكون الدخل الخاضع الإيراد ناقص المصروف النقدي والإهلاك. تضربه في النسبة الضريبية المعطاة ويعاد الإهلاك عند تكوين النقد لأنه لم يكن دفعًا. يجب أن يعطي مثال MACRS الفئة والاتفاق وجدول النسب؛ اضرب كل نسبة في الأساس. لا يثبت كتيب PE القديم قانون اليوم."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s04-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 15,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE15",
+          "page": 5,
+          "filename": "PPIInfo_fl_corner-FEIM2-PP04Economics.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "R revenue, E cash operating expense, D depreciation and τ a hypothetical stated tax fraction.",
+          "ar": "R إيراد و E مصروف نقدي و D إهلاك وτنسبةضريبةافتراضيةمعطاة."
+        },
+        {
+          "en": "TI=R−E−D; tax=τ TI; OCF=(R−E)(1−τ)+τD\nSimplified positive-taxable-income model; losses, disposal tax and jurisdiction-specific rules need separate stated assumptions.",
+          "ar": "TI=R−E−D; tax=τ TI; OCF=(R−E)(1−τ)+τD\nنموذج مبسط لدخل موجب؛ وتحتاج الخسائر وضريبة التصرف وقواعد الجهة فروضًا مستقلة."
+        }
+      ],
+      "id": "ee-fe-pe-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "R=20000,E=8000,D=4000,τ=20% in the stated simplified model. Find operating cash after tax.",
+        "ar": "في النموذجالمبسط: إيراد 20000 ومصروف 8000 وإهلاك 4000 ونسبة 20%. أوجد نقد التشغيل بعدالضريبة."
+      },
+      "expected": 10400,
+      "tolerance": 0.20800000000000002,
+      "unit": "CU",
+      "solution": {
+        "en": "TI=8000; tax 1600; cash=20000−8000−1600=10400.",
+        "ar": "الدخل 8000 والضريبة 1600 والنقد 10400."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s04-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 15,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE15",
+          "page": 5,
+          "filename": "PPIInfo_fl_corner-FEIM2-PP04Economics.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "R revenue, E cash operating expense, D depreciation and τ a hypothetical stated tax fraction.",
+          "ar": "R إيراد و E مصروف نقدي و D إهلاك وτنسبةضريبةافتراضيةمعطاة."
+        },
+        {
+          "en": "TI=R−E−D; tax=τ TI; OCF=(R−E)(1−τ)+τD\nSimplified positive-taxable-income model; losses, disposal tax and jurisdiction-specific rules need separate stated assumptions.",
+          "ar": "TI=R−E−D; tax=τ TI; OCF=(R−E)(1−τ)+τD\nنموذج مبسط لدخل موجب؛ وتحتاج الخسائر وضريبة التصرف وقواعد الجهة فروضًا مستقلة."
+        }
+      ],
+      "id": "ee-fe-pe-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A source uses an old MACRS table. May the app label its percentages as verified current legal requirements?",
+        "ar": "يستخدم المصدرجدول MACRS قديمًا. هل يسمى في التطبيق متطلباتقانونيةحاليةمتحققًا منها؟"
+      },
+      "options": [
+        {
+          "en": "No; use it as supplied exam data and identify its historical context.",
+          "ar": "لا؛ استخدمه معطى امتحانيًا وحدد سياقه التاريخي."
+        },
+        {
+          "en": "Yes; a published practice book never becomes outdated.",
+          "ar": "نعم؛ لا يتقادم كتاب تدريب منشور."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; use it as supplied exam data and identify its historical context. Learning the arithmetic is distinct from verifying current tax rules.",
+        "ar": "لا؛ استخدمه معطى امتحانيًا وحدد سياقه التاريخي. تعلم الحساب يختلف عن التحقق من قاعدة ضريبية حالية."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s05-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 3,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Use signed worth or positive cost magnitudes consistently; compare the same service.",
+          "ar": "استخدم القيمة الموقعة أو مقدار التكلفة باتساق، وبالخدمة نفسها."
+        },
+        {
+          "en": "crossover solves PWA(i)=PWB(i)\nCash timing can affect ranking; safety and service constraints still apply at every rate.",
+          "ar": "crossover solves PWA(i)=PWB(i)\nيؤثر توقيت النقد في الترتيب؛ وتبقى قيود الخدمة والسلامة قائمة."
+        }
+      ],
+      "id": "ee-fe-pe-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can the ranking of cost-only alternatives depend on discount rate?",
+        "ar": "هل قد يعتمد ترتيب بدائل التكلفة فقط على معدل الخصم؟"
+      },
+      "options": [
+        {
+          "en": "Yes; different timing can change their present-cost ordering.",
+          "ar": "نعم؛ قد تغير التواريخ المختلفة ترتيب الحالية."
+        },
+        {
+          "en": "No; cost-only ranking is always rate-independent.",
+          "ar": "لا؛ ترتيب التكاليف مستقل دائمًا عن المعدل."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Yes; different timing can change their present-cost ordering. Compare alternatives at several defensible hurdle rates when timing differs. Even cost-only rankings can reverse with rate; the supplied older PE introduction overstates rate independence. A delayed cost is discounted more strongly when the rate rises. Record the rate, service assumption and switching point. Do not label an alternative “best at every rate” because it won at one trial rate.",
+        "ar": "نعم؛ قد تغير التواريخ المختلفة ترتيب الحالية. قارن البدائل عند معدلات مبررة مختلفة عندما يختلف توقيت كلفتها. حتى ترتيب التكاليف فقط قد ينعكس مع المعدل؛ لذلك فإن تعميم المقدمة القديمة في كتيب PE أوسع مما تسمح به الرياضيات. تخصم الكلفة المؤجلة أكثر عند ارتفاع المعدل. سجل فرض الخدمة والمعدل ونقطة التحول، ولا تسمّ بديلًا الأفضل لكل المعدلات لمجرد فوزه في تجربة واحدة."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s05-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 3,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Use signed worth or positive cost magnitudes consistently; compare the same service.",
+          "ar": "استخدم القيمة الموقعة أو مقدار التكلفة باتساق، وبالخدمة نفسها."
+        },
+        {
+          "en": "crossover solves PWA(i)=PWB(i)\nCash timing can affect ranking; safety and service constraints still apply at every rate.",
+          "ar": "crossover solves PWA(i)=PWB(i)\nيؤثر توقيت النقد في الترتيب؛ وتبقى قيود الخدمة والسلامة قائمة."
+        }
+      ],
+      "id": "ee-fe-pe-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Equal-service option A costs 1000 today; B costs 1500 in 5 years. Find the effective annual crossover rate in percent.",
+        "ar": "A يكلف 1000 الآن و B يكلف 1500 بعد 5 سنوات. أوجد معدل التقاطع السنوي المئوي."
+      },
+      "expected": 8.447177119769854,
+      "tolerance": 0.005,
+      "unit": "percent",
+      "solution": {
+        "en": "1000=1500/(1+i)^5 → i=(1.5)^0.2−1≈8.447177%.",
+        "ar": "1000=1500/(1+i)^5؛ إذن i=(1.5)^0.2−1≈8.447177%."
+      }
+    },
+    {
+      "concept": "ee-fe-pe-s05-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 3,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Use signed worth or positive cost magnitudes consistently; compare the same service.",
+          "ar": "استخدم القيمة الموقعة أو مقدار التكلفة باتساق، وبالخدمة نفسها."
+        },
+        {
+          "en": "crossover solves PWA(i)=PWB(i)\nCash timing can affect ranking; safety and service constraints still apply at every rate.",
+          "ar": "crossover solves PWA(i)=PWB(i)\nيؤثر توقيت النقد في الترتيب؛ وتبقى قيود الخدمة والسلامة قائمة."
+        }
+      ],
+      "id": "ee-fe-pe-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A source answer says the cheapest cost-only alternative is unchanged at all rates. What is a sufficient correction?",
+        "ar": "يقول المصدر إن أرخص بديل لا يتغير بأي معدل. كيف تصحح التعميم؟"
+      },
+      "options": [
+        {
+          "en": "Accept it because it appears before the numerical exercises.",
+          "ar": "اقبله لأن المقدمة تسبق التدريبات."
+        },
+        {
+          "en": "Give a same-service dated counterexample and qualify the statement.",
+          "ar": "قدم مثالًا مؤرخًا بخدمة متساوية وقيد العبارة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Give a same-service dated counterexample and qualify the statement. Independent equivalence checks take precedence over an unchecked generalization.",
+        "ar": "قدم مثالًا مؤرخًا بخدمة متساوية وقيد العبارة. يتقدم تدقيق التكافؤ المستقل على تعميم غير مفحوص."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-fe-pe-s01-recall",
+      "concept": "ee-fe-pe-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Inflation changes the measuring ruler",
+        "ar": "اشرح: يغير التضخم مسطرة القياس"
+      },
+      "a": {
+        "en": "Keep the purchasing-power ruler consistent on both sides.",
+        "ar": "حافظ على مسطرة القوة الشرائية نفسها في الطرفين."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s01-formula",
+      "concept": "ee-fe-pe-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\n1+inom=(1+ireal)(1+f); ireal=(inom−f)/(1+f)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\n1+inom=(1+ireal)(1+f); ireal=(inom−f)/(1+f)"
+      },
+      "a": {
+        "en": "f is inflation per period; nominal and real rates use that same period. Hypothetical given rates; consistent purchasing-power basis and no claim about current market inflation.",
+        "ar": "f تضخم الفترة، ويلزم أن يستخدم المعدلان الفترة نفسها. معدلات افتراضية معطاة وأساس قوة شراء متسق؛ دون ادعاء تضخم سوق حالي."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s01-trap",
+      "concept": "ee-fe-pe-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; the product term is always zero.",
+        "ar": "يقول متعلم: نعم؛ حد حاصل الضرب صفر دائمًا."
+      },
+      "a": {
+        "en": "No; divide by 1+inflation for the exact relation. Keep the purchasing-power ruler consistent on both sides.",
+        "ar": "لا؛ اقسم على 1+التضخم للعلاقة الدقيقة. حافظ على مسطرة القوة الشرائية نفسها في الطرفين."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s02-recall",
+      "concept": "ee-fe-pe-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Benefit/cost needs a definition and a common basis",
+        "ar": "اشرح: تحتاج المنفعة للتكلفة تعريفًا وأساسًا مشتركًا"
+      },
+      "a": {
+        "en": "A complete model includes each consequence once, with a clear sign and category.",
+        "ar": "يضم النموذج الكامل كل نتيجة مرة واحدة بإشارة وتصنيف واضحين."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s02-formula",
+      "concept": "ee-fe-pe-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nB/C=PWbenefits/PWcosts; incremental ratio=ΔB/ΔC",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nB/C=PWbenefits/PWcosts; incremental ratio=ΔB/ΔC"
+      },
+      "a": {
+        "en": "Benefit and cost magnitudes use the same date, horizon and discount assumptions. Costs positive in the denominator, a stated disbenefit convention and relevant feasible alternatives.",
+        "ar": "تستخدم مقادير المنفعة والتكلفة التاريخ والأفق وفروض الخصم نفسها. تكاليف موجبة في المقام واتفاق ضرر معلن وبدائل ممكنة ذات صلة."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s02-trap",
+      "concept": "ee-fe-pe-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; a ratio has already solved every scale issue.",
+        "ar": "يقول متعلم: نعم؛ تحل النسبة كل مشكلات الحجم."
+      },
+      "a": {
+        "en": "No; examine incremental benefits and costs when scale differs. A complete model includes each consequence once, with a clear sign and category.",
+        "ar": "لا؛ افحص المنافع والتكاليف الإضافية مع اختلاف الحجم. يضم النموذج الكامل كل نتيجة مرة واحدة بإشارة وتصنيف واضحين."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s03-recall",
+      "concept": "ee-fe-pe-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Replacement starts from today’s opportunity value",
+        "ar": "اشرح: يبدأ الاستبدال من قيمة الفرصة اليوم"
+      },
+      "a": {
+        "en": "Book allocation and market opportunity are different measurements.",
+        "ar": "التوزيع الدفتري وفرصة السوق قياسان مختلفان."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s03-formula",
+      "concept": "ee-fe-pe-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nEUACn=[P−Sn(P/F,i,n)+PW(O&M)](A/P,i,n)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nEUACn=[P−Sn(P/F,i,n)+PW(O&M)](A/P,i,n)"
+      },
+      "a": {
+        "en": "For the defender, P is current opportunity value in a keep-from-today analysis. Same required service and stated future costs; do not carry sunk purchase invoices into the comparison.",
+        "ar": "للأصل القائم تمثل P قيمة الفرصة الحالية في تحليل الاحتفاظ مناليوم. خدمة مطلوبة واحدة وتكاليف مستقبلية محددة؛ دون إدخال فواتير الشراء الغارقة."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s03-trap",
+      "concept": "ee-fe-pe-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; historical cost can always be recovered by the right replacement decision.",
+        "ar": "يقول متعلم: نعم؛ يسترد السعر التاريخي دائمًا بقراراستبدال مناسب."
+      },
+      "a": {
+        "en": "No; use current opportunity value and relevant future effects. Book allocation and market opportunity are different measurements.",
+        "ar": "لا؛ استخدم قيمة الفرصة الحالية وآثار المستقبل. التوزيع الدفتري وفرصة السوق قياسان مختلفان."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s04-recall",
+      "concept": "ee-fe-pe-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: A stated tax model connects depreciation to cash",
+        "ar": "اشرح: يصل نموذج ضريبي معطى الإهلاك بالنقد"
+      },
+      "a": {
+        "en": "Learning the arithmetic is distinct from verifying current tax rules.",
+        "ar": "تعلم الحساب يختلف عن التحقق من قاعدة ضريبية حالية."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s04-formula",
+      "concept": "ee-fe-pe-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nTI=R−E−D; tax=τ TI; OCF=(R−E)(1−τ)+τD",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nTI=R−E−D; tax=τ TI; OCF=(R−E)(1−τ)+τD"
+      },
+      "a": {
+        "en": "R revenue, E cash operating expense, D depreciation and τ a hypothetical stated tax fraction. Simplified positive-taxable-income model; losses, disposal tax and jurisdiction-specific rules need separate stated assumptions.",
+        "ar": "R إيراد و E مصروف نقدي و D إهلاك وτنسبةضريبةافتراضيةمعطاة. نموذج مبسط لدخل موجب؛ وتحتاج الخسائر وضريبة التصرف وقواعد الجهة فروضًا مستقلة."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s04-trap",
+      "concept": "ee-fe-pe-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; every accounting expense is an independent cash outflow.",
+        "ar": "يقول متعلم: نعم؛ كل مصروف محاسبي دفع مستقل."
+      },
+      "a": {
+        "en": "No; that would treat a noncash allocation as an extra payment. Learning the arithmetic is distinct from verifying current tax rules.",
+        "ar": "لا؛ سيعامل توزيعًا غير نقدي كدفعة إضافية. تعلم الحساب يختلف عن التحقق من قاعدة ضريبية حالية."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s05-recall",
+      "concept": "ee-fe-pe-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Sensitivity can reverse a cost ranking",
+        "ar": "اشرح: قد تغير الحساسية ترتيب التكاليف"
+      },
+      "a": {
+        "en": "Independent equivalence checks take precedence over an unchecked generalization.",
+        "ar": "يتقدم تدقيق التكافؤ المستقل على تعميم غير مفحوص."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s05-formula",
+      "concept": "ee-fe-pe-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\ncrossover solves PWA(i)=PWB(i)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\ncrossover solves PWA(i)=PWB(i)"
+      },
+      "a": {
+        "en": "Use signed worth or positive cost magnitudes consistently; compare the same service. Cash timing can affect ranking; safety and service constraints still apply at every rate.",
+        "ar": "استخدم القيمة الموقعة أو مقدار التكلفة باتساق، وبالخدمة نفسها. يؤثر توقيت النقد في الترتيب؛ وتبقى قيود الخدمة والسلامة قائمة."
+      }
+    },
+    {
+      "id": "ee-fe-pe-s05-trap",
+      "concept": "ee-fe-pe-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: No; cost-only ranking is always rate-independent.",
+        "ar": "يقول متعلم: لا؛ ترتيب التكاليف مستقل دائمًا عن المعدل."
+      },
+      "a": {
+        "en": "Yes; different timing can change their present-cost ordering. Independent equivalence checks take precedence over an unchecked generalization.",
+        "ar": "نعم؛ قد تغير التواريخ المختلفة ترتيب الحالية. يتقدم تدقيق التكافؤ المستقل على تعميم غير مفحوص."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE10",
+      "page": 3,
+      "filename": "Econ-PE-ProblemBk.pdf"
+    },
+    {
+      "doc": "EE10",
+      "page": 3,
+      "filename": "Econ-PE-ProblemBk.pdf"
+    },
+    {
+      "doc": "EE10",
+      "page": 3,
+      "filename": "Econ-PE-ProblemBk.pdf"
+    }
+  ],
+  "videoIds": [
+    "ZoHL_na-QvM",
+    "96GcUS4FieU",
+    "jo2lvnXSYhA"
+  ]
+}

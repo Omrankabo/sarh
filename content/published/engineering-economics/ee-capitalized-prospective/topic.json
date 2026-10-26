@@ -1,0 +1,1374 @@
+{
+  "id": "ee-capitalized-prospective",
+  "family": "ee-comparison",
+  "title": {
+    "en": "Perpetual service and the lecturer’s prospective value",
+    "ar": "الخدمة الدائمة والقيمة المستقبلية الخاصة بالمحاضرة"
+  },
+  "summary": {
+    "en": "A maintained road may require service indefinitely. A project can also be compared with an alternative reinvestment strategy using two rates. Understand the assumption behind each index before calculating it.",
+    "ar": "قد يتطلب طريق خدمة بلا نهاية. وقد يقارن مشروع باستراتيجية إعادة استثمار بديلة بمعدلين. افهم فرض كل مؤشر قبل حسابه."
+  },
+  "outcomes": [
+    {
+      "en": "Perpetuity: leave the capital, use its annual return",
+      "ar": "الدوام: اترك الأصل واستخدم عائده السنوي"
+    },
+    {
+      "en": "A repeated cycle is not a level annual payment",
+      "ar": "الدورة المتكررة ليست دفعة سنوية ثابتة"
+    },
+    {
+      "en": "Combine early construction and later perpetual upkeep",
+      "ar": "اجمع الإنشاء المبكر والصيانة الدائمة اللاحقة"
+    },
+    {
+      "en": "Prospective value uses a different alternative strategy",
+      "ar": "تستخدم القيمة المستقبلية الخاصة استراتيجية بديلة"
+    },
+    {
+      "en": "Check indices by making their assumptions coincide",
+      "ar": "تحقق بتوحيد فروض المؤشرات"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-powers"
+  ],
+  "concepts": [
+    {
+      "id": "ee-capitalized-prospective-s01-concept",
+      "title": {
+        "en": "Perpetuity: leave the capital, use its annual return",
+        "ar": "الدوام: اترك الأصل واستخدم عائده السنوي"
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s02-concept",
+      "title": {
+        "en": "A repeated cycle is not a level annual payment",
+        "ar": "الدورة المتكررة ليست دفعة سنوية ثابتة"
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s03-concept",
+      "title": {
+        "en": "Combine early construction and later perpetual upkeep",
+        "ar": "اجمع الإنشاء المبكر والصيانة الدائمة اللاحقة"
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s04-concept",
+      "title": {
+        "en": "Prospective value uses a different alternative strategy",
+        "ar": "تستخدم القيمة المستقبلية الخاصة استراتيجية بديلة"
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s05-concept",
+      "title": {
+        "en": "Check indices by making their assumptions coincide",
+        "ar": "تحقق بتوحيد فروض المؤشرات"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-capitalized-prospective-s01",
+      "title": {
+        "en": "Perpetuity: leave the capital, use its annual return",
+        "ar": "الدوام: اترك الأصل واستخدم عائده السنوي"
+      },
+      "predict": {
+        "en": "Does an infinite positive payment stream necessarily have infinite discounted present worth?",
+        "ar": "هل تكون حالية تدفق موجب أبدي لا نهائية بالضرورة؟"
+      },
+      "options": [
+        {
+          "en": "No; at a constant positive discount rate it can be finite.",
+          "ar": "لا؛ قد تكون محدودة عند معدل خصم موجب ثابت."
+        },
+        {
+          "en": "Yes; discounting cannot affect an infinite count.",
+          "ar": "نعم؛ لا يؤثر الخصم في عدد لا نهائي."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; at a constant positive discount rate it can be finite. Without return, finite capital cannot sustain an endless positive withdrawal.",
+        "ar": "لا؛ قد تكون محدودة عند معدل خصم موجب ثابت. بلا عائد لا يحافظ أصل محدود على سحب موجب أبدي."
+      },
+      "explain": {
+        "en": "If a fund must supply A at every year-end forever, a present fund A/i earns exactly A each year at effective rate i. The principal is preserved in this idealized model. It is a limiting present worth, not the undiscounted sum of infinite payments. At zero rate a positive endless payment has no finite capitalized value. A perpetual service assumption should be justified, not automatically attached to every asset.",
+        "ar": "إذا موّل صندوق A آخر كل سنة للأبد فإن أصل A/i يكسب A سنويًا عند معدل فعّال i ويحفظ الأصل في النموذج المثالي. هي نهاية الحالية لا مجموع مبالغ لا نهائية دون خصم. عند صفر لا توجد قيمة رأسمالية محدودة لدفعات موجبة أبدية. يجب تبرير دوام الخدمة لا إلصاقه بكل أصل."
+      },
+      "formula": "CE=A/i for i>0",
+      "symbols": {
+        "en": "CE is currency at 0; A is currency each year-end; i is effective annual decimal.",
+        "ar": "CE نقد عند الصفر و A مبلغ نهاية كل سنة و i معدل سنوي فعّال عشري."
+      },
+      "assumptions": {
+        "en": "Infinite uniform year-end series, constant positive rate and maintained principal.",
+        "ar": "سلسلة أبدية متساوية آخر السنوات بمعدل موجب ثابت وحفظ الأصل."
+      },
+      "example": {
+        "en": "Provide 1000 CU/year forever at 10%.",
+        "ar": "وفر 1000 سنويًا للأبد عند 10%."
+      },
+      "calculation": {
+        "en": "CE=1000/0.10=10000 CU; annual return 10000×0.10=1000.",
+        "ar": "الأصل 10000 وعائده السنوي 1000."
+      },
+      "interpret": {
+        "en": "Without return, finite capital cannot sustain an endless positive withdrawal.",
+        "ar": "بلا عائد لا يحافظ أصل محدود على سحب موجب أبدي."
+      },
+      "check": {
+        "prompt": {
+          "en": "What happens to CE=A/i for A>0 as i approaches 0 from above?",
+          "ar": "ماذا يحدث لـ A/i عندما يقترب i منصفر موجب مع A>0؟"
+        },
+        "answer": {
+          "en": "It grows without bound.",
+          "ar": "يزداد بلا حد."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-capitalized-prospective-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 40,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 54,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 55,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-capitalized-prospective-s02",
+      "title": {
+        "en": "A repeated cycle is not a level annual payment",
+        "ar": "الدورة المتكررة ليست دفعة سنوية ثابتة"
+      },
+      "predict": {
+        "en": "Can a payment every 5 years be capitalized as though it occurs every year?",
+        "ar": "هل ترسمل دفعة كل 5 سنوات كما لو حدثت سنويًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; an infinite horizon makes spacing irrelevant.",
+          "ar": "نعم؛ يلغي الأفق الأبدي أهمية التباعد."
+        },
+        {
+          "en": "No; the cycle spacing changes its discounted sum.",
+          "ar": "لا؛ يغير تباعد الدورة مجموعها المخصوم."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; the cycle spacing changes its discounted sum. The recurring cycle must describe actual repeated events, not copied bookkeeping.",
+        "ar": "لا؛ يغير تباعد الدورة مجموعها المخصوم. يجب أن تصف الدورة أحداثًا تتكرر فعليًا لا حسابات منسوخة."
+      },
+      "explain": {
+        "en": "Suppose major maintenance recurs every k years. Its first payment is at k, not at year 1. The discounted sequence is A/(1+i)^k+A/(1+i)^(2k)+… and sums to A/[(1+i)^k−1]. Alternatively, value a complete recurring cycle at its start and repeat that cycle with the k-year discount ratio. Keep any one-time initial construction outlay outside the recurring cycle unless it really repeats.",
+        "ar": "افترض صيانة كبرى كل k سنوات؛ أولهاعند k لا 1. يساوي مجموع الخصم A/[(1+i)^k−1]. ويمكن تقييم دورة كاملة عند بدايتها وتكرارها بنسبة خصم k سنوات. أبقِ إنشاء البداية لمرة واحدة خارج الدورة المتكررة إلا إن كان يتكرر فعلًا."
+      },
+      "formula": "CEperiodic=A/[(1+i)^k−1]",
+      "symbols": {
+        "en": "A is a payment every k years; the first is at year k.",
+        "ar": "A مبلغ كل k سنوات وأول دفع عند k."
+      },
+      "assumptions": {
+        "en": "Identical endless cycles with fixed dates and constant effective rate.",
+        "ar": "دورات متطابقة أبدية بتواريخ ومعدل فعّال ثابتين."
+      },
+      "example": {
+        "en": "10000 CU overhaul every 5 years, first at 5, i=10%.",
+        "ar": "صيانة 10000 كل 5 سنوات بدءًا من 5 بمعدل 10%."
+      },
+      "calculation": {
+        "en": "CE=10000/(1.1^5−1). Do not use 10000/0.10; that would mean annual 10000 payments.",
+        "ar": "استخدم 10000/(1.1^5−1)، لا 10000/0.10 التي تفترض دفعًا سنويًا."
+      },
+      "interpret": {
+        "en": "The recurring cycle must describe actual repeated events, not copied bookkeeping.",
+        "ar": "يجب أن تصف الدورة أحداثًا تتكرر فعليًا لا حسابات منسوخة."
+      },
+      "check": {
+        "prompt": {
+          "en": "An initial bridge construction cost is one-time; resurfacing repeats. Should construction be duplicated every resurfacing cycle?",
+          "ar": "الإنشاء الأول للجسر مرة واحدة والصيانة تتكرر. هل يكرر الإنشاء كل دورة صيانة؟"
+        },
+        "answer": {
+          "en": "No; separate nonrecurring construction from recurring service costs.",
+          "ar": "لا؛ افصل الإنشاء غير المتكرر عن خدمة الصيانة."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-capitalized-prospective-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 41,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE10",
+          "page": 3,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-capitalized-prospective-s03",
+      "title": {
+        "en": "Combine early construction and later perpetual upkeep",
+        "ar": "اجمع الإنشاء المبكر والصيانة الدائمة اللاحقة"
+      },
+      "predict": {
+        "en": "If perpetual upkeep starts at year 4, is A/i located at year 4?",
+        "ar": "إن بدأت الصيانة الدائمة عند 4، هل تقع A/i عند 4؟"
+      },
+      "options": [
+        {
+          "en": "No; at year 3, one period before the first withdrawal.",
+          "ar": "لا؛ عند 3 قبل السحب الأول بفترة."
+        },
+        {
+          "en": "Yes; a fund and its first payment always share a date.",
+          "ar": "نعم؛ يشترك الصندوق وأول دفعة في التاريخ دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; at year 3, one period before the first withdrawal. Factors must partition the real cash flows without overlaps.",
+        "ar": "لا؛ عند 3 قبل السحب الأول بفترة. يجب أن تقسم العوامل التدفقات الفعلية دون تداخل."
+      },
+      "explain": {
+        "en": "A structure may cost money now, need additional construction over several years and then settle into a perpetual maintenance pattern. Value each early cost at 0. If uniform upkeep starts at year d, its perpetual value A/i lies at d−1. Shift that fund back to 0 and add it to construction. A common off-by-one mistake places the fund at the date of the first maintenance payment.",
+        "ar": "قد يكلف المنشأ الآن ثم يحتاج إنشاءات إضافية لسنوات قبل الاستقرار على صيانة دائمة. قيّم كل تكلفة مبكرة عند الصفر. إن بدأت الصيانة المتساوية عند d فقيمة A/i تقععند d−1؛ أعدها للصفر واجمع الإنشاء. من الأخطاء وضع الصندوق في تاريخ أول دفعة بدل ما قبلها بفترة."
+      },
+      "formula": "CC=P0+Σearly Ct/(1+i)^t+(A/i)/(1+i)^(d−1)",
+      "symbols": {
+        "en": "CC is positive capitalized cost magnitude; d is the first perpetual maintenance year.",
+        "ar": "CC مقدار تكلفة رأسمالية موجب و d أول سنة للصيانة الدائمة."
+      },
+      "assumptions": {
+        "en": "The perpetual part is annual, begins at a specified endpoint and does not overlap the early-cost list.",
+        "ar": "الجزء الأبدي سنوي ويبدأ بتاريخ معين ولا يتداخل مع قائمة التكاليف المبكرة."
+      },
+      "example": {
+        "en": "Construction 100000 now; upkeep 2000/year beginning at year 4, i=5%.",
+        "ar": "إنشاء 100000 الآن وصيانة 2000 سنويًا تبدأعند 4 بمعدل 5%."
+      },
+      "calculation": {
+        "en": "Maintenance fund at 3=2000/0.05=40000; CC=100000+40000/1.05³.",
+        "ar": "صندوق الصيانة عند 3 يساوي 40000؛ ثم يخصم 3 سنوات ويضافللإنشاء."
+      },
+      "interpret": {
+        "en": "Factors must partition the real cash flows without overlaps.",
+        "ar": "يجب أن تقسم العوامل التدفقات الفعلية دون تداخل."
+      },
+      "check": {
+        "prompt": {
+          "en": "Early costs already include maintenance at year 3, while a perpetual series also starts at 3. What must be corrected?",
+          "ar": "تتضمن التكاليف المبكرة صيانة 3، وتبدأ الدائمة أيضًا عند 3. ما المطلوب تصحيحه؟"
+        },
+        "answer": {
+          "en": "Remove the duplicate year 3 cash flow from one representation.",
+          "ar": "احذف تكرار تدفق 3 من أحد التمثيلين."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-capitalized-prospective-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE01",
+          "page": 33,
+          "filename": "013 Tut .pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 40,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-capitalized-prospective-s04",
+      "title": {
+        "en": "Prospective value uses a different alternative strategy",
+        "ar": "تستخدم القيمة المستقبلية الخاصة استراتيجية بديلة"
+      },
+      "predict": {
+        "en": "In this lecture, does PV always mean “present value at 0”?",
+        "ar": "هل يعني PV دائمًا الحالية عند الصفر في هذه المحاضرة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; the same initials guarantee the same definition.",
+          "ar": "نعم؛ يضمن اختصارالحروفالتعريفنفسه."
+        },
+        {
+          "en": "No; the prospective index is defined at a future terminal date with two rate roles.",
+          "ar": "لا؛ يعرف المؤشر الخاص عند نهاية مستقبلية بدورين للمعدل."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; the prospective index is defined at a future terminal date with two rate roles. Always interpret an index under the strategy used to define it.",
+        "ar": "لا؛ يعرف المؤشر الخاص عند نهاية مستقبلية بدورين للمعدل. فسّر كل مؤشر وفق الاستراتيجية التي تعرفه."
+      },
+      "explain": {
+        "en": "The lecture’s prospective value is not ordinary present value despite the letters PV. It compares project receipts accumulated at m, normally the stated MARR, with an initial opportunity grown for one period at prevailing i and the remaining periods at m. For the lecture’s simplified initial-outlay/positive-receipts case, keep the two rates and their roles distinct. If later negative flows occur, their financing treatment must be stated rather than silently interpreted as positive reinvestment.",
+        "ar": "ليست القيمة المستقبلية الخاصة بالمحاضرة حالية عادية رغم الرمز PV. تقارن مقبوضات المشروع المنماة بمعدل m، وغالبًا معدل القبول، بفرصة أصلية تنمو فترة واحدة بالمعدل السائد i وبقية الفترات بـ m. في حالة الإنفاق الأول والمقبوضات الموجبة افصل دور المعدلين. ومع تدفقات سالبة لاحقة يجب إعلان تمويلها لا تفسيرها تلقائيًا إعادة استثمار موجبة."
+      },
+      "formula": "PV(m,i)=C0(1+i)(1+m)^(n−1)+Σt=1…n Ct(1+m)^(n−t)",
+      "symbols": {
+        "en": "C0 is negative initial outlay; i is first-period liquid alternative rate; m is receipt reinvestment rate.",
+        "ar": "C0 إنفاق أول سالب و i معدل البديل السائل للفترة الأولى و m معدل إعادة استثمار المقبوضات."
+      },
+      "assumptions": {
+        "en": "This is the supplied course’s defined strategy, not standard notation for present value. All rates must use the same period.",
+        "ar": "هذه استراتيجية المقرر المعرفة لا الرمز الشائع للحالية؛ ويلزم تطابق فترة المعدلات."
+      },
+      "example": {
+        "en": "C0=−1000, receipts 600 at 1 and 2; i=10%,m=20%,n=2.",
+        "ar": "أصل−1000 ومقبوض 600 عند 1 و 2؛ i=10%و m=20%والمدة 2."
+      },
+      "calculation": {
+        "en": "Foregone term=−1000×1.1×1.2=−1320; receipt term=600×1.2+600=1320; prospective value=0.",
+        "ar": "الفرصةالمتروكة−1320 والمقبوضات المنماة 1320؛ فالمؤشرصفر."
+      },
+      "interpret": {
+        "en": "Always interpret an index under the strategy used to define it.",
+        "ar": "فسّر كل مؤشر وفق الاستراتيجية التي تعرفه."
+      },
+      "check": {
+        "prompt": {
+          "en": "A positive prospective value occurs under one pair(i,m). Does it prove acceptability under every other pair?",
+          "ar": "كانت القيمة الخاصة موجبة لزوج(i,m). هل تثبت القبول لكل زوج آخر؟"
+        },
+        "answer": {
+          "en": "No; the opportunity and reinvestment assumptions change the comparison.",
+          "ar": "لا؛ تغير افتراضات الفرصة وإعادة الاستثمار المقارنة."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-capitalized-prospective-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 45,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 46,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 47,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-capitalized-prospective-s05",
+      "title": {
+        "en": "Check indices by making their assumptions coincide",
+        "ar": "تحقق بتوحيد فروض المؤشرات"
+      },
+      "predict": {
+        "en": "If both rates are equal, should the course prospective value agree with consistent future worth?",
+        "ar": "إذا تساوى المعدلان، هل يطابق مؤشر المحاضرة المستقبلية المتسقة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; use that equality as an audit.",
+          "ar": "نعم؛ استخدم المساواة للتدقيق."
+        },
+        {
+          "en": "No; formulas with different names can never be checked against one another.",
+          "ar": "لا؛ لا تقارن معادلات ذات أسماء مختلفة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Yes; use that equality as an audit. Use consistent indices to answer the question each was designed to address.",
+        "ar": "نعم؛ استخدم المساواة للتدقيق. استخدم كل مؤشر لإجابة السؤال الذي صمم له."
+      },
+      "explain": {
+        "en": "When m=i, the prospective formula collapses to ordinary future worth at that common rate. Dividing by(1+i)^n then recovers PW. This gives a strong internal consistency check without claiming different indices always agree under different strategies. A mixed exam decision should name the chosen rate, the flow model and any ambiguous source data, then justify a recommendation by the complete cash-flow result rather than three unrelated slogans.",
+        "ar": "عندما يتساوى m و i تختزل القيمة المستقبلية الخاصة إلى المستقبلية العادية بالمعدل نفسه. بقسمتها على(1+i)^n نحصل على الحالية. يوفر هذا فحص اتساق قويًا، ولا يعني تطابق المؤشرات تحت استراتيجيات مختلفة. في الحل المختلط اذكر المعدل ونمط التدفق والغموض، ثم علل القرار بنتيجة السلسلة كاملة بدل جمع شعارات لا تربطها علاقة."
+      },
+      "formula": "if m=i: PV(m,i)=FW(i)=PW(i)(1+i)^n",
+      "symbols": {
+        "en": "The identity assumes every future flow is accumulated consistently at the common rate.",
+        "ar": "تفترض الهوية تنمية كل تدفق عند المعدل المشترك نفسه."
+      },
+      "assumptions": {
+        "en": "Same dates, same compounding model and same complete cash-flow stream.",
+        "ar": "تواريخ ونموذج تركيب وسلسلة تدفقات متطابقة."
+      },
+      "example": {
+        "en": "Cost 1000 at 0,600 at 1 and 2; seti=m=10%.",
+        "ar": "تكلفة 1000 عند 0 ومقبوض 600 عند 1 و 2؛ المعدلان 10%."
+      },
+      "calculation": {
+        "en": "Prospective=−1210+660+600=50=FW 2. Divideby 1.21 to getPW=41.322314.",
+        "ar": "المؤشر=−1210+660+600=50، وهو FW2؛ والحالية 50/1.21=41.322314."
+      },
+      "interpret": {
+        "en": "Use consistent indices to answer the question each was designed to address.",
+        "ar": "استخدم كل مؤشر لإجابة السؤال الذي صمم له."
+      },
+      "check": {
+        "prompt": {
+          "en": "PW is positive at MARR but simple payback is slow. Is that an arithmetic contradiction?",
+          "ar": "الحالية موجبة لكن الاسترداد العادي بطيء. هل ذلك تناقض؟"
+        },
+        "answer": {
+          "en": "No; complete worth and recovery speed measure different properties.",
+          "ar": "لا؛ تقيس القيمة الكاملة وسرعة الاسترداد خاصيتين مختلفتين."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-capitalized-prospective-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 24,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 45,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-capitalized-prospective-s01-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 40,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 54,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 55,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "CE is currency at 0; A is currency each year-end; i is effective annual decimal.",
+          "ar": "CE نقد عند الصفر و A مبلغ نهاية كل سنة و i معدل سنوي فعّال عشري."
+        },
+        {
+          "en": "CE=A/i for i>0\nInfinite uniform year-end series, constant positive rate and maintained principal.",
+          "ar": "CE=A/i for i>0\nسلسلة أبدية متساوية آخر السنوات بمعدل موجب ثابت وحفظ الأصل."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does an infinite positive payment stream necessarily have infinite discounted present worth?",
+        "ar": "هل تكون حالية تدفق موجب أبدي لا نهائية بالضرورة؟"
+      },
+      "options": [
+        {
+          "en": "No; at a constant positive discount rate it can be finite.",
+          "ar": "لا؛ قد تكون محدودة عند معدل خصم موجب ثابت."
+        },
+        {
+          "en": "Yes; discounting cannot affect an infinite count.",
+          "ar": "نعم؛ لا يؤثر الخصم في عدد لا نهائي."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; at a constant positive discount rate it can be finite. If a fund must supply A at every year-end forever, a present fund A/i earns exactly A each year at effective rate i. The principal is preserved in this idealized model. It is a limiting present worth, not the undiscounted sum of infinite payments. At zero rate a positive endless payment has no finite capitalized value. A perpetual service assumption should be justified, not automatically attached to every asset.",
+        "ar": "لا؛ قد تكون محدودة عند معدل خصم موجب ثابت. إذا موّل صندوق A آخر كل سنة للأبد فإن أصل A/i يكسب A سنويًا عند معدل فعّال i ويحفظ الأصل في النموذج المثالي. هي نهاية الحالية لا مجموع مبالغ لا نهائية دون خصم. عند صفر لا توجد قيمة رأسمالية محدودة لدفعات موجبة أبدية. يجب تبرير دوام الخدمة لا إلصاقه بكل أصل."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s01-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 40,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 54,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 55,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "CE is currency at 0; A is currency each year-end; i is effective annual decimal.",
+          "ar": "CE نقد عند الصفر و A مبلغ نهاية كل سنة و i معدل سنوي فعّال عشري."
+        },
+        {
+          "en": "CE=A/i for i>0\nInfinite uniform year-end series, constant positive rate and maintained principal.",
+          "ar": "CE=A/i for i>0\nسلسلة أبدية متساوية آخر السنوات بمعدل موجب ثابت وحفظ الأصل."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "An end-year 6000 CU perpetual cost is funded at effective 6% annually. Find its capitalized cost magnitude.",
+        "ar": "تمول تكلفة أبدية 6000 آخر السنة عند فعّال 6%. أوجد مقدار تكلفتها الرأسمالية."
+      },
+      "expected": 100000,
+      "tolerance": 2.0,
+      "unit": "CU",
+      "solution": {
+        "en": "6000/0.06=100000 CU.",
+        "ar": "الأصل 100000."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s01-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 40,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 54,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 55,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "CE is currency at 0; A is currency each year-end; i is effective annual decimal.",
+          "ar": "CE نقد عند الصفر و A مبلغ نهاية كل سنة و i معدل سنوي فعّال عشري."
+        },
+        {
+          "en": "CE=A/i for i>0\nInfinite uniform year-end series, constant positive rate and maintained principal.",
+          "ar": "CE=A/i for i>0\nسلسلة أبدية متساوية آخر السنوات بمعدل موجب ثابت وحفظ الأصل."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "What happens to CE=A/i for A>0 as i approaches 0 from above?",
+        "ar": "ماذا يحدث لـ A/i عندما يقترب i منصفر موجب مع A>0؟"
+      },
+      "options": [
+        {
+          "en": "It approaches zero because there is no interest.",
+          "ar": "يقترب منالصفر لعدم الفائدة."
+        },
+        {
+          "en": "It grows without bound.",
+          "ar": "يزداد بلا حد."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "It grows without bound. Without return, finite capital cannot sustain an endless positive withdrawal.",
+        "ar": "يزداد بلا حد. بلا عائد لا يحافظ أصل محدود على سحب موجب أبدي."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s02-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 41,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE10",
+          "page": 3,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A is a payment every k years; the first is at year k.",
+          "ar": "A مبلغ كل k سنوات وأول دفع عند k."
+        },
+        {
+          "en": "CEperiodic=A/[(1+i)^k−1]\nIdentical endless cycles with fixed dates and constant effective rate.",
+          "ar": "CEperiodic=A/[(1+i)^k−1]\nدورات متطابقة أبدية بتواريخ ومعدل فعّال ثابتين."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can a payment every 5 years be capitalized as though it occurs every year?",
+        "ar": "هل ترسمل دفعة كل 5 سنوات كما لو حدثت سنويًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; an infinite horizon makes spacing irrelevant.",
+          "ar": "نعم؛ يلغي الأفق الأبدي أهمية التباعد."
+        },
+        {
+          "en": "No; the cycle spacing changes its discounted sum.",
+          "ar": "لا؛ يغير تباعد الدورة مجموعها المخصوم."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; the cycle spacing changes its discounted sum. Suppose major maintenance recurs every k years. Its first payment is at k, not at year 1. The discounted sequence is A/(1+i)^k+A/(1+i)^(2k)+… and sums to A/[(1+i)^k−1]. Alternatively, value a complete recurring cycle at its start and repeat that cycle with the k-year discount ratio. Keep any one-time initial construction outlay outside the recurring cycle unless it really repeats.",
+        "ar": "لا؛ يغير تباعد الدورة مجموعها المخصوم. افترض صيانة كبرى كل k سنوات؛ أولهاعند k لا 1. يساوي مجموع الخصم A/[(1+i)^k−1]. ويمكن تقييم دورة كاملة عند بدايتها وتكرارها بنسبة خصم k سنوات. أبقِ إنشاء البداية لمرة واحدة خارج الدورة المتكررة إلا إن كان يتكرر فعلًا."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s02-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 41,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE10",
+          "page": 3,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A is a payment every k years; the first is at year k.",
+          "ar": "A مبلغ كل k سنوات وأول دفع عند k."
+        },
+        {
+          "en": "CEperiodic=A/[(1+i)^k−1]\nIdentical endless cycles with fixed dates and constant effective rate.",
+          "ar": "CEperiodic=A/[(1+i)^k−1]\nدورات متطابقة أبدية بتواريخ ومعدل فعّال ثابتين."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Pay 2000 every 2 years forever, first at 2, i=10%. Find capitalized cost magnitude.",
+        "ar": "ادفع 2000 كلسنتين للأبد بدءًا من 2 عند 10%. أوجد المقدار الرأسمالي."
+      },
+      "expected": 9523.809523809516,
+      "tolerance": 0.19047619047619033,
+      "unit": "CU",
+      "solution": {
+        "en": "CE=2000/(1.21−1)=9523.809524 CU.",
+        "ar": "القيمة 9523.809524."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s02-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 41,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE10",
+          "page": 3,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A is a payment every k years; the first is at year k.",
+          "ar": "A مبلغ كل k سنوات وأول دفع عند k."
+        },
+        {
+          "en": "CEperiodic=A/[(1+i)^k−1]\nIdentical endless cycles with fixed dates and constant effective rate.",
+          "ar": "CEperiodic=A/[(1+i)^k−1]\nدورات متطابقة أبدية بتواريخ ومعدل فعّال ثابتين."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "An initial bridge construction cost is one-time; resurfacing repeats. Should construction be duplicated every resurfacing cycle?",
+        "ar": "الإنشاء الأول للجسر مرة واحدة والصيانة تتكرر. هل يكرر الإنشاء كل دورة صيانة؟"
+      },
+      "options": [
+        {
+          "en": "No; separate nonrecurring construction from recurring service costs.",
+          "ar": "لا؛ افصل الإنشاء غير المتكرر عن خدمة الصيانة."
+        },
+        {
+          "en": "Yes; every cycle must contain the full initial project again.",
+          "ar": "نعم؛ تضم كل دورة المشروع الأصلي كاملًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; separate nonrecurring construction from recurring service costs. The recurring cycle must describe actual repeated events, not copied bookkeeping.",
+        "ar": "لا؛ افصل الإنشاء غير المتكرر عن خدمة الصيانة. يجب أن تصف الدورة أحداثًا تتكرر فعليًا لا حسابات منسوخة."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s03-concept",
+      "sources": [
+        {
+          "doc": "EE01",
+          "page": 33,
+          "filename": "013 Tut .pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 40,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "CC is positive capitalized cost magnitude; d is the first perpetual maintenance year.",
+          "ar": "CC مقدار تكلفة رأسمالية موجب و d أول سنة للصيانة الدائمة."
+        },
+        {
+          "en": "CC=P0+Σearly Ct/(1+i)^t+(A/i)/(1+i)^(d−1)\nThe perpetual part is annual, begins at a specified endpoint and does not overlap the early-cost list.",
+          "ar": "CC=P0+Σearly Ct/(1+i)^t+(A/i)/(1+i)^(d−1)\nالجزء الأبدي سنوي ويبدأ بتاريخ معين ولا يتداخل مع قائمة التكاليف المبكرة."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "If perpetual upkeep starts at year 4, is A/i located at year 4?",
+        "ar": "إن بدأت الصيانة الدائمة عند 4، هل تقع A/i عند 4؟"
+      },
+      "options": [
+        {
+          "en": "No; at year 3, one period before the first withdrawal.",
+          "ar": "لا؛ عند 3 قبل السحب الأول بفترة."
+        },
+        {
+          "en": "Yes; a fund and its first payment always share a date.",
+          "ar": "نعم؛ يشترك الصندوق وأول دفعة في التاريخ دائمًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; at year 3, one period before the first withdrawal. A structure may cost money now, need additional construction over several years and then settle into a perpetual maintenance pattern. Value each early cost at 0. If uniform upkeep starts at year d, its perpetual value A/i lies at d−1. Shift that fund back to 0 and add it to construction. A common off-by-one mistake places the fund at the date of the first maintenance payment.",
+        "ar": "لا؛ عند 3 قبل السحب الأول بفترة. قد يكلف المنشأ الآن ثم يحتاج إنشاءات إضافية لسنوات قبل الاستقرار على صيانة دائمة. قيّم كل تكلفة مبكرة عند الصفر. إن بدأت الصيانة المتساوية عند d فقيمة A/i تقععند d−1؛ أعدها للصفر واجمع الإنشاء. من الأخطاء وضع الصندوق في تاريخ أول دفعة بدل ما قبلها بفترة."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s03-concept",
+      "sources": [
+        {
+          "doc": "EE01",
+          "page": 33,
+          "filename": "013 Tut .pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 40,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "CC is positive capitalized cost magnitude; d is the first perpetual maintenance year.",
+          "ar": "CC مقدار تكلفة رأسمالية موجب و d أول سنة للصيانة الدائمة."
+        },
+        {
+          "en": "CC=P0+Σearly Ct/(1+i)^t+(A/i)/(1+i)^(d−1)\nThe perpetual part is annual, begins at a specified endpoint and does not overlap the early-cost list.",
+          "ar": "CC=P0+Σearly Ct/(1+i)^t+(A/i)/(1+i)^(d−1)\nالجزء الأبدي سنوي ويبدأ بتاريخ معين ولا يتداخل مع قائمة التكاليف المبكرة."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Upkeep 1000/year forever starts at year 3, i=10%. Find its present cost at 0.",
+        "ar": "صيانة 1000 سنويًا للأبد تبدأعند 3 بمعدل 10%. أوجد تكلفتها الحالية عند الصفر."
+      },
+      "expected": 8264.462809917353,
+      "tolerance": 0.16528925619834708,
+      "unit": "CU",
+      "solution": {
+        "en": "Fund at 2=10000; P0=10000/1.1²=8264.462810.",
+        "ar": "الصندوق عند 2 هو 10000 وحاليته 8264.462810."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s03-concept",
+      "sources": [
+        {
+          "doc": "EE01",
+          "page": 33,
+          "filename": "013 Tut .pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 40,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "CC is positive capitalized cost magnitude; d is the first perpetual maintenance year.",
+          "ar": "CC مقدار تكلفة رأسمالية موجب و d أول سنة للصيانة الدائمة."
+        },
+        {
+          "en": "CC=P0+Σearly Ct/(1+i)^t+(A/i)/(1+i)^(d−1)\nThe perpetual part is annual, begins at a specified endpoint and does not overlap the early-cost list.",
+          "ar": "CC=P0+Σearly Ct/(1+i)^t+(A/i)/(1+i)^(d−1)\nالجزء الأبدي سنوي ويبدأ بتاريخ معين ولا يتداخل مع قائمة التكاليف المبكرة."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Early costs already include maintenance at year 3, while a perpetual series also starts at 3. What must be corrected?",
+        "ar": "تتضمن التكاليف المبكرة صيانة 3، وتبدأ الدائمة أيضًا عند 3. ما المطلوب تصحيحه؟"
+      },
+      "options": [
+        {
+          "en": "Count both because they belong to different factors.",
+          "ar": "احسبهما لأن لكل منهما عاملًا مختلفًا."
+        },
+        {
+          "en": "Remove the duplicate year 3 cash flow from one representation.",
+          "ar": "احذف تكرار تدفق 3 من أحد التمثيلين."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Remove the duplicate year 3 cash flow from one representation. Factors must partition the real cash flows without overlaps.",
+        "ar": "احذف تكرار تدفق 3 من أحد التمثيلين. يجب أن تقسم العوامل التدفقات الفعلية دون تداخل."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s04-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 45,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 46,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 47,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "C0 is negative initial outlay; i is first-period liquid alternative rate; m is receipt reinvestment rate.",
+          "ar": "C0 إنفاق أول سالب و i معدل البديل السائل للفترة الأولى و m معدل إعادة استثمار المقبوضات."
+        },
+        {
+          "en": "PV(m,i)=C0(1+i)(1+m)^(n−1)+Σt=1…n Ct(1+m)^(n−t)\nThis is the supplied course’s defined strategy, not standard notation for present value. All rates must use the same period.",
+          "ar": "PV(m,i)=C0(1+i)(1+m)^(n−1)+Σt=1…n Ct(1+m)^(n−t)\nهذه استراتيجية المقرر المعرفة لا الرمز الشائع للحالية؛ ويلزم تطابق فترة المعدلات."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "In this lecture, does PV always mean “present value at 0”?",
+        "ar": "هل يعني PV دائمًا الحالية عند الصفر في هذه المحاضرة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; the same initials guarantee the same definition.",
+          "ar": "نعم؛ يضمن اختصارالحروفالتعريفنفسه."
+        },
+        {
+          "en": "No; the prospective index is defined at a future terminal date with two rate roles.",
+          "ar": "لا؛ يعرف المؤشر الخاص عند نهاية مستقبلية بدورين للمعدل."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; the prospective index is defined at a future terminal date with two rate roles. The lecture’s prospective value is not ordinary present value despite the letters PV. It compares project receipts accumulated at m, normally the stated MARR, with an initial opportunity grown for one period at prevailing i and the remaining periods at m. For the lecture’s simplified initial-outlay/positive-receipts case, keep the two rates and their roles distinct. If later negative flows occur, their financing treatment must be stated rather than silently interpreted as positive reinvestment.",
+        "ar": "لا؛ يعرف المؤشر الخاص عند نهاية مستقبلية بدورين للمعدل. ليست القيمة المستقبلية الخاصة بالمحاضرة حالية عادية رغم الرمز PV. تقارن مقبوضات المشروع المنماة بمعدل m، وغالبًا معدل القبول، بفرصة أصلية تنمو فترة واحدة بالمعدل السائد i وبقية الفترات بـ m. في حالة الإنفاق الأول والمقبوضات الموجبة افصل دور المعدلين. ومع تدفقات سالبة لاحقة يجب إعلان تمويلها لا تفسيرها تلقائيًا إعادة استثمار موجبة."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s04-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 45,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 46,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 47,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "C0 is negative initial outlay; i is first-period liquid alternative rate; m is receipt reinvestment rate.",
+          "ar": "C0 إنفاق أول سالب و i معدل البديل السائل للفترة الأولى و m معدل إعادة استثمار المقبوضات."
+        },
+        {
+          "en": "PV(m,i)=C0(1+i)(1+m)^(n−1)+Σt=1…n Ct(1+m)^(n−t)\nThis is the supplied course’s defined strategy, not standard notation for present value. All rates must use the same period.",
+          "ar": "PV(m,i)=C0(1+i)(1+m)^(n−1)+Σt=1…n Ct(1+m)^(n−t)\nهذه استراتيجية المقرر المعرفة لا الرمز الشائع للحالية؛ ويلزم تطابق فترة المعدلات."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "C0=−1000,C1=0,C2=1400; i=10%,m=20%,n=2. Find the lecture prospective value.",
+        "ar": "الأصل−1000 ولا مقبوضعند 1 ومقبوض 1400 عند 2؛ i=10%و m=20%. أوجد مؤشر المحاضرة."
+      },
+      "expected": 80,
+      "tolerance": 0.005,
+      "unit": "CU at year2",
+      "solution": {
+        "en": "−1000×1.1×1.2+1400=80 CU at year 2.",
+        "ar": "الناتج 80 عند 2."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s04-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 45,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 46,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 47,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "C0 is negative initial outlay; i is first-period liquid alternative rate; m is receipt reinvestment rate.",
+          "ar": "C0 إنفاق أول سالب و i معدل البديل السائل للفترة الأولى و m معدل إعادة استثمار المقبوضات."
+        },
+        {
+          "en": "PV(m,i)=C0(1+i)(1+m)^(n−1)+Σt=1…n Ct(1+m)^(n−t)\nThis is the supplied course’s defined strategy, not standard notation for present value. All rates must use the same period.",
+          "ar": "PV(m,i)=C0(1+i)(1+m)^(n−1)+Σt=1…n Ct(1+m)^(n−t)\nهذه استراتيجية المقرر المعرفة لا الرمز الشائع للحالية؛ ويلزم تطابق فترة المعدلات."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A positive prospective value occurs under one pair(i,m). Does it prove acceptability under every other pair?",
+        "ar": "كانت القيمة الخاصة موجبة لزوج(i,m). هل تثبت القبول لكل زوج آخر؟"
+      },
+      "options": [
+        {
+          "en": "No; the opportunity and reinvestment assumptions change the comparison.",
+          "ar": "لا؛ تغير افتراضات الفرصة وإعادة الاستثمار المقارنة."
+        },
+        {
+          "en": "Yes; two-rate indices are assumption-free.",
+          "ar": "نعم؛ مؤشرات المعدلين بلا فروض."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; the opportunity and reinvestment assumptions change the comparison. Always interpret an index under the strategy used to define it.",
+        "ar": "لا؛ تغير افتراضات الفرصة وإعادة الاستثمار المقارنة. فسّر كل مؤشر وفق الاستراتيجية التي تعرفه."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s05-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 24,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 45,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The identity assumes every future flow is accumulated consistently at the common rate.",
+          "ar": "تفترض الهوية تنمية كل تدفق عند المعدل المشترك نفسه."
+        },
+        {
+          "en": "if m=i: PV(m,i)=FW(i)=PW(i)(1+i)^n\nSame dates, same compounding model and same complete cash-flow stream.",
+          "ar": "if m=i: PV(m,i)=FW(i)=PW(i)(1+i)^n\nتواريخ ونموذج تركيب وسلسلة تدفقات متطابقة."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "If both rates are equal, should the course prospective value agree with consistent future worth?",
+        "ar": "إذا تساوى المعدلان، هل يطابق مؤشر المحاضرة المستقبلية المتسقة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; use that equality as an audit.",
+          "ar": "نعم؛ استخدم المساواة للتدقيق."
+        },
+        {
+          "en": "No; formulas with different names can never be checked against one another.",
+          "ar": "لا؛ لا تقارن معادلات ذات أسماء مختلفة."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Yes; use that equality as an audit. When m=i, the prospective formula collapses to ordinary future worth at that common rate. Dividing by(1+i)^n then recovers PW. This gives a strong internal consistency check without claiming different indices always agree under different strategies. A mixed exam decision should name the chosen rate, the flow model and any ambiguous source data, then justify a recommendation by the complete cash-flow result rather than three unrelated slogans.",
+        "ar": "نعم؛ استخدم المساواة للتدقيق. عندما يتساوى m و i تختزل القيمة المستقبلية الخاصة إلى المستقبلية العادية بالمعدل نفسه. بقسمتها على(1+i)^n نحصل على الحالية. يوفر هذا فحص اتساق قويًا، ولا يعني تطابق المؤشرات تحت استراتيجيات مختلفة. في الحل المختلط اذكر المعدل ونمط التدفق والغموض، ثم علل القرار بنتيجة السلسلة كاملة بدل جمع شعارات لا تربطها علاقة."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s05-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 24,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 45,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The identity assumes every future flow is accumulated consistently at the common rate.",
+          "ar": "تفترض الهوية تنمية كل تدفق عند المعدل المشترك نفسه."
+        },
+        {
+          "en": "if m=i: PV(m,i)=FW(i)=PW(i)(1+i)^n\nSame dates, same compounding model and same complete cash-flow stream.",
+          "ar": "if m=i: PV(m,i)=FW(i)=PW(i)(1+i)^n\nتواريخ ونموذج تركيب وسلسلة تدفقات متطابقة."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "PW=200 CU,n=3 and i=m=10%. Find prospective value under the equal-rate identity.",
+        "ar": "الحالية 200 والمدة 3 والمعدلان 10%. أوجد المؤشر بالهوية."
+      },
+      "expected": 266.2000000000001,
+      "tolerance": 0.005324000000000002,
+      "unit": "CU at year3",
+      "solution": {
+        "en": "PV=FW=200(1.1)^3=266.2 CU.",
+        "ar": "PV=FW=200(1.1)^3=266.2 عند السنة 3."
+      }
+    },
+    {
+      "concept": "ee-capitalized-prospective-s05-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 24,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 45,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The identity assumes every future flow is accumulated consistently at the common rate.",
+          "ar": "تفترض الهوية تنمية كل تدفق عند المعدل المشترك نفسه."
+        },
+        {
+          "en": "if m=i: PV(m,i)=FW(i)=PW(i)(1+i)^n\nSame dates, same compounding model and same complete cash-flow stream.",
+          "ar": "if m=i: PV(m,i)=FW(i)=PW(i)(1+i)^n\nتواريخ ونموذج تركيب وسلسلة تدفقات متطابقة."
+        }
+      ],
+      "id": "ee-capitalized-prospective-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "PW is positive at MARR but simple payback is slow. Is that an arithmetic contradiction?",
+        "ar": "الحالية موجبة لكن الاسترداد العادي بطيء. هل ذلك تناقض؟"
+      },
+      "options": [
+        {
+          "en": "Yes; every metric must give the same descriptive conclusion.",
+          "ar": "نعم؛ يجب أن تصف المؤشرات كلها النتيجة نفسها."
+        },
+        {
+          "en": "No; complete worth and recovery speed measure different properties.",
+          "ar": "لا؛ تقيس القيمة الكاملة وسرعة الاسترداد خاصيتين مختلفتين."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; complete worth and recovery speed measure different properties. Use consistent indices to answer the question each was designed to address.",
+        "ar": "لا؛ تقيس القيمة الكاملة وسرعة الاسترداد خاصيتين مختلفتين. استخدم كل مؤشر لإجابة السؤال الذي صمم له."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-capitalized-prospective-s01-recall",
+      "concept": "ee-capitalized-prospective-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Perpetuity: leave the capital, use its annual return",
+        "ar": "اشرح: الدوام: اترك الأصل واستخدم عائده السنوي"
+      },
+      "a": {
+        "en": "Without return, finite capital cannot sustain an endless positive withdrawal.",
+        "ar": "بلا عائد لا يحافظ أصل محدود على سحب موجب أبدي."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s01-formula",
+      "concept": "ee-capitalized-prospective-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nCE=A/i for i>0",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nCE=A/i for i>0"
+      },
+      "a": {
+        "en": "CE is currency at 0; A is currency each year-end; i is effective annual decimal. Infinite uniform year-end series, constant positive rate and maintained principal.",
+        "ar": "CE نقد عند الصفر و A مبلغ نهاية كل سنة و i معدل سنوي فعّال عشري. سلسلة أبدية متساوية آخر السنوات بمعدل موجب ثابت وحفظ الأصل."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s01-trap",
+      "concept": "ee-capitalized-prospective-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; discounting cannot affect an infinite count.",
+        "ar": "يقول متعلم: نعم؛ لا يؤثر الخصم في عدد لا نهائي."
+      },
+      "a": {
+        "en": "No; at a constant positive discount rate it can be finite. Without return, finite capital cannot sustain an endless positive withdrawal.",
+        "ar": "لا؛ قد تكون محدودة عند معدل خصم موجب ثابت. بلا عائد لا يحافظ أصل محدود على سحب موجب أبدي."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s02-recall",
+      "concept": "ee-capitalized-prospective-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: A repeated cycle is not a level annual payment",
+        "ar": "اشرح: الدورة المتكررة ليست دفعة سنوية ثابتة"
+      },
+      "a": {
+        "en": "The recurring cycle must describe actual repeated events, not copied bookkeeping.",
+        "ar": "يجب أن تصف الدورة أحداثًا تتكرر فعليًا لا حسابات منسوخة."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s02-formula",
+      "concept": "ee-capitalized-prospective-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nCEperiodic=A/[(1+i)^k−1]",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nCEperiodic=A/[(1+i)^k−1]"
+      },
+      "a": {
+        "en": "A is a payment every k years; the first is at year k. Identical endless cycles with fixed dates and constant effective rate.",
+        "ar": "A مبلغ كل k سنوات وأول دفع عند k. دورات متطابقة أبدية بتواريخ ومعدل فعّال ثابتين."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s02-trap",
+      "concept": "ee-capitalized-prospective-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; an infinite horizon makes spacing irrelevant.",
+        "ar": "يقول متعلم: نعم؛ يلغي الأفق الأبدي أهمية التباعد."
+      },
+      "a": {
+        "en": "No; the cycle spacing changes its discounted sum. The recurring cycle must describe actual repeated events, not copied bookkeeping.",
+        "ar": "لا؛ يغير تباعد الدورة مجموعها المخصوم. يجب أن تصف الدورة أحداثًا تتكرر فعليًا لا حسابات منسوخة."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s03-recall",
+      "concept": "ee-capitalized-prospective-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Combine early construction and later perpetual upkeep",
+        "ar": "اشرح: اجمع الإنشاء المبكر والصيانة الدائمة اللاحقة"
+      },
+      "a": {
+        "en": "Factors must partition the real cash flows without overlaps.",
+        "ar": "يجب أن تقسم العوامل التدفقات الفعلية دون تداخل."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s03-formula",
+      "concept": "ee-capitalized-prospective-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nCC=P0+Σearly Ct/(1+i)^t+(A/i)/(1+i)^(d−1)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nCC=P0+Σearly Ct/(1+i)^t+(A/i)/(1+i)^(d−1)"
+      },
+      "a": {
+        "en": "CC is positive capitalized cost magnitude; d is the first perpetual maintenance year. The perpetual part is annual, begins at a specified endpoint and does not overlap the early-cost list.",
+        "ar": "CC مقدار تكلفة رأسمالية موجب و d أول سنة للصيانة الدائمة. الجزء الأبدي سنوي ويبدأ بتاريخ معين ولا يتداخل مع قائمة التكاليف المبكرة."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s03-trap",
+      "concept": "ee-capitalized-prospective-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; a fund and its first payment always share a date.",
+        "ar": "يقول متعلم: نعم؛ يشترك الصندوق وأول دفعة في التاريخ دائمًا."
+      },
+      "a": {
+        "en": "No; at year 3, one period before the first withdrawal. Factors must partition the real cash flows without overlaps.",
+        "ar": "لا؛ عند 3 قبل السحب الأول بفترة. يجب أن تقسم العوامل التدفقات الفعلية دون تداخل."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s04-recall",
+      "concept": "ee-capitalized-prospective-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Prospective value uses a different alternative strategy",
+        "ar": "اشرح: تستخدم القيمة المستقبلية الخاصة استراتيجية بديلة"
+      },
+      "a": {
+        "en": "Always interpret an index under the strategy used to define it.",
+        "ar": "فسّر كل مؤشر وفق الاستراتيجية التي تعرفه."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s04-formula",
+      "concept": "ee-capitalized-prospective-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nPV(m,i)=C0(1+i)(1+m)^(n−1)+Σt=1…n Ct(1+m)^(n−t)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nPV(m,i)=C0(1+i)(1+m)^(n−1)+Σt=1…n Ct(1+m)^(n−t)"
+      },
+      "a": {
+        "en": "C0 is negative initial outlay; i is first-period liquid alternative rate; m is receipt reinvestment rate. This is the supplied course’s defined strategy, not standard notation for present value. All rates must use the same period.",
+        "ar": "C0 إنفاق أول سالب و i معدل البديل السائل للفترة الأولى و m معدل إعادة استثمار المقبوضات. هذه استراتيجية المقرر المعرفة لا الرمز الشائع للحالية؛ ويلزم تطابق فترة المعدلات."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s04-trap",
+      "concept": "ee-capitalized-prospective-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; the same initials guarantee the same definition.",
+        "ar": "يقول متعلم: نعم؛ يضمن اختصارالحروفالتعريفنفسه."
+      },
+      "a": {
+        "en": "No; the prospective index is defined at a future terminal date with two rate roles. Always interpret an index under the strategy used to define it.",
+        "ar": "لا؛ يعرف المؤشر الخاص عند نهاية مستقبلية بدورين للمعدل. فسّر كل مؤشر وفق الاستراتيجية التي تعرفه."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s05-recall",
+      "concept": "ee-capitalized-prospective-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Check indices by making their assumptions coincide",
+        "ar": "اشرح: تحقق بتوحيد فروض المؤشرات"
+      },
+      "a": {
+        "en": "Use consistent indices to answer the question each was designed to address.",
+        "ar": "استخدم كل مؤشر لإجابة السؤال الذي صمم له."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s05-formula",
+      "concept": "ee-capitalized-prospective-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nif m=i: PV(m,i)=FW(i)=PW(i)(1+i)^n",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nif m=i: PV(m,i)=FW(i)=PW(i)(1+i)^n"
+      },
+      "a": {
+        "en": "The identity assumes every future flow is accumulated consistently at the common rate. Same dates, same compounding model and same complete cash-flow stream.",
+        "ar": "تفترض الهوية تنمية كل تدفق عند المعدل المشترك نفسه. تواريخ ونموذج تركيب وسلسلة تدفقات متطابقة."
+      }
+    },
+    {
+      "id": "ee-capitalized-prospective-s05-trap",
+      "concept": "ee-capitalized-prospective-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: No; formulas with different names can never be checked against one another.",
+        "ar": "يقول متعلم: لا؛ لا تقارن معادلات ذات أسماء مختلفة."
+      },
+      "a": {
+        "en": "Yes; use that equality as an audit. Use consistent indices to answer the question each was designed to address.",
+        "ar": "نعم؛ استخدم المساواة للتدقيق. استخدم كل مؤشر لإجابة السؤال الذي صمم له."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE09",
+      "page": 40,
+      "filename": "chapter 6 EnEc.pdf"
+    },
+    {
+      "doc": "EE09",
+      "page": 41,
+      "filename": "chapter 6 EnEc.pdf"
+    },
+    {
+      "doc": "EE09",
+      "page": 45,
+      "filename": "chapter 6 EnEc.pdf"
+    }
+  ],
+  "videoIds": [
+    "gjCbIiDERXY",
+    "96GcUS4FieU"
+  ]
+}

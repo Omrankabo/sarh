@@ -1,0 +1,52 @@
+:root{--ease-out:cubic-bezier(.16,1,.3,1)}
+button,.button,a,input,select,summary{transition:background-color 180ms var(--ease-out),border-color 180ms var(--ease-out),box-shadow 220ms var(--ease-out),color 180ms var(--ease-out),transform 220ms var(--ease-out)}
+button:active:not(:disabled),.button:active{transform:scale(.97)}
+button svg,a svg{transition:transform 300ms var(--ease-out)}
+@media(hover:hover){button:hover:not(:disabled) svg,a:hover svg{transform:translateY(-2px)}.metric-row:hover .metric-icon svg{transform:rotate(-9deg) scale(1.12)}.journey-row:hover,.subject-course-card:hover{transform:translateY(-3px)}}
+.metric-icon svg{transition:transform 400ms var(--ease-out)}
+.animated-number{font-variant-numeric:tabular-nums;display:inline-block}
+.navigation-popover,.modal,.notice,.feedback,.card-answer,.review-actions{animation:soft-arrive 360ms var(--ease-out) both}
+.modal-backdrop{animation:soft-fade 200ms var(--ease-out) both}
+.topic-panel,.story-content,.question-stage{animation:soft-arrive 420ms var(--ease-out) both}
+.metric-row{animation:soft-arrive 650ms var(--ease-out) both}
+.metric-row:nth-child(2){animation-delay:60ms}.metric-row:nth-child(3){animation-delay:120ms}.metric-row:nth-child(4){animation-delay:180ms}
+.focus-line{stroke-dasharray:1;stroke-dashoffset:1;animation:chart-draw 1100ms var(--ease-out) both}
+.focus-point{animation:soft-fade 750ms var(--ease-out) both}
+.timer-digit-group{display:inline-flex;align-items:baseline}
+.timer-digit-slot{display:inline-block;overflow:hidden;width:.61em;text-align:center}
+.timer-digit-slot:has(.timer-colon){width:.3em}
+.timer-digit{display:inline-block;animation:digit-arrive 240ms var(--ease-out) both}
+.focus-panel:has(.is-running) .panel-title svg{color:#496c4e}
+.session-status:before{transition:background-color 300ms var(--ease-out),box-shadow 400ms var(--ease-out)}
+.session-status.is-running:before{box-shadow:0 0 0 4px #587b5a18}
+.notice{position:relative;gap:14px;border:1px solid #bdd1bc;box-shadow:0 8px 28px #31553a12;align-items:center;line-height:1.75}
+.notice>svg{flex-shrink:0;animation:bell-arrive 700ms var(--ease-out) both}
+.notice>span{flex:1;min-width:0}
+.timer-toast{position:fixed;top:82px;right:24px;z-index:90;width:min(440px,calc(100vw - 32px))}
+.timer-toast .notice{margin:0;background:#f0f7ed;padding:16px 18px;border-radius:16px;display:flex}
+.alert-preferences{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);display:grid;gap:14px}
+.alert-preferences h3,.alert-preferences p{margin:0}
+.alert-toggle{display:flex;gap:12px;align-items:center;cursor:pointer}
+.alert-toggle input{width:20px;height:20px;accent-color:#496c4e;flex-shrink:0}
+.alert-preferences .actions{display:flex;gap:10px;flex-wrap:wrap}
+.alert-preferences .small{color:var(--muted-readable);line-height:1.8}
+.navigation-feedback{position:fixed;top:0;left:0;right:0;height:5px;z-index:150;pointer-events:none;background:linear-gradient(90deg,#bcdac8,#ebc9a9,#f0d778);transform-origin:left;animation:nav-arrive 650ms var(--ease-out) both}
+.navigation-feedback.pending>span{position:absolute;inset:0;background:linear-gradient(90deg,transparent,#0066ff55,transparent);animation:nav-sweep 1.1s var(--ease-out) infinite}
+.navigation-feedback.arrived{animation:nav-complete 650ms var(--ease-out) both}
+.navigation-feedback{overflow:hidden}
+.navigation-feedback i{display:none}
+.splash-playing .loading-color{animation-timing-function:var(--ease-out)}
+@keyframes soft-arrive{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes soft-fade{from{opacity:0}to{opacity:1}}
+@keyframes digit-arrive{from{opacity:.3;transform:translateY(16%)}to{opacity:1;transform:none}}
+@keyframes bell-arrive{0%{transform:rotate(-15deg)}35%{transform:rotate(12deg)}70%{transform:rotate(-5deg)}100%{transform:none}}
+@keyframes chart-draw{to{stroke-dashoffset:0}}
+@keyframes nav-arrive{from{transform:scaleX(.05)}to{transform:scaleX(.86)}}
+@keyframes nav-sweep{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+@keyframes nav-complete{0%{transform:scaleX(.7);opacity:1}65%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+@media(prefers-reduced-motion:reduce){
+ button:active:not(:disabled),.button:active,button:hover:not(:disabled) svg,a:hover svg,.metric-row:hover .metric-icon svg,.journey-row:hover,.subject-course-card:hover{transform:none}
+ .navigation-popover,.modal,.notice,.feedback,.card-answer,.review-actions,.topic-panel,.story-content,.question-stage,.metric-row,.timer-digit{animation:soft-fade 180ms var(--ease-out) both}
+ .metric-row{animation-delay:0s!important}.notice>svg{animation:none}.focus-line{animation:none;stroke-dashoffset:0}
+ .navigation-feedback,.navigation-feedback.arrived{animation:soft-fade 180ms var(--ease-out) both}.navigation-feedback.pending>span{animation:none}
+}

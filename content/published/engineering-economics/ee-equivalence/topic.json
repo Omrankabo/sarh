@@ -1,0 +1,1414 @@
+{
+  "id": "ee-equivalence",
+  "family": "ee-timing",
+  "title": {
+    "en": "Equivalence, interpolation and mismatched periods",
+    "ar": "التكافؤ والاستيفاء واختلاف الفترات"
+  },
+  "summary": {
+    "en": "Two payment schedules become comparable only after agreeing on a rate and a common date. Learn how to move, interpolate and reconcile payment and compounding frequencies.",
+    "ar": "لا تقارن جدولين قبل الاتفاق على معدل وتاريخ مشترك. تعلّم النقل والاستيفاء والتوفيق بين تواتر الدفع والتركيب."
+  },
+  "outcomes": [
+    {
+      "en": "Equivalence depends on the agreed rate",
+      "ar": "يعتمد التكافؤ على المعدل المتفق عليه"
+    },
+    {
+      "en": "One-dimensional table interpolation",
+      "ar": "استيفاء الجدول في بعد واحد"
+    },
+    {
+      "en": "Two-dimensional interpolation: rate and time",
+      "ar": "استيفاء بعدين: المعدل والزمن"
+    },
+    {
+      "en": "When compounding is more frequent than payment",
+      "ar": "عندما يتكرر التركيب أكثر من الدفع"
+    },
+    {
+      "en": "When payment is more frequent than compounding",
+      "ar": "عندما يتكرر الدفع أكثر من التركيب"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-powers"
+  ],
+  "concepts": [
+    {
+      "id": "ee-equivalence-s01-concept",
+      "title": {
+        "en": "Equivalence depends on the agreed rate",
+        "ar": "يعتمد التكافؤ على المعدل المتفق عليه"
+      }
+    },
+    {
+      "id": "ee-equivalence-s02-concept",
+      "title": {
+        "en": "One-dimensional table interpolation",
+        "ar": "استيفاء الجدول في بعد واحد"
+      }
+    },
+    {
+      "id": "ee-equivalence-s03-concept",
+      "title": {
+        "en": "Two-dimensional interpolation: rate and time",
+        "ar": "استيفاء بعدين: المعدل والزمن"
+      }
+    },
+    {
+      "id": "ee-equivalence-s04-concept",
+      "title": {
+        "en": "When compounding is more frequent than payment",
+        "ar": "عندما يتكرر التركيب أكثر من الدفع"
+      }
+    },
+    {
+      "id": "ee-equivalence-s05-concept",
+      "title": {
+        "en": "When payment is more frequent than compounding",
+        "ar": "عندما يتكرر الدفع أكثر من التركيب"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-equivalence-s01",
+      "title": {
+        "en": "Equivalence depends on the agreed rate",
+        "ar": "يعتمد التكافؤ على المعدل المتفق عليه"
+      },
+      "predict": {
+        "en": "Are two schedules equivalent independently of the chosen rate?",
+        "ar": "هل يتكافأ جدولان بصرف النظر عن المعدل؟"
+      },
+      "options": [
+        {
+          "en": "No; rate and timing define their equivalence.",
+          "ar": "لا؛ يحدد المعدل والتوقيت تكافؤهما."
+        },
+        {
+          "en": "Yes; equal nominal totals always suffice.",
+          "ar": "نعم؛ يكفي تساوي الإجماليات الاسمية."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; rate and timing define their equivalence. A common basis is an invariant comparison, not a selective adjustment.",
+        "ar": "لا؛ يحدد المعدل والتوقيت تكافؤهما. الأساس المشترك مقارنة ثابتة المعنى لا تعديل انتقائي."
+      },
+      "explain": {
+        "en": "100 today and 110 in one year are equivalent at 10%, but not at 5%. Equivalence is a relationship between schedules under an assumed rate, not equality of nominal totals. To replace a debt schedule, value the old and new streams at one date and equate them. Moving the focal date should not change the answer if every stream is moved consistently using the same rate model.",
+        "ar": "تتكافأ 100 الآن و 110 بعدسنة عند 10% لا 5%. التكافؤ علاقة بين جدولين تحت معدل مفروض، لا مساواة مجاميع اسمية. لاستبدال جدول دين قيّم القديم والجديد عند تاريخ واحد وساوهما. لا ينبغي لتغيير التاريخ المرجعي أن يغير الجواب مع نقل الطرفين باتساق بالمعدل نفسه."
+      },
+      "formula": "Σold Ct v(t)=Σnew Dt v(t)",
+      "symbols": {
+        "en": "v(t) is the discount factor to the chosen focal date, not necessarily t=0.",
+        "ar": "v(t) عامل النقل إلى التاريخ المرجعي المختار، وليس الصفر بالضرورة."
+      },
+      "assumptions": {
+        "en": "Same valuation assumptions for every compared stream; no unilateral changes in rate or focal date.",
+        "ar": "افتراضات تقييم واحدة لكل السلاسل دون تغيير أحادي للمعدل أو المرجع."
+      },
+      "example": {
+        "en": "Replace 110 due in one year by money today at 10%.",
+        "ar": "استبدل 110 بعد سنة بمبلغ اليوم عند 10%."
+      },
+      "calculation": {
+        "en": "P=110/1.1=100. At 5%, the equivalent becomes 104.761905.",
+        "ar": "الحالية 100؛ وعند 5% تصبح 104.761905."
+      },
+      "interpret": {
+        "en": "A common basis is an invariant comparison, not a selective adjustment.",
+        "ar": "الأساس المشترك مقارنة ثابتة المعنى لا تعديل انتقائي."
+      },
+      "check": {
+        "prompt": {
+          "en": "You move the comparison date from today to year 3. Which values must move?",
+          "ar": "نقلت تاريخ المقارنة مناليوم إلى 3. ما الذي يجب نقله؟"
+        },
+        "answer": {
+          "en": "Both complete schedules using the same growth assumptions.",
+          "ar": "الجدولان كاملين بافتراضات النمو نفسها."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-equivalence-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 2,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 7,
+          "filename": "chapter 4 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-equivalence-s02",
+      "title": {
+        "en": "One-dimensional table interpolation",
+        "ar": "استيفاء الجدول في بعد واحد"
+      },
+      "predict": {
+        "en": "Does calculator-exact evaluation always match an exam’s table-interpolated answer?",
+        "ar": "هل تطابق القيمة الدقيقة من الآلة دائمًا جواب الاستيفاء الجدولي للامتحان؟"
+      },
+      "options": [
+        {
+          "en": "Yes; interpolation is an exact identity.",
+          "ar": "نعم؛ الاستيفاء هوية دقيقة."
+        },
+        {
+          "en": "No; different methods and rounded source tables can give different approximations.",
+          "ar": "لا؛ قد تختلف طرق التقريب وقيم الجدول المدورة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; different methods and rounded source tables can give different approximations. Bracketing the unknown is part of the interpolation assumption.",
+        "ar": "لا؛ قد تختلف طرق التقريب وقيم الجدول المدورة. إحاطة المجهول جزء من فرض الاستيفاء."
+      },
+      "explain": {
+        "en": "A printed table may omit the requested rate or period. Linear interpolation draws a straight chord between the two surrounding tabulated values. It is an approximation to the factor curve, not an exact financial identity. If an exam explicitly asks for interpolation, use its supplied table values rather than replacing them by calculator-exact factors. Keep the interpolation ratio and unrounded intermediate values visible.",
+        "ar": "قد يفتقد الجدول المطبوع المعدل أو الفترة المطلوبة. يرسم الاستيفاء الخطي وترًا بين القيمتين المحيطتين. هو تقريب لمنحنى العامل وليس هوية مالية دقيقة. إن طلب الامتحان الاستيفاء فاستخدم قيم الجدول المعطاة بدل استبدالها بقيم الآلة الدقيقة، وأظهر نسبة الاستيفاء دون تقريب وسيط."
+      },
+      "formula": "f(x)≈f(x1)+(x−x1)[f(x2)−f(x1)]/(x2−x1)",
+      "symbols": {
+        "en": "x may be rate or periods; f is the tabulated factor. Use the same rate unit for all x values.",
+        "ar": "قد يكون x المعدل أو عدد الفترات و f العامل الجدولي؛ وحد وحدة المعدل للقيم كلها."
+      },
+      "assumptions": {
+        "en": "Bracketing values, local linear approximation and the exam’s stated table precision.",
+        "ar": "قيمتان تحيطان بالمطلوب وتقريب خطي محلي ودقة الجدول التي يحددها الامتحان."
+      },
+      "example": {
+        "en": "Given f(12)=4.8402 and f(13)=4.6573, find f(12.4).",
+        "ar": "مع f(12)=4.8402 و f(13)=4.6573 أوجد f(12.4)."
+      },
+      "calculation": {
+        "en": "f≈4.8402+0.4(4.6573−4.8402)=4.76704.",
+        "ar": "الناتج التقريبي 4.76704."
+      },
+      "interpret": {
+        "en": "Bracketing the unknown is part of the interpolation assumption.",
+        "ar": "إحاطة المجهول جزء من فرض الاستيفاء."
+      },
+      "check": {
+        "prompt": {
+          "en": "An interpolation request lies outside both tabulated endpoints. Is it interpolation?",
+          "ar": "يقع المطلوب خارج طرفي الجدول. هل هو استيفاء؟"
+        },
+        "answer": {
+          "en": "No; that is extrapolation with a different reliability risk.",
+          "ar": "لا؛ هو استقراء خارجي بثقة مختلفة."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-equivalence-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 13,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 16,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE13",
+          "page": 28,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-equivalence-s03",
+      "title": {
+        "en": "Two-dimensional interpolation: rate and time",
+        "ar": "استيفاء بعدين: المعدل والزمن"
+      },
+      "predict": {
+        "en": "May a two-axis factor request be solved using only one surrounding pair?",
+        "ar": "هل يحل مطلوب ذو محورين بزوج إحاطة واحد فقط؟"
+      },
+      "options": [
+        {
+          "en": "No; use all four required corner values.",
+          "ar": "لا؛ استخدم قيم الأركان الأربعة المطلوبة."
+        },
+        {
+          "en": "Yes; a second unknown axis changes nothing.",
+          "ar": "نعم؛ لا يؤثر المحور المجهول الثاني."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; use all four required corner values. Respect the requested numerical procedure while explaining that it is a table approximation.",
+        "ar": "لا؛ استخدم قيم الأركان الأربعة المطلوبة. احترم الإجراء العددي المطلوب مع توضيح كونه تقريبًا جدوليًا."
+      },
+      "explain": {
+        "en": "When both a rate and a period count lie between table entries, interpolate along one axis at each surrounding value of the other, then interpolate the two results. A rectangular bilinear interpolation gives the same answer whichever axis is done first if the same four corner values are used. A fractional n in a factor table is a numerical interpolation request; it does not create a fractional count of physical annual payments without a stated cash model.",
+        "ar": "عندما يقع المعدل وعدد الفترات بين قيم الجدول، استوفِ على محور عند كل طرف للمحور الآخر، ثم استوفِ الناتجين. يعطي الاستيفاء الثنائي المستطيل النتيجة نفسها أيا كان ترتيب المحورين باستخدام الأركان نفسها. و n الكسرية في الجدول طلب عددي؛ لا تنشئ جزء دفعة سنوية دون نموذج نقدي مصرح."
+      },
+      "formula": "f≈(1−u)(1−v)f00+u(1−v)f10+(1−u)v f01+uv f11",
+      "symbols": {
+        "en": "u and v are fractional distances within the two bracketing intervals.",
+        "ar": "u و v مسافتان نسبيتان داخل فترتي الإحاطة."
+      },
+      "assumptions": {
+        "en": "A rectangular four-entry table; retain source-table values and do not round intermediate rows.",
+        "ar": "جدول رباعي مستطيل مع حفظ قيم المصدر ودون تقريب الصفوف الوسيطة."
+      },
+      "example": {
+        "en": "Corners 10,14 at lower time and 20,24 at upper time; u=0.25,v=0.5.",
+        "ar": "الأركان 10 و 14 عند الزمن الأقل و 20 و 24 عند الأعلى، مع u=0.25 و v=0.5."
+      },
+      "calculation": {
+        "en": "Lower interpolation=11; upper=21; midway gives 16. The four weights sum to 1.",
+        "ar": "الاستيفاء الأدنى 11 والأعلى 21 ووسطهما 16؛ ومجموع الأوزان 1."
+      },
+      "interpret": {
+        "en": "Respect the requested numerical procedure while explaining that it is a table approximation.",
+        "ar": "احترم الإجراء العددي المطلوب مع توضيح كونه تقريبًا جدوليًا."
+      },
+      "check": {
+        "prompt": {
+          "en": "The supplied test says “do not round” and gives four P/A values. What should the answer show?",
+          "ar": "يقول الاختبار لا تقرب ويعطي أربع قيم P/A. ماذا يجب أن يظهر الجواب؟"
+        },
+        "answer": {
+          "en": "The two interpolation stages using those exact supplied decimals.",
+          "ar": "مرحلتي الاستيفاء باستخدام الكسور المعطاة نفسها."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-equivalence-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 20,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 24,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-equivalence-s04",
+      "title": {
+        "en": "When compounding is more frequent than payment",
+        "ar": "عندما يتكرر التركيب أكثر من الدفع"
+      },
+      "predict": {
+        "en": "Should 12 quarterly payments be modeled as 36 equal monthly payments of 700?",
+        "ar": "هل تمثل 12 دفعة ربع سنوية بـ 36 دفعة شهرية متساوية 700؟"
+      },
+      "options": [
+        {
+          "en": "Yes; changing the clock automatically replicates the money.",
+          "ar": "نعم؛ تغيير الساعة يكرر المال تلقائيًا."
+        },
+        {
+          "en": "No; that invents 24 additional cash payments.",
+          "ar": "لا؛ يختلق ذلك 24 دفعة إضافية."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; that invents 24 additional cash payments. A cash arrow cannot earn before it exists.",
+        "ar": "لا؛ يختلق ذلك 24 دفعة إضافية. لا يكسب السهم النقدي قبل وجوده."
+      },
+      "explain": {
+        "en": "Monthly compounding with quarterly payments fits the standard factor model after converting to an effective quarter. Draw three monthly growth steps between adjacent quarterly arrows. If a nominal rate changes partway through a series, construct a local quarterly rate for each regime. Accumulate to the boundary and carry that balance onward, keeping the cash-flow dates unchanged.",
+        "ar": "يلائم التركيب الشهري والدفع الربع سنوي نموذج العوامل بعد تحويل المعدل إلى ربع فعّال. ارسم ثلاث خطوات نمو شهرية بين سهمي ربع. إن تغير الاسمي أثناء السلسلة فكوّن معدل ربع محليًا لكل نظام، ثم نمِّ إلى الحد واحمل الرصيد بعده دون تغيير تواريخ النقد."
+      },
+      "formula": "iquarter=(1+r/12)^3−1; P=A(P/A,iquarter,nquarters)",
+      "symbols": {
+        "en": "The exponent 3 counts monthly compounding intervals in a quarter.",
+        "ar": "يعد الأس 3 فترات التركيب الشهرية داخل الربع."
+      },
+      "assumptions": {
+        "en": "Payments at quarter ends, compounding monthly, constant r within each evaluated segment.",
+        "ar": "دفعات نهايات الأرباع وتركيب شهري ومعدل اسمي ثابت داخل كل جزء مقيم."
+      },
+      "example": {
+        "en": "700 CU each quarter for 3 years; nominal 18% monthly compounding.",
+        "ar": "700 كل ربع لثلاث سنوات عند اسمي 18% مركب شهريًا."
+      },
+      "calculation": {
+        "en": "iq=1.015³−1=0.045678375; P=700(P/A,iq,12). A monthly factor would need zeros in months without payments.",
+        "ar": "معدل الربع 0.045678375؛ والحالية 700(P/A,iq,12). أما النموذج الشهري فيحتاج أصفار أشهر دون دفع."
+      },
+      "interpret": {
+        "en": "A cash arrow cannot earn before it exists.",
+        "ar": "لا يكسب السهم النقدي قبل وجوده."
+      },
+      "check": {
+        "prompt": {
+          "en": "If the nominal rate changes just after quarter 8, which rate applies to the deposit made at quarter 9?",
+          "ar": "إذا تغير الاسمي بعد الربع 8 مباشرة، فأي معدل يؤثر في إيداع الربع 9؟"
+        },
+        "answer": {
+          "en": "Only rates over dates after its own deposit, when accumulating onward.",
+          "ar": "المعدلات اللاحقة لإيداعه فقط عند التنـمية."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-equivalence-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 73,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 74,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-equivalence-s05",
+      "title": {
+        "en": "When payment is more frequent than compounding",
+        "ar": "عندما يتكرر الدفع أكثر من التركيب"
+      },
+      "predict": {
+        "en": "Is the quarterly effective root always valid when a bank explicitly excludes within-period credit?",
+        "ar": "هل يصح جذر معدل الربع دائمًا إذا استبعد العقد القيد داخل الفترة؟"
+      },
+      "options": [
+        {
+          "en": "No; follow the explicit credit convention.",
+          "ar": "لا؛ اتبع اتفاق القيد الصريح."
+        },
+        {
+          "en": "Yes; all timing conventions are interchangeable.",
+          "ar": "نعم؛ كل اتفاقات التوقيت متبادلة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; follow the explicit credit convention. Ambiguity belongs in the model notes, not hidden inside a factor.",
+        "ar": "لا؛ اتبع اتفاق القيد الصريح. موضع الغموض ملاحظات النموذج لا داخل عامل مخفي."
+      },
+      "explain": {
+        "en": "Quarterly deposits with semiannual compounding require a within-half-year rule. If the problem says no interest is credited on intermediate deposits, collect the quarterly deposits at each half-year endpoint before applying the half-year factor. If it permits exponential fractional-period equivalence, use the effective quarter root instead. These are different contracts. A good solution names the rule rather than calling one answer universally correct.",
+        "ar": "تحتاج الإيداعات الربع سنوية مع تركيب نصف سنوي قاعدة داخل النصف. إن نص السؤال على عدم استحقاق فائدة للإيداعات الوسطية فاجمع دفعات الربع عند نهاية كل نصف قبل العامل. وإن سمح بالتكافؤ الأسي الكسري فاستخدم جذر نصف السنة لمعدل الربع. هما عقدان مختلفان؛ والجواب الجيد يسمي القاعدة ولا يعمم أحدهما."
+      },
+      "formula": "no-intermediate-credit rule: Ahalf=2Aquarter; ihalf=r/2",
+      "symbols": {
+        "en": "The collected amount is assigned to the half-year end under the specified no-intermediate-credit rule.",
+        "ar": "يسند المبلغ المجمع إلى نهاية النصف وفق قاعدة عدم القيد الوسطي المعطاة."
+      },
+      "assumptions": {
+        "en": "Do not infer this rule merely from the frequency label. Read whether intermediate cash earns interest.",
+        "ar": "لا تستنتج القاعدة من وصف التواتر وحده؛ اقرأ هل تستحق التدفقات الوسطية فائدة."
+      },
+      "example": {
+        "en": "Deposit 750 at each quarter-end; nominal 18% compounded semiannually; intermediate credit explicitly excluded.",
+        "ar": "إيداع 750 آخر كل ربع؛ اسمي 18% نصف سنوي مع استبعاد القيد الوسطي صراحة."
+      },
+      "calculation": {
+        "en": "Collect 1500 at each half-year end and use 9% per half-year. Over 3 years F=1500(F/A,9%,6).",
+        "ar": "اجمع 1500 نهاية كل نصف واستخدم 9%؛ خلال 3 سنوات النهائي 1500(F/A,9%,6)."
+      },
+      "interpret": {
+        "en": "Ambiguity belongs in the model notes, not hidden inside a factor.",
+        "ar": "موضع الغموض ملاحظات النموذج لا داخل عامل مخفي."
+      },
+      "check": {
+        "prompt": {
+          "en": "The statement gives only quarterly payments and semiannual compounding but no intermediate-credit convention. What is most defensible?",
+          "ar": "يذكر النص دفعًا ربع سنويًا وتركيبًا نصف سنوي دون قاعدة وسطية. ما التصرف الأدق؟"
+        },
+        "answer": {
+          "en": "State the assumed convention and identify that another convention can change the result.",
+          "ar": "أعلن الاتفاق المفروض وبين أن غيره قد يغير النتيجة."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-equivalence-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 62,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 67,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE01",
+          "page": 17,
+          "filename": "013 Tut .pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-equivalence-s01-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 2,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 7,
+          "filename": "chapter 4 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "v(t) is the discount factor to the chosen focal date, not necessarily t=0.",
+          "ar": "v(t) عامل النقل إلى التاريخ المرجعي المختار، وليس الصفر بالضرورة."
+        },
+        {
+          "en": "Σold Ct v(t)=Σnew Dt v(t)\nSame valuation assumptions for every compared stream; no unilateral changes in rate or focal date.",
+          "ar": "Σold Ct v(t)=Σnew Dt v(t)\nافتراضات تقييم واحدة لكل السلاسل دون تغيير أحادي للمعدل أو المرجع."
+        }
+      ],
+      "id": "ee-equivalence-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Are two schedules equivalent independently of the chosen rate?",
+        "ar": "هل يتكافأ جدولان بصرف النظر عن المعدل؟"
+      },
+      "options": [
+        {
+          "en": "No; rate and timing define their equivalence.",
+          "ar": "لا؛ يحدد المعدل والتوقيت تكافؤهما."
+        },
+        {
+          "en": "Yes; equal nominal totals always suffice.",
+          "ar": "نعم؛ يكفي تساوي الإجماليات الاسمية."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; rate and timing define their equivalence. 100 today and 110 in one year are equivalent at 10%, but not at 5%. Equivalence is a relationship between schedules under an assumed rate, not equality of nominal totals. To replace a debt schedule, value the old and new streams at one date and equate them. Moving the focal date should not change the answer if every stream is moved consistently using the same rate model.",
+        "ar": "لا؛ يحدد المعدل والتوقيت تكافؤهما. تتكافأ 100 الآن و 110 بعدسنة عند 10% لا 5%. التكافؤ علاقة بين جدولين تحت معدل مفروض، لا مساواة مجاميع اسمية. لاستبدال جدول دين قيّم القديم والجديد عند تاريخ واحد وساوهما. لا ينبغي لتغيير التاريخ المرجعي أن يغير الجواب مع نقل الطرفين باتساق بالمعدل نفسه."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s01-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 2,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 7,
+          "filename": "chapter 4 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "v(t) is the discount factor to the chosen focal date, not necessarily t=0.",
+          "ar": "v(t) عامل النقل إلى التاريخ المرجعي المختار، وليس الصفر بالضرورة."
+        },
+        {
+          "en": "Σold Ct v(t)=Σnew Dt v(t)\nSame valuation assumptions for every compared stream; no unilateral changes in rate or focal date.",
+          "ar": "Σold Ct v(t)=Σnew Dt v(t)\nافتراضات تقييم واحدة لكل السلاسل دون تغيير أحادي للمعدل أو المرجع."
+        }
+      ],
+      "id": "ee-equivalence-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "At 10%, replace 1210 CU due in 2 years by a single amount now.",
+        "ar": "عند 10% استبدل 1210 بعد سنتين بمبلغ مفرد الآن."
+      },
+      "expected": 1000,
+      "tolerance": 0.02,
+      "unit": "CU",
+      "solution": {
+        "en": "1210/1.1²=1000.",
+        "ar": "الحالية 1000."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s01-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 2,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 7,
+          "filename": "chapter 4 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "v(t) is the discount factor to the chosen focal date, not necessarily t=0.",
+          "ar": "v(t) عامل النقل إلى التاريخ المرجعي المختار، وليس الصفر بالضرورة."
+        },
+        {
+          "en": "Σold Ct v(t)=Σnew Dt v(t)\nSame valuation assumptions for every compared stream; no unilateral changes in rate or focal date.",
+          "ar": "Σold Ct v(t)=Σnew Dt v(t)\nافتراضات تقييم واحدة لكل السلاسل دون تغيير أحادي للمعدل أو المرجع."
+        }
+      ],
+      "id": "ee-equivalence-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "You move the comparison date from today to year 3. Which values must move?",
+        "ar": "نقلت تاريخ المقارنة مناليوم إلى 3. ما الذي يجب نقله؟"
+      },
+      "options": [
+        {
+          "en": "Only the schedule that initially looked more expensive.",
+          "ar": "الجدول الذي بدا أغلى فقط."
+        },
+        {
+          "en": "Both complete schedules using the same growth assumptions.",
+          "ar": "الجدولان كاملين بافتراضات النمو نفسها."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Both complete schedules using the same growth assumptions. A common basis is an invariant comparison, not a selective adjustment.",
+        "ar": "الجدولان كاملين بافتراضات النمو نفسها. الأساس المشترك مقارنة ثابتة المعنى لا تعديل انتقائي."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s02-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 13,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 16,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE13",
+          "page": 28,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "x may be rate or periods; f is the tabulated factor. Use the same rate unit for all x values.",
+          "ar": "قد يكون x المعدل أو عدد الفترات و f العامل الجدولي؛ وحد وحدة المعدل للقيم كلها."
+        },
+        {
+          "en": "f(x)≈f(x1)+(x−x1)[f(x2)−f(x1)]/(x2−x1)\nBracketing values, local linear approximation and the exam’s stated table precision.",
+          "ar": "f(x)≈f(x1)+(x−x1)[f(x2)−f(x1)]/(x2−x1)\nقيمتان تحيطان بالمطلوب وتقريب خطي محلي ودقة الجدول التي يحددها الامتحان."
+        }
+      ],
+      "id": "ee-equivalence-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does calculator-exact evaluation always match an exam’s table-interpolated answer?",
+        "ar": "هل تطابق القيمة الدقيقة من الآلة دائمًا جواب الاستيفاء الجدولي للامتحان؟"
+      },
+      "options": [
+        {
+          "en": "Yes; interpolation is an exact identity.",
+          "ar": "نعم؛ الاستيفاء هوية دقيقة."
+        },
+        {
+          "en": "No; different methods and rounded source tables can give different approximations.",
+          "ar": "لا؛ قد تختلف طرق التقريب وقيم الجدول المدورة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; different methods and rounded source tables can give different approximations. A printed table may omit the requested rate or period. Linear interpolation draws a straight chord between the two surrounding tabulated values. It is an approximation to the factor curve, not an exact financial identity. If an exam explicitly asks for interpolation, use its supplied table values rather than replacing them by calculator-exact factors. Keep the interpolation ratio and unrounded intermediate values visible.",
+        "ar": "لا؛ قد تختلف طرق التقريب وقيم الجدول المدورة. قد يفتقد الجدول المطبوع المعدل أو الفترة المطلوبة. يرسم الاستيفاء الخطي وترًا بين القيمتين المحيطتين. هو تقريب لمنحنى العامل وليس هوية مالية دقيقة. إن طلب الامتحان الاستيفاء فاستخدم قيم الجدول المعطاة بدل استبدالها بقيم الآلة الدقيقة، وأظهر نسبة الاستيفاء دون تقريب وسيط."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s02-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 13,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 16,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE13",
+          "page": 28,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "x may be rate or periods; f is the tabulated factor. Use the same rate unit for all x values.",
+          "ar": "قد يكون x المعدل أو عدد الفترات و f العامل الجدولي؛ وحد وحدة المعدل للقيم كلها."
+        },
+        {
+          "en": "f(x)≈f(x1)+(x−x1)[f(x2)−f(x1)]/(x2−x1)\nBracketing values, local linear approximation and the exam’s stated table precision.",
+          "ar": "f(x)≈f(x1)+(x−x1)[f(x2)−f(x1)]/(x2−x1)\nقيمتان تحيطان بالمطلوب وتقريب خطي محلي ودقة الجدول التي يحددها الامتحان."
+        }
+      ],
+      "id": "ee-equivalence-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Given f(5)=10 and f(7)=14, interpolate f(5.5).",
+        "ar": "مع f(5)=10 و f(7)=14 استوفِf(5.5)."
+      },
+      "expected": 11,
+      "tolerance": 0.005,
+      "unit": "factor",
+      "solution": {
+        "en": "10+(0.5/2)(14−10)=11.",
+        "ar": "الناتج 11."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s02-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 13,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 16,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE13",
+          "page": 28,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "x may be rate or periods; f is the tabulated factor. Use the same rate unit for all x values.",
+          "ar": "قد يكون x المعدل أو عدد الفترات و f العامل الجدولي؛ وحد وحدة المعدل للقيم كلها."
+        },
+        {
+          "en": "f(x)≈f(x1)+(x−x1)[f(x2)−f(x1)]/(x2−x1)\nBracketing values, local linear approximation and the exam’s stated table precision.",
+          "ar": "f(x)≈f(x1)+(x−x1)[f(x2)−f(x1)]/(x2−x1)\nقيمتان تحيطان بالمطلوب وتقريب خطي محلي ودقة الجدول التي يحددها الامتحان."
+        }
+      ],
+      "id": "ee-equivalence-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "An interpolation request lies outside both tabulated endpoints. Is it interpolation?",
+        "ar": "يقع المطلوب خارج طرفي الجدول. هل هو استيفاء؟"
+      },
+      "options": [
+        {
+          "en": "No; that is extrapolation with a different reliability risk.",
+          "ar": "لا؛ هو استقراء خارجي بثقة مختلفة."
+        },
+        {
+          "en": "Yes; every straight-line estimate has the same status.",
+          "ar": "نعم؛ لكل تقدير خطي الصفة نفسها."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; that is extrapolation with a different reliability risk. Bracketing the unknown is part of the interpolation assumption.",
+        "ar": "لا؛ هو استقراء خارجي بثقة مختلفة. إحاطة المجهول جزء من فرض الاستيفاء."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s03-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 20,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 24,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "u and v are fractional distances within the two bracketing intervals.",
+          "ar": "u و v مسافتان نسبيتان داخل فترتي الإحاطة."
+        },
+        {
+          "en": "f≈(1−u)(1−v)f00+u(1−v)f10+(1−u)v f01+uv f11\nA rectangular four-entry table; retain source-table values and do not round intermediate rows.",
+          "ar": "f≈(1−u)(1−v)f00+u(1−v)f10+(1−u)v f01+uv f11\nجدول رباعي مستطيل مع حفظ قيم المصدر ودون تقريب الصفوف الوسيطة."
+        }
+      ],
+      "id": "ee-equivalence-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "May a two-axis factor request be solved using only one surrounding pair?",
+        "ar": "هل يحل مطلوب ذو محورين بزوج إحاطة واحد فقط؟"
+      },
+      "options": [
+        {
+          "en": "No; use all four required corner values.",
+          "ar": "لا؛ استخدم قيم الأركان الأربعة المطلوبة."
+        },
+        {
+          "en": "Yes; a second unknown axis changes nothing.",
+          "ar": "نعم؛ لا يؤثر المحور المجهول الثاني."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; use all four required corner values. When both a rate and a period count lie between table entries, interpolate along one axis at each surrounding value of the other, then interpolate the two results. A rectangular bilinear interpolation gives the same answer whichever axis is done first if the same four corner values are used. A fractional n in a factor table is a numerical interpolation request; it does not create a fractional count of physical annual payments without a stated cash model.",
+        "ar": "لا؛ استخدم قيم الأركان الأربعة المطلوبة. عندما يقع المعدل وعدد الفترات بين قيم الجدول، استوفِ على محور عند كل طرف للمحور الآخر، ثم استوفِ الناتجين. يعطي الاستيفاء الثنائي المستطيل النتيجة نفسها أيا كان ترتيب المحورين باستخدام الأركان نفسها. و n الكسرية في الجدول طلب عددي؛ لا تنشئ جزء دفعة سنوية دون نموذج نقدي مصرح."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s03-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 20,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 24,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "u and v are fractional distances within the two bracketing intervals.",
+          "ar": "u و v مسافتان نسبيتان داخل فترتي الإحاطة."
+        },
+        {
+          "en": "f≈(1−u)(1−v)f00+u(1−v)f10+(1−u)v f01+uv f11\nA rectangular four-entry table; retain source-table values and do not round intermediate rows.",
+          "ar": "f≈(1−u)(1−v)f00+u(1−v)f10+(1−u)v f01+uv f11\nجدول رباعي مستطيل مع حفظ قيم المصدر ودون تقريب الصفوف الوسيطة."
+        }
+      ],
+      "id": "ee-equivalence-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Bilinear corners f00=4,f10=8,f01=10,f11=14. Evaluate at u=0.25,v=0.5.",
+        "ar": "الأركان 4 و 8 و 10 و 14؛ أوجد الاستيفاء عند u=0.25 و v=0.5."
+      },
+      "expected": 8,
+      "tolerance": 0.005,
+      "unit": "factor",
+      "solution": {
+        "en": "Lower=5; upper=11; average=8.",
+        "ar": "الأدنى 5 والأعلى 11 ومتوسطهما 8."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s03-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 20,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 24,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "u and v are fractional distances within the two bracketing intervals.",
+          "ar": "u و v مسافتان نسبيتان داخل فترتي الإحاطة."
+        },
+        {
+          "en": "f≈(1−u)(1−v)f00+u(1−v)f10+(1−u)v f01+uv f11\nA rectangular four-entry table; retain source-table values and do not round intermediate rows.",
+          "ar": "f≈(1−u)(1−v)f00+u(1−v)f10+(1−u)v f01+uv f11\nجدول رباعي مستطيل مع حفظ قيم المصدر ودون تقريب الصفوف الوسيطة."
+        }
+      ],
+      "id": "ee-equivalence-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "The supplied test says “do not round” and gives four P/A values. What should the answer show?",
+        "ar": "يقول الاختبار لا تقرب ويعطي أربع قيم P/A. ماذا يجب أن يظهر الجواب؟"
+      },
+      "options": [
+        {
+          "en": "Fresh exact-formula factors rounded early to two decimals.",
+          "ar": "عوامل دقيقة جديدة تقرب مبكرًا إلى منزلتين."
+        },
+        {
+          "en": "The two interpolation stages using those exact supplied decimals.",
+          "ar": "مرحلتي الاستيفاء باستخدام الكسور المعطاة نفسها."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "The two interpolation stages using those exact supplied decimals. Respect the requested numerical procedure while explaining that it is a table approximation.",
+        "ar": "مرحلتي الاستيفاء باستخدام الكسور المعطاة نفسها. احترم الإجراء العددي المطلوب مع توضيح كونه تقريبًا جدوليًا."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s04-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 73,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 74,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The exponent 3 counts monthly compounding intervals in a quarter.",
+          "ar": "يعد الأس 3 فترات التركيب الشهرية داخل الربع."
+        },
+        {
+          "en": "iquarter=(1+r/12)^3−1; P=A(P/A,iquarter,nquarters)\nPayments at quarter ends, compounding monthly, constant r within each evaluated segment.",
+          "ar": "iquarter=(1+r/12)^3−1; P=A(P/A,iquarter,nquarters)\nدفعات نهايات الأرباع وتركيب شهري ومعدل اسمي ثابت داخل كل جزء مقيم."
+        }
+      ],
+      "id": "ee-equivalence-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Should 12 quarterly payments be modeled as 36 equal monthly payments of 700?",
+        "ar": "هل تمثل 12 دفعة ربع سنوية بـ 36 دفعة شهرية متساوية 700؟"
+      },
+      "options": [
+        {
+          "en": "Yes; changing the clock automatically replicates the money.",
+          "ar": "نعم؛ تغيير الساعة يكرر المال تلقائيًا."
+        },
+        {
+          "en": "No; that invents 24 additional cash payments.",
+          "ar": "لا؛ يختلق ذلك 24 دفعة إضافية."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; that invents 24 additional cash payments. Monthly compounding with quarterly payments fits the standard factor model after converting to an effective quarter. Draw three monthly growth steps between adjacent quarterly arrows. If a nominal rate changes partway through a series, construct a local quarterly rate for each regime. Accumulate to the boundary and carry that balance onward, keeping the cash-flow dates unchanged.",
+        "ar": "لا؛ يختلق ذلك 24 دفعة إضافية. يلائم التركيب الشهري والدفع الربع سنوي نموذج العوامل بعد تحويل المعدل إلى ربع فعّال. ارسم ثلاث خطوات نمو شهرية بين سهمي ربع. إن تغير الاسمي أثناء السلسلة فكوّن معدل ربع محليًا لكل نظام، ثم نمِّ إلى الحد واحمل الرصيد بعده دون تغيير تواريخ النقد."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s04-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 73,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 74,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The exponent 3 counts monthly compounding intervals in a quarter.",
+          "ar": "يعد الأس 3 فترات التركيب الشهرية داخل الربع."
+        },
+        {
+          "en": "iquarter=(1+r/12)^3−1; P=A(P/A,iquarter,nquarters)\nPayments at quarter ends, compounding monthly, constant r within each evaluated segment.",
+          "ar": "iquarter=(1+r/12)^3−1; P=A(P/A,iquarter,nquarters)\nدفعات نهايات الأرباع وتركيب شهري ومعدل اسمي ثابت داخل كل جزء مقيم."
+        }
+      ],
+      "id": "ee-equivalence-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Nominal 12% compounded monthly; quarterly receipts 100 for 4 quarters. Find P.",
+        "ar": "اسمي 12% شهري التركيب؛ مقبوض 100 كل ربع لأربعة أرباع. أوجد الحالية."
+      },
+      "expected": 371.44244326869165,
+      "tolerance": 0.007428848865373833,
+      "unit": "CU",
+      "solution": {
+        "en": "P=Σk=1…4 100/(1.01)^(3k), equivalent to P/A at 3.0301% for 4 payments.",
+        "ar": "اجمع 100/(1.01)^(3k) من 1 إلى 4؛ ويكافئ عامل P/A الربع سنوي."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s04-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 73,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 74,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The exponent 3 counts monthly compounding intervals in a quarter.",
+          "ar": "يعد الأس 3 فترات التركيب الشهرية داخل الربع."
+        },
+        {
+          "en": "iquarter=(1+r/12)^3−1; P=A(P/A,iquarter,nquarters)\nPayments at quarter ends, compounding monthly, constant r within each evaluated segment.",
+          "ar": "iquarter=(1+r/12)^3−1; P=A(P/A,iquarter,nquarters)\nدفعات نهايات الأرباع وتركيب شهري ومعدل اسمي ثابت داخل كل جزء مقيم."
+        }
+      ],
+      "id": "ee-equivalence-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "If the nominal rate changes just after quarter 8, which rate applies to the deposit made at quarter 9?",
+        "ar": "إذا تغير الاسمي بعد الربع 8 مباشرة، فأي معدل يؤثر في إيداع الربع 9؟"
+      },
+      "options": [
+        {
+          "en": "Only rates over dates after its own deposit, when accumulating onward.",
+          "ar": "المعدلات اللاحقة لإيداعه فقط عند التنـمية."
+        },
+        {
+          "en": "All rates from project year 0 onward.",
+          "ar": "كل المعدلات منذ بداية المشروع."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Only rates over dates after its own deposit, when accumulating onward. A cash arrow cannot earn before it exists.",
+        "ar": "المعدلات اللاحقة لإيداعه فقط عند التنـمية. لا يكسب السهم النقدي قبل وجوده."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s05-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 62,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 67,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE01",
+          "page": 17,
+          "filename": "013 Tut .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The collected amount is assigned to the half-year end under the specified no-intermediate-credit rule.",
+          "ar": "يسند المبلغ المجمع إلى نهاية النصف وفق قاعدة عدم القيد الوسطي المعطاة."
+        },
+        {
+          "en": "no-intermediate-credit rule: Ahalf=2 Aquarter; ihalf=r/2\nDo not infer this rule merely from the frequency label. Read whether intermediate cash earns interest.",
+          "ar": "no-intermediate-credit rule: Ahalf=2 Aquarter; ihalf=r/2\nلا تستنتج القاعدة من وصف التواتر وحده؛ اقرأ هل تستحق التدفقات الوسطية فائدة."
+        }
+      ],
+      "id": "ee-equivalence-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Is the quarterly effective root always valid when a bank explicitly excludes within-period credit?",
+        "ar": "هل يصح جذر معدل الربع دائمًا إذا استبعد العقد القيد داخل الفترة؟"
+      },
+      "options": [
+        {
+          "en": "No; follow the explicit credit convention.",
+          "ar": "لا؛ اتبع اتفاق القيد الصريح."
+        },
+        {
+          "en": "Yes; all timing conventions are interchangeable.",
+          "ar": "نعم؛ كل اتفاقات التوقيت متبادلة."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; follow the explicit credit convention. Quarterly deposits with semiannual compounding require a within-half-year rule. If the problem says no interest is credited on intermediate deposits, collect the quarterly deposits at each half-year endpoint before applying the half-year factor. If it permits exponential fractional-period equivalence, use the effective quarter root instead. These are different contracts. A good solution names the rule rather than calling one answer universally correct.",
+        "ar": "لا؛ اتبع اتفاق القيد الصريح. تحتاج الإيداعات الربع سنوية مع تركيب نصف سنوي قاعدة داخل النصف. إن نص السؤال على عدم استحقاق فائدة للإيداعات الوسطية فاجمع دفعات الربع عند نهاية كل نصف قبل العامل. وإن سمح بالتكافؤ الأسي الكسري فاستخدم جذر نصف السنة لمعدل الربع. هما عقدان مختلفان؛ والجواب الجيد يسمي القاعدة ولا يعمم أحدهما."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s05-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 62,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 67,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE01",
+          "page": 17,
+          "filename": "013 Tut .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The collected amount is assigned to the half-year end under the specified no-intermediate-credit rule.",
+          "ar": "يسند المبلغ المجمع إلى نهاية النصف وفق قاعدة عدم القيد الوسطي المعطاة."
+        },
+        {
+          "en": "no-intermediate-credit rule: Ahalf=2 Aquarter; ihalf=r/2\nDo not infer this rule merely from the frequency label. Read whether intermediate cash earns interest.",
+          "ar": "no-intermediate-credit rule: Ahalf=2 Aquarter; ihalf=r/2\nلا تستنتج القاعدة من وصف التواتر وحده؛ اقرأ هل تستحق التدفقات الوسطية فائدة."
+        }
+      ],
+      "id": "ee-equivalence-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Deposit 100 quarterly for 1 year; nominal 10% compounded semiannually; no intermediate-period credit. Find F after the fourth deposit.",
+        "ar": "أودع 100 كل ربع لسنة؛ اسمي 10% نصف سنوي دون قيد وسطي. أوجد النهائي بعد الرابعة."
+      },
+      "expected": 410,
+      "tolerance": 0.0082,
+      "unit": "CU",
+      "solution": {
+        "en": "Group 200 at 0.5 year and 200 at 1 year: F=200(1.05)+200=410.",
+        "ar": "اجمع 200 عند 0.5 و 200 عند 1؛ فالنهائي 410."
+      }
+    },
+    {
+      "concept": "ee-equivalence-s05-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 62,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 67,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE01",
+          "page": 17,
+          "filename": "013 Tut .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The collected amount is assigned to the half-year end under the specified no-intermediate-credit rule.",
+          "ar": "يسند المبلغ المجمع إلى نهاية النصف وفق قاعدة عدم القيد الوسطي المعطاة."
+        },
+        {
+          "en": "no-intermediate-credit rule: Ahalf=2 Aquarter; ihalf=r/2\nDo not infer this rule merely from the frequency label. Read whether intermediate cash earns interest.",
+          "ar": "no-intermediate-credit rule: Ahalf=2 Aquarter; ihalf=r/2\nلا تستنتج القاعدة من وصف التواتر وحده؛ اقرأ هل تستحق التدفقات الوسطية فائدة."
+        }
+      ],
+      "id": "ee-equivalence-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "The statement gives only quarterly payments and semiannual compounding but no intermediate-credit convention. What is most defensible?",
+        "ar": "يذكر النص دفعًا ربع سنويًا وتركيبًا نصف سنوي دون قاعدة وسطية. ما التصرف الأدق؟"
+      },
+      "options": [
+        {
+          "en": "Silently choose whichever gives the preferred answer.",
+          "ar": "اختر صامتًا ما يعطي الجواب المفضل."
+        },
+        {
+          "en": "State the assumed convention and identify that another convention can change the result.",
+          "ar": "أعلن الاتفاق المفروض وبين أن غيره قد يغير النتيجة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "State the assumed convention and identify that another convention can change the result. Ambiguity belongs in the model notes, not hidden inside a factor.",
+        "ar": "أعلن الاتفاق المفروض وبين أن غيره قد يغير النتيجة. موضع الغموض ملاحظات النموذج لا داخل عامل مخفي."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-equivalence-s01-recall",
+      "concept": "ee-equivalence-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Equivalence depends on the agreed rate",
+        "ar": "اشرح: يعتمد التكافؤ على المعدل المتفق عليه"
+      },
+      "a": {
+        "en": "A common basis is an invariant comparison, not a selective adjustment.",
+        "ar": "الأساس المشترك مقارنة ثابتة المعنى لا تعديل انتقائي."
+      }
+    },
+    {
+      "id": "ee-equivalence-s01-formula",
+      "concept": "ee-equivalence-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nΣold Ct v(t)=Σnew Dt v(t)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nΣold Ct v(t)=Σnew Dt v(t)"
+      },
+      "a": {
+        "en": "v(t) is the discount factor to the chosen focal date, not necessarily t=0. Same valuation assumptions for every compared stream; no unilateral changes in rate or focal date.",
+        "ar": "v(t) عامل النقل إلى التاريخ المرجعي المختار، وليس الصفر بالضرورة. افتراضات تقييم واحدة لكل السلاسل دون تغيير أحادي للمعدل أو المرجع."
+      }
+    },
+    {
+      "id": "ee-equivalence-s01-trap",
+      "concept": "ee-equivalence-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; equal nominal totals always suffice.",
+        "ar": "يقول متعلم: نعم؛ يكفي تساوي الإجماليات الاسمية."
+      },
+      "a": {
+        "en": "No; rate and timing define their equivalence. A common basis is an invariant comparison, not a selective adjustment.",
+        "ar": "لا؛ يحدد المعدل والتوقيت تكافؤهما. الأساس المشترك مقارنة ثابتة المعنى لا تعديل انتقائي."
+      }
+    },
+    {
+      "id": "ee-equivalence-s02-recall",
+      "concept": "ee-equivalence-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: One-dimensional table interpolation",
+        "ar": "اشرح: استيفاء الجدول في بعد واحد"
+      },
+      "a": {
+        "en": "Bracketing the unknown is part of the interpolation assumption.",
+        "ar": "إحاطة المجهول جزء من فرض الاستيفاء."
+      }
+    },
+    {
+      "id": "ee-equivalence-s02-formula",
+      "concept": "ee-equivalence-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nf(x)≈f(x1)+(x−x1)[f(x2)−f(x1)]/(x2−x1)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nf(x)≈f(x1)+(x−x1)[f(x2)−f(x1)]/(x2−x1)"
+      },
+      "a": {
+        "en": "x may be rate or periods; f is the tabulated factor. Use the same rate unit for all x values. Bracketing values, local linear approximation and the exam’s stated table precision.",
+        "ar": "قد يكون x المعدل أو عدد الفترات و f العامل الجدولي؛ وحد وحدة المعدل للقيم كلها. قيمتان تحيطان بالمطلوب وتقريب خطي محلي ودقة الجدول التي يحددها الامتحان."
+      }
+    },
+    {
+      "id": "ee-equivalence-s02-trap",
+      "concept": "ee-equivalence-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; interpolation is an exact identity.",
+        "ar": "يقول متعلم: نعم؛ الاستيفاء هوية دقيقة."
+      },
+      "a": {
+        "en": "No; different methods and rounded source tables can give different approximations. Bracketing the unknown is part of the interpolation assumption.",
+        "ar": "لا؛ قد تختلف طرق التقريب وقيم الجدول المدورة. إحاطة المجهول جزء من فرض الاستيفاء."
+      }
+    },
+    {
+      "id": "ee-equivalence-s03-recall",
+      "concept": "ee-equivalence-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Two-dimensional interpolation: rate and time",
+        "ar": "اشرح: استيفاء بعدين: المعدل والزمن"
+      },
+      "a": {
+        "en": "Respect the requested numerical procedure while explaining that it is a table approximation.",
+        "ar": "احترم الإجراء العددي المطلوب مع توضيح كونه تقريبًا جدوليًا."
+      }
+    },
+    {
+      "id": "ee-equivalence-s03-formula",
+      "concept": "ee-equivalence-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nf≈(1−u)(1−v)f00+u(1−v)f10+(1−u)v f01+uv f11",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nf≈(1−u)(1−v)f00+u(1−v)f10+(1−u)v f01+uv f11"
+      },
+      "a": {
+        "en": "u and v are fractional distances within the two bracketing intervals. A rectangular four-entry table; retain source-table values and do not round intermediate rows.",
+        "ar": "u و v مسافتان نسبيتان داخل فترتي الإحاطة. جدول رباعي مستطيل مع حفظ قيم المصدر ودون تقريب الصفوف الوسيطة."
+      }
+    },
+    {
+      "id": "ee-equivalence-s03-trap",
+      "concept": "ee-equivalence-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; a second unknown axis changes nothing.",
+        "ar": "يقول متعلم: نعم؛ لا يؤثر المحور المجهول الثاني."
+      },
+      "a": {
+        "en": "No; use all four required corner values. Respect the requested numerical procedure while explaining that it is a table approximation.",
+        "ar": "لا؛ استخدم قيم الأركان الأربعة المطلوبة. احترم الإجراء العددي المطلوب مع توضيح كونه تقريبًا جدوليًا."
+      }
+    },
+    {
+      "id": "ee-equivalence-s04-recall",
+      "concept": "ee-equivalence-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: When compounding is more frequent than payment",
+        "ar": "اشرح: عندما يتكرر التركيب أكثر من الدفع"
+      },
+      "a": {
+        "en": "A cash arrow cannot earn before it exists.",
+        "ar": "لا يكسب السهم النقدي قبل وجوده."
+      }
+    },
+    {
+      "id": "ee-equivalence-s04-formula",
+      "concept": "ee-equivalence-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\niquarter=(1+r/12)^3−1; P=A(P/A,iquarter,nquarters)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\niquarter=(1+r/12)^3−1; P=A(P/A,iquarter,nquarters)"
+      },
+      "a": {
+        "en": "The exponent 3 counts monthly compounding intervals in a quarter. Payments at quarter ends, compounding monthly, constant r within each evaluated segment.",
+        "ar": "يعد الأس 3 فترات التركيب الشهرية داخل الربع. دفعات نهايات الأرباع وتركيب شهري ومعدل اسمي ثابت داخل كل جزء مقيم."
+      }
+    },
+    {
+      "id": "ee-equivalence-s04-trap",
+      "concept": "ee-equivalence-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; changing the clock automatically replicates the money.",
+        "ar": "يقول متعلم: نعم؛ تغيير الساعة يكرر المال تلقائيًا."
+      },
+      "a": {
+        "en": "No; that invents 24 additional cash payments. A cash arrow cannot earn before it exists.",
+        "ar": "لا؛ يختلق ذلك 24 دفعة إضافية. لا يكسب السهم النقدي قبل وجوده."
+      }
+    },
+    {
+      "id": "ee-equivalence-s05-recall",
+      "concept": "ee-equivalence-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: When payment is more frequent than compounding",
+        "ar": "اشرح: عندما يتكرر الدفع أكثر من التركيب"
+      },
+      "a": {
+        "en": "Ambiguity belongs in the model notes, not hidden inside a factor.",
+        "ar": "موضع الغموض ملاحظات النموذج لا داخل عامل مخفي."
+      }
+    },
+    {
+      "id": "ee-equivalence-s05-formula",
+      "concept": "ee-equivalence-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nno-intermediate-credit rule: Ahalf=2 Aquarter; ihalf=r/2",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nno-intermediate-credit rule: Ahalf=2 Aquarter; ihalf=r/2"
+      },
+      "a": {
+        "en": "The collected amount is assigned to the half-year end under the specified no-intermediate-credit rule. Do not infer this rule merely from the frequency label. Read whether intermediate cash earns interest.",
+        "ar": "يسند المبلغ المجمع إلى نهاية النصف وفق قاعدة عدم القيد الوسطي المعطاة. لا تستنتج القاعدة من وصف التواتر وحده؛ اقرأ هل تستحق التدفقات الوسطية فائدة."
+      }
+    },
+    {
+      "id": "ee-equivalence-s05-trap",
+      "concept": "ee-equivalence-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; all timing conventions are interchangeable.",
+        "ar": "يقول متعلم: نعم؛ كل اتفاقات التوقيت متبادلة."
+      },
+      "a": {
+        "en": "No; follow the explicit credit convention. Ambiguity belongs in the model notes, not hidden inside a factor.",
+        "ar": "لا؛ اتبع اتفاق القيد الصريح. موضع الغموض ملاحظات النموذج لا داخل عامل مخفي."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE07",
+      "page": 2,
+      "filename": "chapter 4 EnEc.pdf"
+    },
+    {
+      "doc": "EE07",
+      "page": 13,
+      "filename": "chapter 4 EnEc.pdf"
+    },
+    {
+      "doc": "EE07",
+      "page": 59,
+      "filename": "chapter 4 EnEc.pdf"
+    }
+  ],
+  "videoIds": [
+    "-_Zc8KNpTkw",
+    "xPaQedaiNTU"
+  ]
+}

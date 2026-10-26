@@ -1,0 +1,1218 @@
+{
+  "id": "models-beams",
+  "family": "models",
+  "title": {
+    "en": "Beam models: read forces from a measured shape",
+    "ar": "نماذج الكمرات: اقرأ القوى من الشكل المقاس"
+  },
+  "summary": {
+    "en": "A small spline can reveal a full-sized structure’s influence line. Keep geometric scale, normalized movement, signed areas and units distinct.",
+    "ar": "يمكن لشريحة مرنة صغيرة كشف خط تأثير منشأ كامل الحجم. ميّز بين المقياس الهندسي والحركة المطبعة والمساحات الجبرية والوحدات."
+  },
+  "outcomes": [
+    {
+      "en": "Distinguish direct similitude from indirect influence-line modelling.",
+      "ar": "ميّز التشابه المباشر عن النمذجة غير المباشرة لخطوط التأثير."
+    },
+    {
+      "en": "Turn signed model readings into load contributions.",
+      "ar": "حوّل قراءات النموذج الجبرية إلى مساهمات الأحمال."
+    },
+    {
+      "en": "Recover reactions and diagrams while checking model uncertainty.",
+      "ar": "استخرج ردود الأفعال والمخططات مع فحص عدم يقين النموذج."
+    }
+  ],
+  "prereqIds": [
+    "units",
+    "forces",
+    "loads",
+    "diagrams",
+    "shape",
+    "compatibility"
+  ],
+  "concepts": [
+    {
+      "id": "mb-method",
+      "title": {
+        "en": "Direct versus indirect modelling",
+        "ar": "النمذجة المباشرة وغير المباشرة"
+      }
+    },
+    {
+      "id": "mb-scale",
+      "title": {
+        "en": "Geometric scale and normalization",
+        "ar": "المقياس الهندسي والتطبيع"
+      }
+    },
+    {
+      "id": "mb-simpson",
+      "title": {
+        "en": "Signed areas with Simpson’s rule",
+        "ar": "المساحات الجبرية بقاعدة سمبسون"
+      }
+    },
+    {
+      "id": "mb-work",
+      "title": {
+        "en": "Point and distributed-load work",
+        "ar": "شغل الأحمال المركزة والموزعة"
+      }
+    },
+    {
+      "id": "mb-equilibrium",
+      "title": {
+        "en": "Reactions into shear and moment",
+        "ar": "من ردود الأفعال إلى القص والعزم"
+      }
+    },
+    {
+      "id": "mb-quality",
+      "title": {
+        "en": "Measurement and source checks",
+        "ar": "فحص القياس والمصادر"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "mb-method",
+      "title": {
+        "en": "Decide what the model is measuring",
+        "ar": "حدد ما الذي يقيسه النموذج"
+      },
+      "predict": {
+        "en": "Can every small physical model predict prototype stresses using only a length scale?",
+        "ar": "هل يستطيع كل نموذج مادي صغير توقع إجهادات الأصل باستعمال مقياس الطول وحده؟"
+      },
+      "options": [
+        {
+          "en": "Yes; multiply everything by S.",
+          "ar": "نعم؛ نضرب كل شيء في S."
+        },
+        {
+          "en": "No; direct similitude needs additional scaling laws.",
+          "ar": "لا؛ التشابه المباشر يتطلب قوانين قياس إضافية."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Direct modelling reproduces a physically scaled experiment. Indirect modelling releases a selected action and measures a shape that represents its influence line.",
+        "ar": "تعيد النمذجة المباشرة إنتاج تجربة بمقياس فيزيائي. أما غير المباشرة فتحرر فعلاً مختاراً وتقيس شكلاً يمثل خط تأثيره."
+      },
+      "explain": {
+        "en": "For an indirect model, the deformation amplitude is chosen for reliable measurement. The ratio y/δ is the important result. Geometric similarity alone does not guarantee correct relative stiffness.",
+        "ar": "في النموذج غير المباشر نختار سعة تشوه يسهل قياسها؛ النتيجة المهمة هي y/δ. التشابه الهندسي وحده لا يضمن صحة نسب الصلابة."
+      },
+      "formula": "ηR=y_m/δ_m",
+      "symbols": {
+        "en": "ηR is a reaction influence ordinate; ym is signed model displacement under a potential load; δm is imposed translation at the released reaction.",
+        "ar": "ηR إحداثي تأثير رد فعل، وym إزاحة النموذج الجبرية عند حمل محتمل، وδm إزاحة التحرير المفروضة عند رد الفعل."
+      },
+      "assumptions": {
+        "en": "An indirect, small-displacement model of the released structure with matching relative stiffnesses, geometry and restraints. Model movements are normalized, not literal predictions of prototype deflection.",
+        "ar": "نموذج غير مباشر صغير الإزاحات للمنشأ المحرر مع تماثل الهندسة والقيود ونسب الصلابة. حركات النموذج مطبعة وليست تنبؤاً حرفياً بترخيم الأصل."
+      },
+      "example": {
+        "en": "Authored model test: repeat the experiment with a 50 mm release instead of 100 mm.",
+        "ar": "تجربة نموذج مؤلفة: أعد التجربة بتحرير 50 mm بدلاً من 100 mm."
+      },
+      "calculation": {
+        "en": "If a point reading changes from20 to10 mm, both normalized ordinates equal0.2.",
+        "ar": "إذا تغيرت قراءة نقطة من20 إلى10 mm، فإن الإحداثي المطبع في الحالتين0.2."
+      },
+      "interpret": {
+        "en": "Agreement after normalization checks linearity. It does not verify that the supports or relative EI were modelled correctly.",
+        "ar": "توافق النسب بعد التطبيع يفحص الخطية، لكنه لا يثبت صحة المساند أو نسب EI في النموذج."
+      },
+      "check": {
+        "prompt": {
+          "en": "What does an indirect model primarily give?",
+          "ar": "ماذا يعطي النموذج غير المباشر أساساً؟"
+        },
+        "answer": {
+          "en": "A normalized influence shape for one released action.",
+          "ar": "شكل تأثير مطبع لفعل محرر واحد."
+        }
+      },
+      "diagram": "model",
+      "experiment": "model",
+      "concepts": [
+        "mb-method"
+      ],
+      "sources": [
+        {
+          "doc": "12",
+          "page": 2,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 3,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mb-scale",
+      "title": {
+        "en": "Scale the length, then the area",
+        "ar": "قيّس الطول ثم المساحة"
+      },
+      "predict": {
+        "en": "If prototype/model length ratio is20, does a displacement-diagram area scale by20 or400 under geometric shape scaling?",
+        "ar": "إذا كانت نسبة طول الأصل إلى النموذج20، فهل تتضاعف مساحة مخطط الإزاحة20 أم400 وفق التشابه الهندسي؟"
+      },
+      "options": [
+        {
+          "en": "20.",
+          "ar": "20."
+        },
+        {
+          "en": "400, because both diagram axes scale.",
+          "ar": "400، لأن كلا محوري المخطط يتغيران."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "A model distance and its geometrically corresponding imposed displacement both gain a factor S. Their product, an unnormalized displacement area, gains S².",
+        "ar": "تكتسب مسافة النموذج وإزاحته المفروضة المناظرة هندسياً معامل S. يكتسب حاصل ضربهما، أي مساحة مخطط الإزاحة غير المطبع، معامل S²."
+      },
+      "explain": {
+        "en": "For a reaction line, normalization removes one S: η remains dimensionless, but its area along the prototype is S times the model’s normalized area. Do not multiply a dimensionless ordinate by S again.",
+        "ar": "في خط رد الفعل يلغي التطبيع أحد معاملي S؛ يبقى η بلا أبعاد وتصبح مساحة الخط على الأصل S مرة المساحة المطبعة للنموذج. لا تضرب الإحداثي عديم الأبعاد في S مرة أخرى."
+      },
+      "formula": "S=Lp/Lm; δp=Sδm; Ap=S²Am; ∫η dxp=S Am/δm",
+      "symbols": {
+        "en": "S is dimensionless. Am is a signed model displacement area in mm² if both axes use mm. Convert the resulting length to metres before multiplying by kN/m.",
+        "ar": "S بلا أبعاد. Am مساحة إزاحة النموذج الجبرية بوحدة mm² إذا كان المحوران بالملليمتر. حوّل الطول الناتج إلى متر قبل الضرب في kN/m."
+      },
+      "assumptions": {
+        "en": "An indirect, small-displacement model of the released structure with matching relative stiffnesses, geometry and restraints. Model movements are normalized, not literal predictions of prototype deflection.",
+        "ar": "نموذج غير مباشر صغير الإزاحات للمنشأ المحرر مع تماثل الهندسة والقيود ونسب الصلابة. حركات النموذج مطبعة وليست تنبؤاً حرفياً بترخيم الأصل."
+      },
+      "example": {
+        "en": "Authored lobe contribution: S=20, Am=2000 mm², imposed δm=100 mm.",
+        "ar": "مساهمة فص مؤلفة: S=20 وAm=2000 mm² وإزاحة مفروضة δm=100 mm."
+      },
+      "calculation": {
+        "en": "Prototype normalized area=20×2000/100=400 mm=0.4 m. Under w=10 kN/m its reaction contribution is +4 kN.",
+        "ar": "مساحة التأثير المطبعة في الأصل=20×2000/100=400 mm=0.4 m. تحت w=10 kN/m تساهم في رد الفعل بمقدار +4 kN."
+      },
+      "interpret": {
+        "en": "This is one loaded lobe’s contribution; sum the other loaded lobes and point loads to obtain the full reaction.",
+        "ar": "هذه مساهمة فص محمل واحد؛ اجمع بقية الفصوص والأحمال المركزة المحملة للحصول على رد الفعل الكامل."
+      },
+      "check": {
+        "prompt": {
+          "en": "What would happen if Am were −2000 mm²?",
+          "ar": "ماذا يحدث إذا كانت Am=−2000 mm²؟"
+        },
+        "answer": {
+          "en": "The same calculation gives a −4 kN contribution.",
+          "ar": "يعطي الحساب نفسه مساهمة −4 kN."
+        }
+      },
+      "diagram": "model",
+      "experiment": "model",
+      "concepts": [
+        "mb-scale"
+      ],
+      "sources": [
+        {
+          "doc": "12",
+          "page": 2,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 3,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 6,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mb-simpson",
+      "title": {
+        "en": "Count intervals before pressing calculate",
+        "ar": "عد الفترات قبل الحساب"
+      },
+      "predict": {
+        "en": "Composite Simpson’s one-third rule needs an even number of intervals or readings?",
+        "ar": "هل تتطلب قاعدة سمبسون المركبة ثلثية الأجزاء عدداً زوجياً من الفترات أم القراءات؟"
+      },
+      "options": [
+        {
+          "en": "An even number of intervals; hence an odd number of readings.",
+          "ar": "عدداً زوجياً من الفترات، أي فردياً من القراءات."
+        },
+        {
+          "en": "An even number of readings.",
+          "ar": "عدداً زوجياً من القراءات."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Sample the signed shape at equally spaced stations. End readings get weight1; interior readings alternate4 and2. Never replace a negative reading by its magnitude.",
+        "ar": "خذ قراءات جبرية للشكل عند محطات متساوية التباعد. وزن الطرفين1 والأوزان الداخلية تتناوب4 و2. لا تستبدل القراءة السالبة بمقدارها."
+      },
+      "explain": {
+        "en": "Use Simpson only where spacing and interval parity fit. Split at discontinuities and changes of spacing. An absent reading is not zero; interpolate only with a justified method or obtain the missing measurement.",
+        "ar": "استعمل سمبسون عندما يتحقق تساوي المسافات وزوجية الفترات. قسم المجال عند الانقطاعات وتغير التباعد. القراءة الغائبة ليست صفراً؛ استكملها بطريقة مبررة أو أعد القياس."
+      },
+      "formula": "Am=(h/3)[y0+4y1+2y2+4y3+…+yn]",
+      "symbols": {
+        "en": "h is station spacing in model mm; yi are signed model mm. The result is mm². n must be even.",
+        "ar": "h تباعد المحطات في النموذج بالملليمتر وyi قراءات جبرية بالملليمتر. الناتج mm² ويجب أن يكون n زوجياً."
+      },
+      "assumptions": {
+        "en": "An indirect, small-displacement model of the released structure with matching relative stiffnesses, geometry and restraints. Model movements are normalized, not literal predictions of prototype deflection.",
+        "ar": "نموذج غير مباشر صغير الإزاحات للمنشأ المحرر مع تماثل الهندسة والقيود ونسب الصلابة. حركات النموذج مطبعة وليست تنبؤاً حرفياً بترخيم الأصل."
+      },
+      "example": {
+        "en": "Authored lobe: y=[0,10,20,10,0] mm, h=50 mm.",
+        "ar": "فص مؤلف: y=[0,10,20,10,0] mm وh=50 mm."
+      },
+      "calculation": {
+        "en": "Am=(50/3)[0+40+40+40+0]=2000 mm². Four equal intervals satisfy Simpson’s requirement.",
+        "ar": "Am=(50/3)[0+40+40+40+0]=2000 mm². الفترات الأربع المتساوية تحقق شرط سمبسون."
+      },
+      "interpret": {
+        "en": "The area estimates the signed displacement shape, not the physical area of the steel or timber model.",
+        "ar": "تقدّر المساحة شكل الإزاحة الجبري، وليست مساحة مادة الفولاذ أو الخشب في النموذج."
+      },
+      "check": {
+        "prompt": {
+          "en": "Five readings create how many intervals?",
+          "ar": "كم فترة تعطي خمس قراءات؟"
+        },
+        "answer": {
+          "en": "Four intervals.",
+          "ar": "أربع فترات."
+        }
+      },
+      "diagram": "model",
+      "experiment": "model",
+      "concepts": [
+        "mb-simpson"
+      ],
+      "sources": [
+        {
+          "doc": "12",
+          "page": 5,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mb-work",
+      "title": {
+        "en": "Add the loads that do work",
+        "ar": "اجمع الأحمال التي تبذل شغلاً"
+      },
+      "predict": {
+        "en": "Should a point load over a negative model displacement add positively to an upward reaction?",
+        "ar": "هل يضيف حمل مركز عند إزاحة نموذج سالبة مساهمة موجبة لرد فعل لأعلى؟"
+      },
+      "options": [
+        {
+          "en": "No; retain its negative influence contribution.",
+          "ar": "لا؛ احتفظ بمساهمة تأثيره السالبة."
+        },
+        {
+          "en": "Yes; real downward loads always add positive reactions everywhere.",
+          "ar": "نعم؛ تضيف الأحمال الواقعية لأسفل ردود فعل موجبة في كل مكان."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A point load samples one displacement ratio. A UDL samples a signed area ratio. Add both using a common prototype length unit.",
+        "ar": "الحمل المركز يأخذ نسبة إزاحة نقطة، والحمل الموزع يأخذ نسبة مساحة جبرية. اجمع الاثنين بوحدة طول موحدة للأصل."
+      },
+      "explain": {
+        "en": "The release amplitude belongs in the denominator of every term. Scale only horizontal distances for a reaction influence-area calculation. A common amplitude error can cancel, but relative reading errors do not.",
+        "ar": "تدخل سعة التحرير في مقام كل حد. قيّس المسافات الأفقية فقط عند حساب مساحة خط رد فعل مطبع. قد يختزل خطأ السعة المشترك بينما لا تختزل أخطاء القراءات النسبية."
+      },
+      "formula": "R=ΣPj ym,j/δm + Σwk S Am,k/(1000 δm)",
+      "symbols": {
+        "en": "Use P in kN, w in kN/m, ym and δm in mm, Am in mm². The factor1000 converts mm to m. Signs are those of the selected influence line.",
+        "ar": "استخدم P بوحدة kN وw بوحدة kN/m وym وδm بالملليمتر وAm بوحدة mm². يحوّل عامل1000 من mm إلى m. تتبع الإشارات خط التأثير المختار."
+      },
+      "assumptions": {
+        "en": "An indirect, small-displacement model of the released structure with matching relative stiffnesses, geometry and restraints. Model movements are normalized, not literal predictions of prototype deflection.",
+        "ar": "نموذج غير مباشر صغير الإزاحات للمنشأ المحرر مع تماثل الهندسة والقيود ونسب الصلابة. حركات النموذج مطبعة وليست تنبؤاً حرفياً بترخيم الأصل."
+      },
+      "example": {
+        "en": "Authored contribution sum: S20, δ100 mm, positive area2000 mm² under w10, and P30 kN at reading −10 mm.",
+        "ar": "جمع مساهمات مؤلف: S20 وδ100 mm ومساحة موجبة2000 mm² تحت w10 وحمل P30 kN عند قراءة−10 mm."
+      },
+      "calculation": {
+        "en": "UDL contribution=4 kN; point contribution=30×(−10)/100=−3 kN. Total of these loaded regions=+1 kN.",
+        "ar": "مساهمة الحمل الموزع4 kN، والمركز30×(−10)/100=−3 kN. مجموع هذه المناطق المحملة+1 kN."
+      },
+      "interpret": {
+        "en": "A small total can result from cancellation of large contributions, making sign and measurement errors especially important.",
+        "ar": "قد ينتج مجموع صغير عن إلغاء مساهمات كبيرة بعضها لبعض؛ لذلك تصبح أخطاء الإشارة والقياس مهمة جداً."
+      },
+      "check": {
+        "prompt": {
+          "en": "If the negative point load is removed, what remains in this example?",
+          "ar": "إذا أزلنا الحمل المركز السالب التأثير، ماذا يبقى في المثال؟"
+        },
+        "answer": {
+          "en": "The +4 kN UDL contribution.",
+          "ar": "مساهمة الحمل الموزع +4 kN."
+        }
+      },
+      "diagram": "model",
+      "experiment": "model",
+      "concepts": [
+        "mb-work"
+      ],
+      "sources": [
+        {
+          "doc": "12",
+          "page": 6,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mb-equilibrium",
+      "title": {
+        "en": "Return from the lab to the free-body diagram",
+        "ar": "عد من المختبر إلى الجسم الحر"
+      },
+      "predict": {
+        "en": "Does measuring one reaction determine all remaining reactions of every continuous beam by equilibrium alone?",
+        "ar": "هل يكفي قياس رد فعل واحد لتحديد جميع ردود أي كمرة مستمرة بالاتزان وحده؟"
+      },
+      "options": [
+        {
+          "en": "Yes; every beam has only two unknowns.",
+          "ar": "نعم؛ لكل كمرة مجهولان فقط."
+        },
+        {
+          "en": "No; count the remaining independent unknowns and equations.",
+          "ar": "لا؛ عد المجهولات المتبقية والمعادلات المستقلة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Use model readings for enough independent redundant actions, then use statics to recover what remains. Once reactions are known, sweep from left to right to draw shear and moment.",
+        "ar": "استعمل قراءات النموذج لعدد كاف من الأفعال الزائدة المستقلة ثم استعمل الاستاتيكا للباقي. بعد معرفة الردود، تحرك من اليسار لليمين لرسم القص والعزم."
+      },
+      "explain": {
+        "en": "A continuous beam can retain more unknown reactions than global equilibrium can determine. Do not claim a complete solution from one measured response unless the remaining system is determinate.",
+        "ar": "قد تبقى في الكمرة المستمرة ردود أكثر مما يحدده الاتزان العام. لا تدّع حلاً كاملاً من استجابة مقاسة واحدة إلا إذا أصبح الباقي محدداً استاتيكياً."
+      },
+      "formula": "ΣFy=0; ΣM=0; dM/dx=V",
+      "symbols": {
+        "en": "R and V are forces; M is moment. A concentrated load causes a shear jump; absent a concentrated couple, internal moment stays continuous.",
+        "ar": "R وV قوتان وM عزم. الحمل المركز يسبب قفزة قص؛ وفي غياب عزم مركز يبقى العزم الداخلي متصلاً."
+      },
+      "assumptions": {
+        "en": "An indirect, small-displacement model of the released structure with matching relative stiffnesses, geometry and restraints. Model movements are normalized, not literal predictions of prototype deflection.",
+        "ar": "نموذج غير مباشر صغير الإزاحات للمنشأ المحرر مع تماثل الهندسة والقيود ونسب الصلابة. حركات النموذج مطبعة وليست تنبؤاً حرفياً بترخيم الأصل."
+      },
+      "example": {
+        "en": "Authored determinate check: simple beam L10, downward P30 at x4; model reaction ordinate at A is0.6.",
+        "ar": "تحقق مؤلف محدد استاتيكياً: كمرة بسيطة L10 وحمل P30 لأسفل عند x4؛ إحداثي رد A المقاس بالنموذج0.6."
+      },
+      "calculation": {
+        "en": "RA=30×0.6=18 kN; RB=30−18=12 kN. M under load=18×4=72 kN·m. Right segment gives12×6=72 too.",
+        "ar": "RA=30×0.6=18 kN؛ RB=30−18=12 kN. العزم تحت الحمل18×4=72 kN·m، ومن اليمين12×6=72 أيضاً."
+      },
+      "interpret": {
+        "en": "Matching the two section cuts is a local check beyond a global reaction sum. Both are needed to trust a final diagram.",
+        "ar": "توافق القطعين تحقق موضعي يتجاوز جمع ردود الأفعال العام؛ تحتاجهما معاً للثقة بالمخطط النهائي."
+      },
+      "check": {
+        "prompt": {
+          "en": "For this example, what shear jump occurs at x4?",
+          "ar": "في هذا المثال، ما قفزة القص عند x4؟"
+        },
+        "answer": {
+          "en": "A downward jump of30 kN: +18 to−12 kN.",
+          "ar": "قفزة لأسفل30 kN: من+18 إلى−12 kN."
+        }
+      },
+      "diagram": "model",
+      "experiment": "model",
+      "concepts": [
+        "mb-equilibrium"
+      ],
+      "sources": [
+        {
+          "doc": "12",
+          "page": 6,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 7,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mb-quality",
+      "title": {
+        "en": "Interrogate the measurements, not just the calculator",
+        "ar": "افحص القياسات لا الآلة الحاسبة فقط"
+      },
+      "predict": {
+        "en": "A printed result balances total vertical force. Does that alone prove all model readings and reactions are correct?",
+        "ar": "نتيجة مطبوعة تحقق مجموع القوى الرأسية. هل يثبت ذلك وحده صحة القراءات وجميع الردود؟"
+      },
+      "options": [
+        {
+          "en": "Yes; one equilibrium sum proves everything.",
+          "ar": "نعم؛ معادلة اتزان واحدة تثبت كل شيء."
+        },
+        {
+          "en": "No; signs, moments, compatibility and reading consistency still need checks.",
+          "ar": "لا؛ ما زالت الإشارات والعزوم والتوافق واتساق القراءات بحاجة لفحص."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Repeat a measured shape at another release amplitude, compare normalized readings, check support zeroes and evaluate equilibrium residuals. Keep missing data visible.",
+        "ar": "أعد قياس الشكل بسعة تحرير مختلفة وقارن النسب وافحص أصفار المساند وبواقي الاتزان. أبق البيانات المفقودة واضحة."
+      },
+      "explain": {
+        "en": "The lecture beam model has a printed area inconsistency in a later reaction expression. The recent tutorial model has a different loading. Do not transplant a lecture’s reaction into it.",
+        "ar": "يتضمن نموذج الكمرة بالمحاضرة عدم اتساق مطبوعاً في مساحة ضمن تعبير رد فعل لاحق. ويختلف تحميل نموذج التمرين الحديث؛ لا تنقل رد فعل المحاضرة إليه."
+      },
+      "formula": "rF=ΣR−ΣP−∫w dx; rM=ΣMaboutO",
+      "symbols": {
+        "en": "rF and rM are equilibrium residuals; a normalized reading η=y/δ also carries measurement uncertainty. A complete model must provide enough independent releases.",
+        "ar": "rF وrM بواقي اتزان القوى والعزوم؛ كما تحمل القراءة المطبعة η=y/δ عدم يقين قياس. يجب أن يوفر النموذج تحريرات مستقلة كافية."
+      },
+      "assumptions": {
+        "en": "An indirect, small-displacement model of the released structure with matching relative stiffnesses, geometry and restraints. Model movements are normalized, not literal predictions of prototype deflection.",
+        "ar": "نموذج غير مباشر صغير الإزاحات للمنشأ المحرر مع تماثل الهندسة والقيود ونسب الصلابة. حركات النموذج مطبعة وليست تنبؤاً حرفياً بترخيم الأصل."
+      },
+      "example": {
+        "en": "Authored sensitivity: point reading y=20±1 mm; accurately imposed δ=100 mm; P=50 kN.",
+        "ar": "حساسية مؤلفة: قراءة y=20±1 mm وإزاحة تحرير مضبوطة δ=100 mm وحمل P=50 kN."
+      },
+      "calculation": {
+        "en": "η=0.20±0.01; load contribution=10±0.5 kN, before other uncertainty sources.",
+        "ar": "η=0.20±0.01؛ مساهمة الحمل10±0.5 kN قبل بقية مصادر عدم اليقين."
+      },
+      "interpret": {
+        "en": "Report appropriate precision. Six calculator decimals do not turn millimetre readings into exact force measurements.",
+        "ar": "أبلغ بدقة مناسبة. ست منازل عشرية في الحاسبة لا تحول قراءات بالملليمتر إلى قياسات قوى تامة الدقة."
+      },
+      "check": {
+        "prompt": {
+          "en": "If a station reading is blank, may it be entered as zero?",
+          "ar": "إذا كانت قراءة محطة فارغة، هل يجوز إدخال صفر؟"
+        },
+        "answer": {
+          "en": "No. Obtain it or justify a reconstruction and record the uncertainty.",
+          "ar": "لا. احصل عليها أو برر إعادة بنائها وسجل عدم اليقين."
+        }
+      },
+      "diagram": "model",
+      "experiment": "model",
+      "concepts": [
+        "mb-quality"
+      ],
+      "sources": [
+        {
+          "doc": "12",
+          "page": 3,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 6,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "24",
+          "page": 97,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "mb-q1",
+      "concept": "mb-method",
+      "type": "conceptual",
+      "prompt": {
+        "en": "What does indirect spline modelling measure?",
+        "ar": "ماذا تقيس نمذجة الشريحة غير المباشرة؟"
+      },
+      "hints": [
+        {
+          "en": "The structure is released for one selected action.",
+          "ar": "يحرر المنشأ لفعل مختار واحد."
+        },
+        {
+          "en": "Reaction-type normalized ordinates are displacement ratios; keep numerator and denominator units identical.",
+          "ar": "إحداثيات تأثير رد الفعل المطبعة نسب إزاحات؛ وحّد وحدتي البسط والمقام."
+        }
+      ],
+      "solution": {
+        "en": "A normalized deformation shape representing an influence line, not automatically the prototype’s actual deflection.",
+        "ar": "شكل تشوه مطبع يمثل خط تأثير، وليس تلقائياً الترخيم الفعلي للأصل."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 2,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 3,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "An influence-line shape",
+          "ar": "شكل خط تأثير"
+        },
+        {
+          "en": "Every prototype stress without similitude rules",
+          "ar": "كل إجهادات الأصل دون قوانين تشابه"
+        }
+      ],
+      "correct": 0
+    },
+    {
+      "id": "mb-q2",
+      "concept": "mb-method",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: model point reading10 mm under release50 mm. Find its reaction ordinate.",
+        "ar": "مؤلف: قراءة نقطة النموذج10 mm تحت تحرير50 mm. أوجد إحداثي رد الفعل."
+      },
+      "hints": [
+        {
+          "en": "Divide reading by release.",
+          "ar": "اقسم القراءة على التحرير."
+        },
+        {
+          "en": "Use wSAm/(1000δm); S is dimensionless and model readings are millimetres.",
+          "ar": "استخدم wSAm/(1000δm)؛ S بلا أبعاد والقراءات بالملليمتر."
+        }
+      ],
+      "solution": {
+        "en": "10/50=0.2, dimensionless.",
+        "ar": "10/50=0.2، بلا أبعاد."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 2,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 3,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "expected": 0.2,
+      "tolerance": 0.001
+    },
+    {
+      "id": "mb-q3",
+      "concept": "mb-scale",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: S20, Am2000 mm² and δm100 mm. Find prototype normalized influence area in metres.",
+        "ar": "مؤلف: S20 وAm2000 mm² وδm100 mm. أوجد مساحة التأثير المطبعة للأصل بالمتر."
+      },
+      "hints": [
+        {
+          "en": "SAm/δm gives mm; divide by1000.",
+          "ar": "يعطي SAm/δm ملليمتراً؛ اقسم على1000."
+        },
+        {
+          "en": "A model area divided by release displacement gives a model length; convert the scaled length to metres.",
+          "ar": "قسمة مساحة النموذج على إزاحة التحرير تعطي طولًا؛ حوّل الطول المكبّر إلى متر."
+        }
+      ],
+      "solution": {
+        "en": "20×2000/(100×1000)=0.4 m.",
+        "ar": "20×2000/(100×1000)=0.4 m."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 2,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 3,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 6,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "expected": 0.4,
+      "tolerance": 0.001,
+      "unit": "m"
+    },
+    {
+      "id": "mb-q4",
+      "concept": "mb-scale",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored geometric shape scaling: S=15 and Am=120 mm². Find unnormalized Ap in mm².",
+        "ar": "تشابه هندسي مؤلف: S=15 وAm=120 mm². أوجد Ap غير المطبعة بوحدة mm²."
+      },
+      "hints": [
+        {
+          "en": "Both diagram axes scale by15.",
+          "ar": "يتضاعف كلا محوري المخطط بمعامل15."
+        },
+        {
+          "en": "For geometrically similar unnormalized diagrams, Ap=S²Am.",
+          "ar": "للمخططات غير المطبعة والمتشابهة هندسيًا: Ap=S²Am."
+        }
+      ],
+      "solution": {
+        "en": "Ap=S²Am=225×120=27000 mm². This is displacement area, not reaction influence area.",
+        "ar": "Ap=S²Am=225×120=27000 mm². هذه مساحة إزاحة وليست مساحة تأثير رد فعل مطبعة."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 2,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 3,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 6,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "expected": 27000,
+      "tolerance": 0.01,
+      "unit": "mm²"
+    },
+    {
+      "id": "mb-q5",
+      "concept": "mb-simpson",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored y=[0,10,20,10,0] mm at h50 mm. Find signed Simpson area.",
+        "ar": "قراءات مؤلفة y=[0,10,20,10,0] mm بتباعد h50 mm. أوجد مساحة سمبسون الجبرية."
+      },
+      "hints": [
+        {
+          "en": "Weights are1,4,2,4,1.",
+          "ar": "الأوزان1,4,2,4,1."
+        },
+        {
+          "en": "Write A=(50/3)[0+4×10+2×20+4×10+0].",
+          "ar": "اكتب A=(50/3)[0+4×10+2×20+4×10+0]."
+        }
+      ],
+      "solution": {
+        "en": "(50/3)(0+40+40+40+0)=2000 mm².",
+        "ar": "(50/3)(0+40+40+40+0)=2000 mm²."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 5,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "expected": 2000,
+      "tolerance": 0.01,
+      "unit": "mm²"
+    },
+    {
+      "id": "mb-q6",
+      "concept": "mb-simpson",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Which dataset fits composite Simpson’s one-third rule directly?",
+        "ar": "أي بيانات تناسب مباشرة قاعدة سمبسون المركبة ثلثية الأجزاء؟"
+      },
+      "hints": [
+        {
+          "en": "Count equal intervals, not only readings.",
+          "ar": "عد الفترات المتساوية لا القراءات فقط."
+        },
+        {
+          "en": "Composite Simpson requires an even number of equal-width intervals.",
+          "ar": "تحتاج قاعدة سمبسون المركبة إلى عدد زوجي من الفترات المتساوية."
+        }
+      ],
+      "solution": {
+        "en": "Five readings at equal spacing create four intervals, an even number.",
+        "ar": "خمس قراءات متساوية التباعد تعطي أربع فترات وهو عدد زوجي."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 5,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Five equally spaced readings",
+          "ar": "خمس قراءات متساوية التباعد"
+        },
+        {
+          "en": "Four arbitrarily spaced readings",
+          "ar": "أربع قراءات عشوائية التباعد"
+        }
+      ],
+      "correct": 0
+    },
+    {
+      "id": "mb-q7",
+      "concept": "mb-work",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: S20, δ100 mm, area2000 mm² under w10 kN/m; P30 kN at reading−10 mm. Find summed contribution.",
+        "ar": "مؤلف: S20 وδ100 mm ومساحة2000 mm² تحت w10 kN/m، وحمل P30 kN عند قراءة−10 mm. أوجد مجموع المساهمات."
+      },
+      "hints": [
+        {
+          "en": "UDL gives+4 kN; preserve the point reading sign.",
+          "ar": "الموزع يعطي+4 kN؛ احتفظ بإشارة قراءة الحمل المركز."
+        },
+        {
+          "en": "Add +4 from the UDL to P y/δ=30(−10)/100.",
+          "ar": "اجمع مساهمة الحمل المنتظم+4 مع P y/δ=30(−10)/100."
+        }
+      ],
+      "solution": {
+        "en": "4+30(−10/100)=+1 kN.",
+        "ar": "4+30(−10/100)=+1 kN."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 6,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "expected": 1,
+      "tolerance": 0.01,
+      "unit": "kN"
+    },
+    {
+      "id": "mb-q8",
+      "concept": "mb-work",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: P60 kN acts where y=−9.4 mm and releaseδ=100 mm. Find its reaction contribution.",
+        "ar": "مؤلف: يؤثر P60 kN حيث y=−9.4 mm وإزاحة التحريرδ=100 mm. أوجد مساهمته في رد الفعل."
+      },
+      "hints": [
+        {
+          "en": "A point load uses a displacement ratio, with no geometric S multiplier.",
+          "ar": "الحمل المركز يستعمل نسبة إزاحات دون معامل مقياس هندسي S إضافي."
+        },
+        {
+          "en": "Keep the minus sign: R=P y/δ=60(−9.4)/100.",
+          "ar": "احتفظ بالسالب: R=P y/δ=60(−9.4)/100."
+        }
+      ],
+      "solution": {
+        "en": "60×(−9.4)/100=−5.64 kN.",
+        "ar": "60×(−9.4)/100=−5.64 kN."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 6,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "expected": -5.64,
+      "tolerance": 0.001,
+      "unit": "kN"
+    },
+    {
+      "id": "mb-q9",
+      "concept": "mb-equilibrium",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored simple L10 beam: P30 kN at4 m, RA18 kN. Find RB upward.",
+        "ar": "كمرة بسيطة مؤلفة L10: P30 kN عند4 m وRA18 kN. أوجد RB لأعلى."
+      },
+      "hints": [
+        {
+          "en": "Use vertical equilibrium.",
+          "ar": "استخدم الاتزان الرأسي."
+        },
+        {
+          "en": "Write RA+RB=P before solving for RB.",
+          "ar": "اكتب RA+RB=P قبل إيجاد RB."
+        }
+      ],
+      "solution": {
+        "en": "RB=30−18=12 kN. A moment check gives12×10=30×4.",
+        "ar": "RB=30−18=12 kN. يفحص العزم12×10=30×4."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 6,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 7,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "expected": 12,
+      "tolerance": 0.01,
+      "unit": "kN"
+    },
+    {
+      "id": "mb-q10",
+      "concept": "mb-equilibrium",
+      "type": "mixed",
+      "prompt": {
+        "en": "Same simple beam: find internal moment immediately under the30 kN load at4 m.",
+        "ar": "الكمرة البسيطة نفسها: أوجد العزم الداخلي تحت حمل30 kN مباشرة عند4 m."
+      },
+      "hints": [
+        {
+          "en": "Use either side of the cut.",
+          "ar": "استخدم أياً من جانبي القطع."
+        },
+        {
+          "en": "Immediately under the point force, use M=RA×4 on the left free body.",
+          "ar": "مباشرة تحت القوة استخدم M=RA×4 من الجسم الحر الأيسر."
+        }
+      ],
+      "solution": {
+        "en": "M=RA×4=18×4=72 kN·m, also RB×6=12×6=72.",
+        "ar": "M=RA×4=18×4=72 kN·m، وكذلك RB×6=12×6=72."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 6,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 7,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "expected": 72,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "mb-q11",
+      "concept": "mb-quality",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A model table has a blank entry. What is the defensible action?",
+        "ar": "يتضمن جدول النموذج خانة فارغة. ما التصرف المبرر؟"
+      },
+      "hints": [
+        {
+          "en": "Blank does not mean physically zero.",
+          "ar": "الفراغ لا يعني صفراً فيزيائياً."
+        },
+        {
+          "en": "Recover the missing measurement or retain an explicit uncertainty; never insert an invented zero.",
+          "ar": "استرجع القياس المفقود أو احتفظ بعدم اليقين؛ لا تخترع صفرًا."
+        }
+      ],
+      "solution": {
+        "en": "Obtain the missing reading or justify a reconstruction and record uncertainty; do not silently enter zero.",
+        "ar": "احصل على القراءة أو برر إعادة بنائها وسجل عدم اليقين؛ لا تدخل صفراً بصمت."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 3,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 6,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "24",
+          "page": 97,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Always enter zero",
+          "ar": "أدخل صفراً دائماً"
+        },
+        {
+          "en": "Obtain or justify the missing reading",
+          "ar": "احصل على القراءة أو برر استكمالها"
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "mb-q12",
+      "concept": "mb-quality",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: y20±1 mm, δ100 mm exact, P50 kN. What is the force contribution uncertainty magnitude in kN?",
+        "ar": "مؤلف: y20±1 mm وδ100 mm مضبوطة وP50 kN. ما مقدار عدم يقين مساهمة القوة بوحدة kN؟"
+      },
+      "hints": [
+        {
+          "en": "Propagate the ±1 mm through P y/δ.",
+          "ar": "مرر ±1 mm عبر P y/δ."
+        },
+        {
+          "en": "With exact P and δ, |ΔR|=|P/δ|×|Δy|.",
+          "ar": "مع دقة P وδ: |ΔR|=|P/δ|×|Δy|."
+        }
+      ],
+      "solution": {
+        "en": "50×1/100=0.5 kN, so the contribution is10±0.5 kN before other uncertainties.",
+        "ar": "50×1/100=0.5 kN، إذن المساهمة10±0.5 kN قبل بقية مصادر عدم اليقين."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 3,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 6,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "24",
+          "page": 97,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "expected": 0.5,
+      "tolerance": 0.001,
+      "unit": "kN"
+    }
+  ],
+  "cards": [
+    {
+      "id": "mb-c1",
+      "concept": "mb-method",
+      "kind": "decision",
+      "q": {
+        "en": "Direct and indirect model: difference?",
+        "ar": "ما الفرق بين النموذج المباشر وغير المباشر؟"
+      },
+      "a": {
+        "en": "Direct needs physical similitude laws; indirect measures a released influence shape.",
+        "ar": "المباشر يحتاج قوانين تشابه فيزيائي؛ وغير المباشر يقيس شكل تأثير محرراً."
+      }
+    },
+    {
+      "id": "mb-c2",
+      "concept": "mb-method",
+      "kind": "misconception",
+      "q": {
+        "en": "Is the measured spline deflection automatically prototype service deflection?",
+        "ar": "هل ترخيم الشريحة المقاس هو تلقائياً ترخيم خدمة الأصل؟"
+      },
+      "a": {
+        "en": "No. In an indirect model its amplitude is chosen and normalized.",
+        "ar": "لا. في النموذج غير المباشر تختار السعة ثم تطبّعها."
+      }
+    },
+    {
+      "id": "mb-c3",
+      "concept": "mb-scale",
+      "kind": "interpretation",
+      "q": {
+        "en": "S=Lp/Lm. How do geometric displacement and displacement area scale?",
+        "ar": "S=Lp/Lm. كيف تتغير الإزاحة الهندسية ومساحتها؟"
+      },
+      "a": {
+        "en": "δp=Sδm; Ap=S²Am, for geometrically corresponding released shapes.",
+        "ar": "δp=Sδm وAp=S²Am للأشكال المحررة المتناظرة هندسياً."
+      }
+    },
+    {
+      "id": "mb-c4",
+      "concept": "mb-scale",
+      "kind": "misconception",
+      "q": {
+        "en": "Does a dimensionless reaction ordinate gain an S multiplier?",
+        "ar": "هل يضرب إحداثي رد فعل بلا أبعاد في S؟"
+      },
+      "a": {
+        "en": "No. y/δ is unchanged; horizontal integration length scales by S.",
+        "ar": "لا. تبقى y/δ ثابتة؛ طول التكامل الأفقي هو الذي يتغير بمعامل S."
+      }
+    },
+    {
+      "id": "mb-c5",
+      "concept": "mb-simpson",
+      "kind": "decision",
+      "q": {
+        "en": "Simpson weights for five readings?",
+        "ar": "ما أوزان سمبسون لخمس قراءات؟"
+      },
+      "a": {
+        "en": "1,4,2,4,1, multiplied by h/3. Equal spacing and four intervals are required.",
+        "ar": "1,4,2,4,1 مضروبة في h/3، مع تساوي التباعد وأربع فترات."
+      }
+    },
+    {
+      "id": "mb-c6",
+      "concept": "mb-simpson",
+      "kind": "misconception",
+      "q": {
+        "en": "May negative model ordinates be replaced by magnitudes?",
+        "ar": "هل يجوز استبدال قراءات النموذج السالبة بمقاديرها المطلقة؟"
+      },
+      "a": {
+        "en": "No. That destroys signed work and gives wrong reactions.",
+        "ar": "لا. يفسد ذلك الشغل الجبري ويعطي ردوداً خاطئة."
+      }
+    },
+    {
+      "id": "mb-c7",
+      "concept": "mb-work",
+      "kind": "calculation",
+      "q": {
+        "en": "UDL model contribution with mm readings?",
+        "ar": "ما مساهمة الحمل الموزع عندما تقاس القراءات بالملليمتر؟"
+      },
+      "a": {
+        "en": "w S Am/(1000 δm) in kN when w is kN/m and Am is mm².",
+        "ar": "w S Am/(1000 δm) بوحدة kN عندما تكون w بوحدة kN/m وAm بوحدة mm²."
+      }
+    },
+    {
+      "id": "mb-c8",
+      "concept": "mb-work",
+      "kind": "calculation",
+      "q": {
+        "en": "Point contribution from P30, y−10, δ100?",
+        "ar": "ما مساهمة نقطة عند P30 وy−10 وδ100؟"
+      },
+      "a": {
+        "en": "30×(−10)/100=−3 kN. No extra S factor.",
+        "ar": "30×(−10)/100=−3 kN دون معامل S إضافي."
+      }
+    },
+    {
+      "id": "mb-c9",
+      "concept": "mb-equilibrium",
+      "kind": "decision",
+      "q": {
+        "en": "After one reaction is measured, can equilibrium always solve the rest?",
+        "ar": "بعد قياس رد واحد، هل يحل الاتزان الباقي دائماً؟"
+      },
+      "a": {
+        "en": "No. Count unknowns and independent equations; more releases may be needed.",
+        "ar": "لا. عد المجهولات والمعادلات المستقلة؛ قد تحتاج تحريرات إضافية."
+      }
+    },
+    {
+      "id": "mb-c10",
+      "concept": "mb-equilibrium",
+      "kind": "interpretation",
+      "q": {
+        "en": "What does a downward point load do to shear and moment?",
+        "ar": "ماذا يفعل الحمل المركز لأسفل بالقص والعزم؟"
+      },
+      "a": {
+        "en": "Shear jumps downward by P; moment remains continuous unless a concentrated couple acts.",
+        "ar": "يقفز القص لأسفل بمقدار P؛ ويظل العزم متصلاً ما لم يوجد عزم مركز."
+      }
+    },
+    {
+      "id": "mb-c11",
+      "concept": "mb-quality",
+      "kind": "decision",
+      "q": {
+        "en": "Three quick model checks?",
+        "ar": "ما ثلاثة فحوص سريعة للنموذج؟"
+      },
+      "a": {
+        "en": "Support conditions, repeatability after normalization, and global force/moment residuals.",
+        "ar": "شروط المساند، وتكرارية القراءات بعد التطبيع، وبواقي اتزان القوى والعزوم العامة."
+      }
+    },
+    {
+      "id": "mb-c12",
+      "concept": "mb-quality",
+      "kind": "misconception",
+      "q": {
+        "en": "Do six decimals guarantee an accurate model reaction?",
+        "ar": "هل تضمن ست منازل عشرية رد فعل نموذجي دقيقاً؟"
+      },
+      "a": {
+        "en": "No. Measurement error, scale accuracy and missing readings control meaningful precision.",
+        "ar": "لا. تتحكم أخطاء القياس ودقة المقياس والقراءات الناقصة في الدقة ذات المعنى."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "12",
+      "page": 2,
+      "filename": "lec 8 Models -.pdf"
+    },
+    {
+      "doc": "12",
+      "page": 3,
+      "filename": "lec 8 Models -.pdf"
+    },
+    {
+      "doc": "12",
+      "page": 5,
+      "filename": "lec 8 Models -.pdf"
+    },
+    {
+      "doc": "12",
+      "page": 6,
+      "filename": "lec 8 Models -.pdf"
+    },
+    {
+      "doc": "24",
+      "page": 97,
+      "filename": "Structure II_019+020Tutorials&solutions.pdf"
+    }
+  ],
+  "videoIds": [
+    "iLVyd3bPQZc",
+    "EsRm3lcGmHc"
+  ]
+}

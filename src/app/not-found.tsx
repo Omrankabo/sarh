@@ -1,0 +1,1 @@
+export default function Missing(){return <main style={{padding:'10vw',fontFamily:'sans-serif'}}><h1>صَرح</h1><p>هذه الصفحة غير موجودة · This page could not be found.</p><a href="/ar">العودة إلى البداية · Go home</a></main>}

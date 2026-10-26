@@ -1,0 +1,1493 @@
+{
+  "id": "ee-interest-context",
+  "family": "ee-foundations",
+  "title": {
+    "en": "Interest, riba and the lecturer’s ethical framework",
+    "ar": "الفائدة والربا والإطار الأخلاقي للمحاضرة"
+  },
+  "summary": {
+    "en": "This is a course-specific theory chapter, not a factor table. Learn the lecture’s classification and reasoning through concrete transactions, while keeping mathematical equivalence separate from a normative judgment.",
+    "ar": "هذا فصل نظري خاص بالمقرر وليس جدول عوامل. افهم تصنيف المحاضرة وحجتها عبر معاملات محددة، وافصل التكافؤ الرياضي عن الحكم المعياري."
+  },
+  "outcomes": [
+    {
+      "en": "Separate a calculation from a judgment",
+      "ar": "افصل الحساب عن الحكم"
+    },
+    {
+      "en": "Riba al-nasi’ah: inspect the loan condition",
+      "ar": "ربا النسيئة: افحص شرط القرض"
+    },
+    {
+      "en": "Riba al-fadl: quantity, kind and delivery",
+      "ar": "ربا الفضل: المقدار والجنس والتسليم"
+    },
+    {
+      "en": "Build a delivery matrix for the contract types",
+      "ar": "ابنِ مصفوفة التسليم لأنواع البيوع"
+    },
+    {
+      "en": "Explain the lecturer’s criticisms as arguments",
+      "ar": "اشرح انتقادات المحاضر بوصفها حججًا"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-powers"
+  ],
+  "concepts": [
+    {
+      "id": "ee-interest-context-s01-concept",
+      "title": {
+        "en": "Separate a calculation from a judgment",
+        "ar": "افصل الحساب عن الحكم"
+      }
+    },
+    {
+      "id": "ee-interest-context-s02-concept",
+      "title": {
+        "en": "Riba al-nasi’ah: inspect the loan condition",
+        "ar": "ربا النسيئة: افحص شرط القرض"
+      }
+    },
+    {
+      "id": "ee-interest-context-s03-concept",
+      "title": {
+        "en": "Riba al-fadl: quantity, kind and delivery",
+        "ar": "ربا الفضل: المقدار والجنس والتسليم"
+      }
+    },
+    {
+      "id": "ee-interest-context-s04-concept",
+      "title": {
+        "en": "Build a delivery matrix for the contract types",
+        "ar": "ابنِ مصفوفة التسليم لأنواع البيوع"
+      }
+    },
+    {
+      "id": "ee-interest-context-s05-concept",
+      "title": {
+        "en": "Explain the lecturer’s criticisms as arguments",
+        "ar": "اشرح انتقادات المحاضر بوصفها حججًا"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-interest-context-s01",
+      "title": {
+        "en": "Separate a calculation from a judgment",
+        "ar": "افصل الحساب عن الحكم"
+      },
+      "predict": {
+        "en": "Does computing a contract’s interest rate endorse the contract?",
+        "ar": "هل حساب معدل العقد إقرار به؟"
+      },
+      "options": [
+        {
+          "en": "No; description and normative evaluation are separate tasks.",
+          "ar": "لا؛ الوصف والتقييم المعياري مهمتان منفصلتان."
+        },
+        {
+          "en": "Yes; using a formula is approval of every modeled contract.",
+          "ar": "نعم؛ استخدام المعادلة إقرار بكل عقد تمثله."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; description and normative evaluation are separate tasks. For this chapter, understanding includes knowing what is a definition, a value judgment or an empirical claim.",
+        "ar": "لا؛ الوصف والتقييم المعياري مهمتان منفصلتان. يشمل فهم الفصل تمييز التعريف والحكم القيمي والادعاء التجريبي."
+      },
+      "explain": {
+        "en": "The second chapter frames economic systems through their treatment of interest. It presents a religious and ethical argument, while later chapters calculate interest-based equivalence as an analytical method. A numerical model can describe what a contract demands without declaring that contract permissible. When answering the theory exam, identify the lecturer’s position, define the transaction and explain the stated reason. Do not turn the lecture’s historical political or wealth-distribution claims into unqualified current statistics.",
+        "ar": "يؤطر الفصل الثاني الأنظمة الاقتصادية من خلال موقفها من الفائدة، ويقدم حجة دينية وأخلاقية، بينما تحسب الفصول اللاحقة التكافؤ القائم على المعدلات كأداة تحليل. يمكن للنموذج وصف التزام عقد دون الحكم بمشروعيته. في الإجابة النظرية سمّ موقف المحاضر وعرف المعاملة وعلل السبب المعروض. لا تحول الادعاءات التاريخية السياسية أو التوزيعية إلى إحصاءات راهنة مطلقة."
+      },
+      "formula": "description of cash flows ≠ normative approval",
+      "symbols": {
+        "en": "A mathematical rate measures a specified change per period; a normative conclusion concerns the transaction and its governing framework.",
+        "ar": "يقيس المعدل الرياضي تغيرًا معينًا في الفترة؛ ويتعلق الحكم المعياري بالمعاملة وإطارها الحاكم."
+      },
+      "assumptions": {
+        "en": "This journey summarizes the supplied lecture’s viewpoint for study; legal/religious classifications must be attributed to that source.",
+        "ar": "تلخص الرحلة منظور المحاضرة للدراسة؛ وتنسب تصنيفاتها الفقهية إلى مصدرها."
+      },
+      "example": {
+        "en": "A statement describes 1000 CU now and 1100 CU in one year.",
+        "ar": "يصف نص 1000 الآن و 1100 بعد سنة."
+      },
+      "calculation": {
+        "en": "The stipulated increase is 100 CU, or 10% of principal. That arithmetic alone is not a ruling on the transaction.",
+        "ar": "الزيادة المشروطة 100 أي 10% من الأصل. ولا يشكل هذا الحساب وحده حكمًا على المعاملة."
+      },
+      "interpret": {
+        "en": "For this chapter, understanding includes knowing what is a definition, a value judgment or an empirical claim.",
+        "ar": "يشمل فهم الفصل تمييز التعريف والحكم القيمي والادعاء التجريبي."
+      },
+      "check": {
+        "prompt": {
+          "en": "An answer quotes an old lecture’s wealth-distribution percentage as a verified fact about today. Is that sound?",
+          "ar": "يورد جواب نسبة توزيع ثروة من محاضرة قديمة حقيقة مؤكدة اليوم. هل يصح؟"
+        },
+        "answer": {
+          "en": "No; attribute the historical lecture claim and do not present it as a current measured statistic.",
+          "ar": "لا؛ انسب الادعاء للمحاضرة القديمة ولا تعرضه قياسًا حاليًا."
+        }
+      },
+      "diagram": "econ-context",
+      "concepts": [
+        "ee-interest-context-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 3,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 4,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 5,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-interest-context-s02",
+      "title": {
+        "en": "Riba al-nasi’ah: inspect the loan condition",
+        "ar": "ربا النسيئة: افحص شرط القرض"
+      },
+      "predict": {
+        "en": "In the lecture’s definition, does a very small stipulated loan increase escape the classification automatically?",
+        "ar": "وفق تعريف المحاضرة، هل تخرج زيادة القرض المشروطة الصغيرة جدًا من التصنيف تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; only a doubled principal counts.",
+          "ar": "نعم؛ لا يدخل إلا تضاعف الأصل."
+        },
+        {
+          "en": "No; size alone is not the defining test in the lecture.",
+          "ar": "لا؛ الحجم وحده ليس اختبار التعريف في المحاضرة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; size alone is not the defining test in the lecture. Classify the contractual condition before discussing the use of the funds.",
+        "ar": "لا؛ الحجم وحده ليس اختبار التعريف في المحاضرة. صنف الشرط التعاقدي قبل مناقشة استخدام الأموال."
+      },
+      "explain": {
+        "en": "The lecture describes riba al-nasi’ah as a stipulated benefit linked to a loan and its delay. It explicitly includes small and large increases and consumption and investment loans; the label is not restricted to very high compounding. Identify what was lent, what must be returned, the time and any stipulated benefit. The lecture also discusses non-cash benefits. Keep that description attributed rather than inventing a threshold from the size of a percentage.",
+        "ar": "تصف المحاضرة ربا النسيئة منفعة مشترطة مرتبطة بالقرض والأجل، وتدرج الزيادة القليلة والكثيرة وقرض الاستهلاك والاستثمار؛ فلا تحصر الوصف في تركيب مرتفع جدًا. حدد المقرض والمردود والأجل والمنفعة المشروطة. وتناقش المحاضرة المنفعة غير النقدية أيضًا. حافظ على نسبة الوصف للمصدر ولا تخترع حدًا من حجم النسبة."
+      },
+      "formula": "stipulated monetary excess = repayment − principal",
+      "symbols": {
+        "en": "Principal and repayment are currency amounts. A non-cash contractual benefit requires a description, not a fabricated cash amount.",
+        "ar": "الأصل والسداد مبالغ نقدية؛ والمنفعة غير النقدية المشروطة توصف ولا تختلق لها قيمة نقدية."
+      },
+      "assumptions": {
+        "en": "Apply the classification stated in chapter 2; do not infer a modern contract’s ruling from an incomplete one-line scenario.",
+        "ar": "طبق تصنيف الفصل الثاني ولا تستنبط حكم عقد معاصر من وصف ناقص."
+      },
+      "example": {
+        "en": "A lecture scenario lends 100 CU with a stipulated repayment of 101.",
+        "ar": "مثال دراسي يقرض 100 مع اشتراط رد 101."
+      },
+      "calculation": {
+        "en": "The stipulated excess is 1 CU. The lecture’s distinction is the condition, not whether the excess looks small.",
+        "ar": "الزيادة المشروطة وحدة واحدة؛ ويتمحور تمييز المحاضرة حول الشرط لا صغر الزيادة."
+      },
+      "interpret": {
+        "en": "Classify the contractual condition before discussing the use of the funds.",
+        "ar": "صنف الشرط التعاقدي قبل مناقشة استخدام الأموال."
+      },
+      "check": {
+        "prompt": {
+          "en": "The lecture compares a consumption loan and a business loan, each carrying a stipulated increase. Which statement matches its definition?",
+          "ar": "تقارن المحاضرة قرض استهلاك وقرض نشاط تجاري، وكلاهما بزيادة مشروطة. ما العبارة المطابقة لتعريفها؟"
+        },
+        "answer": {
+          "en": "The stated definition includes both; purpose alone does not remove the condition.",
+          "ar": "يشمل التعريف المذكور كليهما؛ ولا يزيل الغرض وحده الشرط."
+        }
+      },
+      "diagram": "econ-context",
+      "concepts": [
+        "ee-interest-context-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 7,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 8,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 9,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-interest-context-s03",
+      "title": {
+        "en": "Riba al-fadl: quantity, kind and delivery",
+        "ar": "ربا الفضل: المقدار والجنس والتسليم"
+      },
+      "predict": {
+        "en": "In the lecture’s same-kind wheat examples, does equal market value replace equal measured quantity?",
+        "ar": "في أمثلة قمح الجنس الواحد بالمحاضرة، هل تعوض القيمة السوقية المتساوية تساوي المقدار؟"
+      },
+      "options": [
+        {
+          "en": "No; identify the source’s amount and delivery conditions separately.",
+          "ar": "لا؛ حدد شرطي المقدار والتسليم كلًا على حدة."
+        },
+        {
+          "en": "Yes; any quantities are acceptable if their quoted prices match.",
+          "ar": "نعم؛ تقبل أي كميات إذا تساوت أسعارها."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; identify the source’s amount and delivery conditions separately. Test quantity and delivery independently and name the source’s reason.",
+        "ar": "لا؛ حدد شرطي المقدار والتسليم كلًا على حدة. اختبر المقدار والتسليم مستقلين وسمّ علة المصدر."
+      },
+      "explain": {
+        "en": "For the specified ribawi exchanges in the lecture, price equality is not a substitute for the required quantity and delivery conditions. Its date-quality example recommends selling for money and then buying, rather than directly exchanging unequal quantities of the same category. The exam cases distinguish same-kind commodities from different-kind commodities and immediate delivery from delay. Explain which condition is being tested instead of memorizing a yes/no list detached from the transaction.",
+        "ar": "في مبادلات الأصناف الربوية التي تعرضها المحاضرة، لا يعوض تساوي السعر شروط المقدار والتسليم. ويوجه مثال جودة التمر إلى البيع بالنقد ثم الشراء بدل مبادلة كميات متفاوتة من الجنس نفسه مباشرة. تميز حالات الامتحان الجنس الواحد والمختلف والتقابض والتأجيل. اشرح الشرط المختبر بدل حفظ قائمة نعم ولا منفصلة عن المعاملة."
+      },
+      "formula": "same specified kind: equal amount + immediate exchange (lecture classification)",
+      "symbols": {
+        "en": "Kind, measured amount and delivery time are separate variables; commercial price is a fourth variable.",
+        "ar": "الجنس والمقدار المقاس وزمن التسليم متغيرات منفصلة، والسعر التجاري متغير رابع."
+      },
+      "assumptions": {
+        "en": "This is the source’s simplified commodity framework; do not generalize it to every modern instrument or commodity.",
+        "ar": "هذا إطار المصدر المبسط للأصناف؛ فلا تعممه على كل سلعة أو أداة معاصرة."
+      },
+      "example": {
+        "en": "Two bags of ordinary wheat are exchanged now for two equal-measure bags of better wheat now.",
+        "ar": "كيسان من قمح عادي الآن مقابل كيسين مساويين في المقدار من أجود منه الآن."
+      },
+      "calculation": {
+        "en": "The lecture’s example accepts equal amount and immediate exchange despite different quality. If 3 are exchanged for 2 of the same kind with delay, both amount and timing conditions fail.",
+        "ar": "يقبل مثال المحاضرة تساوي المقدار والتقابض رغم اختلاف الجودة. أما 3 مقابل 2 من الجنس نفسه مع التأجيل فتختل فيهما المساواة والتوقيت."
+      },
+      "interpret": {
+        "en": "Test quantity and delivery independently and name the source’s reason.",
+        "ar": "اختبر المقدار والتسليم مستقلين وسمّ علة المصدر."
+      },
+      "check": {
+        "prompt": {
+          "en": "The supplied wheat-for-barley example allows unequal amounts but postpones delivery for one month. What flaw does the lecture identify?",
+          "ar": "يجيز مثال القمح بالشعير اختلاف المقدار لكنه يؤخر التسليم شهرًا. ما الخلل الذي تحدده المحاضرة؟"
+        },
+        "answer": {
+          "en": "Delay, even though the amounts may differ under this stated example.",
+          "ar": "التأجيل، رغم جواز اختلاف المقدار في هذا المثال المحدد."
+        }
+      },
+      "diagram": "econ-context",
+      "concepts": [
+        "ee-interest-context-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 10,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 12,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 14,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 15,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-interest-context-s04",
+      "title": {
+        "en": "Build a delivery matrix for the contract types",
+        "ar": "ابنِ مصفوفة التسليم لأنواع البيوع"
+      },
+      "predict": {
+        "en": "Are current payment/future goods and current goods/future payment the same timing pattern?",
+        "ar": "هل الثمن الحالي والسلعة المستقبلية يساويان السلعة الحالية والثمن المستقبلي زمنيًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; both can be labeled only as a delayed transaction.",
+          "ar": "نعم؛ يكفي وصفهما معًا بمعاملة مؤجلة."
+        },
+        {
+          "en": "No; draw the two obligations on separate timelines.",
+          "ar": "لا؛ ارسم الالتزامين على خطين منفصلين."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; draw the two obligations on separate timelines. A positive financial metric and a valid contractual description answer different questions.",
+        "ar": "لا؛ ارسم الالتزامين على خطين منفصلين. يجيب المؤشر المالي الموجب ووصف العقد الصحيح عن سؤالين مختلفين."
+      },
+      "explain": {
+        "en": "Instead of five disconnected names, imagine two clocks: one for the price and one for delivery of the good. The lecture lists immediate exchange, deferred payment with current delivery, and salam with current payment and specified future delivery. It also criticizes both sides being deferred and transactions with unclear subject or price. The matrix helps recall its categories, but does not replace the conditions of a fully specified contract.",
+        "ar": "بدل خمسة أسماء متفرقة تخيل ساعتين: واحدة للثمن وأخرى للسلعة. تسرد المحاضرة البيع الناجز، وتأجيل الثمن مع تسليم السلعة، والسلم بدفع حالي وتسليم مستقبلي معلوم. وتنتقد تأجيل العوضين وجهالة المبيع أو الثمن. تساعد المصفوفة على تذكر تصنيفاتها لكنها لا تستبدل شروط العقد الكامل."
+      },
+      "formula": "contract description=(price timing, goods timing, specification)",
+      "symbols": {
+        "en": "Timing may be now or a stated future date; specification concerns what and how much is promised.",
+        "ar": "التوقيت حاضر أو أجل محدد، والوصف يتعلق بما يوعد به ومقداره."
+      },
+      "assumptions": {
+        "en": "Use the lecture’s terminology; some category names are presented differently in other legal traditions.",
+        "ar": "استخدم مصطلحات المحاضرة؛ فقد تختلف بعض تسميات التصنيف بين المراجع الفقهية."
+      },
+      "example": {
+        "en": "A farmer receives 600 CU now for a specified future crop delivery.",
+        "ar": "يتلقى مزارع 600 الآن مقابل محصول موصوف يسلم مستقبلًا."
+      },
+      "calculation": {
+        "en": "The source places current payment/future specified delivery in salam. Current goods/future price reverses that timing.",
+        "ar": "يضع المصدر الثمن الحالي والسلعة المستقبلية المعلومة في السلم، ويعكس البيع الآجل ترتيب الزمن."
+      },
+      "interpret": {
+        "en": "A positive financial metric and a valid contractual description answer different questions.",
+        "ar": "يجيب المؤشر المالي الموجب ووصف العقد الصحيح عن سؤالين مختلفين."
+      },
+      "check": {
+        "prompt": {
+          "en": "Both the price and goods are unspecified and deferred. Can a cash-flow formula alone settle the lecture’s objection?",
+          "ar": "الثمن والسلعة كلاهما مجهولان ومؤجلان. هل تحسم معادلة التدفقات اعتراض المحاضرة وحدها؟"
+        },
+        "answer": {
+          "en": "No; describe specification and delivery obligations before doing arithmetic.",
+          "ar": "لا؛ وضح المبيع والثمن والتسليم قبل الحساب."
+        }
+      },
+      "diagram": "econ-context",
+      "concepts": [
+        "ee-interest-context-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 15,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 16,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 17,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-interest-context-s05",
+      "title": {
+        "en": "Explain the lecturer’s criticisms as arguments",
+        "ar": "اشرح انتقادات المحاضر بوصفها حججًا"
+      },
+      "predict": {
+        "en": "Is listing a criticism’s name enough to explain its economic mechanism?",
+        "ar": "هل يكفي سرد اسم الانتقاد لشرح آليته الاقتصادية؟"
+      },
+      "options": [
+        {
+          "en": "No; connect the contract, uncertain outcome and burden distribution.",
+          "ar": "لا؛ اربط العقد والنتيجة غير اليقينية وتوزيع العبء."
+        },
+        {
+          "en": "Yes; a long list of labels replaces reasoning.",
+          "ar": "نعم؛ تحل قائمة طويلة من العناوين محل التعليل."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; connect the contract, uncertain outcome and burden distribution. Attribution preserves course coverage without presenting every slide claim as settled fact.",
+        "ar": "لا؛ اربط العقد والنتيجة غير اليقينية وتوزيع العبء. تحفظ النسبة للمصدر تغطية المقرر دون تحويل كل قول بالشريحة إلى حقيقة محسومة."
+      },
+      "explain": {
+        "en": "The lecture groups alleged consequences of interest into social, distributional, moral, economic and political criticisms. Its examples include concentration of wealth, pressure from debt, risky behavior and monopoly. Learn the causal chain being proposed: a fixed creditor claim, uncertainty in the productive outcome, and who bears the downside. For a theory answer, attribute the argument and give a concrete mechanism. A slide’s sweeping conclusion is not an independently established universal causal law.",
+        "ar": "تجمع المحاضرة الآثار المنسوبة للفائدة في انتقادات اجتماعية وتوزيعية وأخلاقية واقتصادية وسياسية، منها تركز الثروة وضغط الدين والمخاطرة والاحتكار. افهم السلسلة السببية المقترحة: التزام ثابت للدائن ونتيجة إنتاج غير يقينية ومن يتحمل الجانب السلبي. في الجواب النظري انسب الحجة واشرح آلية محددة. ليست النتيجة العامة بالشريحة قانونًا سببيًا عالميًا مثبتًا مستقلًا."
+      },
+      "formula": "cash remaining after debt = realized operating cash − contractual payment",
+      "symbols": {
+        "en": "Realized cash and the contractual payment have currency units for the same date.",
+        "ar": "النقد المحقق والسداد التعاقدي بوحدة نقدية وفي التاريخ نفسه."
+      },
+      "assumptions": {
+        "en": "A hypothetical one-period illustration of the lecture’s mechanism, not a general empirical proof or investment recommendation.",
+        "ar": "توضيح افتراضي لفترة واحدة لآلية المحاضرة؛ ليس إثباتًا تجريبيًا عامًا أو توصية استثمارية."
+      },
+      "example": {
+        "en": "Operating cash turns out to be 80 CU; a fixed payment of 110 is due.",
+        "ar": "تحقق نقد تشغيلي 80 واستحق سداد ثابت 110."
+      },
+      "calculation": {
+        "en": "80−110=−30 CU. The shortfall illustrates how a fixed claim interacts with uncertain business receipts.",
+        "ar": "80−110=−30؛ يوضح العجز تفاعل الالتزام الثابت مع إيصالات النشاط غير اليقينية."
+      },
+      "interpret": {
+        "en": "Attribution preserves course coverage without presenting every slide claim as settled fact.",
+        "ar": "تحفظ النسبة للمصدر تغطية المقرر دون تحويل كل قول بالشريحة إلى حقيقة محسومة."
+      },
+      "check": {
+        "prompt": {
+          "en": "How should a study answer describe a broad political consequence asserted on chapter 2 slides?",
+          "ar": "كيف يصف الجواب الدراسي نتيجة سياسية عامة تؤكدها شرائح الفصل الثاني؟"
+        },
+        "answer": {
+          "en": "As the lecturer’s stated argument, with its proposed mechanism and limits.",
+          "ar": "بوصفها حجة المحاضر، مع آليتها المقترحة وحدودها."
+        }
+      },
+      "diagram": "econ-context",
+      "concepts": [
+        "ee-interest-context-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 18,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 20,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 22,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 26,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 31,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-interest-context-s01-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 3,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 4,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 5,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A mathematical rate measures a specified change per period; a normative conclusion concerns the transaction and its governing framework.",
+          "ar": "يقيس المعدل الرياضي تغيرًا معينًا في الفترة؛ ويتعلق الحكم المعياري بالمعاملة وإطارها الحاكم."
+        },
+        {
+          "en": "description of cash flows ≠ normative approval\nThis journey summarizes the supplied lecture’s viewpoint for study; legal/religious classifications must be attributed to that source.",
+          "ar": "description of cash flows ≠ normative approval\nتلخص الرحلة منظور المحاضرة للدراسة؛ وتنسب تصنيفاتها الفقهية إلى مصدرها."
+        }
+      ],
+      "id": "ee-interest-context-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does computing a contract’s interest rate endorse the contract?",
+        "ar": "هل حساب معدل العقد إقرار به؟"
+      },
+      "options": [
+        {
+          "en": "No; description and normative evaluation are separate tasks.",
+          "ar": "لا؛ الوصف والتقييم المعياري مهمتان منفصلتان."
+        },
+        {
+          "en": "Yes; using a formula is approval of every modeled contract.",
+          "ar": "نعم؛ استخدام المعادلة إقرار بكل عقد تمثله."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; description and normative evaluation are separate tasks. The second chapter frames economic systems through their treatment of interest. It presents a religious and ethical argument, while later chapters calculate interest-based equivalence as an analytical method. A numerical model can describe what a contract demands without declaring that contract permissible. When answering the theory exam, identify the lecturer’s position, define the transaction and explain the stated reason. Do not turn the lecture’s historical political or wealth-distribution claims into unqualified current statistics.",
+        "ar": "لا؛ الوصف والتقييم المعياري مهمتان منفصلتان. يؤطر الفصل الثاني الأنظمة الاقتصادية من خلال موقفها من الفائدة، ويقدم حجة دينية وأخلاقية، بينما تحسب الفصول اللاحقة التكافؤ القائم على المعدلات كأداة تحليل. يمكن للنموذج وصف التزام عقد دون الحكم بمشروعيته. في الإجابة النظرية سمّ موقف المحاضر وعرف المعاملة وعلل السبب المعروض. لا تحول الادعاءات التاريخية السياسية أو التوزيعية إلى إحصاءات راهنة مطلقة."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s01-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 3,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 4,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 5,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A mathematical rate measures a specified change per period; a normative conclusion concerns the transaction and its governing framework.",
+          "ar": "يقيس المعدل الرياضي تغيرًا معينًا في الفترة؛ ويتعلق الحكم المعياري بالمعاملة وإطارها الحاكم."
+        },
+        {
+          "en": "description of cash flows ≠ normative approval\nThis journey summarizes the supplied lecture’s viewpoint for study; legal/religious classifications must be attributed to that source.",
+          "ar": "description of cash flows ≠ normative approval\nتلخص الرحلة منظور المحاضرة للدراسة؛ وتنسب تصنيفاتها الفقهية إلى مصدرها."
+        }
+      ],
+      "id": "ee-interest-context-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "A stated repayment is 1260 on a principal of 1200 CU after one year. Find the stipulated increase as a percentage of principal.",
+        "ar": "السداد المقرر 1260 لأصل 1200 بعد سنة. أوجد نسبة الزيادة المشروطة من الأصل."
+      },
+      "expected": 5,
+      "tolerance": 0.005,
+      "unit": "percent",
+      "solution": {
+        "en": "(1260−1200)/1200×100=5%. This is a description of the stated amounts.",
+        "ar": "(1260−1200)/1200×100=5%؛ وهو وصف للمبالغ المعطاة."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s01-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 3,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 4,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 5,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A mathematical rate measures a specified change per period; a normative conclusion concerns the transaction and its governing framework.",
+          "ar": "يقيس المعدل الرياضي تغيرًا معينًا في الفترة؛ ويتعلق الحكم المعياري بالمعاملة وإطارها الحاكم."
+        },
+        {
+          "en": "description of cash flows ≠ normative approval\nThis journey summarizes the supplied lecture’s viewpoint for study; legal/religious classifications must be attributed to that source.",
+          "ar": "description of cash flows ≠ normative approval\nتلخص الرحلة منظور المحاضرة للدراسة؛ وتنسب تصنيفاتها الفقهية إلى مصدرها."
+        }
+      ],
+      "id": "ee-interest-context-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "An answer quotes an old lecture’s wealth-distribution percentage as a verified fact about today. Is that sound?",
+        "ar": "يورد جواب نسبة توزيع ثروة من محاضرة قديمة حقيقة مؤكدة اليوم. هل يصح؟"
+      },
+      "options": [
+        {
+          "en": "Yes; lecture slides automatically verify present conditions.",
+          "ar": "نعم؛ الشرائح تثبت الظروف الحالية تلقائيًا."
+        },
+        {
+          "en": "No; attribute the historical lecture claim and do not present it as a current measured statistic.",
+          "ar": "لا؛ انسب الادعاء للمحاضرة القديمة ولا تعرضه قياسًا حاليًا."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; attribute the historical lecture claim and do not present it as a current measured statistic. For this chapter, understanding includes knowing what is a definition, a value judgment or an empirical claim.",
+        "ar": "لا؛ انسب الادعاء للمحاضرة القديمة ولا تعرضه قياسًا حاليًا. يشمل فهم الفصل تمييز التعريف والحكم القيمي والادعاء التجريبي."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s02-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 7,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 8,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 9,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Principal and repayment are currency amounts. A non-cash contractual benefit requires a description, not a fabricated cash amount.",
+          "ar": "الأصل والسداد مبالغ نقدية؛ والمنفعة غير النقدية المشروطة توصف ولا تختلق لها قيمة نقدية."
+        },
+        {
+          "en": "stipulated monetary excess = repayment − principal\nApply the classification stated in chapter 2; do not infer a modern contract’s ruling from an incomplete one-line scenario.",
+          "ar": "stipulated monetary excess = repayment − principal\nطبق تصنيف الفصل الثاني ولا تستنبط حكم عقد معاصر من وصف ناقص."
+        }
+      ],
+      "id": "ee-interest-context-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "In the lecture’s definition, does a very small stipulated loan increase escape the classification automatically?",
+        "ar": "وفق تعريف المحاضرة، هل تخرج زيادة القرض المشروطة الصغيرة جدًا من التصنيف تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; only a doubled principal counts.",
+          "ar": "نعم؛ لا يدخل إلا تضاعف الأصل."
+        },
+        {
+          "en": "No; size alone is not the defining test in the lecture.",
+          "ar": "لا؛ الحجم وحده ليس اختبار التعريف في المحاضرة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; size alone is not the defining test in the lecture. The lecture describes riba al-nasi’ah as a stipulated benefit linked to a loan and its delay. It explicitly includes small and large increases and consumption and investment loans; the label is not restricted to very high compounding. Identify what was lent, what must be returned, the time and any stipulated benefit. The lecture also discusses non-cash benefits. Keep that description attributed rather than inventing a threshold from the size of a percentage.",
+        "ar": "لا؛ الحجم وحده ليس اختبار التعريف في المحاضرة. تصف المحاضرة ربا النسيئة منفعة مشترطة مرتبطة بالقرض والأجل، وتدرج الزيادة القليلة والكثيرة وقرض الاستهلاك والاستثمار؛ فلا تحصر الوصف في تركيب مرتفع جدًا. حدد المقرض والمردود والأجل والمنفعة المشروطة. وتناقش المحاضرة المنفعة غير النقدية أيضًا. حافظ على نسبة الوصف للمصدر ولا تخترع حدًا من حجم النسبة."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s02-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 7,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 8,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 9,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Principal and repayment are currency amounts. A non-cash contractual benefit requires a description, not a fabricated cash amount.",
+          "ar": "الأصل والسداد مبالغ نقدية؛ والمنفعة غير النقدية المشروطة توصف ولا تختلق لها قيمة نقدية."
+        },
+        {
+          "en": "stipulated monetary excess = repayment − principal\nApply the classification stated in chapter 2; do not infer a modern contract’s ruling from an incomplete one-line scenario.",
+          "ar": "stipulated monetary excess = repayment − principal\nطبق تصنيف الفصل الثاني ولا تستنبط حكم عقد معاصر من وصف ناقص."
+        }
+      ],
+      "id": "ee-interest-context-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "A lecture example stipulates 515 CU against 500 CU lent. What is the monetary excess?",
+        "ar": "يشترط مثال دراسي رد 515 مقابل 500 مقرضة. ما الزيادة النقدية؟"
+      },
+      "expected": 15,
+      "tolerance": 0.005,
+      "unit": "CU",
+      "solution": {
+        "en": "515−500=15 CU. Classification is attributed to the lecture rather than inferred from an arbitrary percentage cutoff.",
+        "ar": "515−500=15؛ وينسب التصنيف للمحاضرة لا لحد نسبة اعتباطي."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s02-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 7,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 8,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 9,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Principal and repayment are currency amounts. A non-cash contractual benefit requires a description, not a fabricated cash amount.",
+          "ar": "الأصل والسداد مبالغ نقدية؛ والمنفعة غير النقدية المشروطة توصف ولا تختلق لها قيمة نقدية."
+        },
+        {
+          "en": "stipulated monetary excess = repayment − principal\nApply the classification stated in chapter 2; do not infer a modern contract’s ruling from an incomplete one-line scenario.",
+          "ar": "stipulated monetary excess = repayment − principal\nطبق تصنيف الفصل الثاني ولا تستنبط حكم عقد معاصر من وصف ناقص."
+        }
+      ],
+      "id": "ee-interest-context-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "The lecture compares a consumption loan and a business loan, each carrying a stipulated increase. Which statement matches its definition?",
+        "ar": "تقارن المحاضرة قرض استهلاك وقرض نشاط تجاري، وكلاهما بزيادة مشروطة. ما العبارة المطابقة لتعريفها؟"
+      },
+      "options": [
+        {
+          "en": "The stated definition includes both; purpose alone does not remove the condition.",
+          "ar": "يشمل التعريف المذكور كليهما؛ ولا يزيل الغرض وحده الشرط."
+        },
+        {
+          "en": "A business purpose automatically removes every restriction.",
+          "ar": "الغرض التجاري يرفع كل قيد تلقائيًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "The stated definition includes both; purpose alone does not remove the condition. Classify the contractual condition before discussing the use of the funds.",
+        "ar": "يشمل التعريف المذكور كليهما؛ ولا يزيل الغرض وحده الشرط. صنف الشرط التعاقدي قبل مناقشة استخدام الأموال."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s03-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 10,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 12,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 14,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 15,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Kind, measured amount and delivery time are separate variables; commercial price is a fourth variable.",
+          "ar": "الجنس والمقدار المقاس وزمن التسليم متغيرات منفصلة، والسعر التجاري متغير رابع."
+        },
+        {
+          "en": "same specified kind: equal amount + immediate exchange (lecture classification)\nThis is the source’s simplified commodity framework; do not generalize it to every modern instrument or commodity.",
+          "ar": "same specified kind: equal amount + immediate exchange (lecture classification)\nهذا إطار المصدر المبسط للأصناف؛ فلا تعممه على كل سلعة أو أداة معاصرة."
+        }
+      ],
+      "id": "ee-interest-context-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "In the lecture’s same-kind wheat examples, does equal market value replace equal measured quantity?",
+        "ar": "في أمثلة قمح الجنس الواحد بالمحاضرة، هل تعوض القيمة السوقية المتساوية تساوي المقدار؟"
+      },
+      "options": [
+        {
+          "en": "No; identify the source’s amount and delivery conditions separately.",
+          "ar": "لا؛ حدد شرطي المقدار والتسليم كلًا على حدة."
+        },
+        {
+          "en": "Yes; any quantities are acceptable if their quoted prices match.",
+          "ar": "نعم؛ تقبل أي كميات إذا تساوت أسعارها."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; identify the source’s amount and delivery conditions separately. For the specified ribawi exchanges in the lecture, price equality is not a substitute for the required quantity and delivery conditions. Its date-quality example recommends selling for money and then buying, rather than directly exchanging unequal quantities of the same category. The exam cases distinguish same-kind commodities from different-kind commodities and immediate delivery from delay. Explain which condition is being tested instead of memorizing a yes/no list detached from the transaction.",
+        "ar": "لا؛ حدد شرطي المقدار والتسليم كلًا على حدة. في مبادلات الأصناف الربوية التي تعرضها المحاضرة، لا يعوض تساوي السعر شروط المقدار والتسليم. ويوجه مثال جودة التمر إلى البيع بالنقد ثم الشراء بدل مبادلة كميات متفاوتة من الجنس نفسه مباشرة. تميز حالات الامتحان الجنس الواحد والمختلف والتقابض والتأجيل. اشرح الشرط المختبر بدل حفظ قائمة نعم ولا منفصلة عن المعاملة."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s03-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 10,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 12,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 14,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 15,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Kind, measured amount and delivery time are separate variables; commercial price is a fourth variable.",
+          "ar": "الجنس والمقدار المقاس وزمن التسليم متغيرات منفصلة، والسعر التجاري متغير رابع."
+        },
+        {
+          "en": "same specified kind: equal amount + immediate exchange (lecture classification)\nThis is the source’s simplified commodity framework; do not generalize it to every modern instrument or commodity.",
+          "ar": "same specified kind: equal amount + immediate exchange (lecture classification)\nهذا إطار المصدر المبسط للأصناف؛ فلا تعممه على كل سلعة أو أداة معاصرة."
+        }
+      ],
+      "id": "ee-interest-context-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "For a same-kind quantity check, 3 equal-measure bags are offered against 2. What is the absolute quantity difference?",
+        "ar": "لفحص مقدار الجنس الواحد:3 أكياس متساوية المكيال مقابل 2. ما الفرق المطلق في المقدار؟"
+      },
+      "expected": 1,
+      "tolerance": 0.005,
+      "unit": "bag",
+      "solution": {
+        "en": "|3−2|=1 bag. A price comparison does not eliminate that quantity difference.",
+        "ar": "|3−2|=كيس واحد؛ ولا تلغي مقارنة الأسعار هذا الفرق."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s03-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 10,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 12,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 14,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 15,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Kind, measured amount and delivery time are separate variables; commercial price is a fourth variable.",
+          "ar": "الجنس والمقدار المقاس وزمن التسليم متغيرات منفصلة، والسعر التجاري متغير رابع."
+        },
+        {
+          "en": "same specified kind: equal amount + immediate exchange (lecture classification)\nThis is the source’s simplified commodity framework; do not generalize it to every modern instrument or commodity.",
+          "ar": "same specified kind: equal amount + immediate exchange (lecture classification)\nهذا إطار المصدر المبسط للأصناف؛ فلا تعممه على كل سلعة أو أداة معاصرة."
+        }
+      ],
+      "id": "ee-interest-context-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "The supplied wheat-for-barley example allows unequal amounts but postpones delivery for one month. What flaw does the lecture identify?",
+        "ar": "يجيز مثال القمح بالشعير اختلاف المقدار لكنه يؤخر التسليم شهرًا. ما الخلل الذي تحدده المحاضرة؟"
+      },
+      "options": [
+        {
+          "en": "Only unequal amounts; timing is irrelevant.",
+          "ar": "اختلاف المقدار وحده؛ التوقيت غير مؤثر."
+        },
+        {
+          "en": "Delay, even though the amounts may differ under this stated example.",
+          "ar": "التأجيل، رغم جواز اختلاف المقدار في هذا المثال المحدد."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Delay, even though the amounts may differ under this stated example. Test quantity and delivery independently and name the source’s reason.",
+        "ar": "التأجيل، رغم جواز اختلاف المقدار في هذا المثال المحدد. اختبر المقدار والتسليم مستقلين وسمّ علة المصدر."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s04-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 15,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 16,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 17,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Timing may be now or a stated future date; specification concerns what and how much is promised.",
+          "ar": "التوقيت حاضر أو أجل محدد، والوصف يتعلق بما يوعد به ومقداره."
+        },
+        {
+          "en": "contract description=(price timing, goods timing, specification)\nUse the lecture’s terminology; some category names are presented differently in other legal traditions.",
+          "ar": "contract description=(price timing, goods timing, specification)\nاستخدم مصطلحات المحاضرة؛ فقد تختلف بعض تسميات التصنيف بين المراجع الفقهية."
+        }
+      ],
+      "id": "ee-interest-context-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Are current payment/future goods and current goods/future payment the same timing pattern?",
+        "ar": "هل الثمن الحالي والسلعة المستقبلية يساويان السلعة الحالية والثمن المستقبلي زمنيًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; both can be labeled only as a delayed transaction.",
+          "ar": "نعم؛ يكفي وصفهما معًا بمعاملة مؤجلة."
+        },
+        {
+          "en": "No; draw the two obligations on separate timelines.",
+          "ar": "لا؛ ارسم الالتزامين على خطين منفصلين."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; draw the two obligations on separate timelines. Instead of five disconnected names, imagine two clocks: one for the price and one for delivery of the good. The lecture lists immediate exchange, deferred payment with current delivery, and salam with current payment and specified future delivery. It also criticizes both sides being deferred and transactions with unclear subject or price. The matrix helps recall its categories, but does not replace the conditions of a fully specified contract.",
+        "ar": "لا؛ ارسم الالتزامين على خطين منفصلين. بدل خمسة أسماء متفرقة تخيل ساعتين: واحدة للثمن وأخرى للسلعة. تسرد المحاضرة البيع الناجز، وتأجيل الثمن مع تسليم السلعة، والسلم بدفع حالي وتسليم مستقبلي معلوم. وتنتقد تأجيل العوضين وجهالة المبيع أو الثمن. تساعد المصفوفة على تذكر تصنيفاتها لكنها لا تستبدل شروط العقد الكامل."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s04-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 15,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 16,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 17,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Timing may be now or a stated future date; specification concerns what and how much is promised.",
+          "ar": "التوقيت حاضر أو أجل محدد، والوصف يتعلق بما يوعد به ومقداره."
+        },
+        {
+          "en": "contract description=(price timing, goods timing, specification)\nUse the lecture’s terminology; some category names are presented differently in other legal traditions.",
+          "ar": "contract description=(price timing, goods timing, specification)\nاستخدم مصطلحات المحاضرة؛ فقد تختلف بعض تسميات التصنيف بين المراجع الفقهية."
+        }
+      ],
+      "id": "ee-interest-context-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "A stated price of 900 CU is paid as 300 now and 600 later. How much price remains unpaid immediately after the first payment?",
+        "ar": "ثمن 900 يدفع منه 300 الآن و 600 لاحقًا. كم يبقى غير مدفوع بعد الدفعة الأولى؟"
+      },
+      "expected": 600,
+      "tolerance": 0.012,
+      "unit": "CU",
+      "solution": {
+        "en": "900−300=600 CU remains. This arithmetic does not by itself establish the contract classification.",
+        "ar": "يتبقى 900−300=600؛ ولا يكفي الحساب وحده لتصنيف العقد."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s04-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 15,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 16,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 17,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Timing may be now or a stated future date; specification concerns what and how much is promised.",
+          "ar": "التوقيت حاضر أو أجل محدد، والوصف يتعلق بما يوعد به ومقداره."
+        },
+        {
+          "en": "contract description=(price timing, goods timing, specification)\nUse the lecture’s terminology; some category names are presented differently in other legal traditions.",
+          "ar": "contract description=(price timing, goods timing, specification)\nاستخدم مصطلحات المحاضرة؛ فقد تختلف بعض تسميات التصنيف بين المراجع الفقهية."
+        }
+      ],
+      "id": "ee-interest-context-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Both the price and goods are unspecified and deferred. Can a cash-flow formula alone settle the lecture’s objection?",
+        "ar": "الثمن والسلعة كلاهما مجهولان ومؤجلان. هل تحسم معادلة التدفقات اعتراض المحاضرة وحدها؟"
+      },
+      "options": [
+        {
+          "en": "No; describe specification and delivery obligations before doing arithmetic.",
+          "ar": "لا؛ وضح المبيع والثمن والتسليم قبل الحساب."
+        },
+        {
+          "en": "Yes; every positive present worth proves validity.",
+          "ar": "نعم؛ كل قيمة حالية موجبة تثبت الصحة."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; describe specification and delivery obligations before doing arithmetic. A positive financial metric and a valid contractual description answer different questions.",
+        "ar": "لا؛ وضح المبيع والثمن والتسليم قبل الحساب. يجيب المؤشر المالي الموجب ووصف العقد الصحيح عن سؤالين مختلفين."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s05-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 18,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 20,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 22,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 26,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 31,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Realized cash and the contractual payment have currency units for the same date.",
+          "ar": "النقد المحقق والسداد التعاقدي بوحدة نقدية وفي التاريخ نفسه."
+        },
+        {
+          "en": "cash remaining after debt = realized operating cash − contractual payment\nA hypothetical one-period illustration of the lecture’s mechanism, not a general empirical proof or investment recommendation.",
+          "ar": "cash remaining after debt = realized operating cash − contractual payment\nتوضيح افتراضي لفترة واحدة لآلية المحاضرة؛ ليس إثباتًا تجريبيًا عامًا أو توصية استثمارية."
+        }
+      ],
+      "id": "ee-interest-context-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Is listing a criticism’s name enough to explain its economic mechanism?",
+        "ar": "هل يكفي سرد اسم الانتقاد لشرح آليته الاقتصادية؟"
+      },
+      "options": [
+        {
+          "en": "No; connect the contract, uncertain outcome and burden distribution.",
+          "ar": "لا؛ اربط العقد والنتيجة غير اليقينية وتوزيع العبء."
+        },
+        {
+          "en": "Yes; a long list of labels replaces reasoning.",
+          "ar": "نعم؛ تحل قائمة طويلة من العناوين محل التعليل."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; connect the contract, uncertain outcome and burden distribution. The lecture groups alleged consequences of interest into social, distributional, moral, economic and political criticisms. Its examples include concentration of wealth, pressure from debt, risky behavior and monopoly. Learn the causal chain being proposed: a fixed creditor claim, uncertainty in the productive outcome, and who bears the downside. For a theory answer, attribute the argument and give a concrete mechanism. A slide’s sweeping conclusion is not an independently established universal causal law.",
+        "ar": "لا؛ اربط العقد والنتيجة غير اليقينية وتوزيع العبء. تجمع المحاضرة الآثار المنسوبة للفائدة في انتقادات اجتماعية وتوزيعية وأخلاقية واقتصادية وسياسية، منها تركز الثروة وضغط الدين والمخاطرة والاحتكار. افهم السلسلة السببية المقترحة: التزام ثابت للدائن ونتيجة إنتاج غير يقينية ومن يتحمل الجانب السلبي. في الجواب النظري انسب الحجة واشرح آلية محددة. ليست النتيجة العامة بالشريحة قانونًا سببيًا عالميًا مثبتًا مستقلًا."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s05-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 18,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 20,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 22,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 26,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 31,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Realized cash and the contractual payment have currency units for the same date.",
+          "ar": "النقد المحقق والسداد التعاقدي بوحدة نقدية وفي التاريخ نفسه."
+        },
+        {
+          "en": "cash remaining after debt = realized operating cash − contractual payment\nA hypothetical one-period illustration of the lecture’s mechanism, not a general empirical proof or investment recommendation.",
+          "ar": "cash remaining after debt = realized operating cash − contractual payment\nتوضيح افتراضي لفترة واحدة لآلية المحاضرة؛ ليس إثباتًا تجريبيًا عامًا أو توصية استثمارية."
+        }
+      ],
+      "id": "ee-interest-context-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "A hypothetical activity realizes 950 CU while 1020 CU is contractually due at that date. Find the shortfall as a positive amount.",
+        "ar": "يحقق نشاط افتراضي 950 ويستحق عليه 1020 في التاريخ نفسه. أوجد العجز مقدارًا موجبًا."
+      },
+      "expected": 70,
+      "tolerance": 0.005,
+      "unit": "CU",
+      "solution": {
+        "en": "1020−950=70 CU shortfall.",
+        "ar": "العجز=1020−950=70."
+      }
+    },
+    {
+      "concept": "ee-interest-context-s05-concept",
+      "sources": [
+        {
+          "doc": "EE05",
+          "page": 18,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 20,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 22,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 26,
+          "filename": "chapter 2 EnEc.pdf"
+        },
+        {
+          "doc": "EE05",
+          "page": 31,
+          "filename": "chapter 2 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Realized cash and the contractual payment have currency units for the same date.",
+          "ar": "النقد المحقق والسداد التعاقدي بوحدة نقدية وفي التاريخ نفسه."
+        },
+        {
+          "en": "cash remaining after debt = realized operating cash − contractual payment\nA hypothetical one-period illustration of the lecture’s mechanism, not a general empirical proof or investment recommendation.",
+          "ar": "cash remaining after debt = realized operating cash − contractual payment\nتوضيح افتراضي لفترة واحدة لآلية المحاضرة؛ ليس إثباتًا تجريبيًا عامًا أو توصية استثمارية."
+        }
+      ],
+      "id": "ee-interest-context-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "How should a study answer describe a broad political consequence asserted on chapter 2 slides?",
+        "ar": "كيف يصف الجواب الدراسي نتيجة سياسية عامة تؤكدها شرائح الفصل الثاني؟"
+      },
+      "options": [
+        {
+          "en": "As a timeless measurement verified by the cash-flow equation.",
+          "ar": "قياسًا دائمًا تثبته معادلة التدفقات."
+        },
+        {
+          "en": "As the lecturer’s stated argument, with its proposed mechanism and limits.",
+          "ar": "بوصفها حجة المحاضر، مع آليتها المقترحة وحدودها."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "As the lecturer’s stated argument, with its proposed mechanism and limits. Attribution preserves course coverage without presenting every slide claim as settled fact.",
+        "ar": "بوصفها حجة المحاضر، مع آليتها المقترحة وحدودها. تحفظ النسبة للمصدر تغطية المقرر دون تحويل كل قول بالشريحة إلى حقيقة محسومة."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-interest-context-s01-recall",
+      "concept": "ee-interest-context-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Separate a calculation from a judgment",
+        "ar": "اشرح: افصل الحساب عن الحكم"
+      },
+      "a": {
+        "en": "For this chapter, understanding includes knowing what is a definition, a value judgment or an empirical claim.",
+        "ar": "يشمل فهم الفصل تمييز التعريف والحكم القيمي والادعاء التجريبي."
+      }
+    },
+    {
+      "id": "ee-interest-context-s01-formula",
+      "concept": "ee-interest-context-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\ndescription of cash flows ≠ normative approval",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\ndescription of cash flows ≠ normative approval"
+      },
+      "a": {
+        "en": "A mathematical rate measures a specified change per period; a normative conclusion concerns the transaction and its governing framework. This journey summarizes the supplied lecture’s viewpoint for study; legal/religious classifications must be attributed to that source.",
+        "ar": "يقيس المعدل الرياضي تغيرًا معينًا في الفترة؛ ويتعلق الحكم المعياري بالمعاملة وإطارها الحاكم. تلخص الرحلة منظور المحاضرة للدراسة؛ وتنسب تصنيفاتها الفقهية إلى مصدرها."
+      }
+    },
+    {
+      "id": "ee-interest-context-s01-trap",
+      "concept": "ee-interest-context-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; using a formula is approval of every modeled contract.",
+        "ar": "يقول متعلم: نعم؛ استخدام المعادلة إقرار بكل عقد تمثله."
+      },
+      "a": {
+        "en": "No; description and normative evaluation are separate tasks. For this chapter, understanding includes knowing what is a definition, a value judgment or an empirical claim.",
+        "ar": "لا؛ الوصف والتقييم المعياري مهمتان منفصلتان. يشمل فهم الفصل تمييز التعريف والحكم القيمي والادعاء التجريبي."
+      }
+    },
+    {
+      "id": "ee-interest-context-s02-recall",
+      "concept": "ee-interest-context-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Riba al-nasi’ah: inspect the loan condition",
+        "ar": "اشرح: ربا النسيئة: افحص شرط القرض"
+      },
+      "a": {
+        "en": "Classify the contractual condition before discussing the use of the funds.",
+        "ar": "صنف الشرط التعاقدي قبل مناقشة استخدام الأموال."
+      }
+    },
+    {
+      "id": "ee-interest-context-s02-formula",
+      "concept": "ee-interest-context-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nstipulated monetary excess = repayment − principal",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nstipulated monetary excess = repayment − principal"
+      },
+      "a": {
+        "en": "Principal and repayment are currency amounts. A non-cash contractual benefit requires a description, not a fabricated cash amount. Apply the classification stated in chapter 2; do not infer a modern contract’s ruling from an incomplete one-line scenario.",
+        "ar": "الأصل والسداد مبالغ نقدية؛ والمنفعة غير النقدية المشروطة توصف ولا تختلق لها قيمة نقدية. طبق تصنيف الفصل الثاني ولا تستنبط حكم عقد معاصر من وصف ناقص."
+      }
+    },
+    {
+      "id": "ee-interest-context-s02-trap",
+      "concept": "ee-interest-context-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; only a doubled principal counts.",
+        "ar": "يقول متعلم: نعم؛ لا يدخل إلا تضاعف الأصل."
+      },
+      "a": {
+        "en": "No; size alone is not the defining test in the lecture. Classify the contractual condition before discussing the use of the funds.",
+        "ar": "لا؛ الحجم وحده ليس اختبار التعريف في المحاضرة. صنف الشرط التعاقدي قبل مناقشة استخدام الأموال."
+      }
+    },
+    {
+      "id": "ee-interest-context-s03-recall",
+      "concept": "ee-interest-context-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Riba al-fadl: quantity, kind and delivery",
+        "ar": "اشرح: ربا الفضل: المقدار والجنس والتسليم"
+      },
+      "a": {
+        "en": "Test quantity and delivery independently and name the source’s reason.",
+        "ar": "اختبر المقدار والتسليم مستقلين وسمّ علة المصدر."
+      }
+    },
+    {
+      "id": "ee-interest-context-s03-formula",
+      "concept": "ee-interest-context-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nsame specified kind: equal amount + immediate exchange (lecture classification)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nsame specified kind: equal amount + immediate exchange (lecture classification)"
+      },
+      "a": {
+        "en": "Kind, measured amount and delivery time are separate variables; commercial price is a fourth variable. This is the source’s simplified commodity framework; do not generalize it to every modern instrument or commodity.",
+        "ar": "الجنس والمقدار المقاس وزمن التسليم متغيرات منفصلة، والسعر التجاري متغير رابع. هذا إطار المصدر المبسط للأصناف؛ فلا تعممه على كل سلعة أو أداة معاصرة."
+      }
+    },
+    {
+      "id": "ee-interest-context-s03-trap",
+      "concept": "ee-interest-context-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; any quantities are acceptable if their quoted prices match.",
+        "ar": "يقول متعلم: نعم؛ تقبل أي كميات إذا تساوت أسعارها."
+      },
+      "a": {
+        "en": "No; identify the source’s amount and delivery conditions separately. Test quantity and delivery independently and name the source’s reason.",
+        "ar": "لا؛ حدد شرطي المقدار والتسليم كلًا على حدة. اختبر المقدار والتسليم مستقلين وسمّ علة المصدر."
+      }
+    },
+    {
+      "id": "ee-interest-context-s04-recall",
+      "concept": "ee-interest-context-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Build a delivery matrix for the contract types",
+        "ar": "اشرح: ابنِ مصفوفة التسليم لأنواع البيوع"
+      },
+      "a": {
+        "en": "A positive financial metric and a valid contractual description answer different questions.",
+        "ar": "يجيب المؤشر المالي الموجب ووصف العقد الصحيح عن سؤالين مختلفين."
+      }
+    },
+    {
+      "id": "ee-interest-context-s04-formula",
+      "concept": "ee-interest-context-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\ncontract description=(price timing, goods timing, specification)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\ncontract description=(price timing, goods timing, specification)"
+      },
+      "a": {
+        "en": "Timing may be now or a stated future date; specification concerns what and how much is promised. Use the lecture’s terminology; some category names are presented differently in other legal traditions.",
+        "ar": "التوقيت حاضر أو أجل محدد، والوصف يتعلق بما يوعد به ومقداره. استخدم مصطلحات المحاضرة؛ فقد تختلف بعض تسميات التصنيف بين المراجع الفقهية."
+      }
+    },
+    {
+      "id": "ee-interest-context-s04-trap",
+      "concept": "ee-interest-context-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; both can be labeled only as a delayed transaction.",
+        "ar": "يقول متعلم: نعم؛ يكفي وصفهما معًا بمعاملة مؤجلة."
+      },
+      "a": {
+        "en": "No; draw the two obligations on separate timelines. A positive financial metric and a valid contractual description answer different questions.",
+        "ar": "لا؛ ارسم الالتزامين على خطين منفصلين. يجيب المؤشر المالي الموجب ووصف العقد الصحيح عن سؤالين مختلفين."
+      }
+    },
+    {
+      "id": "ee-interest-context-s05-recall",
+      "concept": "ee-interest-context-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Explain the lecturer’s criticisms as arguments",
+        "ar": "اشرح: اشرح انتقادات المحاضر بوصفها حججًا"
+      },
+      "a": {
+        "en": "Attribution preserves course coverage without presenting every slide claim as settled fact.",
+        "ar": "تحفظ النسبة للمصدر تغطية المقرر دون تحويل كل قول بالشريحة إلى حقيقة محسومة."
+      }
+    },
+    {
+      "id": "ee-interest-context-s05-formula",
+      "concept": "ee-interest-context-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\ncash remaining after debt = realized operating cash − contractual payment",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\ncash remaining after debt = realized operating cash − contractual payment"
+      },
+      "a": {
+        "en": "Realized cash and the contractual payment have currency units for the same date. A hypothetical one-period illustration of the lecture’s mechanism, not a general empirical proof or investment recommendation.",
+        "ar": "النقد المحقق والسداد التعاقدي بوحدة نقدية وفي التاريخ نفسه. توضيح افتراضي لفترة واحدة لآلية المحاضرة؛ ليس إثباتًا تجريبيًا عامًا أو توصية استثمارية."
+      }
+    },
+    {
+      "id": "ee-interest-context-s05-trap",
+      "concept": "ee-interest-context-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; a long list of labels replaces reasoning.",
+        "ar": "يقول متعلم: نعم؛ تحل قائمة طويلة من العناوين محل التعليل."
+      },
+      "a": {
+        "en": "No; connect the contract, uncertain outcome and burden distribution. Attribution preserves course coverage without presenting every slide claim as settled fact.",
+        "ar": "لا؛ اربط العقد والنتيجة غير اليقينية وتوزيع العبء. تحفظ النسبة للمصدر تغطية المقرر دون تحويل كل قول بالشريحة إلى حقيقة محسومة."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE05",
+      "page": 2,
+      "filename": "chapter 2 EnEc.pdf"
+    },
+    {
+      "doc": "EE05",
+      "page": 7,
+      "filename": "chapter 2 EnEc.pdf"
+    },
+    {
+      "doc": "EE05",
+      "page": 15,
+      "filename": "chapter 2 EnEc.pdf"
+    }
+  ],
+  "videoIds": [
+    "fo0L6NZGZX8"
+  ]
+}

@@ -1,0 +1,2506 @@
+{
+  "id": "slope-beams",
+  "family": "slope",
+  "title": {
+    "en": "Slope-deflection: continuous beams",
+    "ar": "الانحدار والانحراف: الكمرات المستمرة"
+  },
+  "summary": {
+    "en": "Turn a shared rotation into moments you can explain, calculate and check.",
+    "ar": "حوّل الدوران المشترك إلى عزوم تستطيع شرحها وحسابها والتحقق منها."
+  },
+  "outcomes": [
+    {
+      "en": "Distinguish support restraint from a moment release.",
+      "ar": "ميّز قيد المسند عن تحرير العزم."
+    },
+    {
+      "en": "Give every term in slope-deflection a physical meaning.",
+      "ar": "امنح كل حد في معادلة الانحدار والانحراف معنى فيزيائيًا."
+    },
+    {
+      "en": "Solve unequal-stiffness beams, settlement and overhang cases.",
+      "ar": "حل الكمرات مختلفة الجساءة وحالات الهبوط والأجزاء البارزة."
+    },
+    {
+      "en": "Recover reactions and diagrams, then audit equilibrium.",
+      "ar": "استخرج ردود الأفعال والمخططات ثم تحقق من الاتزان."
+    }
+  ],
+  "prereqIds": [
+    "units",
+    "algebra",
+    "forces",
+    "supports",
+    "loads",
+    "diagrams",
+    "shape",
+    "rigidity",
+    "compatibility"
+  ],
+  "concepts": [
+    {
+      "id": "restraints",
+      "title": {
+        "en": "Support freedoms",
+        "ar": "حرية المساند"
+      }
+    },
+    {
+      "id": "continuity",
+      "title": {
+        "en": "Continuity & joint balance",
+        "ar": "الاستمرارية واتزان العقدة"
+      }
+    },
+    {
+      "id": "compatibility",
+      "title": {
+        "en": "Equilibrium + compatibility",
+        "ar": "الاتزان والتوافق"
+      }
+    },
+    {
+      "id": "stiffness",
+      "title": {
+        "en": "Rotational stiffness",
+        "ar": "جساءة الدوران"
+      }
+    },
+    {
+      "id": "fem",
+      "title": {
+        "en": "Fixed-end load effects",
+        "ar": "أثر الأحمال عند تثبيت الأطراف"
+      }
+    },
+    {
+      "id": "signs",
+      "title": {
+        "en": "Equations & signs",
+        "ar": "المعادلات والإشارات"
+      }
+    },
+    {
+      "id": "units",
+      "title": {
+        "en": "Units & radians",
+        "ar": "الوحدات والراديان"
+      }
+    },
+    {
+      "id": "movement",
+      "title": {
+        "en": "Prescribed movements",
+        "ar": "الحركات المفروضة"
+      }
+    },
+    {
+      "id": "overhang",
+      "title": {
+        "en": "Overhang boundaries",
+        "ar": "حدود الأجزاء البارزة"
+      }
+    },
+    {
+      "id": "solving",
+      "title": {
+        "en": "Solving joint rotations",
+        "ar": "حل دورانات العقد"
+      }
+    },
+    {
+      "id": "diagrams",
+      "title": {
+        "en": "Reactions & diagrams",
+        "ar": "ردود الأفعال والمخططات"
+      }
+    },
+    {
+      "id": "checks",
+      "title": {
+        "en": "Checks & linearity",
+        "ar": "التحقق والخطية"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "another-support",
+      "title": {
+        "en": "One more support. One new condition.",
+        "ar": "مسند إضافي. شرط جديد."
+      },
+      "predict": {
+        "en": "Start with a beam supported at its ends. Add a middle roller. What new fact must the solution obey?",
+        "ar": "أضف مسندًا متحركًا في وسط كمرة كانت مسندة عند طرفيها. أي شرط جديد يجب أن يحققه الحل؟"
+      },
+      "options": [
+        {
+          "en": "The middle of the beam must meet the roller’s prescribed position.",
+          "ar": "تمر الكمرة بموضع المسند الأوسط المفروض."
+        },
+        {
+          "en": "The whole beam must become straight.",
+          "ar": "تصبح الكمرة كلها مستقيمة."
+        },
+        {
+          "en": "The load has disappeared.",
+          "ar": "يختفي الحمل."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The roller adds a reaction and a movement restriction. The new reaction must make the beam meet that support.",
+        "ar": "يضيف المسند رد فعل وقيد حركة؛ يجب أن يجعل رد الفعل الكمرة تمر بموضعه."
+      },
+      "explain": {
+        "en": "Imagine a long ruler resting on two books. It sags when you press it. Slide a third book underneath its middle: that book changes the shape and starts carrying load.\nForce balance still matters. But several reaction sets can balance the same load. The right set must also put the beam through the middle support. That requirement is compatibility: the pieces and supports must fit.",
+        "ar": "تخيّل مسطرة على كتابين ثم اضغط عليها. أضف كتابًا تحت الوسط: يتغير شكل المسطرة ويبدأ الكتاب الجديد بحمل جزء من القوة.\nيمكن لمجموعات مختلفة من ردود الأفعال أن توازن الأحمال نفسها. المجموعة الصحيحة وحدها تجعل الكمرة تلائم المسند الأوسط. هذا هو التوافق: اتصال الأجزاء واحترام القيود."
+      },
+      "formula": "Equilibrium + compatibility + elastic response → one consistent solution",
+      "symbols": {
+        "en": "Equilibrium balances forces and couples. Compatibility enforces support positions and shared movements. Elastic response relates force and movement.",
+        "ar": "الاتزان يوازن القوى والعزوم. التوافق يفرض مواضع المساند والحركات المشتركة. علاقة المرونة تربط الحركة بالقوة."
+      },
+      "assumptions": {
+        "en": "Stable planar beam, small displacements and linear elasticity. A terminal pin plus two rollers gives four reaction components and three rigid-body equilibrium equations.",
+        "ar": "كمرة مستقرة تحت أحمال مستوية، وتشوهات صغيرة ومرونة خطية. مفصل طرفي ومسندان متحركان يعطيان أربعة مركّبات رد فعل وثلاث معادلات اتزان مستقلة."
+      },
+      "example": {
+        "en": "How many additional independent compatibility conditions does that one redundant reaction need?",
+        "ar": "كم شرط توافق إضافي تحتاجه حالة رد الفعل الزائد الواحد؟"
+      },
+      "calculation": {
+        "en": "One new independent redundant reaction requires one independent compatibility condition.",
+        "ar": "أربعة مجاهيل رد فعل − ثلاث معادلات اتزان = مجهول زائد واحد، ولذلك نحتاج شرط توافق مستقلًا واحدًا."
+      },
+      "interpret": {
+        "en": "The extra support does not just share the weight. It changes the bending shape and therefore the forces throughout the beam.",
+        "ar": "لا يكتفي المسند الإضافي بتقاسم الوزن؛ بل يغيّر شكل الانحناء والقوى في المنشأ كله."
+      },
+      "check": {
+        "prompt": {
+          "en": "Does adding a support always make equilibrium alone sufficient?",
+          "ar": "هل إضافة مسند تجعل الاتزان وحده كافيًا دائمًا؟"
+        },
+        "answer": {
+          "en": "Force balance and the support movement must both hold.",
+          "ar": "لا. يجب فرض قيد الحركة الإضافي أيضًا."
+        }
+      },
+      "diagram": "beam",
+      "concepts": [
+        "compatibility"
+      ],
+      "sources": [
+        {
+          "doc": "08",
+          "page": 3,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ]
+    },
+    {
+      "id": "supports-continuity",
+      "title": {
+        "en": "A support holds a point. A connection carries the bend.",
+        "ar": "المسند يمسك نقطة. والاتصال ينقل الانحناء."
+      },
+      "predict": {
+        "en": "In the selected middle connection, which statement is correct?",
+        "ar": "أي عبارة تميّز المسند المتحرك عن المفصل الداخلي؟"
+      },
+      "options": [
+        {
+          "en": "The beam must have zero moment at every support.",
+          "ar": "ينعدم عزم الكمرة عند كل مسند."
+        },
+        {
+          "en": "An unbroken beam can carry moment over the roller; an internal hinge releases that moment.",
+          "ar": "تنقل الكمرة المتصلة عزمًا فوق المسند؛ والمفصل الداخلي يحرره."
+        },
+        {
+          "en": "Every roller fixes the beam’s angle.",
+          "ar": "كل مسند متحرك يمنع دوران الكمرة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "A vertical reaction and a bending release are different features. Read both the support symbol and the beam connection.",
+        "ar": "رد الفعل الرأسي وتحرير العزم ميزتان مختلفتان. اقرأ رمز المسند ورمز اتصال العضو كلًا على حدة."
+      },
+      "explain": {
+        "en": "Hold a ruler down at one point with your fingertip: its height is fixed there, but the ruler can still tilt. A roller does a similar job in its reaction direction.\nAn internal hinge is a change inside the beam. It lets the two pieces turn relative to each other. An unbroken joint instead shares one rotation.",
+        "ar": "ثبّت ارتفاع نقطة من مسطرة بإصبعك: قد تبقى قادرة على الميل. المسند المتحرك يقيّد الحركة في اتجاه رد فعله على هذا النحو.\nالمفصل الداخلي تغيير داخل الكمرة نفسها: يسمح بفرق في زاويتي القطعتين. أما العقدة الصلبة غير المقطوعة فتشترك في دوران واحد."
+      },
+      "formula": "M_BA + M_BC = 0; θ_B(AB) = θ_B(BC)",
+      "symbols": {
+        "en": "M_BA and M_BC are moments applied to the members at B, in kN·m, positive clockwise. With no external joint couple their sum is zero.",
+        "ar": "M_BA وM_BC عزمان مؤثران على العضوين عند B، بوحدة kN·m وموجبان مع عقارب الساعة. المجموع يساوي صفرًا عند غياب عزم خارجي على العقدة."
+      },
+      "assumptions": {
+        "en": "A rigid unbroken joint without an applied couple. A loaded overhang is a different boundary case from an unloaded terminal pin.",
+        "ar": "عقدة صلبة بلا عزم خارجي. في مفصل طرفي غير محمّل بعزم ينعدم عزم الطرف؛ وجود جزء بارز محمّل حالة مختلفة."
+      },
+      "example": {
+        "en": "At an unbroken B, M_BA = +45 kN·m and M_BC = −45 kN·m. Calculate their sum.",
+        "ar": "إذا كان M_BA=+45 وM_BC=−45 kN·m، احسب مجموعهما."
+      },
+      "calculation": {
+        "en": "The moments sum to zero at the joint even though the beam carries a nonzero internal moment there.",
+        "ar": "45+(−45)=0 kN·m. العقدة متزنة رغم وجود عزم داخلي غير صفري في الكمرة."
+      },
+      "interpret": {
+        "en": "The support can provide zero external reaction couple while the continuous beam has a nonzero internal bending moment above it.",
+        "ar": "قد يكون عزم رد الفعل الخارجي صفرًا بينما يوجد عزم انحناء داخلي فوق المسند."
+      },
+      "check": {
+        "prompt": {
+          "en": "Which drawing would justify setting the internal beam moment at B to zero?",
+          "ar": "أي رسم يبرر وضع العزم الداخلي عند B مساويًا للصفر؟"
+        },
+        "answer": {
+          "en": "The release belongs to the beam connection, not merely to the support beneath it.",
+          "ar": "مفصل داخلي صريح غير محمّل بعزم؛ وليس مجرد مسند متحرك تحت كمرة مستمرة."
+        }
+      },
+      "diagram": "beam",
+      "concepts": [
+        "restraints",
+        "continuity"
+      ],
+      "sources": [
+        {
+          "doc": "08",
+          "page": 24,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "experiment": "support"
+    },
+    {
+      "id": "rotation-stiffness",
+      "title": {
+        "en": "How much moment buys one small rotation?",
+        "ar": "كم عزمًا يلزم لدوران صغير؟"
+      },
+      "predict": {
+        "en": "In this experiment the near-end angle is prescribed. What can increasing EI change?",
+        "ar": "في تجربة نفرض فيها الزاوية القريبة، ماذا يغيّر رفع EI؟"
+      },
+      "options": [
+        {
+          "en": "The required moments increase, while the prescribed angle stays fixed.",
+          "ar": "يزيد العزوم المطلوبة وتثبت الزاوية المفروضة."
+        },
+        {
+          "en": "The prescribed angle must double.",
+          "ar": "يجب أن تتضاعف الزاوية المفروضة."
+        },
+        {
+          "en": "The material loses its stiffness.",
+          "ar": "تفقد المادة جساءتها."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "An imposed angle is an input. A stiffer member needs more moment to achieve that same input.",
+        "ar": "الزاوية المفروضة مدخل. يحتاج العضو الأجسأ عزمًا أكبر لتحقيق المدخل نفسه."
+      },
+      "explain": {
+        "en": "Keep the far end of a ruler from rotating. Turn the near end through a small angle. A short, deep or stiff ruler resists more strongly.\nE is material stiffness. I measures the cross-section’s resistance to bending about the chosen axis. L is member length. Their combination controls rotational stiffness.",
+        "ar": "امنع الطرف البعيد لمسطرة من الدوران، ثم أدر الطرف القريب قليلًا. تقاوم المسطرة الأقصر أو الأعمق أو الأجسأ أكثر.\nE يصف جساءة المادة، وI يصف توزيع مساحة المقطع حول محور الانحناء، وL طول العضو. هذه الكميات مع القيد البعيد تحدد مقاومة الدوران."
+      },
+      "formula": "M_ij = (4EI/L)θ_i; M_ji = (2EI/L)θ_i\nTrue far hinge: K_near = 3EI/L; carry-over = 0",
+      "symbols": {
+        "en": "EI: kN·m²; θ_i: imposed clockwise rotation in radians; L: m. 4EI/L is near rotational stiffness and 2EI/L is the far-end response.",
+        "ar": "EI جساءة الانحناء بوحدة kN·m². وθ بالراديان موجبة مع عقارب الساعة. 4EI/L جساءة الطرف القريب و2EI/L أثر الدوران نفسه على العزم البعيد."
+      },
+      "assumptions": {
+        "en": "Prismatic, linear-elastic member; small bending displacement, no member load or chord movement; far rotation held zero. A true far hinge gives 3EI/L and zero carry-over.",
+        "ar": "عضو منشوري مرن خطيًا وتشوهات صغيرة، دون حمل أو حركة وتر، مع تثبيت دوران الطرف البعيد. إذا كان البعيد مفصلًا حقيقيًا تصبح الجساءة3EI/L والنقل صفرًا."
+      },
+      "example": {
+        "en": "For EI=80,000 kN·m², L=6 m and imposed θ_i=0.001 rad with far end fixed, calculate both end moments.",
+        "ar": "EI=80000 kN·m²، L=6 m، θ_i=0.001 rad والطرف البعيد مثبت. احسب العزمين."
+      },
+      "calculation": {
+        "en": "EI=80,000 kN·m², L=6 m, θ_i=0.001 rad, far fixed. M_ij=53.333333 and M_ji=26.666667 kN·m.",
+        "ar": "M_ij=4×80000×0.001/6=53.33333 kN·m. M_ji=2×80000×0.001/6=26.66667 kN·m."
+      },
+      "interpret": {
+        "en": "Under an imposed angle, increasing EI raises the required moments. Under a prescribed force, increasing EI instead reduces the resulting movement. Keep input and output clear.",
+        "ar": "مع زاوية مفروضة يزيد رفع EI العزوم. مع قوة مفروضة يقلّل رفع EI الحركة الناتجة. حدّد المدخل والناتج قبل التوقع."
+      },
+      "check": {
+        "prompt": {
+          "en": "With the far end held fixed, the far/near moment ratio from near rotation alone is…",
+          "ar": "ما نسبة العزم البعيد إلى القريب من دوران الطرف القريب وحده؟"
+        },
+        "answer": {
+          "en": "(2EI/L)/(4EI/L) = 1/2. This ratio is for the held-fixed far-end case.",
+          "ar": "النصف عندما يكون دوران الطرف البعيد مثبتًا؛ وصفر عند مفصل بعيد حقيقي."
+        }
+      },
+      "diagram": "beam",
+      "concepts": [
+        "stiffness",
+        "units"
+      ],
+      "sources": [
+        {
+          "doc": "08",
+          "page": 6,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "experiment": "stiffness"
+    },
+    {
+      "id": "load-effects",
+      "title": {
+        "en": "First hold the ends. Then let the joints move.",
+        "ar": "ثبّت الطرفين أولًا. ثم اسمح للعقد بالحركة."
+      },
+      "predict": {
+        "en": "Imagine applying the load while both end rotations and chord rotation are held zero. What do the computed moments represent?",
+        "ar": "طبّقت الحمل مع منع دوران الطرفين والوتر. ماذا تمثّل العزوم المحسوبة؟"
+      },
+      "options": [
+        {
+          "en": "The final answer for every possible support system.",
+          "ar": "الحل النهائي لكل أنواع المساند."
+        },
+        {
+          "en": "The load-only fixed-end part, before the real joint movements are added.",
+          "ar": "جزء التثبيت الناتج عن الحمل قبل إضافة الحركات الحقيقية."
+        },
+        {
+          "en": "A force with units kN/m.",
+          "ar": "قوة بوحدة kN/m."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "We temporarily hold movements at zero to isolate the load effect. The final structure may need movement corrections.",
+        "ar": "نعزل أثر الحمل بتثبيت الحركات مؤقتًا. قد يحتاج المنشأ الحقيقي إلى تصحيحات حركة."
+      },
+      "explain": {
+        "en": "Imagine clamping both ends of a ruler and pressing down. Your hands must apply end moments to keep the clamps from turning. Those are the fixed-end moments, F.\nNow connect that span to the rest of the structure. Its joints may rotate, adding another contribution. Linear behaviour lets us add the contributions without mixing their causes.",
+        "ar": "تخيّل تثبيت طرفي مسطرة والضغط عليها. تحتاج يداك عزومًا لمنع دوران الطرفين؛ هذه عزوم التثبيت F.\nعند وصل البحر ببقية المنشأ قد تدور العقد، فتضيف مساهمة أخرى. تسمح الخطية بجمع الأثرين مع الاحتفاظ بسبب كل منهما."
+      },
+      "formula": "F_ij = −wL²/12; F_ji = +wL²/12\nPoint load: F_ij = −Pab²/L²; F_ji = +Pa²b/L²; a+b=L",
+      "symbols": {
+        "en": "w: downward kN/m; L: m; F: kN·m. P: downward point load in kN; a and b: distances from the ends, a+b=L.",
+        "ar": "w شدة الحمل لأسفل بوحدة kN/m؛ L بالمتر؛ F بوحدة kN·m. للحمل المركز P بالكيلونيوتن، a المسافة من اليسار وb من اليمين وa+b=L."
+      },
+      "assumptions": {
+        "en": "Prismatic beam with both end rotations and chord rotation held zero. Use the formula matching the actual load shape and extent.",
+        "ar": "بحر منشوري مثبت الدورانين، وحمل منتظم على الطول الكامل أو حمل مركز حسب الصيغة. الاصطلاح موجب مع عقارب الساعة. لا تُبدّل صيغة الحمل المنتظم بصيغة القوة المركزة."
+      },
+      "example": {
+        "en": "A downward 12 kN/m UDL acts over 6 m. Calculate the left clockwise fixed-end moment.",
+        "ar": "حمل منتظم12 kN/m على6 m. أوجد عزم التثبيت الأيسر."
+      },
+      "calculation": {
+        "en": "−12 × 6²/12 = −36 kN·m. The right clockwise fixed-end moment is +36.",
+        "ar": "F_left=−12×6²/12=−36 kN·m؛ F_right=+36 kN·m. لحمل250 kN عند a=2 وb=4: F_left=−222.22222 وF_right=+111.11111 kN·m."
+      },
+      "interpret": {
+        "en": "F is not a guess at the final answer. It is the exact load contribution for the temporarily clamped member under the stated model.",
+        "ar": "F ليس تخمينًا للحل النهائي؛ إنه أثر الحمل الدقيق للعضو المثبت مؤقتًا ضمن النموذج المحدد."
+      },
+      "check": {
+        "prompt": {
+          "en": "For the complete response of a connected beam, fixed-end load effects generally need…",
+          "ar": "بماذا نكمل عزوم التثبيت للحصول على استجابة كمرة متصلة؟"
+        },
+        "answer": {
+          "en": "The real joints must fit and the final moments must balance.",
+          "ar": "بمساهمات الحركات التي تحقق القيود الفعلية واتزان العقد."
+        }
+      },
+      "diagram": "beam",
+      "concepts": [
+        "fem",
+        "checks"
+      ],
+      "sources": [
+        {
+          "doc": "08",
+          "page": 12,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ]
+    },
+    {
+      "id": "join-spans",
+      "title": {
+        "en": "Make both spans agree about B.",
+        "ar": "اجعل البحرين يتفقان عند B."
+      },
+      "predict": {
+        "en": "The beam is unbroken at B. How many different beam-joint rotations may AB and BC assign to that same joint?",
+        "ar": "كم دورانًا مستقلًا يمكن للبحرين AB وBC إسناده إلى العقدة الصلبة المشتركة B؟"
+      },
+      "options": [
+        {
+          "en": "One shared θ_B.",
+          "ar": "دوران مشترك واحد θ_B."
+        },
+        {
+          "en": "A separate independent rotation for each span, with no connection condition.",
+          "ar": "دوران مستقل لكل بحر دون شرط اتصال."
+        },
+        {
+          "en": "Zero rotations in every case.",
+          "ar": "صفر دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The two spans meet at one rigid joint. They share θ_B, and their applied end moments must balance there.",
+        "ar": "يلتقي البحران عند عقدة صلبة واحدة؛ يشتركان في θ_B وتتوازن عزوم أطرافهما عندها."
+      },
+      "explain": {
+        "en": "We now use the actual lecture beam: AB is 8 m with rigidity 2EI₀ and a centred 10 kN load. BC is 6 m with rigidity 3EI₀ and a 4 kN/m UDL. A is a pin, B a roller beneath the continuous beam, C fixed.\nUnknowns: θ_A, θ_B. Known: θ_C = 0. No support settles, so ψ = 0. Use M_AB = 0 and M_BA + M_BC = 0.",
+        "ar": "نستخدم كمرة المحاضرة: AB بطول8 m وجساءة2EI₀ وحمل10 kN في المنتصف. وBC بطول6 m وجساءة3EI₀ وحمل4 kN/m. A مفصل، وB مسند متحرك تحت كمرة متصلة، وC مثبت.\nالمجهولان θ_A وθ_B؛ المعلوم θ_C=0. لا يوجد هبوط، إذن ψ=0. طبّق M_AB=0 وM_BA+M_BC=0."
+      },
+      "formula": "M_ij = F_ij + (2EI/L)(2θ_i + θ_j − 3ψ)\nM_ji = F_ji + (2EI/L)(θ_i + 2θ_j − 3ψ)\nX_A + 0.5X_B = 10; 0.5X_A + 3X_B = 2",
+      "symbols": {
+        "en": "M_ij: clockwise-positive member-end couple in kN·m; F_ij: load-only fixed-end moment. EI: kN·m²; L: m. θ_i,θ_j: clockwise radians. ψ=(d_j−d_i)/L with downward d positive. X=EI₀θ has units kN·m².",
+        "ar": "M_ij عزم العضو عند i؛ وF أثر الحمل عند التثبيت. θ_i وθ_j زاويتا الطرفين مع عقارب الساعة بالراديان. ψ=(d_j−d_i)/L دوران الوتر مع d موجبة لأسفل. تعريف X=EI₀θ يختصر الجبر ووحدته kN·m²."
+      },
+      "assumptions": {
+        "en": "Prismatic linear-elastic bending; small displacements; axial and shear deformation neglected. Share each rigid-joint rotation, and reverse the θ coefficients at the far end.",
+        "ar": "انحناء منشوري مرن خطيًا وتشوهات صغيرة؛ نهمل تشوه القص والمحور. يتبادل معاملا الزاويتين في معادلة الطرف الآخر. نفس دوران B يدخل معادلتي البحرين."
+      },
+      "example": {
+        "en": "Solve the two equations. Enter X_B.",
+        "ar": "حل المعادلتين: X_A+0.5X_B=10؛ و0.5X_A+3X_B=2."
+      },
+      "calculation": {
+        "en": "Substitute X_A = 10 − 0.5X_B: 5 + 2.75X_B = 2, so X_B = −12/11 = −1.090909.",
+        "ar": "عوّض X_A=10−0.5X_B: نحصل على5+2.75X_B=2؛ إذن X_B=−12/11=−1.090909 وX_A=116/11=10.545455 kN·m².\nعزوم الأعضاء بالترتيب[AB,BA,BC,CB]=[0,+14.181818,−14.181818,+10.909091] kN·m."
+      },
+      "interpret": {
+        "en": "X_B’s negative sign means the joint rotates counterclockwise under our convention. Substituting it gives member moments [0,+14.18182,−14.18182,+10.90909] kN·m.",
+        "ar": "إشارة X_B السالبة تعني دورانًا عكس عقارب الساعة. تُظهر المساواة عند B أن البحرين اتفقا على الحركة واتزنا في العزم."
+      },
+      "check": {
+        "prompt": {
+          "en": "Which pair is compatible with the actual B joint?",
+          "ar": "أي زوج من الشروط يلائم B؟"
+        },
+        "answer": {
+          "en": "The roller fixes the vertical position here; continuity shares the angle and balances the adjacent member moments.",
+          "ar": "دوران θ_B مشترك بين البحرين، وM_BA+M_BC=0؛ المسند المتحرك لا يفرض θ_B=0."
+        }
+      },
+      "diagram": "beam",
+      "concepts": [
+        "signs",
+        "solving",
+        "compatibility",
+        "continuity"
+      ],
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ]
+    },
+    {
+      "id": "read-results",
+      "title": {
+        "en": "Turn four end moments into a whole beam.",
+        "ar": "حوّل أربعة عزوم إلى كمرة كاملة."
+      },
+      "predict": {
+        "en": "If the right clockwise member moment is positive, can its sagging-positive internal BMD value be negative?",
+        "ar": "هل يمكن لعزم عضو موجب مع عقارب الساعة عند الطرف الأيمن أن يقابله عزم داخلي سالب؟"
+      },
+      "options": [
+        {
+          "en": "Yes: at the right end internal M = −M_ji.",
+          "ar": "نعم؛ عند اليمين M_internal=−M_ji."
+        },
+        {
+          "en": "No: both sign systems must look identical.",
+          "ar": "لا؛ يجب أن يتطابق اصطلاحا الإشارة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A member-end couple convention and an internal cut-face convention use different signs at the right end.",
+        "ar": "اصطلاح عزم طرف العضو يختلف عن اصطلاح العزم الداخلي على وجهي القطع عند الطرف الأيمن."
+      },
+      "explain": {
+        "en": "Isolate one span. Include its real loads and both solved end couples. Ordinary equilibrium now gives that span’s reaction contributions. At a shared support, add contributions from both adjacent spans.\nFor AB, the left upward reaction is (40 − 14.18182)/8 = 3.22727 kN. AB supplies 6.77273 kN at B; BC supplies another 12.54545 kN there. Total R_B = 19.31818 kN.",
+        "ar": "اعزل كل بحر وأضف الأحمال الحقيقية وعزمي الطرفين المحسوبين. يعطي الاتزان العادي مساهمة كل بحر في ردود الأفعال. عند المسند المشترك اجمع مساهمتي البحرين.\nفي AB: رد الفعل الأيسر(40−14.181818)/8=3.227273 kN. وتأتي6.772727 kN عند B من AB و12.545455 kN من BC؛ إذن R_B=19.318182 kN."
+      },
+      "formula": "M_internal,left = M_ij; M_internal,right = −M_ji\ndM/dx = V; dV/dx = −w",
+      "symbols": {
+        "en": "M: sagging-positive internal moment, kN·m; V: shear, kN; x: m; w: downward load intensity, kN/m. A point load jumps shear; shear gives the moment gradient.",
+        "ar": "M هو العزم الداخلي الموجب للترخيم بوحدة kN·m، وV القص بالكيلونيوتن، وx بالمتر، وw الحمل لأسفل بوحدة kN/m. القوة المركزة تقفز بالقص؛ والحمل المنتظم يغيّر ميل القص."
+      },
+      "assumptions": {
+        "en": "Use the stated cut-face signs consistently. Isolate each span before adding its contributions at common supports.",
+        "ar": "استعمل اصطلاح القص والعزم الداخليين المعلن. عند طرف عضو أفقي موجه لليمين: M_left=M_ij وM_right=−M_ji. افحص كل بحر ثم المنشأ كاملًا."
+      },
+      "example": {
+        "en": "Use the AB free body to calculate upward R_A.",
+        "ar": "استخدم الجسم الحر لـAB لحساب R_A، ثم تحقق من مجموع ردود الأفعال."
+      },
+      "calculation": {
+        "en": "Take moments on AB: R_A = (10×4 − 14.181818)/8 = 3.227273 kN. Reactions [A,B,C]=[3.227273,19.318182,11.454545] kN. BC: M(s)=−14.181818+12.545455s−2s²; max +5.491736 kN·m at s=3.136364 m. External clockwise support couple C=10.909091 kN·m. Total load34 kN.",
+        "ar": "R_A=(10×4−14.181818)/8=3.227273 kN. R_B=19.318182؛ R_C=11.454545 kN. المجموع34=10+4×6 kN.\nAB: M(x)=3.227273x−10max(x−4,0).\nBC: M(s)=−14.181818+12.545455s−2s². ينعدم V عند s=3.136364 m فتكون M=+5.491736 kN·m. عزم رد الفعل عند C هو10.909091 kN·m مع عقارب الساعة."
+      },
+      "interpret": {
+        "en": "The diagrams tell you where the beam bends most, where bending changes sign, and where shear must jump. They also expose a wrong support model that a single final number might hide.",
+        "ar": "تبيّن المخططات أين يشتد الانحناء وأين تتغير إشارته وأين يجب أن يقفز القص. وهي تكشف خطأ نموذج المسند الذي قد يخفيه رقم نهائي منفرد."
+      },
+      "check": {
+        "prompt": {
+          "en": "Which check finishes this reference beam?",
+          "ar": "ما الذي ينهي التحقق من كمرة المرجع؟"
+        },
+        "answer": {
+          "en": "The load is 10 + 4×6 = 34 kN. Also check 19.31818×8 + 11.45455×14 − 10×4 − 24×11 − 10.90909 = 0 about A.",
+          "ar": "ΣR=34 kN واتزان B وشروط المساند واتزان العزوم الكلي. حول A: 19.318182×8+11.454545×14−10×4−24×11−10.909091=0."
+        }
+      },
+      "diagram": "beam",
+      "concepts": [
+        "diagrams",
+        "signs",
+        "checks"
+      ],
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moving-supports",
+      "title": {
+        "en": "The ground can bend an unloaded beam.",
+        "ar": "قد تثني الأرض كمرة غير محمّلة."
+      },
+      "predict": {
+        "en": "Can an unloaded beam develop bending moments when its supports move?",
+        "ar": "هل تنشأ عزوم انحناء دون حمل عرضي عندما تتحرك المساند؟"
+      },
+      "options": [
+        {
+          "en": "Yes, when prescribed movements force curvature.",
+          "ar": "نعم عندما تفرض الحركة تقوسًا."
+        },
+        {
+          "en": "No: only external loads can cause moment.",
+          "ar": "لا؛ الأحمال الخارجية وحدها تولّد العزم."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Restraints can do work as they move. Relative settlement or imposed rotation can force bending even without a transverse load.",
+        "ar": "قد تبذل القيود شغلًا أثناء حركتها. الهبوط النسبي أو الدوران المفروض قد يفرض الانحناء دون حمل عرضي."
+      },
+      "explain": {
+        "en": "Lower only one end while both clamps keep their angles fixed. The ruler must curve to fit. Lower both clamps equally and keep their angles: it simply moves down without bending.\nThat is why the equation uses a difference in displacement. A support rotating by a given angle is also a prescribed input, replacing the usual θ = 0 at that support.",
+        "ar": "اخفض مشبكًا واحدًا مع إبقاء زاويتي المشبكين ثابتتين؛ يجب أن تتقوس المسطرة. اخفض المشبكين بالمقدار نفسه؛ تتحرك المسطرة إلى أسفل دون انحناء.\nلهذا تستخدم المعادلة فرق الإزاحتين. أما دوران المسند المفروض فيحل محل θ=0 المعتادة عند التثبيت."
+      },
+      "formula": "ψ = (d_j−d_i)/L\nM_settlement,each end = −6EI(d_j−d_i)/L²\nM_overhang,support = −wa²/2",
+      "symbols": {
+        "en": "d: downward displacement in m; ψ: clockwise chord rotation in radians. Equal end settlements eliminate only the direct chord term, not the adjoining-span rotation effects.",
+        "ar": "d إزاحة موجبة لأسفل بالمتر. ψ دوران الوتر بالراديان. تساوي الهبوطين يلغي حد الوتر المباشر لكنه لا يمنع البحور المجاورة من تغيير دورانات العقد."
+      },
+      "assumptions": {
+        "en": "Small movements and constant member EI. In the settlement example both end rotations are held zero. A free overhang support moment follows from the overhang free body.",
+        "ar": "الحركة صغيرة وEI ثابتة على العضو. لمثال الهبوط هنا تُمنع زاويتا الطرفين. عند جزء بارز حر محمّل، استخرج عزم طرف الكمرة من اتزان الجزء البارز قبل تجميع المعادلات."
+      },
+      "example": {
+        "en": "An unloaded 6 m member has EI=80,000 kN·m² and both end rotations held zero. Right settlement is10 mm. Find the left moment.",
+        "ar": "عضو غير محمّل طوله6 m وEI=80000 kN·m² ومثبت الدورانين. هبط اليمين10 mm. احسب العزم الأيسر."
+      },
+      "calculation": {
+        "en": "EI=80,000 kN·m², L=6 m, both rotations zero; Δ=0.010 m. ψ=0.001666667 rad. Both clockwise end moments are −133.333333 kN·m. A 3 m overhang under24 kN/m gives internal support moment −108 kN·m.",
+        "ar": "Δ=0.010 m؛ ψ=0.010/6=0.001666667 rad. M_ij=M_ji=−6×80000×0.010/6²=−133.333333 kN·m.\nأما جزء بارز بطول3 m وحمل24 kN/m فيفرض عزمًا داخليًا−24×3²/2=−108 kN·m عند مسنده."
+      },
+      "interpret": {
+        "en": "Ask which movement is prescribed before predicting what a stiffness change will do. With imposed movement, increasing EI can increase force effects. With common rigid translation alone, it creates no bending.",
+        "ar": "مع الحركة المفروضة قد يزيد رفع EI القوى الناتجة. أما الانتقال الصلب المشترك وحده فلا يصنع انحناءً."
+      },
+      "check": {
+        "prompt": {
+          "en": "B and C both settle 15 mm in the cumulative test. What is the direct chord rotation on BC?",
+          "ar": "في الاختبار هبطت B وC معًا15 mm. ما دوران وتر BC المباشر؟"
+        },
+        "answer": {
+          "en": "d_C − d_B = 0. The adjacent spans still affect θ_B and θ_C.",
+          "ar": "صفر؛ لأن d_C−d_B=0. لكن البحور المجاورة تظل تؤثر في θ_B وθ_C."
+        }
+      },
+      "diagram": "beam",
+      "concepts": [
+        "movement",
+        "overhang",
+        "units"
+      ],
+      "sources": [
+        {
+          "doc": "08",
+          "page": 23,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "experiment": "settlement"
+    },
+    {
+      "id": "independent-mission",
+      "title": {
+        "en": "Now carry the whole story yourself.",
+        "ar": "احمل القصة كاملة بنفسك."
+      },
+      "predict": {
+        "en": "Before calculating a real beam, what is the most useful first move?",
+        "ar": "ما أول عمل مفيد قبل حساب كمرة من الاختبار؟"
+      },
+      "options": [
+        {
+          "en": "Choose a familiar final number.",
+          "ar": "اختر رقمًا نهائيًا مألوفًا."
+        },
+        {
+          "en": "Draw restraints, unknown rotations, support movements and the member free bodies.",
+          "ar": "ارسم القيود والدورانات المجهولة وحركات المساند والأجسام الحرة."
+        },
+        {
+          "en": "Assume every support moment is zero.",
+          "ar": "افترض صفر العزم عند كل مسند."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "A correct physical model makes the algebra meaningful. Read the actual load extents and connection symbols before choosing equations.",
+        "ar": "النموذج الفيزيائي الصحيح يعطي الجبر معناه. اقرأ امتداد الأحمال ورموز الاتصالات قبل اختيار المعادلات."
+      },
+      "explain": {
+        "en": "The lecture gave every step. The tutorial now gives only the setup questions and graduated hints. The test adds settlement and loaded overhangs. Keep the source solution closed until you have an independent attempt. Tutorial geometry: AB=BC=6 m, A pin/B roller/C fixed, 250 kN at2 m fromA, 120 kN midBC. Test geometry: 3 m overhang each side, main spans8,9,8 m, UDL24 kN/m over both full11 m outside regions, two75 kN loads3 and6 m fromB; EI=800 kN·m², B/C settle15 mm.",
+        "ar": "قدمت المحاضرة كل الخطوات. يزيل التمرين الآن بعض السقالات؛ ويضيف الاختبار الهبوط والأجزاء البارزة. أغلق الحل أثناء محاولتك المستقلة.\nالتمرين1 س1: بحران بطول6 m، A مفصل وB متحرك وC مثبت؛250 kN على بُعد2 m من A و120 kN في منتصف BC.\nالاختبار2 س1: جزء بارز3 m عند الطرفين، ثم البحور8 و9 و8 m. حمل24 kN/m على كل منطقة خارجية بطول11 m، وقوتان75 kN عند3 و6 m من B؛ EI=800 kN·m² وهبوط B وC يساوي15 mm."
+      },
+      "formula": "Read → model → load effects → shared movements → solve → reactions → check",
+      "symbols": {
+        "en": "First choose the unknown joint rotations, then calculate FEMs, share movements and enforce joint equilibrium. Each 3 m test overhang fixes an internal −108 kN·m boundary moment.",
+        "ar": "رتّب المجاهيل أولًا، ثم احسب عزوم التثبيت، وشارك الدورانات عند العقد وطبّق اتزانها. في الاختبار يفرض كل جزء بارز عزمًا داخليًا−108 kN·m."
+      },
+      "assumptions": {
+        "en": "Use the constant EI ratio for the tutorial. Its printed I is implausibly small and can violate the small-rotation assumption; it is not silently corrected. Test geometry is on source 23 p.20.",
+        "ar": "تُستخدم نسب EI الثابتة في التمرين. قيمة I المطبوعة صغيرة على نحو غير معقول وقد تعطي دورانًا يخالف فرض الحركة الصغيرة؛ لا نصححها بصمت. معطيات الاختبار تُقرأ من الصفحة20."
+      },
+      "example": {
+        "en": "Solve the tutorial first, then the test. Check M_BC and upward reactions.",
+        "ar": "حل التمرين أولًا ثم الاختبار دون تلميحات. تحقق من M_BC وردود الأفعال."
+      },
+      "calculation": {
+        "en": "Tutorial: [M_AB,M_BA,M_BC,M_CB]=[0,165.555556,−165.555556,52.222222] kN·m; upward reactions[139.074074,189.814815,41.111111] kN, total370. Test: internal moments A,D=−108, B,C=−145.325581 kN·m; reactions A,D=163.334302, B,C=175.665698 kN, total678. BC moment plateau=+79.674419 kN·m.",
+        "ar": "التمرين: عزوم الأعضاء[0,+165.555556,−165.555556,+52.222222] kN·m، وردود الأفعال[139.074074,189.814815,41.111111] kN. المجموع370 kN.\nالاختبار: العزم الداخلي عند A وD هو−108، وعند B وC هو−145.325581 kN·m. ردود الأفعال الخارجية A,D=163.334302؛ والداخلية B,C=175.665698 kN. المجموع678 kN. بين قوتي75 kN في البحر الأوسط توجد هضبة عزم+79.674419 kN·m."
+      },
+      "interpret": {
+        "en": "You understand the method when you can explain what each unknown and term does, then solve a changed beam without leaning on a memorized sequence of numbers.",
+        "ar": "تتقن الطريقة عندما تشرح وظيفة كل مجهول وحد، ثم تحل كمرة متغيرة وتتحقق منها دون حفظ تسلسل أرقام الحل."
+      },
+      "check": {
+        "prompt": {
+          "en": "What counts as an independent successful transfer attempt?",
+          "ar": "ما الذي يُعد انتقالًا مستقلًا ناجحًا للفهم؟"
+        },
+        "answer": {
+          "en": "A revealed or assisted solution is a learning attempt. A fresh, checked independent attempt is performance evidence.",
+          "ar": "حل مسألة جديدة دون تلميحات، وشرح نموذجها والتحقق من مخرجاتها. التعرّف على الحل بعد كشفه محاولة تعلّم وليس دليل أداء مستقل."
+        }
+      },
+      "diagram": "beam",
+      "concepts": [
+        "solving",
+        "fem",
+        "overhang",
+        "movement",
+        "checks"
+      ],
+      "sources": [
+        {
+          "doc": "24",
+          "page": 3,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        },
+        {
+          "doc": "23",
+          "page": 20,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "C01",
+      "concept": "compatibility",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Why is equilibrium alone insufficient after a stable beam gains a redundant vertical support?",
+        "ar": "لماذا لا يكفي الاتزان وحده بعد إضافة مسند رأسي زائد إلى كمرة مستقرة؟"
+      },
+      "hints": [
+        {
+          "en": "Count the new reaction.",
+          "ar": "عدّ رد الفعل الجديد."
+        },
+        {
+          "en": "The added support also prescribes a position.",
+          "ar": "يفرض المسند المضاف موضعًا أيضًا."
+        }
+      ],
+      "solution": {
+        "en": "The extra reaction must enforce a displacement condition. Equilibrium, compatibility and the elastic force–movement relation must all hold.",
+        "ar": "يجب أن يحقق رد الفعل الجديد شرط الإزاحة. يلزم الاتزان والتوافق وعلاقة المرونة بين القوة والحركة معًا."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "The new reaction needs a deformation condition.",
+          "ar": "رد الفعل الجديد يحتاج إلى شرط تشوّه."
+        },
+        {
+          "en": "There are no equilibrium equations any more.",
+          "ar": "تختفي معادلات الاتزان."
+        },
+        {
+          "en": "The load resultant changes automatically.",
+          "ar": "يتغير محصّل الحمل تلقائيًا."
+        }
+      ],
+      "correct": 0
+    },
+    {
+      "id": "C02",
+      "concept": "continuity",
+      "type": "conceptual",
+      "prompt": {
+        "en": "An unbroken beam crosses a roller at B. Which condition belongs there?",
+        "ar": "كمرة متصلة تمر فوق مسند متحرك عند B. أي شرط يخص العقدة؟"
+      },
+      "hints": [
+        {
+          "en": "Separate the support from the beam connection.",
+          "ar": "افصل رمز المسند عن اتصال الكمرة."
+        },
+        {
+          "en": "Think about moments from the two adjacent spans.",
+          "ar": "فكّر في عزمي البحرين المتجاورين."
+        }
+      ],
+      "solution": {
+        "en": "With no applied joint couple, M_BA + M_BC = 0. Each moment may be nonzero.",
+        "ar": "دون عزم خارجي عند العقدة: M_BA+M_BC=0. يجوز لكل منهما أن يكون غير صفري."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Both member moments individually vanish.",
+          "ar": "ينعدم كل عزم طرفي منفردًا."
+        },
+        {
+          "en": "The adjacent member moments balance.",
+          "ar": "تتوازن عزوم طرفي العضوين المتجاورين."
+        },
+        {
+          "en": "The joint rotation must be zero.",
+          "ar": "يجب أن يكون دوران العقدة صفرًا."
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "C03",
+      "concept": "restraints",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A pin support does not settle. Can the beam tangent rotate there?",
+        "ar": "مسند مفصلي لا يهبط. هل يمكن أن يدور مماس الكمرة عنده؟"
+      },
+      "hints": [
+        {
+          "en": "Position and angle are separate freedoms.",
+          "ar": "الموضع والزاوية حريتان مختلفتان."
+        },
+        {
+          "en": "The pin supplies no reaction couple.",
+          "ar": "لا يقدّم المفصل عزم رد فعل."
+        }
+      ],
+      "solution": {
+        "en": "Yes. The pin can restrain point translation while allowing a nonzero slope.",
+        "ar": "نعم. يمنع المفصل انتقال النقطة لكنه يسمح بميل غير صفري."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Yes.",
+          "ar": "نعم."
+        },
+        {
+          "en": "No.",
+          "ar": "لا."
+        },
+        {
+          "en": "Only if EI is infinite.",
+          "ar": "فقط إذا كانت EI لا نهائية."
+        }
+      ],
+      "correct": 0
+    },
+    {
+      "id": "C04",
+      "concept": "stiffness",
+      "type": "conceptual",
+      "prompt": {
+        "en": "You prescribe the same near rotation and hold the far end fixed. Double EI. What changes?",
+        "ar": "فرضت الدوران القريب نفسه وثبّت الطرف البعيد ثم ضاعفت EI. ماذا يتغير؟"
+      },
+      "hints": [
+        {
+          "en": "Use M = Kθ.",
+          "ar": "استخدم M=Kθ."
+        },
+        {
+          "en": "The angle is prescribed, not solved from a force.",
+          "ar": "الزاوية مدخل معلوم وليست ناتج قوة معلومة."
+        }
+      ],
+      "solution": {
+        "en": "K doubles, so the moments required to impose the same angle double. The angle itself stays fixed.",
+        "ar": "تتضاعف K فتتضاعف العزوم اللازمة لتحقيق الزاوية ذاتها. تبقى الزاوية المفروضة ثابتة."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Rotation doubles; moments stay fixed.",
+          "ar": "يتضاعف الدوران وتثبت العزوم."
+        },
+        {
+          "en": "Both angle and moments vanish.",
+          "ar": "تنعدم الزاوية والعزوم."
+        },
+        {
+          "en": "Required moments double; imposed angle stays fixed.",
+          "ar": "تتضاعف العزوم المطلوبة وتثبت الزاوية المفروضة."
+        }
+      ],
+      "correct": 2
+    },
+    {
+      "id": "C05",
+      "concept": "fem",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A load-only fixed-end moment is calculated. Is it automatically the final member moment?",
+        "ar": "حسبت عزم تثبيت بسبب الحمل وحده. هل هو تلقائيًا العزم النهائي؟"
+      },
+      "hints": [
+        {
+          "en": "What happens when connected joints are allowed to rotate?",
+          "ar": "ماذا يحدث عند السماح للعقد المتصلة بالدوران؟"
+        },
+        {
+          "en": "The slope-deflection equation adds movement terms.",
+          "ar": "تضيف المعادلة حدود الحركة."
+        }
+      ],
+      "solution": {
+        "en": "No. Add the joint-rotation and chord-rotation effects, then satisfy the real restraints and joint equilibrium.",
+        "ar": "لا. أضف آثار دوران العقد والوتر ثم حقق القيود الحقيقية واتزان العقد."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Yes, in every continuous beam.",
+          "ar": "نعم في كل كمرة مستمرة."
+        },
+        {
+          "en": "No; movement corrections generally change it.",
+          "ar": "لا؛ تصححه حركات العقد عمومًا."
+        },
+        {
+          "en": "Only if the FEM is positive.",
+          "ar": "فقط إذا كان موجبًا."
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "C06",
+      "concept": "signs",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At a right end M_ji = +40 kN·m clockwise. What is the sagging-positive internal BMD value?",
+        "ar": "عزم الطرف الأيمن M_ji=+40 kN·m مع عقارب الساعة. ما قيمة مخطط العزم الداخلي الموجب للترخيم؟"
+      },
+      "hints": [
+        {
+          "en": "A cut-face convention is different from a member couple convention.",
+          "ar": "اصطلاح وجه القطع يختلف عن اصطلاح عزم العضو."
+        },
+        {
+          "en": "At the right, internal M = −M_ji.",
+          "ar": "يمينًا: M_internal=−M_ji."
+        }
+      ],
+      "solution": {
+        "en": "The internal bending moment at the right end is −40 kN·m.",
+        "ar": "العزم الداخلي عند الطرف الأيمن −40 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "+40 kN·m",
+          "ar": "+40 kN·m"
+        },
+        {
+          "en": "0",
+          "ar": "0"
+        },
+        {
+          "en": "−40 kN·m",
+          "ar": "−40 kN·m"
+        }
+      ],
+      "correct": 2
+    },
+    {
+      "id": "C07",
+      "concept": "movement",
+      "type": "conceptual",
+      "prompt": {
+        "en": "B and C both settle 15 mm. Can BC’s final moments change even though ψ_BC = 0?",
+        "ar": "هبطت B وC بالمقدار نفسه 15 mm. هل تتغير عزوم BC النهائية رغم ψ_BC=0؟"
+      },
+      "hints": [
+        {
+          "en": "The adjacent spans remain connected at B and C.",
+          "ar": "البحور المجاورة ما زالت متصلة عند B وC."
+        },
+        {
+          "en": "Zero direct chord term does not prescribe zero joint rotation.",
+          "ar": "انعدام حد الوتر المباشر لا يفرض انعدام دوران العقدة."
+        }
+      ],
+      "solution": {
+        "en": "Yes. Adjacent spans can change θ_B and θ_C, which enter the BC equations.",
+        "ar": "نعم. قد تغيّر البحور المجاورة θ_B وθ_C اللتين تدخلان معادلتي BC."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "No, ψ = 0 freezes all moments.",
+          "ar": "لا؛ انعدام ψ يثبت كل العزوم."
+        },
+        {
+          "en": "Yes, through changed joint rotations.",
+          "ar": "نعم؛ عبر تغيّر دورانات العقد."
+        },
+        {
+          "en": "Only if BC carries a new load.",
+          "ar": "فقط إذا أُضيف حمل جديد على BC."
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "C08",
+      "concept": "overhang",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Why can the internal moment over this support be nonzero?",
+        "ar": "لماذا يمكن أن يكون العزم الداخلي فوق مسند بسيط عند جزء بارز غير صفري؟"
+      },
+      "hints": [
+        {
+          "en": "Isolate the loaded overhang.",
+          "ar": "اعزل الجزء البارز المحمّل."
+        },
+        {
+          "en": "A force reaction and an internal beam moment are different things.",
+          "ar": "فرّق بين رد الفعل الخارجي والعزم الداخلي."
+        }
+      ],
+      "solution": {
+        "en": "The overhang load creates bending across the unbroken beam. The simple support supplies no external reaction couple.",
+        "ar": "يثني حمل الجزء البارز الكمرة غير المقطوعة. المسند البسيط لا يقدّم عزم رد فعل خارجي."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "The support becomes fixed.",
+          "ar": "لأن المسند يصبح مثبتًا."
+        },
+        {
+          "en": "The overhang load bends the continuous beam over it.",
+          "ar": "حمل الجزء البارز يثني الكمرة المستمرة فوقه."
+        },
+        {
+          "en": "Every simple support supplies a reaction couple.",
+          "ar": "كل مسند بسيط يقدّم عزم رد فعل."
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "C09",
+      "concept": "diagrams",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Shear is zero between two point loads. What shape does the moment diagram have there?",
+        "ar": "القص صفر بين قوتين مركزتين. ما شكل مخطط العزم هناك؟"
+      },
+      "hints": [
+        {
+          "en": "Use dM/dx = V.",
+          "ar": "استخدم dM/dx=V."
+        },
+        {
+          "en": "Zero derivative means constant value.",
+          "ar": "المشتقة الصفرية تعني قيمة ثابتة."
+        }
+      ],
+      "solution": {
+        "en": "The moment diagram is horizontal there; the constant value can be nonzero.",
+        "ar": "مخطط العزم أفقي؛ وقد تكون القيمة الثابتة غير صفرية."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "A horizontal segment.",
+          "ar": "قطعة أفقية."
+        },
+        {
+          "en": "A mandatory zero line.",
+          "ar": "خط صفري بالضرورة."
+        },
+        {
+          "en": "A parabola.",
+          "ar": "قطع مكافئ."
+        }
+      ],
+      "correct": 0
+    },
+    {
+      "id": "C10",
+      "concept": "checks",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Which combination is the strongest final check?",
+        "ar": "ما أقوى مجموعة تحقق نهائي؟"
+      },
+      "hints": [
+        {
+          "en": "One global check can miss a local modeling error.",
+          "ar": "قد يفوت فحص كلي واحد خطأ نمذجة محليًا."
+        },
+        {
+          "en": "Check the joints and restraints as well as the full free body.",
+          "ar": "تحقق من العقد والقيود ومن الجسم الحر الكامل."
+        }
+      ],
+      "solution": {
+        "en": "Use local boundary/joint checks, global equilibrium and diagram/units checks together.",
+        "ar": "استخدم اختبارات القيود والعقد والاتزان الكلي والمخططات والوحدات معًا."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Only the sum of vertical reactions.",
+          "ar": "مجموع ردود الأفعال الرأسية فقط."
+        },
+        {
+          "en": "Only whether the answer looks familiar.",
+          "ar": "كون الإجابة مألوفة."
+        },
+        {
+          "en": "Restraints, joint balance, global equilibrium, diagrams and units.",
+          "ar": "القيود واتزان العقد والاتزان الكلي والمخططات والوحدات."
+        }
+      ],
+      "correct": 2
+    },
+    {
+      "id": "N01",
+      "concept": "units",
+      "type": "numerical",
+      "prompt": {
+        "en": "Convert 0.05° to radians.",
+        "ar": "حوّل 0.05° إلى راديان."
+      },
+      "hints": [
+        {
+          "en": "Multiply by π/180.",
+          "ar": "اضرب في π/180."
+        },
+        {
+          "en": "0.05π/180 is much smaller than 0.05.",
+          "ar": "العدد 0.05π/180 أصغر كثيرًا من 0.05."
+        }
+      ],
+      "solution": {
+        "en": "0.000872664626 rad.",
+        "ar": "0.000872664626 rad."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "expected": 0.000872664626,
+      "tolerance": 5e-07,
+      "unit": "rad"
+    },
+    {
+      "id": "N02",
+      "concept": "units",
+      "type": "numerical",
+      "prompt": {
+        "en": "E = 200 kN/mm² and I = 400×10⁻⁶ m⁴. Calculate EI in kN·m².",
+        "ar": "E=200 kN/mm² وI=400×10⁻⁶ m⁴. احسب EI بوحدة kN·m²."
+      },
+      "hints": [
+        {
+          "en": "Convert E to kN/m² first.",
+          "ar": "حوّل E إلى kN/m² أولًا."
+        },
+        {
+          "en": "E = 200×10⁶ kN/m².",
+          "ar": "E=200×10⁶ kN/m²."
+        }
+      ],
+      "solution": {
+        "en": "EI = 200×10⁶ × 400×10⁻⁶ = 80,000 kN·m².",
+        "ar": "EI=200×10⁶×400×10⁻⁶=80000 kN·m²."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "expected": 80000,
+      "tolerance": 0.01,
+      "unit": "kN·m²"
+    },
+    {
+      "id": "N03",
+      "concept": "stiffness",
+      "type": "numerical",
+      "prompt": {
+        "en": "L = 6 m, EI = 80,000 kN·m²; θ_i = +0.001 rad; far end fixed; no load or chord movement. Find M_ij.",
+        "ar": "L=6 m وEI=80000 kN·m²؛ θ_i=+0.001 rad والطرف البعيد مثبت، دون حمل أو حركة وتر. احسب M_ij."
+      },
+      "hints": [
+        {
+          "en": "K_near = 4EI/L.",
+          "ar": "K_near=4EI/L."
+        },
+        {
+          "en": "Multiply 4×80,000/6 by 0.001.",
+          "ar": "اضرب 4×80000/6 في 0.001."
+        }
+      ],
+      "solution": {
+        "en": "M_ij = +53.33333 kN·m. The far clockwise moment is +26.66667 kN·m.",
+        "ar": "M_ij=+53.33333 kN·m؛ والعزم مع عقارب الساعة عند الطرف البعيد +26.66667 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "expected": 53.333333,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "N04",
+      "concept": "fem",
+      "type": "numerical",
+      "prompt": {
+        "en": "A 12 kN/m downward UDL covers a 6 m fixed-fixed span. Find the left clockwise FEM.",
+        "ar": "حمل منتظم لأسفل 12 kN/m على بحر مثبت الطرفين بطول 6 m. احسب عزم التثبيت الأيسر مع عقارب الساعة."
+      },
+      "hints": [
+        {
+          "en": "The left load-only FEM is negative here.",
+          "ar": "عزم التثبيت الأيسر سالب هنا."
+        },
+        {
+          "en": "F_ij = −wL²/12.",
+          "ar": "F_ij=−wL²/12."
+        }
+      ],
+      "solution": {
+        "en": "F_ij = −12×6²/12 = −36 kN·m; the right FEM is +36 kN·m.",
+        "ar": "F_ij=−12×6²/12=−36 kN·m؛ والأيمن +36 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "expected": -36,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "N05",
+      "concept": "fem",
+      "type": "numerical",
+      "prompt": {
+        "en": "A 250 kN load is 2 m from the left and 4 m from the right on a fixed-fixed 6 m span. Find the left FEM.",
+        "ar": "حمل 250 kN يبعد 2 m عن اليسار و4 m عن اليمين على بحر مثبت الطرفين بطول 6 m. احسب عزم التثبيت الأيسر."
+      },
+      "hints": [
+        {
+          "en": "Use a = 2 and b = 4.",
+          "ar": "a=2 وb=4."
+        },
+        {
+          "en": "F_ij = −Pab²/L².",
+          "ar": "F_ij=−Pab²/L²."
+        }
+      ],
+      "solution": {
+        "en": "−250×2×4²/6² = −222.22222 kN·m. The right FEM is +111.11111.",
+        "ar": "−250×2×4²/6²=−222.22222 kN·m. العزم الأيمن +111.11111 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "expected": -222.222222,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "N06",
+      "concept": "movement",
+      "type": "numerical",
+      "prompt": {
+        "en": "Unloaded fixed-fixed beam: L = 4 m, EI = 200,000 kN·m². Right end settles 10 mm, with both rotations held zero. Find left clockwise moment.",
+        "ar": "كمرة مثبتة الطرفين غير محمّلة: L=4 m وEI=200000 kN·m². هبط اليمين 10 mm مع منع الدورانين. احسب العزم الأيسر مع عقارب الساعة."
+      },
+      "hints": [
+        {
+          "en": "Δ = 0.010 m.",
+          "ar": "Δ=0.010 m."
+        },
+        {
+          "en": "M_ij = −6EIΔ/L².",
+          "ar": "M_ij=−6EIΔ/L²."
+        }
+      ],
+      "solution": {
+        "en": "Both clockwise member moments are −750 kN·m. The internal right-end BMD is +750 kN·m.",
+        "ar": "كلا عزمي العضو −750 kN·m مع عقارب الساعة. قيمة مخطط العزم الداخلي يمينًا +750 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "expected": -750,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "N07",
+      "concept": "solving",
+      "type": "numerical",
+      "prompt": {
+        "en": "For the reference beam, X_A + 0.5X_B = 10 and 0.5X_A + 3X_B = 2. Find X_B.",
+        "ar": "في كمرة المرجع: X_A+0.5X_B=10؛ و0.5X_A+3X_B=2. أوجد X_B."
+      },
+      "hints": [
+        {
+          "en": "Eliminate X_A.",
+          "ar": "احذف X_A."
+        },
+        {
+          "en": "Substitute X_A = 10 − 0.5X_B into the second equation.",
+          "ar": "عوّض X_A=10−0.5X_B في المعادلة الثانية."
+        }
+      ],
+      "solution": {
+        "en": "X_B = −12/11 = −1.090909 kN·m². X is EI₀θ, not θ alone.",
+        "ar": "X_B=−12/11=−1.090909 kN·m². تذكّر أن X=EI₀θ وليست θ وحدها."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "expected": -1.090909,
+      "tolerance": 0.001,
+      "unit": "kN·m²"
+    },
+    {
+      "id": "N08",
+      "concept": "diagrams",
+      "type": "numerical",
+      "prompt": {
+        "en": "Reference span AB: L = 8 m, a 10 kN midpoint load; internal end moments 0 and −14.181818 kN·m. Find upward R_A.",
+        "ar": "بحر المرجع AB: طوله 8 m وحمل 10 kN في المنتصف؛ العزمان الداخليان 0 و−14.181818 kN·m. أوجد R_A الموجب لأعلى."
+      },
+      "hints": [
+        {
+          "en": "Isolate AB and take moments.",
+          "ar": "اعزل AB وخذ العزوم."
+        },
+        {
+          "en": "R_A = (10×4 − 14.181818)/8.",
+          "ar": "R_A=(10×4−14.181818)/8."
+        }
+      ],
+      "solution": {
+        "en": "R_A = 3.2272727 kN upward. The right reaction contribution is 6.7727273 kN.",
+        "ar": "R_A=3.2272727 kN لأعلى؛ ومساهمة البحر عند B تساوي 6.7727273 kN."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "expected": 3.227273,
+      "tolerance": 0.002,
+      "unit": "kN"
+    },
+    {
+      "id": "N09",
+      "concept": "diagrams",
+      "type": "numerical",
+      "prompt": {
+        "en": "Reference span BC: V(s) = 12.5454545 − 4s kN, s measured from B. Find s where V = 0.",
+        "ar": "بحر المرجع BC: V(s)=12.5454545−4s kN، وs من B. أوجد s عندما V=0."
+      },
+      "hints": [
+        {
+          "en": "Set the expression equal to zero.",
+          "ar": "ساوِ التعبير بالصفر."
+        },
+        {
+          "en": "s = 12.5454545/4.",
+          "ar": "s=12.5454545/4."
+        }
+      ],
+      "solution": {
+        "en": "s = 3.1363636 m. Substitution into M gives +5.49174 kN·m.",
+        "ar": "s=3.1363636 m. بالتعويض في M نحصل على +5.49174 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "expected": 3.136364,
+      "tolerance": 0.002,
+      "unit": "m"
+    },
+    {
+      "id": "N10",
+      "concept": "solving",
+      "type": "numerical",
+      "prompt": {
+        "en": "For the supplied settlement-and-overhang test beam, compute R_A using 91.334302 kN from AB plus the 3 m overhang’s 24 kN/m load.",
+        "ar": "في مسألة الاختبار ذات الهبوط والأجزاء البارزة: احسب R_A من مساهمة AB البالغة 91.334302 kN وحمل الجزء البارز 24 kN/m على 3 m."
+      },
+      "hints": [
+        {
+          "en": "The overhang contributes 72 kN.",
+          "ar": "مساهمة الجزء البارز 72 kN."
+        },
+        {
+          "en": "R_A = 91.334302 + 24×3.",
+          "ar": "R_A=91.334302+24×3."
+        }
+      ],
+      "solution": {
+        "en": "R_A = 163.334302 kN upward.",
+        "ar": "R_A=163.334302 kN لأعلى."
+      },
+      "sources": [
+        {
+          "doc": "23",
+          "page": 20,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ],
+      "expected": 163.334302,
+      "tolerance": 0.01,
+      "unit": "kN"
+    },
+    {
+      "id": "M01",
+      "concept": "checks",
+      "type": "mixed",
+      "prompt": {
+        "en": "Reference beam: double every EI and keep their ratios, loads and zero support movements unchanged. Give the new clockwise M_BC and choose the correct rotation change.",
+        "ar": "ضاعف كل EI في كمرة المرجع مع ثبات النسب والأحمال ودون حركة مسند مفروضة. أعطِ M_BC الجديد واختر تغير الدوران."
+      },
+      "hints": [
+        {
+          "en": "A common stiffness factor cancels out of the force solution.",
+          "ar": "يلغى معامل الجساءة المشترك من حل القوى."
+        },
+        {
+          "en": "The original M_BC is −14.181818 kN·m.",
+          "ar": "M_BC الأصلي −14.181818 kN·m."
+        }
+      ],
+      "solution": {
+        "en": "M_BC stays −14.181818 kN·m; rotations halve. This depends on having no imposed support movements.",
+        "ar": "يبقى M_BC=−14.181818 kN·m؛ وتنخفض الدورانات إلى النصف. يشترط عدم وجود حركات مفروضة للمساند."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Rotations double.",
+          "ar": "تتضاعف الدورانات."
+        },
+        {
+          "en": "Rotations halve.",
+          "ar": "تنخفض الدورانات إلى النصف."
+        },
+        {
+          "en": "Rotations stay the same.",
+          "ar": "تبقى الدورانات ثابتة."
+        }
+      ],
+      "correct": 1,
+      "expected": -14.181818,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "M02",
+      "concept": "stiffness",
+      "type": "mixed",
+      "prompt": {
+        "en": "Unloaded 6 m member, far fixed, prescribed θ_i = 0.005 rad. EI increases from 80,000 to 160,000 kN·m². Give the new near moment and what happens to the prescribed angle.",
+        "ar": "عضو غير محمّل بطول 6 m وطرف بعيد مثبت، θ_i=0.005 rad. ارتفعت EI من 80000 إلى160000 kN·m². احسب العزم القريب الجديد وما يحدث للزاوية المفروضة."
+      },
+      "hints": [
+        {
+          "en": "M_near = 4EIθ_i/L.",
+          "ar": "M_near=4EIθ_i/L."
+        },
+        {
+          "en": "Use the new EI; the specified angle stays 0.005.",
+          "ar": "استخدم EI الجديدة؛ الزاوية المعطاة لا تتغير."
+        }
+      ],
+      "solution": {
+        "en": "M_near = 533.33333 kN·m; the imposed angle is unchanged.",
+        "ar": "M_near=533.33333 kN·m؛ وتبقى الزاوية المفروضة ثابتة."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "The angle halves.",
+          "ar": "تنخفض الزاوية إلى النصف."
+        },
+        {
+          "en": "The angle remains 0.005 rad.",
+          "ar": "تبقى الزاوية 0.005 rad."
+        },
+        {
+          "en": "The angle doubles.",
+          "ar": "تتضاعف الزاوية."
+        }
+      ],
+      "correct": 1,
+      "expected": 533.333333,
+      "tolerance": 0.02,
+      "unit": "kN·m"
+    },
+    {
+      "id": "M03",
+      "concept": "movement",
+      "type": "mixed",
+      "prompt": {
+        "en": "An unloaded member with both end rotations zero translates 10 mm downward at both ends. Give either member end moment and the reason.",
+        "ar": "عضو غير محمّل ودورانا طرفيه صفر؛ انتقل الطرفان لأسفل10 mm. أعطِ عزم أي طرف وفسّر."
+      },
+      "hints": [
+        {
+          "en": "Compute d_j − d_i.",
+          "ar": "احسب d_j−d_i."
+        },
+        {
+          "en": "A common translation introduces no chord angle.",
+          "ar": "الانتقال المشترك لا يصنع دورانًا للوتر."
+        }
+      ],
+      "solution": {
+        "en": "Both moments are zero. The beam undergoes rigid translation without bending in this case.",
+        "ar": "العزمان صفر. يحدث انتقال صلب دون انحناء في هذه الحالة."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "The chord rotates by 20 mm/L.",
+          "ar": "يدور الوتر بمقدار20 mm/L."
+        },
+        {
+          "en": "The displacements cancel in the relative movement.",
+          "ar": "تُلغى الإزاحتان في الحركة النسبية."
+        },
+        {
+          "en": "EI must be zero.",
+          "ar": "يجب أن تكون EI صفرًا."
+        }
+      ],
+      "correct": 1,
+      "expected": 0,
+      "tolerance": 1e-05,
+      "unit": "kN·m"
+    },
+    {
+      "id": "M04",
+      "concept": "continuity",
+      "type": "mixed",
+      "prompt": {
+        "en": "Equal 6 m spans, equal EI, 10 kN/m UDL on both; A and C pins, B intermediate roller; beam unbroken. Give internal M_B and explain why it is allowed.",
+        "ar": "بحران متساويان بطول 6 m وبنفس EI، وحمل10 kN/m على كليهما؛ A وC مفصلان وB مسند متحرك تحت كمرة متصلة. أعطِ M_B الداخلي ولماذا يجوز."
+      },
+      "hints": [
+        {
+          "en": "For this symmetric two-span case M_B = −wL²/8.",
+          "ar": "في هذه الحالة المتماثلة M_B=−wL²/8."
+        },
+        {
+          "en": "The support is not a moment release in the beam.",
+          "ar": "المسند لا يمثل تحريرًا لعزم الكمرة."
+        }
+      ],
+      "solution": {
+        "en": "M_B = −10×6²/8 = −45 kN·m. Adjacent clockwise member moments balance despite nonzero internal bending.",
+        "ar": "M_B=−10×6²/8=−45 kN·m. تتوازن عزوم الأعضاء مع وجود انحناء داخلي غير صفري."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "B supplies an external reaction couple.",
+          "ar": "يولّد B عزم رد فعل خارجيًا."
+        },
+        {
+          "en": "Continuity transfers moment across B.",
+          "ar": "تنقل الاستمرارية العزم عبر B."
+        },
+        {
+          "en": "Every roller is actually fixed.",
+          "ar": "كل مسند متحرك مثبت في الحقيقة."
+        }
+      ],
+      "correct": 1,
+      "expected": -45,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "M05",
+      "concept": "restraints",
+      "type": "mixed",
+      "prompt": {
+        "en": "Unloaded 6 m member, EI = 80,000 kN·m², near rotation 0.001 rad, true far hinge. Give near clockwise moment and carry-over.",
+        "ar": "عضو غير محمّل بطول6 m وEI=80000 kN·m² ودوران قريب0.001 rad، والطرف البعيد مفصل حقيقي. أعطِ العزم القريب ومعامل النقل."
+      },
+      "hints": [
+        {
+          "en": "Use the condensed stiffness 3EI/L.",
+          "ar": "استخدم الجساءة المختزلة 3EI/L."
+        },
+        {
+          "en": "The far hinge must retain zero moment.",
+          "ar": "يجب أن يبقى عزم المفصل البعيد صفرًا."
+        }
+      ],
+      "solution": {
+        "en": "Near moment = 40 kN·m; carry-over = 0. The far end rotates to satisfy its zero-moment condition.",
+        "ar": "العزم القريب40 kN·m؛ ومعامل النقل صفر. يدور الطرف البعيد لتحقيق شرط العزم الصفري."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Carry-over is one-half.",
+          "ar": "معامل النقل نصف."
+        },
+        {
+          "en": "Carry-over is zero.",
+          "ar": "معامل النقل صفر."
+        },
+        {
+          "en": "Carry-over is one.",
+          "ar": "معامل النقل واحد."
+        }
+      ],
+      "correct": 1,
+      "expected": 40,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "M06",
+      "concept": "overhang",
+      "type": "mixed",
+      "prompt": {
+        "en": "A free overhang of length 3 m carries 24 kN/m downward. Give the internal moment at its support and the support’s external couple.",
+        "ar": "جزء بارز حر بطول3 m وحمل24 kN/m لأسفل. أعطِ العزم الداخلي عند المسند والعزم الخارجي للمسند البسيط."
+      },
+      "hints": [
+        {
+          "en": "Isolate the overhang.",
+          "ar": "اعزل الجزء البارز."
+        },
+        {
+          "en": "Internal M = −wa²/2.",
+          "ar": "M_internal=−wa²/2."
+        }
+      ],
+      "solution": {
+        "en": "Internal M = −108 kN·m; an ideal simple support still contributes no external reaction couple.",
+        "ar": "العزم الداخلي−108 kN·m؛ ولا يقدّم المسند البسيط المثالي عزم رد فعل خارجيًا."
+      },
+      "sources": [
+        {
+          "doc": "08",
+          "page": 19,
+          "filename": "lec 1 slope deflection.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "External reaction couple is zero.",
+          "ar": "عزم رد الفعل الخارجي صفر."
+        },
+        {
+          "en": "External reaction couple must be −108.",
+          "ar": "عزم رد الفعل الخارجي −108 بالضرورة."
+        },
+        {
+          "en": "The overhang must be removed.",
+          "ar": "يجب حذف الجزء البارز."
+        }
+      ],
+      "correct": 0,
+      "expected": -108,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "M07",
+      "concept": "fem",
+      "type": "mixed",
+      "prompt": {
+        "en": "Tutorial 1 Q1: AB = BC = 6 m, A pin, B roller, C fixed; 250 kN at 2 m from A; 120 kN at midpoint BC. Give M_BC and identify the off-centre FEM pair on AB.",
+        "ar": "التمرين1 س1: AB=BC=6 m، A مفصل وB متحرك وC مثبت؛250 kN على بُعد2 m من A و120 kN في منتصف BC. أعطِ M_BC وحدد زوج عزمي تثبيت AB."
+      },
+      "hints": [
+        {
+          "en": "Use the equations and boundary conditions, not PL/8 for AB.",
+          "ar": "استخدم القيود والمعادلات؛ لا تستخدم PL/8 للحمل غير المركزي."
+        },
+        {
+          "en": "The solved clockwise member moments are [0, +165.55556, −165.55556, +52.22222].",
+          "ar": "عزوم الأعضاء النهائية [0,+165.55556,−165.55556,+52.22222]."
+        }
+      ],
+      "solution": {
+        "en": "M_BC = −165.55556 kN·m. AB’s load-only pair is [−222.22222,+111.11111] kN·m. The printed I is implausibly small; force results use the constant EI ratio.",
+        "ar": "M_BC=−165.55556 kN·m. زوج تثبيت AB هو[−222.22222,+111.11111] kN·m. قيمة I المطبوعة صغيرة على نحو غير معقول؛ تستخدم نتائج القوى نسبة EI الثابتة."
+      },
+      "sources": [
+        {
+          "doc": "24",
+          "page": 3,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "[−250,+250]",
+          "ar": "[−250,+250]"
+        },
+        {
+          "en": "[−222.22222,+111.11111]",
+          "ar": "[−222.22222,+111.11111]"
+        },
+        {
+          "en": "[−187.5,+187.5]",
+          "ar": "[−187.5,+187.5]"
+        }
+      ],
+      "correct": 1,
+      "expected": -165.555556,
+      "tolerance": 0.02,
+      "unit": "kN·m"
+    },
+    {
+      "id": "M08",
+      "concept": "movement",
+      "type": "mixed",
+      "prompt": {
+        "en": "In the real test, B and C both settle 15 mm. Give final clockwise M_BC and describe the direct chord term on BC.",
+        "ar": "في الاختبار الحقيقي تهبط B وC معًا15 mm. أعطِ M_BC النهائي مع عقارب الساعة وصف حد الوتر المباشر في BC."
+      },
+      "hints": [
+        {
+          "en": "Use the entire connected system.",
+          "ar": "حل المنشأ المتصل كله."
+        },
+        {
+          "en": "The test benchmark gives internal M_B = −145.32558 kN·m.",
+          "ar": "العزم الداخلي المتحقق عند B هو−145.32558 kN·m."
+        }
+      ],
+      "solution": {
+        "en": "M_BC = −145.32558 kN·m. ψ_BC = 0; changed joint rotations transmit adjoining-span effects.",
+        "ar": "M_BC=−145.32558 kN·m. ψ_BC=0؛ وتنقل دورانات العقد المتغيرة أثر البحور المجاورة."
+      },
+      "sources": [
+        {
+          "doc": "23",
+          "page": 20,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "The direct chord term is zero.",
+          "ar": "حد الوتر المباشر صفر."
+        },
+        {
+          "en": "The direct chord term uses 30 mm.",
+          "ar": "يستخدم حد الوتر30 mm."
+        },
+        {
+          "en": "All BC moments must be zero.",
+          "ar": "يجب أن تنعدم كل عزوم BC."
+        }
+      ],
+      "correct": 0,
+      "expected": -145.325581,
+      "tolerance": 0.02,
+      "unit": "kN·m"
+    },
+    {
+      "id": "M09",
+      "concept": "diagrams",
+      "type": "mixed",
+      "prompt": {
+        "en": "In test span BC, internal M_B = −145.325581 kN·m. Left shear is +75 kN and the first 75 kN load is 3 m from B. Give the moment between the two loads and explain its shape.",
+        "ar": "في بحر الاختبار BC: M_B=−145.325581 kN·m والقص الأيسر+75 kN وأول حمل75 kN يبعد3 m عن B. أعطِ العزم بين الحملين وفسّر شكله."
+      },
+      "hints": [
+        {
+          "en": "M just after the first load equals −145.325581 + 75×3.",
+          "ar": "العزم بعد الحمل الأول =−145.325581+75×3."
+        },
+        {
+          "en": "The shear between the two equal loads is zero.",
+          "ar": "القص بين الحملين المتساويين صفر."
+        }
+      ],
+      "solution": {
+        "en": "Moment = +79.674419 kN·m. It remains constant between the loads because V = 0 there.",
+        "ar": "العزم+79.674419 kN·m. يبقى ثابتًا بين الحملين لأن V=0."
+      },
+      "sources": [
+        {
+          "doc": "23",
+          "page": 20,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "A horizontal moment plateau.",
+          "ar": "هضبة أفقية للعزم."
+        },
+        {
+          "en": "A parabola.",
+          "ar": "قطع مكافئ."
+        },
+        {
+          "en": "An obligatory zero moment.",
+          "ar": "عزم صفري بالضرورة."
+        }
+      ],
+      "correct": 0,
+      "expected": 79.674419,
+      "tolerance": 0.02,
+      "unit": "kN·m"
+    },
+    {
+      "id": "M10",
+      "concept": "checks",
+      "type": "mixed",
+      "prompt": {
+        "en": "Two outer UDL regions are each 11 m long at 24 kN/m, plus two 75 kN point loads. Give total upward reactions and identify the consequence of omitting both 3 m overhang loads.",
+        "ar": "منطقتا حمل منتظم، طول كل منهما11 m وشدته24 kN/m، مع قوتين75 kN. أعطِ مجموع ردود الأفعال لأعلى وأثر حذف منطقتي الجزء البارز3 m."
+      },
+      "hints": [
+        {
+          "en": "Count full loaded lengths, not only support-to-support spans.",
+          "ar": "احسب طول الحمل كاملًا وليس بين المساند فقط."
+        },
+        {
+          "en": "2×24×11 + 2×75.",
+          "ar": "2×24×11+2×75."
+        }
+      ],
+      "solution": {
+        "en": "ΣR = 678 kN. Omitting the two 3 m overhang regions loses 144 kN of applied load and corrupts the boundary moments.",
+        "ar": "ΣR=678 kN. إهمال الجزأين البارزين يحذف144 kN ويُفسد شروط عزوم الأطراف."
+      },
+      "sources": [
+        {
+          "doc": "23",
+          "page": 20,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "The omission loses 144 kN.",
+          "ar": "يحذف الإهمال144 kN."
+        },
+        {
+          "en": "The omission changes nothing.",
+          "ar": "لا يغيّر الإهمال شيئًا."
+        },
+        {
+          "en": "The omission loses 6 kN.",
+          "ar": "يحذف الإهمال6 kN."
+        }
+      ],
+      "correct": 0,
+      "expected": 678,
+      "tolerance": 0.01,
+      "unit": "kN"
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-01",
+      "concept": "restraints",
+      "kind": "Interpret",
+      "q": {
+        "en": "What does a fixed support normally prescribe?",
+        "ar": "ماذا يفرض المسند المثبت عادةً؟"
+      },
+      "a": {
+        "en": "Zero translation and zero rotation. If a problem gives an imposed support movement, use that value in place of zero.",
+        "ar": "إزاحة ودوران يساويان صفرًا. إذا أعطت المسألة حركة مفروضة للمسند فاستعمل قيمتها بدل الصفر."
+      }
+    },
+    {
+      "id": "card-02",
+      "concept": "restraints",
+      "kind": "Predict",
+      "q": {
+        "en": "A terminal pin has no applied end couple. What is its end moment?",
+        "ar": "مفصل طرفي لا يؤثر عليه عزم خارجي. ما عزم طرف العضو؟"
+      },
+      "a": {
+        "en": "Zero. This condition is about an unloaded terminal pin; a loaded overhang is a different boundary situation.",
+        "ar": "صفر. هذه حالة مفصل طرفي غير محمّل بعزم؛ وجود جزء بارز محمّل يغيّر الحالة الحدّية."
+      }
+    },
+    {
+      "id": "card-03",
+      "concept": "restraints",
+      "kind": "Misconception",
+      "q": {
+        "en": "If deflection is zero at a support, must rotation be zero?",
+        "ar": "هل انعدام الإزاحة عند المسند يعني انعدام الدوران؟"
+      },
+      "a": {
+        "en": "No. A pin or roller can hold a point in place while allowing the beam tangent to rotate.",
+        "ar": "لا. يستطيع المفصل أو المسند المتحرك تثبيت موضع النقطة مع السماح بميل مماس الكمرة."
+      }
+    },
+    {
+      "id": "card-04",
+      "concept": "continuity",
+      "kind": "Misconception",
+      "q": {
+        "en": "Does a roller beneath a continuous beam create an internal hinge?",
+        "ar": "هل ينشئ المسند المتحرك تحت كمرة مستمرة مفصلًا داخليًا؟"
+      },
+      "a": {
+        "en": "No. Continuity still transfers bending moment across the support.",
+        "ar": "لا. تستمر الكمرة في نقل عزم الانحناء عبر موضع المسند."
+      }
+    },
+    {
+      "id": "card-05",
+      "concept": "continuity",
+      "kind": "Interpret",
+      "q": {
+        "en": "What must two spans share at an unbroken rigid joint?",
+        "ar": "ما الذي يشترك فيه بحران عند عقدة صلبة متصلة؟"
+      },
+      "a": {
+        "en": "The same joint rotation and joint position. Their end moments satisfy joint equilibrium.",
+        "ar": "نفس دوران العقدة وموضعها. كما تحقق عزوم أطرافهما اتزان العقدة."
+      }
+    },
+    {
+      "id": "card-06",
+      "concept": "continuity",
+      "kind": "Predict",
+      "q": {
+        "en": "Insert an unloaded internal hinge. Which response is released?",
+        "ar": "أضفت مفصلًا داخليًا غير محمّل. ما الاستجابة التي تحررت؟"
+      },
+      "a": {
+        "en": "Bending-moment transfer at the hinge. The connected pieces can have different end rotations there.",
+        "ar": "انتقال عزم الانحناء عبر المفصل. يمكن للقطعتين أن تدورا بزوايا مختلفة عنده."
+      }
+    },
+    {
+      "id": "card-07",
+      "concept": "compatibility",
+      "kind": "Interpret",
+      "q": {
+        "en": "Why does another support make the beam problem harder?",
+        "ar": "لماذا يزيد المسند الإضافي صعوبة حل الكمرة؟"
+      },
+      "a": {
+        "en": "It adds a restraint and an unknown reaction. The solution must satisfy the added support movement as well as equilibrium.",
+        "ar": "يضيف قيدًا ورد فعل مجهولًا. يجب أن يحقق الحل حركة المسند الجديدة إلى جانب الاتزان."
+      }
+    },
+    {
+      "id": "card-08",
+      "concept": "compatibility",
+      "kind": "Interpret",
+      "q": {
+        "en": "Give equilibrium and compatibility in everyday language.",
+        "ar": "اشرح الاتزان والتوافق بكلمات بسيطة."
+      },
+      "a": {
+        "en": "Equilibrium: nothing is left unbalanced. Compatibility: connected parts fit and the supports are obeyed.",
+        "ar": "الاتزان: لا تبقى قوة أو عزم غير متزن. التوافق: الأجزاء المتصلة تتلاءم وتحترم قيود المساند."
+      }
+    },
+    {
+      "id": "card-09",
+      "concept": "compatibility",
+      "kind": "Misconception",
+      "q": {
+        "en": "A set of reactions balances the loads. Is that enough for an indeterminate beam?",
+        "ar": "ردود الأفعال توازن الأحمال. هل يكفي هذا لكمرة غير محددة استاتيكيًا؟"
+      },
+      "a": {
+        "en": "No. It must also produce the required support positions and connected joint movements.",
+        "ar": "لا. يجب أن تنتج أيضًا مواضع المساند والحركات المشتركة المطلوبة للعقد."
+      }
+    },
+    {
+      "id": "card-10",
+      "concept": "stiffness",
+      "kind": "Calculate",
+      "q": {
+        "en": "Near-end rotational stiffness with the far end held fixed?",
+        "ar": "ما جساءة الدوران القريبة عندما يكون الطرف البعيد مثبتًا؟"
+      },
+      "a": {
+        "en": "4EI/L for a prismatic linear-elastic member with no chord movement. Its far-end rotation contribution is 2EI/L.",
+        "ar": "4EI/L لعضو منشوري مرن خطيًا دون حركة للوتر. معامل العزم عند الطرف البعيد بسبب دوران الطرف القريب هو 2EI/L."
+      }
+    },
+    {
+      "id": "card-11",
+      "concept": "stiffness",
+      "kind": "Predict",
+      "q": {
+        "en": "Double EI while imposing the same near-end rotation and holding the far end fixed. What changes?",
+        "ar": "ضاعفت EI مع فرض نفس الدوران القريب وتثبيت الطرف البعيد. ماذا يتغير؟"
+      },
+      "a": {
+        "en": "The required end moments double. The prescribed rotation stays the same.",
+        "ar": "تتضاعف العزوم المطلوبة، بينما يبقى الدوران المفروض نفسه."
+      }
+    },
+    {
+      "id": "card-12",
+      "concept": "stiffness",
+      "kind": "Interpret",
+      "q": {
+        "en": "A true far hinge changes which stiffness and transfer factor?",
+        "ar": "ماذا يغيّر المفصل الحقيقي في الطرف البعيد؟"
+      },
+      "a": {
+        "en": "Near stiffness becomes 3EI/L and carry-over becomes zero. The near load term also changes to F_near − ½F_far.",
+        "ar": "تصبح الجساءة القريبة 3EI/L ومعامل نقل العزم صفرًا. ويتغير حد الحمل القريب إلى F_near − ½F_far."
+      }
+    },
+    {
+      "id": "card-13",
+      "concept": "fem",
+      "kind": "Calculate",
+      "q": {
+        "en": "Downward UDL w on a fixed-fixed span: clockwise load moments?",
+        "ar": "ما عزما التثبيت لحمل منتظم w لأسفل على بحر مثبت الطرفين؟"
+      },
+      "a": {
+        "en": "F_left = −wL²/12 and F_right = +wL²/12.",
+        "ar": "باتخاذ عزم العضو مع عقارب الساعة موجبًا: F_left = −wL²/12؛ F_right = +wL²/12."
+      }
+    },
+    {
+      "id": "card-14",
+      "concept": "fem",
+      "kind": "Calculate",
+      "q": {
+        "en": "Downward point load P at distances a and b from the ends: clockwise FEMs?",
+        "ar": "حمل مركز P يبعد a وb عن الطرفين. ما عزما التثبيت؟"
+      },
+      "a": {
+        "en": "Left −Pab²/L²; right +Pa²b/L²; a + b = L. At midspan they reduce to −PL/8 and +PL/8.",
+        "ar": "يسارًا −Pab²/L²؛ يمينًا +Pa²b/L²؛ حيث a+b=L. عند المنتصف: −PL/8 و+PL/8."
+      }
+    },
+    {
+      "id": "card-15",
+      "concept": "fem",
+      "kind": "Interpret",
+      "q": {
+        "en": "Are fixed-end moments necessarily the final moments?",
+        "ar": "هل عزوم التثبيت هي بالضرورة العزوم النهائية؟"
+      },
+      "a": {
+        "en": "No. They are the load effects with both end rotations and chord rotation held at zero. Joint movement corrections create the final moments.",
+        "ar": "لا. هي أثر الحمل مع منع دوراني الطرفين ودوران الوتر. تضيف حركات العقد تصحيحات للوصول إلى العزوم النهائية."
+      }
+    },
+    {
+      "id": "card-16",
+      "concept": "signs",
+      "kind": "Interpret",
+      "q": {
+        "en": "What does M_ij mean in this topic?",
+        "ar": "ماذا يعني M_ij في هذا الموضوع؟"
+      },
+      "a": {
+        "en": "The clockwise-positive couple applied to member ij at end i. Orient horizontal spans left to right.",
+        "ar": "العزم المؤثر على العضو ij عند الطرف i، موجب مع عقارب الساعة. وجّه البحور الأفقية من اليسار إلى اليمين."
+      }
+    },
+    {
+      "id": "card-17",
+      "concept": "signs",
+      "kind": "Calculate",
+      "q": {
+        "en": "State the near-end slope-deflection equation.",
+        "ar": "اكتب معادلة الانحدار والانحراف للطرف القريب."
+      },
+      "a": {
+        "en": "M_ij = F_ij + (2EI/L)(2θ_i + θ_j − 3ψ). Use signed clockwise angles and ψ = (d_j − d_i)/L with downward d positive.",
+        "ar": "M_ij = F_ij + (2EI/L)(2θ_i + θ_j − 3ψ). الزوايا موجبة مع عقارب الساعة وψ=(d_j−d_i)/L، والإزاحة d موجبة لأسفل."
+      }
+    },
+    {
+      "id": "card-18",
+      "concept": "signs",
+      "kind": "Misconception",
+      "q": {
+        "en": "Can I copy both clockwise member-end signs straight onto a sagging-positive BMD?",
+        "ar": "هل أنقل إشارات عزمي الطرفين مباشرةً إلى مخطط عزم داخلي موجب للترخيم؟"
+      },
+      "a": {
+        "en": "No. The internal BMD is M_ij at the left end and −M_ji at the right end.",
+        "ar": "لا. قيمة المخطط الداخلية تساوي M_ij يسارًا و−M_ji يمينًا."
+      }
+    },
+    {
+      "id": "card-19",
+      "concept": "units",
+      "kind": "Calculate",
+      "q": {
+        "en": "Convert 0.05 degrees to radians.",
+        "ar": "حوّل 0.05 درجة إلى راديان."
+      },
+      "a": {
+        "en": "0.05π/180 = 0.000872664626 rad. The number 0.05 is not the same angle in radians.",
+        "ar": "0.05π/180 = 0.000872664626 rad. العدد 0.05 بالراديان ليس الزاوية نفسها."
+      }
+    },
+    {
+      "id": "card-20",
+      "concept": "units",
+      "kind": "Calculate",
+      "q": {
+        "en": "Convert 200 kN/mm² to kN/m².",
+        "ar": "حوّل 200 kN/mm² إلى kN/m²."
+      },
+      "a": {
+        "en": "200 × 10⁶ kN/m², because one square metre contains 10⁶ square millimetres.",
+        "ar": "200 × 10⁶ kN/m²؛ لأن المتر المربع يحتوي على 10⁶ ملليمتر مربع."
+      }
+    },
+    {
+      "id": "card-21",
+      "concept": "units",
+      "kind": "Interpret",
+      "q": {
+        "en": "Which units belong to EI, EI/L and (EI/L)θ?",
+        "ar": "ما وحدات EI وEI/L و(EI/L)θ؟"
+      },
+      "a": {
+        "en": "EI: kN·m². EI/L: kN·m, interpreted as moment per radian for rotational stiffness. Radians are dimensionless; the resulting moment is kN·m.",
+        "ar": "EI بوحدة kN·m². وEI/L بوحدة kN·m، وتُفسّر جساءة الدوران بوصفها عزمًا لكل راديان. الراديان بلا أبعاد، والعزم الناتج بوحدة kN·m."
+      }
+    },
+    {
+      "id": "card-22",
+      "concept": "movement",
+      "kind": "Predict",
+      "q": {
+        "en": "Both ends settle 15 mm. What is the direct chord rotation?",
+        "ar": "هبط الطرفان بمقدار 15 mm. ما دوران الوتر المباشر؟"
+      },
+      "a": {
+        "en": "Zero: (0.015 − 0.015)/L = 0. The adjoining spans may still change the joint rotations.",
+        "ar": "صفر: (0.015−0.015)/L=0. قد تظل البحور المجاورة تغيّر دورانات العقد."
+      }
+    },
+    {
+      "id": "card-23",
+      "concept": "movement",
+      "kind": "Calculate",
+      "q": {
+        "en": "An unloaded fixed-fixed 4 m member has EI = 200,000 kN·m². Right end settles 10 mm. Member moments?",
+        "ar": "عضو مثبت الطرفين طوله 4 m وEI=200000 kN·m²؛ هبط الطرف الأيمن 10 mm. ما عزما العضو؟"
+      },
+      "a": {
+        "en": "ψ = 0.0025 rad. Both clockwise member moments are −6EIΔ/L² = −750 kN·m; internal BMD ends are −750 and +750.",
+        "ar": "ψ=0.0025 rad. كلا عزمي العضو مع عقارب الساعة يساوي −6EIΔ/L²=−750 kN·m؛ وطرفا مخطط العزم الداخلي −750 و+750."
+      }
+    },
+    {
+      "id": "card-24",
+      "concept": "movement",
+      "kind": "Misconception",
+      "q": {
+        "en": "The support is called fixed but rotates by a prescribed amount. Should I use θ = 0?",
+        "ar": "المسند مثبت لكنه يدور بزاوية معلومة. هل أضع θ=0؟"
+      },
+      "a": {
+        "en": "Use the prescribed rotation. A specified movement replaces the usual zero boundary value.",
+        "ar": "استخدم الدوران المفروض. الحركة المعلومة تحل محل القيمة الحدّية الصفرية المعتادة."
+      }
+    },
+    {
+      "id": "card-25",
+      "concept": "overhang",
+      "kind": "Calculate",
+      "q": {
+        "en": "A 3 m free overhang carries a downward 24 kN/m UDL. Internal support moment?",
+        "ar": "جزء بارز حر بطول 3 m عليه 24 kN/m لأسفل. ما العزم الداخلي عند مسنده؟"
+      },
+      "a": {
+        "en": "Hogging −w a²/2 = −108 kN·m, using sagging-positive internal bending.",
+        "ar": "عزم تحديب سالب: −wa²/2=−108 kN·m، وفق اصطلاح العزم الداخلي الموجب للترخيم."
+      }
+    },
+    {
+      "id": "card-26",
+      "concept": "overhang",
+      "kind": "Interpret",
+      "q": {
+        "en": "What must vanish at an unloaded free tip?",
+        "ar": "ما الذي يجب أن ينعدم عند طرف حر غير محمّل؟"
+      },
+      "a": {
+        "en": "Shear and bending moment. A point force or couple applied at the tip changes the corresponding boundary condition.",
+        "ar": "القص والعزم. وجود قوة مركزة أو عزم عند الطرف يغيّر الشرط الحدّي الموافق له."
+      }
+    },
+    {
+      "id": "card-27",
+      "concept": "overhang",
+      "kind": "Misconception",
+      "q": {
+        "en": "Why can an outer simple support beneath a loaded overhang have nonzero internal beam moment?",
+        "ar": "لماذا يكون العزم الداخلي غير صفري فوق مسند بسيط عند جزء بارز محمّل؟"
+      },
+      "a": {
+        "en": "The overhang load bends the beam over that support. The support supplies no reaction couple, but the unbroken beam carries internal moment.",
+        "ar": "يثني حمل الجزء البارز الكمرة عند المسند. لا يولّد المسند عزم رد فعل، لكن الكمرة غير المقطوعة تنقل عزمًا داخليًا."
+      }
+    },
+    {
+      "id": "card-28",
+      "concept": "solving",
+      "kind": "Interpret",
+      "q": {
+        "en": "What are the unknowns in the reference A-pin / B-roller / C-fixed beam without settlement?",
+        "ar": "ما المجاهيل في كمرة المرجع: مفصل A ومسند متحرك B وتثبيت C دون هبوط؟"
+      },
+      "a": {
+        "en": "θ_A and θ_B. θ_C = 0. Enforce M_AB = 0 and M_BA + M_BC = 0.",
+        "ar": "θ_A وθ_B. أما θ_C=0. طبّق M_AB=0 وM_BA+M_BC=0."
+      }
+    },
+    {
+      "id": "card-29",
+      "concept": "solving",
+      "kind": "Interpret",
+      "q": {
+        "en": "Why introduce X = EI₀θ?",
+        "ar": "لماذا نعرّف X=EI₀θ؟"
+      },
+      "a": {
+        "en": "It simplifies equations when member rigidities are multiples of a common EI₀. X has units kN·m² and is not an angle.",
+        "ar": "لتبسيط المعادلات عندما تكون جساءات الأعضاء مضاعفات EI₀. وحدة X هي kN·m² وليست زاوية."
+      }
+    },
+    {
+      "id": "card-30",
+      "concept": "solving",
+      "kind": "Calculate",
+      "q": {
+        "en": "Reference beam equations: X_A + 0.5X_B = 10; 0.5X_A + 3X_B = 2. Solve.",
+        "ar": "حل: X_A+0.5X_B=10؛ و0.5X_A+3X_B=2."
+      },
+      "a": {
+        "en": "X_A = 116/11 = 10.54545 and X_B = −12/11 = −1.09091 kN·m². Check both original equations.",
+        "ar": "X_A=116/11=10.54545؛ X_B=−12/11=−1.09091 kN·m². عوّض في المعادلتين للتحقق."
+      }
+    },
+    {
+      "id": "card-31",
+      "concept": "diagrams",
+      "kind": "Interpret",
+      "q": {
+        "en": "How do solved end moments give reactions?",
+        "ar": "كيف نحصل على ردود الأفعال من عزوم الأطراف؟"
+      },
+      "a": {
+        "en": "Isolate each span, include its end couples and real loads, solve equilibrium, then add adjacent member reaction contributions at shared supports.",
+        "ar": "اعزل كل بحر، وأضف عزوم طرفيه وأحماله الحقيقية، ثم حل الاتزان واجمع مساهمات الأعضاء المجاورة عند المسند المشترك."
+      }
+    },
+    {
+      "id": "card-32",
+      "concept": "diagrams",
+      "kind": "Predict",
+      "q": {
+        "en": "A downward point force and a downward UDL do what to shear?",
+        "ar": "ماذا تفعل قوة مركزة لأسفل وحمل منتظم لأسفل بمخطط القص؟"
+      },
+      "a": {
+        "en": "The point force causes a downward jump. The UDL causes a linear reduction with slope −w.",
+        "ar": "تحدث القوة المركزة قفزة لأسفل. ويحدث الحمل المنتظم نقصانًا خطيًا بميل −w."
+      }
+    },
+    {
+      "id": "card-33",
+      "concept": "diagrams",
+      "kind": "Interpret",
+      "q": {
+        "en": "What does V = 0 tell you about M?",
+        "ar": "ماذا يخبرك V=0 عن العزم M؟"
+      },
+      "a": {
+        "en": "At an isolated smooth point it is a candidate moment extremum. Over an entire interval it gives a constant-moment plateau.",
+        "ar": "عند نقطة ملساء منفردة تكون مرشحة لقيمة عظمى أو صغرى. وإذا انعدم القص على فترة كاملة يكون العزم ثابتًا خلالها."
+      }
+    },
+    {
+      "id": "card-34",
+      "concept": "checks",
+      "kind": "Interpret",
+      "q": {
+        "en": "What checks finish a complete beam solution?",
+        "ar": "ما اختبارات اكتمال حل الكمرة؟"
+      },
+      "a": {
+        "en": "Support and release conditions, joint moment balance, total force and moment equilibrium, diagram jumps and slopes, and consistent units.",
+        "ar": "شروط المساند والتحرير، واتزان عزوم العقد، واتزان القوى والعزوم الكلي، وقفزات المخططات وميولها، واتساق الوحدات."
+      }
+    },
+    {
+      "id": "card-35",
+      "concept": "checks",
+      "kind": "Predict",
+      "q": {
+        "en": "Double all loads, with no imposed support movements. What happens in a linear model?",
+        "ar": "ضاعفت الأحمال دون حركات مفروضة للمساند. ماذا يحدث في نموذج خطي؟"
+      },
+      "a": {
+        "en": "All force effects and displacements double. This is a useful superposition check.",
+        "ar": "تتضاعف القوى والعزوم والإزاحات. هذا اختبار مفيد لمبدأ التراكب."
+      }
+    },
+    {
+      "id": "card-36",
+      "concept": "checks",
+      "kind": "Predict",
+      "q": {
+        "en": "Double every EI, keeping their ratios and loads unchanged and prescribing no support movements. What changes?",
+        "ar": "ضاعفت جميع قيم EI مع ثبات نسبها والأحمال ودون حركة مفروضة للمساند. ماذا يتغير؟"
+      },
+      "a": {
+        "en": "Moments and reactions stay the same; rotations and deflections halve. Prescribed settlements or rotations change that conclusion.",
+        "ar": "تبقى العزوم وردود الأفعال كما هي؛ تنخفض الدورانات والإزاحات إلى النصف. وجود حركات مفروضة يغيّر هذه النتيجة."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "08",
+      "page": 19,
+      "filename": "lec 1 slope deflection.pdf"
+    },
+    {
+      "doc": "24",
+      "page": 3,
+      "filename": "Structure II_019+020Tutorials&solutions.pdf"
+    },
+    {
+      "doc": "23",
+      "page": 20,
+      "filename": "Structure II_019+020TESTS&solutions.pdf"
+    }
+  ],
+  "videoIds": [
+    "gQtII2rL8PQ",
+    "dwXudm5IPDE",
+    "MvBqCeZllpQ",
+    "bPbQeptNxEo"
+  ]
+}

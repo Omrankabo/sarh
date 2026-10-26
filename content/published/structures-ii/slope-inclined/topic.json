@@ -1,0 +1,1185 @@
+{
+  "id": "slope-inclined",
+  "family": "slope",
+  "title": {
+    "en": "Slope-deflection: inclined and gable frames",
+    "ar": "زاوية الميل والهبوط: الإطارات المائلة والجمالونية"
+  },
+  "summary": {
+    "en": "Stop treating every displacement as Δ/L. Construct local axes, project the true relative movement and preserve roof compatibility.",
+    "ar": "توقف عن معاملة كل إزاحة على أنها Δ/L. أنشئ المحاور المحلية، وأسقط الحركة النسبية الحقيقية، وحافظ على توافق السقف."
+  },
+  "outcomes": [
+    {
+      "en": "Use actual member lengths and transverse load components.",
+      "ar": "استخدام الأطوال الحقيقية ومركبات الأحمال العرضية."
+    },
+    {
+      "en": "Derive chord rotations from displacement compatibility, including gable roofs.",
+      "ar": "اشتقاق دورانات الأوتار من توافق الإزاحات بما فيها الأسقف الجمالونية."
+    },
+    {
+      "en": "Assemble complete independent equations without guessing numerical source geometry.",
+      "ar": "تجميع معادلات مستقلة كاملة دون تخمين هندسة رقمية غير موجودة بالمصدر."
+    }
+  ],
+  "prereqIds": [
+    "units",
+    "algebra",
+    "forces",
+    "supports",
+    "loads",
+    "diagrams",
+    "shape",
+    "rigidity",
+    "compatibility"
+  ],
+  "concepts": [
+    {
+      "id": "in-axes",
+      "title": {
+        "en": "Real length and local axes",
+        "ar": "الطول الحقيقي والمحاور المحلية"
+      }
+    },
+    {
+      "id": "in-compat",
+      "title": {
+        "en": "Axial compatibility and projected movement",
+        "ar": "التوافق المحوري وإسقاط الحركة"
+      }
+    },
+    {
+      "id": "in-loads",
+      "title": {
+        "en": "Project loads before fixed-end moments",
+        "ar": "إسقاط الأحمال قبل حساب عزوم التثبيت"
+      }
+    },
+    {
+      "id": "in-gable",
+      "title": {
+        "en": "Gable-roof freedoms and compatibility",
+        "ar": "درجات حرية السقف الجمالوني وتوافقه"
+      }
+    },
+    {
+      "id": "in-equations",
+      "title": {
+        "en": "Equations for coupled inclined members",
+        "ar": "معادلات الأعضاء المائلة المترابطة"
+      }
+    },
+    {
+      "id": "in-audit",
+      "title": {
+        "en": "Geometry and global force audits",
+        "ar": "تدقيق الهندسة والقوى العامة"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "inclined-1",
+      "title": {
+        "en": "1 · First find the member you actually have",
+        "ar": "١ · تعرف أولاً على العضو الحقيقي"
+      },
+      "predict": {
+        "en": "A member has horizontal projection 3 m and vertical projection 4 m. May 4 m be used as L in its bending stiffness?",
+        "ar": "إسقاط عضو أفقي 3 m ورأسي 4 m. هل يمكن استخدام 4 m كطول L في جساءته؟"
+      },
+      "options": [
+        {
+          "en": "Yes; use its height.",
+          "ar": "نعم؛ استخدم الارتفاع."
+        },
+        {
+          "en": "No; the member bends along its actual 5 m length.",
+          "ar": "لا؛ ينحني العضو على طوله الحقيقي 5 m."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "The local bending problem lives on the sloping member, not on the horizontal or vertical projection.",
+        "ar": "مسألة الانحناء المحلية تقع على العضو المائل نفسه، لا على إسقاطه الأفقي أو الرأسي."
+      },
+      "explain": {
+        "en": "Write coordinates before displacement triangles. The unit tangent e points along the member. The unit normal n is obtained by turning e counterclockwise by 90°. This removes ambiguity over which angle is measured from the vertical.",
+        "ar": "اكتب الإحداثيات قبل مثلثات الإزاحة. متجه الوحدة المماسي e يتجه على طول العضو، ومتجه الوحدة العمودي n ينتج من تدوير e عكس عقارب الساعة 90°. بهذا تزول حيرة قياس الزاوية من الرأسي أو الأفقي."
+      },
+      "formula": "L=√(dx²+dy²); e=(dx/L,dy/L); n=(−dy/L,dx/L)",
+      "symbols": {
+        "en": "dx,dy,L in m; e and n dimensionless. Bending stiffness uses the actual L.",
+        "ar": "dx وdy وL بالمتر، وe وn دون وحدات. تستخدم جساءة الانحناء الطول الحقيقي L."
+      },
+      "assumptions": {
+        "en": "Linear elastic bending and small rotations; neglected member axial strain. Global x is right, y is up; positive end couples and section rotations are clockwise. Each local axis points i→j. All numerical dimensions in this journey are explicitly authored training variants unless stated otherwise.",
+        "ar": "انحناء مرن خطي ودورانات صغيرة مع إهمال الانفعال المحوري للأعضاء. المحور العام x لليمين وy للأعلى، والعزوم الطرفية ودورانات القطاعات مع عقارب الساعة موجبة. يتجه كل محور محلي من i إلى j. جميع الأبعاد الرقمية في هذه الرحلة أمثلة تدريبية مؤلفة ما لم يذكر خلاف ذلك."
+      },
+      "example": {
+        "en": "Authored member A(0,0)→B(3,4), EI=10000 kN·m².",
+        "ar": "عضو مؤلف من A(0,0) إلى B(3,4)، وجساءته EI=10000 kN·m²."
+      },
+      "calculation": {
+        "en": "L=5 m; e=(0.6,0.8); n=(−0.8,0.6). Held-far-end rotational stiffness=4EI/L=8000 kN·m/rad.",
+        "ar": "L=5 m وe=(0.6,0.8) وn=(−0.8,0.6). جساءة الدوران مع تقييد الطرف البعيد=4EI/L=8000 kN·m/rad."
+      },
+      "interpret": {
+        "en": "Using L=4 would overestimate rotational stiffness by 25%. Geometry errors propagate even when the algebra is perfect.",
+        "ar": "استخدام L=4 يبالغ في جساءة الدوران بنسبة 25%. تنتقل أخطاء الهندسة إلى الحل ولو كان الجبر صحيحاً."
+      },
+      "check": {
+        "prompt": {
+          "en": "What member length belongs in fixed-end moment formulas?",
+          "ar": "أي طول للعضو يدخل معادلات عزوم التثبيت؟"
+        },
+        "answer": {
+          "en": "The actual member length, together with transverse load intensity defined per actual member length.",
+          "ar": "الطول الحقيقي للعضو، مع شدة حمل عرضي معرفة لكل وحدة من هذا الطول الحقيقي."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "in-axes"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 18,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "inclined-2",
+      "title": {
+        "en": "2 · A sideways joint can also move vertically",
+        "ar": "٢ · قد تتحرك العقدة رأسياً مع انتقالها الجانبي"
+      },
+      "predict": {
+        "en": "The top of the 3–4–5 inclined member moves 4 mm right, with no axial extension. Can its vertical displacement be zero?",
+        "ar": "تتحرك قمة العضو المائل 3–4–5 بمقدار 4 mm يميناً دون استطالة محورية. هل يمكن أن يكون انتقالها الرأسي صفراً؟"
+      },
+      "options": [
+        {
+          "en": "No; axial compatibility forces a vertical component.",
+          "ar": "لا؛ يفرض التوافق المحوري مركبة رأسية."
+        },
+        {
+          "en": "Yes; sway is always purely horizontal.",
+          "ar": "نعم؛ الانزياح الجانبي أفقي دائماً."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The endpoint moves normal to the inextensible member to first order. Treating it as horizontal only would introduce a forbidden axial extension.",
+        "ar": "تتحرك النهاية عمودياً على العضو غير القابل للاستطالة ضمن الرتبة الأولى. واعتبار الحركة أفقية فقط يفرض استطالة محورية ممنوعة."
+      },
+      "explain": {
+        "en": "Compatibility constrains the tangential component of relative displacement to zero. The transverse component then determines the chord rotation. Because clockwise is positive, take the negative of the counterclockwise geometric slope change.",
+        "ar": "يفرض التوافق انعدام المركبة المماسية للإزاحة النسبية. وتحدد المركبة العرضية دوران الوتر. وبما أن الدوران مع عقارب الساعة موجب، نأخذ سالب تغير الميل الهندسي عكس عقارب الساعة."
+      },
+      "formula": "e·(uj−ui)=0; ψCW=−n·(uj−ui)/L",
+      "symbols": {
+        "en": "u=(ux,uy) in m; e,n dimensionless; ψCW in radians. This projection formula replaces any memorized Δ/L shortcut.",
+        "ar": "u=(ux,uy) بالمتر وe وn دون وحدات وψCW بالراديان. تحل معادلة الإسقاط محل أي اختصار محفوظ من نوع Δ/L."
+      },
+      "assumptions": {
+        "en": "Linear elastic bending and small rotations; neglected member axial strain. Global x is right, y is up; positive end couples and section rotations are clockwise. Each local axis points i→j. All numerical dimensions in this journey are explicitly authored training variants unless stated otherwise.",
+        "ar": "انحناء مرن خطي ودورانات صغيرة مع إهمال الانفعال المحوري للأعضاء. المحور العام x لليمين وy للأعلى، والعزوم الطرفية ودورانات القطاعات مع عقارب الساعة موجبة. يتجه كل محور محلي من i إلى j. جميع الأبعاد الرقمية في هذه الرحلة أمثلة تدريبية مؤلفة ما لم يذكر خلاف ذلك."
+      },
+      "example": {
+        "en": "A is fixed; uBx=0.004 m for the authored 3–4–5 member.",
+        "ar": "A ثابتة وuBx=0.004 m للعضو المؤلف 3–4–5."
+      },
+      "calculation": {
+        "en": "0.6(0.004)+0.8uBy=0 gives uBy=−0.003 m. n·uB=−0.8(0.004)+0.6(−0.003)=−0.005 m, so ψCW=+0.001 rad.",
+        "ar": "من 0.6(0.004)+0.8uBy=0 نحصل على uBy=−0.003 m. ثم n·uB=−0.8(0.004)+0.6(−0.003)=−0.005 m، لذا ψCW=+0.001 rad."
+      },
+      "interpret": {
+        "en": "The actual transverse movement is 5 mm, larger than the horizontal 4 mm. Its effect cannot be obtained by blindly dividing 4 mm by 5 m.",
+        "ar": "الإزاحة العرضية الفعلية 5 mm، وهي أكبر من الإزاحة الأفقية 4 mm. لا نحسب أثرها بقسمة 4 mm على 5 m بصورة آلية."
+      },
+      "check": {
+        "prompt": {
+          "en": "Why is uBy negative?",
+          "ar": "لماذا uBy سالبة؟"
+        },
+        "answer": {
+          "en": "Moving right along this inclined geometry requires downward movement to prevent first-order axial extension.",
+          "ar": "لأن الانتقال يميناً في هذه الهندسة المائلة يستلزم هبوطاً لمنع الاستطالة المحورية من الرتبة الأولى."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "in-compat"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 19,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "inclined-3",
+      "title": {
+        "en": "3 · Bending sees the transverse part of a load",
+        "ar": "٣ · الانحناء يتأثر بالمركبة العرضية للحمل"
+      },
+      "predict": {
+        "en": "A 10 kN/m global vertical load acts per actual metre on the inclined 3–4–5 member. Is its transverse intensity 10?",
+        "ar": "حمل رأسي عام شدته 10 kN/m لكل متر حقيقي على العضو المائل 3–4–5. هل شدته العرضية تساوي 10؟"
+      },
+      "options": [
+        {
+          "en": "Yes; use the full vertical intensity.",
+          "ar": "نعم؛ استخدم الشدة الرأسية كاملة."
+        },
+        {
+          "en": "No; project onto the local normal.",
+          "ar": "لا؛ أسقطها على العمودي المحلي."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "One part of the load bends the member; the tangential part produces axial action. The load’s “per metre” definition matters as much as its direction.",
+        "ar": "جزء من الحمل يثني العضو، والمركبة المماسية تولّد فعلاً محورياً. وتعريف «لكل متر» مهم بقدر اتجاه الحمل."
+      },
+      "explain": {
+        "en": "Project a global line-load vector defined per actual member length. If instead it is given per horizontal metre, first multiply by the horizontal-to-actual length ratio. Do not assume the source sketch’s w convention applies to every new problem.",
+        "ar": "أسقط متجه الحمل الخطي العام المعرف لكل طول حقيقي. إذا عُرف لكل متر أفقي، اضرب أولاً بنسبة الطول الأفقي إلى الحقيقي. لا تفترض أن تعريف w في شكل المصدر ينطبق على كل مسألة جديدة."
+      },
+      "formula": "q⊥=qglobal·n; |F|=|q⊥|L²/12 for a full-span uniform transverse load",
+      "symbols": {
+        "en": "qglobal is kN/m of actual length; n=(−0.8,0.6). The pair of signed end moments follows the chosen local load sense.",
+        "ar": "qglobal بوحدة kN/m من الطول الحقيقي؛ وn=(−0.8,0.6). تحدد إشارة كل عزم طرفي وفق اتجاه الحمل المحلي المختار."
+      },
+      "assumptions": {
+        "en": "Linear elastic bending and small rotations; neglected member axial strain. Global x is right, y is up; positive end couples and section rotations are clockwise. Each local axis points i→j. All numerical dimensions in this journey are explicitly authored training variants unless stated otherwise.",
+        "ar": "انحناء مرن خطي ودورانات صغيرة مع إهمال الانفعال المحوري للأعضاء. المحور العام x لليمين وy للأعلى، والعزوم الطرفية ودورانات القطاعات مع عقارب الساعة موجبة. يتجه كل محور محلي من i إلى j. جميع الأبعاد الرقمية في هذه الرحلة أمثلة تدريبية مؤلفة ما لم يذكر خلاف ذلك."
+      },
+      "example": {
+        "en": "Authored uniform vertical qglobal=(0,−10) kN/m on the 5 m member.",
+        "ar": "حمل رأسي منتظم مؤلف qglobal=(0,−10) kN/m على العضو بطول 5 m."
+      },
+      "calculation": {
+        "en": "q⊥=(0,−10)·(−0.8,0.6)=−6 kN/m. Fixed-end magnitude=6·25/12=12.5 kN·m. If 10 kN/m is per horizontal metre instead, q⊥=−3.6 and magnitude=7.5.",
+        "ar": "q⊥=(0,−10)·(−0.8,0.6)=−6 kN/m. مقدار عزم التثبيت=6·25/12=12.5 kN·m. وإذا كانت 10 kN/m لكل متر أفقي يصبح q⊥=−3.6 والمقدار=7.5."
+      },
+      "interpret": {
+        "en": "Different load bases describe different physical total loads. They cannot share a fixed-end-moment answer merely because both labels say kN/m.",
+        "ar": "تعريف الحمل لكل طول مختلف يصف حملاً كلياً مختلفاً فيزيائياً. لا يعطي التعريفان النتيجة نفسها لمجرد حملهما وحدة kN/m."
+      },
+      "check": {
+        "prompt": {
+          "en": "What must you ask before applying wL²/12 to an inclined member?",
+          "ar": "ماذا يجب أن تسأل قبل تطبيق wL²/12 على عضو مائل؟"
+        },
+        "answer": {
+          "en": "What direction is w, and is it measured per actual, horizontal or vertical length? Then project and convert accordingly.",
+          "ar": "ما اتجاه w؟ وهل تقاس لكل طول حقيقي أم أفقي أم رأسي؟ ثم حوّلها وأسقطها وفق التعريف."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "in-loads"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 26,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "inclined-4",
+      "title": {
+        "en": "4 · The roof ridge must fit both rafters",
+        "ar": "٤ · يجب أن تتوافق قمة السقف مع الرافدين"
+      },
+      "predict": {
+        "en": "For a gable with two independently swaying eaves, may both roof transverse movements be guessed equal?",
+        "ar": "لسقف جمالوني ذي إفريزين ينزاحان بصورة مستقلة، هل يمكن افتراض تساوي حركتي الرافدين العرضيتين؟"
+      },
+      "options": [
+        {
+          "en": "Yes; the picture looks symmetric.",
+          "ar": "نعم؛ لأن الرسم يبدو متماثلاً."
+        },
+        {
+          "en": "No; derive both from compatible endpoint movements.",
+          "ar": "لا؛ اشتقهما من حركات الأطراف المتوافقة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "The source gable has three rotating joints B,C,D and two independent eave translations. The ridge must satisfy both rafters’ axial compatibility.",
+        "ar": "للسقف في المصدر ثلاث عقد دوارة B وC وD وانتقالان مستقلان للإفريزين. ويجب أن تحقق القمة التوافق المحوري للرافدين معاً."
+      },
+      "explain": {
+        "en": "Let the left roof rise at angle α, the right roof fall at angle β. With vertical eave movements zero, let eave horizontal movements be u1 and u2. Solve two dot-product compatibility equations for ridge uC and vC. This is an algebraic version of the lecture displacement triangle.",
+        "ar": "ليرتفع الرافد الأيسر بزاوية α وينخفض الأيمن بزاوية β. مع انعدام حركتي الإفريزين الرأسيتين، نفرض حركتيهما الأفقيتين u1 وu2. نحل معادلتي توافق الجداء النقطي لإيجاد uC وvC للقمة. هذه صيغة جبرية لمثلث الإزاحة في المحاضرة."
+      },
+      "formula": "vC=(u1−u2)/(tanα+tanβ); uC=(u1tanβ+u2tanα)/(tanα+tanβ)",
+      "symbols": {
+        "en": "All u,v in m; α,β measured from horizontal. This formula assumes inextensible roof members and fixed eave elevations.",
+        "ar": "جميع u وv بالمتر؛ وتقاس α وβ من الأفقي. تفترض المعادلة عدم استطالة الرافدين وثبات منسوبي الإفريزين."
+      },
+      "assumptions": {
+        "en": "Linear elastic bending and small rotations; neglected member axial strain. Global x is right, y is up; positive end couples and section rotations are clockwise. Each local axis points i→j. All numerical dimensions in this journey are explicitly authored training variants unless stated otherwise.",
+        "ar": "انحناء مرن خطي ودورانات صغيرة مع إهمال الانفعال المحوري للأعضاء. المحور العام x لليمين وy للأعلى، والعزوم الطرفية ودورانات القطاعات مع عقارب الساعة موجبة. يتجه كل محور محلي من i إلى j. جميع الأبعاد الرقمية في هذه الرحلة أمثلة تدريبية مؤلفة ما لم يذكر خلاف ذلك."
+      },
+      "example": {
+        "en": "Authored symmetric roof: tanα=tanβ=0.75, each rafter length 5 m; u1=6 mm, u2=2 mm.",
+        "ar": "سقف متماثل مؤلف: tanα=tanβ=0.75 وطول كل رافد 5 m؛ وu1=6 mm وu2=2 mm."
+      },
+      "calculation": {
+        "en": "vC=(6−2)/1.5=2.666667 mm upward; uC=(6·0.75+2·0.75)/1.5=4 mm right. The ridge neither stays at the same elevation nor follows one eave alone.",
+        "ar": "vC=(6−2)/1.5=2.666667 mm للأعلى، وuC=(6·0.75+2·0.75)/1.5=4 mm يميناً. لا تبقى القمة على منسوبها ولا تتبع حركة إفريز واحد فقط."
+      },
+      "interpret": {
+        "en": "Do not borrow a five-unknown count for every roof. Recount if there are axial strains, different support restraints or hinges.",
+        "ar": "لا تنقل عدد المجاهيل الخمسة لكل سقف. أعد الحصر إذا وجدت انفعالات محورية أو قيود مختلفة أو مفاصل."
+      },
+      "check": {
+        "prompt": {
+          "en": "How many independent freedoms does the source’s unbraced, fixed-base, inextensible gable have?",
+          "ar": "كم درجة حرية مستقلة للسقف غير المدعم وثابت القاعدتين وغير القابل للاستطالة في المصدر؟"
+        },
+        "answer": {
+          "en": "Five: θB, θC, θD, Δ1, Δ2.",
+          "ar": "خمس: θB وθC وθD وΔ1 وΔ2."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "in-gable"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 28,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "inclined-5",
+      "title": {
+        "en": "5 · Turn compatible geometry into moments",
+        "ar": "٥ · حوّل الهندسة المتوافقة إلى عزوم"
+      },
+      "predict": {
+        "en": "Can the two rafters have opposite chord-rotation signs even when both eaves move right?",
+        "ar": "هل يمكن أن تختلف إشارتا دوران وترَي الرافدين رغم انتقال الإفريزين يميناً؟"
+      },
+      "options": [
+        {
+          "en": "Yes; relative movements, not absolute directions, control chord rotation.",
+          "ar": "نعم؛ تتحكم الحركات النسبية بدوران الوتر لا الاتجاهات المطلقة."
+        },
+        {
+          "en": "No; rightward movement means identical chord rotations.",
+          "ar": "لا؛ الحركة يميناً تعني دورانَي وتر متطابقين."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "In the authored roof, the ridge rises while sitting between the two horizontal movements. The rafters therefore rotate in opposite geometric senses.",
+        "ar": "في السقف المؤلف ترتفع القمة وتقع حركتها الأفقية بين حركتي الإفريزين. لذلك يدور الرافدان باتجاهين هندسيين متعاكسين."
+      },
+      "explain": {
+        "en": "Compute each local normal and project the relative endpoint displacement. Insert the resulting signed ψ into the two slope-deflection expressions for that member. Then write three joint moment equations and two independent translation-equilibrium equations for the five freedoms.",
+        "ar": "احسب العمودي المحلي لكل عضو وأسقط الإزاحة النسبية لطرفيه. أدخل ψ بإشارتها في معادلتي الميل والهبوط لذلك العضو. ثم اكتب ثلاث معادلات لاتزان عزوم العقد ومعادلتي اتزان انتقاليتين مستقلتين لدرجات الحرية الخمس."
+      },
+      "formula": "Mij=Fij+(2EI/L)(2θi+θj−3ψij)",
+      "symbols": {
+        "en": "θ and ψ are clockwise radians; EI in kN·m² and L in m. Translational equations can come from carefully chosen free bodies or virtual work with compatible unit displacement patterns.",
+        "ar": "θ وψ بالراديان مع عقارب الساعة؛ وEI بوحدة kN·m² وL بالمتر. يمكن إيجاد معادلات الانتقال من مخططات جسم حر مختارة بعناية أو من الشغل الافتراضي مع أنماط إزاحة وحدية متوافقة."
+      },
+      "assumptions": {
+        "en": "Linear elastic bending and small rotations; neglected member axial strain. Global x is right, y is up; positive end couples and section rotations are clockwise. Each local axis points i→j. All numerical dimensions in this journey are explicitly authored training variants unless stated otherwise.",
+        "ar": "انحناء مرن خطي ودورانات صغيرة مع إهمال الانفعال المحوري للأعضاء. المحور العام x لليمين وy للأعلى، والعزوم الطرفية ودورانات القطاعات مع عقارب الساعة موجبة. يتجه كل محور محلي من i إلى j. جميع الأبعاد الرقمية في هذه الرحلة أمثلة تدريبية مؤلفة ما لم يذكر خلاف ذلك."
+      },
+      "example": {
+        "en": "Continue the authored roof: left e=(0.8,0.6), right e=(0.8,−0.6). Use the previous ridge movement.",
+        "ar": "أكمل السقف المؤلف: e اليسرى=(0.8,0.6) واليمنى=(0.8,−0.6). استخدم حركة القمة السابقة."
+      },
+      "calculation": {
+        "en": "Left normal displacement=(−0.6,0.8)·(−2,2.666667)=3.333333 mm, so ψBC=−0.000666667 rad. Right normal displacement=(0.6,0.8)·(−2,−2.666667)=−3.333333 mm, so ψCD=+0.000666667 rad.",
+        "ar": "الإزاحة العمودية اليسرى=(−0.6,0.8)·(−2,2.666667)=3.333333 mm، لذا ψBC=−0.000666667 rad. والإزاحة العمودية اليمنى=(0.6,0.8)·(−2,−2.666667)=−3.333333 mm، لذا ψCD=+0.000666667 rad."
+      },
+      "interpret": {
+        "en": "Equal magnitudes here follow the explicitly symmetric authored geometry. The method still works for unequal slopes and rigidities.",
+        "ar": "تساوي المقدارين هنا نتيجة الهندسة المؤلفة المتماثلة تحديداً. وتظل الطريقة صالحة للميلين والجساءتين غير المتساويين."
+      },
+      "check": {
+        "prompt": {
+          "en": "With EI=10000, L=5 and θi=θj=0, what is the left rafter displacement moment contribution?",
+          "ar": "عند EI=10000 وL=5 وθi=θj=0، ما مساهمة الإزاحة في عزم طرف الرافد الأيسر؟"
+        },
+        "answer": {
+          "en": "−6EIψ/L=−6·10000·(−0.000666667)/5=+8 kN·m at each held end.",
+          "ar": "−6EIψ/L=−6·10000·(−0.000666667)/5=+8 kN·m عند كل طرف مقيد."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "in-equations"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 29,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "inclined-6",
+      "title": {
+        "en": "6 · Return local answers to the whole structure",
+        "ar": "٦ · أعد النتائج المحلية إلى المنشأ كله"
+      },
+      "predict": {
+        "en": "If local shear is known, is it automatically the global horizontal reaction?",
+        "ar": "إذا عُرف القص المحلي، فهل يساوي رد الفعل الأفقي العام تلقائياً؟"
+      },
+      "options": [
+        {
+          "en": "Yes, regardless of inclination.",
+          "ar": "نعم مهما كان الميل."
+        },
+        {
+          "en": "No; rotate local axial and transverse forces into global components.",
+          "ar": "لا؛ حوّل القوتين المحورية والعرضية المحليتين إلى مركبات عامة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "An inclined member transmits both axial and transverse force components. A column-moment shortcut that works for a vertical member can omit an important lever arm here.",
+        "ar": "ينقل العضو المائل مركبات من القوة المحورية والعرضية معاً. قد يهمل اختصار عزوم العمود الصالح لعضو رأسي ذراع عزم مهماً هنا."
+      },
+      "explain": {
+        "en": "The source explicitly includes an additional force lever arm for its inclined leg. Audit your complete free body instead of using a vertical-column shear formula outside its geometry. A compatibility residual e·(uj−ui) also exposes a bad displacement triangle.",
+        "ar": "يتضمن المصدر صراحة ذراع عزم إضافياً للقوة في الرجل المائلة. دقق مخطط الجسم الحر كاملاً بدلاً من استخدام معادلة قص العمود الرأسي خارج هندستها. كما يكشف المتبقي e·(uj−ui) مثلث إزاحة خاطئاً."
+      },
+      "formula": "Fglobal=N e+V n; e·(uj−ui)=0; ΣFx=ΣFy=ΣM=0",
+      "symbols": {
+        "en": "N is local axial force; V is local transverse force; their signs must be defined on a chosen member free body.",
+        "ar": "N القوة المحورية المحلية وV القوة العرضية المحلية؛ ويجب تعريف إشاراتهما على مخطط جسم حر محدد."
+      },
+      "assumptions": {
+        "en": "Linear elastic bending and small rotations; neglected member axial strain. Global x is right, y is up; positive end couples and section rotations are clockwise. Each local axis points i→j. All numerical dimensions in this journey are explicitly authored training variants unless stated otherwise.",
+        "ar": "انحناء مرن خطي ودورانات صغيرة مع إهمال الانفعال المحوري للأعضاء. المحور العام x لليمين وy للأعلى، والعزوم الطرفية ودورانات القطاعات مع عقارب الساعة موجبة. يتجه كل محور محلي من i إلى j. جميع الأبعاد الرقمية في هذه الرحلة أمثلة تدريبية مؤلفة ما لم يذكر خلاف ذلك."
+      },
+      "example": {
+        "en": "Authored transformation: e=(0.6,0.8), n=(−0.8,0.6), N=10 kN and V=5 kN on the chosen face.",
+        "ar": "تحويل مؤلف: e=(0.6,0.8) وn=(−0.8,0.6) وN=10 kN وV=5 kN على الوجه المختار."
+      },
+      "calculation": {
+        "en": "Fx=10·0.6+5(−0.8)=2 kN; Fy=10·0.8+5·0.6=11 kN. Magnitude √(2²+11²)=√(10²+5²), as rotation preserves force magnitude.",
+        "ar": "Fx=10·0.6+5(−0.8)=2 kN وFy=10·0.8+5·0.6=11 kN. المقدار √(2²+11²)=√(10²+5²)، لأن تحويل المحاور يحفظ مقدار القوة."
+      },
+      "interpret": {
+        "en": "The lecture’s general gable figures are symbolic, not a numerical test case. These authored projection examples verify the method without inventing source dimensions.",
+        "ar": "أشكال السقف العامة بالمحاضرة رمزية وليست مسألة اختبار رقمية. تتحقق أمثلة الإسقاط المؤلفة من الطريقة دون اختراع أبعاد منسوبة للمصدر."
+      },
+      "check": {
+        "prompt": {
+          "en": "Name three checks before accepting an inclined-frame solution.",
+          "ar": "اذكر ثلاثة فحوص قبل قبول حل إطار مائل."
+        },
+        "answer": {
+          "en": "Axial compatibility, rigid-joint moment equilibrium, and global force/moment equilibrium with properly transformed components.",
+          "ar": "التوافق المحوري، واتزان عزوم العقد الجسئة، واتزان القوى والعزوم العام بعد تحويل المركبات بصورة صحيحة."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "in-audit"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 21,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "in-q1",
+      "concept": "in-axes",
+      "type": "conceptual",
+      "prompt": {
+        "en": "What length enters 4EI/L for a sloped member?",
+        "ar": "أي طول يدخل 4EI/L للعضو المائل؟"
+      },
+      "options": [
+        {
+          "en": "Its actual length.",
+          "ar": "طوله الحقيقي."
+        },
+        {
+          "en": "Its vertical projection.",
+          "ar": "إسقاطه الرأسي."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Define the local tangent and normal before deciding.",
+          "ar": "عرّف المماس والعمودي المحليين قبل اتخاذ القرار."
+        },
+        {
+          "en": "Use this relationship: L=√(dx²+dy²); e=(dx/L,dy/L); n=(−dy/L,dx/L)",
+          "ar": "استخدم العلاقة: L=√(dx²+dy²); e=(dx/L,dy/L); n=(−dy/L,dx/L)"
+        }
+      ],
+      "solution": {
+        "en": "Bending occurs along the actual member axis.",
+        "ar": "يحدث الانحناء على طول محور العضو الحقيقي."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 18,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-q2",
+      "concept": "in-axes",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored variant: dx=6 m, dy=8 m. Find member length.",
+        "ar": "تمرين مؤلف: dx=6 m وdy=8 m. أوجد طول العضو."
+      },
+      "expected": 10,
+      "tolerance": 0.01,
+      "unit": "m",
+      "hints": [
+        {
+          "en": "This is an authored training variant. Use actual lengths and explicit vector projections.",
+          "ar": "هذا تمرين مؤلف. استخدم الأطوال الحقيقية والإسقاطات المتجهية الصريحة."
+        },
+        {
+          "en": "Use this relationship: L=√(dx²+dy²); e=(dx/L,dy/L); n=(−dy/L,dx/L)",
+          "ar": "استخدم العلاقة: L=√(dx²+dy²); e=(dx/L,dy/L); n=(−dy/L,dx/L)"
+        }
+      ],
+      "solution": {
+        "en": "L=√(6²+8²)=10 m.",
+        "ar": "L=√(6²+8²)=10 m."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 18,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-q3",
+      "concept": "in-compat",
+      "type": "conceptual",
+      "prompt": {
+        "en": "If axial strain is neglected, what movement condition applies?",
+        "ar": "ما شرط الحركة عند إهمال الانفعال المحوري؟"
+      },
+      "options": [
+        {
+          "en": "The relative displacement projection on the tangent is zero.",
+          "ar": "إسقاط الإزاحة النسبية على المماس يساوي صفراً."
+        },
+        {
+          "en": "Both global displacement components must be zero.",
+          "ar": "يجب انعدام مركبتي الإزاحة العامتين."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Define the local tangent and normal before deciding.",
+          "ar": "عرّف المماس والعمودي المحليين قبل اتخاذ القرار."
+        },
+        {
+          "en": "Use this relationship: e·(uj−ui)=0; ψCW=−n·(uj−ui)/L",
+          "ar": "استخدم العلاقة: e·(uj−ui)=0; ψCW=−n·(uj−ui)/L"
+        }
+      ],
+      "solution": {
+        "en": "Inextensibility allows transverse motion but forbids first-order axial extension.",
+        "ar": "عدم الاستطالة يسمح بالحركة العرضية ويمنع الاستطالة المحورية من الرتبة الأولى."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 19,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-q4",
+      "concept": "in-compat",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored 3–4–5 member: fixed lower end; upper ux=4 mm; no axial extension. Enter upper uy (up positive).",
+        "ar": "عضو مؤلف 3–4–5 طرفه السفلي ثابت، وux العليا=4 mm، ولا استطالة محورية. أدخل uy العليا والأعلى موجب."
+      },
+      "expected": -3,
+      "tolerance": 0.003,
+      "unit": "mm",
+      "hints": [
+        {
+          "en": "This is an authored training variant. Use actual lengths and explicit vector projections.",
+          "ar": "هذا تمرين مؤلف. استخدم الأطوال الحقيقية والإسقاطات المتجهية الصريحة."
+        },
+        {
+          "en": "Use this relationship: e·(uj−ui)=0; ψCW=−n·(uj−ui)/L",
+          "ar": "استخدم العلاقة: e·(uj−ui)=0; ψCW=−n·(uj−ui)/L"
+        }
+      ],
+      "solution": {
+        "en": "0.6·4+0.8uy=0 ⇒ uy=−3 mm.",
+        "ar": "0.6·4+0.8uy=0 ⇒ uy=−3 mm."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 19,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-q5",
+      "concept": "in-loads",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Two labels both read 10 kN/m. One is per actual length and one per horizontal length. Are they physically identical on a slope?",
+        "ar": "حملان كلاهما 10 kN/m، أحدهما لكل طول حقيقي والآخر لكل طول أفقي. هل هما متطابقان على عضو مائل؟"
+      },
+      "options": [
+        {
+          "en": "Yes.",
+          "ar": "نعم."
+        },
+        {
+          "en": "No; their total loads and local transverse intensities differ.",
+          "ar": "لا؛ يختلف الحمل الكلي والشدة العرضية المحلية."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Define the local tangent and normal before deciding.",
+          "ar": "عرّف المماس والعمودي المحليين قبل اتخاذ القرار."
+        },
+        {
+          "en": "Use this relationship: q⊥=qglobal·n; |F|=|q⊥|L²/12 for a full-span uniform transverse load",
+          "ar": "استخدم العلاقة: q⊥=qglobal·n; |F|=|q⊥|L²/12 for a full-span uniform transverse load"
+        }
+      ],
+      "solution": {
+        "en": "Convert the load base before projecting. Units alone do not reveal the reference length.",
+        "ar": "حوّل أساس تعريف الحمل قبل الإسقاط؛ فالوحدات وحدها لا تحدد الطول المرجعي."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 26,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-q6",
+      "concept": "in-loads",
+      "type": "mixed",
+      "prompt": {
+        "en": "Authored 3–4–5 member: downward vertical 10 kN/m per actual length. Find the magnitude of either fixed-end moment.",
+        "ar": "عضو مؤلف 3–4–5: حمل رأسي للأسفل 10 kN/m لكل طول حقيقي. أوجد مقدار أحد عزمي التثبيت."
+      },
+      "expected": 12.5,
+      "tolerance": 0.0125,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "This is an authored training variant. Use actual lengths and explicit vector projections.",
+          "ar": "هذا تمرين مؤلف. استخدم الأطوال الحقيقية والإسقاطات المتجهية الصريحة."
+        },
+        {
+          "en": "Use this relationship: q⊥=qglobal·n; |F|=|q⊥|L²/12 for a full-span uniform transverse load",
+          "ar": "استخدم العلاقة: q⊥=qglobal·n; |F|=|q⊥|L²/12 for a full-span uniform transverse load"
+        }
+      ],
+      "solution": {
+        "en": "Normal intensity magnitude=10·0.6=6; magnitude=6·5²/12=12.5.",
+        "ar": "مقدار الشدة العمودية=10·0.6=6؛ ومقدار العزم=6·5²/12=12.5."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 26,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-q7",
+      "concept": "in-gable",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Why can the ridge move vertically even when both eave elevations stay fixed?",
+        "ar": "لماذا قد تتحرك القمة رأسياً مع ثبات منسوبي الإفريزين؟"
+      },
+      "options": [
+        {
+          "en": "The two sloped inextensible rafters require compatible relative motion.",
+          "ar": "لأن الرافدين المائلين غير القابلين للاستطالة يفرضان حركة نسبية متوافقة."
+        },
+        {
+          "en": "Axial strain must be included.",
+          "ar": "لأن إدخال الانفعال المحوري واجب دائماً."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Define the local tangent and normal before deciding.",
+          "ar": "عرّف المماس والعمودي المحليين قبل اتخاذ القرار."
+        },
+        {
+          "en": "Use this relationship: vC=(u1−u2)/(tanα+tanβ); uC=(u1tanβ+u2tanα)/(tanα+tanβ)",
+          "ar": "استخدم العلاقة: vC=(u1−u2)/(tanα+tanβ); uC=(u1tanβ+u2tanα)/(tanα+tanβ)"
+        }
+      ],
+      "solution": {
+        "en": "Differential horizontal eave motion changes the compatible ridge position without first-order rafter extension.",
+        "ar": "اختلاف الانتقالين الأفقيين للإفريزين يغيّر موضع القمة المتوافق دون استطالة الرافدين من الرتبة الأولى."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 28,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-q8",
+      "concept": "in-gable",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored gable: tanα=tanβ=0.75, u1=6 mm, u2=2 mm. Find ridge vertical movement (up positive).",
+        "ar": "سقف جمالوني مؤلف: tanα=tanβ=0.75 وu1=6 mm وu2=2 mm. أوجد انتقال القمة الرأسي والأعلى موجب."
+      },
+      "expected": 2.666666667,
+      "tolerance": 0.0026666666669999998,
+      "unit": "mm",
+      "hints": [
+        {
+          "en": "This is an authored training variant. Use actual lengths and explicit vector projections.",
+          "ar": "هذا تمرين مؤلف. استخدم الأطوال الحقيقية والإسقاطات المتجهية الصريحة."
+        },
+        {
+          "en": "Use this relationship: vC=(u1−u2)/(tanα+tanβ); uC=(u1tanβ+u2tanα)/(tanα+tanβ)",
+          "ar": "استخدم العلاقة: vC=(u1−u2)/(tanα+tanβ); uC=(u1tanβ+u2tanα)/(tanα+tanβ)"
+        }
+      ],
+      "solution": {
+        "en": "vC=(6−2)/(0.75+0.75)=2.666666667 mm.",
+        "ar": "vC=(6−2)/(0.75+0.75)=2.666666667 mm."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 29,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-q9",
+      "concept": "in-equations",
+      "type": "conceptual",
+      "prompt": {
+        "en": "What controls an inclined member’s chord rotation?",
+        "ar": "ما الذي يحدد دوران وتر العضو المائل؟"
+      },
+      "options": [
+        {
+          "en": "The absolute rightward displacement of either endpoint.",
+          "ar": "الإزاحة المطلقة يميناً لأي طرف."
+        },
+        {
+          "en": "The signed transverse component of relative endpoint displacement divided by actual length.",
+          "ar": "المركبة العرضية للإزاحة النسبية للطرفين بإشارتها مقسومة على الطول الحقيقي."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Define the local tangent and normal before deciding.",
+          "ar": "عرّف المماس والعمودي المحليين قبل اتخاذ القرار."
+        },
+        {
+          "en": "Use this relationship: Mij=Fij+(2EI/L)(2θi+θj−3ψij)",
+          "ar": "استخدم العلاقة: Mij=Fij+(2EI/L)(2θi+θj−3ψij)"
+        }
+      ],
+      "solution": {
+        "en": "Rigid translation of both ends equally causes no chord rotation.",
+        "ar": "الانتقال الصلب المتساوي للطرفين لا يولّد دوران وتر."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 20,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-q10",
+      "concept": "in-equations",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored variant: EI=10000 kN·m², L=5 m, θi=θj=0 and clockwise ψ=−0.000666666667 rad. Find the displacement-only end moment.",
+        "ar": "تمرين مؤلف: EI=10000 kN·m² وL=5 m وθi=θj=0 وψ مع عقارب الساعة=−0.000666666667 rad. أوجد عزم الطرف الناتج عن الإزاحة فقط."
+      },
+      "expected": 8,
+      "tolerance": 0.008,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "This is an authored training variant. Use actual lengths and explicit vector projections.",
+          "ar": "هذا تمرين مؤلف. استخدم الأطوال الحقيقية والإسقاطات المتجهية الصريحة."
+        },
+        {
+          "en": "Use this relationship: Mij=Fij+(2EI/L)(2θi+θj−3ψij)",
+          "ar": "استخدم العلاقة: Mij=Fij+(2EI/L)(2θi+θj−3ψij)"
+        }
+      ],
+      "solution": {
+        "en": "M=−6EIψ/L=+8 kN·m.",
+        "ar": "M=−6EIψ/L=+8 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 20,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-q11",
+      "concept": "in-audit",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Local shear V on an inclined member equals global horizontal force:",
+        "ar": "القص المحلي V في عضو مائل يساوي القوة الأفقية العامة:"
+      },
+      "options": [
+        {
+          "en": "Always.",
+          "ar": "دائماً."
+        },
+        {
+          "en": "Only in the appropriate special orientation; generally transform N and V together.",
+          "ar": "فقط في اتجاه خاص مناسب؛ عموماً حوّل N وV معاً."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Define the local tangent and normal before deciding.",
+          "ar": "عرّف المماس والعمودي المحليين قبل اتخاذ القرار."
+        },
+        {
+          "en": "Use this relationship: Fglobal=N e+V n; e·(uj−ui)=0; ΣFx=ΣFy=ΣM=0",
+          "ar": "استخدم العلاقة: Fglobal=N e+V n; e·(uj−ui)=0; ΣFx=ΣFy=ΣM=0"
+        }
+      ],
+      "solution": {
+        "en": "Fglobal=N e+V n. Both components may contribute horizontally.",
+        "ar": "Fglobal=N e+V n. قد تسهم المركبتان أفقياً."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 21,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-q12",
+      "concept": "in-audit",
+      "type": "mixed",
+      "prompt": {
+        "en": "Authored transformation: e=(0.6,0.8), n=(−0.8,0.6), N=10 kN, V=5 kN. Find global Fx.",
+        "ar": "تحويل مؤلف: e=(0.6,0.8) وn=(−0.8,0.6) وN=10 kN وV=5 kN. أوجد Fx العامة."
+      },
+      "expected": 2,
+      "tolerance": 0.002,
+      "unit": "kN",
+      "hints": [
+        {
+          "en": "This is an authored training variant. Use actual lengths and explicit vector projections.",
+          "ar": "هذا تمرين مؤلف. استخدم الأطوال الحقيقية والإسقاطات المتجهية الصريحة."
+        },
+        {
+          "en": "Use this relationship: Fglobal=N e+V n; e·(uj−ui)=0; ΣFx=ΣFy=ΣM=0",
+          "ar": "استخدم العلاقة: Fglobal=N e+V n; e·(uj−ui)=0; ΣFx=ΣFy=ΣM=0"
+        }
+      ],
+      "solution": {
+        "en": "Fx=10·0.6+5(−0.8)=2 kN.",
+        "ar": "Fx=10·0.6+5(−0.8)=2 kN."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 21,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "in-card-1",
+      "concept": "in-axes",
+      "kind": "interpretation",
+      "q": {
+        "en": "What length enters 4EI/L for a sloped member?",
+        "ar": "أي طول يدخل 4EI/L للعضو المائل؟"
+      },
+      "a": {
+        "en": "Bending occurs along the actual member axis.",
+        "ar": "يحدث الانحناء على طول محور العضو الحقيقي."
+      }
+    },
+    {
+      "id": "in-card-2",
+      "concept": "in-axes",
+      "kind": "calculation",
+      "q": {
+        "en": "Authored variant: dx=6 m, dy=8 m. Find member length.",
+        "ar": "تمرين مؤلف: dx=6 m وdy=8 m. أوجد طول العضو."
+      },
+      "a": {
+        "en": "L=√(6²+8²)=10 m.",
+        "ar": "L=√(6²+8²)=10 m."
+      }
+    },
+    {
+      "id": "in-card-3",
+      "concept": "in-compat",
+      "kind": "interpretation",
+      "q": {
+        "en": "If axial strain is neglected, what movement condition applies?",
+        "ar": "ما شرط الحركة عند إهمال الانفعال المحوري؟"
+      },
+      "a": {
+        "en": "Inextensibility allows transverse motion but forbids first-order axial extension.",
+        "ar": "عدم الاستطالة يسمح بالحركة العرضية ويمنع الاستطالة المحورية من الرتبة الأولى."
+      }
+    },
+    {
+      "id": "in-card-4",
+      "concept": "in-compat",
+      "kind": "calculation",
+      "q": {
+        "en": "Authored 3–4–5 member: fixed lower end; upper ux=4 mm; no axial extension. Enter upper uy (up positive).",
+        "ar": "عضو مؤلف 3–4–5 طرفه السفلي ثابت، وux العليا=4 mm، ولا استطالة محورية. أدخل uy العليا والأعلى موجب."
+      },
+      "a": {
+        "en": "0.6·4+0.8uy=0 ⇒ uy=−3 mm.",
+        "ar": "0.6·4+0.8uy=0 ⇒ uy=−3 mm."
+      }
+    },
+    {
+      "id": "in-card-5",
+      "concept": "in-loads",
+      "kind": "interpretation",
+      "q": {
+        "en": "Two labels both read 10 kN/m. One is per actual length and one per horizontal length. Are they physically identical on a slope?",
+        "ar": "حملان كلاهما 10 kN/m، أحدهما لكل طول حقيقي والآخر لكل طول أفقي. هل هما متطابقان على عضو مائل؟"
+      },
+      "a": {
+        "en": "Convert the load base before projecting. Units alone do not reveal the reference length.",
+        "ar": "حوّل أساس تعريف الحمل قبل الإسقاط؛ فالوحدات وحدها لا تحدد الطول المرجعي."
+      }
+    },
+    {
+      "id": "in-card-6",
+      "concept": "in-loads",
+      "kind": "calculation",
+      "q": {
+        "en": "Authored 3–4–5 member: downward vertical 10 kN/m per actual length. Find the magnitude of either fixed-end moment.",
+        "ar": "عضو مؤلف 3–4–5: حمل رأسي للأسفل 10 kN/m لكل طول حقيقي. أوجد مقدار أحد عزمي التثبيت."
+      },
+      "a": {
+        "en": "Normal intensity magnitude=10·0.6=6; magnitude=6·5²/12=12.5.",
+        "ar": "مقدار الشدة العمودية=10·0.6=6؛ ومقدار العزم=6·5²/12=12.5."
+      }
+    },
+    {
+      "id": "in-card-7",
+      "concept": "in-gable",
+      "kind": "interpretation",
+      "q": {
+        "en": "Why can the ridge move vertically even when both eave elevations stay fixed?",
+        "ar": "لماذا قد تتحرك القمة رأسياً مع ثبات منسوبي الإفريزين؟"
+      },
+      "a": {
+        "en": "Differential horizontal eave motion changes the compatible ridge position without first-order rafter extension.",
+        "ar": "اختلاف الانتقالين الأفقيين للإفريزين يغيّر موضع القمة المتوافق دون استطالة الرافدين من الرتبة الأولى."
+      }
+    },
+    {
+      "id": "in-card-8",
+      "concept": "in-gable",
+      "kind": "calculation",
+      "q": {
+        "en": "Authored gable: tanα=tanβ=0.75, u1=6 mm, u2=2 mm. Find ridge vertical movement (up positive).",
+        "ar": "سقف جمالوني مؤلف: tanα=tanβ=0.75 وu1=6 mm وu2=2 mm. أوجد انتقال القمة الرأسي والأعلى موجب."
+      },
+      "a": {
+        "en": "vC=(6−2)/(0.75+0.75)=2.666666667 mm.",
+        "ar": "vC=(6−2)/(0.75+0.75)=2.666666667 mm."
+      }
+    },
+    {
+      "id": "in-card-9",
+      "concept": "in-equations",
+      "kind": "interpretation",
+      "q": {
+        "en": "What controls an inclined member’s chord rotation?",
+        "ar": "ما الذي يحدد دوران وتر العضو المائل؟"
+      },
+      "a": {
+        "en": "Rigid translation of both ends equally causes no chord rotation.",
+        "ar": "الانتقال الصلب المتساوي للطرفين لا يولّد دوران وتر."
+      }
+    },
+    {
+      "id": "in-card-10",
+      "concept": "in-equations",
+      "kind": "calculation",
+      "q": {
+        "en": "Authored variant: EI=10000 kN·m², L=5 m, θi=θj=0 and clockwise ψ=−0.000666666667 rad. Find the displacement-only end moment.",
+        "ar": "تمرين مؤلف: EI=10000 kN·m² وL=5 m وθi=θj=0 وψ مع عقارب الساعة=−0.000666666667 rad. أوجد عزم الطرف الناتج عن الإزاحة فقط."
+      },
+      "a": {
+        "en": "M=−6EIψ/L=+8 kN·m.",
+        "ar": "M=−6EIψ/L=+8 kN·m."
+      }
+    },
+    {
+      "id": "in-card-11",
+      "concept": "in-audit",
+      "kind": "interpretation",
+      "q": {
+        "en": "Local shear V on an inclined member equals global horizontal force:",
+        "ar": "القص المحلي V في عضو مائل يساوي القوة الأفقية العامة:"
+      },
+      "a": {
+        "en": "Fglobal=N e+V n. Both components may contribute horizontally.",
+        "ar": "Fglobal=N e+V n. قد تسهم المركبتان أفقياً."
+      }
+    },
+    {
+      "id": "in-card-12",
+      "concept": "in-audit",
+      "kind": "calculation",
+      "q": {
+        "en": "Authored transformation: e=(0.6,0.8), n=(−0.8,0.6), N=10 kN, V=5 kN. Find global Fx.",
+        "ar": "تحويل مؤلف: e=(0.6,0.8) وn=(−0.8,0.6) وN=10 kN وV=5 kN. أوجد Fx العامة."
+      },
+      "a": {
+        "en": "Fx=10·0.6+5(−0.8)=2 kN.",
+        "ar": "Fx=10·0.6+5(−0.8)=2 kN."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "14",
+      "page": 18,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 19,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 20,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 21,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 26,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 27,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 28,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 29,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 30,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 31,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 32,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 33,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    }
+  ],
+  "videoIds": [
+    "MvBqCeZllpQ",
+    "bPbQeptNxEo"
+  ]
+}

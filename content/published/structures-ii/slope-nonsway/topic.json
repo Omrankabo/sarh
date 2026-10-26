@@ -1,0 +1,1160 @@
+{
+  "id": "slope-nonsway",
+  "family": "slope",
+  "title": {
+    "en": "Slope-deflection: non-sway frames",
+    "ar": "زاوية الميل والهبوط: إطارات دون انزياح جانبي"
+  },
+  "summary": {
+    "en": "Let each rigid corner turn, then make the connected members balance. Follow the actual lecture frame from its restraints to checked end moments.",
+    "ar": "اسمح لكل ركن جسئ بالدوران، ثم اجعل الأعضاء المتصلة تتزن. نتتبع إطار المحاضرة الحقيقي من قيوده إلى عزوم أطراف متحققة."
+  },
+  "outcomes": [
+    {
+      "en": "Identify independent rotations without inventing a sway displacement.",
+      "ar": "تحديد الدورانات المستقلة دون افتراض انزياح جانبي غير موجود."
+    },
+    {
+      "en": "Condense real end hinges, preserve overhang moments and solve joint equilibrium.",
+      "ar": "اختزال المفاصل الطرفية الحقيقية مع حفظ عزوم الكوابيل وحل اتزان العقد."
+    },
+    {
+      "en": "Interpret signs, obtain reactions and check the bending response.",
+      "ar": "تفسير الإشارات وإيجاد ردود الأفعال وفحص استجابة الانحناء."
+    }
+  ],
+  "prereqIds": [
+    "units",
+    "algebra",
+    "forces",
+    "supports",
+    "loads",
+    "diagrams",
+    "shape",
+    "rigidity",
+    "compatibility"
+  ],
+  "concepts": [
+    {
+      "id": "ns-freedoms",
+      "title": {
+        "en": "Restraints and independent rotations",
+        "ar": "القيود والدورانات المستقلة"
+      }
+    },
+    {
+      "id": "ns-fem",
+      "title": {
+        "en": "Fixed-end load moments",
+        "ar": "عزوم التثبيت الناتجة عن الأحمال"
+      }
+    },
+    {
+      "id": "ns-equation",
+      "title": {
+        "en": "Member equations and physical stiffness",
+        "ar": "معادلات العضو والمعنى الفيزيائي للجساءة"
+      }
+    },
+    {
+      "id": "ns-release",
+      "title": {
+        "en": "True hinges and the overhang",
+        "ar": "المفاصل الحقيقية والكابولي"
+      }
+    },
+    {
+      "id": "ns-solve",
+      "title": {
+        "en": "Joint equilibrium and elimination",
+        "ar": "اتزان العقد والحذف"
+      }
+    },
+    {
+      "id": "ns-check",
+      "title": {
+        "en": "End moments, reactions and verification",
+        "ar": "عزوم الأطراف وردود الأفعال والتحقق"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "freedoms",
+      "title": {
+        "en": "1 · The frame is a connected set of bending springs",
+        "ar": "١ · الإطار مجموعة نوابض انحناء مترابطة"
+      },
+      "predict": {
+        "en": "A pin at A permits rotation. Must the entire frame therefore sway?",
+        "ar": "يسمح المفصل عند A بالدوران. هل يجب أن ينزاح الإطار كله جانبياً؟"
+      },
+      "options": [
+        {
+          "en": "Yes; any pin creates sway.",
+          "ar": "نعم، كل مفصل يسبب الانزياح."
+        },
+        {
+          "en": "No; inspect the translational restraints of the whole frame.",
+          "ar": "لا؛ افحص قيود الانتقال للإطار كله."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "The horizontal member is anchored at A. Its inextensible axis prevents horizontal translation of B and C in this idealization, even under the horizontal column load.",
+        "ar": "العضو الأفقي مثبت انتقالياً عند A. ومحوره غير القابل للاستطالة يمنع الانتقال الأفقي للعقدتين B وC ضمن هذا النموذج، حتى مع حمل العمود الأفقي."
+      },
+      "explain": {
+        "en": "The source frame has AB=4 m, BC=6 m, CD=2 m, BF=CE=3 m. A and F are pins, E is fixed, D is a free overhang tip. B and C are rigid joints. A roller under an intermediate continuous beam is not an internal hinge.",
+        "ar": "في إطار المصدر AB=4 m وBC=6 m وCD=2 m وBF=CE=3 m. الطرفان A وF مفصليان، وE مثبت، وD نهاية كابولية حرة. العقدتان B وC جسئتان. والمسند البسيط أسفل كمرة مستمرة ليس مفصلاً داخلياً."
+      },
+      "formula": "q = [θA, θB, θC, θF]; θE = 0; Δ = 0",
+      "symbols": {
+        "en": "θ is a cross-section rotation in radians; Δ is horizontal story translation in m. End-hinge rotations can later be eliminated.",
+        "ar": "θ دوران القطاع بالراديان؛ وΔ انتقال الطابق الأفقي بالمتر. يمكن حذف دورانات المفاصل الطرفية لاحقاً."
+      },
+      "assumptions": {
+        "en": "Small deflections; linear elastic prismatic members; neglect axial deformation. Clockwise member-end couples and rotations are positive. State each member direction before assigning its chord rotation.",
+        "ar": "تشوهات صغيرة وأعضاء منشورية مرنة خطياً مع إهمال التشوه المحوري. العزوم الطرفية والدورانات مع عقارب الساعة موجبة. عيّن اتجاه كل عضو قبل تحديد دوران وتره."
+      },
+      "example": {
+        "en": "First draw only the allowed movements before drawing any moment arrow.",
+        "ar": "ارسم أولاً الحركات المسموح بها قبل رسم أي سهم عزم."
+      },
+      "calculation": {
+        "en": "There are four rotation unknowns before condensation and two after eliminating θA and θF. No extra equation for Δ is needed.",
+        "ar": "قبل الاختزال توجد أربعة دورانات مجهولة، وبعد حذف θA وθF يبقى مجهولان. لا نحتاج معادلة إضافية لـΔ."
+      },
+      "interpret": {
+        "en": "Choosing freedoms correctly determines the size and meaning of the entire solution.",
+        "ar": "اختيار درجات الحرية بدقة يحدد حجم الحل ومعناه."
+      },
+      "check": {
+        "prompt": {
+          "en": "Why does the horizontal 40 kN load not automatically imply sway here?",
+          "ar": "لماذا لا يستلزم الحمل الأفقي 40 kN انزياحاً جانبياً هنا؟"
+        },
+        "answer": {
+          "en": "Because A restrains horizontal motion and the horizontal members are taken as axially inextensible. Loads and movement permissions are different things.",
+          "ar": "لأن A يمنع الانتقال الأفقي، ولأن الأعضاء الأفقية غير قابلة للاستطالة محورياً في النموذج. وجود حمل وإمكانية الحركة أمران مختلفان."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "ns-freedoms"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 3,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "loads",
+      "title": {
+        "en": "2 · Freeze rotations to measure the load’s first push",
+        "ar": "٢ · امنع الدوران لتعرف أثر الحمل الأول"
+      },
+      "predict": {
+        "en": "A 36 kN point load lies 4 m from B and 2 m from C on BC. Are its two fixed-end moments equal?",
+        "ar": "حمل مركز 36 kN على BC يبعد 4 m عن B و2 m عن C. هل عزما تثبيته متساويان؟"
+      },
+      "options": [
+        {
+          "en": "Equal, because the total force is one value.",
+          "ar": "متساويان لأن مقدار القوة واحد."
+        },
+        {
+          "en": "Unequal, because position changes restraint demand.",
+          "ar": "غير متساويين لأن موضع الحمل يغيّر أثر القيود."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "A frozen span must resist both the distributed load and the off-centre point load. The shorter lever arm near C does not imply a smaller fixed-end moment there.",
+        "ar": "الفتحة المقيدة تقاوم الحمل الموزع والحمل المركز غير المنتصف معاً. قرب الحمل من C لا يعني أن عزم التثبيت هناك أصغر."
+      },
+      "explain": {
+        "en": "Use signed fixed-end moments Fij for the initially locked member. AB and BC carry 12 kN/m. The 40 kN horizontal point load acts at mid-height of CE. The overhang load is handled separately by statics.",
+        "ar": "استخدم عزمي تثبيت بإشارتين Fij للعضو المقيد مبدئياً. على AB وBC حمل 12 kN/m، وعلى منتصف CE حمل أفقي 40 kN. يعالج حمل الكابولي بالاستاتيكا مستقلاً."
+      },
+      "formula": "Fij = −wL²/12 − Pab²/L²; Fji = +wL²/12 + Pa²b/L²",
+      "symbols": {
+        "en": "w: kN/m; P: kN; a: distance from i; b=L−a; F: kN·m. Choose the transverse load sense in each member’s local sketch.",
+        "ar": "w بوحدة kN/m وP بوحدة kN وa بعد الحمل عن i وb=L−a؛ والعزم بوحدة kN·m. حدد اتجاه الحمل العرضي على الرسم المحلي لكل عضو."
+      },
+      "assumptions": {
+        "en": "Small deflections; linear elastic prismatic members; neglect axial deformation. Clockwise member-end couples and rotations are positive. State each member direction before assigning its chord rotation.",
+        "ar": "تشوهات صغيرة وأعضاء منشورية مرنة خطياً مع إهمال التشوه المحوري. العزوم الطرفية والدورانات مع عقارب الساعة موجبة. عيّن اتجاه كل عضو قبل تحديد دوران وتره."
+      },
+      "example": {
+        "en": "For BC use L=6, w=12, P=36, a=4, b=2.",
+        "ar": "لـBC استخدم L=6 وw=12 وP=36 وa=4 وb=2."
+      },
+      "calculation": {
+        "en": "FBC=−36−16=−52; FCB=36+32=+68 kN·m. FAB=−16 and FBA=+16. For CE, FCE=−15 and FEC=+15 in the source orientation.",
+        "ar": "FBC=−36−16=−52 وFCB=36+32=+68 kN·m. كذلك FAB=−16 وFBA=+16. ولـCE نحصل على FCE=−15 وFEC=+15 وفق اتجاه المصدر."
+      },
+      "interpret": {
+        "en": "Fixed-end moments are the load contribution, not the final answer: unlocking the rigid joints redistributes them.",
+        "ar": "عزوم التثبيت هي مساهمة الأحمال وليست النتيجة النهائية؛ إذ تتغير عند السماح بدوران العقد."
+      },
+      "check": {
+        "prompt": {
+          "en": "Why may you add the UDL and point-load fixed-end moments?",
+          "ar": "لماذا يمكن جمع عزوم التثبيت للحمل الموزع والمركز؟"
+        },
+        "answer": {
+          "en": "Linear elastic superposition applies with the same restraints and sign convention.",
+          "ar": "لأن التراكب الخطي المرن يصح مع ثبات القيود واتفاقية الإشارات."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "ns-fem"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 5,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "springs",
+      "title": {
+        "en": "3 · Rotation creates a measurable restoring moment",
+        "ar": "٣ · الدوران يولّد عزم مقاومة يمكن حسابه"
+      },
+      "predict": {
+        "en": "At identical rotation, which resists more: a member with EI or an equal-length member with 2EI?",
+        "ar": "عند دوران متساوٍ، أيهما يقاوم أكثر: عضو جساءته EI أم عضو مساوٍ بالطول جساءته 2EI؟"
+      },
+      "options": [
+        {
+          "en": "The 2EI member develops twice the rotational moment contribution.",
+          "ar": "العضو ذو 2EI يولّد ضعف مساهمة العزم الدوراني."
+        },
+        {
+          "en": "Both develop the same moment.",
+          "ar": "كلاهما يولّد العزم نفسه."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Each end feels its own rotation more strongly than the far end’s rotation. With translations prevented, the own-end coefficient is twice the cross coefficient.",
+        "ar": "يتأثر كل طرف بدورانه أكثر من تأثره بدوران الطرف البعيد. ومع منع الانتقالات يكون معامل الدوران المحلي ضعف المعامل المتبادل."
+      },
+      "explain": {
+        "en": "Member stiffness is not an arbitrary table number. Bending a shorter or more rigid member through the same angle requires more moment. The fixed-end load term remains when all rotations are zero.",
+        "ar": "جساءة العضو ليست رقماً اعتباطياً في جدول. تدوير عضو أقصر أو أشد صلابة بالزاوية نفسها يحتاج عزماً أكبر. ويظل أثر الحمل الثابت موجوداً حتى عند انعدام الدورانات."
+      },
+      "formula": "Mij = Fij + (2EI/L)(2θi + θj); Mji = Fji + (2EI/L)(θi + 2θj)",
+      "symbols": {
+        "en": "M and F: kN·m; EI: kN·m²; L: m; θ: rad. For the lecture let x=EI₀θB and y=EI₀θC, where EI₀ is the reference rigidity.",
+        "ar": "M وF بوحدة kN·m، وEI بوحدة kN·m²، وL بالمتر، وθ بالراديان. في المثال نضع x=EI₀θB وy=EI₀θC حيث EI₀ الجساءة المرجعية."
+      },
+      "assumptions": {
+        "en": "Small deflections; linear elastic prismatic members; neglect axial deformation. Clockwise member-end couples and rotations are positive. State each member direction before assigning its chord rotation.",
+        "ar": "تشوهات صغيرة وأعضاء منشورية مرنة خطياً مع إهمال التشوه المحوري. العزوم الطرفية والدورانات مع عقارب الساعة موجبة. عيّن اتجاه كل عضو قبل تحديد دوران وتره."
+      },
+      "example": {
+        "en": "BC has rigidity 2EI₀ and length 6 m. CE has 1.5EI₀ and length 3 m with fixed E.",
+        "ar": "جساءة BC تساوي 2EI₀ وطولها 6 m. جساءة CE تساوي 1.5EI₀ وطولها 3 m وطرف E مثبت."
+      },
+      "calculation": {
+        "en": "MBC=−52+(2/3)(2x+y); MCB=68+(2/3)(x+2y). MCE=−15+2y and MEC=15+y.",
+        "ar": "MBC=−52+(2/3)(2x+y) وMCB=68+(2/3)(x+2y). وكذلك MCE=−15+2y وMEC=15+y."
+      },
+      "interpret": {
+        "en": "The fixed support E has zero rotation, yet its reaction couple MEC need not be zero.",
+        "ar": "المسند المثبت E لا يدور، لكن عزم رد فعله MEC ليس صفراً بالضرورة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Does θE=0 imply MEC=0?",
+          "ar": "هل θE=0 تعني MEC=0؟"
+        },
+        "answer": {
+          "en": "No. A fixed restraint supplies whatever end moment equilibrium and compatibility require.",
+          "ar": "لا. فالمسند المثبت يوفّر عزم الطرف الذي يتطلبه الاتزان والتوافق."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "ns-equation"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 6,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "releases",
+      "title": {
+        "en": "4 · Remove only real hinge freedoms",
+        "ar": "٤ · احذف درجات حرية المفاصل الحقيقية فقط"
+      },
+      "predict": {
+        "en": "If the far end really is hinged, should its moment be carried over as if fixed?",
+        "ar": "إذا كان الطرف البعيد مفصلياً فعلاً، فهل ينتقل إليه العزم كما لو كان مثبتاً؟"
+      },
+      "options": [
+        {
+          "en": "Yes, always one half.",
+          "ar": "نعم، النصف دائماً."
+        },
+        {
+          "en": "No; the hinge moment must remain zero.",
+          "ar": "لا؛ يجب أن يظل عزم المفصل صفراً."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "A and F rotate freely while carrying zero member-end moment. Condensation absorbs those rotations into a smaller near-end stiffness. The free overhang instead applies a known moment at C.",
+        "ar": "يدور A وF بحرية مع انعدام عزمي طرفيهما. يضمّن الاختزال هذه الدورانات في جساءة أصغر للطرف القريب. أما الكابولي الحر فيطبّق عزماً معلوماً عند C."
+      },
+      "explain": {
+        "en": "Eliminate θfar from Mfar=0, rather than pretending θfar=0. A 6 kN load at D, 2 m beyond C, gives MCD=−12 kN·m in the source’s clockwise convention. CD does not acquire a distribution stiffness at C: its free tip cannot restrain rotation.",
+        "ar": "احذف θfar من شرط Mfar=0، ولا تفترض θfar=0. الحمل 6 kN عند D على بعد 2 m بعد C يعطي MCD=−12 kN·m وفق اتفاقية المصدر. لا يضيف CD جساءة توزيع عند C، لأن طرفه الحر لا يقيد الدوران."
+      },
+      "formula": "Mnear = Fnear − ½Ffar + (3EI/L)θnear; Mfar=0",
+      "symbols": {
+        "en": "The released member stiffness is 3EI/L, not 4EI/L. The load term must change along with stiffness.",
+        "ar": "جساءة العضو المحرر 3EI/L بدلاً من 4EI/L. ويجب تعديل حد الحمل مع تعديل الجساءة."
+      },
+      "assumptions": {
+        "en": "Small deflections; linear elastic prismatic members; neglect axial deformation. Clockwise member-end couples and rotations are positive. State each member direction before assigning its chord rotation.",
+        "ar": "تشوهات صغيرة وأعضاء منشورية مرنة خطياً مع إهمال التشوه المحوري. العزوم الطرفية والدورانات مع عقارب الساعة موجبة. عيّن اتجاه كل عضو قبل تحديد دوران وتره."
+      },
+      "example": {
+        "en": "Condense A in AB and F in BF.",
+        "ar": "اختزل A في AB وF في BF."
+      },
+      "calculation": {
+        "en": "MBA=16−½(−16)+(3·2/4)x=24+1.5x. MBF=(3·1/3)x=x. MFB=MAB=0. MCD=−6·2=−12.",
+        "ar": "MBA=16−½(−16)+(3·2/4)x=24+1.5x، وMBF=(3·1/3)x=x. كما أن MFB=MAB=0 وMCD=−6·2=−12."
+      },
+      "interpret": {
+        "en": "A real end hinge softens the member; an intermediate roller under a continuous beam does not automatically release the member’s internal bending moment.",
+        "ar": "المفصل الطرفي الحقيقي يخفّض الجساءة؛ أما المسند البسيط الوسطي أسفل كمرة مستمرة فلا يحرر عزمها الداخلي تلقائياً."
+      },
+      "check": {
+        "prompt": {
+          "en": "What two things change when condensing a loaded far-end hinge?",
+          "ar": "ما الأمران اللذان يتغيران عند اختزال مفصل بعيد لعضو محمّل؟"
+        },
+        "answer": {
+          "en": "The near-end stiffness and the near-end fixed-load term.",
+          "ar": "جساءة الطرف القريب وحد الحمل المكافئ عنده."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "ns-release"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 10,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "balance",
+      "title": {
+        "en": "5 · Ask the connected members to agree",
+        "ar": "٥ · اجعل الأعضاء المتصلة تتوافق"
+      },
+      "predict": {
+        "en": "At B with no applied joint couple, what should the sum of member-end moments be?",
+        "ar": "ما مجموع عزوم الأعضاء عند B إذا لم يوجد عزم خارجي على العقدة؟"
+      },
+      "options": [
+        {
+          "en": "Zero.",
+          "ar": "صفر."
+        },
+        {
+          "en": "The largest member moment.",
+          "ar": "أكبر عزم بين الأعضاء."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Every connected member shares θB, but each contributes a different end moment. Equilibrium chooses the one shared rotation that makes their sum vanish.",
+        "ar": "تشترك جميع الأعضاء المتصلة في θB، لكن مساهمة كل منها في العزم مختلفة. يحدد الاتزان الدوران المشترك الذي يجعل مجموعها صفراً."
+      },
+      "explain": {
+        "en": "At B: MBA+MBC+MBF=0. At C: MCB+MCE+MCD=0. Use the condensed equations to solve only x and y.",
+        "ar": "عند B: MBA+MBC+MBF=0. وعند C: MCB+MCE+MCD=0. استخدم المعادلات المختزلة لحل x وy فقط."
+      },
+      "formula": "23x + 4y = 168; 2x + 10y = −123",
+      "symbols": {
+        "en": "x=EI₀θB and y=EI₀θC carry the reference-rigidity scaling; divide by the actual EI₀ to obtain radians.",
+        "ar": "x=EI₀θB وy=EI₀θC مقداران مضروبان بالجساءة المرجعية؛ اقسم على EI₀ الفعلية للحصول على الراديان."
+      },
+      "assumptions": {
+        "en": "Small deflections; linear elastic prismatic members; neglect axial deformation. Clockwise member-end couples and rotations are positive. State each member direction before assigning its chord rotation.",
+        "ar": "تشوهات صغيرة وأعضاء منشورية مرنة خطياً مع إهمال التشوه المحوري. العزوم الطرفية والدورانات مع عقارب الساعة موجبة. عيّن اتجاه كل عضو قبل تحديد دوران وتره."
+      },
+      "example": {
+        "en": "Eliminate x or solve the two-equation system.",
+        "ar": "احذف x أو حل المعادلتين معاً."
+      },
+      "calculation": {
+        "en": "x=9.783783784; y=−14.256756757. Then EI₀θA=(16−x)/2=3.108108108 and EI₀θF=−x/2=−4.891891892.",
+        "ar": "x=9.783783784 وy=−14.256756757. ثم EI₀θA=(16−x)/2=3.108108108 وEI₀θF=−x/2=−4.891891892."
+      },
+      "interpret": {
+        "en": "Opposite rotation signs at B and C describe the bending shape; they are not a reason to discard a solution.",
+        "ar": "اختلاف إشارة الدوران عند B وC يصف شكل الانحناء، وليس سبباً لرفض الحل."
+      },
+      "check": {
+        "prompt": {
+          "en": "Insert the solution into the first equation. What residual remains?",
+          "ar": "عوّض الحل في المعادلة الأولى. ما المتبقي؟"
+        },
+        "answer": {
+          "en": "23(9.783783784)+4(−14.256756757)−168≈0. A residual should be near rounding error.",
+          "ar": "23(9.783783784)+4(−14.256756757)−168≈0. يجب أن يقتصر المتبقي على خطأ التقريب."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "ns-solve"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 11,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "verify",
+      "title": {
+        "en": "6 · Read the shape and audit the forces",
+        "ar": "٦ · اقرأ شكل الانحناء ودقق القوى"
+      },
+      "predict": {
+        "en": "Can a solution with small joint residuals still have a wrong load or length?",
+        "ar": "هل يمكن لحل ذي متبقيات اتزان صغيرة أن يحتوي حملاً أو طولاً خاطئاً؟"
+      },
+      "options": [
+        {
+          "en": "No; algebra guarantees the model.",
+          "ar": "لا؛ الجبر يضمن صحة النموذج."
+        },
+        {
+          "en": "Yes; equilibrium checks the equations, so also check the physical model.",
+          "ar": "نعم؛ الاتزان يفحص المعادلات، لذا افحص النموذج الفيزيائي أيضاً."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "The solved clockwise end moments are AB=0, BA=38.675676, BC=−48.459459, CB=55.513514, BF=9.783784, FB=0, CE=−43.513514, EC=0.743243 and CD=−12 kN·m.",
+        "ar": "العزوم الطرفية المحسوبة مع عقارب الساعة هي AB=0 وBA=38.675676 وBC=−48.459459 وCB=55.513514 وBF=9.783784 وFB=0 وCE=−43.513514 وEC=0.743243 وCD=−12 kN·m."
+      },
+      "explain": {
+        "en": "Draw one free-body diagram for each member. Add the known transverse loads and the end couples, then solve forces from equilibrium. Convert member-end couple signs to a consistent internal bending-diagram convention; do not plot every clockwise value directly as sagging.",
+        "ar": "ارسم مخطط جسم حر لكل عضو، وضع الأحمال العرضية والعزوم الطرفية ثم احسب القوى بالاتزان. حوّل إشارات العزوم الطرفية إلى اتفاقية موحدة للعزم الداخلي، ولا ترسم كل عزم مع عقارب الساعة على أنه موجب مترخٍ."
+      },
+      "formula": "ΣMB=0; ΣMC=0; ΣFx=0; ΣFy=0; ΣM=0",
+      "symbols": {
+        "en": "A joint residual tests local moment balance. Whole-frame force and moment sums test reactions. Member load–shear–moment relations test diagrams.",
+        "ar": "متبقي العقدة يفحص اتزان العزوم محلياً. ومجاميع القوى والعزوم للإطار كله تفحص ردود الأفعال. وعلاقات الحمل والقص والعزم تفحص المخططات."
+      },
+      "assumptions": {
+        "en": "Small deflections; linear elastic prismatic members; neglect axial deformation. Clockwise member-end couples and rotations are positive. State each member direction before assigning its chord rotation.",
+        "ar": "تشوهات صغيرة وأعضاء منشورية مرنة خطياً مع إهمال التشوه المحوري. العزوم الطرفية والدورانات مع عقارب الساعة موجبة. عيّن اتجاه كل عضو قبل تحديد دوران وتره."
+      },
+      "example": {
+        "en": "Recheck the two rigid corners and the two released ends.",
+        "ar": "أعد فحص الركنين الجسئين والطرفين المحررين."
+      },
+      "calculation": {
+        "en": "At B: 38.675676−48.459459+9.783784≈0. At C: 55.513514−43.513514−12≈0. MAB=MFB=0 exactly before rounding.",
+        "ar": "عند B: 38.675676−48.459459+9.783784≈0. وعند C: 55.513514−43.513514−12≈0. كما أن MAB=MFB=0 تماماً قبل التقريب."
+      },
+      "interpret": {
+        "en": "The small positive EC value is real in this idealized calculation. Rounding the rotations early can hide it or reverse its sign.",
+        "ar": "قيمة EC الموجبة الصغيرة حقيقية في هذا النموذج الحسابي. تقريب الدورانات مبكراً قد يخفيها أو يعكس إشارتها."
+      },
+      "check": {
+        "prompt": {
+          "en": "Which values must vanish because of restraints, and which merely happen to be small?",
+          "ar": "أي القيم يجب أن تنعدم بسبب القيود، وأيها صغيرة فقط نتيجة للحساب؟"
+        },
+        "answer": {
+          "en": "MAB and MFB must vanish because of hinges. MEC≈0.743 is small but is not a hinge release.",
+          "ar": "يجب انعدام MAB وMFB بسبب المفصلين. أما MEC≈0.743 فهو صغير لكنه ليس تحريراً مفصلياً."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "ns-check"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 12,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "ns-q1",
+      "concept": "ns-freedoms",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A frame has a horizontal point load. Which fact proves that sway must be included?",
+        "ar": "على إطار حمل أفقي مركز. أي حقيقة تثبت وجوب تضمين الانزياح الجانبي؟"
+      },
+      "options": [
+        {
+          "en": "The load is horizontal.",
+          "ar": "الحمل أفقي."
+        },
+        {
+          "en": "An independent lateral displacement is allowed by the restraint and compatibility model.",
+          "ar": "تسمح القيود والتوافق بإزاحة جانبية مستقلة."
+        },
+        {
+          "en": "A member is long.",
+          "ar": "يوجد عضو طويل."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the permitted movement before using a formula.",
+          "ar": "ارسم الحركة المسموح بها قبل استخدام المعادلة."
+        },
+        {
+          "en": "Use this relationship: q = [θA, θB, θC, θF]; θE = 0; Δ = 0",
+          "ar": "استخدم العلاقة: q = [θA, θB, θC, θF]; θE = 0; Δ = 0"
+        }
+      ],
+      "solution": {
+        "en": "Force direction alone does not define a degree of freedom. Inspect translation restraints and axial compatibility.",
+        "ar": "اتجاه القوة لا يحدد درجة حرية وحده. افحص قيود الانتقال والتوافق المحوري."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 3,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ns-q2",
+      "concept": "ns-freedoms",
+      "type": "numerical",
+      "prompt": {
+        "en": "How many rotational unknowns remain in the lecture frame after condensing the two end hinges?",
+        "ar": "كم دوراناً مجهولاً يبقى في إطار المحاضرة بعد اختزال المفصلين الطرفيين؟"
+      },
+      "expected": 2,
+      "tolerance": 0.002,
+      "unit": "",
+      "hints": [
+        {
+          "en": "Use the stated clockwise convention and keep EI₀-scaled rotations until the end.",
+          "ar": "استخدم اتفاقية عقارب الساعة المذكورة واحتفظ بالدورانات المضروبة في EI₀ حتى النهاية."
+        },
+        {
+          "en": "Use this relationship: q = [θA, θB, θC, θF]; θE = 0; Δ = 0",
+          "ar": "استخدم العلاقة: q = [θA, θB, θC, θF]; θE = 0; Δ = 0"
+        }
+      ],
+      "solution": {
+        "en": "Only θB and θC remain. θE=0; θA and θF are eliminated through zero end moment.",
+        "ar": "يبقى θB وθC فقط. θE=0، ويحذف θA وθF بشرطي انعدام عزمي الطرفين."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 10,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ns-q3",
+      "concept": "ns-fem",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At locked ends, why does an off-centre point load generally give unequal fixed-end moments?",
+        "ar": "لماذا يعطي الحمل المركز غير المنتصف غالباً عزمي تثبيت غير متساويين؟"
+      },
+      "options": [
+        {
+          "en": "The lever arms a and b enter differently.",
+          "ar": "لأن ذراعي الحمل a وb يدخلان بصورة مختلفة."
+        },
+        {
+          "en": "The modulus E changes along the member.",
+          "ar": "لأن E يتغير على طول العضو."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the permitted movement before using a formula.",
+          "ar": "ارسم الحركة المسموح بها قبل استخدام المعادلة."
+        },
+        {
+          "en": "Use this relationship: Fij = −wL²/12 − Pab²/L²; Fji = +wL²/12 + Pa²b/L²",
+          "ar": "استخدم العلاقة: Fij = −wL²/12 − Pab²/L²; Fji = +wL²/12 + Pa²b/L²"
+        }
+      ],
+      "solution": {
+        "en": "Pab²/L² and Pa²b/L² exchange a and b; equality follows only in the midpoint special case.",
+        "ar": "يتبادل الحدّان Pab²/L² وPa²b/L² موضعي a وb؛ وتتساوى القيمتان في الحالة الخاصة للحمل المنتصف."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 5,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ns-q4",
+      "concept": "ns-fem",
+      "type": "numerical",
+      "prompt": {
+        "en": "For BC, L=6 m, w=12 kN/m and P=36 kN at a=4 m, b=2 m. Find signed FBC.",
+        "ar": "لـBC: L=6 m وw=12 kN/m وحمل P=36 kN عند a=4 m وb=2 m. أوجد FBC بإشارته."
+      },
+      "expected": -52,
+      "tolerance": 0.052000000000000005,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "Use the stated clockwise convention and keep EI₀-scaled rotations until the end.",
+          "ar": "استخدم اتفاقية عقارب الساعة المذكورة واحتفظ بالدورانات المضروبة في EI₀ حتى النهاية."
+        },
+        {
+          "en": "Use this relationship: Fij = −wL²/12 − Pab²/L²; Fji = +wL²/12 + Pa²b/L²",
+          "ar": "استخدم العلاقة: Fij = −wL²/12 − Pab²/L²; Fji = +wL²/12 + Pa²b/L²"
+        }
+      ],
+      "solution": {
+        "en": "FBC=−12·6²/12−36·4·2²/6²=−36−16=−52.",
+        "ar": "FBC=−12·6²/12−36·4·2²/6²=−36−16=−52."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 5,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ns-q5",
+      "concept": "ns-equation",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A fixed support has zero rotation. Its end moment is:",
+        "ar": "المسند المثبت دورانه صفر. عزم طرفه يكون: "
+      },
+      "options": [
+        {
+          "en": "Always zero.",
+          "ar": "صفراً دائماً."
+        },
+        {
+          "en": "An unknown reaction determined by loads and compatibility.",
+          "ar": "رد فعل تحدده الأحمال والتوافق."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the permitted movement before using a formula.",
+          "ar": "ارسم الحركة المسموح بها قبل استخدام المعادلة."
+        },
+        {
+          "en": "Use this relationship: Mij = Fij + (2EI/L)(2θi + θj); Mji = Fji + (2EI/L)(θi + 2θj)",
+          "ar": "استخدم العلاقة: Mij = Fij + (2EI/L)(2θi + θj); Mji = Fji + (2EI/L)(θi + 2θj)"
+        }
+      ],
+      "solution": {
+        "en": "Zero rotation is a kinematic condition, not a zero-moment boundary condition.",
+        "ar": "انعدام الدوران شرط حركي وليس شرط انعدام عزم."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 6,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ns-q6",
+      "concept": "ns-equation",
+      "type": "mixed",
+      "prompt": {
+        "en": "Authored variant: unloaded member, far end fixed, EI=12000 kN·m², L=4 m and near clockwise θ=0.002 rad. Find near-end moment.",
+        "ar": "تمرين مؤلف: عضو غير محمّل، طرفه البعيد مثبت، EI=12000 kN·m² وL=4 m ودوران الطرف القريب مع عقارب الساعة θ=0.002 rad. أوجد عزم الطرف القريب."
+      },
+      "expected": 24,
+      "tolerance": 0.024,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "Use the stated clockwise convention and keep EI₀-scaled rotations until the end.",
+          "ar": "استخدم اتفاقية عقارب الساعة المذكورة واحتفظ بالدورانات المضروبة في EI₀ حتى النهاية."
+        },
+        {
+          "en": "Use this relationship: Mij = Fij + (2EI/L)(2θi + θj); Mji = Fji + (2EI/L)(θi + 2θj)",
+          "ar": "استخدم العلاقة: Mij = Fij + (2EI/L)(2θi + θj); Mji = Fji + (2EI/L)(θi + 2θj)"
+        }
+      ],
+      "solution": {
+        "en": "Mnear=(4EI/L)θ=(4·12000/4)0.002=24. The far moment is 12 kN·m.",
+        "ar": "Mnear=(4EI/L)θ=(4·12000/4)0.002=24. والعزم البعيد 12 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 6,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ns-q7",
+      "concept": "ns-release",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Which change is required when replacing a fixed far end by a true hinge on a loaded span?",
+        "ar": "أي تعديل يلزم عند استبدال الطرف البعيد المثبت بمفصل حقيقي في فتحة محمّلة؟"
+      },
+      "options": [
+        {
+          "en": "Change stiffness only.",
+          "ar": "تعديل الجساءة فقط."
+        },
+        {
+          "en": "Use 3EI/L and Fnear−½Ffar, with zero hinge moment.",
+          "ar": "استخدام 3EI/L وFnear−½Ffar مع انعدام عزم المفصل."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the permitted movement before using a formula.",
+          "ar": "ارسم الحركة المسموح بها قبل استخدام المعادلة."
+        },
+        {
+          "en": "Use this relationship: Mnear = Fnear − ½Ffar + (3EI/L)θnear; Mfar=0",
+          "ar": "استخدم العلاقة: Mnear = Fnear − ½Ffar + (3EI/L)θnear; Mfar=0"
+        }
+      ],
+      "solution": {
+        "en": "Eliminating the free rotation changes both stiffness and equivalent load action.",
+        "ar": "حذف الدوران الحر يغيّر الجساءة وحد الحمل المكافئ معاً."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 10,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ns-q8",
+      "concept": "ns-release",
+      "type": "numerical",
+      "prompt": {
+        "en": "In the lecture AB span, FBA=16 and FAB=−16 kN·m. What is the condensed load term at B?",
+        "ar": "في فتحة المحاضرة AB: FBA=16 وFAB=−16 kN·m. ما حد الحمل المختزل عند B؟"
+      },
+      "expected": 24,
+      "tolerance": 0.024,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "Use the stated clockwise convention and keep EI₀-scaled rotations until the end.",
+          "ar": "استخدم اتفاقية عقارب الساعة المذكورة واحتفظ بالدورانات المضروبة في EI₀ حتى النهاية."
+        },
+        {
+          "en": "Use this relationship: Mnear = Fnear − ½Ffar + (3EI/L)θnear; Mfar=0",
+          "ar": "استخدم العلاقة: Mnear = Fnear − ½Ffar + (3EI/L)θnear; Mfar=0"
+        }
+      ],
+      "solution": {
+        "en": "FBA−½FAB=16−½(−16)=24.",
+        "ar": "FBA−½FAB=16−½(−16)=24."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 10,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ns-q9",
+      "concept": "ns-solve",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A rigid joint connects three members and carries no external couple. What equation determines its shared rotation?",
+        "ar": "تصل عقدة جسئة ثلاثة أعضاء ولا تحمل عزماً خارجياً. ما المعادلة التي تحدد دورانها المشترك؟"
+      },
+      "options": [
+        {
+          "en": "Each member-end moment separately equals zero.",
+          "ar": "عزم كل طرف يساوي صفراً منفرداً."
+        },
+        {
+          "en": "The algebraic sum of the three member-end moments equals zero.",
+          "ar": "المجموع الجبري لعزوم الأطراف الثلاثة يساوي صفراً."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the permitted movement before using a formula.",
+          "ar": "ارسم الحركة المسموح بها قبل استخدام المعادلة."
+        },
+        {
+          "en": "Use this relationship: 23x + 4y = 168; 2x + 10y = −123",
+          "ar": "استخدم العلاقة: 23x + 4y = 168; 2x + 10y = −123"
+        }
+      ],
+      "solution": {
+        "en": "The members can exert nonzero moments that balance collectively. Rigidity requires one rotation at the joint.",
+        "ar": "قد تكون العزوم غير صفرية لكنها تتزن معاً، وتتطلب جساءة العقدة دوراناً واحداً مشتركاً."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 11,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ns-q10",
+      "concept": "ns-solve",
+      "type": "numerical",
+      "prompt": {
+        "en": "Solve 23x+4y=168 and 2x+10y=−123. Enter x=EI₀θB.",
+        "ar": "حل 23x+4y=168 و2x+10y=−123. أدخل x=EI₀θB."
+      },
+      "expected": 9.783783784,
+      "tolerance": 0.009783783784000001,
+      "unit": "EI₀·rad",
+      "hints": [
+        {
+          "en": "Use the stated clockwise convention and keep EI₀-scaled rotations until the end.",
+          "ar": "استخدم اتفاقية عقارب الساعة المذكورة واحتفظ بالدورانات المضروبة في EI₀ حتى النهاية."
+        },
+        {
+          "en": "Use this relationship: 23x + 4y = 168; 2x + 10y = −123",
+          "ar": "استخدم العلاقة: 23x + 4y = 168; 2x + 10y = −123"
+        }
+      ],
+      "solution": {
+        "en": "From the second equation y=−12.3−0.2x. Thus 22.2x=217.2 and x=9.783783784.",
+        "ar": "من الثانية y=−12.3−0.2x، لذا 22.2x=217.2 ومنه x=9.783783784."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 11,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ns-q11",
+      "concept": "ns-check",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Which check detects an incorrectly retained moment at a true hinge?",
+        "ar": "أي فحص يكشف بقاء عزم خاطئ عند مفصل حقيقي؟"
+      },
+      "options": [
+        {
+          "en": "Only total vertical force balance.",
+          "ar": "اتزان القوى الرأسية فقط."
+        },
+        {
+          "en": "The member-end boundary condition Mhinge=0.",
+          "ar": "شرط طرف العضو Mhinge=0."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the permitted movement before using a formula.",
+          "ar": "ارسم الحركة المسموح بها قبل استخدام المعادلة."
+        },
+        {
+          "en": "Use this relationship: ΣMB=0; ΣMC=0; ΣFx=0; ΣFy=0; ΣM=0",
+          "ar": "استخدم العلاقة: ΣMB=0; ΣMC=0; ΣFx=0; ΣFy=0; ΣM=0"
+        }
+      ],
+      "solution": {
+        "en": "Global equilibrium can pass while an incorrect boundary condition remains. Test compatibility and releases independently.",
+        "ar": "قد يتحقق الاتزان العام مع بقاء شرط حدّي خاطئ. افحص التوافق والتحريرات بصورة مستقلة."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 12,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ns-q12",
+      "concept": "ns-check",
+      "type": "mixed",
+      "prompt": {
+        "en": "With y=−14.256756757, compute the clockwise end moment MEC=15+y.",
+        "ar": "عند y=−14.256756757، احسب عزم الطرف MEC=15+y مع عقارب الساعة."
+      },
+      "expected": 0.743243243,
+      "tolerance": 0.002,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "Use the stated clockwise convention and keep EI₀-scaled rotations until the end.",
+          "ar": "استخدم اتفاقية عقارب الساعة المذكورة واحتفظ بالدورانات المضروبة في EI₀ حتى النهاية."
+        },
+        {
+          "en": "Use this relationship: ΣMB=0; ΣMC=0; ΣFx=0; ΣFy=0; ΣM=0",
+          "ar": "استخدم العلاقة: ΣMB=0; ΣMC=0; ΣFx=0; ΣFy=0; ΣM=0"
+        }
+      ],
+      "solution": {
+        "en": "MEC=15−14.256756757=0.743243243. It is small but not constrained to zero.",
+        "ar": "MEC=15−14.256756757=0.743243243. قيمته صغيرة لكنها ليست مقيدة بالصفر."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 12,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "ns-card-1",
+      "concept": "ns-freedoms",
+      "kind": "misconception",
+      "q": {
+        "en": "A frame has a horizontal point load. Which fact proves that sway must be included?",
+        "ar": "على إطار حمل أفقي مركز. أي حقيقة تثبت وجوب تضمين الانزياح الجانبي؟"
+      },
+      "a": {
+        "en": "Force direction alone does not define a degree of freedom. Inspect translation restraints and axial compatibility.",
+        "ar": "اتجاه القوة لا يحدد درجة حرية وحده. افحص قيود الانتقال والتوافق المحوري."
+      }
+    },
+    {
+      "id": "ns-card-2",
+      "concept": "ns-freedoms",
+      "kind": "calculation",
+      "q": {
+        "en": "How many rotational unknowns remain in the lecture frame after condensing the two end hinges?",
+        "ar": "كم دوراناً مجهولاً يبقى في إطار المحاضرة بعد اختزال المفصلين الطرفيين؟"
+      },
+      "a": {
+        "en": "Only θB and θC remain. θE=0; θA and θF are eliminated through zero end moment.",
+        "ar": "يبقى θB وθC فقط. θE=0، ويحذف θA وθF بشرطي انعدام عزمي الطرفين."
+      }
+    },
+    {
+      "id": "ns-card-3",
+      "concept": "ns-fem",
+      "kind": "misconception",
+      "q": {
+        "en": "At locked ends, why does an off-centre point load generally give unequal fixed-end moments?",
+        "ar": "لماذا يعطي الحمل المركز غير المنتصف غالباً عزمي تثبيت غير متساويين؟"
+      },
+      "a": {
+        "en": "Pab²/L² and Pa²b/L² exchange a and b; equality follows only in the midpoint special case.",
+        "ar": "يتبادل الحدّان Pab²/L² وPa²b/L² موضعي a وb؛ وتتساوى القيمتان في الحالة الخاصة للحمل المنتصف."
+      }
+    },
+    {
+      "id": "ns-card-4",
+      "concept": "ns-fem",
+      "kind": "calculation",
+      "q": {
+        "en": "For BC, L=6 m, w=12 kN/m and P=36 kN at a=4 m, b=2 m. Find signed FBC.",
+        "ar": "لـBC: L=6 m وw=12 kN/m وحمل P=36 kN عند a=4 m وb=2 m. أوجد FBC بإشارته."
+      },
+      "a": {
+        "en": "FBC=−12·6²/12−36·4·2²/6²=−36−16=−52.",
+        "ar": "FBC=−12·6²/12−36·4·2²/6²=−36−16=−52."
+      }
+    },
+    {
+      "id": "ns-card-5",
+      "concept": "ns-equation",
+      "kind": "misconception",
+      "q": {
+        "en": "A fixed support has zero rotation. Its end moment is:",
+        "ar": "المسند المثبت دورانه صفر. عزم طرفه يكون: "
+      },
+      "a": {
+        "en": "Zero rotation is a kinematic condition, not a zero-moment boundary condition.",
+        "ar": "انعدام الدوران شرط حركي وليس شرط انعدام عزم."
+      }
+    },
+    {
+      "id": "ns-card-6",
+      "concept": "ns-equation",
+      "kind": "calculation",
+      "q": {
+        "en": "Authored variant: unloaded member, far end fixed, EI=12000 kN·m², L=4 m and near clockwise θ=0.002 rad. Find near-end moment.",
+        "ar": "تمرين مؤلف: عضو غير محمّل، طرفه البعيد مثبت، EI=12000 kN·m² وL=4 m ودوران الطرف القريب مع عقارب الساعة θ=0.002 rad. أوجد عزم الطرف القريب."
+      },
+      "a": {
+        "en": "Mnear=(4EI/L)θ=(4·12000/4)0.002=24. The far moment is 12 kN·m.",
+        "ar": "Mnear=(4EI/L)θ=(4·12000/4)0.002=24. والعزم البعيد 12 kN·m."
+      }
+    },
+    {
+      "id": "ns-card-7",
+      "concept": "ns-release",
+      "kind": "misconception",
+      "q": {
+        "en": "Which change is required when replacing a fixed far end by a true hinge on a loaded span?",
+        "ar": "أي تعديل يلزم عند استبدال الطرف البعيد المثبت بمفصل حقيقي في فتحة محمّلة؟"
+      },
+      "a": {
+        "en": "Eliminating the free rotation changes both stiffness and equivalent load action.",
+        "ar": "حذف الدوران الحر يغيّر الجساءة وحد الحمل المكافئ معاً."
+      }
+    },
+    {
+      "id": "ns-card-8",
+      "concept": "ns-release",
+      "kind": "calculation",
+      "q": {
+        "en": "In the lecture AB span, FBA=16 and FAB=−16 kN·m. What is the condensed load term at B?",
+        "ar": "في فتحة المحاضرة AB: FBA=16 وFAB=−16 kN·m. ما حد الحمل المختزل عند B؟"
+      },
+      "a": {
+        "en": "FBA−½FAB=16−½(−16)=24.",
+        "ar": "FBA−½FAB=16−½(−16)=24."
+      }
+    },
+    {
+      "id": "ns-card-9",
+      "concept": "ns-solve",
+      "kind": "misconception",
+      "q": {
+        "en": "A rigid joint connects three members and carries no external couple. What equation determines its shared rotation?",
+        "ar": "تصل عقدة جسئة ثلاثة أعضاء ولا تحمل عزماً خارجياً. ما المعادلة التي تحدد دورانها المشترك؟"
+      },
+      "a": {
+        "en": "The members can exert nonzero moments that balance collectively. Rigidity requires one rotation at the joint.",
+        "ar": "قد تكون العزوم غير صفرية لكنها تتزن معاً، وتتطلب جساءة العقدة دوراناً واحداً مشتركاً."
+      }
+    },
+    {
+      "id": "ns-card-10",
+      "concept": "ns-solve",
+      "kind": "calculation",
+      "q": {
+        "en": "Solve 23x+4y=168 and 2x+10y=−123. Enter x=EI₀θB.",
+        "ar": "حل 23x+4y=168 و2x+10y=−123. أدخل x=EI₀θB."
+      },
+      "a": {
+        "en": "From the second equation y=−12.3−0.2x. Thus 22.2x=217.2 and x=9.783783784.",
+        "ar": "من الثانية y=−12.3−0.2x، لذا 22.2x=217.2 ومنه x=9.783783784."
+      }
+    },
+    {
+      "id": "ns-card-11",
+      "concept": "ns-check",
+      "kind": "misconception",
+      "q": {
+        "en": "Which check detects an incorrectly retained moment at a true hinge?",
+        "ar": "أي فحص يكشف بقاء عزم خاطئ عند مفصل حقيقي؟"
+      },
+      "a": {
+        "en": "Global equilibrium can pass while an incorrect boundary condition remains. Test compatibility and releases independently.",
+        "ar": "قد يتحقق الاتزان العام مع بقاء شرط حدّي خاطئ. افحص التوافق والتحريرات بصورة مستقلة."
+      }
+    },
+    {
+      "id": "ns-card-12",
+      "concept": "ns-check",
+      "kind": "calculation",
+      "q": {
+        "en": "With y=−14.256756757, compute the clockwise end moment MEC=15+y.",
+        "ar": "عند y=−14.256756757، احسب عزم الطرف MEC=15+y مع عقارب الساعة."
+      },
+      "a": {
+        "en": "MEC=15−14.256756757=0.743243243. It is small but not constrained to zero.",
+        "ar": "MEC=15−14.256756757=0.743243243. قيمته صغيرة لكنها ليست مقيدة بالصفر."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "14",
+      "page": 3,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 5,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 6,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 10,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 11,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 12,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    }
+  ],
+  "videoIds": [
+    "gQtII2rL8PQ",
+    "MvBqCeZllpQ",
+    "bPbQeptNxEo"
+  ]
+}

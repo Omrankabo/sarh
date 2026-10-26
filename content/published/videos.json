@@ -1,0 +1,612 @@
+[
+  {
+    "title": "Introduction to radians | Unit circle definition of trig functions | Trigonometry | Khan Academy",
+    "author": "Khan Academy",
+    "id": "EnwWxMZVBeg",
+    "language": "English",
+    "purpose": {
+      "en": "A correct model still fails if millimetres, metres and angles get mixed.",
+      "ar": "قد يفشل نموذج صحيح إذا اختلط الملليمتر والمتر والزوايا."
+    },
+    "kind": "foundation",
+    "topics": [],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=EnwWxMZVBeg"
+  },
+  {
+    "title": "1st application of Dimensional analysis | Units and Measurements | Grade 11 | Physics | Khan Academy",
+    "author": "Khan Academy India - English",
+    "id": "c2KhOBz3y7s",
+    "language": "English",
+    "purpose": {
+      "en": "A correct model still fails if millimetres, metres and angles get mixed.",
+      "ar": "قد يفشل نموذج صحيح إذا اختلط الملليمتر والمتر والزوايا."
+    },
+    "kind": "foundation",
+    "topics": [],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=c2KhOBz3y7s"
+  },
+  {
+    "title": "Solving systems of equations by elimination | Algebra Basics | Khan Academy",
+    "author": "Khan Academy",
+    "id": "vA-55wZtLeE",
+    "language": "English",
+    "purpose": {
+      "en": "The unknown rotations must satisfy several joint conditions at the same time.",
+      "ar": "يجب أن تحقق الدورانات المجهولة شروط عدة عقد في الوقت نفسه."
+    },
+    "kind": "foundation",
+    "topics": [],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=vA-55wZtLeE"
+  },
+  {
+    "title": "Statics: Lesson 29 - 2D Reaction at Supports, Example Problem",
+    "author": "Jeff Hanson",
+    "id": "bPbQeptNxEo",
+    "language": "English",
+    "purpose": {
+      "en": "A beam solution must balance forces and turning effects, member by member.",
+      "ar": "يجب أن يوازن حل الكمرة القوى وآثار الدوران لكل عضو."
+    },
+    "kind": "foundation",
+    "topics": [],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=bPbQeptNxEo"
+  },
+  {
+    "title": "Statics: Lesson 46 - Distributed Loads Using Centroids",
+    "author": "Jeff Hanson",
+    "id": "s-SFb0ZuJhE",
+    "language": "English",
+    "purpose": {
+      "en": "Load shapes determine both resultants and fixed-end moments.",
+      "ar": "يحدد شكل الحمل المحصلة وعزوم النهايات المثبتة."
+    },
+    "kind": "foundation",
+    "topics": [],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=s-SFb0ZuJhE"
+  },
+  {
+    "title": "Statics: Lesson 59 - Shear Moment Diagram, The Graphic Method",
+    "author": "Jeff Hanson",
+    "id": "ZbL3PghURkA",
+    "language": "English",
+    "purpose": {
+      "en": "End moments are only part of the answer: diagrams show what happens between joints.",
+      "ar": "عزوم النهايات جزء من الحل فقط؛ تكشف المخططات ما يحدث بين العقد."
+    },
+    "kind": "foundation",
+    "topics": [],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=ZbL3PghURkA"
+  },
+  {
+    "title": "Understanding the Deflection of Beams",
+    "author": "The Efficient Engineer",
+    "id": "MvBqCeZllpQ",
+    "language": "English",
+    "purpose": {
+      "en": "Slope-deflection connects joint movements to the moments needed to produce them.",
+      "ar": "يربط الميل والانحراف حركات العقد بالعزوم اللازمة لإنتاجها."
+    },
+    "kind": "foundation",
+    "topics": [],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=MvBqCeZllpQ"
+  },
+  {
+    "title": "Understanding Young's Modulus",
+    "author": "The Efficient Engineer",
+    "id": "DLE-ieOVFjI",
+    "language": "English",
+    "purpose": {
+      "en": "Material and cross-section shape together determine resistance to bending.",
+      "ar": "تحدد مادة المقطع وشكله معاً مقاومة الانحناء."
+    },
+    "kind": "foundation",
+    "topics": [],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=DLE-ieOVFjI"
+  },
+  {
+    "title": "Understanding Stresses in Beams",
+    "author": "The Efficient Engineer",
+    "id": "f08Y39UiC-o",
+    "language": "English",
+    "purpose": {
+      "en": "Material and cross-section shape together determine resistance to bending.",
+      "ar": "تحدد مادة المقطع وشكله معاً مقاومة الانحناء."
+    },
+    "kind": "foundation",
+    "topics": [],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=f08Y39UiC-o"
+  },
+  {
+    "title": "Determinacy & Stability of Beam & Frame & Truss   Structural Analysis & Design I",
+    "author": "Rakibul Hassan",
+    "id": "JXKRAF8HIHs",
+    "language": "English",
+    "purpose": {
+      "en": "Extra restraints require movement conditions as well as force balance.",
+      "ar": "تتطلب القيود الإضافية شروط حركة إلى جانب اتزان القوى."
+    },
+    "kind": "foundation",
+    "topics": [],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=JXKRAF8HIHs"
+  },
+  {
+    "id": "gQtII2rL8PQ",
+    "title": "Slope Deflection Method Example (1/3) - Structural Analysis",
+    "author": "structurefree",
+    "language": "English",
+    "purpose": {
+      "en": "Follow the member equations and joint balance in a similar beam; compare its restraints before copying signs.",
+      "ar": "تتبّع معادلات الأعضاء واتزان العقد في كمرة مشابهة، وقارن القيود قبل نقل الإشارات."
+    },
+    "kind": "worked",
+    "topics": [
+      "slope-beams",
+      "slope-nonsway"
+    ],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=gQtII2rL8PQ"
+  },
+  {
+    "id": "dwXudm5IPDE",
+    "title": "SA32: Slope-Deflection Method and Support Settlement",
+    "author": "Dr. Structure",
+    "language": "English",
+    "purpose": {
+      "en": "See how differential support movement bends a continuous beam; its dimensions and settlements differ from our problems.",
+      "ar": "شاهد أثر الهبوط التفاضلي في كمرة مستمرة؛ تختلف أبعادها وهبوطها عن مسائلنا."
+    },
+    "kind": "worked",
+    "topics": [
+      "slope-beams",
+      "distribution-beams"
+    ],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=dwXudm5IPDE"
+  },
+  {
+    "id": "Fa0RQeY1XyE",
+    "title": "Moment Distribution Method Example 1 (1/2) - Structural Analysis",
+    "author": "structurefree",
+    "language": "English",
+    "purpose": {
+      "en": "A similar continuous-beam balancing example: follow distribution factors, corrections and carry-over.",
+      "ar": "مثال موازنة لكمرة مستمرة مشابهة: تتبّع معاملات التوزيع والتصحيح والنقل."
+    },
+    "kind": "worked",
+    "topics": [
+      "distribution-beams",
+      "distribution-nonsway"
+    ],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=Fa0RQeY1XyE"
+  },
+  {
+    "id": "nKVDcnq-clc",
+    "title": "Moment Distribution Method Example 1 (2/2) - Structural Analysis",
+    "author": "structurefree",
+    "language": "English",
+    "purpose": {
+      "en": "Continue from end moments to reactions, shear and bending diagrams in the companion example.",
+      "ar": "انتقل من عزوم الأطراف إلى ردود الأفعال ومخططي القص والعزم في المثال المكمل."
+    },
+    "kind": "worked",
+    "topics": [
+      "distribution-beams",
+      "distribution-nonsway"
+    ],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=nKVDcnq-clc"
+  },
+  {
+    "id": "BjbVlb6HvMc",
+    "title": "SA40: Moment Distribution Method: Frames (No Sidesway)",
+    "author": "Dr. Structure",
+    "language": "English",
+    "purpose": {
+      "en": "A related non-sway frame calculation; compare the far-end restraints and stiffnesses.",
+      "ar": "حساب إطار دون انزياح مشابه؛ قارن قيود الأطراف البعيدة والجساءات."
+    },
+    "kind": "worked",
+    "topics": [
+      "distribution-nonsway"
+    ],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=BjbVlb6HvMc"
+  },
+  {
+    "id": "9R-tpqwr0W0",
+    "title": "SA41: Moment Distribution Method: Frames (Sidesway 1)",
+    "author": "Dr. Structure",
+    "language": "English",
+    "purpose": {
+      "en": "Observe restrained and trial-sway responses; the artificial horizontal force must cancel.",
+      "ar": "راقب استجابتي التقييد والانزياح التجريبي، وضرورة إلغاء القوة الأفقية المصطنعة."
+    },
+    "kind": "worked",
+    "topics": [
+      "distribution-sway",
+      "slope-sway"
+    ],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=9R-tpqwr0W0"
+  },
+  {
+    "id": "iLVyd3bPQZc",
+    "title": "Influence Line Diagram (ILD) in Structural Analysis | Quick Concepts",
+    "author": "APSEd",
+    "language": "English",
+    "purpose": {
+      "en": "Clarify the fixed observation point and moving load before using ordinates or areas.",
+      "ar": "وضّح ثبات نقطة الرصد وحركة الحمل قبل استخدام الإحداثيات أو المساحات."
+    },
+    "kind": "concept",
+    "topics": [
+      "influence-qualitative",
+      "influence-numerical",
+      "influence-moving",
+      "models-beams"
+    ],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=iLVyd3bPQZc"
+  },
+  {
+    "id": "EsRm3lcGmHc",
+    "title": "Untold concept of Influence Line Diagram - Structural Analysis",
+    "author": "APSEd",
+    "language": "English",
+    "purpose": {
+      "en": "Connect a released restraint to an influence-line shape; model scaling still follows the written lesson.",
+      "ar": "اربط القيد المحرر بشكل خط التأثير؛ يبقى تحويل مقياس النموذج وفق الشرح المكتوب."
+    },
+    "kind": "concept",
+    "topics": [
+      "influence-qualitative",
+      "influence-numerical",
+      "models-beams",
+      "models-frames"
+    ],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=EsRm3lcGmHc"
+  },
+  {
+    "id": "02pOdMKCoVs",
+    "title": "EX03: Solved Problem: Conjugate Beam Method (beam with internal hinge)",
+    "author": "Dr. Structure",
+    "language": "English",
+    "purpose": {
+      "en": "A related slope/deflection example with a hinge; it is not the exact influence-line test problem.",
+      "ar": "مثال مرتبط للميل والإزاحة مع مفصل؛ ليس مسألة اختبار خط التأثير نفسها."
+    },
+    "kind": "worked",
+    "topics": [
+      "influence-numerical"
+    ],
+    "reviewedAt": "2026-10-25",
+    "reference": "https://www.youtube.com/watch?v=02pOdMKCoVs"
+  },
+  {
+    "id": "mQTWzLpCcW0",
+    "title": "Introduction to Logarithms",
+    "author": "Khan Academy",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.youtube.com/watch?v=mQTWzLpCcW0"
+  },
+  {
+    "id": "fo0L6NZGZX8",
+    "title": "Engineering Economic Analysis - Cash Flow Diagram",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "A mathematical cash-flow refresher. It does not teach or adjudicate the religious classifications of chapter2.",
+      "ar": "مراجعة رياضية للتدفقات فقط؛ لا تشرح أو تحكم في التصنيفات الفقهية للفصل الثاني."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-foundations",
+      "ee-interest-context",
+      "ee-single-payments",
+      "ee-uniform-series"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "ddVaiumu0tI",
+    "title": "Engineering Economic Analysis - Compound Interest Rate",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-single-payments",
+      "ee-rates",
+      "ee-continuous-flows"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "-_Zc8KNpTkw",
+    "title": "Eng Economic Analysis - Nominal & Effective Interest Rates",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-rates",
+      "ee-equivalence"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "xPaQedaiNTU",
+    "title": "Engineering Economic Analysis - Uniform Series",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-uniform-series",
+      "ee-gradients",
+      "ee-equivalence"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "3YeDeCawZog",
+    "title": "Engineering Economic Analysis - Gradient Series",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-gradients"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "96GcUS4FieU",
+    "title": "Introduction to Net Present Value Analysis",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-worth",
+      "ee-irr-payback",
+      "ee-capitalized-prospective",
+      "ee-fe-pe",
+      "ee-risk-inventory"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "gjCbIiDERXY",
+    "title": "Capitalized Cost Explained",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-capitalized-prospective"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "SfzXFIMHUHw",
+    "title": "Annual Worth Analysis",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-worth"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "U8VE4w-UXA8",
+    "title": "Internal Rate of Return (IRR) Example 1",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "worked",
+    "topics": [
+      "ee-irr-payback"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "30Br5MCv_gk",
+    "title": "Straight Line Depreciation Method",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-depreciation"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "6CzX1anbEDo",
+    "title": "(Double) Declining Balance Depreciation Method",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-depreciation"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "3RvC0eI2Go4",
+    "title": "Sum of Years Digits Depreciation Method",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-depreciation"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "jo2lvnXSYhA",
+    "title": "Establishment of After Tax Cash Flow - Example",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "worked",
+    "topics": [
+      "ee-fe-pe"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "ZoHL_na-QvM",
+    "title": "Inflation - Actual Dollars vs. Real Dollars",
+    "author": "Learning OnDemand",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-fe-pe"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.cpp.edu/videotutorials/ime/engineering-economics.shtml"
+  },
+  {
+    "id": "733mgqrzNKs",
+    "title": "Time value of money | Interest and debt | Finance & Capital Markets | Khan Academy",
+    "author": "Khan Academy",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-foundations",
+      "ee-single-payments"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.youtube.com/watch?v=733mgqrzNKs"
+  },
+  {
+    "id": "ShzPtU7IOXs",
+    "title": "Law of demand | Supply, demand, and market equilibrium | Microeconomics | Khan Academy",
+    "author": "Khan Academy",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-markets"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.youtube.com/watch?v=ShzPtU7IOXs"
+  },
+  {
+    "id": "uzkc-qNVoOk",
+    "title": "Probability explained | Independent and dependent events | Probability and Statistics | Khan Academy",
+    "author": "Khan Academy",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-risk-inventory"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.youtube.com/watch?v=uzkc-qNVoOk"
+  },
+  {
+    "id": "rfG8ce4nNh0",
+    "title": "Integration and the fundamental theorem of calculus | Chapter 8, Essence of calculus",
+    "author": "3Blue1Brown",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of the indicated method. Apply the course’s stated dates and conventions to your own problem; this is not a recording of the supplied problem.",
+      "ar": "شرح اختياري للطريقة المشار إليها. طبق تواريخ المقرر واتفاقاته على مسألتك؛ ليس تسجيلًا لحل مسألة المصدر نفسها."
+    },
+    "kind": "concept",
+    "topics": [
+      "ee-continuous-flows"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.youtube.com/watch?v=rfG8ce4nNh0"
+  }
+]

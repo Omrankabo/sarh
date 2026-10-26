@@ -1,0 +1,740 @@
+[
+  {
+    "id": "units",
+    "title": {
+      "en": "Units, powers & radians",
+      "ar": "الوحدات والأسس والراديان"
+    },
+    "why": {
+      "en": "A correct model still fails if millimetres, metres and angles get mixed.",
+      "ar": "قد يفشل نموذج صحيح إذا اختلط الملليمتر والمتر والزوايا."
+    },
+    "refresher": {
+      "en": "Treat units like algebra. Convert before substituting. A length to the fourth power carries the conversion factor to the fourth power. Radians measure angle as arc length divided by radius.",
+      "ar": "عامل الوحدات كالجبر وحوّلها قبل التعويض. تحويل طول مرفوع للأس الرابع يحمل معامل التحويل مرفوعاً للأس الرابع. يقيس الراديان الزاوية بنسبة طول القوس إلى نصف القطر."
+    },
+    "example": {
+      "en": "10 mm = 0.010 m; 1 cm⁴ = 10⁻⁸ m⁴; 0.05° = 0.05π/180 = 0.000872665 rad.",
+      "ar": "10 mm = 0.010 m؛ 1 cm⁴ = 10⁻⁸ m⁴؛ 0.05° = 0.05π/180 = 0.000872665 rad."
+    },
+    "question": {
+      "en": "Convert 10 mm to metres.",
+      "ar": "حوّل 10 mm إلى متر."
+    },
+    "options": [
+      {
+        "en": "0.010 m",
+        "ar": "0.010 m"
+      },
+      {
+        "en": "0.10 m",
+        "ar": "0.10 m"
+      },
+      {
+        "en": "10 m",
+        "ar": "10 m"
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "Divide millimetres by 1,000. Write 0.010 m before using a metre-based formula.",
+      "ar": "اقسم الملليمتر على 1000 واكتب 0.010 m قبل استعمال معادلة وحداتها بالمتر."
+    },
+    "videos": [
+      {
+        "title": "Introduction to radians",
+        "author": "Khan Academy",
+        "id": "EnwWxMZVBeg",
+        "language": "English"
+      },
+      {
+        "title": "1st application of Dimensional analysis",
+        "author": "Khan Academy India - English",
+        "id": "c2KhOBz3y7s",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "algebra",
+    "title": {
+      "en": "Simultaneous linear equations",
+      "ar": "المعادلات الخطية المتزامنة"
+    },
+    "why": {
+      "en": "The unknown rotations must satisfy several joint conditions at the same time.",
+      "ar": "يجب أن تحقق الدورانات المجهولة شروط عدة عقد في الوقت نفسه."
+    },
+    "refresher": {
+      "en": "Two equations describe two restrictions on the same unknowns. Eliminate one unknown, solve for the other, then substitute back into both original equations.",
+      "ar": "تمثل معادلتان قيدين على المجهولات نفسها. احذف مجهولاً ثم حل الآخر وعوّض في المعادلتين الأصليتين."
+    },
+    "example": {
+      "en": "x + 0.5y = 10 and 0.5x + 3y = 2 give y = −12/11 and x = 116/11.",
+      "ar": "x + 0.5y = 10 و0.5x + 3y = 2 تعطيان y = −12/11 وx = 116/11."
+    },
+    "question": {
+      "en": "Which is a valid final check after solving two simultaneous equations?",
+      "ar": "ما التحقق الصحيح بعد حل معادلتين متزامنتين؟"
+    },
+    "options": [
+      {
+        "en": "Check just the easier equation.",
+        "ar": "افحص المعادلة الأسهل فقط."
+      },
+      {
+        "en": "Substitute the solution into both original equations.",
+        "ar": "عوّض الحل في المعادلتين الأصليتين."
+      },
+      {
+        "en": "Round both unknowns to integers.",
+        "ar": "قرّب المجهولين إلى عددين صحيحين."
+      }
+    ],
+    "correct": 1,
+    "answer": {
+      "en": "Both equations must be satisfied; a solution that fits only one condition cannot describe the joint movements.",
+      "ar": "يجب تحقيق المعادلتين؛ الحل الذي يحقق شرطاً واحداً لا يصف حركات العقد الصحيحة."
+    },
+    "videos": [
+      {
+        "title": "Solving systems of equations by elimination",
+        "author": "Khan Academy",
+        "id": "vA-55wZtLeE",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "forces",
+    "title": {
+      "en": "Forces, moments & free bodies",
+      "ar": "القوى والعزوم والأجسام الحرة"
+    },
+    "why": {
+      "en": "A beam solution must balance forces and turning effects, member by member.",
+      "ar": "يجب أن يوازن حل الكمرة القوى وآثار الدوران لكل عضو."
+    },
+    "refresher": {
+      "en": "A force tends to translate an object. A moment measures its turning effect about a point. A couple is a pure turning action. Isolate the body and replace its surroundings with the forces and couples they apply.",
+      "ar": "تميل القوة إلى نقل الجسم، ويقيس العزم أثرها الدوراني حول نقطة. الازدواج فعل دوران خالص. اعزل الجسم واستبدل محيطه بالقوى والعزوم التي يؤثر بها عليه."
+    },
+    "example": {
+      "en": "A 20 kN force with a 3 m perpendicular lever arm produces a 60 kN·m moment. State its direction separately.",
+      "ar": "قوة 20 kN بذراع عمودي 3 m تنتج عزماً 60 kN·m. حدد اتجاهه منفصلاً."
+    },
+    "question": {
+      "en": "A downward 20 kN force acts 3 m to the right of a pivot. Its turning effect is…",
+      "ar": "قوة 20 kN لأسفل على بعد 3 m يمين محور دوران. أثرها الدوراني…"
+    },
+    "options": [
+      {
+        "en": "60 kN clockwise.",
+        "ar": "60 kN مع الساعة."
+      },
+      {
+        "en": "60 kN·m clockwise.",
+        "ar": "60 kN·m مع الساعة."
+      },
+      {
+        "en": "6.67 kN·m counterclockwise.",
+        "ar": "6.67 kN·m عكس الساعة."
+      }
+    ],
+    "correct": 1,
+    "answer": {
+      "en": "Moment = force × perpendicular distance = 60 kN·m, clockwise about the pivot.",
+      "ar": "العزم = القوة × الذراع العمودي = 60 kN·m مع الساعة حول المحور."
+    },
+    "videos": [
+      {
+        "title": "Statics: Lesson 29 – 2D Reaction at Supports, Example Problem",
+        "author": "Jeff Hanson",
+        "id": "bPbQeptNxEo",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "supports",
+    "title": {
+      "en": "Supports, restraints & hinges",
+      "ar": "المساند والقيود والمفاصل"
+    },
+    "why": {
+      "en": "Boundary conditions tell the equations which movements are allowed.",
+      "ar": "تحدد شروط الحدود الحركات المسموحة في المعادلات."
+    },
+    "refresher": {
+      "en": "A fixed support restrains translation and rotation. A pin permits rotation but restrains translation. A roller restrains translation in one direction. An internal hinge releases moment transfer between connected beam pieces.",
+      "ar": "المسند المثبت يقيد الإزاحات والدوران. المفصلي يسمح بالدوران ويقيد الإزاحة. البكرة تقيد الإزاحة في اتجاه واحد. المفصل الداخلي يحرر انتقال العزم بين أجزاء الكمرة."
+    },
+    "example": {
+      "en": "A roller beneath an unbroken beam does not turn that beam into two hinged pieces.",
+      "ar": "البكرة أسفل كمرة غير مقطوعة لا تحولها إلى قطعتين موصولتين بمفصل."
+    },
+    "question": {
+      "en": "Which feature explicitly releases bending-moment transfer?",
+      "ar": "أي عنصر يحرر انتقال عزم الانحناء صراحة؟"
+    },
+    "options": [
+      {
+        "en": "An intermediate roller beneath an unbroken beam.",
+        "ar": "بكرة وسطية أسفل كمرة غير مقطوعة."
+      },
+      {
+        "en": "An internal hinge in the beam.",
+        "ar": "مفصل داخلي في الكمرة."
+      },
+      {
+        "en": "A change in beam colour.",
+        "ar": "تغير لون الكمرة."
+      }
+    ],
+    "correct": 1,
+    "answer": {
+      "en": "An internal hinge releases moment transfer. A support beneath a continuous beam does not create that release.",
+      "ar": "يحرر المفصل الداخلي انتقال العزم. وجود مسند أسفل كمرة مستمرة لا ينشئ ذلك التحرير."
+    },
+    "videos": [
+      {
+        "title": "Statics: Lesson 29 – 2D Reaction at Supports, Example Problem",
+        "author": "Jeff Hanson",
+        "id": "bPbQeptNxEo",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "loads",
+    "title": {
+      "en": "Point loads & distributed loads",
+      "ar": "الأحمال المركزة والموزعة"
+    },
+    "why": {
+      "en": "Load shapes determine both resultants and fixed-end moments.",
+      "ar": "يحدد شكل الحمل المحصلة وعزوم النهايات المثبتة."
+    },
+    "refresher": {
+      "en": "A point load is concentrated at a position. A distributed load is intensity per length. The equivalent force equals the area under the load diagram and acts at that area’s centroid.",
+      "ar": "الحمل المركز يقع عند موضع محدد، والموزع شدة قوة لكل طول. تساوي القوة المكافئة مساحة مخطط الحمل وتمر بمركز تلك المساحة."
+    },
+    "example": {
+      "en": "A 12 kN/m UDL over 6 m equals 72 kN at the midpoint for overall equilibrium. Keep the actual UDL when calculating its bending response.",
+      "ar": "حمل منتظم 12 kN/m على 6 m يكافئ قوة 72 kN بالمنتصف للاتزان العام. أبق الحمل الموزع الحقيقي عند حساب استجابة الانحناء."
+    },
+    "question": {
+      "en": "A 12 kN/m UDL covers 6 m. Its resultant is…",
+      "ar": "محصلة حمل منتظم 12 kN/m على 6 m هي…"
+    },
+    "options": [
+      {
+        "en": "2 kN at the left end.",
+        "ar": "2 kN عند الطرف الأيسر."
+      },
+      {
+        "en": "72 kN at the midpoint.",
+        "ar": "72 kN عند المنتصف."
+      },
+      {
+        "en": "72 kN/m at the midpoint.",
+        "ar": "72 kN/m عند المنتصف."
+      }
+    ],
+    "correct": 1,
+    "answer": {
+      "en": "12 × 6 = 72 kN. Uniform intensity puts the resultant at the midpoint.",
+      "ar": "12 × 6 = 72 kN. انتظام الشدة يجعل المحصلة عند المنتصف."
+    },
+    "videos": [
+      {
+        "title": "Statics: Lesson 46 – Distributed Loads Using Centroids",
+        "author": "Jeff Hanson",
+        "id": "s-SFb0ZuJhE",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "diagrams",
+    "title": {
+      "en": "Shear-force & bending-moment diagrams",
+      "ar": "مخططات القص وعزم الانحناء"
+    },
+    "why": {
+      "en": "End moments are only part of the answer: diagrams show what happens between joints.",
+      "ar": "عزوم النهايات جزء من الحل فقط؛ تكشف المخططات ما يحدث بين العقد."
+    },
+    "refresher": {
+      "en": "Shear tells you how bending moment changes along the beam. Under downward load w, dV/dx = −w; dM/dx = V. A point force jumps shear; a point couple jumps moment.",
+      "ar": "يبين القص معدل تغير العزم على طول الكمرة. تحت حمل لأسفل w، تكون dV/dx = −w وdM/dx = V. تقفز قوة مركزة بالقص ويقفز عزم مركز بمخطط العزم."
+    },
+    "example": {
+      "en": "A UDL makes shear linear and moment parabolic. Where shear stays zero over an interval, moment stays constant over that interval.",
+      "ar": "يجعل الحمل المنتظم القص خطياً والعزم قطعاً مكافئاً. وعندما يبقى القص صفراً في فترة، يبقى العزم ثابتاً فيها."
+    },
+    "question": {
+      "en": "If V = 0 throughout a short beam region, M is…",
+      "ar": "إذا كان V = 0 على منطقة قصيرة من الكمرة فإن M…"
+    },
+    "options": [
+      {
+        "en": "Always zero.",
+        "ar": "صفر دائماً."
+      },
+      {
+        "en": "Constant, possibly nonzero.",
+        "ar": "ثابت وقد يكون غير صفري."
+      },
+      {
+        "en": "Necessarily parabolic.",
+        "ar": "قطع مكافئ بالضرورة."
+      }
+    ],
+    "correct": 1,
+    "answer": {
+      "en": "Zero shear means zero slope of the moment diagram. The moment level can be nonzero.",
+      "ar": "انعدام القص يعني انعدام ميل مخطط العزم؛ وقد يكون مستوى العزم غير صفري."
+    },
+    "videos": [
+      {
+        "title": "Statics: Lesson 59 – Shear Moment Diagram, The Graphic Method",
+        "author": "Jeff Hanson",
+        "id": "ZbL3PghURkA",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "shape",
+    "title": {
+      "en": "Deflection, slope & curvature",
+      "ar": "الترخيم والميل والتقوس"
+    },
+    "why": {
+      "en": "Slope-deflection connects joint movements to the moments needed to produce them.",
+      "ar": "يربط الميل والانحراف حركات العقد بالعزوم اللازمة لإنتاجها."
+    },
+    "refresher": {
+      "en": "Deflection is the movement of a point. Slope is the angle of the tangent to the beam’s displaced centreline. Curvature tells you how fast that angle changes along the beam.",
+      "ar": "الترخيم حركة نقطة. والميل زاوية المماس لمحور الكمرة المتشوه. والتقوس معدل تغير تلك الزاوية على طول الكمرة."
+    },
+    "example": {
+      "en": "A beam point may have zero vertical movement and still rotate. Bending moment relates to curvature, not simply to the height of a deflected point.",
+      "ar": "قد تنعدم الحركة الرأسية لنقطة وتبقى قادرة على الدوران. يرتبط العزم بالتقوس لا بارتفاع نقطة التشوه وحده."
+    },
+    "question": {
+      "en": "At a pin support with no settlement, can the beam rotate?",
+      "ar": "هل يمكن للكمرة أن تدور عند مسند مفصلي لا يهبط؟"
+    },
+    "options": [
+      {
+        "en": "Yes: zero deflection does not require zero slope.",
+        "ar": "نعم؛ انعدام الإزاحة لا يفرض انعدام الميل."
+      },
+      {
+        "en": "No: zero deflection means zero slope.",
+        "ar": "لا؛ انعدام الإزاحة يعني انعدام الميل."
+      },
+      {
+        "en": "Only if its stiffness is zero.",
+        "ar": "فقط إذا انعدمت الصلابة."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "Position and angle are different freedoms. A pin can hold a point in place while allowing rotation.",
+      "ar": "الموضع والزاوية درجتا حرية مختلفتان. يمكن للمفصل تثبيت نقطة والسماح بدورانها."
+    },
+    "videos": [
+      {
+        "title": "Understanding the Deflection of Beams",
+        "author": "The Efficient Engineer",
+        "id": "MvBqCeZllpQ",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "rigidity",
+    "title": {
+      "en": "E, I & flexural rigidity",
+      "ar": "E وI وصلابة الانحناء"
+    },
+    "why": {
+      "en": "Material and cross-section shape together determine resistance to bending.",
+      "ar": "تحدد مادة المقطع وشكله معاً مقاومة الانحناء."
+    },
+    "refresher": {
+      "en": "Young’s modulus E describes material stiffness. The second moment of area I describes how the cross-sectional area is distributed relative to the bending axis. EI is flexural rigidity. Rotational member stiffness also depends on length and end restraint.",
+      "ar": "يصف معامل يونغ E صلابة المادة، ويصف عزم المساحة الثاني I توزع مساحة المقطع حول محور الانحناء. حاصل EI صلابة الانحناء. تعتمد صلابة الدوران أيضاً على الطول وقيد الطرف الآخر."
+    },
+    "example": {
+      "en": "For a rectangle, I = bh³/12 about its centroidal horizontal axis. Doubling depth h multiplies I by eight when b is unchanged.",
+      "ar": "للمستطيل I = bh³/12 حول محوره الأفقي المار بمركزه. مضاعفة العمق h مع ثبات العرض تضاعف I ثماني مرات."
+    },
+    "question": {
+      "en": "For a rectangular section, doubling its bending depth with width unchanged multiplies I by…",
+      "ar": "مضاعفة عمق مقطع مستطيل في اتجاه الانحناء مع ثبات العرض تضاعف I بمقدار…"
+    },
+    "options": [
+      {
+        "en": "2",
+        "ar": "2"
+      },
+      {
+        "en": "4",
+        "ar": "4"
+      },
+      {
+        "en": "8",
+        "ar": "8"
+      }
+    ],
+    "correct": 2,
+    "answer": {
+      "en": "Depth is cubed: (2h)³ = 8h³. This is why orientation and depth matter so much.",
+      "ar": "العمق مرفوع للأس الثالث: (2h)³ = 8h³. لهذا يؤثر اتجاه المقطع وعمقه بقوة."
+    },
+    "videos": [
+      {
+        "title": "Understanding Young’s Modulus",
+        "author": "The Efficient Engineer",
+        "id": "DLE-ieOVFjI",
+        "language": "English"
+      },
+      {
+        "title": "Understanding Stresses in Beams",
+        "author": "The Efficient Engineer",
+        "id": "f08Y39UiC-o",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "compatibility",
+    "title": {
+      "en": "Equilibrium, determinacy & compatibility",
+      "ar": "الاتزان والتعيين والتوافق"
+    },
+    "why": {
+      "en": "Extra restraints require movement conditions as well as force balance.",
+      "ar": "تتطلب القيود الإضافية شروط حركة إلى جانب اتزان القوى."
+    },
+    "refresher": {
+      "en": "Equilibrium says forces and moments balance. Compatibility says connected parts fit together and satisfy their support movements. A stable statically indeterminate beam needs deformation information to determine all its reactions.",
+      "ar": "الاتزان يعني توازن القوى والعزوم. التوافق يعني أن الأجزاء المتصلة تتلاءم وتحقق حركات مساندها. تحتاج الكمرة المستقرة غير المحددة استاتيكياً معلومات تشوه لتحديد جميع ردودها."
+    },
+    "example": {
+      "en": "Adding a middle roller to a simply supported beam adds a reaction. The extra fact is that the beam must pass through the middle support’s prescribed position.",
+      "ar": "إضافة بكرة وسطية إلى كمرة بسيطة تضيف رد فعل. والمعلومة الإضافية أن الكمرة يجب أن تمر بموضع المسند الأوسط المفروض."
+    },
+    "question": {
+      "en": "What closes a statically indeterminate beam problem?",
+      "ar": "ما الذي يكمل حل كمرة غير محددة استاتيكياً؟"
+    },
+    "options": [
+      {
+        "en": "Equilibrium plus suitable compatibility and force–deformation relations.",
+        "ar": "الاتزان مع التوافق المناسب وعلاقات القوة والتشوه."
+      },
+      {
+        "en": "More rounding of the reactions.",
+        "ar": "المزيد من تقريب ردود الأفعال."
+      },
+      {
+        "en": "Equilibrium alone in every case.",
+        "ar": "الاتزان وحده في كل الحالات."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "The reactions must balance loads and produce movements that satisfy the restraints and connections.",
+      "ar": "يجب أن توازن الردود الأحمال وأن تنتج حركات تحقق قيود المساند والاتصالات."
+    },
+    "videos": [
+      {
+        "title": "Determinacy & Stability of Beam & Frame & Truss – Structural Analysis & Design I",
+        "author": "Rakibul Hassan",
+        "id": "JXKRAF8HIHs",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "ee-percent",
+    "title": {
+      "en": "Percentages, ratios and units",
+      "ar": "النسب المئوية والنسب والوحدات"
+    },
+    "why": {
+      "en": "A rate must be a decimal inside formulas; per-year and per-month are different units.",
+      "ar": "يجب أن يدخل المعدل عشريًا في المعادلة؛ والسنوي والشهري ساعتان مختلفتان."
+    },
+    "refresher": {
+      "en": "Percent means per 100. Divide by 100 once, and keep the time label.100 CU/year is a flow rate, not 100 CU total.",
+      "ar": "النسبة تعني لكل 100؛ اقسم على 100 مرة واحدة واحفظ وحدة الزمن. الشدة 100 نقد/سنة ليست إجمالي 100 نقد."
+    },
+    "example": {
+      "en": "8%=0.08;0.08×250=20. A quarter is 0.25 year.",
+      "ar": "8%=0.08؛ و 0.08×250=20. الربع سنة 0.25."
+    },
+    "question": {
+      "en": "What decimal belongs in a factor for a1.5%monthly rate?",
+      "ar": "ما العدد العشري لمعدل شهري 1.5%؟"
+    },
+    "options": [
+      {
+        "en": "0.015 permonth.",
+        "ar": "0.015 لكل شهر."
+      },
+      {
+        "en": "1.5 peryear.",
+        "ar": "1.5 لكل سنة."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "Divide by 100 and preserve the monthly clock.",
+      "ar": "اقسم على 100 واحفظ الساعة الشهرية."
+    },
+    "videos": [
+      {
+        "id": "ddVaiumu0tI",
+        "title": "Engineering Economic Analysis - Compound Interest Rate",
+        "author": "Learning OnDemand",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "ee-algebra",
+    "title": {
+      "en": "Algebra and rearranging an equation",
+      "ar": "الجبر وإعادة ترتيب المعادلة"
+    },
+    "why": {
+      "en": "Targets, loan payments, gradient increments and crossover prices are unknowns in an equation.",
+      "ar": "الأهداف والأقساط والزيادات وأسعار التقاطع مجاهيل في معادلات."
+    },
+    "refresher": {
+      "en": "Keep equality by applying the same operation to both sides. Separate a constant base from the coefficient of the unknown.",
+      "ar": "حافظ على التساوي بإجراء العملية نفسها للطرفين. افصل الحد الثابت عن معامل المجهول."
+    },
+    "example": {
+      "en": "400=331+3.1G → G=(400−331)/3.1.",
+      "ar": "400=331+3.1G؛ إذن G=(400−331)/3.1."
+    },
+    "question": {
+      "en": "If 1200=1000+5x, what isx?",
+      "ar": "إن 1200=1000+5x فما x؟"
+    },
+    "options": [
+      {
+        "en": "40.",
+        "ar": "40."
+      },
+      {
+        "en": "200.",
+        "ar": "200."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "Subtract 1000 then divide by 5:x=40.",
+      "ar": "اطرح 1000 ثم اقسم على 5؛ فينتج 40."
+    },
+    "videos": [
+      {
+        "title": "Solving systems of equations by elimination",
+        "author": "Khan Academy",
+        "id": "vA-55wZtLeE",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "ee-timeline",
+    "title": {
+      "en": "Signed cash-flow timelines and sequence counting",
+      "ar": "الخط النقدي والإشارات وعد السلاسل"
+    },
+    "why": {
+      "en": "Almost every factor error begins with a wrong date or missing arrow.",
+      "ar": "يبدأ كثير من أخطاء العوامل بتاريخ خاطئ أو سهم مفقود."
+    },
+    "refresher": {
+      "en": "Pick the owner’s viewpoint. Mark 0 before the first ordinary payment at 1. Count both endpoints when both contain payments.",
+      "ar": "اختر منظور المالك وحدد الصفر وفترة المحور. عد الطرفين عندما يحتوي كل منهما على دفعة."
+    },
+    "example": {
+      "en": "0→1→2→3: four 500 payments when“starts now and ends at 3”is stated.",
+      "ar": "من 0 إلى 3 توجد أربع دفعات إن نص على البدء الآن والانتهاء عند 3."
+    },
+    "question": {
+      "en": "How many payments occur at 0,1,…,7?",
+      "ar": "كم دفعة عند 0 و 1 إلى 7؟"
+    },
+    "options": [
+      {
+        "en": "8.",
+        "ar": "8."
+      },
+      {
+        "en": "7.",
+        "ar": "7."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "Count 7−0+1=8. The first ordinaryP/Areference would be one period before its own first arrow.",
+      "ar": "7−0+1=8؛ وتقع حالية السلسلة العادية قبل أول سهم بفترة واحدة."
+    },
+    "videos": [
+      {
+        "id": "fo0L6NZGZX8",
+        "title": "Engineering Economic Analysis - Cash Flow Diagram",
+        "author": "Learning OnDemand",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "ee-powers",
+    "title": {
+      "en": "Powers, logarithms and exponential growth",
+      "ar": "القوى واللوغاريتمات والنمو الأسي"
+    },
+    "why": {
+      "en": "Compounding repeats multiplication; logarithms recover an unknown period count.",
+      "ar": "التركيب ضرب متكرر، واللوغاريتم يستخرج عدد الفترات المجهول."
+    },
+    "refresher": {
+      "en": "(1+i)^n multiplies the same growth factor n times. ln(a^n)=nln(a), so n=ln(F/P)/ln(1+i).",
+      "ar": "يضرب(1+i)^n عامل النمو n مرة. من ln(a^n)=nln(a)ينتج n=ln(F/P)/ln(1+i)."
+    },
+    "example": {
+      "en": "1.1²=1.21; ln 1.21/ln 1.1=2.",
+      "ar": "1.1²=1.21؛ وقسمة ln1.21 على ln1.1 تعطي 2."
+    },
+    "question": {
+      "en": "Which is 1.1^3?",
+      "ar": "ما قيمة 1.1^3؟"
+    },
+    "options": [
+      {
+        "en": "1.331.",
+        "ar": "1.331."
+      },
+      {
+        "en": "1.3.",
+        "ar": "1.3."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "Multiply 1.1×1.1×1.1. Adding three 10%increments would be simple growth instead.",
+      "ar": "اضرب 1.1×1.1×1.1. جمع ثلاث زيادات 10%على الأصل نفسه نمو بسيط."
+    },
+    "videos": [
+      {
+        "id": "mQTWzLpCcW0",
+        "title": "Introduction to Logarithms",
+        "author": "Khan Academy",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "ee-integration",
+    "title": {
+      "en": "Accumulation, integrals and an exponential antiderivative",
+      "ar": "التراكم والتكامل وتكامل الأسي"
+    },
+    "why": {
+      "en": "Continuous cash-flow models add infinitely small dated payments.",
+      "ar": "تجمع نماذج النقد المستمر مبالغ صغيرة مؤرخة."
+    },
+    "refresher": {
+      "en": "A flow rate a(t) multiplied by dt is an amount. Add by integration. ∫e^(kt)dt=e^(kt)/k for k≠0; at k=0 integrate 1 as t.",
+      "ar": "الشدة a(t)مضروبة في dt مبلغ؛ يجمعه التكامل. تكامل e^(kt)هو e^(kt)/k مع k غير صفر، وعند k=0 يكون تكامل الواحد t."
+    },
+    "example": {
+      "en": "∫0²1000 dt=2000 CU when the rate is 1000 CU/year.",
+      "ar": "تكامل 1000 من 0 إلى 2 يساوي 2000 نقد لشدة 1000 نقد/سنة."
+    },
+    "question": {
+      "en": "Units of(CU/year)×dt with dt inyears?",
+      "ar": "ما وحدة نقد/سنة مضروبة في dt بالسنوات؟"
+    },
+    "options": [
+      {
+        "en": "CU.",
+        "ar": "نقد."
+      },
+      {
+        "en": "CU/year².",
+        "ar": "نقد/سنة²."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "Time cancels the denominator. This is why a flow integral produces money.",
+      "ar": "يلغى الزمن من المقام؛ لهذا ينتج التكامل مبلغًا لا شدة."
+    },
+    "videos": [
+      {
+        "id": "rfG8ce4nNh0",
+        "title": "Integration and the fundamental theorem of calculus | Chapter 8, Essence of calculus",
+        "author": "3Blue1Brown",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "ee-probability",
+    "title": {
+      "en": "Probabilities and weighted averages",
+      "ar": "الاحتمالات والمتوسطات المرجحة"
+    },
+    "why": {
+      "en": "Expected cost and flood-risk practice require explicit outcomes and probabilities.",
+      "ar": "تحتاج التكلفة المتوقعة ومخاطر الفيضان حالات واحتمالات صريحة."
+    },
+    "refresher": {
+      "en": "For exhaustive mutually exclusive outcomes, probabilities sum to 1. Expectation isΣp×value; it is not a promised result for a single project.",
+      "ar": "لحالات شاملة متنافية مجموع الاحتمال 1. التوقع مجموع p×القيمة؛ وليس وعدًا بنتيجة المشروع الواحد."
+    },
+    "example": {
+      "en": "50%chance of 100 and 50%of 300 gives expected 200.",
+      "ar": "احتمال 50%لـ 100 ومثله لـ 300 يعطي متوسط 200."
+    },
+    "question": {
+      "en": "If two exhaustive probabilities are 0.3 and 0.7, what is theirsum?",
+      "ar": "احتمالا حالتين شاملتين 0.3 و 0.7؛ ما مجموعهما؟"
+    },
+    "options": [
+      {
+        "en": "1.",
+        "ar": "1."
+      },
+      {
+        "en": "0.21.",
+        "ar": "0.21."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "Add disjoint exhaustive outcomes; multiplication would need a different event relationship.",
+      "ar": "تجمع الحالات الشاملة المنفصلة؛ أما الضرب فيحتاج علاقة أحداث مختلفة."
+    },
+    "videos": [
+      {
+        "id": "uzkc-qNVoOk",
+        "title": "Probability explained | Independent and dependent events | Probability and Statistics | Khan Academy",
+        "author": "Khan Academy",
+        "language": "English"
+      }
+    ]
+  }
+]

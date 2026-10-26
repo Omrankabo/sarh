@@ -1,0 +1,1238 @@
+{
+  "id": "models-frames",
+  "family": "models",
+  "title": {
+    "en": "Frame models: forces and rotations in one work balance",
+    "ar": "نماذج الإطارات: القوى والدورانات في ميزان شغل واحد"
+  },
+  "summary": {
+    "en": "Read a released frame as a set of conjugate movements. Separate horizontal and vertical translations, relative rotation, geometric scale and signed external work.",
+    "ar": "اقرأ الإطار المحرر كمجموعة حركات مترافقة. افصل الإزاحات الأفقية والرأسية والدوران النسبي والمقياس الهندسي والشغل الخارجي الجبري."
+  },
+  "outcomes": [
+    {
+      "en": "Choose a translation or rotation release for the desired frame action.",
+      "ar": "اختر تحرير إزاحة أو دوران للفعل المطلوب بالإطار."
+    },
+    {
+      "en": "Include point forces, distributed loads and applied couples in virtual work.",
+      "ar": "أدخل القوى المركزة والموزعة والعزوم المطبقة في الشغل الافتراضي."
+    },
+    {
+      "en": "Transform inclined-member readings and check global equilibrium.",
+      "ar": "حوّل قراءات الأعضاء المائلة وافحص الاتزان العام."
+    }
+  ],
+  "prereqIds": [
+    "units",
+    "algebra",
+    "forces",
+    "supports",
+    "loads",
+    "diagrams",
+    "shape",
+    "rigidity",
+    "compatibility"
+  ],
+  "concepts": [
+    {
+      "id": "mf-release",
+      "title": {
+        "en": "Conjugate frame releases",
+        "ar": "تحريرات الإطار المترافقة"
+      }
+    },
+    {
+      "id": "mf-vector",
+      "title": {
+        "en": "Signed vector work",
+        "ar": "الشغل المتجهي الجبري"
+      }
+    },
+    {
+      "id": "mf-rotation",
+      "title": {
+        "en": "Rotation-release normalization",
+        "ar": "تطبيع تحرير الدوران"
+      }
+    },
+    {
+      "id": "mf-local",
+      "title": {
+        "en": "Local and global directions",
+        "ar": "الاتجاهات المحلية والعامة"
+      }
+    },
+    {
+      "id": "mf-recover",
+      "title": {
+        "en": "Recover remaining actions",
+        "ar": "استرجاع الأفعال المتبقية"
+      }
+    },
+    {
+      "id": "mf-check",
+      "title": {
+        "en": "Independent checks and uncertainty",
+        "ar": "التحققات المستقلة وعدم اليقين"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "mf-release",
+      "title": {
+        "en": "Ask for one frame action",
+        "ar": "اطلب فعلاً واحداً من الإطار"
+      },
+      "predict": {
+        "en": "To measure a horizontal support reaction, should the model be released vertically at that support?",
+        "ar": "لقياس رد فعل أفقي عند مسند، هل نحرر النموذج رأسياً عند ذلك المسند؟"
+      },
+      "options": [
+        {
+          "en": "No; release horizontal movement in the reaction direction.",
+          "ar": "لا؛ نحرر الحركة الأفقية في اتجاه رد الفعل."
+        },
+        {
+          "en": "Yes; any support movement is interchangeable.",
+          "ar": "نعم؛ يمكن تبادل أي حركة للمسند."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Keep the frame’s other restraints. Release the selected horizontal reaction and move that coordinate. The rest of the frame responds with horizontal, vertical and rotational movements.",
+        "ar": "أبق بقية قيود الإطار. حرر رد الفعل الأفقي المختار وحرّك إحداثيه؛ يستجيب باقي الإطار بحركات أفقية ورأسية ودورانية."
+      },
+      "explain": {
+        "en": "A horizontal reaction pairs with horizontal translation, a vertical reaction with vertical translation, and a support couple with rotation. Different released coordinates require distinct experiments.",
+        "ar": "يقابل رد الفعل الأفقي إزاحة أفقية والرأسي إزاحة رأسية وعزم المسند دوراناً. تتطلب الإحداثيات المحررة المختلفة تجارب منفصلة."
+      },
+      "formula": "H↔u; V↔v; M↔θ",
+      "symbols": {
+        "en": "Arrows identify work-conjugate pairs, not equality of numerical values. Each release must leave a meaningful stable model shape.",
+        "ar": "تحدد الأسهم أزواجاً مترافقة في الشغل ولا تعني تساوي القيم. يجب أن يترك كل تحرير شكلاً نموذجياً مستقراً ذا معنى."
+      },
+      "assumptions": {
+        "en": "Small-displacement linear frame with geometrically compatible release shapes and matching relative stiffness. Below, global +x is right, +y is up and positive couple/rotation is counterclockwise unless specified.",
+        "ar": "إطار خطي صغير الإزاحات ذو أشكال تحرير متوافقة هندسياً ونسب صلابة مطابقة. فيما يلي +x يمين و+y أعلى، والعزم والدوران الموجبان عكس الساعة ما لم يذكر غير ذلك."
+      },
+      "example": {
+        "en": "Lecture scalar calculation: a signed area with magnitude22500 mm², S20, release100 mm, and w30 kN/m.",
+        "ar": "حساب عددي بالمحاضرة: مساحة جبرية مقدارها22500 mm² وS20 وتحرير100 mm وحمل w30 kN/m."
+      },
+      "calculation": {
+        "en": "Magnitude of the UDL contribution=30×20×22500/(1000×100)=135 kN. Its sign requires the actual released shape and load directions.",
+        "ar": "مقدار مساهمة الحمل الموزع=30×20×22500/(1000×100)=135 kN. تتطلب الإشارة معرفة شكل التحرير واتجاه الحمل الفعليين."
+      },
+      "interpret": {
+        "en": "A table of unsigned area magnitudes cannot determine reaction directions on its own. Label the signed lobes before calculating.",
+        "ar": "جدول مقادير مساحات دون إشارات لا يحدد اتجاه الردود وحده. علّم الفصوص الجبرية قبل الحساب."
+      },
+      "check": {
+        "prompt": {
+          "en": "Which release is needed for a support couple?",
+          "ar": "أي تحرير نحتاج لعزم رد فعل مسند؟"
+        },
+        "answer": {
+          "en": "A rotation release with translation restraints preserved as required.",
+          "ar": "تحرير دوران مع الاحتفاظ بقيود الإزاحة المطلوبة."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "mf-release"
+      ],
+      "sources": [
+        {
+          "doc": "12",
+          "page": 9,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 10,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mf-vector",
+      "title": {
+        "en": "Make every force meet its own movement",
+        "ar": "اجعل كل قوة تقابل حركتها"
+      },
+      "predict": {
+        "en": "A vertical load contributes to work during a horizontal release if its point also moves vertically. True?",
+        "ar": "يساهم حمل رأسي في الشغل أثناء تحرير أفقي إذا تحرك موضعه رأسياً أيضاً. هل هذا صحيح؟"
+      },
+      "options": [
+        {
+          "en": "False: only horizontal loads count.",
+          "ar": "خطأ: تدخل الأحمال الأفقية فقط."
+        },
+        {
+          "en": "True: work depends on each force’s matching movement, not the release name.",
+          "ar": "صحيح: يعتمد الشغل على حركة كل قوة المتوافقة معها لا على اسم التحرير."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "The released frame can sway and bend at once. Use each global force component with its matching displacement component, and each applied couple with rotation.",
+        "ar": "قد ينزاح الإطار المحرر جانبياً وينحني معاً. استعمل كل مركبة قوة عامة مع مركبة إزاحتها الموافقة وكل عزم مطبق مع دورانه."
+      },
+      "explain": {
+        "en": "With signed global forces and movements, total external virtual work is zero. Solve the one unknown reaction from that balance. For translation releases, prototype displacement scales by S; rotation does not acquire a length-scale factor.",
+        "ar": "مع القوى والحركات العامة الجبرية يكون مجموع الشغل الخارجي الافتراضي صفراً. استخرج رد الفعل المجهول من الميزان. في تحرير الإزاحة تتغير إزاحة الأصل بمعامل S، بينما لا يكتسب الدوران معامل طول."
+      },
+      "formula": "H uA + Σ(Fx u+Fy v+Cθ)+∫(qx u+qy v)dx=0",
+      "symbols": {
+        "en": "Use prototype translations in m, forces in kN, couples in kN·m and rotations in radians. Every term then has kN·m units.",
+        "ar": "استعمل إزاحات الأصل بالمتر والقوى kN والعزوم kN·m والدورانات بالراديان. تصبح جميع الحدود kN·m."
+      },
+      "assumptions": {
+        "en": "Small-displacement linear frame with geometrically compatible release shapes and matching relative stiffness. Below, global +x is right, +y is up and positive couple/rotation is counterclockwise unless specified.",
+        "ar": "إطار خطي صغير الإزاحات ذو أشكال تحرير متوافقة هندسياً ونسب صلابة مطابقة. فيما يلي +x يمين و+y أعلى، والعزم والدوران الموجبان عكس الساعة ما لم يذكر غير ذلك."
+      },
+      "example": {
+        "en": "Authored release lab: S20, uA,m=10 mm right; downward Fy=−30 kN at vm=+4 mm up; applied C=+8 kN·m has θ=+0.05 rad.",
+        "ar": "مختبر تحرير مؤلف: S20 وuA,m=10 mm يميناً؛ قوة لأسفل Fy=−30 kN حيث vm=+4 mm لأعلى؛ وعزم C=+8 kN·m عند θ=+0.05 rad."
+      },
+      "calculation": {
+        "en": "uA,p=0.2 m; vp=0.08 m. Work:0.2H−30×0.08+8×0.05=0. Thus0.2H−2=0 and H=+10 kN right.",
+        "ar": "uA,p=0.2 m وvp=0.08 m. الشغل:0.2H−30×0.08+8×0.05=0؛ إذن0.2H−2=0 وH=+10 kN يميناً."
+      },
+      "interpret": {
+        "en": "The couple reduces the required positive H in this experiment. Dropping its rotation term would give12 kN and be wrong.",
+        "ar": "يخفض العزم المطبق قيمة H الموجبة المطلوبة في التجربة. حذف حد دورانه يعطي12 kN وهو خطأ."
+      },
+      "check": {
+        "prompt": {
+          "en": "What is the vertical force’s work term here?",
+          "ar": "ما حد شغل القوة الرأسية هنا؟"
+        },
+        "answer": {
+          "en": "−30×0.08=−2.4 kN·m.",
+          "ar": "−30×0.08=−2.4 kN·m."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "mf-vector"
+      ],
+      "sources": [
+        {
+          "doc": "12",
+          "page": 2,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 11,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "24",
+          "page": 98,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mf-rotation",
+      "title": {
+        "en": "Normalize a moment with radians",
+        "ar": "طبّع العزم بالراديان"
+      },
+      "predict": {
+        "en": "Should a moment-release work balance be divided by a displacement in millimetres?",
+        "ar": "هل نقسم ميزان الشغل لتحرير عزم على إزاحة بالملليمتر؟"
+      },
+      "options": [
+        {
+          "en": "No; divide by the released rotation in radians.",
+          "ar": "لا؛ نقسم على دوران التحرير بالراديان."
+        },
+        {
+          "en": "Yes; every model uses100 mm as its denominator.",
+          "ar": "نعم؛ مقام كل نموذج100 mm."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Release rotational restraint at the target support while maintaining the required translations. Impose a small known rotation, then measure translations at force locations and rotations at couple locations.",
+        "ar": "حرر قيد الدوران عند المسند المطلوب مع إبقاء الإزاحات المطلوبة مقيدة. افرض دوراناً صغيراً معروفاً ثم قس الإزاحات عند القوى والدورانات عند العزوم."
+      },
+      "explain": {
+        "en": "Geometric length scaling changes translations but leaves corresponding rotations unchanged. Convert degrees to radians before using moment times rotation as work.",
+        "ar": "يغير مقياس الطول الإزاحات لكنه لا يغير الدورانات المتناظرة. حوّل الدرجات إلى راديان قبل استعمال العزم مضروباً في الدوران كشغل."
+      },
+      "formula": "M=−[ΣF·δp+ΣCθ+∫q·δp dx]/θA",
+      "symbols": {
+        "en": "θA is the imposed signed release rotation. For a point-force term, δp=Sδm/1000 m when δm is mm. For a distributed-load term, displacement area scales as S².",
+        "ar": "θA دوران التحرير الجبري المفروض. في حد القوة المركزة δp=Sδm/1000 m إذا كانت δm بالملليمتر. وفي حد الموزع تتغير مساحة الإزاحة بمعامل S²."
+      },
+      "assumptions": {
+        "en": "Small-displacement linear frame with geometrically compatible release shapes and matching relative stiffness. Below, global +x is right, +y is up and positive couple/rotation is counterclockwise unless specified.",
+        "ar": "إطار خطي صغير الإزاحات ذو أشكال تحرير متوافقة هندسياً ونسب صلابة مطابقة. فيما يلي +x يمين و+y أعلى، والعزم والدوران الموجبان عكس الساعة ما لم يذكر غير ذلك."
+      },
+      "example": {
+        "en": "Authored lab: rotationθA=+0.02 rad, S20, downward P20 kN where measured upward vm=+3 mm. No other load work.",
+        "ar": "مختبر مؤلف: دوران θA=+0.02 rad وS20 وحمل P20 kN لأسفل عند قراءة vm=+3 mm لأعلى دون شغل أحمال آخر."
+      },
+      "calculation": {
+        "en": "vp=20×3/1000=0.06 m. Equation0.02M−20×0.06=0 gives M=+60 kN·m.",
+        "ar": "vp=20×3/1000=0.06 m. تعطي المعادلة0.02M−20×0.06=0 النتيجة M=+60 kN·m."
+      },
+      "interpret": {
+        "en": "A rotation denominator produces a moment. A translation denominator would produce force, exposing a dimensional error immediately.",
+        "ar": "مقام الدوران يعطي عزماً. مقام الإزاحة يعطي قوة ويكشف الخطأ البعدي فوراً."
+      },
+      "check": {
+        "prompt": {
+          "en": "How many radians is a0.5° release?",
+          "ar": "كم رادياناً يساوي تحرير0.5°؟"
+        },
+        "answer": {
+          "en": "0.5π/180≈0.00872665 rad.",
+          "ar": "0.5π/180≈0.00872665 rad."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "mf-rotation"
+      ],
+      "sources": [
+        {
+          "doc": "12",
+          "page": 2,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "24",
+          "page": 98,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mf-local",
+      "title": {
+        "en": "Turn inclined readings into matching directions",
+        "ar": "حوّل القراءات المائلة إلى اتجاهات متوافقة"
+      },
+      "predict": {
+        "en": "A horizontal joint displacement on an inclined member is always purely transverse to that member. True?",
+        "ar": "الإزاحة الأفقية لعقدة في عضو مائل تكون عرضية خالصة للعضو دائماً. هل هذا صحيح؟"
+      },
+      "options": [
+        {
+          "en": "True for every incline.",
+          "ar": "صحيح لكل ميل."
+        },
+        {
+          "en": "False; resolve it into axial and transverse components.",
+          "ar": "خطأ؛ حللها إلى مركبتين محورية وعرضية."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Imagine a 3–4–5 inclined member. A global rightward movement has both a component along the member and one normal to it. Use the same transformation for force and movement pairs.",
+        "ar": "تخيل عضواً مائلاً بأبعاد3–4–5. للحركة العامة يميناً مركبة على طول العضو وأخرى عمودية عليه. استعمل التحويل نفسه لأزواج القوى والحركات."
+      },
+      "explain": {
+        "en": "Work is invariant under an orthogonal coordinate rotation. A load specified per horizontal metre also needs conversion before treating it as per member metre; identify the original intensity definition.",
+        "ar": "يبقى الشغل ثابتاً تحت تحويل إحداثيات متعامد. والحمل المحدد لكل متر أفقي يحتاج تحويلاً قبل معاملته لكل متر من العضو؛ حدد تعريف الشدة الأصلي."
+      },
+      "formula": "u∥=c ux+s uy; u⊥=−s ux+c uy; F·u=F∥u∥+F⊥u⊥",
+      "symbols": {
+        "en": "c=Δx/L and s=Δy/L. Positive local transverse direction is (−s,c). L is actual member length.",
+        "ar": "c=Δx/L وs=Δy/L. الاتجاه العرضي المحلي الموجب هو(−s,c). L طول العضو الحقيقي."
+      },
+      "assumptions": {
+        "en": "Small-displacement linear frame with geometrically compatible release shapes and matching relative stiffness. Below, global +x is right, +y is up and positive couple/rotation is counterclockwise unless specified.",
+        "ar": "إطار خطي صغير الإزاحات ذو أشكال تحرير متوافقة هندسياً ونسب صلابة مطابقة. فيما يلي +x يمين و+y أعلى، والعزم والدوران الموجبان عكس الساعة ما لم يذكر غير ذلك."
+      },
+      "example": {
+        "en": "Authored3–4–5 member rising right: c0.6,s0.8; global displacement ux10 mm,uy0.",
+        "ar": "عضو مؤلف3–4–5 يصعد يميناً: c0.6 وs0.8 وإزاحة عامة ux10 mm وuy0."
+      },
+      "calculation": {
+        "en": "u∥=0.6×10=6 mm; u⊥=−0.8×10=−8 mm. Magnitude√(6²+8²)=10 mm.",
+        "ar": "u∥=0.6×10=6 mm؛ u⊥=−0.8×10=−8 mm. المقدار√(6²+8²)=10 mm."
+      },
+      "interpret": {
+        "en": "A model omitting axial strain still needs kinematically compatible joint motions. Do not invent independent member slips to make a convenient shape.",
+        "ar": "حتى إن أهمل النموذج الانفعال المحوري، يجب أن تتوافق حركات العقد هندسياً. لا تختلق انزلاقات مستقلة للأعضاء لصنع شكل مناسب."
+      },
+      "check": {
+        "prompt": {
+          "en": "Can a vertical force be paired with an arbitrary horizontal reading in global work?",
+          "ar": "هل يجوز ضرب قوة رأسية في قراءة أفقية عشوائية في الشغل العام؟"
+        },
+        "answer": {
+          "en": "No. Pair matching components or transform both consistently.",
+          "ar": "لا. قابل المركبات المتوافقة أو حوّل الطرفين باتساق."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "mf-local"
+      ],
+      "sources": [
+        {
+          "doc": "12",
+          "page": 8,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 11,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mf-recover",
+      "title": {
+        "en": "Use the model where statics runs out",
+        "ar": "استعمل النموذج حيث يعجز الاتزان وحده"
+      },
+      "predict": {
+        "en": "Do three global equilibrium equations determine every reaction in a multi-support rigid frame?",
+        "ar": "هل تحدد معادلات الاتزان العامة الثلاث كل ردود إطار جاسئ متعدد المساند؟"
+      },
+      "options": [
+        {
+          "en": "No; additional independent model releases may be required.",
+          "ar": "لا؛ قد نحتاج تحريرات نموذجية مستقلة إضافية."
+        },
+        {
+          "en": "Yes, regardless of the number of unknown reactions.",
+          "ar": "نعم مهما كان عدد الردود المجهولة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Measure enough independent actions to remove indeterminacy. Recover the remaining reactions with force and moment equilibrium, then isolate joints and members to determine internal forces.",
+        "ar": "قس أفعالاً مستقلة كافية لإزالة عدم التعيين. استخرج بقية الردود باتزان القوى والعزوم ثم اعزل العقد والأعضاء لإيجاد القوى الداخلية."
+      },
+      "explain": {
+        "en": "Global equilibrium does not replace joint equilibrium. Member end moments must also agree with measured reaction lever arms, applied distributed loads and connection restraints.",
+        "ar": "لا يغني الاتزان العام عن اتزان العقد. يجب أن تتفق عزوم نهايات الأعضاء مع أذرع الردود والأحمال الموزعة وقيود الاتصالات."
+      },
+      "formula": "ΣFx=0; ΣFy=0; ΣMO=0; ΣMjoint=0",
+      "symbols": {
+        "en": "Global equations constrain the full frame; joint equations constrain each connection. Count unknowns after each measured action.",
+        "ar": "تقيد المعادلات العامة الإطار كله بينما تقيد معادلات العقد كل اتصال. عد المجهولات بعد كل فعل مقاس."
+      },
+      "assumptions": {
+        "en": "Small-displacement linear frame with geometrically compatible release shapes and matching relative stiffness. Below, global +x is right, +y is up and positive couple/rotation is counterclockwise unless specified.",
+        "ar": "إطار خطي صغير الإزاحات ذو أشكال تحرير متوافقة هندسياً ونسب صلابة مطابقة. فيما يلي +x يمين و+y أعلى، والعزم والدوران الموجبان عكس الساعة ما لم يذكر غير ذلك."
+      },
+      "example": {
+        "en": "Authored force-balance lab, not a complete source-frame solution: total downward load300 kN; measured vertical reactions are−15.48 and+135 kN at two supports.",
+        "ar": "مختبر اتزان قوى مؤلف وليس حلاً كاملاً لإطار المصدر: الحمل الكلي لأسفل300 kN وردان مقاسان−15.48 و+135 kN عند مسندين."
+      },
+      "calculation": {
+        "en": "Third vertical reaction=300−(−15.48)−135=+180.48 kN. This balances vertical force, but coordinates and remaining actions are still needed for the moment check.",
+        "ar": "رد الفعل الرأسي الثالث=300−(−15.48)−135=+180.48 kN. يحقق ذلك اتزان القوى الرأسية، لكن فحص العزوم يتطلب الإحداثيات وبقية الأفعال."
+      },
+      "interpret": {
+        "en": "A negative support reaction is a direction result. Verify whether the real support can resist uplift before accepting the elastic model.",
+        "ar": "سالبية رد الفعل نتيجة اتجاه. تحقق من قدرة المسند الواقعي على مقاومة الانفصال قبل اعتماد النموذج المرن."
+      },
+      "check": {
+        "prompt": {
+          "en": "Can that force sum alone establish a complete frame bending diagram?",
+          "ar": "هل يثبت جمع القوى وحده مخطط عزم إطار كامل؟"
+        },
+        "answer": {
+          "en": "No. Additional reactions, geometry and member/joint equilibrium are needed.",
+          "ar": "لا. نحتاج بقية الردود والهندسة واتزان الأعضاء والعقد."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "mf-recover"
+      ],
+      "sources": [
+        {
+          "doc": "12",
+          "page": 10,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 11,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mf-check",
+      "title": {
+        "en": "Test work from more than one direction",
+        "ar": "اختبر الشغل من أكثر من اتجاه"
+      },
+      "predict": {
+        "en": "If every measured movement is multiplied by2, should a correctly normalized reaction estimate double?",
+        "ar": "إذا تضاعفت كل الحركات المقاسة مرتين، هل يتضاعف تقدير رد الفعل المطبع بصورة صحيحة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; the model became twice as stiff.",
+          "ar": "نعم؛ صار النموذج أصلب مرتين."
+        },
+        {
+          "en": "No; numerator and release movement scale together.",
+          "ar": "لا؛ يتضاعف البسط وحركة التحرير معاً."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Repeat an experiment at half amplitude, check the selected fixed coordinates remain fixed and compare normalized results. Then verify total force, moment and selected joint balances independently.",
+        "ar": "أعد التجربة بنصف السعة وافحص ثبات الإحداثيات المقيدة وقارن النتائج المطبعة. ثم تحقق مستقلاً من اتزان القوى والعزوم وبعض العقد."
+      },
+      "explain": {
+        "en": "A moment-release measurement needs especially careful angle units. A table without directions or sufficient independent releases cannot support a unique full-frame answer. Record the missing information instead of guessing.",
+        "ar": "تحتاج قياسات تحرير العزم ضبطاً خاصاً لوحدة الزاوية. لا يدعم جدول بلا اتجاهات أو تحريرات مستقلة كافية حلاً كاملاً وحيداً للإطار. سجل المفقود بدلاً من التخمين."
+      },
+      "formula": "normalized result = load work / release movement",
+      "symbols": {
+        "en": "The denominator is translation for a force and radians for a moment. In signed equilibrium use the negative of the known external-work sum.",
+        "ar": "المقام إزاحة عند إيجاد قوة وراديان عند إيجاد عزم. في الاتزان الجبري استخدم سالب مجموع شغل الأفعال الخارجية المعلومة."
+      },
+      "assumptions": {
+        "en": "Small-displacement linear frame with geometrically compatible release shapes and matching relative stiffness. Below, global +x is right, +y is up and positive couple/rotation is counterclockwise unless specified.",
+        "ar": "إطار خطي صغير الإزاحات ذو أشكال تحرير متوافقة هندسياً ونسب صلابة مطابقة. فيما يلي +x يمين و+y أعلى، والعزم والدوران الموجبان عكس الساعة ما لم يذكر غير ذلك."
+      },
+      "example": {
+        "en": "Authored angle audit: an analyst divides by0.5 instead of0.5π/180 for a half-degree release.",
+        "ar": "فحص زاوية مؤلف: يقسم محلل على0.5 بدلاً من0.5π/180 لتحرير نصف درجة."
+      },
+      "calculation": {
+        "en": "The denominator is57.2958 times too large, so the reported moment is57.2958 times too small. Correct by multiplying that result by180/π.",
+        "ar": "المقام أكبر57.2958 مرة، فيصبح العزم المبلغ أصغر57.2958 مرة. صحح بضرب النتيجة في180/π."
+      },
+      "interpret": {
+        "en": "A dimensional and magnitude check can catch an error before detailed algebra. Preserve unrounded readings until the final reported result.",
+        "ar": "قد يكشف فحص الأبعاد والمقادير الخطأ قبل الجبر التفصيلي. احتفظ بالقراءات دون تقريب حتى النتيجة النهائية."
+      },
+      "check": {
+        "prompt": {
+          "en": "What three things must accompany each measured model area?",
+          "ar": "ما الأمور الثلاثة التي ترافق كل مساحة نموذج مقاسة؟"
+        },
+        "answer": {
+          "en": "Its sign/direction, member or load region, and units with scale definition.",
+          "ar": "إشارتها واتجاهها، والعضو أو منطقة التحميل، والوحدة مع تعريف المقياس."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "mf-check"
+      ],
+      "sources": [
+        {
+          "doc": "12",
+          "page": 9,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "24",
+          "page": 98,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "mf-q1",
+      "concept": "mf-release",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Which movement is conjugate to a horizontal reaction?",
+        "ar": "أي حركة مترافقة مع رد فعل أفقي؟"
+      },
+      "hints": [
+        {
+          "en": "A force does work along its own direction.",
+          "ar": "تبذل القوة شغلاً في اتجاهها."
+        },
+        {
+          "en": "Horizontal reaction H pairs with signed horizontal translation u, so its work is H u.",
+          "ar": "يقترن رد الفعل الأفقي H بالإزاحة الأفقية الجبرية u، وشغله H u."
+        }
+      ],
+      "solution": {
+        "en": "Horizontal translation at that support, with the remaining restraints preserved.",
+        "ar": "إزاحة أفقية عند المسند مع إبقاء بقية القيود."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 9,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 10,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Horizontal translation",
+          "ar": "إزاحة أفقية"
+        },
+        {
+          "en": "An unrelated vertical displacement",
+          "ar": "إزاحة رأسية غير مترافقة"
+        }
+      ],
+      "correct": 0
+    },
+    {
+      "id": "mf-q2",
+      "concept": "mf-release",
+      "type": "numerical",
+      "prompt": {
+        "en": "Lecture scalar magnitude: w30 kN/m,S20,Am22500 mm²,δ100 mm. Find reaction-contribution magnitude.",
+        "ar": "المقدار العددي بالمحاضرة: w30 kN/m وS20 وAm22500 mm² وδ100 mm. أوجد مقدار مساهمة رد الفعل."
+      },
+      "hints": [
+        {
+          "en": "Use wSAm/(1000δ).",
+          "ar": "استعمل wSAm/(1000δ)."
+        },
+        {
+          "en": "Substitute 30×20×22500/(1000×100), keeping all model readings in mm.",
+          "ar": "عوّض30×20×22500/(1000×100) مع إبقاء قراءات النموذج بالملليمتر."
+        }
+      ],
+      "solution": {
+        "en": "30×20×22500/(1000×100)=135 kN. Direction still requires signed readings.",
+        "ar": "30×20×22500/(1000×100)=135 kN. يتطلب الاتجاه قراءات جبرية."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 9,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 10,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "expected": 135,
+      "tolerance": 0.01,
+      "unit": "kN"
+    },
+    {
+      "id": "mf-q3",
+      "concept": "mf-vector",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored lab: uA,p=+0.2 m; Fy=−30 kN at v=+0.08 m; C=+8 kN·m at θ=+0.05 rad. Find H right-positive.",
+        "ar": "مختبر مؤلف: uA,p=+0.2 m وFy=−30 kN عند v=+0.08 m وC=+8 kN·m عند θ=+0.05 rad. أوجد H موجباً يميناً."
+      },
+      "hints": [
+        {
+          "en": "Write0.2H−2.4+0.4=0.",
+          "ar": "اكتب0.2H−2.4+0.4=0."
+        },
+        {
+          "en": "Collect all signed work terms: H u+Fy v+Cθ=0.",
+          "ar": "اجمع حدود الشغل الجبرية: H u+Fy v+Cθ=0."
+        }
+      ],
+      "solution": {
+        "en": "H=−(−2)/0.2=+10 kN. Include both force and couple work.",
+        "ar": "H=−(−2)/0.2=+10 kN. أدخل شغل القوة والعزم كليهما."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 2,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 11,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "24",
+          "page": 98,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "expected": 10,
+      "tolerance": 0.01,
+      "unit": "kN"
+    },
+    {
+      "id": "mf-q4",
+      "concept": "mf-vector",
+      "type": "conceptual",
+      "prompt": {
+        "en": "During a horizontal support release, can vertical loads contribute to virtual work?",
+        "ar": "أثناء تحرير أفقي لمسند، هل تسهم الأحمال الرأسية في الشغل الافتراضي؟"
+      },
+      "hints": [
+        {
+          "en": "Inspect movement at each load.",
+          "ar": "افحص الحركة عند كل حمل."
+        },
+        {
+          "en": "A horizontal release may produce vertical joint movements; vertical forces do work against those components.",
+          "ar": "قد يسبب التحرير الأفقي إزاحات رأسية للعقد؛ فتساهم القوى الرأسية بشغل مقابلها."
+        }
+      ],
+      "solution": {
+        "en": "Yes, whenever their application points have vertical virtual displacement.",
+        "ar": "نعم، متى كانت لمواضع تأثيرها إزاحة افتراضية رأسية."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 2,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 11,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "24",
+          "page": 98,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Never",
+          "ar": "أبداً"
+        },
+        {
+          "en": "Yes, if their points move vertically",
+          "ar": "نعم إذا تحركت مواضعها رأسياً"
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "mf-q5",
+      "concept": "mf-rotation",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: θA=0.02 rad,S20,upward model reading3 mm under downward P20 kN. Find the counterclockwise support couple.",
+        "ar": "مؤلف: θA=0.02 rad وS20 وقراءة نموذج لأعلى3 mm تحت حمل P20 kN لأسفل. أوجد عزم المسند عكس الساعة."
+      },
+      "hints": [
+        {
+          "en": "Convert the displacement to prototype metres, then balance work.",
+          "ar": "حوّل الإزاحة إلى أمتار الأصل ثم وازن الشغل."
+        },
+        {
+          "en": "Prototype upward movement is S×3/1000 m. Balance Cθ against the downward force work.",
+          "ar": "الإزاحة الأصلية لأعلى S×3/1000 m؛ وازن Cθ مع شغل القوة لأسفل."
+        }
+      ],
+      "solution": {
+        "en": "0.02M−20×0.06=0 gives M=+60 kN·m.",
+        "ar": "0.02M−20×0.06=0 تعطي M=+60 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 2,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "24",
+          "page": 98,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "expected": 60,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "mf-q6",
+      "concept": "mf-rotation",
+      "type": "numerical",
+      "prompt": {
+        "en": "Convert a0.5° release to radians.",
+        "ar": "حوّل تحرير0.5° إلى راديان."
+      },
+      "hints": [
+        {
+          "en": "Multiply degrees byπ/180.",
+          "ar": "اضرب الدرجات فيπ/180."
+        },
+        {
+          "en": "Use θ=0.5π/180; degrees cannot be used directly in the work denominator.",
+          "ar": "استخدم θ=0.5π/180؛ لا تدخل الدرجات مباشرة في مقام الشغل."
+        }
+      ],
+      "solution": {
+        "en": "0.5π/180=0.00872664626 rad.",
+        "ar": "0.5π/180=0.00872664626 rad."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 2,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "24",
+          "page": 98,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "expected": 0.00872664626,
+      "tolerance": 1e-06,
+      "unit": "rad"
+    },
+    {
+      "id": "mf-q7",
+      "concept": "mf-local",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored3–4–5 member rises right, c0.6,s0.8. Joint movement ux10 mm,uy0. Find local transverse displacement.",
+        "ar": "عضو مؤلف3–4–5 يصعد يميناً وc0.6 وs0.8. حركة العقدة ux10 mm وuy0. أوجد الإزاحة العرضية المحلية."
+      },
+      "hints": [
+        {
+          "en": "u⊥=−sux+cuy.",
+          "ar": "u⊥=−sux+cuy."
+        },
+        {
+          "en": "The normal unit vector is (−s,c), so u⊥=(−s,c)·(ux,uy).",
+          "ar": "متجه الوحدة العمودي (−s,c)، لذلك u⊥=(−s,c)·(ux,uy)."
+        }
+      ],
+      "solution": {
+        "en": "u⊥=−0.8×10+0.6×0=−8 mm.",
+        "ar": "u⊥=−0.8×10+0.6×0=−8 mm."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 8,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 11,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "expected": -8,
+      "tolerance": 0.01,
+      "unit": "mm"
+    },
+    {
+      "id": "mf-q8",
+      "concept": "mf-local",
+      "type": "conceptual",
+      "prompt": {
+        "en": "What preserves the work product when changing coordinates?",
+        "ar": "ما الذي يحفظ حاصل الشغل عند تغيير الإحداثيات؟"
+      },
+      "hints": [
+        {
+          "en": "Forces and movements must use the same orthogonal transformation.",
+          "ar": "يجب تحويل القوى والحركات بالتحويل المتعامد نفسه."
+        },
+        {
+          "en": "Apply the same rotation matrix to both vectors; the dot product then stays unchanged.",
+          "ar": "طبّق مصفوفة الدوران نفسها على المتجهين؛ يبقى الجداء النقطي ثابتًا."
+        }
+      ],
+      "solution": {
+        "en": "Transform both force and displacement components consistently. Then Fxu+Fyv=F∥u∥+F⊥u⊥.",
+        "ar": "حوّل مركبات القوة والإزاحة باتساق؛ عندها Fxu+Fyv=F∥u∥+F⊥u⊥."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 8,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 11,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Transform force only",
+          "ar": "حوّل القوة فقط"
+        },
+        {
+          "en": "Transform both force and movement",
+          "ar": "حوّل القوة والحركة معاً"
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "mf-q9",
+      "concept": "mf-recover",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored three-support force check: downward load300 kN, reactions−15.48 and135 kN. Find the third upward-positive vertical reaction.",
+        "ar": "فحص قوى مؤلف لثلاثة مساند: حمل لأسفل300 kN وردان−15.48 و135 kN. أوجد الثالث موجباً لأعلى."
+      },
+      "hints": [
+        {
+          "en": "Sum signed reactions to300.",
+          "ar": "اجعل مجموع الردود الجبرية300."
+        },
+        {
+          "en": "Preserve the negative reaction: R3=300−(−15.48)−135.",
+          "ar": "احتفظ برد الفعل السالب: R3=300−(−15.48)−135."
+        }
+      ],
+      "solution": {
+        "en": "R=300+15.48−135=180.48 kN. A full solution still needs moment checks.",
+        "ar": "R=300+15.48−135=180.48 kN. ما زال الحل الكامل يحتاج فحوص العزوم."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 10,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 11,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "expected": 180.48,
+      "tolerance": 0.01,
+      "unit": "kN"
+    },
+    {
+      "id": "mf-q10",
+      "concept": "mf-recover",
+      "type": "mixed",
+      "prompt": {
+        "en": "Authored isolated5 m column has a horizontal tip force4 kN and no distributed load. Find the magnitude of the equilibrating base moment.",
+        "ar": "عمود معزول مؤلف طوله5 m وقوة أفقية عند رأسه4 kN بلا حمل موزع. أوجد مقدار عزم القاعدة الموازن."
+      },
+      "hints": [
+        {
+          "en": "Use the perpendicular lever arm.",
+          "ar": "استعمل الذراع العمودي."
+        },
+        {
+          "en": "Base moment magnitude is horizontal force times vertical column height.",
+          "ar": "مقدار عزم القاعدة يساوي القوة الأفقية مضروبة في ارتفاع العمود الرأسي."
+        }
+      ],
+      "solution": {
+        "en": "|Mbase|=4×5=20 kN·m. Its signed direction opposes the applied force’s moment.",
+        "ar": "|Mbase|=4×5=20 kN·m. يتجه جبرياً عكس عزم القوة المطبقة."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 10,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "12",
+          "page": 11,
+          "filename": "lec 8 Models -.pdf"
+        }
+      ],
+      "expected": 20,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "mf-q11",
+      "concept": "mf-check",
+      "type": "conceptual",
+      "prompt": {
+        "en": "All readings and the imposed release double in a repeated linear test. What should the normalized action do?",
+        "ar": "تتضاعف كل القراءات والتحرير المفروض في تجربة خطية مكررة. ماذا يحدث للفعل المطبع؟"
+      },
+      "hints": [
+        {
+          "en": "Both numerator and denominator double.",
+          "ar": "يتضاعف البسط والمقام معاً."
+        },
+        {
+          "en": "Normalize before comparing: (2 numerator)/(2 release) is the original ratio.",
+          "ar": "طبّع قبل المقارنة: (2 البسط)/(2 التحرير) تعطي النسبة الأصلية."
+        }
+      ],
+      "solution": {
+        "en": "It should stay unchanged; disagreement suggests nonlinearity, measurement or restraint errors.",
+        "ar": "يجب أن يبقى ثابتاً؛ قد يدل الاختلاف على لاخطية أو خطأ قياس أو قيود."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 9,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "24",
+          "page": 98,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Stay unchanged",
+          "ar": "يبقى ثابتاً"
+        },
+        {
+          "en": "Double",
+          "ar": "يتضاعف"
+        }
+      ],
+      "correct": 0
+    },
+    {
+      "id": "mf-q12",
+      "concept": "mf-check",
+      "type": "numerical",
+      "prompt": {
+        "en": "An analyst used degrees as radians in a moment-release denominator. By what factor180/π should the underestimated result be multiplied?",
+        "ar": "استعمل محلل الدرجات كراديان في مقام تحرير عزم. بأي معامل180/π نضرب النتيجة الناقصة؟"
+      },
+      "hints": [
+        {
+          "en": "A radian is about57.3 degrees.",
+          "ar": "الراديان نحو57.3 درجة."
+        },
+        {
+          "en": "Write θ_rad=θ_deg π/180. Compare division by θ_deg with division by θ_rad.",
+          "ar": "اكتب θ_rad=θ_deg π/180، وقارن القسمة على الدرجات بالقسمة على الراديان."
+        }
+      ],
+      "solution": {
+        "en": "180/π≈57.2958. Convert the release angle before work calculation.",
+        "ar": "180/π≈57.2958. حوّل زاوية التحرير قبل حساب الشغل."
+      },
+      "sources": [
+        {
+          "doc": "12",
+          "page": 9,
+          "filename": "lec 8 Models -.pdf"
+        },
+        {
+          "doc": "24",
+          "page": 98,
+          "filename": "Structure II_019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "expected": 57.2957795,
+      "tolerance": 0.001
+    }
+  ],
+  "cards": [
+    {
+      "id": "mf-c1",
+      "concept": "mf-release",
+      "kind": "decision",
+      "q": {
+        "en": "Horizontal, vertical and moment reaction: releases?",
+        "ar": "ما تحريرات رد الفعل الأفقي والرأسي والعزم؟"
+      },
+      "a": {
+        "en": "Horizontal translation, vertical translation and rotation, respectively. Preserve the other restraints.",
+        "ar": "إزاحة أفقية ثم رأسية ثم دوران على الترتيب، مع حفظ القيود الأخرى."
+      }
+    },
+    {
+      "id": "mf-c2",
+      "concept": "mf-release",
+      "kind": "misconception",
+      "q": {
+        "en": "Unsigned model area determines direction?",
+        "ar": "هل تحدد مساحة نموذج دون إشارة الاتجاه؟"
+      },
+      "a": {
+        "en": "No. Record the signed displacement direction and load direction first.",
+        "ar": "لا. سجل اتجاه الإزاحة الجبري واتجاه الحمل أولاً."
+      }
+    },
+    {
+      "id": "mf-c3",
+      "concept": "mf-vector",
+      "kind": "interpretation",
+      "q": {
+        "en": "General frame external virtual-work sum?",
+        "ar": "ما مجموع الشغل الافتراضي الخارجي العام للإطار؟"
+      },
+      "a": {
+        "en": "Σ(Fxu+Fyv+Cθ)+distributed-load work=0 for a compatible release, including the unknown reaction’s work.",
+        "ar": "Σ(Fxu+Fyv+Cθ) مع شغل الأحمال الموزعة يساوي صفراً لتحرير متوافق، بما فيه شغل رد الفعل المجهول."
+      }
+    },
+    {
+      "id": "mf-c4",
+      "concept": "mf-vector",
+      "kind": "misconception",
+      "q": {
+        "en": "Do only horizontal loads matter in a horizontal release?",
+        "ar": "هل تؤثر الأحمال الأفقية فقط في تحرير أفقي؟"
+      },
+      "a": {
+        "en": "No. All loads with matching nonzero movements contribute.",
+        "ar": "لا. تسهم جميع الأحمال ذات الحركات المترافقة غير الصفرية."
+      }
+    },
+    {
+      "id": "mf-c5",
+      "concept": "mf-rotation",
+      "kind": "decision",
+      "q": {
+        "en": "Moment-release denominator?",
+        "ar": "ما مقام تحرير العزم؟"
+      },
+      "a": {
+        "en": "The imposed signed rotation in radians, not a translational mm reading.",
+        "ar": "الدوران الجبري المفروض بالراديان، وليس قراءة إزاحة بالملليمتر."
+      }
+    },
+    {
+      "id": "mf-c6",
+      "concept": "mf-rotation",
+      "kind": "calculation",
+      "q": {
+        "en": "0.5° equals?",
+        "ar": "كم يساوي0.5°؟"
+      },
+      "a": {
+        "en": "0.00872665 rad.",
+        "ar": "0.00872665 rad."
+      }
+    },
+    {
+      "id": "mf-c7",
+      "concept": "mf-local",
+      "kind": "interpretation",
+      "q": {
+        "en": "Local transverse displacement for direction cosines c,s?",
+        "ar": "ما الإزاحة العرضية المحلية عند جيبي الاتجاه c,s؟"
+      },
+      "a": {
+        "en": "u⊥=−sux+cuy; use the same coordinate transformation for forces.",
+        "ar": "u⊥=−sux+cuy؛ استعمل تحويل الإحداثيات نفسه للقوى."
+      }
+    },
+    {
+      "id": "mf-c8",
+      "concept": "mf-local",
+      "kind": "misconception",
+      "q": {
+        "en": "Load per horizontal metre equals load per member metre on an incline?",
+        "ar": "هل الحمل لكل متر أفقي يساوي الحمل لكل متر عضو مائل؟"
+      },
+      "a": {
+        "en": "Not generally. Identify the loaded measure and transform by geometry.",
+        "ar": "ليس عموماً. حدد معيار طول التحميل وحوّل وفق الهندسة."
+      }
+    },
+    {
+      "id": "mf-c9",
+      "concept": "mf-recover",
+      "kind": "decision",
+      "q": {
+        "en": "When can global equilibrium complete a model solution?",
+        "ar": "متى يكمل الاتزان العام حل النموذج؟"
+      },
+      "a": {
+        "en": "When sufficient independent model actions are known that the remaining unknowns are determined by independent equations.",
+        "ar": "عندما تتوافر أفعال نموذجية مستقلة كافية بحيث تحدد المعادلات المستقلة المجهولات الباقية."
+      }
+    },
+    {
+      "id": "mf-c10",
+      "concept": "mf-recover",
+      "kind": "interpretation",
+      "q": {
+        "en": "Negative vertical reaction means?",
+        "ar": "ماذا يعني رد فعل رأسي سالب؟"
+      },
+      "a": {
+        "en": "Direction opposite the assumed upward sign; assess uplift/contact capability.",
+        "ar": "اتجاهاً معاكساً للاتجاه المفترض لأعلى؛ افحص مقاومة الانفصال والتلامس."
+      }
+    },
+    {
+      "id": "mf-c11",
+      "concept": "mf-check",
+      "kind": "prediction",
+      "q": {
+        "en": "Half the release amplitude and all readings halve: normalized answer?",
+        "ar": "نصّف سعة التحرير فانخفضت كل القراءات للنصف: ما النتيجة المطبعة؟"
+      },
+      "a": {
+        "en": "Unchanged in a correct linear experiment.",
+        "ar": "تبقى ثابتة في تجربة خطية صحيحة."
+      }
+    },
+    {
+      "id": "mf-c12",
+      "concept": "mf-check",
+      "kind": "decision",
+      "q": {
+        "en": "What to do if directions or required releases are missing?",
+        "ar": "ماذا تفعل إذا غابت الاتجاهات أو التحريرات المطلوبة؟"
+      },
+      "a": {
+        "en": "Identify the missing data and withhold a unique complete solution; do not infer it from equilibrium alone.",
+        "ar": "حدد البيانات الناقصة ولا تدّع حلاً كاملاً وحيداً؛ لا تستنتجها من الاتزان وحده."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "12",
+      "page": 8,
+      "filename": "lec 8 Models -.pdf"
+    },
+    {
+      "doc": "12",
+      "page": 9,
+      "filename": "lec 8 Models -.pdf"
+    },
+    {
+      "doc": "12",
+      "page": 10,
+      "filename": "lec 8 Models -.pdf"
+    },
+    {
+      "doc": "12",
+      "page": 11,
+      "filename": "lec 8 Models -.pdf"
+    },
+    {
+      "doc": "24",
+      "page": 98,
+      "filename": "Structure II_019+020Tutorials&solutions.pdf"
+    }
+  ],
+  "videoIds": [
+    "EsRm3lcGmHc",
+    "iLVyd3bPQZc"
+  ]
+}

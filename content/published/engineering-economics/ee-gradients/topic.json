@@ -1,0 +1,1354 @@
+{
+  "id": "ee-gradients",
+  "family": "ee-cashflows",
+  "title": {
+    "en": "Growing payments: separate the base from the change",
+    "ar": "الدفعات المتزايدة: افصل الأساس عن الزيادة"
+  },
+  "summary": {
+    "en": "Maintenance grows as equipment ages; savings deposits may rise by a fixed amount or percentage. Draw the first actual payments before deciding whether a gradient factor applies.",
+    "ar": "تزداد الصيانة مع تقادم المعدات، وقد تزيد الإيداعات بمقدار ثابت أو بنسبة. ارسم الدفعات الفعلية الأولى قبل اختيار عامل التدرج."
+  },
+  "outcomes": [
+    {
+      "en": "An arithmetic gradient starts with zero change",
+      "ar": "يبدأ التدرج الحسابي بزيادة صفر"
+    },
+    {
+      "en": "Convert a staircase into a level annual amount",
+      "ar": "تحويل الدرج إلى دفعة سنوية مستوية"
+    },
+    {
+      "en": "A percentage creates a geometric sequence",
+      "ar": "النسبة تصنع متتالية هندسية"
+    },
+    {
+      "en": "Choose deposits to hit a target",
+      "ar": "اختيار إيداعات لبلوغ هدف"
+    },
+    {
+      "en": "Piecewise projects are several short stories",
+      "ar": "المشروع المجزأ عدة قصص قصيرة"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-powers"
+  ],
+  "concepts": [
+    {
+      "id": "ee-gradients-s01-concept",
+      "title": {
+        "en": "An arithmetic gradient starts with zero change",
+        "ar": "يبدأ التدرج الحسابي بزيادة صفر"
+      }
+    },
+    {
+      "id": "ee-gradients-s02-concept",
+      "title": {
+        "en": "Convert a staircase into a level annual amount",
+        "ar": "تحويل الدرج إلى دفعة سنوية مستوية"
+      }
+    },
+    {
+      "id": "ee-gradients-s03-concept",
+      "title": {
+        "en": "A percentage creates a geometric sequence",
+        "ar": "النسبة تصنع متتالية هندسية"
+      }
+    },
+    {
+      "id": "ee-gradients-s04-concept",
+      "title": {
+        "en": "Choose deposits to hit a target",
+        "ar": "اختيار إيداعات لبلوغ هدف"
+      }
+    },
+    {
+      "id": "ee-gradients-s05-concept",
+      "title": {
+        "en": "Piecewise projects are several short stories",
+        "ar": "المشروع المجزأ عدة قصص قصيرة"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-gradients-s01",
+      "title": {
+        "en": "An arithmetic gradient starts with zero change",
+        "ar": "يبدأ التدرج الحسابي بزيادة صفر"
+      },
+      "predict": {
+        "en": "In the standard gradient, is the year 1 gradient amount G?",
+        "ar": "هل مقدار الزيادة عند السنة 1 في التدرج القياسي هو G؟"
+      },
+      "options": [
+        {
+          "en": "No; it is zero; G first appears at year 2.",
+          "ar": "لا؛ هو صفر وتظهر G أول مرة عند السنة 2."
+        },
+        {
+          "en": "Yes; standard gradients start with G at year 1.",
+          "ar": "نعم؛ يبدأ التدرج القياسي بـ G عند السنة 1."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; it is zero; G first appears at year 2. Write the actual sequence before selecting a factor family.",
+        "ar": "لا؛ هو صفر وتظهر G أول مرة عند السنة 2. اكتب الدفعات الفعلية قبل اختيار عائلة العامل."
+      },
+      "explain": {
+        "en": "Write 1000,1500,2000,2500 as a base 1000 in every year plus 0,500,1000,1500. The gradient G is the increase between adjacent payments, not the first payment. The standard A/G factor assumes zero gradient at year 1 and the first G at year 2. This offset is why blindly treating the first receipt as G shifts the whole result. A decreasing gradient uses the same dates with a negative G.",
+        "ar": "اكتب 1000 و 1500 و 2000 و 2500 كأساس 1000 متكرر مع زيادات 0 و 500 و 1000 و 1500. تمثل G الفرق بين دفعتين متتاليتين، لا مقدار الأولى. يبدأ التدرج القياسي بصفر عند السنة 1 وأول G عند 2. يحافظ التناقص الحسابي على التوقيت نفسه مع G سالبة؛ أما النسبة المئوية فتصنع نمطًا مختلفًا."
+      },
+      "formula": "Ct=A1+(t−1)G, t=1…n",
+      "symbols": {
+        "en": "A1 is first payment; G is CU added per successive payment; t is a payment index.",
+        "ar": "A1 أول دفعة و G زيادة نقدية ثابتة بين دفعتين و t ترتيب الدفعة."
+      },
+      "assumptions": {
+        "en": "Equally spaced payments with a constant arithmetic increment. Do not use for percentage escalation.",
+        "ar": "دفعات متساوية التباعد بزيادة حسابية ثابتة، لا نمو نسبي."
+      },
+      "example": {
+        "en": "A1=1000 and G=500 for 4 years.",
+        "ar": "A1=1000 و G=500 لعدد 4 دفعات."
+      },
+      "calculation": {
+        "en": "Payments=1000,1500,2000,2500; total at i=0 is 7000.",
+        "ar": "الدفعات 1000 و 1500 و 2000 و 2500، ومجموعها عند معدل صفر 7000."
+      },
+      "interpret": {
+        "en": "Write the actual sequence before selecting a factor family.",
+        "ar": "اكتب الدفعات الفعلية قبل اختيار عائلة العامل."
+      },
+      "check": {
+        "prompt": {
+          "en": "A source says payments increase by 20% each year. Can G be taken as 20 CU?",
+          "ar": "ينص المصدر على زيادة 20% سنويًا. هل نستخدم G=20 نقدًا؟"
+        },
+        "answer": {
+          "en": "No; percentage growth is geometric, not a constant money increment.",
+          "ar": "لا؛ النسبة نمو هندسي وليست زيادة نقدية ثابتة."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-gradients-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 42,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 43,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-gradients-s02",
+      "title": {
+        "en": "Convert a staircase into a level annual amount",
+        "ar": "تحويل الدرج إلى دفعة سنوية مستوية"
+      },
+      "predict": {
+        "en": "After using A/G, can you omit the constant base payment?",
+        "ar": "هل يجوز حذف الأساس A1 بعد استخدام A/G؟"
+      },
+      "options": [
+        {
+          "en": "Yes; A/G already includes every possible base.",
+          "ar": "نعم؛ يتضمن A/G كل أساس تلقائيًا."
+        },
+        {
+          "en": "No; the factor converts only the incremental staircase.",
+          "ar": "لا؛ يحول العامل الزيادة المتدرجة فقط."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; the factor converts only the incremental staircase. Count the base year as well as the subsequent increases.",
+        "ar": "لا؛ يحول العامل الزيادة المتدرجة فقط. احسب سنة الأساس مع السنوات التي تحدث فيها الزيادة."
+      },
+      "explain": {
+        "en": "A/G finds the equal annual addition equivalent to the gradient. It is not itself the full payment when a base A1 is present. Add A1 first, then use P/A or F/A if a present or future result is required. An independent check discounts the original staircase directly. At zero rate the equivalent annual gradient is the average of 0 through(n−1)G.",
+        "ar": "يعطي A/G زيادة سنوية متساوية مكافئة للدرج وحده. مع وجود A1 أضف الأساس قبل استخدام P/A أو F/A. ويمكن تدقيق النتيجة بخصم الدفعات الأصلية مباشرة ثم تحويل الحالية إلى سنوية. عند صفر يساوي متوسط الزيادات مجموع 0 إلى (n−1)G مقسومًا على n؛ فينتج G(n−1)/2 دون قسمة على صفر."
+      },
+      "formula": "Aeq=A1+G[1/i−n/((1+i)^n−1)]",
+      "symbols": {
+        "en": "A/G is dimensionless. The bracket multiplies G; all rates and payment spacings must match.",
+        "ar": "القوس A/G بلا أبعاد ويضرب G؛ والمعدل متوافق مع تباعد الدفعات."
+      },
+      "assumptions": {
+        "en": "Arithmetic gradient with first increase at year 2. At i=0 use(A/G)=(n−1)/2.",
+        "ar": "أول زيادة G عند السنة 2؛ وعند معدل صفر استخدم (n−1)/2."
+      },
+      "example": {
+        "en": "A1=2000, G=400, n=8, i=8%.",
+        "ar": "A1=2000 و G=400 و n=8 و i=8%."
+      },
+      "calculation": {
+        "en": "Aeq=2000+400[1/0.08−8/(1.08^8−1)]≈3239.41 CU/year. Verify by direct PW divided by(P/A,8%,8).",
+        "ar": "Aeq=2000+400[1/0.08−8/(1.08^8−1)]=3239.409576 سنويًا."
+      },
+      "interpret": {
+        "en": "Count the base year as well as the subsequent increases.",
+        "ar": "احسب سنة الأساس مع السنوات التي تحدث فيها الزيادة."
+      },
+      "check": {
+        "prompt": {
+          "en": "The lecture exam uses maintenance 2000 in year 1, increasing 400 for the following 7 years. What is n?",
+          "ar": "تبدأ الصيانة 2000 عند السنة 1 وتزيد 400 لسبع سنوات تالية. ما n؟"
+        },
+        "answer": {
+          "en": "8 payments, with the last amount 4800.",
+          "ar": "ثماني دفعات وآخرها 4800."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-gradients-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 44,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 46,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE11",
+          "page": 3,
+          "filename": "Economics Exams .pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-gradients-s03",
+      "title": {
+        "en": "A percentage creates a geometric sequence",
+        "ar": "النسبة تصنع متتالية هندسية"
+      },
+      "predict": {
+        "en": "Does g=i make the economic model impossible?",
+        "ar": "هل يجعل تساوي g و i النموذج مستحيلًا؟"
+      },
+      "options": [
+        {
+          "en": "No; use the finite-sum limit.",
+          "ar": "لا؛ استخدم نهاية المجموع المحدود."
+        },
+        {
+          "en": "Yes; there can be no present value.",
+          "ar": "نعم؛ لا يمكن حساب الحالية."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; use the finite-sum limit. A decrease by 20% retains 80%; distinguish the change from the new amount.",
+        "ar": "لا؛ استخدم نهاية المجموع المحدود. ينقص المبلغ بنسبة 20% فيبقى 80%؛ ميز مقدار التغير عن الرصيد الجديد."
+      },
+      "explain": {
+        "en": "For percentage growth every payment is multiplied by 1+g. The first A1 is at year 1; the second is A1(1+g). Discounting introduces a second geometric ratio(1+g)/(1+i). If g equals i, the familiar closed form seems to divide by zero, but the original sum is perfectly finite: every discounted term equals A1/(1+i). This limit is a meaning check, not an exceptional financial mystery.",
+        "ar": "في النمو النسبي تضرب كل دفعة في 1+g. تقع الأولى A1 عند السنة 1 والثانية A1(1+g) عند 2. يجمع الخصم المتتالية بنسبة (1+g)/(1+i). إذا تساوى g و i يظهر عدم تعيين في الصيغة المختصرة، لكن المجموع الأصلي محدود؛ فكل دفعة مخصومة تساوي A1/(1+i). العودة للمجموع تشرح النهاية بدل حفظ استثناء بلا معنى."
+      },
+      "formula": "P=A1[1−((1+g)/(1+i))^n]/(i−g); if i=g: P=nA1/(1+i)",
+      "symbols": {
+        "en": "g is payment growth per period, i is discount per same period; A1 is the first year-end cash flow.",
+        "ar": "g نمو الدفعة لكل فترة و i خصم الفترة نفسها و A1 أول دفعة في نهايتها."
+      },
+      "assumptions": {
+        "en": "Constant percentage escalation; the formula applies only to the specified finite series.",
+        "ar": "نمو نسبي ثابت لسلسلة محدودة، مع معالجة النهاية عند g=i."
+      },
+      "example": {
+        "en": "A1=100, g=10%, i=10%, n=3.",
+        "ar": "A1=100 و g=i=10% و n=3."
+      },
+      "calculation": {
+        "en": "P=3×100/1.1=272.727273. Direct terms 100/1.1,110/1.1²,121/1.1³are equal.",
+        "ar": "P=3×100/1.1=272.727273؛ المقادير المخصومة الثلاثة متساوية."
+      },
+      "interpret": {
+        "en": "A decrease by 20% retains 80%; distinguish the change from the new amount.",
+        "ar": "ينقص المبلغ بنسبة 20% فيبقى 80%؛ ميز مقدار التغير عن الرصيد الجديد."
+      },
+      "check": {
+        "prompt": {
+          "en": "A receipt stays 60000 through year 11, then falls 20% each year. What is its year 12 amount?",
+          "ar": "يبقى المقبوض 60000 إلى السنة 11 ثم ينخفض 20% سنويًا. ما مبلغ 12؟"
+        },
+        "answer": {
+          "en": "48000; apply 0.8 once to the last level receipt.",
+          "ar": "48000، أي 80% من آخر مبلغ."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-gradients-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 49,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE16",
+          "page": 1,
+          "filename": "Questions.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-gradients-s04",
+      "title": {
+        "en": "Choose deposits to hit a target",
+        "ar": "اختيار إيداعات لبلوغ هدف"
+      },
+      "predict": {
+        "en": "Does “increases continuously every month” necessarily mean a continuous cash-flow integral?",
+        "ar": "هل تعني «يزداد باستمرار كل شهر» بالضرورة تدفقًا نقديًا مستمرًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; any use of the word continuously removes payment dates.",
+          "ar": "نعم؛ كلمة باستمرار تلغي تواريخ الدفع."
+        },
+        {
+          "en": "No; the actual payment dates determine whether the cash is discrete.",
+          "ar": "لا؛ تحدد تواريخ الدفع الفعلية كون النقد متقطعًا."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; the actual payment dates determine whether the cash is discrete. A feasible payment schedule is a model requirement, not something guaranteed by solving an equation.",
+        "ar": "لا؛ تحدد تواريخ الدفع الفعلية كون النقد متقطعًا. صلاحية جدول الدفع قيد في النموذج لا تضمنه حل المعادلة وحده."
+      },
+      "explain": {
+        "en": "A saver may know the target F and initial payment A1 but not the constant increment G. Split the future amount into the level base component and the gradient component. The equation is linear in G even though compounding is exponential in time. Check the last deposit and whether G is positive. If the given base alone exceeds the target, a negative G may be mathematically required and may violate the intended “increasing” schedule.",
+        "ar": "قد تعرف الهدف النهائي F والدفعة الأولى A1 ولا تعرف الزيادة الحسابية G. افصل النهائي إلى جزء للأساس وآخر للتدرج. رغم النمو الأسي بالزمن تبقى المعادلة خطية في G. افحص إشارة الزيادة والدفعة الأخيرة؛ إن تجاوزت دفعات الأساس الهدف فقد تحتاج G سالبة تخالف وصف جدول متزايد. وفي مسألة نهى تدفع المبالغ كل شهر، فلا تحولها كلمة «باستمرار» إلى تكامل نقد مستمر."
+      },
+      "formula": "F=Σ[A1+(t−1)G](1+i)^(n−t)",
+      "symbols": {
+        "en": "n is payment count; solve G=(F−A1Σgrowth)/Σ[(t−1)growth].",
+        "ar": "n عدد الدفعات؛ S0 مجموع عوامل النمو و S1 مجموع عوامل النمو موزونة بترتيب الزيادة."
+      },
+      "assumptions": {
+        "en": "End-period monthly payments with a monthly effective rate; “increase continuously every month” in this statement means discrete monthly increments.",
+        "ar": "دفعات شهرية آخر الفترة بمعدل شهري فعّال؛ الزيادات بين الدفعات متقطعة."
+      },
+      "example": {
+        "en": "Target 15000 after 24 months; A1=250, i=1.5% monthly.",
+        "ar": "الهدف 15000 بعد 24 شهرًا، والدفعة الأولى 250 والمعدل الشهري 1.5%."
+      },
+      "calculation": {
+        "en": "ComputeS 0=Σ1.015^(24−t), S1=Σ(t−1)1.015^(24−t); G=(15000−250S0)/S1≈25.385512. Deposit 10=250+9G; deposit 24=250+23G.",
+        "ar": "G=(15000−250S0)/S1=25.385511842؛ العاشرة 250+9G والأخيرة 250+23G."
+      },
+      "interpret": {
+        "en": "A feasible payment schedule is a model requirement, not something guaranteed by solving an equation.",
+        "ar": "صلاحية جدول الدفع قيد في النموذج لا تضمنه حل المعادلة وحده."
+      },
+      "check": {
+        "prompt": {
+          "en": "A computed G is negative although the question insists deposits increase. What should you do?",
+          "ar": "كانت G سالبة رغم اشتراط تزايد الإيداعات. ما التصرف الصحيح؟"
+        },
+        "answer": {
+          "en": "Check dates and inputs; report the incompatibility if the base already overshoots the target.",
+          "ar": "راجع التواريخ والمعطيات وبين التعارض إن كان الأساس يجاوز الهدف."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-gradients-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE13",
+          "page": 12,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-gradients-s05",
+      "title": {
+        "en": "Piecewise projects are several short stories",
+        "ar": "المشروع المجزأ عدة قصص قصيرة"
+      },
+      "predict": {
+        "en": "May a year 7 receipt be included in both the growing segment 3–7 and the level segment 7–11?",
+        "ar": "هل يعد مقبوض السنة 7 ضمن التدرج 3 إلى 7 والثبات 7 إلى 11 معًا؟"
+      },
+      "options": [
+        {
+          "en": "No; use level years 8–11 after already counting year 7.",
+          "ar": "لا؛ يبدأ الجزء الثابت المنفصل عند 8 بعد احتساب 7."
+        },
+        {
+          "en": "Yes; overlapping segment boundaries improve accuracy.",
+          "ar": "نعم؛ تكرار الحدود يزيد الدقة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; use level years 8–11 after already counting year 7. Source answers are evidence to inspect, not immunity from arithmetic or timing errors.",
+        "ar": "لا؛ يبدأ الجزء الثابت المنفصل عند 8 بعد احتساب 7. حل المصدر مادة للفحص، وليس معصومًا من أخطاء الحساب والتوقيت."
+      },
+      "explain": {
+        "en": "A project may spend in years 0–2, grow receipts in 3–7, stay level in 8–11 and decline later. Do not force all 15 years into one gradient. Build a dated table, identify each segment’s first payment and prevent double counting at boundaries. Direct discounted summation is often the clearest audit. A compact factor solution is useful only after the full arrows are unambiguous.",
+        "ar": "قد ينفق المشروع عند 0 إلى 2، ويزداد مقبوضه عند 3 إلى 7، ويثبت عند 8 إلى 11، ثم يتناقص. لا تضغط الأجزاء في تدرج واحد. اكتب جدولًا مؤرخًا لكل سنة وحدد بدايات الأجزاء ونهاياتها، خصوصًا السنة المشتركة التي قد تعد مرتين. تحقق بجمع الخصم المباشر ثم اختصر بالعوامل. يتضمن حل المصدر أخطاء في مقدار الزيادة وحسابات أخرى؛ لذلك نعتمد المعطيات ونعلن التصحيح."
+      },
+      "formula": "PW=Σsegment PW; Ct is assigned once at every boundary",
+      "symbols": {
+        "en": "Use positive receipts and negative investments; continuous discount uses e^(−rt), discrete discount uses(1+i)^−t.",
+        "ar": "المقبوض موجب والإنفاق سالب؛ للخصم المستمر e^(−rt) وللمتقطع(1+i)^−t."
+      },
+      "assumptions": {
+        "en": "Choose compounding from the problem, not from the appearance of a gradient. Segment end dates must be stated.",
+        "ar": "التركيب من نص السؤال، وكل تدفق عند حد الأجزاء يحتسب مرة واحدة."
+      },
+      "example": {
+        "en": "For Questions.pdf Q1: costs 60000 at 0,40000 at 1,20000 at 2; receipts 20000 at 3 then+10000 annually to 60000 at 7, level to 11, then×0.8 through 15.",
+        "ar": "تكاليف 60000 عند 0 و 40000 عند 1 و 20000 عند 2؛ مقبوض 20000 عند 3 يزيد 10000 إلى 60000 عند 7، يثبت إلى 11 ثم ينقص 20% إلى 15."
+      },
+      "calculation": {
+        "en": "Write every year before factorization. The printed solution contains 1000 where the statement’s increment is 10000; reconstruct from the statement and check by summation.",
+        "ar": "اكتب الجدول أولًا. عبارة 1000 في موضع الزيادة بالحـل لا تطابق 10000 في المعطيات. تحقق بمجموع كل التدفقات المؤرخة."
+      },
+      "interpret": {
+        "en": "Source answers are evidence to inspect, not immunity from arithmetic or timing errors.",
+        "ar": "حل المصدر مادة للفحص، وليس معصومًا من أخطاء الحساب والتوقيت."
+      },
+      "check": {
+        "prompt": {
+          "en": "The question specifies continuous compounding at 18%, but the worked sheet uses a mix of table factors and unexplained rounding. What is the reliable audit?",
+          "ar": "السؤال ينص على تركيب مستمر 18% والحل يخلط عوامل وتدويرًا ملتبسًا. ما التدقيق المستقل؟"
+        },
+        "answer": {
+          "en": "Build the explicit cash flows and computeΣCt e^(−0.18t), checking the source’s dates.",
+          "ar": "كوّن الجدول واحسب مجموع Ct e^(−0.18t)."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-gradients-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE16",
+          "page": 1,
+          "filename": "Questions.pdf"
+        },
+        {
+          "doc": "EE16",
+          "page": 2,
+          "filename": "Questions.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-gradients-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 42,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 43,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A1 is first payment; G is CU added per successive payment; t is a payment index.",
+          "ar": "A1 أول دفعة و G زيادة نقدية ثابتة بين دفعتين و t ترتيب الدفعة."
+        },
+        {
+          "en": "Ct=A1+(t−1)G, t=1…n\nEqually spaced payments with a constant arithmetic increment. Do not use for percentage escalation.",
+          "ar": "Ct=A1+(t−1)G, t=1…n\nدفعات متساوية التباعد بزيادة حسابية ثابتة، لا نمو نسبي."
+        }
+      ],
+      "id": "ee-gradients-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "In the standard gradient, is the year 1 gradient amount G?",
+        "ar": "هل مقدار الزيادة عند السنة 1 في التدرج القياسي هو G؟"
+      },
+      "options": [
+        {
+          "en": "No; it is zero; G first appears at year 2.",
+          "ar": "لا؛ هو صفر وتظهر G أول مرة عند السنة 2."
+        },
+        {
+          "en": "Yes; standard gradients start with G at year 1.",
+          "ar": "نعم؛ يبدأ التدرج القياسي بـ G عند السنة 1."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; it is zero; G first appears at year 2. Write 1000,1500,2000,2500 as a base 1000 in every year plus 0,500,1000,1500. The gradient G is the increase between adjacent payments, not the first payment. The standard A/G factor assumes zero gradient at year 1 and the first G at year 2. This offset is why blindly treating the first receipt as G shifts the whole result. A decreasing gradient uses the same dates with a negative G.",
+        "ar": "لا؛ هو صفر وتظهر G أول مرة عند السنة 2. اكتب 1000 و 1500 و 2000 و 2500 كأساس 1000 متكرر مع زيادات 0 و 500 و 1000 و 1500. تمثل G الفرق بين دفعتين متتاليتين، لا مقدار الأولى. يبدأ التدرج القياسي بصفر عند السنة 1 وأول G عند 2. يحافظ التناقص الحسابي على التوقيت نفسه مع G سالبة؛ أما النسبة المئوية فتصنع نمطًا مختلفًا."
+      }
+    },
+    {
+      "concept": "ee-gradients-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 42,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 43,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A1 is first payment; G is CU added per successive payment; t is a payment index.",
+          "ar": "A1 أول دفعة و G زيادة نقدية ثابتة بين دفعتين و t ترتيب الدفعة."
+        },
+        {
+          "en": "Ct=A1+(t−1)G, t=1…n\nEqually spaced payments with a constant arithmetic increment. Do not use for percentage escalation.",
+          "ar": "Ct=A1+(t−1)G, t=1…n\nدفعات متساوية التباعد بزيادة حسابية ثابتة، لا نمو نسبي."
+        }
+      ],
+      "id": "ee-gradients-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "A1=800 and G=120 per year. Find the year 6 payment.",
+        "ar": "الدفعة الأولى 800 والزيادة 120 لكل سنة. أوجد السادسة."
+      },
+      "expected": 1400,
+      "tolerance": 0.028,
+      "unit": "CU",
+      "solution": {
+        "en": "C6=800+5×120=1400.",
+        "ar": "C6=800+5×120=1400."
+      }
+    },
+    {
+      "concept": "ee-gradients-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 42,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 43,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A1 is first payment; G is CU added per successive payment; t is a payment index.",
+          "ar": "A1 أول دفعة و G زيادة نقدية ثابتة بين دفعتين و t ترتيب الدفعة."
+        },
+        {
+          "en": "Ct=A1+(t−1)G, t=1…n\nEqually spaced payments with a constant arithmetic increment. Do not use for percentage escalation.",
+          "ar": "Ct=A1+(t−1)G, t=1…n\nدفعات متساوية التباعد بزيادة حسابية ثابتة، لا نمو نسبي."
+        }
+      ],
+      "id": "ee-gradients-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A source says payments increase by 20% each year. Can G be taken as 20 CU?",
+        "ar": "ينص المصدر على زيادة 20% سنويًا. هل نستخدم G=20 نقدًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; percentage and currency increments are interchangeable.",
+          "ar": "نعم؛ النسبة والمبلغ الإضافي شيء واحد."
+        },
+        {
+          "en": "No; percentage growth is geometric, not a constant money increment.",
+          "ar": "لا؛ النسبة نمو هندسي وليست زيادة نقدية ثابتة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; percentage growth is geometric, not a constant money increment. Write the actual sequence before selecting a factor family.",
+        "ar": "لا؛ النسبة نمو هندسي وليست زيادة نقدية ثابتة. اكتب الدفعات الفعلية قبل اختيار عائلة العامل."
+      }
+    },
+    {
+      "concept": "ee-gradients-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 44,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 46,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE11",
+          "page": 3,
+          "filename": "Economics Exams .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A/G is dimensionless. The bracket multiplies G; all rates and payment spacings must match.",
+          "ar": "القوس A/G بلا أبعاد ويضرب G؛ والمعدل متوافق مع تباعد الدفعات."
+        },
+        {
+          "en": "Aeq=A1+G[1/i−n/((1+i)^n−1)]\nArithmetic gradient with first increase at year 2. At i=0 use(A/G)=(n−1)/2.",
+          "ar": "Aeq=A1+G[1/i−n/((1+i)^n−1)]\nأول زيادة G عند السنة 2؛ وعند معدل صفر استخدم (n−1)/2."
+        }
+      ],
+      "id": "ee-gradients-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "After using A/G, can you omit the constant base payment?",
+        "ar": "هل يجوز حذف الأساس A1 بعد استخدام A/G؟"
+      },
+      "options": [
+        {
+          "en": "Yes; A/G already includes every possible base.",
+          "ar": "نعم؛ يتضمن A/G كل أساس تلقائيًا."
+        },
+        {
+          "en": "No; the factor converts only the incremental staircase.",
+          "ar": "لا؛ يحول العامل الزيادة المتدرجة فقط."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; the factor converts only the incremental staircase. A/G finds the equal annual addition equivalent to the gradient. It is not itself the full payment when a base A1 is present. Add A1 first, then use P/A or F/A if a present or future result is required. An independent check discounts the original staircase directly. At zero rate the equivalent annual gradient is the average of 0 through(n−1)G.",
+        "ar": "لا؛ يحول العامل الزيادة المتدرجة فقط. يعطي A/G زيادة سنوية متساوية مكافئة للدرج وحده. مع وجود A1 أضف الأساس قبل استخدام P/A أو F/A. ويمكن تدقيق النتيجة بخصم الدفعات الأصلية مباشرة ثم تحويل الحالية إلى سنوية. عند صفر يساوي متوسط الزيادات مجموع 0 إلى (n−1)G مقسومًا على n؛ فينتج G(n−1)/2 دون قسمة على صفر."
+      }
+    },
+    {
+      "concept": "ee-gradients-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 44,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 46,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE11",
+          "page": 3,
+          "filename": "Economics Exams .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A/G is dimensionless. The bracket multiplies G; all rates and payment spacings must match.",
+          "ar": "القوس A/G بلا أبعاد ويضرب G؛ والمعدل متوافق مع تباعد الدفعات."
+        },
+        {
+          "en": "Aeq=A1+G[1/i−n/((1+i)^n−1)]\nArithmetic gradient with first increase at year 2. At i=0 use(A/G)=(n−1)/2.",
+          "ar": "Aeq=A1+G[1/i−n/((1+i)^n−1)]\nأول زيادة G عند السنة 2؛ وعند معدل صفر استخدم (n−1)/2."
+        }
+      ],
+      "id": "ee-gradients-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "At zero rate, payments are 100,150,200,250 CU at years 1…4. Find the equivalent equal annual payment.",
+        "ar": "عند معدل صفر، الدفعات 100 و 150 و 200 و 250. أوجد الدفعة المتساوية المكافئة."
+      },
+      "expected": 175,
+      "tolerance": 0.005,
+      "unit": "CU/year",
+      "solution": {
+        "en": "Aeq=100+50(4−1)/2=175; total 700 divided by 4 gives 175.",
+        "ar": "المجموع 700 على أربع دفعات؛ المكافئ 175."
+      }
+    },
+    {
+      "concept": "ee-gradients-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 44,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 46,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE11",
+          "page": 3,
+          "filename": "Economics Exams .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A/G is dimensionless. The bracket multiplies G; all rates and payment spacings must match.",
+          "ar": "القوس A/G بلا أبعاد ويضرب G؛ والمعدل متوافق مع تباعد الدفعات."
+        },
+        {
+          "en": "Aeq=A1+G[1/i−n/((1+i)^n−1)]\nArithmetic gradient with first increase at year 2. At i=0 use(A/G)=(n−1)/2.",
+          "ar": "Aeq=A1+G[1/i−n/((1+i)^n−1)]\nأول زيادة G عند السنة 2؛ وعند معدل صفر استخدم (n−1)/2."
+        }
+      ],
+      "id": "ee-gradients-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "The lecture exam uses maintenance 2000 in year 1, increasing 400 for the following 7 years. What is n?",
+        "ar": "تبدأ الصيانة 2000 عند السنة 1 وتزيد 400 لسبع سنوات تالية. ما n؟"
+      },
+      "options": [
+        {
+          "en": "8 payments, with the last amount 4800.",
+          "ar": "ثماني دفعات وآخرها 4800."
+        },
+        {
+          "en": "7 payments because the increase lasts 7 years.",
+          "ar": "سبع دفعات لأن الزيادة سبع سنوات."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "8 payments, with the last amount 4800. Count the base year as well as the subsequent increases.",
+        "ar": "ثماني دفعات وآخرها 4800. احسب سنة الأساس مع السنوات التي تحدث فيها الزيادة."
+      }
+    },
+    {
+      "concept": "ee-gradients-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 49,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE16",
+          "page": 1,
+          "filename": "Questions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "g is payment growth per period, i is discount per same period; A1 is the first year-end cash flow.",
+          "ar": "g نمو الدفعة لكل فترة و i خصم الفترة نفسها و A1 أول دفعة في نهايتها."
+        },
+        {
+          "en": "P=A1[1−((1+g)/(1+i))^n]/(i−g); if i=g: P=nA 1/(1+i)\nConstant percentage escalation; the formula applies only to the specified finite series.",
+          "ar": "P=A1[1−((1+g)/(1+i))^n]/(i−g); if i=g: P=nA1/(1+i)\nنمو نسبي ثابت لسلسلة محدودة، مع معالجة النهاية عند g=i."
+        }
+      ],
+      "id": "ee-gradients-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does g=i make the economic model impossible?",
+        "ar": "هل يجعل تساوي g و i النموذج مستحيلًا؟"
+      },
+      "options": [
+        {
+          "en": "No; use the finite-sum limit.",
+          "ar": "لا؛ استخدم نهاية المجموع المحدود."
+        },
+        {
+          "en": "Yes; there can be no present value.",
+          "ar": "نعم؛ لا يمكن حساب الحالية."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; use the finite-sum limit. For percentage growth every payment is multiplied by 1+g. The first A1 is at year 1; the second is A1(1+g). Discounting introduces a second geometric ratio(1+g)/(1+i). If g equals i, the familiar closed form seems to divide by zero, but the original sum is perfectly finite: every discounted term equals A1/(1+i). This limit is a meaning check, not an exceptional financial mystery.",
+        "ar": "لا؛ استخدم نهاية المجموع المحدود. في النمو النسبي تضرب كل دفعة في 1+g. تقع الأولى A1 عند السنة 1 والثانية A1(1+g) عند 2. يجمع الخصم المتتالية بنسبة (1+g)/(1+i). إذا تساوى g و i يظهر عدم تعيين في الصيغة المختصرة، لكن المجموع الأصلي محدود؛ فكل دفعة مخصومة تساوي A1/(1+i). العودة للمجموع تشرح النهاية بدل حفظ استثناء بلا معنى."
+      }
+    },
+    {
+      "concept": "ee-gradients-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 49,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE16",
+          "page": 1,
+          "filename": "Questions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "g is payment growth per period, i is discount per same period; A1 is the first year-end cash flow.",
+          "ar": "g نمو الدفعة لكل فترة و i خصم الفترة نفسها و A1 أول دفعة في نهايتها."
+        },
+        {
+          "en": "P=A1[1−((1+g)/(1+i))^n]/(i−g); if i=g: P=nA 1/(1+i)\nConstant percentage escalation; the formula applies only to the specified finite series.",
+          "ar": "P=A1[1−((1+g)/(1+i))^n]/(i−g); if i=g: P=nA1/(1+i)\nنمو نسبي ثابت لسلسلة محدودة، مع معالجة النهاية عند g=i."
+        }
+      ],
+      "id": "ee-gradients-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "First receipt 1000 at year 1 grows 5% annually for 4 payments; discount at 10%. Find P.",
+        "ar": "أول مقبوض 1000 في السنة 1 يزيد 5% لأربع دفعات، والخصم 10%. أوجد P."
+      },
+      "expected": 3395.8575233932106,
+      "tolerance": 0.06791715046786422,
+      "unit": "CU",
+      "solution": {
+        "en": "P=1000[1−(1.05/1.1)^4]/(0.10−0.05)=3395.857525 CU. The direct discounted sum is the check.",
+        "ar": "اجمع 1000(1.05)^(t−1)/(1.1)^t؛ الناتج 3395.857523."
+      }
+    },
+    {
+      "concept": "ee-gradients-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 49,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE16",
+          "page": 1,
+          "filename": "Questions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "g is payment growth per period, i is discount per same period; A1 is the first year-end cash flow.",
+          "ar": "g نمو الدفعة لكل فترة و i خصم الفترة نفسها و A1 أول دفعة في نهايتها."
+        },
+        {
+          "en": "P=A1[1−((1+g)/(1+i))^n]/(i−g); if i=g: P=nA 1/(1+i)\nConstant percentage escalation; the formula applies only to the specified finite series.",
+          "ar": "P=A1[1−((1+g)/(1+i))^n]/(i−g); if i=g: P=nA1/(1+i)\nنمو نسبي ثابت لسلسلة محدودة، مع معالجة النهاية عند g=i."
+        }
+      ],
+      "id": "ee-gradients-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A receipt stays 60000 through year 11, then falls 20% each year. What is its year 12 amount?",
+        "ar": "يبقى المقبوض 60000 إلى السنة 11 ثم ينخفض 20% سنويًا. ما مبلغ 12؟"
+      },
+      "options": [
+        {
+          "en": "12000; the decline percentage is the retained percentage.",
+          "ar": "12000، أي 20% من آخر مبلغ."
+        },
+        {
+          "en": "48000; apply 0.8 once to the last level receipt.",
+          "ar": "48000، أي 80% من آخر مبلغ."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "48000; apply 0.8 once to the last level receipt. A decrease by 20% retains 80%; distinguish the change from the new amount.",
+        "ar": "48000، أي 80% من آخر مبلغ. ينقص المبلغ بنسبة 20% فيبقى 80%؛ ميز مقدار التغير عن الرصيد الجديد."
+      }
+    },
+    {
+      "concept": "ee-gradients-s04-concept",
+      "sources": [
+        {
+          "doc": "EE13",
+          "page": 12,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "n is payment count; solve G=(F−A1Σgrowth)/Σ[(t−1)growth].",
+          "ar": "n عدد الدفعات؛ S0 مجموع عوامل النمو و S1 مجموع عوامل النمو موزونة بترتيب الزيادة."
+        },
+        {
+          "en": "F=Σ[A1+(t−1)G](1+i)^(n−t)\nEnd-period monthly payments with a monthly effective rate; “increase continuously every month” in this statement means discrete monthly increments.",
+          "ar": "F=Σ[A1+(t−1)G](1+i)^(n−t)\nدفعات شهرية آخر الفترة بمعدل شهري فعّال؛ الزيادات بين الدفعات متقطعة."
+        }
+      ],
+      "id": "ee-gradients-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does “increases continuously every month” necessarily mean a continuous cash-flow integral?",
+        "ar": "هل تعني «يزداد باستمرار كل شهر» بالضرورة تدفقًا نقديًا مستمرًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; any use of the word continuously removes payment dates.",
+          "ar": "نعم؛ كلمة باستمرار تلغي تواريخ الدفع."
+        },
+        {
+          "en": "No; the actual payment dates determine whether the cash is discrete.",
+          "ar": "لا؛ تحدد تواريخ الدفع الفعلية كون النقد متقطعًا."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; the actual payment dates determine whether the cash is discrete. A saver may know the target F and initial payment A1 but not the constant increment G. Split the future amount into the level base component and the gradient component. The equation is linear in G even though compounding is exponential in time. Check the last deposit and whether G is positive. If the given base alone exceeds the target, a negative G may be mathematically required and may violate the intended “increasing” schedule.",
+        "ar": "لا؛ تحدد تواريخ الدفع الفعلية كون النقد متقطعًا. قد تعرف الهدف النهائي F والدفعة الأولى A1 ولا تعرف الزيادة الحسابية G. افصل النهائي إلى جزء للأساس وآخر للتدرج. رغم النمو الأسي بالزمن تبقى المعادلة خطية في G. افحص إشارة الزيادة والدفعة الأخيرة؛ إن تجاوزت دفعات الأساس الهدف فقد تحتاج G سالبة تخالف وصف جدول متزايد. وفي مسألة نهى تدفع المبالغ كل شهر، فلا تحولها كلمة «باستمرار» إلى تكامل نقد مستمر."
+      }
+    },
+    {
+      "concept": "ee-gradients-s04-concept",
+      "sources": [
+        {
+          "doc": "EE13",
+          "page": 12,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "n is payment count; solve G=(F−A1Σgrowth)/Σ[(t−1)growth].",
+          "ar": "n عدد الدفعات؛ S0 مجموع عوامل النمو و S1 مجموع عوامل النمو موزونة بترتيب الزيادة."
+        },
+        {
+          "en": "F=Σ[A1+(t−1)G](1+i)^(n−t)\nEnd-period monthly payments with a monthly effective rate; “increase continuously every month” in this statement means discrete monthly increments.",
+          "ar": "F=Σ[A1+(t−1)G](1+i)^(n−t)\nدفعات شهرية آخر الفترة بمعدل شهري فعّال؛ الزيادات بين الدفعات متقطعة."
+        }
+      ],
+      "id": "ee-gradients-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Three year-end deposits are 100,100+G,100+2G. At 10%, target F at 3 is 400. Find G.",
+        "ar": "إيداعات ثلاث سنوات 100 ثم 100+G ثم 100+2G؛ المعدل 10% والهدف 400 عند 3. أوجد G."
+      },
+      "expected": 22.258064516128904,
+      "tolerance": 0.005,
+      "unit": "CU per increment",
+      "solution": {
+        "en": "BaseF=331. Gradient contribution=(1.1+2)G=3.1G. G=(400−331)/3.1=22.2580645.",
+        "ar": "نهائي الأساس 331 وإسهام التدرج 3.1G؛ فتكون G=69/3.1=22.2580645."
+      }
+    },
+    {
+      "concept": "ee-gradients-s04-concept",
+      "sources": [
+        {
+          "doc": "EE13",
+          "page": 12,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "n is payment count; solve G=(F−A1Σgrowth)/Σ[(t−1)growth].",
+          "ar": "n عدد الدفعات؛ S0 مجموع عوامل النمو و S1 مجموع عوامل النمو موزونة بترتيب الزيادة."
+        },
+        {
+          "en": "F=Σ[A1+(t−1)G](1+i)^(n−t)\nEnd-period monthly payments with a monthly effective rate; “increase continuously every month” in this statement means discrete monthly increments.",
+          "ar": "F=Σ[A1+(t−1)G](1+i)^(n−t)\nدفعات شهرية آخر الفترة بمعدل شهري فعّال؛ الزيادات بين الدفعات متقطعة."
+        }
+      ],
+      "id": "ee-gradients-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A computed G is negative although the question insists deposits increase. What should you do?",
+        "ar": "كانت G سالبة رغم اشتراط تزايد الإيداعات. ما التصرف الصحيح؟"
+      },
+      "options": [
+        {
+          "en": "Check dates and inputs; report the incompatibility if the base already overshoots the target.",
+          "ar": "راجع التواريخ والمعطيات وبين التعارض إن كان الأساس يجاوز الهدف."
+        },
+        {
+          "en": "Change the sign to positive without changing anything else.",
+          "ar": "حوّل الإشارة إلى موجبة دون تغيير الباقي."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Check dates and inputs; report the incompatibility if the base already overshoots the target. A feasible payment schedule is a model requirement, not something guaranteed by solving an equation.",
+        "ar": "راجع التواريخ والمعطيات وبين التعارض إن كان الأساس يجاوز الهدف. صلاحية جدول الدفع قيد في النموذج لا تضمنه حل المعادلة وحده."
+      }
+    },
+    {
+      "concept": "ee-gradients-s05-concept",
+      "sources": [
+        {
+          "doc": "EE16",
+          "page": 1,
+          "filename": "Questions.pdf"
+        },
+        {
+          "doc": "EE16",
+          "page": 2,
+          "filename": "Questions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Use positive receipts and negative investments; continuous discount uses e^(−rt), discrete discount uses(1+i)^−t.",
+          "ar": "المقبوض موجب والإنفاق سالب؛ للخصم المستمر e^(−rt) وللمتقطع(1+i)^−t."
+        },
+        {
+          "en": "PW=Σsegment PW; Ct is assigned once at every boundary\nChoose compounding from the problem, not from the appearance of a gradient. Segment end dates must be stated.",
+          "ar": "PW=Σsegment PW; Ct is assigned once at every boundary\nالتركيب من نص السؤال، وكل تدفق عند حد الأجزاء يحتسب مرة واحدة."
+        }
+      ],
+      "id": "ee-gradients-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "May a year 7 receipt be included in both the growing segment 3–7 and the level segment 7–11?",
+        "ar": "هل يعد مقبوض السنة 7 ضمن التدرج 3 إلى 7 والثبات 7 إلى 11 معًا؟"
+      },
+      "options": [
+        {
+          "en": "No; use level years 8–11 after already counting year 7.",
+          "ar": "لا؛ يبدأ الجزء الثابت المنفصل عند 8 بعد احتساب 7."
+        },
+        {
+          "en": "Yes; overlapping segment boundaries improve accuracy.",
+          "ar": "نعم؛ تكرار الحدود يزيد الدقة."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; use level years 8–11 after already counting year 7. A project may spend in years 0–2, grow receipts in 3–7, stay level in 8–11 and decline later. Do not force all 15 years into one gradient. Build a dated table, identify each segment’s first payment and prevent double counting at boundaries. Direct discounted summation is often the clearest audit. A compact factor solution is useful only after the full arrows are unambiguous.",
+        "ar": "لا؛ يبدأ الجزء الثابت المنفصل عند 8 بعد احتساب 7. قد ينفق المشروع عند 0 إلى 2، ويزداد مقبوضه عند 3 إلى 7، ويثبت عند 8 إلى 11، ثم يتناقص. لا تضغط الأجزاء في تدرج واحد. اكتب جدولًا مؤرخًا لكل سنة وحدد بدايات الأجزاء ونهاياتها، خصوصًا السنة المشتركة التي قد تعد مرتين. تحقق بجمع الخصم المباشر ثم اختصر بالعوامل. يتضمن حل المصدر أخطاء في مقدار الزيادة وحسابات أخرى؛ لذلك نعتمد المعطيات ونعلن التصحيح."
+      }
+    },
+    {
+      "concept": "ee-gradients-s05-concept",
+      "sources": [
+        {
+          "doc": "EE16",
+          "page": 1,
+          "filename": "Questions.pdf"
+        },
+        {
+          "doc": "EE16",
+          "page": 2,
+          "filename": "Questions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Use positive receipts and negative investments; continuous discount uses e^(−rt), discrete discount uses(1+i)^−t.",
+          "ar": "المقبوض موجب والإنفاق سالب؛ للخصم المستمر e^(−rt) وللمتقطع(1+i)^−t."
+        },
+        {
+          "en": "PW=Σsegment PW; Ct is assigned once at every boundary\nChoose compounding from the problem, not from the appearance of a gradient. Segment end dates must be stated.",
+          "ar": "PW=Σsegment PW; Ct is assigned once at every boundary\nالتركيب من نص السؤال، وكل تدفق عند حد الأجزاء يحتسب مرة واحدة."
+        }
+      ],
+      "id": "ee-gradients-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "A receipt reaches 60000 at year 11 then falls 20% each year. Find its year 14 amount.",
+        "ar": "المقبوض 60000 عند 11 ويتناقص 20% سنويًا. أوجد مبلغ 14."
+      },
+      "expected": 30720.000000000007,
+      "tolerance": 0.6144000000000002,
+      "unit": "CU",
+      "solution": {
+        "en": "Year 12=48000,13=38400,14=30720.",
+        "ar": "12:48000، 13:38400، 14:30720."
+      }
+    },
+    {
+      "concept": "ee-gradients-s05-concept",
+      "sources": [
+        {
+          "doc": "EE16",
+          "page": 1,
+          "filename": "Questions.pdf"
+        },
+        {
+          "doc": "EE16",
+          "page": 2,
+          "filename": "Questions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Use positive receipts and negative investments; continuous discount uses e^(−rt), discrete discount uses(1+i)^−t.",
+          "ar": "المقبوض موجب والإنفاق سالب؛ للخصم المستمر e^(−rt) وللمتقطع(1+i)^−t."
+        },
+        {
+          "en": "PW=Σsegment PW; Ct is assigned once at every boundary\nChoose compounding from the problem, not from the appearance of a gradient. Segment end dates must be stated.",
+          "ar": "PW=Σsegment PW; Ct is assigned once at every boundary\nالتركيب من نص السؤال، وكل تدفق عند حد الأجزاء يحتسب مرة واحدة."
+        }
+      ],
+      "id": "ee-gradients-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "The question specifies continuous compounding at 18%, but the worked sheet uses a mix of table factors and unexplained rounding. What is the reliable audit?",
+        "ar": "السؤال ينص على تركيب مستمر 18% والحل يخلط عوامل وتدويرًا ملتبسًا. ما التدقيق المستقل؟"
+      },
+      "options": [
+        {
+          "en": "Accept the printed total because it is a solution file.",
+          "ar": "اقبل الإجمالي المطبوع لأن الملف ملف حلول."
+        },
+        {
+          "en": "Build the explicit cash flows and computeΣCt e^(−0.18t), checking the source’s dates.",
+          "ar": "كوّن الجدول واحسب مجموع Ct e^(−0.18t)."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Build the explicit cash flows and computeΣCt e^(−0.18t), checking the source’s dates. Source answers are evidence to inspect, not immunity from arithmetic or timing errors.",
+        "ar": "كوّن الجدول واحسب مجموع Ct e^(−0.18t). حل المصدر مادة للفحص، وليس معصومًا من أخطاء الحساب والتوقيت."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-gradients-s01-recall",
+      "concept": "ee-gradients-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: An arithmetic gradient starts with zero change",
+        "ar": "اشرح: يبدأ التدرج الحسابي بزيادة صفر"
+      },
+      "a": {
+        "en": "Write the actual sequence before selecting a factor family.",
+        "ar": "اكتب الدفعات الفعلية قبل اختيار عائلة العامل."
+      }
+    },
+    {
+      "id": "ee-gradients-s01-formula",
+      "concept": "ee-gradients-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nCt=A1+(t−1)G, t=1…n",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nCt=A1+(t−1)G, t=1…n"
+      },
+      "a": {
+        "en": "A1 is first payment; G is CU added per successive payment; t is a payment index. Equally spaced payments with a constant arithmetic increment. Do not use for percentage escalation.",
+        "ar": "A1 أول دفعة و G زيادة نقدية ثابتة بين دفعتين و t ترتيب الدفعة. دفعات متساوية التباعد بزيادة حسابية ثابتة، لا نمو نسبي."
+      }
+    },
+    {
+      "id": "ee-gradients-s01-trap",
+      "concept": "ee-gradients-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; standard gradients start with G at year 1.",
+        "ar": "يقول متعلم: نعم؛ يبدأ التدرج القياسي بـ G عند السنة 1."
+      },
+      "a": {
+        "en": "No; it is zero; G first appears at year 2. Write the actual sequence before selecting a factor family.",
+        "ar": "لا؛ هو صفر وتظهر G أول مرة عند السنة 2. اكتب الدفعات الفعلية قبل اختيار عائلة العامل."
+      }
+    },
+    {
+      "id": "ee-gradients-s02-recall",
+      "concept": "ee-gradients-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Convert a staircase into a level annual amount",
+        "ar": "اشرح: تحويل الدرج إلى دفعة سنوية مستوية"
+      },
+      "a": {
+        "en": "Count the base year as well as the subsequent increases.",
+        "ar": "احسب سنة الأساس مع السنوات التي تحدث فيها الزيادة."
+      }
+    },
+    {
+      "id": "ee-gradients-s02-formula",
+      "concept": "ee-gradients-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nAeq=A1+G[1/i−n/((1+i)^n−1)]",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nAeq=A1+G[1/i−n/((1+i)^n−1)]"
+      },
+      "a": {
+        "en": "A/G is dimensionless. The bracket multiplies G; all rates and payment spacings must match. Arithmetic gradient with first increase at year 2. At i=0 use(A/G)=(n−1)/2.",
+        "ar": "القوس A/G بلا أبعاد ويضرب G؛ والمعدل متوافق مع تباعد الدفعات. أول زيادة G عند السنة 2؛ وعند معدل صفر استخدم (n−1)/2."
+      }
+    },
+    {
+      "id": "ee-gradients-s02-trap",
+      "concept": "ee-gradients-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; A/G already includes every possible base.",
+        "ar": "يقول متعلم: نعم؛ يتضمن A/G كل أساس تلقائيًا."
+      },
+      "a": {
+        "en": "No; the factor converts only the incremental staircase. Count the base year as well as the subsequent increases.",
+        "ar": "لا؛ يحول العامل الزيادة المتدرجة فقط. احسب سنة الأساس مع السنوات التي تحدث فيها الزيادة."
+      }
+    },
+    {
+      "id": "ee-gradients-s03-recall",
+      "concept": "ee-gradients-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: A percentage creates a geometric sequence",
+        "ar": "اشرح: النسبة تصنع متتالية هندسية"
+      },
+      "a": {
+        "en": "A decrease by 20% retains 80%; distinguish the change from the new amount.",
+        "ar": "ينقص المبلغ بنسبة 20% فيبقى 80%؛ ميز مقدار التغير عن الرصيد الجديد."
+      }
+    },
+    {
+      "id": "ee-gradients-s03-formula",
+      "concept": "ee-gradients-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nP=A1[1−((1+g)/(1+i))^n]/(i−g); if i=g: P=nA 1/(1+i)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nP=A1[1−((1+g)/(1+i))^n]/(i−g); if i=g: P=nA1/(1+i)"
+      },
+      "a": {
+        "en": "g is payment growth per period, i is discount per same period; A1 is the first year-end cash flow. Constant percentage escalation; the formula applies only to the specified finite series.",
+        "ar": "g نمو الدفعة لكل فترة و i خصم الفترة نفسها و A1 أول دفعة في نهايتها. نمو نسبي ثابت لسلسلة محدودة، مع معالجة النهاية عند g=i."
+      }
+    },
+    {
+      "id": "ee-gradients-s03-trap",
+      "concept": "ee-gradients-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; there can be no present value.",
+        "ar": "يقول متعلم: نعم؛ لا يمكن حساب الحالية."
+      },
+      "a": {
+        "en": "No; use the finite-sum limit. A decrease by 20% retains 80%; distinguish the change from the new amount.",
+        "ar": "لا؛ استخدم نهاية المجموع المحدود. ينقص المبلغ بنسبة 20% فيبقى 80%؛ ميز مقدار التغير عن الرصيد الجديد."
+      }
+    },
+    {
+      "id": "ee-gradients-s04-recall",
+      "concept": "ee-gradients-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Choose deposits to hit a target",
+        "ar": "اشرح: اختيار إيداعات لبلوغ هدف"
+      },
+      "a": {
+        "en": "A feasible payment schedule is a model requirement, not something guaranteed by solving an equation.",
+        "ar": "صلاحية جدول الدفع قيد في النموذج لا تضمنه حل المعادلة وحده."
+      }
+    },
+    {
+      "id": "ee-gradients-s04-formula",
+      "concept": "ee-gradients-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nF=Σ[A1+(t−1)G](1+i)^(n−t)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nF=Σ[A1+(t−1)G](1+i)^(n−t)"
+      },
+      "a": {
+        "en": "n is payment count; solve G=(F−A1Σgrowth)/Σ[(t−1)growth]. End-period monthly payments with a monthly effective rate; “increase continuously every month” in this statement means discrete monthly increments.",
+        "ar": "n عدد الدفعات؛ S0 مجموع عوامل النمو و S1 مجموع عوامل النمو موزونة بترتيب الزيادة. دفعات شهرية آخر الفترة بمعدل شهري فعّال؛ الزيادات بين الدفعات متقطعة."
+      }
+    },
+    {
+      "id": "ee-gradients-s04-trap",
+      "concept": "ee-gradients-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; any use of the word continuously removes payment dates.",
+        "ar": "يقول متعلم: نعم؛ كلمة باستمرار تلغي تواريخ الدفع."
+      },
+      "a": {
+        "en": "No; the actual payment dates determine whether the cash is discrete. A feasible payment schedule is a model requirement, not something guaranteed by solving an equation.",
+        "ar": "لا؛ تحدد تواريخ الدفع الفعلية كون النقد متقطعًا. صلاحية جدول الدفع قيد في النموذج لا تضمنه حل المعادلة وحده."
+      }
+    },
+    {
+      "id": "ee-gradients-s05-recall",
+      "concept": "ee-gradients-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Piecewise projects are several short stories",
+        "ar": "اشرح: المشروع المجزأ عدة قصص قصيرة"
+      },
+      "a": {
+        "en": "Source answers are evidence to inspect, not immunity from arithmetic or timing errors.",
+        "ar": "حل المصدر مادة للفحص، وليس معصومًا من أخطاء الحساب والتوقيت."
+      }
+    },
+    {
+      "id": "ee-gradients-s05-formula",
+      "concept": "ee-gradients-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nPW=Σsegment PW; Ct is assigned once at every boundary",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nPW=Σsegment PW; Ct is assigned once at every boundary"
+      },
+      "a": {
+        "en": "Use positive receipts and negative investments; continuous discount uses e^(−rt), discrete discount uses(1+i)^−t. Choose compounding from the problem, not from the appearance of a gradient. Segment end dates must be stated.",
+        "ar": "المقبوض موجب والإنفاق سالب؛ للخصم المستمر e^(−rt) وللمتقطع(1+i)^−t. التركيب من نص السؤال، وكل تدفق عند حد الأجزاء يحتسب مرة واحدة."
+      }
+    },
+    {
+      "id": "ee-gradients-s05-trap",
+      "concept": "ee-gradients-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; overlapping segment boundaries improve accuracy.",
+        "ar": "يقول متعلم: نعم؛ تكرار الحدود يزيد الدقة."
+      },
+      "a": {
+        "en": "No; use level years 8–11 after already counting year 7. Source answers are evidence to inspect, not immunity from arithmetic or timing errors.",
+        "ar": "لا؛ يبدأ الجزء الثابت المنفصل عند 8 بعد احتساب 7. حل المصدر مادة للفحص، وليس معصومًا من أخطاء الحساب والتوقيت."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE06",
+      "page": 42,
+      "filename": "chapter 3 EnEc.pdf"
+    },
+    {
+      "doc": "EE06",
+      "page": 46,
+      "filename": "chapter 3 EnEc.pdf"
+    },
+    {
+      "doc": "EE13",
+      "page": 12,
+      "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+    }
+  ],
+  "videoIds": [
+    "3YeDeCawZog",
+    "xPaQedaiNTU"
+  ]
+}

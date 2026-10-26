@@ -1,0 +1,1394 @@
+{
+  "id": "ee-uniform-series",
+  "family": "ee-cashflows",
+  "title": {
+    "en": "Equal payments: one repeated action, six useful factors",
+    "ar": "الدفعات المتساوية: فعل متكرر وستة عوامل مفيدة"
+  },
+  "summary": {
+    "en": "A monthly deposit or annual maintenance bill repeats. Build its equivalent by counting and moving every payment, then recognize the shortcut and exactly where it lands.",
+    "ar": "يتكرر إيداع شهري أو صيانة سنوية. ابنِ المكافئ بعدّ كل دفعة ونقلها ثم تعرف الاختصار والمكان الذي يصل إليه بالضبط."
+  },
+  "outcomes": [
+    {
+      "en": "Count the first and last arrows",
+      "ar": "عدّ السهم الأول والأخير"
+    },
+    {
+      "en": "Build savings toward a future target",
+      "ar": "كوّن ادخارًا لهدف مستقبلي"
+    },
+    {
+      "en": "What repeated receipts are worth today",
+      "ar": "قيمة المقبوضات المتكررة اليوم"
+    },
+    {
+      "en": "Recover capital through equal payments",
+      "ar": "استرداد الأصل بدفعات متساوية"
+    },
+    {
+      "en": "Shift the series without losing a payment",
+      "ar": "نقل السلسلة دون فقد دفعة"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-powers"
+  ],
+  "concepts": [
+    {
+      "id": "ee-uniform-series-s01-concept",
+      "title": {
+        "en": "Count the first and last arrows",
+        "ar": "عدّ السهم الأول والأخير"
+      }
+    },
+    {
+      "id": "ee-uniform-series-s02-concept",
+      "title": {
+        "en": "Build savings toward a future target",
+        "ar": "كوّن ادخارًا لهدف مستقبلي"
+      }
+    },
+    {
+      "id": "ee-uniform-series-s03-concept",
+      "title": {
+        "en": "What repeated receipts are worth today",
+        "ar": "قيمة المقبوضات المتكررة اليوم"
+      }
+    },
+    {
+      "id": "ee-uniform-series-s04-concept",
+      "title": {
+        "en": "Recover capital through equal payments",
+        "ar": "استرداد الأصل بدفعات متساوية"
+      }
+    },
+    {
+      "id": "ee-uniform-series-s05-concept",
+      "title": {
+        "en": "Shift the series without losing a payment",
+        "ar": "نقل السلسلة دون فقد دفعة"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-uniform-series-s01",
+      "title": {
+        "en": "Count the first and last arrows",
+        "ar": "عدّ السهم الأول والأخير"
+      },
+      "predict": {
+        "en": "Does “starts now and continues through year 7” necessarily mean seven payments?",
+        "ar": "هل تعني تبدأالآن وتستمر لنهاية 7 سبع دفعات بالضرورة؟"
+      },
+      "options": [
+        {
+          "en": "No; include t=0 and both stated endpoints.",
+          "ar": "لا؛ احسب الصفر والطرفين المحددين."
+        },
+        {
+          "en": "Yes; the final year number is always the payment count.",
+          "ar": "نعم؛ رقم السنة الأخيرة هو عدد الدفعات دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; include t=0 and both stated endpoints. P/A lands one period before the first arrow, not at an arbitrary present date.",
+        "ar": "لا؛ احسب الصفر والطرفين المحددين. يقع P/A قبل السهم الأول بفترة، لا في حاضر اعتباطي."
+      },
+      "explain": {
+        "en": "An ordinary equal-payment series has n payments at t=1 through n. Its present equivalent sits one period before the first payment, at t=0. The series from t=0 through 7 contains eight payments, not seven. The two details to mark before choosing P/A are the payment count and the location of the resulting P. An annuity due begins one period earlier than the corresponding ordinary annuity.",
+        "ar": "تتكون السلسلة العادية من n دفعات عند 1 إلى n، وتقع حاليتها قبل الأولى بفترة عند الصفر. السلسلة من 0 إلى 7 فيها ثماني دفعات لا سبع. علّم عدد الدفعات وموقع P الناتج قبل اختيار P/A. وتبدأ دفعات أول الفترة قبل السلسلة العادية المناظرة بفترة."
+      },
+      "formula": "count = last index − first index + 1",
+      "symbols": {
+        "en": "Indices are payment dates in the chosen period clock.",
+        "ar": "المؤشرات تواريخ الدفع وفق ساعة الفترات المختارة."
+      },
+      "assumptions": {
+        "en": "Count actual arrows; a duration alone does not say whether both endpoints contain a payment.",
+        "ar": "عد السهام الفعلية؛ المدة وحدها لا تحدد الدفع عند الطرفين."
+      },
+      "example": {
+        "en": "500 CU is paid at t=0,1,…,7.",
+        "ar": "تدفع 500 عند 0 و 1 إلى 7."
+      },
+      "calculation": {
+        "en": "There are 8 payments. PW=500+500(P/A,15%,7), or 500(P/A,15%,8)×1.15.",
+        "ar": "توجد 8 دفعات؛ الحالية 500+500(P/A,15%,7)، أو 500(P/A,15%,8)×1.15."
+      },
+      "interpret": {
+        "en": "P/A lands one period before the first arrow, not at an arbitrary present date.",
+        "ar": "يقع P/A قبل السهم الأول بفترة، لا في حاضر اعتباطي."
+      },
+      "check": {
+        "prompt": {
+          "en": "For a series at years 3 through 10, where does A(P/A,i,8) land?",
+          "ar": "لسلسلة السنوات 3 إلى 10، أين يقع A(P/A,i,8)؟"
+        },
+        "answer": {
+          "en": "At year 2; discount two more years if today is zero.",
+          "ar": "عندالسنة 2؛ اخصم سنتين إضافيتين للوصول للصفر."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-uniform-series-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 28,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 118,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE03",
+          "page": 1,
+          "filename": "015 Tut.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-uniform-series-s02",
+      "title": {
+        "en": "Build savings toward a future target",
+        "ar": "كوّن ادخارًا لهدف مستقبلي"
+      },
+      "predict": {
+        "en": "Does the last deposit earn one whole period of interest when F is measured immediately after it?",
+        "ar": "هل تكسب الدفعة الأخيرة فائدة فترة كاملة عند قياس F بعدها مباشرة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; every one of n deposits earns n periods.",
+          "ar": "نعم؛ تكسب كل دفعة من n فائدة n فترات."
+        },
+        {
+          "en": "No; its accumulation exponent is zero.",
+          "ar": "لا؛ أس تنميتهاصفر."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; its accumulation exponent is zero. A factor’s removable zero-rate singularity has a simple cash-counting meaning.",
+        "ar": "لا؛ أس تنميتهاصفر. لموضععدم التعيين عند صفر معنىبسيط بعدّالمبالغ."
+      },
+      "explain": {
+        "en": "Each deposit has a different growth time. The first ordinary payment grows for n−1 periods; the last grows for zero periods because F is measured immediately after it. Adding that geometric sequence produces F/A. Its reciprocal A/F answers the sinking-fund question: what equal deposit will achieve a specified target? At zero rate the balance is simply nA, which is an essential check on the formula.",
+        "ar": "لكل إيداع مدة نمو مختلفة؛ تنمو الدفعة العادية الأولى n−1 فترات والأخيرةصفر لأن F يقاس بعد دفعها مباشرة. ينتج عن جمع المتتالية الهندسية عامل F/A، ويجيب مقلوبه A/F عن مبلغ الإيداع المتساوي اللازم لهدف معين. عند صفر يصبح الرصيد nA؛ وهو فحص أساسي للصيغة."
+      },
+      "formula": "F=A[(1+i)^n−1]/i; A=F i/[(1+i)^n−1]",
+      "symbols": {
+        "en": "A is currency each payment; F is currency at the last payment date; i matches the payment spacing.",
+        "ar": "A مبلغ كل دفعة و F مبلغ تاريخ الأخيرة، والمعدل يطابق تباعد الدفعات."
+      },
+      "assumptions": {
+        "en": "Equal end-period payments, no missed dates and a constant effective payment-period rate.",
+        "ar": "دفعات متساوية نهاية الفترات دون انقطاع ومعدل فعّال ثابت لفترة الدفع."
+      },
+      "example": {
+        "en": "Deposit 1000 annually at 10% for 3 payments.",
+        "ar": "أودع 1000 سنويًا عند 10% لثلاث دفعات."
+      },
+      "calculation": {
+        "en": "F=1000(1.1²+1.1+1)=3310 CU. To reach 3310, the required deposit is 1000.",
+        "ar": "النهائي 1000(1.1²+1.1+1)=3310؛ ولبلوغ 3310 يكون الإيداع 1000."
+      },
+      "interpret": {
+        "en": "A factor’s removable zero-rate singularity has a simple cash-counting meaning.",
+        "ar": "لموضععدم التعيين عند صفر معنىبسيط بعدّالمبالغ."
+      },
+      "check": {
+        "prompt": {
+          "en": "At i=0, what deposit builds 6000 CU in 12 equal end-month payments?",
+          "ar": "عندمعدلصفر، ما الدفعة التي تكون 6000 خلال 12 دفعة شهرية متساوية؟"
+        },
+        "answer": {
+          "en": "500 CU; use the zero-rate limit instead of dividing 0/0.",
+          "ar": "500؛ استخدم النهاية عند صفر بدل قسمة 0/0."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-uniform-series-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 20,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 24,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-uniform-series-s03",
+      "title": {
+        "en": "What repeated receipts are worth today",
+        "ar": "قيمة المقبوضات المتكررة اليوم"
+      },
+      "predict": {
+        "en": "Can the same P/A factor value a cost series and a receipt series?",
+        "ar": "هل يمكن استخدام عامل P/A نفسه للتكاليف والمقبوضات؟"
+      },
+      "options": [
+        {
+          "en": "Yes; assign consistent signs to the cash flows.",
+          "ar": "نعم؛ أسند الإشارات للتدفقات باتساق."
+        },
+        {
+          "en": "No; costs require an unrelated mathematical factor.",
+          "ar": "لا؛ تحتاج التكاليف عاملًا رياضيًا مختلفًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Yes; assign consistent signs to the cash flows. The intermediate equivalent is at 3, exactly one period before the first receipt at 4.",
+        "ar": "نعم؛ أسند الإشارات للتدفقات باتساق. يقع المكافئ الوسيط عند السنة 3، قبل أول مقبوض عند 4 بفترة واحدة."
+      },
+      "explain": {
+        "en": "Take every future payment backward to the same starting date. The first travels one period and the last travels n periods. Summing gives P/A. This is useful for valuing maintenance costs as well as receipts; the factor does not decide the cash-flow sign. A larger positive discount rate reduces the present value of the same positive future series, because each arrow is pulled back more strongly.",
+        "ar": "أعد كل دفعة مستقبلية إلى تاريخ مشترك؛ الأولى فترة واحدة والأخيرة n فترات. يعطي مجموعها عامل P/A. يصلح العامل للتكاليف وللمقبوضات؛ فالإشارة تتبع منظورك لا اسم العامل. عند معدل موجب أكبر تقل حالية السلسلة الموجبة نفسها، لأن كل مبلغ مستقبلي يخصم أكثر. ارسم السلسلة أولًا ثم حدد موضع الحالية قبل أول سهم بفترة."
+      },
+      "formula": "P=A[1−(1+i)^−n]/i",
+      "symbols": {
+        "en": "P is one period before the first equal payment; A may be treated as a positive magnitude with an explicitly assigned cost/receipt sign.",
+        "ar": "P قبل أول دفعة بفترة، و A مقدار كل دفعة مع إشارة التكلفة أو المقبوض المعلنة."
+      },
+      "assumptions": {
+        "en": "Ordinary equal series with matching effective rate; at zero, P=nA.",
+        "ar": "سلسلة عادية متساوية بمعدل فعّال متوافق. عند صفر يكون P=nA."
+      },
+      "example": {
+        "en": "Receive 1000 at years 1,2,3, at 10%.",
+        "ar": "تستلم 1000 في نهايات السنوات 1 و 2 و 3 عند معدل 10%."
+      },
+      "calculation": {
+        "en": "P=1000(1/1.1+1/1.1²+1/1.1³)=2486.85199 CU.",
+        "ar": "P=1000(1/1.1+1/1.1²+1/1.1³)=2486.85199 وحدة نقدية."
+      },
+      "interpret": {
+        "en": "The intermediate equivalent is at 3, exactly one period before the first receipt at 4.",
+        "ar": "يقع المكافئ الوسيط عند السنة 3، قبل أول مقبوض عند 4 بفترة واحدة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Equal 800 CU receipts start at year 4 for 6 years. Which sequence reaches t=0?",
+          "ar": "تبدأ مقبوضات 800 عند السنة 4 وتستمر ست سنوات. أي تعبير يصل إلى الصفر؟"
+        },
+        "answer": {
+          "en": "800(P/A,i,6)(P/F,i,3).",
+          "ar": "800(P/A,i,6)(P/F,i,3)."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-uniform-series-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 28,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 31,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-uniform-series-s04",
+      "title": {
+        "en": "Recover capital through equal payments",
+        "ar": "استرداد الأصل بدفعات متساوية"
+      },
+      "predict": {
+        "en": "Is an equal loan payment entirely a reduction of principal?",
+        "ar": "هل القسط المتساوي تخفيض كامل لأصل الدين؟"
+      },
+      "options": [
+        {
+          "en": "Yes; interest is ignored once A/P has been used.",
+          "ar": "نعم؛ تهمل الفائدة بعد استخدام A/P."
+        },
+        {
+          "en": "No; part covers the period’s return on the unpaid balance.",
+          "ar": "لا؛ يغطي جزء منه عائد الفترة على الرصيد غير المسدد."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; part covers the period’s return on the unpaid balance. The recurrence separates growth from repayment and catches negative amortization.",
+        "ar": "لا؛ يغطي جزء منه عائد الفترة على الرصيد غير المسدد. يفصل تكرار الرصيد النمو عن السداد ويكشف زيادة الدين رغم الدفع."
+      },
+      "explain": {
+        "en": "A machine purchase or loan can be replaced by an equivalent equal-payment series. A/P is the reciprocal of P/A. Each loan payment normally contains a return on the outstanding balance plus a principal reduction; it is not all interest. A balance recurrence checks the factor result and reveals what is actually happening between payments. With positive rates, nA exceeds the amount originally financed.",
+        "ar": "يمكن استبدال شراء آلة أو تمويل قرض بسلسلة دفعات سنوية مكافئة. A/P مقلوب P/A. يغطي جزء من القسط عادة عائد الفترة على الرصيد القائم، ويخفض الباقي أصل الدين؛ لذلك لا تساوي قيمة القسط تخفيض الأصل كاملًا. يكشف تكرار الرصيد ما يحدث بين الدفعات ويتحقق من العامل: نمِّ رصيد الافتتاح ثم اطرح القسط."
+      },
+      "formula": "A=P i/[1−(1+i)^−n]; Bt=Bt−1(1+i)−A",
+      "symbols": {
+        "en": "Bt is debt balance immediately after payment t; B0=P.",
+        "ar": "Bt رصيد الدين بعد القسط t مباشرة، و B0=P. المعدل فعّال لفترة الدفع."
+      },
+      "assumptions": {
+        "en": "Level end-period repayments, constant effective period rate and no fees or extra payments.",
+        "ar": "أقساط متساوية آخر الفترات، ومعدل ثابت، ودون رسوم أو سداد إضافي."
+      },
+      "example": {
+        "en": "Borrow 1000 and repay in 3 annual payments at 10%.",
+        "ar": "اقترض 1000 واسدد بثلاث دفعات سنوية عند 10%."
+      },
+      "calculation": {
+        "en": "A=1000/2.486851991=402.114804 CU. B1=1000×1.1−402.114804=697.885196.",
+        "ar": "A=402.114804. بعد الأولى B1=1000×1.1−402.114804=697.885196."
+      },
+      "interpret": {
+        "en": "The recurrence separates growth from repayment and catches negative amortization.",
+        "ar": "يفصل تكرار الرصيد النمو عن السداد ويكشف زيادة الدين رغم الدفع."
+      },
+      "check": {
+        "prompt": {
+          "en": "If a200 payment is less than a250 period-interest charge, what happens to the debt balance?",
+          "ar": "إذا كان القسط 200 وزيادة الفترة 250، ماذا يحدث للرصيد؟"
+        },
+        "answer": {
+          "en": "It increases by 50 despite making a payment.",
+          "ar": "يزيد 50 رغم إجراء دفعة."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-uniform-series-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 32,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 35,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-uniform-series-s05",
+      "title": {
+        "en": "Shift the series without losing a payment",
+        "ar": "نقل السلسلة دون فقد دفعة"
+      },
+      "predict": {
+        "en": "Does shifting a series earlier change the payment count?",
+        "ar": "هل نقل السلسلة إلى وقت أبكر يغير عدد الدفعات؟"
+      },
+      "options": [
+        {
+          "en": "No; count and timing are independent bookkeeping tasks.",
+          "ar": "لا؛ العدد والتوقيت مسألتان مستقلتان."
+        },
+        {
+          "en": "Yes; the earlier starting point removes the last payment automatically.",
+          "ar": "نعم؛ تحذف الدفعة الأخيرة تلقائيًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; count and timing are independent bookkeeping tasks. A/P assumes the first payment follows its P by one full payment period.",
+        "ar": "لا؛ العدد والتوقيت مسألتان مستقلتان. يفترض A/P أن أول قسط يلي موضع P بفترة دفع كاملة."
+      },
+      "explain": {
+        "en": "If every payment moves one period earlier, every one receives an extra period of growth to any common future date. Multiply the ordinary-series equivalent by 1+i. For a deferred series, first find the local P one period before its first payment, then move that P to the required date. Draw the local zero above the time axis; a large share of exam errors are correct factors attached to the wrong date.",
+        "ar": "إذا نقلت كل دفعة فترة إلى الأمام نحو الحاضر، حصلت كلها على فترة نمو إضافية إلى الغاية المشتركة؛ لذلك تضرب المكافئ العادي في 1+i. للسلسلة المؤجلة أوجد الحالية المحلية قبل أول دفعة بفترة، ثم انقلها إلى المطلوب. علّم الصفر المحلي فوق المحور: كثير من أخطاء الاختبار عوامل صحيحة موضوعة في تاريخ خاطئ."
+      },
+      "formula": "Pdue=A(P/A,i,n)(1+i); P0=A(P/A,i,n)(P/F,i,k−1)",
+      "symbols": {
+        "en": "k is the first payment date of a deferred ordinary series, measured from the required zero.",
+        "ar": "k تاريخ أول دفعة في السلسلة العادية المؤجلة."
+      },
+      "assumptions": {
+        "en": "Annuity due has exactly n payments at 0…n−1; distinguish it from a series running 0…n.",
+        "ar": "أول الفترة تضم n دفعات عند 0 إلى n−1؛ أما السلسلة عند 0 إلى n ففيها n+1 دفعة."
+      },
+      "example": {
+        "en": "500 CU at t=0 through 7, i=15%.",
+        "ar": "تدفع 500 عند 0 إلى 7 بمعدل 15%."
+      },
+      "calculation": {
+        "en": "P=500+500(P/A,15%,7)≈2580.21 CU. F at 7=P(1.15)^7; the t=0 arrow earns 7 periods.",
+        "ar": "P=500+500(P/A,15%,7)=2580.209867 تقريبًا؛ و F7=P(1.15)^7."
+      },
+      "interpret": {
+        "en": "A/P assumes the first payment follows its P by one full payment period.",
+        "ar": "يفترض A/P أن أول قسط يلي موضع P بفترة دفع كاملة."
+      },
+      "check": {
+        "prompt": {
+          "en": "A repayment starts exactly 3 years after borrowing and repeats quarterly. Where is its ordinary annuity P?",
+          "ar": "يبدأ السداد بعد 3 سنوات تمامًا ويتكرر ربع سنويًا. أين تقع حالية السلسلة العادية؟"
+        },
+        "answer": {
+          "en": "At 2.75 years: one quarter before the first payment.",
+          "ar": "عند 2.75 سنة، ربع سنة قبل الدفعة الأولى."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-uniform-series-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 108,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 118,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE03",
+          "page": 1,
+          "filename": "015 Tut.pdf"
+        },
+        {
+          "doc": "EE15",
+          "page": 1,
+          "filename": "PPIInfo_fl_corner-FEIM2-PP04Economics.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-uniform-series-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 28,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 118,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE03",
+          "page": 1,
+          "filename": "015 Tut.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Indices are payment dates in the chosen period clock.",
+          "ar": "المؤشرات تواريخ الدفع وفق ساعة الفترات المختارة."
+        },
+        {
+          "en": "count = last index − first index + 1\nCount actual arrows; a duration alone does not say whether both endpoints contain a payment.",
+          "ar": "count = last index − first index + 1\nعد السهام الفعلية؛ المدة وحدها لا تحدد الدفع عند الطرفين."
+        }
+      ],
+      "id": "ee-uniform-series-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does “starts now and continues through year 7” necessarily mean seven payments?",
+        "ar": "هل تعني تبدأالآن وتستمر لنهاية 7 سبع دفعات بالضرورة؟"
+      },
+      "options": [
+        {
+          "en": "No; include t=0 and both stated endpoints.",
+          "ar": "لا؛ احسب الصفر والطرفين المحددين."
+        },
+        {
+          "en": "Yes; the final year number is always the payment count.",
+          "ar": "نعم؛ رقم السنة الأخيرة هو عدد الدفعات دائمًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; include t=0 and both stated endpoints. An ordinary equal-payment series has n payments at t=1 through n. Its present equivalent sits one period before the first payment, at t=0. The series from t=0 through 7 contains eight payments, not seven. The two details to mark before choosing P/A are the payment count and the location of the resulting P. An annuity due begins one period earlier than the corresponding ordinary annuity.",
+        "ar": "لا؛ احسب الصفر والطرفين المحددين. تتكون السلسلة العادية من n دفعات عند 1 إلى n، وتقع حاليتها قبل الأولى بفترة عند الصفر. السلسلة من 0 إلى 7 فيها ثماني دفعات لا سبع. علّم عدد الدفعات وموقع P الناتج قبل اختيار P/A. وتبدأ دفعات أول الفترة قبل السلسلة العادية المناظرة بفترة."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 28,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 118,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE03",
+          "page": 1,
+          "filename": "015 Tut.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Indices are payment dates in the chosen period clock.",
+          "ar": "المؤشرات تواريخ الدفع وفق ساعة الفترات المختارة."
+        },
+        {
+          "en": "count = last index − first index + 1\nCount actual arrows; a duration alone does not say whether both endpoints contain a payment.",
+          "ar": "count = last index − first index + 1\nعد السهام الفعلية؛ المدة وحدها لا تحدد الدفع عند الطرفين."
+        }
+      ],
+      "id": "ee-uniform-series-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Equal payments occur at t=3,4,…,10. How many payments are there?",
+        "ar": "دفعات متساوية عند 3 و 4 إلى 10. كم عددها؟"
+      },
+      "expected": 8,
+      "tolerance": 0.005,
+      "unit": "payments",
+      "solution": {
+        "en": "10−3+1=8. Their ordinary P/A equivalent lies at t=2.",
+        "ar": "العدد 10−3+1=8؛ وتقع الحالية العادية عند 2."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 28,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 118,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE03",
+          "page": 1,
+          "filename": "015 Tut.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Indices are payment dates in the chosen period clock.",
+          "ar": "المؤشرات تواريخ الدفع وفق ساعة الفترات المختارة."
+        },
+        {
+          "en": "count = last index − first index + 1\nCount actual arrows; a duration alone does not say whether both endpoints contain a payment.",
+          "ar": "count = last index − first index + 1\nعد السهام الفعلية؛ المدة وحدها لا تحدد الدفع عند الطرفين."
+        }
+      ],
+      "id": "ee-uniform-series-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "For a series at years 3 through 10, where does A(P/A,i,8) land?",
+        "ar": "لسلسلة السنوات 3 إلى 10، أين يقع A(P/A,i,8)؟"
+      },
+      "options": [
+        {
+          "en": "At year 0 automatically.",
+          "ar": "عند الصفر تلقائيًا."
+        },
+        {
+          "en": "At year 2; discount two more years if today is zero.",
+          "ar": "عندالسنة 2؛ اخصم سنتين إضافيتين للوصول للصفر."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "At year 2; discount two more years if today is zero. P/A lands one period before the first arrow, not at an arbitrary present date.",
+        "ar": "عندالسنة 2؛ اخصم سنتين إضافيتين للوصول للصفر. يقع P/A قبل السهم الأول بفترة، لا في حاضر اعتباطي."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 20,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 24,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A is currency each payment; F is currency at the last payment date; i matches the payment spacing.",
+          "ar": "A مبلغ كل دفعة و F مبلغ تاريخ الأخيرة، والمعدل يطابق تباعد الدفعات."
+        },
+        {
+          "en": "F=A[(1+i)^n−1]/i; A=F i/[(1+i)^n−1]\nEqual end-period payments, no missed dates and a constant effective payment-period rate.",
+          "ar": "F=A[(1+i)^n−1]/i; A=F i/[(1+i)^n−1]\nدفعات متساوية نهاية الفترات دون انقطاع ومعدل فعّال ثابت لفترة الدفع."
+        }
+      ],
+      "id": "ee-uniform-series-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does the last deposit earn one whole period of interest when F is measured immediately after it?",
+        "ar": "هل تكسب الدفعة الأخيرة فائدة فترة كاملة عند قياس F بعدها مباشرة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; every one of n deposits earns n periods.",
+          "ar": "نعم؛ تكسب كل دفعة من n فائدة n فترات."
+        },
+        {
+          "en": "No; its accumulation exponent is zero.",
+          "ar": "لا؛ أس تنميتهاصفر."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; its accumulation exponent is zero. Each deposit has a different growth time. The first ordinary payment grows for n−1 periods; the last grows for zero periods because F is measured immediately after it. Adding that geometric sequence produces F/A. Its reciprocal A/F answers the sinking-fund question: what equal deposit will achieve a specified target? At zero rate the balance is simply nA, which is an essential check on the formula.",
+        "ar": "لا؛ أس تنميتهاصفر. لكل إيداع مدة نمو مختلفة؛ تنمو الدفعة العادية الأولى n−1 فترات والأخيرةصفر لأن F يقاس بعد دفعها مباشرة. ينتج عن جمع المتتالية الهندسية عامل F/A، ويجيب مقلوبه A/F عن مبلغ الإيداع المتساوي اللازم لهدف معين. عند صفر يصبح الرصيد nA؛ وهو فحص أساسي للصيغة."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 20,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 24,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A is currency each payment; F is currency at the last payment date; i matches the payment spacing.",
+          "ar": "A مبلغ كل دفعة و F مبلغ تاريخ الأخيرة، والمعدل يطابق تباعد الدفعات."
+        },
+        {
+          "en": "F=A[(1+i)^n−1]/i; A=F i/[(1+i)^n−1]\nEqual end-period payments, no missed dates and a constant effective payment-period rate.",
+          "ar": "F=A[(1+i)^n−1]/i; A=F i/[(1+i)^n−1]\nدفعات متساوية نهاية الفترات دون انقطاع ومعدل فعّال ثابت لفترة الدفع."
+        }
+      ],
+      "id": "ee-uniform-series-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Deposit 200 CU at each year-end for 4 years at 5%. Find F immediately after the fourth deposit.",
+        "ar": "أودع 200 آخر كل سنة لأربعسنوات بمعدل 5%. أوجد النهائي بعد الرابعةمباشرة."
+      },
+      "expected": 862.0250000000009,
+      "tolerance": 0.01724050000000002,
+      "unit": "CU",
+      "solution": {
+        "en": "F=200[(1.05)^4−1]/0.05=862.025 CU. Direct check:200(1.05³+1.05²+1.05+1).",
+        "ar": "النهائي 862.025؛ ويؤكد الجمع المباشر للدفعات النتيجة."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 20,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 24,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A is currency each payment; F is currency at the last payment date; i matches the payment spacing.",
+          "ar": "A مبلغ كل دفعة و F مبلغ تاريخ الأخيرة، والمعدل يطابق تباعد الدفعات."
+        },
+        {
+          "en": "F=A[(1+i)^n−1]/i; A=F i/[(1+i)^n−1]\nEqual end-period payments, no missed dates and a constant effective payment-period rate.",
+          "ar": "F=A[(1+i)^n−1]/i; A=F i/[(1+i)^n−1]\nدفعات متساوية نهاية الفترات دون انقطاع ومعدل فعّال ثابت لفترة الدفع."
+        }
+      ],
+      "id": "ee-uniform-series-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "At i=0, what deposit builds 6000 CU in 12 equal end-month payments?",
+        "ar": "عندمعدلصفر، ما الدفعة التي تكون 6000 خلال 12 دفعة شهرية متساوية؟"
+      },
+      "options": [
+        {
+          "en": "500 CU; use the zero-rate limit instead of dividing 0/0.",
+          "ar": "500؛ استخدم النهاية عند صفر بدل قسمة 0/0."
+        },
+        {
+          "en": "6000 CU each month because there is no compounding.",
+          "ar": "6000 كل شهرلعدم وجودتركيب."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "500 CU; use the zero-rate limit instead of dividing 0/0. A factor’s removable zero-rate singularity has a simple cash-counting meaning.",
+        "ar": "500؛ استخدم النهاية عند صفر بدل قسمة 0/0. لموضععدم التعيين عند صفر معنىبسيط بعدّالمبالغ."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 28,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 31,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P is one period before the first equal payment; A may be treated as a positive magnitude with an explicitly assigned cost/receipt sign.",
+          "ar": "P قبل أول دفعة بفترة، و A مقدار كل دفعة مع إشارة التكلفة أو المقبوض المعلنة."
+        },
+        {
+          "en": "P=A[1−(1+i)^−n]/i\nOrdinary equal series with matching effective rate; at zero, P=nA.",
+          "ar": "P=A[1−(1+i)^−n]/i\nسلسلة عادية متساوية بمعدل فعّال متوافق. عند صفر يكون P=nA."
+        }
+      ],
+      "id": "ee-uniform-series-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can the same P/A factor value a cost series and a receipt series?",
+        "ar": "هل يمكن استخدام عامل P/A نفسه للتكاليف والمقبوضات؟"
+      },
+      "options": [
+        {
+          "en": "Yes; assign consistent signs to the cash flows.",
+          "ar": "نعم؛ أسند الإشارات للتدفقات باتساق."
+        },
+        {
+          "en": "No; costs require an unrelated mathematical factor.",
+          "ar": "لا؛ تحتاج التكاليف عاملًا رياضيًا مختلفًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Yes; assign consistent signs to the cash flows. Take every future payment backward to the same starting date. The first travels one period and the last travels n periods. Summing gives P/A. This is useful for valuing maintenance costs as well as receipts; the factor does not decide the cash-flow sign. A larger positive discount rate reduces the present value of the same positive future series, because each arrow is pulled back more strongly.",
+        "ar": "نعم؛ أسند الإشارات للتدفقات باتساق. أعد كل دفعة مستقبلية إلى تاريخ مشترك؛ الأولى فترة واحدة والأخيرة n فترات. يعطي مجموعها عامل P/A. يصلح العامل للتكاليف وللمقبوضات؛ فالإشارة تتبع منظورك لا اسم العامل. عند معدل موجب أكبر تقل حالية السلسلة الموجبة نفسها، لأن كل مبلغ مستقبلي يخصم أكثر. ارسم السلسلة أولًا ثم حدد موضع الحالية قبل أول سهم بفترة."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 28,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 31,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P is one period before the first equal payment; A may be treated as a positive magnitude with an explicitly assigned cost/receipt sign.",
+          "ar": "P قبل أول دفعة بفترة، و A مقدار كل دفعة مع إشارة التكلفة أو المقبوض المعلنة."
+        },
+        {
+          "en": "P=A[1−(1+i)^−n]/i\nOrdinary equal series with matching effective rate; at zero, P=nA.",
+          "ar": "P=A[1−(1+i)^−n]/i\nسلسلة عادية متساوية بمعدل فعّال متوافق. عند صفر يكون P=nA."
+        }
+      ],
+      "id": "ee-uniform-series-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Find present value of 300 CU/year received at the ends of 5 years at 8%.",
+        "ar": "أوجد حالية 300 سنويًا في نهايات خمس سنوات عند 8%."
+      },
+      "expected": 1197.8130111234266,
+      "tolerance": 0.023956260222468533,
+      "unit": "CU",
+      "solution": {
+        "en": "P=300[1−1.08^−5]/0.08=1197.813011 CU.",
+        "ar": "P=300[1−1.08^−5]/0.08=1197.813011."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 28,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 31,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P is one period before the first equal payment; A may be treated as a positive magnitude with an explicitly assigned cost/receipt sign.",
+          "ar": "P قبل أول دفعة بفترة، و A مقدار كل دفعة مع إشارة التكلفة أو المقبوض المعلنة."
+        },
+        {
+          "en": "P=A[1−(1+i)^−n]/i\nOrdinary equal series with matching effective rate; at zero, P=nA.",
+          "ar": "P=A[1−(1+i)^−n]/i\nسلسلة عادية متساوية بمعدل فعّال متوافق. عند صفر يكون P=nA."
+        }
+      ],
+      "id": "ee-uniform-series-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Equal 800 CU receipts start at year 4 for 6 years. Which sequence reaches t=0?",
+        "ar": "تبدأ مقبوضات 800 عند السنة 4 وتستمر ست سنوات. أي تعبير يصل إلى الصفر؟"
+      },
+      "options": [
+        {
+          "en": "800(P/A,i,6)(P/F,i,4).",
+          "ar": "800(P/A,i,6)(P/F,i,4)."
+        },
+        {
+          "en": "800(P/A,i,6)(P/F,i,3).",
+          "ar": "800(P/A,i,6)(P/F,i,3)."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "800(P/A,i,6)(P/F,i,3). The intermediate equivalent is at 3, exactly one period before the first receipt at 4.",
+        "ar": "800(P/A,i,6)(P/F,i,3). يقع المكافئ الوسيط عند السنة 3، قبل أول مقبوض عند 4 بفترة واحدة."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s04-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 32,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 35,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Bt is debt balance immediately after payment t; B0=P.",
+          "ar": "Bt رصيد الدين بعد القسط t مباشرة، و B0=P. المعدل فعّال لفترة الدفع."
+        },
+        {
+          "en": "A=P i/[1−(1+i)^−n]; Bt=Bt−1(1+i)−A\nLevel end-period repayments, constant effective period rate and no fees or extra payments.",
+          "ar": "A=P i/[1−(1+i)^−n]; Bt=Bt−1(1+i)−A\nأقساط متساوية آخر الفترات، ومعدل ثابت، ودون رسوم أو سداد إضافي."
+        }
+      ],
+      "id": "ee-uniform-series-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Is an equal loan payment entirely a reduction of principal?",
+        "ar": "هل القسط المتساوي تخفيض كامل لأصل الدين؟"
+      },
+      "options": [
+        {
+          "en": "Yes; interest is ignored once A/P has been used.",
+          "ar": "نعم؛ تهمل الفائدة بعد استخدام A/P."
+        },
+        {
+          "en": "No; part covers the period’s return on the unpaid balance.",
+          "ar": "لا؛ يغطي جزء منه عائد الفترة على الرصيد غير المسدد."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; part covers the period’s return on the unpaid balance. A machine purchase or loan can be replaced by an equivalent equal-payment series. A/P is the reciprocal of P/A. Each loan payment normally contains a return on the outstanding balance plus a principal reduction; it is not all interest. A balance recurrence checks the factor result and reveals what is actually happening between payments. With positive rates, nA exceeds the amount originally financed.",
+        "ar": "لا؛ يغطي جزء منه عائد الفترة على الرصيد غير المسدد. يمكن استبدال شراء آلة أو تمويل قرض بسلسلة دفعات سنوية مكافئة. A/P مقلوب P/A. يغطي جزء من القسط عادة عائد الفترة على الرصيد القائم، ويخفض الباقي أصل الدين؛ لذلك لا تساوي قيمة القسط تخفيض الأصل كاملًا. يكشف تكرار الرصيد ما يحدث بين الدفعات ويتحقق من العامل: نمِّ رصيد الافتتاح ثم اطرح القسط."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s04-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 32,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 35,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Bt is debt balance immediately after payment t; B0=P.",
+          "ar": "Bt رصيد الدين بعد القسط t مباشرة، و B0=P. المعدل فعّال لفترة الدفع."
+        },
+        {
+          "en": "A=P i/[1−(1+i)^−n]; Bt=Bt−1(1+i)−A\nLevel end-period repayments, constant effective period rate and no fees or extra payments.",
+          "ar": "A=P i/[1−(1+i)^−n]; Bt=Bt−1(1+i)−A\nأقساط متساوية آخر الفترات، ومعدل ثابت، ودون رسوم أو سداد إضافي."
+        }
+      ],
+      "id": "ee-uniform-series-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "A10000 CU balance accrues 1% in one month before a200 CU payment. Find balance immediately after payment.",
+        "ar": "رصيد 10000 ينمو 1% خلال شهر ثم يدفع قسط 200. أوجد الرصيد بعده."
+      },
+      "expected": 9900,
+      "tolerance": 0.198,
+      "unit": "CU",
+      "solution": {
+        "en": "10000×1.01−200=9900. Principal reduction is 100, not 200.",
+        "ar": "10000×1.01−200=9900؛ تخفيض الأصل 100 لا 200."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s04-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 32,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 35,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Bt is debt balance immediately after payment t; B0=P.",
+          "ar": "Bt رصيد الدين بعد القسط t مباشرة، و B0=P. المعدل فعّال لفترة الدفع."
+        },
+        {
+          "en": "A=P i/[1−(1+i)^−n]; Bt=Bt−1(1+i)−A\nLevel end-period repayments, constant effective period rate and no fees or extra payments.",
+          "ar": "A=P i/[1−(1+i)^−n]; Bt=Bt−1(1+i)−A\nأقساط متساوية آخر الفترات، ومعدل ثابت، ودون رسوم أو سداد إضافي."
+        }
+      ],
+      "id": "ee-uniform-series-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "If a200 payment is less than a250 period-interest charge, what happens to the debt balance?",
+        "ar": "إذا كان القسط 200 وزيادة الفترة 250، ماذا يحدث للرصيد؟"
+      },
+      "options": [
+        {
+          "en": "It increases by 50 despite making a payment.",
+          "ar": "يزيد 50 رغم إجراء دفعة."
+        },
+        {
+          "en": "It must fall by 200 because every payment reduces debt by its full amount.",
+          "ar": "ينخفض 200 لأن كل القسط يذهب للأصل."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "It increases by 50 despite making a payment. The recurrence separates growth from repayment and catches negative amortization.",
+        "ar": "يزيد 50 رغم إجراء دفعة. يفصل تكرار الرصيد النمو عن السداد ويكشف زيادة الدين رغم الدفع."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s05-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 108,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 118,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE03",
+          "page": 1,
+          "filename": "015 Tut.pdf"
+        },
+        {
+          "doc": "EE15",
+          "page": 1,
+          "filename": "PPIInfo_fl_corner-FEIM2-PP04Economics.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "k is the first payment date of a deferred ordinary series, measured from the required zero.",
+          "ar": "k تاريخ أول دفعة في السلسلة العادية المؤجلة."
+        },
+        {
+          "en": "Pdue=A(P/A,i,n)(1+i); P0=A(P/A,i,n)(P/F,i,k−1)\nAnnuity due has exactly n payments at 0…n−1; distinguish it from a series running 0…n.",
+          "ar": "Pdue=A(P/A,i,n)(1+i); P0=A(P/A,i,n)(P/F,i,k−1)\nأول الفترة تضم n دفعات عند 0 إلى n−1؛ أما السلسلة عند 0 إلى n ففيها n+1 دفعة."
+        }
+      ],
+      "id": "ee-uniform-series-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does shifting a series earlier change the payment count?",
+        "ar": "هل نقل السلسلة إلى وقت أبكر يغير عدد الدفعات؟"
+      },
+      "options": [
+        {
+          "en": "No; count and timing are independent bookkeeping tasks.",
+          "ar": "لا؛ العدد والتوقيت مسألتان مستقلتان."
+        },
+        {
+          "en": "Yes; the earlier starting point removes the last payment automatically.",
+          "ar": "نعم؛ تحذف الدفعة الأخيرة تلقائيًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; count and timing are independent bookkeeping tasks. If every payment moves one period earlier, every one receives an extra period of growth to any common future date. Multiply the ordinary-series equivalent by 1+i. For a deferred series, first find the local P one period before its first payment, then move that P to the required date. Draw the local zero above the time axis; a large share of exam errors are correct factors attached to the wrong date.",
+        "ar": "لا؛ العدد والتوقيت مسألتان مستقلتان. إذا نقلت كل دفعة فترة إلى الأمام نحو الحاضر، حصلت كلها على فترة نمو إضافية إلى الغاية المشتركة؛ لذلك تضرب المكافئ العادي في 1+i. للسلسلة المؤجلة أوجد الحالية المحلية قبل أول دفعة بفترة، ثم انقلها إلى المطلوب. علّم الصفر المحلي فوق المحور: كثير من أخطاء الاختبار عوامل صحيحة موضوعة في تاريخ خاطئ."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s05-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 108,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 118,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE03",
+          "page": 1,
+          "filename": "015 Tut.pdf"
+        },
+        {
+          "doc": "EE15",
+          "page": 1,
+          "filename": "PPIInfo_fl_corner-FEIM2-PP04Economics.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "k is the first payment date of a deferred ordinary series, measured from the required zero.",
+          "ar": "k تاريخ أول دفعة في السلسلة العادية المؤجلة."
+        },
+        {
+          "en": "Pdue=A(P/A,i,n)(1+i); P0=A(P/A,i,n)(P/F,i,k−1)\nAnnuity due has exactly n payments at 0…n−1; distinguish it from a series running 0…n.",
+          "ar": "Pdue=A(P/A,i,n)(1+i); P0=A(P/A,i,n)(P/F,i,k−1)\nأول الفترة تضم n دفعات عند 0 إلى n−1؛ أما السلسلة عند 0 إلى n ففيها n+1 دفعة."
+        }
+      ],
+      "id": "ee-uniform-series-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Pay 100 CU at t=0,1,2,3 with i=10%. Find present cost as a positive magnitude.",
+        "ar": "ادفع 100 عند 0 و 1 و 2 و 3 بمعدل 10%. أوجد مقدار الحالية."
+      },
+      "expected": 348.68519909842246,
+      "tolerance": 0.00697370398196845,
+      "unit": "CU",
+      "solution": {
+        "en": "P=100+100(P/A,10%,3)=348.685199 CU. Equivalent due form:100(P/A,10%,4)×1.1.",
+        "ar": "P=100+100(P/A,10%,3)=348.685199."
+      }
+    },
+    {
+      "concept": "ee-uniform-series-s05-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 108,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 118,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE03",
+          "page": 1,
+          "filename": "015 Tut.pdf"
+        },
+        {
+          "doc": "EE15",
+          "page": 1,
+          "filename": "PPIInfo_fl_corner-FEIM2-PP04Economics.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "k is the first payment date of a deferred ordinary series, measured from the required zero.",
+          "ar": "k تاريخ أول دفعة في السلسلة العادية المؤجلة."
+        },
+        {
+          "en": "Pdue=A(P/A,i,n)(1+i); P0=A(P/A,i,n)(P/F,i,k−1)\nAnnuity due has exactly n payments at 0…n−1; distinguish it from a series running 0…n.",
+          "ar": "Pdue=A(P/A,i,n)(1+i); P0=A(P/A,i,n)(P/F,i,k−1)\nأول الفترة تضم n دفعات عند 0 إلى n−1؛ أما السلسلة عند 0 إلى n ففيها n+1 دفعة."
+        }
+      ],
+      "id": "ee-uniform-series-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A repayment starts exactly 3 years after borrowing and repeats quarterly. Where is its ordinary annuity P?",
+        "ar": "يبدأ السداد بعد 3 سنوات تمامًا ويتكرر ربع سنويًا. أين تقع حالية السلسلة العادية؟"
+      },
+      "options": [
+        {
+          "en": "At 3 years immediately before the first payment with no adjustment.",
+          "ar": "عند 3 سنوات بلا تعديل."
+        },
+        {
+          "en": "At 2.75 years: one quarter before the first payment.",
+          "ar": "عند 2.75 سنة، ربع سنة قبل الدفعة الأولى."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "At 2.75 years: one quarter before the first payment. A/P assumes the first payment follows its P by one full payment period.",
+        "ar": "عند 2.75 سنة، ربع سنة قبل الدفعة الأولى. يفترض A/P أن أول قسط يلي موضع P بفترة دفع كاملة."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-uniform-series-s01-recall",
+      "concept": "ee-uniform-series-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Count the first and last arrows",
+        "ar": "اشرح: عدّ السهم الأول والأخير"
+      },
+      "a": {
+        "en": "P/A lands one period before the first arrow, not at an arbitrary present date.",
+        "ar": "يقع P/A قبل السهم الأول بفترة، لا في حاضر اعتباطي."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s01-formula",
+      "concept": "ee-uniform-series-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\ncount = last index − first index + 1",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\ncount = last index − first index + 1"
+      },
+      "a": {
+        "en": "Indices are payment dates in the chosen period clock. Count actual arrows; a duration alone does not say whether both endpoints contain a payment.",
+        "ar": "المؤشرات تواريخ الدفع وفق ساعة الفترات المختارة. عد السهام الفعلية؛ المدة وحدها لا تحدد الدفع عند الطرفين."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s01-trap",
+      "concept": "ee-uniform-series-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; the final year number is always the payment count.",
+        "ar": "يقول متعلم: نعم؛ رقم السنة الأخيرة هو عدد الدفعات دائمًا."
+      },
+      "a": {
+        "en": "No; include t=0 and both stated endpoints. P/A lands one period before the first arrow, not at an arbitrary present date.",
+        "ar": "لا؛ احسب الصفر والطرفين المحددين. يقع P/A قبل السهم الأول بفترة، لا في حاضر اعتباطي."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s02-recall",
+      "concept": "ee-uniform-series-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Build savings toward a future target",
+        "ar": "اشرح: كوّن ادخارًا لهدف مستقبلي"
+      },
+      "a": {
+        "en": "A factor’s removable zero-rate singularity has a simple cash-counting meaning.",
+        "ar": "لموضععدم التعيين عند صفر معنىبسيط بعدّالمبالغ."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s02-formula",
+      "concept": "ee-uniform-series-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nF=A[(1+i)^n−1]/i; A=F i/[(1+i)^n−1]",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nF=A[(1+i)^n−1]/i; A=F i/[(1+i)^n−1]"
+      },
+      "a": {
+        "en": "A is currency each payment; F is currency at the last payment date; i matches the payment spacing. Equal end-period payments, no missed dates and a constant effective payment-period rate.",
+        "ar": "A مبلغ كل دفعة و F مبلغ تاريخ الأخيرة، والمعدل يطابق تباعد الدفعات. دفعات متساوية نهاية الفترات دون انقطاع ومعدل فعّال ثابت لفترة الدفع."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s02-trap",
+      "concept": "ee-uniform-series-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; every one of n deposits earns n periods.",
+        "ar": "يقول متعلم: نعم؛ تكسب كل دفعة من n فائدة n فترات."
+      },
+      "a": {
+        "en": "No; its accumulation exponent is zero. A factor’s removable zero-rate singularity has a simple cash-counting meaning.",
+        "ar": "لا؛ أس تنميتهاصفر. لموضععدم التعيين عند صفر معنىبسيط بعدّالمبالغ."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s03-recall",
+      "concept": "ee-uniform-series-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: What repeated receipts are worth today",
+        "ar": "اشرح: قيمة المقبوضات المتكررة اليوم"
+      },
+      "a": {
+        "en": "The intermediate equivalent is at 3, exactly one period before the first receipt at 4.",
+        "ar": "يقع المكافئ الوسيط عند السنة 3، قبل أول مقبوض عند 4 بفترة واحدة."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s03-formula",
+      "concept": "ee-uniform-series-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nP=A[1−(1+i)^−n]/i",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nP=A[1−(1+i)^−n]/i"
+      },
+      "a": {
+        "en": "P is one period before the first equal payment; A may be treated as a positive magnitude with an explicitly assigned cost/receipt sign. Ordinary equal series with matching effective rate; at zero, P=nA.",
+        "ar": "P قبل أول دفعة بفترة، و A مقدار كل دفعة مع إشارة التكلفة أو المقبوض المعلنة. سلسلة عادية متساوية بمعدل فعّال متوافق. عند صفر يكون P=nA."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s03-trap",
+      "concept": "ee-uniform-series-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: No; costs require an unrelated mathematical factor.",
+        "ar": "يقول متعلم: لا؛ تحتاج التكاليف عاملًا رياضيًا مختلفًا."
+      },
+      "a": {
+        "en": "Yes; assign consistent signs to the cash flows. The intermediate equivalent is at 3, exactly one period before the first receipt at 4.",
+        "ar": "نعم؛ أسند الإشارات للتدفقات باتساق. يقع المكافئ الوسيط عند السنة 3، قبل أول مقبوض عند 4 بفترة واحدة."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s04-recall",
+      "concept": "ee-uniform-series-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Recover capital through equal payments",
+        "ar": "اشرح: استرداد الأصل بدفعات متساوية"
+      },
+      "a": {
+        "en": "The recurrence separates growth from repayment and catches negative amortization.",
+        "ar": "يفصل تكرار الرصيد النمو عن السداد ويكشف زيادة الدين رغم الدفع."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s04-formula",
+      "concept": "ee-uniform-series-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nA=P i/[1−(1+i)^−n]; Bt=Bt−1(1+i)−A",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nA=P i/[1−(1+i)^−n]; Bt=Bt−1(1+i)−A"
+      },
+      "a": {
+        "en": "Bt is debt balance immediately after payment t; B0=P. Level end-period repayments, constant effective period rate and no fees or extra payments.",
+        "ar": "Bt رصيد الدين بعد القسط t مباشرة، و B0=P. المعدل فعّال لفترة الدفع. أقساط متساوية آخر الفترات، ومعدل ثابت، ودون رسوم أو سداد إضافي."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s04-trap",
+      "concept": "ee-uniform-series-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; interest is ignored once A/P has been used.",
+        "ar": "يقول متعلم: نعم؛ تهمل الفائدة بعد استخدام A/P."
+      },
+      "a": {
+        "en": "No; part covers the period’s return on the unpaid balance. The recurrence separates growth from repayment and catches negative amortization.",
+        "ar": "لا؛ يغطي جزء منه عائد الفترة على الرصيد غير المسدد. يفصل تكرار الرصيد النمو عن السداد ويكشف زيادة الدين رغم الدفع."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s05-recall",
+      "concept": "ee-uniform-series-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Shift the series without losing a payment",
+        "ar": "اشرح: نقل السلسلة دون فقد دفعة"
+      },
+      "a": {
+        "en": "A/P assumes the first payment follows its P by one full payment period.",
+        "ar": "يفترض A/P أن أول قسط يلي موضع P بفترة دفع كاملة."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s05-formula",
+      "concept": "ee-uniform-series-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nPdue=A(P/A,i,n)(1+i); P0=A(P/A,i,n)(P/F,i,k−1)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nPdue=A(P/A,i,n)(1+i); P0=A(P/A,i,n)(P/F,i,k−1)"
+      },
+      "a": {
+        "en": "k is the first payment date of a deferred ordinary series, measured from the required zero. Annuity due has exactly n payments at 0…n−1; distinguish it from a series running 0…n.",
+        "ar": "k تاريخ أول دفعة في السلسلة العادية المؤجلة. أول الفترة تضم n دفعات عند 0 إلى n−1؛ أما السلسلة عند 0 إلى n ففيها n+1 دفعة."
+      }
+    },
+    {
+      "id": "ee-uniform-series-s05-trap",
+      "concept": "ee-uniform-series-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; the earlier starting point removes the last payment automatically.",
+        "ar": "يقول متعلم: نعم؛ تحذف الدفعة الأخيرة تلقائيًا."
+      },
+      "a": {
+        "en": "No; count and timing are independent bookkeeping tasks. A/P assumes the first payment follows its P by one full payment period.",
+        "ar": "لا؛ العدد والتوقيت مسألتان مستقلتان. يفترض A/P أن أول قسط يلي موضع P بفترة دفع كاملة."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE06",
+      "page": 20,
+      "filename": "chapter 3 EnEc.pdf"
+    },
+    {
+      "doc": "EE06",
+      "page": 28,
+      "filename": "chapter 3 EnEc.pdf"
+    },
+    {
+      "doc": "EE06",
+      "page": 32,
+      "filename": "chapter 3 EnEc.pdf"
+    }
+  ],
+  "videoIds": [
+    "xPaQedaiNTU",
+    "fo0L6NZGZX8"
+  ]
+}

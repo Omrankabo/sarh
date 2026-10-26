@@ -1,0 +1,1194 @@
+{
+  "id": "influence-numerical",
+  "family": "influence",
+  "title": {
+    "en": "Numerical influence lines: shape into ordinates",
+    "ar": "خطوط التأثير العددية: من الشكل إلى الإحداثيات"
+  },
+  "summary": {
+    "en": "Build ordinates from compatibility and conjugate-beam statics, then verify them against direct equilibrium. Read the support symbols before using any formula.",
+    "ar": "كوّن الإحداثيات من التوافق واستاتيكا الكمرة المرافقة ثم تحقق بالاتزان المباشر. اقرأ رموز المساند قبل استعمال أي معادلة."
+  },
+  "outcomes": [
+    {
+      "en": "Normalize an elastic release without inventing stiffness values.",
+      "ar": "طبّع تحريراً مرناً دون اختلاق قيم الصلابة."
+    },
+    {
+      "en": "Transform conjugate-beam supports using slope and deflection conditions.",
+      "ar": "حوّل مساند الكمرة المرافقة من شروط الميل والإزاحة."
+    },
+    {
+      "en": "Solve the supplied 12 m propped-cantilever influence-line test.",
+      "ar": "حل مسألة اختبار الكابولي المسند بطول 12 m."
+    }
+  ],
+  "prereqIds": [
+    "units",
+    "algebra",
+    "supports",
+    "loads",
+    "diagrams",
+    "shape",
+    "rigidity",
+    "compatibility"
+  ],
+  "concepts": [
+    {
+      "id": "in-release",
+      "title": {
+        "en": "Normalize the release",
+        "ar": "تطبيع التحرير"
+      }
+    },
+    {
+      "id": "in-conjugate",
+      "title": {
+        "en": "Conjugate boundary conditions",
+        "ar": "شروط حدود الكمرة المرافقة"
+      }
+    },
+    {
+      "id": "in-integrate",
+      "title": {
+        "en": "Integrate curvature by statics",
+        "ar": "تكامل التقوس بالاستاتيكا"
+      }
+    },
+    {
+      "id": "in-stiffness",
+      "title": {
+        "en": "Absolute and relative stiffness",
+        "ar": "الصلابة المطلقة والنسبية"
+      }
+    },
+    {
+      "id": "in-propped",
+      "title": {
+        "en": "Propped-cantilever compatibility",
+        "ar": "توافق الكابولي المسند"
+      }
+    },
+    {
+      "id": "in-section",
+      "title": {
+        "en": "Recover a section response",
+        "ar": "استرجاع أثر مقطع"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "in-release",
+      "title": {
+        "en": "Measure a shape, then divide",
+        "ar": "قس الشكل ثم اقسم"
+      },
+      "predict": {
+        "en": "If a release is caused by a convenient force F=7 rather than F=1, must the entire analysis be repeated?",
+        "ar": "إذا سبب التحرير حمل مناسب F=7 بدلاً من F=1، فهل نعيد التحليل كاملاً؟"
+      },
+      "options": [
+        {
+          "en": "Yes; only a unit force works.",
+          "ar": "نعم؛ يلزم حمل وحدة حصراً."
+        },
+        {
+          "en": "No; normalize by the measured release movement.",
+          "ar": "لا؛ نطبّع بإزاحة التحرير المقاسة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "The lecture releases support A of a continuous beam A–B–C, with spans 6 m and 6 m. All displacement ordinates scale with the applied release force.",
+        "ar": "تحرر المحاضرة المسند A في كمرة مستمرة A–B–C ببحرين 6 m و6 m. تتناسب كل إحداثيات الإزاحة مع قوة التحرير."
+      },
+      "explain": {
+        "en": "The force creates the shape; its magnitude does not survive division by the support movement. Use signed numerator and denominator from the same displacement convention.",
+        "ar": "القوة تنشئ الشكل، لكن مقدارها يختزل عند القسمة على إزاحة المسند. استخدم بسطاً ومقاماً جبريين من اصطلاح الإزاحة نفسه."
+      },
+      "formula": "ηRA(x)=y(x)/y(A)",
+      "symbols": {
+        "en": "y(x) is the release displacement at the moving-load location; y(A) is displacement of released A. Their common F/EI factor cancels.",
+        "ar": "y(x) إزاحة التحرير عند موضع الحمل المتحرك، وy(A) إزاحة A المحرر. يختزل عامل F/EI المشترك."
+      },
+      "assumptions": {
+        "en": "Small-deflection linear elastic bending; stated supports and positive signs; constant EI only where explicitly stated. All source diagrams must be read before applying a beam formula.",
+        "ar": "انحناء خطي مرن بإزاحات صغيرة مع المساند والإشارات المحددة. لا نفترض ثبات EI إلا حيث يذكر. يجب قراءة الرسم قبل تطبيق معادلة كمرة."
+      },
+      "example": {
+        "en": "Lecture 7, equal 6 m spans: at x=3 m from A, y=−58.5 and y(A)=−144 in consistent scaled units.",
+        "ar": "المحاضرة 7، بحران متساويان 6 m: عند x=3 m من A، تكون y=−58.5 وy(A)=−144 بوحدات مقيّسة متسقة."
+      },
+      "calculation": {
+        "en": "ηRA(3)=−58.5/(−144)=0.40625. A downward 80 kN load gives RA=32.5 kN.",
+        "ar": "ηRA(3)=−58.5/(−144)=0.40625. يعطي حمل 80 kN لأسفل رد فعل RA=32.5 kN."
+      },
+      "interpret": {
+        "en": "A ratio of two negative movements can be positive. Choose signs algebraically before interpreting a sketch.",
+        "ar": "قد تكون نسبة إزاحتين سالبتين موجبة. احسم الإشارة جبرياً قبل تفسير الرسم."
+      },
+      "check": {
+        "prompt": {
+          "en": "Multiply the release force by 3: what happens to η?",
+          "ar": "إذا تضاعفت قوة التحرير ثلاث مرات، ماذا يحدث للإحداثي؟"
+        },
+        "answer": {
+          "en": "It stays unchanged because every displacement in the ratio triples.",
+          "ar": "يبقى ثابتاً لأن كل إزاحة في النسبة تتضاعف ثلاث مرات."
+        }
+      },
+      "diagram": "influence",
+      "concepts": [
+        "in-release"
+      ],
+      "sources": [
+        {
+          "doc": "19",
+          "page": 2,
+          "filename": "Lecture (7)- influence lines....pdf"
+        },
+        {
+          "doc": "19",
+          "page": 3,
+          "filename": "Lecture (7)- influence lines....pdf"
+        },
+        {
+          "doc": "19",
+          "page": 5,
+          "filename": "Lecture (7)- influence lines....pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-conjugate",
+      "title": {
+        "en": "Build the beam that integrates for you",
+        "ar": "أنشئ الكمرة التي تتكامل نيابة عنك"
+      },
+      "predict": {
+        "en": "A real fixed end has zero displacement and slope. What must vanish at the matching conjugate end?",
+        "ar": "عند تثبيت الطرف الحقيقي تكون الإزاحة والميل صفراً. ماذا يجب أن ينعدم في الطرف المرافق؟"
+      },
+      "options": [
+        {
+          "en": "Conjugate bending moment and shear.",
+          "ar": "العزم والقص في الكمرة المرافقة."
+        },
+        {
+          "en": "Only conjugate loading.",
+          "ar": "حمل الكمرة المرافقة فقط."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "In the conjugate beam, shear represents the real slope and bending moment represents real displacement. A fixed real end therefore becomes a free conjugate end.",
+        "ar": "قص الكمرة المرافقة يمثل ميل الكمرة الحقيقية وعزمها يمثل الإزاحة. لذلك يتحول التثبيت الحقيقي إلى طرف حر مرافق."
+      },
+      "explain": {
+        "en": "Transform conditions, not icons from memory: fixed↔free; an end pin remains an end pin. A real interior simple support requires zero conjugate moment and becomes an internal hinge, while maintaining the needed continuity conditions.",
+        "ar": "حوّل الشروط لا الرموز المحفوظة: مثبت↔حر، والمسند المفصلي الطرفي يبقى مفصلياً. المسند البسيط الداخلي الحقيقي يفرض عزماً مرافقاً صفراً فيصبح مفصلاً داخلياً مع مراعاة شروط الاتصال."
+      },
+      "formula": "w*=M/EI; V*=θ; M*=y",
+      "symbols": {
+        "en": "Starred quantities belong to the conjugate beam. The sign mapping depends on a consistent curvature/deflection convention; use one convention throughout.",
+        "ar": "الكميات ذات النجمة تخص الكمرة المرافقة. تتبع الإشارات اصطلاح التقوس والإزاحة المتسق؛ استخدم اصطلاحاً واحداً طوال الحل."
+      },
+      "assumptions": {
+        "en": "Small-deflection linear elastic bending; stated supports and positive signs; constant EI only where explicitly stated. All source diagrams must be read before applying a beam formula.",
+        "ar": "انحناء خطي مرن بإزاحات صغيرة مع المساند والإشارات المحددة. لا نفترض ثبات EI إلا حيث يذكر. يجب قراءة الرسم قبل تطبيق معادلة كمرة."
+      },
+      "example": {
+        "en": "Authored mapping: a real cantilever fixed at A and free at B becomes free at A and fixed at B in the conjugate beam.",
+        "ar": "تحويل مؤلف: الكابولي الحقيقي المثبت عند A والحر عند B يصبح حراً عند A ومثبتاً عند B في الكمرة المرافقة."
+      },
+      "calculation": {
+        "en": "At real A: θA=yA=0, hence V*A=M*A=0. These are precisely free-end conjugate conditions.",
+        "ar": "عند A الحقيقي: θA=yA=0، إذن V*A=M*A=0. هذه شروط الطرف الحر المرافق تماماً."
+      },
+      "interpret": {
+        "en": "Do not turn the roller at B in the supplied test into a free end. Its yB=0 is a physical boundary condition.",
+        "ar": "لا تحول بكرة B في الاختبار المرفق إلى طرف حر. الشرط yB=0 قيد فيزيائي حقيقي."
+      },
+      "check": {
+        "prompt": {
+          "en": "Why does an end pin remain an end pin?",
+          "ar": "لماذا يبقى المفصل الطرفي مفصلاً طرفياً؟"
+        },
+        "answer": {
+          "en": "Real y=0 corresponds to conjugate M*=0, while real slope and conjugate shear can be nonzero.",
+          "ar": "الإزاحة الحقيقية y=0 تقابل عزماً مرافقاً M*=0، بينما يمكن أن يكون الميل الحقيقي والقص المرافق غير صفريين."
+        }
+      },
+      "diagram": "influence",
+      "concepts": [
+        "in-conjugate"
+      ],
+      "sources": [
+        {
+          "doc": "18",
+          "page": 9,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 10,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-integrate",
+      "title": {
+        "en": "Treat curvature as a signed load",
+        "ar": "عامل التقوس كحمل جبري"
+      },
+      "predict": {
+        "en": "If the real M/EI diagram has a negative region, should its conjugate load be replaced by its absolute value?",
+        "ar": "إذا كانت منطقة M/EI الحقيقية سالبة، هل نعوض الحمل المرافق بقيمتها المطلقة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; all load areas are positive.",
+          "ar": "نعم؛ جميع مساحات الأحمال موجبة."
+        },
+        {
+          "en": "No; its sign determines the resulting slope and displacement.",
+          "ar": "لا؛ إشارتها تحدد الميل والإزاحة الناتجين."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Construct the real M diagram for the release load, divide each member by its EI, then solve the conjugate beam by equilibrium. Integrating once changes slope; integrating again changes displacement.",
+        "ar": "ارسم عزم المنشأ الحقيقي تحت حمل التحرير واقسم كل عضو على EI الخاص به ثم حل الكمرة المرافقة بالاتزان. التكامل الأول يغير الميل والثاني يغير الإزاحة."
+      },
+      "explain": {
+        "en": "This is not another bending-moment diagram of the original load. It is a statics tool that integrates curvature. Use distances and centroid positions carefully; a triangular load area acts at one third of its base from the larger end.",
+        "ar": "هذا ليس مخطط عزم آخر للحمل الأصلي؛ إنه أداة استاتيكية لتكامل التقوس. اضبط المسافات ومراكز المساحات؛ محصلة المثلث تقع عند ثلث القاعدة من الطرف الأكبر."
+      },
+      "formula": "Δθ=∫(M/EI) dx; y=M*",
+      "symbols": {
+        "en": "M/EI has units 1/m; its area is a rotation in radians. The first moment of that area has length units.",
+        "ar": "وحدة M/EI هي 1/m؛ ومساحته دوران بالراديان. العزم الأول لتلك المساحة له وحدة طول."
+      },
+      "assumptions": {
+        "en": "Small-deflection linear elastic bending; stated supports and positive signs; constant EI only where explicitly stated. All source diagrams must be read before applying a beam formula.",
+        "ar": "انحناء خطي مرن بإزاحات صغيرة مع المساند والإشارات المحددة. لا نفترض ثبات EI إلا حيث يذكر. يجب قراءة الرسم قبل تطبيق معادلة كمرة."
+      },
+      "example": {
+        "en": "Lecture 7 right span, coordinate u measured from C toward B: y=6u−u³/6, with y(A)=−144. At global x=10 m, u=2 m.",
+        "ar": "المحاضرة 7، البحر الأيمن وإحداثيه u من C نحو B: y=6u−u³/6 وy(A)=−144. عند x=10 m عالمياً، u=2 m."
+      },
+      "calculation": {
+        "en": "y=12−8/6=10.666667; ηRA=10.666667/(−144)=−0.074074. The printed table’s −0.081 at this location is inconsistent with its own polynomial.",
+        "ar": "y=12−8/6=10.666667؛ ηRA=10.666667/(−144)=−0.074074. القيمة المطبوعة −0.081 عند هذا الموضع لا تتفق مع كثيرة الحدود المطبوعة نفسها."
+      },
+      "interpret": {
+        "en": "Keep the coordinate origin beside every expression. A correct polynomial evaluated with the wrong origin gives a wrong influence line.",
+        "ar": "اكتب أصل الإحداثيات بجوار كل تعبير. استعمال أصل خاطئ في كثيرة حدود صحيحة يعطي خط تأثير خاطئاً."
+      },
+      "check": {
+        "prompt": {
+          "en": "What is u at global x=9 m on this beam?",
+          "ar": "ما u عند الإحداثي العالمي x=9 m في هذه الكمرة؟"
+        },
+        "answer": {
+          "en": "u=12−9=3 m.",
+          "ar": "u=12−9=3 m."
+        }
+      },
+      "diagram": "influence",
+      "concepts": [
+        "in-integrate"
+      ],
+      "sources": [
+        {
+          "doc": "19",
+          "page": 4,
+          "filename": "Lecture (7)- influence lines....pdf"
+        },
+        {
+          "doc": "19",
+          "page": 5,
+          "filename": "Lecture (7)- influence lines....pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-stiffness",
+      "title": {
+        "en": "Know which EI cancels",
+        "ar": "اعرف أي صلابة تختزل"
+      },
+      "predict": {
+        "en": "If EI doubles everywhere, does a normalized reaction influence line change?",
+        "ar": "إذا تضاعفت EI في كل مكان، هل يتغير خط تأثير رد الفعل المطبع؟"
+      },
+      "options": [
+        {
+          "en": "No, for the same linear structure with all stiffnesses scaled equally.",
+          "ar": "لا، للمنشأ الخطي نفسه عندما تتضاعف كل الصلابات بالنسبة نفسها."
+        },
+        {
+          "en": "Yes, every ordinate doubles.",
+          "ar": "نعم، يتضاعف كل إحداثي."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Multiplying every EI by the same number reduces all force-induced displacements by that number. The normalized displacement ratio remains unchanged.",
+        "ar": "ضرب جميع قيم EI في العدد نفسه يخفض كل إزاحات الأحمال بالنسبة العكسية؛ تبقى نسبة الإزاحات المطبعة ثابتة."
+      },
+      "explain": {
+        "en": "Changing only one span’s EI changes the shape and can change reactions. The lecture’s convenient EI=1 is safe for a common constant EI, not permission to discard different member stiffnesses.",
+        "ar": "تغيير EI لبحر واحد يغير الشكل وقد يغير ردود الأفعال. افتراض المحاضرة EI=1 مناسب لصلابة ثابتة مشتركة، ولا يسمح بإهمال اختلاف صلابات الأعضاء."
+      },
+      "formula": "η=f(x,A)/f(A,A)",
+      "symbols": {
+        "en": "f is flexibility. A common multiplier 1/EI cancels; relative EI ratios remain inside the flexibility calculation.",
+        "ar": "f مرونة. يختزل عامل 1/EI المشترك بينما تبقى نسب EI النسبية ضمن حساب المرونة."
+      },
+      "assumptions": {
+        "en": "Small-deflection linear elastic bending; stated supports and positive signs; constant EI only where explicitly stated. All source diagrams must be read before applying a beam formula.",
+        "ar": "انحناء خطي مرن بإزاحات صغيرة مع المساند والإشارات المحددة. لا نفترض ثبات EI إلا حيث يذكر. يجب قراءة الرسم قبل تطبيق معادلة كمرة."
+      },
+      "example": {
+        "en": "Authored comparison: y(A)=4 mm and y(x)=1 mm. After uniform EI doubling they become 2 mm and 0.5 mm.",
+        "ar": "مقارنة مؤلفة: y(A)=4 mm وy(x)=1 mm؛ بعد مضاعفة EI للجميع تصبحان 2 mm و0.5 mm."
+      },
+      "calculation": {
+        "en": "Both ratios are 0.25. This says nothing about a beam with one span stiffened alone.",
+        "ar": "كلتا النسبتين 0.25. لا تنطبق النتيجة تلقائياً على تقوية بحر واحد فقط."
+      },
+      "interpret": {
+        "en": "Use absolute EI when actual movements are requested. Use normalized shape for influence ordinates, retaining relative stiffness.",
+        "ar": "استعمل EI المطلقة عند طلب الإزاحات الفعلية. استعمل الشكل المطبع للإحداثيات مع الاحتفاظ بالصلابة النسبية."
+      },
+      "check": {
+        "prompt": {
+          "en": "Would halving just one span’s EI necessarily leave the line unchanged?",
+          "ar": "هل تنصيف EI لبحر واحد فقط يبقي الخط دون تغيير بالضرورة؟"
+        },
+        "answer": {
+          "en": "No. Recalculate using the new relative stiffnesses.",
+          "ar": "لا. أعد الحساب باستعمال نسب الصلابة الجديدة."
+        }
+      },
+      "diagram": "influence",
+      "concepts": [
+        "in-stiffness"
+      ],
+      "sources": [
+        {
+          "doc": "19",
+          "page": 3,
+          "filename": "Lecture (7)- influence lines....pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-propped",
+      "title": {
+        "en": "Read the roller before solving the test",
+        "ar": "اقرأ البكرة قبل حل الاختبار"
+      },
+      "predict": {
+        "en": "The supplied 12 m beam has a fixed A and a roller B. Can its vertical reaction at A be 1 for every unit-load position?",
+        "ar": "الكمرة المرفقة بطول 12 m لها تثبيت A وبكرة B. هل يمكن أن يكون رد الفعل عند A مساوياً 1 لكل موضع حمل وحدة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; B is a free end.",
+          "ar": "نعم؛ B طرف حر."
+        },
+        {
+          "en": "No; B is a prop and takes a position-dependent share.",
+          "ar": "لا؛ B مسند يأخذ حصة تتغير مع موضع الحمل."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Release roller B temporarily. The resulting cantilever deflects at B under the unit load at x. Add upward RB until B returns to zero displacement.",
+        "ar": "حرر بكرة B مؤقتاً. يترخم الكابولي الناتج عند B تحت حمل الوحدة عند x. أضف RB لأعلى حتى تعود إزاحة B إلى الصفر."
+      },
+      "explain": {
+        "en": "The source drawing is a propped cantilever, not a free-ended cantilever. Compatibility, not vertical equilibrium alone, determines how the two supports share the moving load.",
+        "ar": "رسم المصدر كابولي مسند وليس كابولياً حراً. يحدد التوافق توزيع الحمل المتحرك بين المسندين، ولا يكفي اتزان القوى الرأسية."
+      },
+      "formula": "RB=x²(3L−x)/(2L³); RA=1−RB; MA,CCW=x−L RB",
+      "symbols": {
+        "en": "L=12 m; x is measured from fixed A. RB is upward; MA,CCW is the external counterclockwise support couple. Assume constant EI.",
+        "ar": "L=12 m وx من التثبيت A. RB لأعلى وMA,CCW عزم رد فعل خارجي عكس الساعة. نفترض ثبات EI."
+      },
+      "assumptions": {
+        "en": "Small-deflection linear elastic bending; stated supports and positive signs; constant EI only where explicitly stated. All source diagrams must be read before applying a beam formula.",
+        "ar": "انحناء خطي مرن بإزاحات صغيرة مع المساند والإشارات المحددة. لا نفترض ثبات EI إلا حيث يذكر. يجب قراءة الرسم قبل تطبيق معادلة كمرة."
+      },
+      "example": {
+        "en": "Recent cumulative test, Question 3: put the downward unit load at x=6 m.",
+        "ar": "الاختبار التجميعي الحديث، السؤال 3: ضع حمل الوحدة لأسفل عند x=6 m."
+      },
+      "calculation": {
+        "en": "RB=6²(36−6)/(2×12³)=0.3125; RA=0.6875; MA,CCW=6−12×0.3125=2.25 m. For P=20 kN these become 6.25 kN, 13.75 kN and 45 kN·m.",
+        "ar": "RB=6²(36−6)/(2×12³)=0.3125؛ RA=0.6875؛ MA,CCW=6−12×0.3125=2.25 m. للحمل P=20 kN تصبح 6.25 kN و13.75 kN و45 kN·m."
+      },
+      "interpret": {
+        "en": "At x=L the prop carries all the load, so RA and MA vanish. At x=0 the fixed support carries the vertical load directly. These endpoint checks catch an omitted prop.",
+        "ar": "عند x=L يحمل المسند الطرفي الحمل كله فتنعدم RA وMA. وعند x=0 يحمل التثبيت القوة الرأسية مباشرة. يكشف فحص الطرفين نسيان المسند."
+      },
+      "check": {
+        "prompt": {
+          "en": "What is RA for a downward unit load applied exactly at B?",
+          "ar": "ما RA لحمل وحدة لأسفل يقع تماماً عند B؟"
+        },
+        "answer": {
+          "en": "RA=0; RB=1; MA=0.",
+          "ar": "RA=0؛ RB=1؛ MA=0."
+        }
+      },
+      "diagram": "propped",
+      "concepts": [
+        "in-propped"
+      ],
+      "sources": [
+        {
+          "doc": "23",
+          "page": 22,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ]
+    },
+    {
+      "id": "in-section",
+      "title": {
+        "en": "Cut the beam after finding its reactions",
+        "ar": "اقطع الكمرة بعد إيجاد ردودها"
+      },
+      "predict": {
+        "en": "For the propped beam, can a load left of midspan affect the midspan moment?",
+        "ar": "في الكابولي المسند، هل يؤثر حمل يسار منتصف البحر على عزم المنتصف؟"
+      },
+      "options": [
+        {
+          "en": "Yes, through the reaction at prop B.",
+          "ar": "نعم، من خلال رد فعل المسند B."
+        },
+        {
+          "en": "No; every left-side load gives zero moment there.",
+          "ar": "لا؛ كل حمل يساري يعطي عزماً صفراً هناك."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Keep the right-hand free body at section s=6 m. RB always acts at a lever arm of 6 m; a load right of the section adds a negative contribution.",
+        "ar": "احتفظ بالجسم الحر يمين المقطع s=6 m. تؤثر RB دائماً بذراع 6 m، ويضيف الحمل الواقع يمين المقطع مساهمة سالبة."
+      },
+      "explain": {
+        "en": "Use internal sagging-positive moments, distinct from the external support couple. Combining the reactions and a section cut avoids memorizing a second unrelated formula.",
+        "ar": "استعمل عزماً داخلياً موجباً للترخيم وافصله عن عزم رد الفعل الخارجي. الجمع بين ردود الأفعال وقطع المقطع يغني عن حفظ معادلة مستقلة أخرى."
+      },
+      "formula": "ηM6(x)=6 RB(x)−max(x−6,0)",
+      "symbols": {
+        "en": "ηM6 is in metres; the max term includes the load only when it lies right of the section. For a unit load at x=3, the term is zero.",
+        "ar": "ηM6 بوحدة المتر؛ يضم حد max الحمل فقط عندما يقع يمين المقطع. عند x=3 يساوي هذا الحد صفراً."
+      },
+      "assumptions": {
+        "en": "Small-deflection linear elastic bending; stated supports and positive signs; constant EI only where explicitly stated. All source diagrams must be read before applying a beam formula.",
+        "ar": "انحناء خطي مرن بإزاحات صغيرة مع المساند والإشارات المحددة. لا نفترض ثبات EI إلا حيث يذكر. يجب قراءة الرسم قبل تطبيق معادلة كمرة."
+      },
+      "example": {
+        "en": "Supplied test ordinates at x=0,3,6,9,12 m.",
+        "ar": "إحداثيات الاختبار المرفق عند x=0,3,6,9,12 m."
+      },
+      "calculation": {
+        "en": "RA: 1, 0.9140625, 0.6875, 0.3671875, 0. External MA,CCW: 0,1.96875,2.25,1.40625,0 m. Internal ηM6: 0,0.515625,1.875,0.796875,0 m.",
+        "ar": "RA: 1,0.9140625,0.6875,0.3671875,0. عزم MA,CCW الخارجي: 0,1.96875,2.25,1.40625,0 m. الإحداثي الداخلي ηM6: 0,0.515625,1.875,0.796875,0 m."
+      },
+      "interpret": {
+        "en": "The midpoint line is nonnegative over this beam. A full-span 10 kN/m UDL therefore maximizes its positive midpoint moment: +90 kN·m, while fixed-end internal moment is −180 kN·m. These are different sections.",
+        "ar": "خط المنتصف غير سالب على طول هذه الكمرة. لذلك يغطي حمل موزع 10 kN/m كامل البحر لتحقيق أكبر عزم موجب بالمنتصف: +90 kN·m، بينما العزم الداخلي عند التثبيت −180 kN·m. هذان مقطعان مختلفان."
+      },
+      "check": {
+        "prompt": {
+          "en": "A 20 kN load at x=9 m: what is M6?",
+          "ar": "حمل 20 kN عند x=9 m: ما M6؟"
+        },
+        "answer": {
+          "en": "20×0.796875=+15.9375 kN·m.",
+          "ar": "20×0.796875=+15.9375 kN·m."
+        }
+      },
+      "diagram": "propped",
+      "concepts": [
+        "in-section"
+      ],
+      "sources": [
+        {
+          "doc": "23",
+          "page": 22,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "in-q1",
+      "concept": "in-release",
+      "type": "numerical",
+      "prompt": {
+        "en": "For the lecture 6+6 m beam, y(3)=−58.5 and y(A)=−144. Find ηRA(3).",
+        "ar": "في كمرة المحاضرة 6+6 m، y(3)=−58.5 وy(A)=−144. أوجد ηRA(3)."
+      },
+      "hints": [
+        {
+          "en": "Normalize by support movement.",
+          "ar": "طبّع بإزاحة المسند."
+        },
+        {
+          "en": "Write η=−58.5/(−144); the two negative signs cancel.",
+          "ar": "اكتب η=−58.5/(−144)؛ تلغى الإشارتان السالبتان."
+        }
+      ],
+      "solution": {
+        "en": "η=−58.5/(−144)=0.40625.",
+        "ar": "η=−58.5/(−144)=0.40625."
+      },
+      "sources": [
+        {
+          "doc": "19",
+          "page": 2,
+          "filename": "Lecture (7)- influence lines....pdf"
+        },
+        {
+          "doc": "19",
+          "page": 3,
+          "filename": "Lecture (7)- influence lines....pdf"
+        },
+        {
+          "doc": "19",
+          "page": 5,
+          "filename": "Lecture (7)- influence lines....pdf"
+        }
+      ],
+      "expected": 0.40625,
+      "tolerance": 0.0001
+    },
+    {
+      "id": "in-q2",
+      "concept": "in-release",
+      "type": "conceptual",
+      "prompt": {
+        "en": "What must be divided out of a non-unit reaction release?",
+        "ar": "ما الذي يجب القسمة عليه في تحرير رد فعل بإزاحة ليست وحدة؟"
+      },
+      "hints": [
+        {
+          "en": "Use the corresponding generalized movement.",
+          "ar": "استخدم الحركة المعممة الموافقة."
+        },
+        {
+          "en": "Normalize by the displacement of the released support, not by an arbitrary beam reading.",
+          "ar": "طبّع بإزاحة المسند المحرر لا بقراءة عشوائية من الكمرة."
+        }
+      ],
+      "solution": {
+        "en": "Divide each displacement ordinate by the released support displacement, preserving signs.",
+        "ar": "اقسم كل إزاحة على إزاحة المسند المحرر مع حفظ الإشارات."
+      },
+      "sources": [
+        {
+          "doc": "19",
+          "page": 2,
+          "filename": "Lecture (7)- influence lines....pdf"
+        },
+        {
+          "doc": "19",
+          "page": 3,
+          "filename": "Lecture (7)- influence lines....pdf"
+        },
+        {
+          "doc": "19",
+          "page": 5,
+          "filename": "Lecture (7)- influence lines....pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "The span length only",
+          "ar": "طول البحر فقط"
+        },
+        {
+          "en": "The imposed support movement",
+          "ar": "إزاحة المسند المفروضة"
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "in-q3",
+      "concept": "in-conjugate",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A real free end transforms into which conjugate end?",
+        "ar": "إلى ماذا يتحول الطرف الحر الحقيقي في الكمرة المرافقة؟"
+      },
+      "hints": [
+        {
+          "en": "Real slope and displacement may both be nonzero.",
+          "ar": "يمكن أن يكون الميل والإزاحة الحقيقيان غير صفريين."
+        },
+        {
+          "en": "The conjugate end needs both shear and moment to represent real slope and deflection.",
+          "ar": "يحتاج الطرف المرافق إلى قص وعزم لتمثيل الميل والإزاحة الحقيقيين."
+        }
+      ],
+      "solution": {
+        "en": "A fixed conjugate end can supply both shear and moment, representing slope and displacement.",
+        "ar": "الطرف المثبت المرافق يوفر القص والعزم اللذين يمثلان الميل والإزاحة."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 9,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 10,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Fixed",
+          "ar": "مثبت"
+        },
+        {
+          "en": "Free",
+          "ar": "حر"
+        },
+        {
+          "en": "Always a simple pin",
+          "ar": "مفصل بسيط دائماً"
+        }
+      ],
+      "correct": 0
+    },
+    {
+      "id": "in-q4",
+      "concept": "in-conjugate",
+      "type": "conceptual",
+      "prompt": {
+        "en": "What does conjugate-beam shear represent?",
+        "ar": "ماذا يمثل قص الكمرة المرافقة؟"
+      },
+      "hints": [
+        {
+          "en": "Integrate M/EI once.",
+          "ar": "كامل M/EI مرة واحدة."
+        },
+        {
+          "en": "Conjugate loading is M/EI: its shear is θ and its moment is y.",
+          "ar": "حمل الكمرة المرافقة M/EI؛ قصها θ وعزمها y."
+        }
+      ],
+      "solution": {
+        "en": "It represents real-beam slope θ; conjugate moment represents real deflection y.",
+        "ar": "يمثل ميل الكمرة الحقيقية θ؛ أما العزم المرافق فيمثل الترخيم الحقيقي y."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 9,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 10,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Real slope",
+          "ar": "الميل الحقيقي"
+        },
+        {
+          "en": "Real bending moment",
+          "ar": "العزم الحقيقي"
+        }
+      ],
+      "correct": 0
+    },
+    {
+      "id": "in-q5",
+      "concept": "in-integrate",
+      "type": "numerical",
+      "prompt": {
+        "en": "Lecture right span: u=2, y=6u−u³/6 and y(A)=−144. Find the reaction ordinate.",
+        "ar": "البحر الأيمن بالمحاضرة: u=2 وy=6u−u³/6 وy(A)=−144. أوجد إحداثي رد الفعل."
+      },
+      "hints": [
+        {
+          "en": "First calculate y, then divide by −144.",
+          "ar": "احسب y ثم اقسم على −144."
+        },
+        {
+          "en": "Evaluate (6×2−2³/6)/(−144), preserving the denominator sign.",
+          "ar": "احسب (6×2−2³/6)/(−144) مع الاحتفاظ بإشارة المقام."
+        }
+      ],
+      "solution": {
+        "en": "y=10.666667; η=−0.0740741. This corrects a printed rounding/table inconsistency.",
+        "ar": "y=10.666667؛ η=−0.0740741. تصحح هذه القيمة عدم اتساق الجدول المطبوع."
+      },
+      "sources": [
+        {
+          "doc": "19",
+          "page": 4,
+          "filename": "Lecture (7)- influence lines....pdf"
+        },
+        {
+          "doc": "19",
+          "page": 5,
+          "filename": "Lecture (7)- influence lines....pdf"
+        }
+      ],
+      "expected": -0.074074074,
+      "tolerance": 0.0001
+    },
+    {
+      "id": "in-q6",
+      "concept": "in-integrate",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: constant curvature M/EI=0.002 per metre over 4 m. Find the slope change in radians.",
+        "ar": "مؤلف: تقوس ثابت M/EI=0.002 لكل متر على طول 4 m. أوجد تغير الميل بالراديان."
+      },
+      "hints": [
+        {
+          "en": "Slope change is signed curvature area.",
+          "ar": "تغير الميل مساحة التقوس الجبرية."
+        },
+        {
+          "en": "Integrate the constant curvature: Δθ=(M/EI)L.",
+          "ar": "كامل التقوس الثابت: Δθ=(M/EI)L."
+        }
+      ],
+      "solution": {
+        "en": "Δθ=0.002×4=0.008 rad. A second integration with boundary conditions is needed for displacement.",
+        "ar": "Δθ=0.002×4=0.008 rad. تتطلب الإزاحة تكاملاً ثانياً وشروط الحدود."
+      },
+      "sources": [
+        {
+          "doc": "19",
+          "page": 4,
+          "filename": "Lecture (7)- influence lines....pdf"
+        },
+        {
+          "doc": "19",
+          "page": 5,
+          "filename": "Lecture (7)- influence lines....pdf"
+        }
+      ],
+      "expected": 0.008,
+      "tolerance": 1e-05,
+      "unit": "rad"
+    },
+    {
+      "id": "in-q7",
+      "concept": "in-stiffness",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Which change can alter the normalized influence line?",
+        "ar": "أي تغيير يمكن أن يغير خط التأثير المطبع؟"
+      },
+      "hints": [
+        {
+          "en": "Common stiffness scale differs from changing relative member stiffness.",
+          "ar": "ميز مقياس الصلابة المشترك عن تغيير الصلابات النسبية."
+        },
+        {
+          "en": "Compare a common multiplier on every EI with changing the EI ratio between spans.",
+          "ar": "قارن ضرب كل EI بمعامل مشترك بتغيير نسبة EI بين البحور."
+        }
+      ],
+      "solution": {
+        "en": "Stiffening only one span changes relative stiffness; multiplying every EI equally does not change the normalized line.",
+        "ar": "تقوية بحر واحد تغير الصلابة النسبية؛ مضاعفة EI للجميع بالتساوي لا تغير الخط المطبع."
+      },
+      "sources": [
+        {
+          "doc": "19",
+          "page": 3,
+          "filename": "Lecture (7)- influence lines....pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Multiply every EI by 2",
+          "ar": "مضاعفة EI للجميع"
+        },
+        {
+          "en": "Multiply only one span’s EI by 2",
+          "ar": "مضاعفة EI لبحر واحد فقط"
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "in-q8",
+      "concept": "in-stiffness",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: y(A)=8 mm and y(x)=2 mm. Every EI triples. What is the new normalized ordinate?",
+        "ar": "مؤلف: y(A)=8 mm وy(x)=2 mm. تتضاعف EI للجميع ثلاث مرات. ما الإحداثي المطبع الجديد؟"
+      },
+      "hints": [
+        {
+          "en": "The common displacement scale cancels.",
+          "ar": "يختزل مقياس الإزاحة المشترك."
+        },
+        {
+          "en": "Write (2/3)/(8/3); the common multiplier cancels from the ratio.",
+          "ar": "اكتب (2/3)/(8/3)؛ يُختزل المعامل المشترك من النسبة."
+        }
+      ],
+      "solution": {
+        "en": "(2/3)/(8/3)=0.25. Absolute displacements reduce, but the ratio stays unchanged.",
+        "ar": "(2/3)/(8/3)=0.25. تقل الإزاحات المطلقة لكن النسبة ثابتة."
+      },
+      "sources": [
+        {
+          "doc": "19",
+          "page": 3,
+          "filename": "Lecture (7)- influence lines....pdf"
+        }
+      ],
+      "expected": 0.25,
+      "tolerance": 0.001
+    },
+    {
+      "id": "in-q9",
+      "concept": "in-propped",
+      "type": "numerical",
+      "prompt": {
+        "en": "Supplied test, fixed A/roller B, L=12 m: find RB for a downward unit load at x=3 m.",
+        "ar": "الاختبار المرفق: تثبيت A وبكرة B وL=12 m. أوجد RB لحمل وحدة لأسفل عند x=3 m."
+      },
+      "hints": [
+        {
+          "en": "Use x²(3L−x)/(2L³).",
+          "ar": "استخدم x²(3L−x)/(2L³)."
+        },
+        {
+          "en": "For the fixed/roller beam use RB=x²(3L−x)/(2L³), not free-cantilever equilibrium.",
+          "ar": "للكمرة المثبتة والمسندة استخدم RB=x²(3L−x)/(2L³)، لا نموذج كابولي حر."
+        }
+      ],
+      "solution": {
+        "en": "RB=9×33/3456=0.0859375. Treating B as free would incorrectly give zero.",
+        "ar": "RB=9×33/3456=0.0859375. اعتبار B حراً يعطي صفراً خطأً."
+      },
+      "sources": [
+        {
+          "doc": "23",
+          "page": 22,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ],
+      "expected": 0.0859375,
+      "tolerance": 1e-05
+    },
+    {
+      "id": "in-q10",
+      "concept": "in-propped",
+      "type": "numerical",
+      "prompt": {
+        "en": "Same test: find external counterclockwise support-moment ordinate at x=9 m, in metres.",
+        "ar": "الاختبار نفسه: أوجد إحداثي عزم رد الفعل الخارجي عكس الساعة عند x=9 m بوحدة m."
+      },
+      "hints": [
+        {
+          "en": "Compute RB first, then x−12RB.",
+          "ar": "احسب RB أولاً ثم x−12RB."
+        },
+        {
+          "en": "Use the unit-load moment balance MA,CCW=x−L RB.",
+          "ar": "استخدم اتزان العزوم لحمل الوحدة MA,CCW=x−L RB."
+        }
+      ],
+      "solution": {
+        "en": "RB=0.6328125, so MA,CCW=9−12×0.6328125=1.40625 m.",
+        "ar": "RB=0.6328125، إذن MA,CCW=9−12×0.6328125=1.40625 m."
+      },
+      "sources": [
+        {
+          "doc": "23",
+          "page": 22,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ],
+      "expected": 1.40625,
+      "tolerance": 0.0001,
+      "unit": "m"
+    },
+    {
+      "id": "in-q11",
+      "concept": "in-section",
+      "type": "numerical",
+      "prompt": {
+        "en": "Same test: a 20 kN load lies at x=9 m. Find internal sagging-positive moment at s=6 m.",
+        "ar": "الاختبار نفسه: حمل 20 kN عند x=9 m. أوجد العزم الداخلي الموجب للترخيم عند s=6 m."
+      },
+      "hints": [
+        {
+          "en": "Use 20[6RB−(9−6)].",
+          "ar": "استخدم 20[6RB−(9−6)]."
+        },
+        {
+          "en": "At s=6 use M=20[RB(12−6)−(9−6)] with RB evaluated for x=9.",
+          "ar": "عند s=6 استخدم M=20[RB(12−6)−(9−6)] واحسب RB عند x=9."
+        }
+      ],
+      "solution": {
+        "en": "20[6×0.6328125−3]=+15.9375 kN·m.",
+        "ar": "20[6×0.6328125−3]=+15.9375 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "23",
+          "page": 22,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ],
+      "expected": 15.9375,
+      "tolerance": 0.001,
+      "unit": "kN·m"
+    },
+    {
+      "id": "in-q12",
+      "concept": "in-section",
+      "type": "mixed",
+      "prompt": {
+        "en": "The supplied beam carries a full-span 10 kN/m UDL. Enter its internal midpoint moment, sagging positive.",
+        "ar": "تحمل كمرة الاختبار حملاً موزعاً 10 kN/m على كامل البحر. أدخل عزم المنتصف الداخلي موجباً للترخيم."
+      },
+      "hints": [
+        {
+          "en": "Full-load RB=3wL/8=45 kN. Cut the right half.",
+          "ar": "RB=3wL/8=45 kN للحمل الكامل. اقطع النصف الأيمن."
+        },
+        {
+          "en": "M6=RB×6−w×6×3.",
+          "ar": "M6=RB×6−w×6×3."
+        }
+      ],
+      "solution": {
+        "en": "M6=45×6−10×6×3=+90 kN·m. The −180 kN·m value belongs at fixed A, not midpoint.",
+        "ar": "M6=45×6−10×6×3=+90 kN·m. القيمة −180 kN·m تخص التثبيت A لا المنتصف."
+      },
+      "sources": [
+        {
+          "doc": "23",
+          "page": 22,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ],
+      "expected": 90,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    }
+  ],
+  "cards": [
+    {
+      "id": "in-c1",
+      "concept": "in-release",
+      "kind": "decision",
+      "q": {
+        "en": "What makes a non-unit release usable?",
+        "ar": "ما الذي يجعل تحريراً غير وحدي صالحاً؟"
+      },
+      "a": {
+        "en": "Divide the measured shape by its own imposed release displacement or relative rotation.",
+        "ar": "اقسم الشكل المقاس على إزاحة التحرير أو دورانه النسبي نفسه."
+      }
+    },
+    {
+      "id": "in-c2",
+      "concept": "in-release",
+      "kind": "calculation",
+      "q": {
+        "en": "−58.5 divided by −144?",
+        "ar": "ما −58.5 مقسوماً على −144؟"
+      },
+      "a": {
+        "en": "0.40625: the lecture reaction ordinate 3 m from A.",
+        "ar": "0.40625: إحداثي رد الفعل في المحاضرة على بعد 3 m من A."
+      }
+    },
+    {
+      "id": "in-c3",
+      "concept": "in-conjugate",
+      "kind": "interpretation",
+      "q": {
+        "en": "Real fixed end → conjugate ?",
+        "ar": "طرف حقيقي مثبت ← ماذا في المرافق؟"
+      },
+      "a": {
+        "en": "Free end, because real θ=y=0 requires conjugate V*=M*=0.",
+        "ar": "طرف حر، لأن θ=y=0 الحقيقيتين تفرضان V*=M*=0 في المرافق."
+      }
+    },
+    {
+      "id": "in-c4",
+      "concept": "in-conjugate",
+      "kind": "interpretation",
+      "q": {
+        "en": "What are conjugate V* and M*?",
+        "ar": "ماذا يمثل V* وM* في المرافق؟"
+      },
+      "a": {
+        "en": "V* represents real slope; M* represents real displacement.",
+        "ar": "V* يمثل الميل الحقيقي وM* يمثل الإزاحة الحقيقية."
+      }
+    },
+    {
+      "id": "in-c5",
+      "concept": "in-integrate",
+      "kind": "misconception",
+      "q": {
+        "en": "May negative curvature regions be made positive?",
+        "ar": "هل يجوز تحويل مناطق التقوس السالبة إلى موجبة؟"
+      },
+      "a": {
+        "en": "No. Preserve signs in conjugate loading and integration.",
+        "ar": "لا. احتفظ بالإشارات في الحمل المرافق والتكامل."
+      }
+    },
+    {
+      "id": "in-c6",
+      "concept": "in-integrate",
+      "kind": "decision",
+      "q": {
+        "en": "Before substituting x into a polynomial, check what?",
+        "ar": "ما الذي تفحصه قبل التعويض بـx في كثيرة حدود؟"
+      },
+      "a": {
+        "en": "The coordinate origin and positive axis direction for that expression.",
+        "ar": "أصل الإحداثيات واتجاه المحور الموجب الخاصين بذلك التعبير."
+      }
+    },
+    {
+      "id": "in-c7",
+      "concept": "in-stiffness",
+      "kind": "prediction",
+      "q": {
+        "en": "Uniformly double every EI: normalized reaction line?",
+        "ar": "ضاعف EI لكل الأعضاء: ماذا عن خط رد الفعل المطبع؟"
+      },
+      "a": {
+        "en": "Unchanged for the same linear supports; displacements halve.",
+        "ar": "يبقى ثابتاً مع المساند الخطية نفسها؛ تنخفض الإزاحات إلى النصف."
+      }
+    },
+    {
+      "id": "in-c8",
+      "concept": "in-stiffness",
+      "kind": "misconception",
+      "q": {
+        "en": "Can all EI be set to 1 in a beam with unequal member EI?",
+        "ar": "هل يجوز جعل EI=1 للجميع عندما تختلف صلابة الأعضاء؟"
+      },
+      "a": {
+        "en": "No. Keep relative stiffness ratios even if a common multiplier cancels.",
+        "ar": "لا. احتفظ بنسب الصلابة حتى إن اختزل العامل المشترك."
+      }
+    },
+    {
+      "id": "in-c9",
+      "concept": "in-propped",
+      "kind": "decision",
+      "q": {
+        "en": "What is B in supplied Test Q3?",
+        "ar": "ما حالة B في السؤال 3 من الاختبار المرفق؟"
+      },
+      "a": {
+        "en": "A roller prop. The 12 m beam is a propped cantilever, not a free cantilever.",
+        "ar": "مسند بكرة. الكمرة بطول 12 m كابولية مسندة وليست حرة الطرف."
+      }
+    },
+    {
+      "id": "in-c10",
+      "concept": "in-propped",
+      "kind": "calculation",
+      "q": {
+        "en": "RB ordinate for x=L/2 on a constant-EI propped cantilever?",
+        "ar": "ما إحداثي RB عند x=L/2 في كابولي مسند ثابت EI؟"
+      },
+      "a": {
+        "en": "5/16=0.3125; derive it from zero displacement at the prop.",
+        "ar": "5/16=0.3125؛ اشتقه من انعدام الإزاحة عند المسند."
+      }
+    },
+    {
+      "id": "in-c11",
+      "concept": "in-section",
+      "kind": "interpretation",
+      "q": {
+        "en": "External fixed support couple vs internal moment?",
+        "ar": "عزم رد فعل التثبيت الخارجي مقابل العزم الداخلي؟"
+      },
+      "a": {
+        "en": "They use different free-body meanings. State the convention; here internal moment at A is negative of the external CCW couple.",
+        "ar": "لهما معنيان مختلفان في الجسم الحر. حدد الاصطلاح؛ هنا العزم الداخلي عند A عكس عزم رد الفعل الخارجي الموجب عكس الساعة."
+      }
+    },
+    {
+      "id": "in-c12",
+      "concept": "in-section",
+      "kind": "calculation",
+      "q": {
+        "en": "12 m propped beam, full UDL10: midpoint moment and fixed internal moment?",
+        "ar": "كابولي مسند 12 m وحمل موزع كامل10: ما عزم المنتصف وعزم التثبيت الداخلي؟"
+      },
+      "a": {
+        "en": "Midpoint +90 kN·m; fixed A −180 kN·m, sagging positive.",
+        "ar": "المنتصف +90 kN·m والتثبيت A −180 kN·m، باعتماد الترخيم موجباً."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "18",
+      "page": 9,
+      "filename": "Lecture (6) - influence lines ..pdf"
+    },
+    {
+      "doc": "18",
+      "page": 10,
+      "filename": "Lecture (6) - influence lines ..pdf"
+    },
+    {
+      "doc": "19",
+      "page": 2,
+      "filename": "Lecture (7)- influence lines....pdf"
+    },
+    {
+      "doc": "19",
+      "page": 5,
+      "filename": "Lecture (7)- influence lines....pdf"
+    },
+    {
+      "doc": "23",
+      "page": 22,
+      "filename": "Structure II_019+020TESTS&solutions.pdf"
+    }
+  ],
+  "videoIds": [
+    "iLVyd3bPQZc",
+    "EsRm3lcGmHc",
+    "02pOdMKCoVs"
+  ]
+}

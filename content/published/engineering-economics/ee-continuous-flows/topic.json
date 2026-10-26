@@ -1,0 +1,1414 @@
+{
+  "id": "ee-continuous-flows",
+  "family": "ee-timing",
+  "title": {
+    "en": "Continuous cash flows: money arrives between the dates",
+    "ar": "التدفق المستمر: يصل المال بين التواريخ"
+  },
+  "summary": {
+    "en": "Fuel purchases happen throughout a year, while rent may be paid at year-end. Distinguish the flow rate from a lump sum and build the correct present or future equivalent.",
+    "ar": "تقع مشتريات الوقود طوال السنة وقد يدفع الإيجار آخرها. ميّز شدة التدفق عن المبلغ المفرد وابنِ مكافئه الحالي أو المستقبلي الصحيح."
+  },
+  "outcomes": [
+    {
+      "en": "A flow rate becomes money after multiplying by time",
+      "ar": "تتحول شدة التدفق إلى مبلغ بضربها بالزمن"
+    },
+    {
+      "en": "A uniform continuous flow at a continuous force",
+      "ar": "تدفق مستمر منتظم مع قوة مستمرة"
+    },
+    {
+      "en": "Discrete payments can coexist with continuous compounding",
+      "ar": "يجتمع الدفع المتقطع والتركيب المستمر"
+    },
+    {
+      "en": "An effective discrete rate can discount a continuous flow",
+      "ar": "معدل فعّال متقطع يخصم تدفقًا مستمرًا"
+    },
+    {
+      "en": "Defer, escalate and combine flow segments",
+      "ar": "أجّل وصعّد واجمع أجزاء التدفق"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-powers",
+    "ee-timeline",
+    "ee-integration"
+  ],
+  "concepts": [
+    {
+      "id": "ee-continuous-flows-s01-concept",
+      "title": {
+        "en": "A flow rate becomes money after multiplying by time",
+        "ar": "تتحول شدة التدفق إلى مبلغ بضربها بالزمن"
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s02-concept",
+      "title": {
+        "en": "A uniform continuous flow at a continuous force",
+        "ar": "تدفق مستمر منتظم مع قوة مستمرة"
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s03-concept",
+      "title": {
+        "en": "Discrete payments can coexist with continuous compounding",
+        "ar": "يجتمع الدفع المتقطع والتركيب المستمر"
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s04-concept",
+      "title": {
+        "en": "An effective discrete rate can discount a continuous flow",
+        "ar": "معدل فعّال متقطع يخصم تدفقًا مستمرًا"
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s05-concept",
+      "title": {
+        "en": "Defer, escalate and combine flow segments",
+        "ar": "أجّل وصعّد واجمع أجزاء التدفق"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-continuous-flows-s01",
+      "title": {
+        "en": "A flow rate becomes money after multiplying by time",
+        "ar": "تتحول شدة التدفق إلى مبلغ بضربها بالزمن"
+      },
+      "predict": {
+        "en": "Can a constant flow of 1000 CU/year over 3 years be interpreted as 1000 CU total?",
+        "ar": "هل يعني تدفق 1000 سنويًا لثلاث سنوات إجمالي 1000 فقط؟"
+      },
+      "options": [
+        {
+          "en": "No; without discounting the total is 3000 CU.",
+          "ar": "لا؛ الإجمالي غير المخصوم 3000."
+        },
+        {
+          "en": "Yes; a rate and a total have the same units.",
+          "ar": "نعم؛ للشدة والإجمالي الوحدات نفسها."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; without discounting the total is 3000 CU. Cash timing, not the presence of repetition, determines whether a sum or integral is needed.",
+        "ar": "لا؛ الإجمالي غير المخصوم 3000. يحدد توقيت النقد الحاجة إلى مجموع أو تكامل، لا مجرد التكرار."
+      },
+      "explain": {
+        "en": "A constant 1000 CU/year is a rate, not a payment arrow of 1000 CU at every mathematical instant. In a short time dt, the amount is a(t)dt. Discount that small amount from its own date and add all such pieces with an integral. This gives a reason for integration that you can picture: cash reaches the account at many times and each small piece has a different remaining growth time.",
+        "ar": "تمثل 1000 نقد/سنة شدة، وليست سهم 1000 في كل لحظة رياضية. خلال dt يصل a(t)dt؛ اخصم هذا المبلغ الصغير من تاريخه ثم اجمع الأجزاء بالتكامل. سبب التكامل بصري: يصل المال في أزمنة كثيرة ولكل جزء مدة نمو متبقية مختلفة."
+      },
+      "formula": "dC=a(t)dt; P=∫ a(t)e^(−rt)dt",
+      "symbols": {
+        "en": "a(t) is CU/year; dt is years; P is CU; r is continuous force/year.",
+        "ar": "a(t) نقد/سنة و dt سنوات و P نقد و r قوة مستمرة لكل سنة."
+      },
+      "assumptions": {
+        "en": "Truly continuous flow and continuous compounding as stated. A monthly deposit series is not this model.",
+        "ar": "تدفق مستمر حقيقي مع تركيب مستمر كما ينص السؤال؛ ليست سلسلة الإيداعات الشهرية هذا النموذج."
+      },
+      "example": {
+        "en": "Uniform 1000 CU/year flows for 3 years with no time value.",
+        "ar": "يتدفق 1000 سنويًا بصورة منتظمة لثلاث سنوات دون أثر زمني."
+      },
+      "calculation": {
+        "en": "At r=0, P=∫0³1000 dt=3000 CU; units(CU/year)×years=CU.",
+        "ar": "عند صفر يكون التكامل 3000؛ ووحداته نقد/سنة مضروبة في سنوات تساوي نقدًا."
+      },
+      "interpret": {
+        "en": "Cash timing, not the presence of repetition, determines whether a sum or integral is needed.",
+        "ar": "يحدد توقيت النقد الحاجة إلى مجموع أو تكامل، لا مجرد التكرار."
+      },
+      "check": {
+        "prompt": {
+          "en": "A question says “200 at each month-end”. Should you integrate 200 dt directly?",
+          "ar": "ينص السؤال على 200 في نهاية كل شهر. هل تكامل 200 dt مباشرة؟"
+        },
+        "answer": {
+          "en": "No; these are discrete payments with a monthly clock.",
+          "ar": "لا؛ هي دفعات متقطعة بساعة شهرية."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-continuous-flows-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 87,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 89,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 90,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-continuous-flows-s02",
+      "title": {
+        "en": "A uniform continuous flow at a continuous force",
+        "ar": "تدفق مستمر منتظم مع قوة مستمرة"
+      },
+      "predict": {
+        "en": "Should a continuous-payment factor denominator be replaced by e^r−1 without changing the flow model?",
+        "ar": "هل يستبدل مقام عامل الدفع المستمر بـ e^r−1 دون تغيير النموذج؟"
+      },
+      "options": [
+        {
+          "en": "Yes; r and e^r−1 are exactly the same.",
+          "ar": "نعم؛ r و e^r−1 متطابقان تمامًا."
+        },
+        {
+          "en": "No; that replacement changes the payment pattern.",
+          "ar": "لا؛ يغير ذلك نمط الدفع."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; that replacement changes the payment pattern. Equal nominal totals are not necessarily equivalent when their timing differs.",
+        "ar": "لا؛ يغير ذلك نمط الدفع. لا تتكافأ المجاميع الاسمية المتساوية بالضرورة مع اختلاف التوقيت."
+      },
+      "explain": {
+        "en": "Move each small incoming amount to a common date. Integrating the exponential produces a denominator r, whereas annual discrete payments under the same force use e^r−1. That difference is the payment model, not a contradiction. For the same total yearly amount and positive rate, spreading receipts through the year gives them earlier arrival than a single year-end receipt, so present worth is larger.",
+        "ar": "انقل كل جزء وارد إلى تاريخ مشترك؛ ينتج عن تكامل الأسي مقام r، بينما تستخدم الدفعات السنوية المتقطعة مع القوة نفسها e^r−1. الفرق في نموذج الدفع وليس تناقضًا. مع إجمالي سنوي واحد ومعدل موجب تصل أجزاء التدفق الموزع قبل المقبوض السنوي الختامي، فتكون حاليته أكبر."
+      },
+      "formula": "P=a(1−e^(−rn))/r; F=a(e^(rn)−1)/r",
+      "symbols": {
+        "en": "a is constant CU/year, n years, r force/year; at r=0 both equivalents equal a n.",
+        "ar": "a شدة ثابتة نقد/سنة و n سنوات و r قوة/سنة؛ وعند صفر يساوي المكافئان an."
+      },
+      "assumptions": {
+        "en": "Uniform continuous flow, continuous compounding, no additional jumps.",
+        "ar": "تدفق منتظم مستمر وتركيب مستمر دون قفزات إضافية."
+      },
+      "example": {
+        "en": "a=1000 CU/year, r=10%, n=3.",
+        "ar": "الشدة 1000 سنويًا والقوة 10% والمدة 3."
+      },
+      "calculation": {
+        "en": "P=1000(1−e^−0.3)/0.1≈2591.817793; F=1000(e^0.3−1)/0.1≈3498.588076.",
+        "ar": "الحالية 2591.817793 والنهائي 3498.588076 تقريبًا."
+      },
+      "interpret": {
+        "en": "Equal nominal totals are not necessarily equivalent when their timing differs.",
+        "ar": "لا تتكافأ المجاميع الاسمية المتساوية بالضرورة مع اختلاف التوقيت."
+      },
+      "check": {
+        "prompt": {
+          "en": "At positive r, compare a1000/year continuous receipt over one year with 1000 received only at year-end. Which has greater present worth?",
+          "ar": "عند قوة موجبة، قارن تدفق 1000 خلال سنة بمبلغ 1000 آخر السنة فقط. أيهما أعلى حالية؟"
+        },
+        "answer": {
+          "en": "The continuous receipt, because part arrives earlier.",
+          "ar": "التدفق المستمر لأن جزءًا منه يصل مبكرًا."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-continuous-flows-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 91,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 94,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE11",
+          "page": 52,
+          "filename": "Economics Exams .pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-continuous-flows-s03",
+      "title": {
+        "en": "Discrete payments can coexist with continuous compounding",
+        "ar": "يجتمع الدفع المتقطع والتركيب المستمر"
+      },
+      "predict": {
+        "en": "Does continuous compounding remove the last payment’s zero growth time?",
+        "ar": "هل يزيل التركيب المستمر زمن النمو الصفري للدفعة الأخيرة؟"
+      },
+      "options": [
+        {
+          "en": "No; the final dated deposit still has zero time before F is measured.",
+          "ar": "لا؛ يبقى للدفعة المؤرخة الأخيرة زمن صفر قبل قياس F."
+        },
+        {
+          "en": "Yes; every deposit grows continuously for the full project life.",
+          "ar": "نعم؛ تنمو كل دفعة كامل عمر المشروع."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; the final dated deposit still has zero time before F is measured. Compounding and payment are independent modeling axes.",
+        "ar": "لا؛ يبقى للدفعة المؤرخة الأخيرة زمن صفر قبل قياس F. التركيب والدفع محوران مستقلان في النموذج."
+      },
+      "explain": {
+        "en": "Imagine an account accruing continuously, but your employer deposits once each year. The cash remains a list of dated arrows. Convert the force to the effective gap rate i=e^r−1, then use ordinary series factors. For monthly deposits use e^(r/12)−1. Keeping the denominator connected to the payment spacing prevents confusing the two columns of the lecture’s summary table.",
+        "ar": "تخيل حسابًا ينمو باستمرار لكن جهة العمل تودع سنويًا. يبقى النقد قائمة سهام مؤرخة. حوّل القوة إلى معدل فعّال للفجوة i=e^r−1 ثم استخدم العوامل العادية. وللشهري استخدم e^(r/12)−1. يقي ربط المقام بتباعد الدفع من خلط عمودي جدول المحاضرة."
+      },
+      "formula": "F=A[e^(rn)−1]/[e^r−1] for annual end-year payments",
+      "symbols": {
+        "en": "A is an amount per annual payment, unlike a continuous rate a.",
+        "ar": "A مبلغ لكل دفعة سنوية، بخلاف شدة التدفق المستمر a."
+      },
+      "assumptions": {
+        "en": "n annual end-year cash arrows and constant continuous annual force.",
+        "ar": "n من سهام آخر السنة وقوة تركيب سنوية مستمرة ثابتة."
+      },
+      "example": {
+        "en": "Deposit 1000 at each year-end for 3 years with r=10%.",
+        "ar": "أودع 1000 آخر كل سنة لثلاث سنوات بقوة 10%."
+      },
+      "calculation": {
+        "en": "F=1000(e^0.3−1)/(e^0.1−1)=1000(e^0.2+e^0.1+1). It is smaller than the continuous-flow future worth for the same 1000/year total.",
+        "ar": "النهائي 1000(e^0.2+e^0.1+1)، وهو دون نهائي التدفق المستمر لنفس الإجمالي السنوي."
+      },
+      "interpret": {
+        "en": "Compounding and payment are independent modeling axes.",
+        "ar": "التركيب والدفع محوران مستقلان في النموذج."
+      },
+      "check": {
+        "prompt": {
+          "en": "A factor table has denominators r and e^r−1 for two “continuous interest” cases. What distinction must you check?",
+          "ar": "يعرض جدول مقام r ومقام e^r−1 لحالتي تركيب مستمر. ما الفرق المطلوب فحصه؟"
+        },
+        "answer": {
+          "en": "Whether payment itself is continuous or discrete.",
+          "ar": "هل الدفع نفسه مستمر أم متقطع."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-continuous-flows-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 88,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 104,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 146,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-continuous-flows-s04",
+      "title": {
+        "en": "An effective discrete rate can discount a continuous flow",
+        "ar": "معدل فعّال متقطع يخصم تدفقًا مستمرًا"
+      },
+      "predict": {
+        "en": "Can i be used instead of ln(1+i) in this continuous-flow denominator exactly?",
+        "ar": "هل يحل i محل ln(1+i) في مقام التدفق المستمر بدقة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; logarithms and rates are identical for every i.",
+          "ar": "نعم؛ يتطابق اللوغاريتم والمعدل لكل i."
+        },
+        {
+          "en": "No; that would be an approximation or a changed compounding model.",
+          "ar": "لا؛ يكون تقريبًا أو تغييرًا لنموذج التركيب."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; that would be an approximation or a changed compounding model. A convenient formula does not override a stated timing assumption.",
+        "ar": "لا؛ يكون تقريبًا أو تغييرًا لنموذج التركيب. لا تتقدم المعادلة المريحة على فرض توقيت صريح."
+      },
+      "explain": {
+        "en": "The lecture also allows a continuous payment stream with discrete annual compounding. A within-year convention is needed. Under exponential interpolation the growth from 0 to t is(1+i)^t=e^[ln(1+i)t]. Its equivalent force is ln(1+i), so the integral denominator becomes ln(1+i). This is not the same as a rule that credits interest only at annual boundaries. State the convention rather than hiding it in the formula.",
+        "ar": "تعرض المحاضرة أيضًا تدفقًا مستمرًا مع تركيب سنوي متقطع؛ وهنا يلزم اتفاق داخل السنة. مع الاستيفاء الأسي يكون النمو(1+i)^t=e^[ln(1+i)t] والقوة المكافئة ln(1+i)، فيصبح مقام التكامل هذا اللوغاريتم. يختلف ذلك عن قاعدة تقيد الفائدة في النهايات السنوية فقط؛ أعلن الاتفاق."
+      },
+      "formula": "P=a[1−(1+i)^−n]/ln(1+i)",
+      "symbols": {
+        "en": "i is annual effective; ln(1+i) is the equivalent continuous annual force.",
+        "ar": "i فعّال سنوي و ln(1+i) قوته المستمرة المكافئة."
+      },
+      "assumptions": {
+        "en": "Continuous flow with exponential fractional-year valuation. A different credit convention needs a different model.",
+        "ar": "تدفق مستمر وتقييم أسي لكسور السنة؛ أما قاعدة قيد أخرى فتحتاج نموذجًا آخر."
+      },
+      "example": {
+        "en": "1000 CU/year continuously for 2 years with annual effective 10%.",
+        "ar": "تدفق مستمر 1000 سنويًا لسنتين عند فعّال سنوي 10%."
+      },
+      "calculation": {
+        "en": "P=1000[1−1.1^−2]/ln 1.1; compare with the direct integral using force ln 1.1.",
+        "ar": "احسب الحالية بالصيغة وتحقق بالتكامل المباشر بقوة ln1.1."
+      },
+      "interpret": {
+        "en": "A convenient formula does not override a stated timing assumption.",
+        "ar": "لا تتقدم المعادلة المريحة على فرض توقيت صريح."
+      },
+      "check": {
+        "prompt": {
+          "en": "A statement forbids within-year interest credit. May you silently use the fractional-year exponential convention?",
+          "ar": "يمنع النص قيد الفائدة داخل السنة. هل تستخدم الاتفاق الأسي الكسري دون بيان؟"
+        },
+        "answer": {
+          "en": "No; apply the specified credit rule or flag the missing assumption.",
+          "ar": "لا؛ طبق قاعدة القيد المذكورة أو بين الفرض الناقص."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-continuous-flows-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 95,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 100,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 101,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-continuous-flows-s05",
+      "title": {
+        "en": "Defer, escalate and combine flow segments",
+        "ar": "أجّل وصعّد واجمع أجزاء التدفق"
+      },
+      "predict": {
+        "en": "For a flow over years 2 through 5, should its duration be 5 years?",
+        "ar": "لتدفق من 2 إلى 5، هل مدته 5 سنوات؟"
+      },
+      "options": [
+        {
+          "en": "No; duration is 5−2=3 years, with a separate 2-year delay.",
+          "ar": "لا؛ مدته 3 سنوات مع تأجيل مستقل سنتين."
+        },
+        {
+          "en": "Yes; the last calendar index is the duration.",
+          "ar": "نعم؛ الرقم الأخير هو المدة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; duration is 5−2=3 years, with a separate 2-year delay. Combine cash models only after converting them to the same date.",
+        "ar": "لا؛ مدته 3 سنوات مع تأجيل مستقل سنتين. اجمع نماذج النقد بعد تحويلها إلى تاريخ واحد."
+      },
+      "explain": {
+        "en": "Rent may be a dated annual payment while wages and materials flow continuously. Value each component with its own payment model and combine them at a common date. For a uniform flow that starts at year d, find its value at d then discount d years. If the flow rate itself grows exponentially at force g, discounting turns its exponent into g−r. At g=r the integral is simply the constant initial flow rate times duration.",
+        "ar": "قد يكون الإيجار دفعة سنوية مؤرخة بينما تتدفق الأجور والمواد باستمرار. قيّم كل جزء بنمطه واجمعه في تاريخ مشترك. للتدفق الذي يبدأ عند d أوجد قيمته هناك ثم اخصم d. وإن نمت الشدة أسيًا بقوة g أصبح أس الخصم g−r؛ وعند التساوي يساوي التكامل الشدة الابتدائية مضروبة بالمدة."
+      },
+      "formula": "P=a(1−e^(−rL))e^(−rd)/r; growing flow: P=∫a0 e^((g−r)t)dt",
+      "symbols": {
+        "en": "d is delay, L flow duration, a0 initial flow rate; both r and g are continuous forces/year.",
+        "ar": "d التأجيل و L مدة التدفق و a0 شدته الابتدائية، و r و g قوتان سنويتان."
+      },
+      "assumptions": {
+        "en": "Identify whether the quoted growth is a continuous force or a discrete percentage before using g.",
+        "ar": "حدد هل النمو المعلن قوة مستمرة أم نسبة متقطعة قبل استخدام g."
+      },
+      "example": {
+        "en": "A1000/year flow runs only from t=2 to 5 at r=10%.",
+        "ar": "تدفق 1000 سنويًا من 2 إلى 5 فقط عند قوة 10%."
+      },
+      "calculation": {
+        "en": "P=1000(e^−0.2−e^−0.5)/0.1≈2122.000934 CU. This is a3-year stream discounted 2 years.",
+        "ar": "الحالية 2122.000934 تقريبًا؛ وهو تدفق 3 سنوات مخصوم سنتين."
+      },
+      "interpret": {
+        "en": "Combine cash models only after converting them to the same date.",
+        "ar": "اجمع نماذج النقد بعد تحويلها إلى تاريخ واحد."
+      },
+      "check": {
+        "prompt": {
+          "en": "Materials 18000/year and labor 25000/year are continuous; rent 4000 is paid at year-end. Can all 47000 be treated as one continuous flow without changing timing?",
+          "ar": "مواد 18000 وأجور 25000 سنويًا مستمران، وإيجار 4000 آخر السنة. هل تعامل 47000 كتدفق مستمر واحد دون تغيير التوقيت؟"
+        },
+        "answer": {
+          "en": "No; value 43000 as flow and 4000 as a dated payment.",
+          "ar": "لا؛ قيّم 43000 تدفقًا و 4000 دفعة مؤرخة."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-continuous-flows-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 132,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 20,
+          "filename": "014 Tuts.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-continuous-flows-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 87,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 89,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 90,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "a(t) is CU/year; dt is years; P is CU; r is continuous force/year.",
+          "ar": "a(t) نقد/سنة و dt سنوات و P نقد و r قوة مستمرة لكل سنة."
+        },
+        {
+          "en": "dC=a(t)dt; P=∫ a(t)e^(−rt)dt\nTruly continuous flow and continuous compounding as stated. A monthly deposit series is not this model.",
+          "ar": "dC=a(t)dt; P=∫ a(t)e^(−rt)dt\nتدفق مستمر حقيقي مع تركيب مستمر كما ينص السؤال؛ ليست سلسلة الإيداعات الشهرية هذا النموذج."
+        }
+      ],
+      "id": "ee-continuous-flows-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can a constant flow of 1000 CU/year over 3 years be interpreted as 1000 CU total?",
+        "ar": "هل يعني تدفق 1000 سنويًا لثلاث سنوات إجمالي 1000 فقط؟"
+      },
+      "options": [
+        {
+          "en": "No; without discounting the total is 3000 CU.",
+          "ar": "لا؛ الإجمالي غير المخصوم 3000."
+        },
+        {
+          "en": "Yes; a rate and a total have the same units.",
+          "ar": "نعم؛ للشدة والإجمالي الوحدات نفسها."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; without discounting the total is 3000 CU. A constant 1000 CU/year is a rate, not a payment arrow of 1000 CU at every mathematical instant. In a short time dt, the amount is a(t)dt. Discount that small amount from its own date and add all such pieces with an integral. This gives a reason for integration that you can picture: cash reaches the account at many times and each small piece has a different remaining growth time.",
+        "ar": "لا؛ الإجمالي غير المخصوم 3000. تمثل 1000 نقد/سنة شدة، وليست سهم 1000 في كل لحظة رياضية. خلال dt يصل a(t)dt؛ اخصم هذا المبلغ الصغير من تاريخه ثم اجمع الأجزاء بالتكامل. سبب التكامل بصري: يصل المال في أزمنة كثيرة ولكل جزء مدة نمو متبقية مختلفة."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 87,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 89,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 90,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "a(t) is CU/year; dt is years; P is CU; r is continuous force/year.",
+          "ar": "a(t) نقد/سنة و dt سنوات و P نقد و r قوة مستمرة لكل سنة."
+        },
+        {
+          "en": "dC=a(t)dt; P=∫ a(t)e^(−rt)dt\nTruly continuous flow and continuous compounding as stated. A monthly deposit series is not this model.",
+          "ar": "dC=a(t)dt; P=∫ a(t)e^(−rt)dt\nتدفق مستمر حقيقي مع تركيب مستمر كما ينص السؤال؛ ليست سلسلة الإيداعات الشهرية هذا النموذج."
+        }
+      ],
+      "id": "ee-continuous-flows-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "A continuous flow of 2400 CU/year lasts 1.5 years with zero rate. Find total money.",
+        "ar": "يستمر تدفق 2400 نقد/سنة مدة 1.5 سنة بمعدل صفر. أوجد الإجمالي."
+      },
+      "expected": 3600,
+      "tolerance": 0.07200000000000001,
+      "unit": "CU",
+      "solution": {
+        "en": "2400×1.5=3600 CU.",
+        "ar": "الإجمالي 2400×1.5=3600."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 87,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 89,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 90,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "a(t) is CU/year; dt is years; P is CU; r is continuous force/year.",
+          "ar": "a(t) نقد/سنة و dt سنوات و P نقد و r قوة مستمرة لكل سنة."
+        },
+        {
+          "en": "dC=a(t)dt; P=∫ a(t)e^(−rt)dt\nTruly continuous flow and continuous compounding as stated. A monthly deposit series is not this model.",
+          "ar": "dC=a(t)dt; P=∫ a(t)e^(−rt)dt\nتدفق مستمر حقيقي مع تركيب مستمر كما ينص السؤال؛ ليست سلسلة الإيداعات الشهرية هذا النموذج."
+        }
+      ],
+      "id": "ee-continuous-flows-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A question says “200 at each month-end”. Should you integrate 200 dt directly?",
+        "ar": "ينص السؤال على 200 في نهاية كل شهر. هل تكامل 200 dt مباشرة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; every repeating payment is a continuous flow.",
+          "ar": "نعم؛ كل دفع متكرر تدفق مستمر."
+        },
+        {
+          "en": "No; these are discrete payments with a monthly clock.",
+          "ar": "لا؛ هي دفعات متقطعة بساعة شهرية."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; these are discrete payments with a monthly clock. Cash timing, not the presence of repetition, determines whether a sum or integral is needed.",
+        "ar": "لا؛ هي دفعات متقطعة بساعة شهرية. يحدد توقيت النقد الحاجة إلى مجموع أو تكامل، لا مجرد التكرار."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 91,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 94,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE11",
+          "page": 52,
+          "filename": "Economics Exams .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "a is constant CU/year, n years, r force/year; at r=0 both equivalents equal a n.",
+          "ar": "a شدة ثابتة نقد/سنة و n سنوات و r قوة/سنة؛ وعند صفر يساوي المكافئان an."
+        },
+        {
+          "en": "P=a(1−e^(−rn))/r; F=a(e^(rn)−1)/r\nUniform continuous flow, continuous compounding, no additional jumps.",
+          "ar": "P=a(1−e^(−rn))/r; F=a(e^(rn)−1)/r\nتدفق منتظم مستمر وتركيب مستمر دون قفزات إضافية."
+        }
+      ],
+      "id": "ee-continuous-flows-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Should a continuous-payment factor denominator be replaced by e^r−1 without changing the flow model?",
+        "ar": "هل يستبدل مقام عامل الدفع المستمر بـ e^r−1 دون تغيير النموذج؟"
+      },
+      "options": [
+        {
+          "en": "Yes; r and e^r−1 are exactly the same.",
+          "ar": "نعم؛ r و e^r−1 متطابقان تمامًا."
+        },
+        {
+          "en": "No; that replacement changes the payment pattern.",
+          "ar": "لا؛ يغير ذلك نمط الدفع."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; that replacement changes the payment pattern. Move each small incoming amount to a common date. Integrating the exponential produces a denominator r, whereas annual discrete payments under the same force use e^r−1. That difference is the payment model, not a contradiction. For the same total yearly amount and positive rate, spreading receipts through the year gives them earlier arrival than a single year-end receipt, so present worth is larger.",
+        "ar": "لا؛ يغير ذلك نمط الدفع. انقل كل جزء وارد إلى تاريخ مشترك؛ ينتج عن تكامل الأسي مقام r، بينما تستخدم الدفعات السنوية المتقطعة مع القوة نفسها e^r−1. الفرق في نموذج الدفع وليس تناقضًا. مع إجمالي سنوي واحد ومعدل موجب تصل أجزاء التدفق الموزع قبل المقبوض السنوي الختامي، فتكون حاليته أكبر."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 91,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 94,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE11",
+          "page": 52,
+          "filename": "Economics Exams .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "a is constant CU/year, n years, r force/year; at r=0 both equivalents equal a n.",
+          "ar": "a شدة ثابتة نقد/سنة و n سنوات و r قوة/سنة؛ وعند صفر يساوي المكافئان an."
+        },
+        {
+          "en": "P=a(1−e^(−rn))/r; F=a(e^(rn)−1)/r\nUniform continuous flow, continuous compounding, no additional jumps.",
+          "ar": "P=a(1−e^(−rn))/r; F=a(e^(rn)−1)/r\nتدفق منتظم مستمر وتركيب مستمر دون قفزات إضافية."
+        }
+      ],
+      "id": "ee-continuous-flows-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Find future worth for continuous 9000 CU/year over 9.7 years at a continuous force 7.3%.",
+        "ar": "أوجد النهائي لتدفق مستمر 9000 سنويًا مدة 9.7 سنوات بقوة مستمرة 7.3%."
+      },
+      "expected": 127002.37121327552,
+      "tolerance": 2.5400474242655107,
+      "unit": "CU",
+      "solution": {
+        "en": "F=9000[e^(0.073×9.7)−1]/0.073. Use the flow-rate units and retain the fractional 9.7 years.",
+        "ar": "استخدم صيغة النهائي المستمر مع 9.7 سنة دون تقريبها."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 91,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 94,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE11",
+          "page": 52,
+          "filename": "Economics Exams .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "a is constant CU/year, n years, r force/year; at r=0 both equivalents equal a n.",
+          "ar": "a شدة ثابتة نقد/سنة و n سنوات و r قوة/سنة؛ وعند صفر يساوي المكافئان an."
+        },
+        {
+          "en": "P=a(1−e^(−rn))/r; F=a(e^(rn)−1)/r\nUniform continuous flow, continuous compounding, no additional jumps.",
+          "ar": "P=a(1−e^(−rn))/r; F=a(e^(rn)−1)/r\nتدفق منتظم مستمر وتركيب مستمر دون قفزات إضافية."
+        }
+      ],
+      "id": "ee-continuous-flows-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "At positive r, compare a1000/year continuous receipt over one year with 1000 received only at year-end. Which has greater present worth?",
+        "ar": "عند قوة موجبة، قارن تدفق 1000 خلال سنة بمبلغ 1000 آخر السنة فقط. أيهما أعلى حالية؟"
+      },
+      "options": [
+        {
+          "en": "The continuous receipt, because part arrives earlier.",
+          "ar": "التدفق المستمر لأن جزءًا منه يصل مبكرًا."
+        },
+        {
+          "en": "They must be identical because both total 1000.",
+          "ar": "يتطابقان لأن إجمالي كليهما 1000."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "The continuous receipt, because part arrives earlier. Equal nominal totals are not necessarily equivalent when their timing differs.",
+        "ar": "التدفق المستمر لأن جزءًا منه يصل مبكرًا. لا تتكافأ المجاميع الاسمية المتساوية بالضرورة مع اختلاف التوقيت."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 88,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 104,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 146,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A is an amount per annual payment, unlike a continuous rate a.",
+          "ar": "A مبلغ لكل دفعة سنوية، بخلاف شدة التدفق المستمر a."
+        },
+        {
+          "en": "F=A[e^(rn)−1]/[e^r−1] for annual end-year payments\nn annual end-year cash arrows and constant continuous annual force.",
+          "ar": "F=A[e^(rn)−1]/[e^r−1] for annual end-year payments\nn من سهام آخر السنة وقوة تركيب سنوية مستمرة ثابتة."
+        }
+      ],
+      "id": "ee-continuous-flows-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does continuous compounding remove the last payment’s zero growth time?",
+        "ar": "هل يزيل التركيب المستمر زمن النمو الصفري للدفعة الأخيرة؟"
+      },
+      "options": [
+        {
+          "en": "No; the final dated deposit still has zero time before F is measured.",
+          "ar": "لا؛ يبقى للدفعة المؤرخة الأخيرة زمن صفر قبل قياس F."
+        },
+        {
+          "en": "Yes; every deposit grows continuously for the full project life.",
+          "ar": "نعم؛ تنمو كل دفعة كامل عمر المشروع."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; the final dated deposit still has zero time before F is measured. Imagine an account accruing continuously, but your employer deposits once each year. The cash remains a list of dated arrows. Convert the force to the effective gap rate i=e^r−1, then use ordinary series factors. For monthly deposits use e^(r/12)−1. Keeping the denominator connected to the payment spacing prevents confusing the two columns of the lecture’s summary table.",
+        "ar": "لا؛ يبقى للدفعة المؤرخة الأخيرة زمن صفر قبل قياس F. تخيل حسابًا ينمو باستمرار لكن جهة العمل تودع سنويًا. يبقى النقد قائمة سهام مؤرخة. حوّل القوة إلى معدل فعّال للفجوة i=e^r−1 ثم استخدم العوامل العادية. وللشهري استخدم e^(r/12)−1. يقي ربط المقام بتباعد الدفع من خلط عمودي جدول المحاضرة."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 88,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 104,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 146,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A is an amount per annual payment, unlike a continuous rate a.",
+          "ar": "A مبلغ لكل دفعة سنوية، بخلاف شدة التدفق المستمر a."
+        },
+        {
+          "en": "F=A[e^(rn)−1]/[e^r−1] for annual end-year payments\nn annual end-year cash arrows and constant continuous annual force.",
+          "ar": "F=A[e^(rn)−1]/[e^r−1] for annual end-year payments\nn من سهام آخر السنة وقوة تركيب سنوية مستمرة ثابتة."
+        }
+      ],
+      "id": "ee-continuous-flows-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Deposit 500 CU at year-ends 1,2,3 under continuous 10%. Find F immediately after the third.",
+        "ar": "أودع 500 في نهايات 1 و 2 و 3 بقوة مستمرة 10%. أوجد النهائي بعد الثالثة مباشرة."
+      },
+      "expected": 1663.2868381179087,
+      "tolerance": 0.033265736762358174,
+      "unit": "CU",
+      "solution": {
+        "en": "F=500[e^0.2+e^0.1+1]. Each term retains its own date.",
+        "ar": "النهائي 500[e^0.2+e^0.1+1]؛ لكل حد تاريخه."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 88,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 104,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 146,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A is an amount per annual payment, unlike a continuous rate a.",
+          "ar": "A مبلغ لكل دفعة سنوية، بخلاف شدة التدفق المستمر a."
+        },
+        {
+          "en": "F=A[e^(rn)−1]/[e^r−1] for annual end-year payments\nn annual end-year cash arrows and constant continuous annual force.",
+          "ar": "F=A[e^(rn)−1]/[e^r−1] for annual end-year payments\nn من سهام آخر السنة وقوة تركيب سنوية مستمرة ثابتة."
+        }
+      ],
+      "id": "ee-continuous-flows-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A factor table has denominators r and e^r−1 for two “continuous interest” cases. What distinction must you check?",
+        "ar": "يعرض جدول مقام r ومقام e^r−1 لحالتي تركيب مستمر. ما الفرق المطلوب فحصه؟"
+      },
+      "options": [
+        {
+          "en": "Whether the currency is dollars or pounds.",
+          "ar": "هل العملة دولار أم جنيه."
+        },
+        {
+          "en": "Whether payment itself is continuous or discrete.",
+          "ar": "هل الدفع نفسه مستمر أم متقطع."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Whether payment itself is continuous or discrete. Compounding and payment are independent modeling axes.",
+        "ar": "هل الدفع نفسه مستمر أم متقطع. التركيب والدفع محوران مستقلان في النموذج."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s04-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 95,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 100,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 101,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "i is annual effective; ln(1+i) is the equivalent continuous annual force.",
+          "ar": "i فعّال سنوي و ln(1+i) قوته المستمرة المكافئة."
+        },
+        {
+          "en": "P=a[1−(1+i)^−n]/ln(1+i)\nContinuous flow with exponential fractional-year valuation. A different credit convention needs a different model.",
+          "ar": "P=a[1−(1+i)^−n]/ln(1+i)\nتدفق مستمر وتقييم أسي لكسور السنة؛ أما قاعدة قيد أخرى فتحتاج نموذجًا آخر."
+        }
+      ],
+      "id": "ee-continuous-flows-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can i be used instead of ln(1+i) in this continuous-flow denominator exactly?",
+        "ar": "هل يحل i محل ln(1+i) في مقام التدفق المستمر بدقة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; logarithms and rates are identical for every i.",
+          "ar": "نعم؛ يتطابق اللوغاريتم والمعدل لكل i."
+        },
+        {
+          "en": "No; that would be an approximation or a changed compounding model.",
+          "ar": "لا؛ يكون تقريبًا أو تغييرًا لنموذج التركيب."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; that would be an approximation or a changed compounding model. The lecture also allows a continuous payment stream with discrete annual compounding. A within-year convention is needed. Under exponential interpolation the growth from 0 to t is(1+i)^t=e^[ln(1+i)t]. Its equivalent force is ln(1+i), so the integral denominator becomes ln(1+i). This is not the same as a rule that credits interest only at annual boundaries. State the convention rather than hiding it in the formula.",
+        "ar": "لا؛ يكون تقريبًا أو تغييرًا لنموذج التركيب. تعرض المحاضرة أيضًا تدفقًا مستمرًا مع تركيب سنوي متقطع؛ وهنا يلزم اتفاق داخل السنة. مع الاستيفاء الأسي يكون النمو(1+i)^t=e^[ln(1+i)t] والقوة المكافئة ln(1+i)، فيصبح مقام التكامل هذا اللوغاريتم. يختلف ذلك عن قاعدة تقيد الفائدة في النهايات السنوية فقط؛ أعلن الاتفاق."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s04-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 95,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 100,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 101,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "i is annual effective; ln(1+i) is the equivalent continuous annual force.",
+          "ar": "i فعّال سنوي و ln(1+i) قوته المستمرة المكافئة."
+        },
+        {
+          "en": "P=a[1−(1+i)^−n]/ln(1+i)\nContinuous flow with exponential fractional-year valuation. A different credit convention needs a different model.",
+          "ar": "P=a[1−(1+i)^−n]/ln(1+i)\nتدفق مستمر وتقييم أسي لكسور السنة؛ أما قاعدة قيد أخرى فتحتاج نموذجًا آخر."
+        }
+      ],
+      "id": "ee-continuous-flows-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Find P for continuous 1200 CU/year for 2 years at effective annual 10%, using exponential interpolation.",
+        "ar": "أوجد الحالية لتدفق مستمر 1200 سنويًا لسنتين بفعّال سنوي 10% مع الاستيفاء الأسي."
+      },
+      "expected": 2185.1229662717196,
+      "tolerance": 0.043702459325434394,
+      "unit": "CU",
+      "solution": {
+        "en": "P=1200(1−1.1^−2)/ln 1.1. The denominator is the equivalent force, not 0.10.",
+        "ar": "المقام هو القوة المكافئة ln1.1 لا 0.10."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s04-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 95,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 100,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 101,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "i is annual effective; ln(1+i) is the equivalent continuous annual force.",
+          "ar": "i فعّال سنوي و ln(1+i) قوته المستمرة المكافئة."
+        },
+        {
+          "en": "P=a[1−(1+i)^−n]/ln(1+i)\nContinuous flow with exponential fractional-year valuation. A different credit convention needs a different model.",
+          "ar": "P=a[1−(1+i)^−n]/ln(1+i)\nتدفق مستمر وتقييم أسي لكسور السنة؛ أما قاعدة قيد أخرى فتحتاج نموذجًا آخر."
+        }
+      ],
+      "id": "ee-continuous-flows-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A statement forbids within-year interest credit. May you silently use the fractional-year exponential convention?",
+        "ar": "يمنع النص قيد الفائدة داخل السنة. هل تستخدم الاتفاق الأسي الكسري دون بيان؟"
+      },
+      "options": [
+        {
+          "en": "No; apply the specified credit rule or flag the missing assumption.",
+          "ar": "لا؛ طبق قاعدة القيد المذكورة أو بين الفرض الناقص."
+        },
+        {
+          "en": "Yes; every continuous-flow problem has the same within-year convention.",
+          "ar": "نعم؛ لكل مسائل التدفق المستمر الاتفاق الداخلي نفسه."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; apply the specified credit rule or flag the missing assumption. A convenient formula does not override a stated timing assumption.",
+        "ar": "لا؛ طبق قاعدة القيد المذكورة أو بين الفرض الناقص. لا تتقدم المعادلة المريحة على فرض توقيت صريح."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s05-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 132,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 20,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "d is delay, L flow duration, a0 initial flow rate; both r and g are continuous forces/year.",
+          "ar": "d التأجيل و L مدة التدفق و a0 شدته الابتدائية، و r و g قوتان سنويتان."
+        },
+        {
+          "en": "P=a(1−e^(−rL))e^(−rd)/r; growing flow: P=∫a0 e^((g−r)t)dt\nIdentify whether the quoted growth is a continuous force or a discrete percentage before using g.",
+          "ar": "P=a(1−e^(−rL))e^(−rd)/r; growing flow: P=∫a0 e^((g−r)t)dt\nحدد هل النمو المعلن قوة مستمرة أم نسبة متقطعة قبل استخدام g."
+        }
+      ],
+      "id": "ee-continuous-flows-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "For a flow over years 2 through 5, should its duration be 5 years?",
+        "ar": "لتدفق من 2 إلى 5، هل مدته 5 سنوات؟"
+      },
+      "options": [
+        {
+          "en": "No; duration is 5−2=3 years, with a separate 2-year delay.",
+          "ar": "لا؛ مدته 3 سنوات مع تأجيل مستقل سنتين."
+        },
+        {
+          "en": "Yes; the last calendar index is the duration.",
+          "ar": "نعم؛ الرقم الأخير هو المدة."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; duration is 5−2=3 years, with a separate 2-year delay. Rent may be a dated annual payment while wages and materials flow continuously. Value each component with its own payment model and combine them at a common date. For a uniform flow that starts at year d, find its value at d then discount d years. If the flow rate itself grows exponentially at force g, discounting turns its exponent into g−r. At g=r the integral is simply the constant initial flow rate times duration.",
+        "ar": "لا؛ مدته 3 سنوات مع تأجيل مستقل سنتين. قد يكون الإيجار دفعة سنوية مؤرخة بينما تتدفق الأجور والمواد باستمرار. قيّم كل جزء بنمطه واجمعه في تاريخ مشترك. للتدفق الذي يبدأ عند d أوجد قيمته هناك ثم اخصم d. وإن نمت الشدة أسيًا بقوة g أصبح أس الخصم g−r؛ وعند التساوي يساوي التكامل الشدة الابتدائية مضروبة بالمدة."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s05-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 132,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 20,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "d is delay, L flow duration, a0 initial flow rate; both r and g are continuous forces/year.",
+          "ar": "d التأجيل و L مدة التدفق و a0 شدته الابتدائية، و r و g قوتان سنويتان."
+        },
+        {
+          "en": "P=a(1−e^(−rL))e^(−rd)/r; growing flow: P=∫a0 e^((g−r)t)dt\nIdentify whether the quoted growth is a continuous force or a discrete percentage before using g.",
+          "ar": "P=a(1−e^(−rL))e^(−rd)/r; growing flow: P=∫a0 e^((g−r)t)dt\nحدد هل النمو المعلن قوة مستمرة أم نسبة متقطعة قبل استخدام g."
+        }
+      ],
+      "id": "ee-continuous-flows-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "A uniform 500 CU/year flow runs from year 1 to 3 at continuous 10%. Find P at 0.",
+        "ar": "تدفق منتظم 500 سنويًا من 1 إلى 3 بقوة مستمرة 10%. أوجد الحالية عند الصفر."
+      },
+      "expected": 820.0959867712081,
+      "tolerance": 0.016401919735424163,
+      "unit": "CU",
+      "solution": {
+        "en": "P=500(e^−0.1−e^−0.3)/0.1. The 2-year duration is not 3 years.",
+        "ar": "الحالية بالصيغة المذكورة؛ ومدته سنتان لا 3."
+      }
+    },
+    {
+      "concept": "ee-continuous-flows-s05-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 132,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 20,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "d is delay, L flow duration, a0 initial flow rate; both r and g are continuous forces/year.",
+          "ar": "d التأجيل و L مدة التدفق و a0 شدته الابتدائية، و r و g قوتان سنويتان."
+        },
+        {
+          "en": "P=a(1−e^(−rL))e^(−rd)/r; growing flow: P=∫a0 e^((g−r)t)dt\nIdentify whether the quoted growth is a continuous force or a discrete percentage before using g.",
+          "ar": "P=a(1−e^(−rL))e^(−rd)/r; growing flow: P=∫a0 e^((g−r)t)dt\nحدد هل النمو المعلن قوة مستمرة أم نسبة متقطعة قبل استخدام g."
+        }
+      ],
+      "id": "ee-continuous-flows-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Materials 18000/year and labor 25000/year are continuous; rent 4000 is paid at year-end. Can all 47000 be treated as one continuous flow without changing timing?",
+        "ar": "مواد 18000 وأجور 25000 سنويًا مستمران، وإيجار 4000 آخر السنة. هل تعامل 47000 كتدفق مستمر واحد دون تغيير التوقيت؟"
+      },
+      "options": [
+        {
+          "en": "Yes; annual totals determine timing automatically.",
+          "ar": "نعم؛ تحدد المجاميع السنوية التوقيت تلقائيًا."
+        },
+        {
+          "en": "No; value 43000 as flow and 4000 as a dated payment.",
+          "ar": "لا؛ قيّم 43000 تدفقًا و 4000 دفعة مؤرخة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; value 43000 as flow and 4000 as a dated payment. Combine cash models only after converting them to the same date.",
+        "ar": "لا؛ قيّم 43000 تدفقًا و 4000 دفعة مؤرخة. اجمع نماذج النقد بعد تحويلها إلى تاريخ واحد."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-continuous-flows-s01-recall",
+      "concept": "ee-continuous-flows-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: A flow rate becomes money after multiplying by time",
+        "ar": "اشرح: تتحول شدة التدفق إلى مبلغ بضربها بالزمن"
+      },
+      "a": {
+        "en": "Cash timing, not the presence of repetition, determines whether a sum or integral is needed.",
+        "ar": "يحدد توقيت النقد الحاجة إلى مجموع أو تكامل، لا مجرد التكرار."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s01-formula",
+      "concept": "ee-continuous-flows-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\ndC=a(t)dt; P=∫ a(t)e^(−rt)dt",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\ndC=a(t)dt; P=∫ a(t)e^(−rt)dt"
+      },
+      "a": {
+        "en": "a(t) is CU/year; dt is years; P is CU; r is continuous force/year. Truly continuous flow and continuous compounding as stated. A monthly deposit series is not this model.",
+        "ar": "a(t) نقد/سنة و dt سنوات و P نقد و r قوة مستمرة لكل سنة. تدفق مستمر حقيقي مع تركيب مستمر كما ينص السؤال؛ ليست سلسلة الإيداعات الشهرية هذا النموذج."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s01-trap",
+      "concept": "ee-continuous-flows-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; a rate and a total have the same units.",
+        "ar": "يقول متعلم: نعم؛ للشدة والإجمالي الوحدات نفسها."
+      },
+      "a": {
+        "en": "No; without discounting the total is 3000 CU. Cash timing, not the presence of repetition, determines whether a sum or integral is needed.",
+        "ar": "لا؛ الإجمالي غير المخصوم 3000. يحدد توقيت النقد الحاجة إلى مجموع أو تكامل، لا مجرد التكرار."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s02-recall",
+      "concept": "ee-continuous-flows-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: A uniform continuous flow at a continuous force",
+        "ar": "اشرح: تدفق مستمر منتظم مع قوة مستمرة"
+      },
+      "a": {
+        "en": "Equal nominal totals are not necessarily equivalent when their timing differs.",
+        "ar": "لا تتكافأ المجاميع الاسمية المتساوية بالضرورة مع اختلاف التوقيت."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s02-formula",
+      "concept": "ee-continuous-flows-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nP=a(1−e^(−rn))/r; F=a(e^(rn)−1)/r",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nP=a(1−e^(−rn))/r; F=a(e^(rn)−1)/r"
+      },
+      "a": {
+        "en": "a is constant CU/year, n years, r force/year; at r=0 both equivalents equal a n. Uniform continuous flow, continuous compounding, no additional jumps.",
+        "ar": "a شدة ثابتة نقد/سنة و n سنوات و r قوة/سنة؛ وعند صفر يساوي المكافئان an. تدفق منتظم مستمر وتركيب مستمر دون قفزات إضافية."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s02-trap",
+      "concept": "ee-continuous-flows-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; r and e^r−1 are exactly the same.",
+        "ar": "يقول متعلم: نعم؛ r و e^r−1 متطابقان تمامًا."
+      },
+      "a": {
+        "en": "No; that replacement changes the payment pattern. Equal nominal totals are not necessarily equivalent when their timing differs.",
+        "ar": "لا؛ يغير ذلك نمط الدفع. لا تتكافأ المجاميع الاسمية المتساوية بالضرورة مع اختلاف التوقيت."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s03-recall",
+      "concept": "ee-continuous-flows-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Discrete payments can coexist with continuous compounding",
+        "ar": "اشرح: يجتمع الدفع المتقطع والتركيب المستمر"
+      },
+      "a": {
+        "en": "Compounding and payment are independent modeling axes.",
+        "ar": "التركيب والدفع محوران مستقلان في النموذج."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s03-formula",
+      "concept": "ee-continuous-flows-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nF=A[e^(rn)−1]/[e^r−1] for annual end-year payments",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nF=A[e^(rn)−1]/[e^r−1] for annual end-year payments"
+      },
+      "a": {
+        "en": "A is an amount per annual payment, unlike a continuous rate a. n annual end-year cash arrows and constant continuous annual force.",
+        "ar": "A مبلغ لكل دفعة سنوية، بخلاف شدة التدفق المستمر a. n من سهام آخر السنة وقوة تركيب سنوية مستمرة ثابتة."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s03-trap",
+      "concept": "ee-continuous-flows-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; every deposit grows continuously for the full project life.",
+        "ar": "يقول متعلم: نعم؛ تنمو كل دفعة كامل عمر المشروع."
+      },
+      "a": {
+        "en": "No; the final dated deposit still has zero time before F is measured. Compounding and payment are independent modeling axes.",
+        "ar": "لا؛ يبقى للدفعة المؤرخة الأخيرة زمن صفر قبل قياس F. التركيب والدفع محوران مستقلان في النموذج."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s04-recall",
+      "concept": "ee-continuous-flows-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: An effective discrete rate can discount a continuous flow",
+        "ar": "اشرح: معدل فعّال متقطع يخصم تدفقًا مستمرًا"
+      },
+      "a": {
+        "en": "A convenient formula does not override a stated timing assumption.",
+        "ar": "لا تتقدم المعادلة المريحة على فرض توقيت صريح."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s04-formula",
+      "concept": "ee-continuous-flows-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nP=a[1−(1+i)^−n]/ln(1+i)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nP=a[1−(1+i)^−n]/ln(1+i)"
+      },
+      "a": {
+        "en": "i is annual effective; ln(1+i) is the equivalent continuous annual force. Continuous flow with exponential fractional-year valuation. A different credit convention needs a different model.",
+        "ar": "i فعّال سنوي و ln(1+i) قوته المستمرة المكافئة. تدفق مستمر وتقييم أسي لكسور السنة؛ أما قاعدة قيد أخرى فتحتاج نموذجًا آخر."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s04-trap",
+      "concept": "ee-continuous-flows-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; logarithms and rates are identical for every i.",
+        "ar": "يقول متعلم: نعم؛ يتطابق اللوغاريتم والمعدل لكل i."
+      },
+      "a": {
+        "en": "No; that would be an approximation or a changed compounding model. A convenient formula does not override a stated timing assumption.",
+        "ar": "لا؛ يكون تقريبًا أو تغييرًا لنموذج التركيب. لا تتقدم المعادلة المريحة على فرض توقيت صريح."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s05-recall",
+      "concept": "ee-continuous-flows-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Defer, escalate and combine flow segments",
+        "ar": "اشرح: أجّل وصعّد واجمع أجزاء التدفق"
+      },
+      "a": {
+        "en": "Combine cash models only after converting them to the same date.",
+        "ar": "اجمع نماذج النقد بعد تحويلها إلى تاريخ واحد."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s05-formula",
+      "concept": "ee-continuous-flows-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nP=a(1−e^(−rL))e^(−rd)/r; growing flow: P=∫a0 e^((g−r)t)dt",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nP=a(1−e^(−rL))e^(−rd)/r; growing flow: P=∫a0 e^((g−r)t)dt"
+      },
+      "a": {
+        "en": "d is delay, L flow duration, a0 initial flow rate; both r and g are continuous forces/year. Identify whether the quoted growth is a continuous force or a discrete percentage before using g.",
+        "ar": "d التأجيل و L مدة التدفق و a0 شدته الابتدائية، و r و g قوتان سنويتان. حدد هل النمو المعلن قوة مستمرة أم نسبة متقطعة قبل استخدام g."
+      }
+    },
+    {
+      "id": "ee-continuous-flows-s05-trap",
+      "concept": "ee-continuous-flows-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; the last calendar index is the duration.",
+        "ar": "يقول متعلم: نعم؛ الرقم الأخير هو المدة."
+      },
+      "a": {
+        "en": "No; duration is 5−2=3 years, with a separate 2-year delay. Combine cash models only after converting them to the same date.",
+        "ar": "لا؛ مدته 3 سنوات مع تأجيل مستقل سنتين. اجمع نماذج النقد بعد تحويلها إلى تاريخ واحد."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE06",
+      "page": 87,
+      "filename": "chapter 3 EnEc.pdf"
+    },
+    {
+      "doc": "EE06",
+      "page": 90,
+      "filename": "chapter 3 EnEc.pdf"
+    },
+    {
+      "doc": "EE06",
+      "page": 100,
+      "filename": "chapter 3 EnEc.pdf"
+    }
+  ],
+  "videoIds": [
+    "rfG8ce4nNh0",
+    "ddVaiumu0tI"
+  ]
+}

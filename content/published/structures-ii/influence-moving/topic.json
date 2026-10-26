@@ -1,0 +1,1183 @@
+{
+  "id": "influence-moving",
+  "family": "influence",
+  "title": {
+    "en": "Moving loads: put the load where it matters",
+    "ar": "الأحمال المتحركة: ضع الحمل حيث يؤثر"
+  },
+  "summary": {
+    "en": "Turn an influence line into a loading decision. Separate point loads from load intensity, and signed maximum from largest magnitude.",
+    "ar": "حوّل خط التأثير إلى قرار تحميل. ميّز بين الحمل المركز وشدة الحمل وبين القيمة الجبرية العظمى وأكبر مقدار مطلق."
+  },
+  "outcomes": [
+    {
+      "en": "Superpose a moving train at its actual axle spacings.",
+      "ar": "راكب أحمال قطار متحرك مع الحفاظ على تباعد محاوره."
+    },
+    {
+      "en": "Choose UDL patches from signed influence areas.",
+      "ar": "اختر مناطق الحمل الموزع من مساحات التأثير الجبرية."
+    },
+    {
+      "en": "Check candidate placements rather than trusting a picture.",
+      "ar": "افحص مواضع التحميل المرشحة بدلاً من الاعتماد على شكل الرسم."
+    }
+  ],
+  "prereqIds": [
+    "units",
+    "forces",
+    "loads",
+    "diagrams",
+    "algebra"
+  ],
+  "concepts": [
+    {
+      "id": "im-point",
+      "title": {
+        "en": "Point load × ordinate",
+        "ar": "الحمل المركز × الإحداثي"
+      }
+    },
+    {
+      "id": "im-train",
+      "title": {
+        "en": "Rigid train and superposition",
+        "ar": "قطار ثابت التباعد والتراكب"
+      }
+    },
+    {
+      "id": "im-area",
+      "title": {
+        "en": "UDL × signed area",
+        "ar": "الحمل الموزع × المساحة الجبرية"
+      }
+    },
+    {
+      "id": "im-critical",
+      "title": {
+        "en": "Critical axle placement",
+        "ar": "موضع المحاور الحرج"
+      }
+    },
+    {
+      "id": "im-patch",
+      "title": {
+        "en": "Finite-length UDL placement",
+        "ar": "موضع الحمل الموزع محدود الطول"
+      }
+    },
+    {
+      "id": "im-extremes",
+      "title": {
+        "en": "Signed extremes and physical limits",
+        "ar": "القيم الجبرية والحدود الفيزيائية"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "im-point",
+      "title": {
+        "en": "Place one wheel before the whole truck",
+        "ar": "ضع عجلة واحدة قبل الشاحنة كاملة"
+      },
+      "predict": {
+        "en": "Does a high influence ordinate always mean a large effect regardless of load size?",
+        "ar": "هل الإحداثي الكبير يعني أثراً كبيراً مهما كان مقدار الحمل؟"
+      },
+      "options": [
+        {
+          "en": "Yes; ignore the load magnitude.",
+          "ar": "نعم؛ نهمل مقدار الحمل."
+        },
+        {
+          "en": "No; effect is the load multiplied by that ordinate.",
+          "ar": "لا؛ الأثر يساوي الحمل مضروباً في الإحداثي."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Fix the middle section of a simply supported 10 m beam. Its moment influence line is a triangle, zero at both ends and 2.5 m high at midspan.",
+        "ar": "ثبت المقطع الأوسط لكمرة بسيطة طولها 10 m. خط تأثير عزمه مثلث، صفر عند الطرفين وارتفاعه 2.5 m في المنتصف."
+      },
+      "explain": {
+        "en": "A unit load just locates the response sensitivity. Restore the real wheel force by multiplication. For this beam, ηM5=x/2 for x≤5, and (10−x)/2 for x≥5.",
+        "ar": "يكشف حمل الوحدة حساسية الاستجابة. أعد قوة العجلة الحقيقية بالضرب. لهذه الكمرة ηM5=x/2 عندما x≤5 و(10−x)/2 عندما x≥5."
+      },
+      "formula": "M5=P ηM5(x)",
+      "symbols": {
+        "en": "P is in kN; ηM5 is in m; their product is kN·m. The section stays at s=5 m while x moves.",
+        "ar": "P بوحدة kN وηM5 بوحدة m؛ الناتج kN·m. يظل المقطع عند s=5 m بينما يتحرك x."
+      },
+      "assumptions": {
+        "en": "Linear superposition and a defined downward moving load; preserve axle spacing, allowable travel and load-length limits. Authored simple-beam examples below use pin/roller ends and L=10 m.",
+        "ar": "تراكب خطي وحمل متحرك محدد لأسفل؛ حافظ على تباعد المحاور وحدود الحركة وطول التحميل المسموح. أمثلة الكمرة البسيطة المؤلفة أدناه لها طرفان مفصلي وبكرة وطول L=10 m."
+      },
+      "example": {
+        "en": "Authored example: P=20 kN at x=3 m.",
+        "ar": "مثال مؤلف: P=20 kN عند x=3 m."
+      },
+      "calculation": {
+        "en": "η=3/2=1.5 m, so M5=20×1.5=30 kN·m. At x=5 it rises to 50 kN·m.",
+        "ar": "η=3/2=1.5 m، إذن M5=20×1.5=30 kN·m. وعند x=5 يصبح 50 kN·m."
+      },
+      "interpret": {
+        "en": "Predict where the wheel should move before looking at the response. On this line, moving toward the peak raises the positive moment.",
+        "ar": "توقع جهة حركة العجلة قبل إظهار الاستجابة. في هذا الخط، الاقتراب من القمة يزيد العزم الموجب."
+      },
+      "check": {
+        "prompt": {
+          "en": "What is ηM5 at x=8 m?",
+          "ar": "ما ηM5 عند x=8 m؟"
+        },
+        "answer": {
+          "en": "(10−8)/2=1 m.",
+          "ar": "(10−8)/2=1 m."
+        }
+      },
+      "diagram": "influence",
+      "experiment": "moving",
+      "concepts": [
+        "im-point"
+      ],
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ]
+    },
+    {
+      "id": "im-train",
+      "title": {
+        "en": "Keep the wheels connected",
+        "ar": "أبق العجلات مرتبطة"
+      },
+      "predict": {
+        "en": "May the heavy and light axles both be independently moved onto the same peak?",
+        "ar": "هل يجوز نقل المحور الثقيل والخفيف مستقلاً إلى القمة نفسها؟"
+      },
+      "options": [
+        {
+          "en": "No; the train spacing constrains their positions.",
+          "ar": "لا؛ تباعد القطار يقيد مواضعهما."
+        },
+        {
+          "en": "Yes; place every axle at the peak simultaneously.",
+          "ar": "نعم؛ نضع كل محور في القمة معاً."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A two-axle train moves as one object. Slide its reference axle; the other follows at a fixed spacing. Sum each force times the ordinate under that axle.",
+        "ar": "يتحرك القطار ذو المحورين كجسم واحد. حرّك محوراً مرجعياً فيتبعه الآخر بتباعد ثابت. اجمع حاصل ضرب كل قوة في الإحداثي تحتها."
+      },
+      "explain": {
+        "en": "An axle outside the loaded structure contributes zero, but may still matter while entering or leaving. State whether reverse travel orientation is allowed.",
+        "ar": "المحور خارج المنشأ لا يساهم، لكنه مهم أثناء الدخول والخروج. حدد ما إذا كان الاتجاه المعاكس مسموحاً."
+      },
+      "formula": "E(a)=ΣPi η(a+di)",
+      "symbols": {
+        "en": "a is the train reference position; di are fixed axle offsets. Define η=0 outside the permitted beam length.",
+        "ar": "a موضع مرجع القطار وdi إزاحات المحاور الثابتة. عرف η=0 خارج طول الكمرة المسموح."
+      },
+      "assumptions": {
+        "en": "Linear superposition and a defined downward moving load; preserve axle spacing, allowable travel and load-length limits. Authored simple-beam examples below use pin/roller ends and L=10 m.",
+        "ar": "تراكب خطي وحمل متحرك محدد لأسفل؛ حافظ على تباعد المحاور وحدود الحركة وطول التحميل المسموح. أمثلة الكمرة البسيطة المؤلفة أدناه لها طرفان مفصلي وبكرة وطول L=10 m."
+      },
+      "example": {
+        "en": "Authored train: 30 kN at x=4 m and 20 kN at x=8 m on the 10 m beam, maintaining 4 m spacing.",
+        "ar": "قطار مؤلف: 30 kN عند x=4 m و20 kN عند x=8 m مع تباعد 4 m على الكمرة 10 m."
+      },
+      "calculation": {
+        "en": "η(4)=2 m and η(8)=1 m. M5=30×2+20×1=80 kN·m.",
+        "ar": "η(4)=2 m وη(8)=1 m. M5=30×2+20×1=80 kN·m."
+      },
+      "interpret": {
+        "en": "Do not add the independent maximum of each axle; that would represent a different vehicle.",
+        "ar": "لا تجمع القيمة القصوى المستقلة لكل محور؛ فهذا يمثل مركبة مختلفة."
+      },
+      "check": {
+        "prompt": {
+          "en": "What is the second axle position if the first moves from x=4 to x=5?",
+          "ar": "أين يصبح المحور الثاني إذا انتقل الأول من x=4 إلى x=5؟"
+        },
+        "answer": {
+          "en": "It moves from 8 to 9 m; spacing remains 4 m.",
+          "ar": "ينتقل من 8 إلى 9 m؛ يبقى التباعد 4 m."
+        }
+      },
+      "diagram": "influence",
+      "experiment": "moving",
+      "concepts": [
+        "im-train"
+      ],
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "07",
+          "page": 1,
+          "filename": "influence line stru.pdf"
+        }
+      ]
+    },
+    {
+      "id": "im-area",
+      "title": {
+        "en": "Spread the wheels into a carpet of load",
+        "ar": "حوّل العجلات إلى بساط من الحمل"
+      },
+      "predict": {
+        "en": "For a UDL, multiply its intensity by the tallest ordinate or by the loaded influence area?",
+        "ar": "للحمل الموزع، هل نضرب الشدة في أعلى إحداثي أم في مساحة التأثير المحملة؟"
+      },
+      "options": [
+        {
+          "en": "Only the tallest ordinate.",
+          "ar": "أعلى إحداثي فقط."
+        },
+        {
+          "en": "The signed area under the loaded part of the influence line.",
+          "ar": "المساحة الجبرية تحت الجزء المحمل من خط التأثير."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Imagine many tiny point loads w dx. Each contributes w dx η. Adding them becomes an integral of the line over the actual loaded region.",
+        "ar": "تخيل أحمالاً صغيرة كثيرة w dx، يساهم كل منها بمقدار w dx η. يتحول جمعها إلى تكامل الخط على المنطقة المحملة فعلاً."
+      },
+      "explain": {
+        "en": "Intensity is force per length. For a moment influence line, area has length squared, so kN/m×m² gives kN·m. Negative lobes subtract from positive response.",
+        "ar": "الشدة قوة لكل طول. مساحة خط تأثير العزم بوحدة طول مربع؛ إذن kN/m×m² تعطي kN·m. تطرح الفصوص السالبة من الاستجابة الموجبة."
+      },
+      "formula": "E=w∫loaded η(x) dx",
+      "symbols": {
+        "en": "w is UDL intensity; the integration bounds are the loaded region, not automatically the whole bridge.",
+        "ar": "w شدة الحمل الموزع وحدود التكامل هي المنطقة المحملة وليست تلقائياً الجسر كله."
+      },
+      "assumptions": {
+        "en": "Linear superposition and a defined downward moving load; preserve axle spacing, allowable travel and load-length limits. Authored simple-beam examples below use pin/roller ends and L=10 m.",
+        "ar": "تراكب خطي وحمل متحرك محدد لأسفل؛ حافظ على تباعد المحاور وحدود الحركة وطول التحميل المسموح. أمثلة الكمرة البسيطة المؤلفة أدناه لها طرفان مفصلي وبكرة وطول L=10 m."
+      },
+      "example": {
+        "en": "Authored simple 10 m beam: full-span w=10 kN/m and midspan moment line height 2.5 m.",
+        "ar": "مثال كمرة بسيطة مؤلف بطول 10 m: حمل موزع كامل w=10 kN/m وارتفاع خط عزم المنتصف 2.5 m."
+      },
+      "calculation": {
+        "en": "Area=½×10×2.5=12.5 m². M5=10×12.5=125 kN·m, matching wL²/8.",
+        "ar": "المساحة=½×10×2.5=12.5 m². M5=10×12.5=125 kN·m، كما في wL²/8."
+      },
+      "interpret": {
+        "en": "Do not confuse an influence area in m² with physical beam area. It is an integration aid whose dimensions depend on the chosen response.",
+        "ar": "لا تخلط مساحة التأثير بوحدة m² مع مساحة مقطع الكمرة؛ إنها أداة تكامل تعتمد أبعادها على الأثر المختار."
+      },
+      "check": {
+        "prompt": {
+          "en": "If a reaction influence area is 3 m under w=8 kN/m, what is the reaction contribution?",
+          "ar": "إذا كانت مساحة تأثير رد فعل 3 m تحت w=8 kN/m، فما المساهمة؟"
+        },
+        "answer": {
+          "en": "8×3=24 kN.",
+          "ar": "8×3=24 kN."
+        }
+      },
+      "diagram": "influence",
+      "experiment": "moving",
+      "concepts": [
+        "im-area"
+      ],
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "23",
+          "page": 22,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ]
+    },
+    {
+      "id": "im-critical",
+      "title": {
+        "en": "Check the places where the rule changes",
+        "ar": "افحص مواضع تغير القاعدة"
+      },
+      "predict": {
+        "en": "For a piecewise linear line, is a finely spaced sweep alone enough to prove the exact maximum?",
+        "ar": "لخط مكون من قطع مستقيمة، هل يكفي مسح عددي متقارب وحده لإثبات القيمة القصوى الدقيقة؟"
+      },
+      "options": [
+        {
+          "en": "No; inspect breakpoints, entries and exits, and compare candidates.",
+          "ar": "لا؛ افحص نقاط الانكسار والدخول والخروج وقارن المرشحين."
+        },
+        {
+          "en": "Yes; every coarse sweep is exact.",
+          "ar": "نعم؛ كل مسح خشن دقيق."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Between events, a simple-beam train response is linear in train position. Its maximum occurs at a boundary of such an interval, or throughout a flat interval.",
+        "ar": "بين الأحداث تكون استجابة قطار على كمرة بسيطة خطية في موضعه. تقع القيمة القصوى عند حد تلك الفترة أو على فترة مستوية كاملة."
+      },
+      "explain": {
+        "en": "Evaluate positions when an axle reaches the studied section, a line breakpoint, or a permitted travel boundary. Curved influence lines can also have interior stationary points; then solve dE/da=0 and compare all candidates.",
+        "ar": "افحص وصول محور للمقطع المدروس أو لنقطة تغير الخط أو لحد الحركة. قد تملك الخطوط المنحنية نقاطاً ساكنة داخلية؛ حل dE/da=0 وقارن جميع المرشحين."
+      },
+      "formula": "dE/da=ΣPi η′(a+di)",
+      "symbols": {
+        "en": "The derivative measures whether moving the entire train right increases the selected effect. At kinks use one-sided derivatives.",
+        "ar": "تقيس المشتقة ما إذا كان تحريك القطار كله يميناً يزيد الأثر المختار. عند الزوايا استعمل مشتقات الجهتين."
+      },
+      "assumptions": {
+        "en": "Linear superposition and a defined downward moving load; preserve axle spacing, allowable travel and load-length limits. Authored simple-beam examples below use pin/roller ends and L=10 m.",
+        "ar": "تراكب خطي وحمل متحرك محدد لأسفل؛ حافظ على تباعد المحاور وحدود الحركة وطول التحميل المسموح. أمثلة الكمرة البسيطة المؤلفة أدناه لها طرفان مفصلي وبكرة وطول L=10 m."
+      },
+      "example": {
+        "en": "Authored 30/20 kN train, 4 m spacing, fixed midspan section of L=10 m. Compare heavy axle at 5 and light axle at 5.",
+        "ar": "قطار مؤلف 30/20 kN وتباعد 4 m، والمقطع ثابت بمنتصف كمرة 10 m. قارن وضع الثقيل عند 5 ووضع الخفيف عند 5."
+      },
+      "calculation": {
+        "en": "Heavy at5/light at9: 30×2.5+20×0.5=85. Heavy at1/light at5: 30×0.5+20×2.5=65 kN·m. Entry/exit candidates are lower; maximum=85 kN·m.",
+        "ar": "الثقيل عند5 والخفيف عند9: 30×2.5+20×0.5=85. الثقيل عند1 والخفيف عند5: 30×0.5+20×2.5=65 kN·m. مرشحو الدخول والخروج أقل؛ القيمة القصوى85 kN·m."
+      },
+      "interpret": {
+        "en": "This is the maximum at a specified section, not the absolute maximum bending moment anywhere in the beam. Those are different optimization questions.",
+        "ar": "هذه القيمة القصوى عند مقطع محدد وليست أكبر عزم في أي موضع من الكمرة؛ المسألتان مختلفتان."
+      },
+      "check": {
+        "prompt": {
+          "en": "On a curved influence line, what additional candidate must be checked?",
+          "ar": "ما المرشح الإضافي الواجب فحصه في خط تأثير منحني؟"
+        },
+        "answer": {
+          "en": "Interior train positions where the response derivative is zero.",
+          "ar": "مواضع داخلية للقطار تنعدم عندها مشتقة الاستجابة."
+        }
+      },
+      "diagram": "influence",
+      "experiment": "moving",
+      "concepts": [
+        "im-critical"
+      ],
+      "sources": [
+        {
+          "doc": "07",
+          "page": 1,
+          "filename": "influence line stru.pdf"
+        },
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ]
+    },
+    {
+      "id": "im-patch",
+      "title": {
+        "en": "Slide a load patch, not an unlimited flood",
+        "ar": "حرّك رقعة حمل لا غمراً غير محدود"
+      },
+      "predict": {
+        "en": "A fixed-length UDL patch is moved slightly right. What decides whether response rises?",
+        "ar": "تتحرك رقعة حمل موزع ثابتة الطول قليلاً يميناً. ما الذي يحدد زيادة الاستجابة؟"
+      },
+      "options": [
+        {
+          "en": "The difference between ordinates entering at the right and leaving at the left.",
+          "ar": "فرق الإحداثي الداخل من اليمين والخارج من اليسار."
+        },
+        {
+          "en": "The total beam length alone.",
+          "ar": "طول الكمرة الكلي وحده."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A small strip of load enters one edge while another strip leaves the other edge. The net response change depends on their two influence ordinates.",
+        "ar": "يدخل شريط حمل صغير عند حافة ويخرج شريط عند الأخرى. يتحدد تغير الاستجابة بإحداثيي التأثير عند الحافتين."
+      },
+      "explain": {
+        "en": "For an interior optimum of a constant-intensity patch, equal endpoint ordinates make the first derivative zero. Also test load boundaries, kinks and allowed patch positions.",
+        "ar": "عند موضع داخلي أمثل لرقعة ثابتة الشدة، يجعل تساوي إحداثيي الحافتين المشتقة الأولى صفراً. افحص أيضاً الحدود والزوايا ومواضع الرقعة المسموحة."
+      },
+      "formula": "E(a)=w∫a^(a+ℓ)η(x)dx; E′(a)=w[η(a+ℓ)−η(a)]",
+      "symbols": {
+        "en": "ℓ is fixed patch length; a is the left edge. The formula assumes the whole specified patch is within the evaluated integration domain.",
+        "ar": "ℓ طول الرقعة الثابت وa حافتها اليسرى. تفترض المعادلة وجود الرقعة المحددة ضمن مجال التكامل المدروس."
+      },
+      "assumptions": {
+        "en": "Linear superposition and a defined downward moving load; preserve axle spacing, allowable travel and load-length limits. Authored simple-beam examples below use pin/roller ends and L=10 m.",
+        "ar": "تراكب خطي وحمل متحرك محدد لأسفل؛ حافظ على تباعد المحاور وحدود الحركة وطول التحميل المسموح. أمثلة الكمرة البسيطة المؤلفة أدناه لها طرفان مفصلي وبكرة وطول L=10 m."
+      },
+      "example": {
+        "en": "Authored simple beam: w=10 kN/m over exactly 4 m; maximize midspan moment. Symmetry puts edges at x=3 and 7 m.",
+        "ar": "مثال مؤلف لكمرة بسيطة: w=10 kN/m على طول 4 m بالضبط؛ عظّم عزم المنتصف. يضع التماثل الحافتين عند x=3 و7 m."
+      },
+      "calculation": {
+        "en": "Endpoint ordinates are both1.5 m; peak2.5 m. Loaded area=2×[2×(1.5+2.5)/2]=8 m². M5=80 kN·m.",
+        "ar": "إحداثيا الحافتين1.5 m والقمة2.5 m. المساحة المحملة=2×[2×(1.5+2.5)/2]=8 m². M5=80 kN·m."
+      },
+      "interpret": {
+        "en": "Loading the entire positive lobe would violate the 4 m limit. Optimization must honor the actual vehicle or loading specification.",
+        "ar": "تحميل الفص الموجب كله يخالف حد 4 m. يجب أن يحترم التحسين مواصفات المركبة أو التحميل الفعلية."
+      },
+      "check": {
+        "prompt": {
+          "en": "Why do equal endpoint ordinates help locate the optimum?",
+          "ar": "لماذا يساعد تساوي إحداثيي الطرفين على إيجاد الموضع الأمثل؟"
+        },
+        "answer": {
+          "en": "The entering and leaving strips have equal first-order effects, so E′=0.",
+          "ar": "يتساوى أثر الشريط الداخل والخارج من الرتبة الأولى فتصبح E′=0."
+        }
+      },
+      "diagram": "influence",
+      "experiment": "moving",
+      "concepts": [
+        "im-patch"
+      ],
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ]
+    },
+    {
+      "id": "im-extremes",
+      "title": {
+        "en": "Say which maximum you mean",
+        "ar": "حدد أي قيمة قصوى تقصد"
+      },
+      "predict": {
+        "en": "If every influence ordinate is negative, is the maximum positive response under optional downward loading necessarily a large negative number?",
+        "ar": "إذا كانت جميع الإحداثيات سالبة، فهل تكون أكبر استجابة موجبة تحت تحميل لأسفل اختياري رقماً سالباً كبيراً بالضرورة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; maximum always means largest absolute value.",
+          "ar": "نعم؛ القيمة القصوى تعني دوماً أكبر مقدار مطلق."
+        },
+        {
+          "en": "No; signed maximum may be zero with no load, while maximum negative magnitude is a different target.",
+          "ar": "لا؛ قد تكون القيمة الجبرية العظمى صفراً دون تحميل، وأكبر مقدار سالب هدف مختلف."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Separate maximum sagging, maximum hogging and maximum absolute moment. If loading is optional, place it on positive lobes for positive effects and negative lobes for negative effects, within the stated restrictions.",
+        "ar": "ميز أكبر ترخيم وأكبر تقعر وأكبر مقدار مطلق للعزم. إذا كان التحميل اختيارياً فحمّل الفصوص الموجبة للأثر الموجب والسالبة للسالب ضمن القيود المحددة."
+      },
+      "explain": {
+        "en": "The supplied propped beam has a positive midpoint moment line. Its fixed-end internal moment line is negative. The same UDL can therefore create positive midpoint moment and negative support moment.",
+        "ar": "خط عزم المنتصف في الكابولي المسند المرفق موجب، بينما خط العزم الداخلي عند التثبيت سالب. لذلك يعطي الحمل نفسه عزماً موجباً بالمنتصف وسالباً عند المسند."
+      },
+      "formula": "Emax+=w∫η>0η dx; Emin−=w∫η<0η dx",
+      "symbols": {
+        "en": "These lobe rules assume independently selectable loading regions of unchanged intensity. They do not override fixed patch lengths, mandatory dead load or train spacing.",
+        "ar": "تفترض قواعد الفصوص إمكان اختيار مناطق التحميل مستقلة بالشدة نفسها. لا تلغي طول الرقعة الثابت أو الحمل الدائم الإلزامي أو تباعد المحاور."
+      },
+      "assumptions": {
+        "en": "Linear superposition and a defined downward moving load; preserve axle spacing, allowable travel and load-length limits. Authored simple-beam examples below use pin/roller ends and L=10 m.",
+        "ar": "تراكب خطي وحمل متحرك محدد لأسفل؛ حافظ على تباعد المحاور وحدود الحركة وطول التحميل المسموح. أمثلة الكمرة البسيطة المؤلفة أدناه لها طرفان مفصلي وبكرة وطول L=10 m."
+      },
+      "example": {
+        "en": "Supplied test, L=12 m propped cantilever, w=10 kN/m over the favorable full span.",
+        "ar": "الاختبار المرفق: كابولي مسند L=12 m وحمل w=10 kN/m على كامل البحر المناسب."
+      },
+      "calculation": {
+        "en": "Midpoint η-area=9 m² gives +90 kN·m. External support-couple area=18 m² gives +180 kN·m CCW; internal fixed moment is −180 kN·m.",
+        "ar": "مساحة خط المنتصف9 m² تعطي +90 kN·m. مساحة عزم رد الفعل الخارجي18 m² تعطي +180 kN·m عكس الساعة؛ عزم التثبيت الداخلي −180 kN·m."
+      },
+      "interpret": {
+        "en": "Never reuse the free-cantilever result −180 at midpoint for this propped source diagram. A missing support changes both the influence shape and the critical load effect.",
+        "ar": "لا تستعمل نتيجة الكابولي الحر −180 عند المنتصف لهذا الرسم المسند. نسيان مسند يغير شكل التأثير وأثر التحميل الحرج معاً."
+      },
+      "check": {
+        "prompt": {
+          "en": "Does largest absolute moment specify a sign?",
+          "ar": "هل أكبر مقدار مطلق للعزم يحدد إشارة؟"
+        },
+        "answer": {
+          "en": "No. Compare magnitudes, then report the governing sign and location.",
+          "ar": "لا. قارن المقادير ثم اذكر الإشارة والموضع الحاكمين."
+        }
+      },
+      "diagram": "influence",
+      "experiment": "moving",
+      "concepts": [
+        "im-extremes"
+      ],
+      "sources": [
+        {
+          "doc": "23",
+          "page": 22,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "im-q1",
+      "concept": "im-point",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored simple L10 beam, midspan section: P=18 kN at x=4 m. Find moment in kN·m.",
+        "ar": "كمرة بسيطة مؤلفة L10 ومقطع المنتصف: P=18 kN عند x=4 m. أوجد العزم بوحدة kN·m."
+      },
+      "hints": [
+        {
+          "en": "η=x/2 left of midspan.",
+          "ar": "η=x/2 يسار المنتصف."
+        },
+        {
+          "en": "The midspan ordinate of a simple 10 m beam at x=4 is x/2.",
+          "ar": "إحداثي خط تأثير عزم منتصف كمرة بسيطة بطول10 m عند x=4 هو x/2."
+        }
+      ],
+      "solution": {
+        "en": "η=2 m; M=18×2=36 kN·m.",
+        "ar": "η=2 m؛ M=18×2=36 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "expected": 36,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "im-q2",
+      "concept": "im-point",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A moment influence ordinate is in metres. A wheel force is in kN. What are effect units?",
+        "ar": "إحداثي تأثير العزم بالمتر وقوة العجلة kN. ما وحدة الأثر؟"
+      },
+      "hints": [
+        {
+          "en": "Multiply the units as well as the values.",
+          "ar": "اضرب الوحدات كما تضرب القيم."
+        },
+        {
+          "en": "Force times a length has the dimensions of moment.",
+          "ar": "القوة مضروبة في طول تعطي أبعاد العزم."
+        }
+      ],
+      "solution": {
+        "en": "kN×m=kN·m, a bending moment.",
+        "ar": "kN×m=kN·m، وهي وحدة عزم انحناء."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "kN/m",
+          "ar": "kN/m"
+        },
+        {
+          "en": "kN·m",
+          "ar": "kN·m"
+        },
+        {
+          "en": "m²",
+          "ar": "m²"
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "im-q3",
+      "concept": "im-train",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored simple L10 beam: axles30 kN at x4 and20 kN at x8. Find midspan moment.",
+        "ar": "كمرة بسيطة مؤلفة L10: محور30 kN عند x4 ومحور20 kN عند x8. أوجد عزم المنتصف."
+      },
+      "hints": [
+        {
+          "en": "Ordinates are2 and1 metres.",
+          "ar": "الإحداثيان2 و1 متر."
+        },
+        {
+          "en": "Use M=30η(4)+20η(8) with η(4)=2 and η(8)=1.",
+          "ar": "استخدم M=30η(4)+20η(8)، حيث η(4)=2 وη(8)=1."
+        }
+      ],
+      "solution": {
+        "en": "30×2+20×1=80 kN·m.",
+        "ar": "30×2+20×1=80 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "07",
+          "page": 1,
+          "filename": "influence line stru.pdf"
+        }
+      ],
+      "expected": 80,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "im-q4",
+      "concept": "im-train",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Why is summing each axle’s isolated maximum usually invalid?",
+        "ar": "لماذا يكون جمع القيمة القصوى المنفردة لكل محور غير صحيح عادة؟"
+      },
+      "hints": [
+        {
+          "en": "The axles form one vehicle.",
+          "ar": "المحاور مركبة واحدة."
+        },
+        {
+          "en": "One common train-position parameter must place every axle at its fixed offset.",
+          "ar": "يجب أن يحدد متغير موضع واحد مواقع المحاور كلها وفق تباعدها الثابت."
+        }
+      ],
+      "solution": {
+        "en": "Their fixed spacings prevent arbitrary independent placement of all axles at one peak.",
+        "ar": "تمنع مسافات المحاور الثابتة وضعها جميعاً مستقلة عند قمة واحدة."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "07",
+          "page": 1,
+          "filename": "influence line stru.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Fixed axle spacings must be preserved",
+          "ar": "يجب حفظ مسافات المحاور"
+        },
+        {
+          "en": "Superposition never applies",
+          "ar": "التراكب لا ينطبق مطلقاً"
+        }
+      ],
+      "correct": 0
+    },
+    {
+      "id": "im-q5",
+      "concept": "im-area",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: a reaction influence line has signed loaded area2.4 m under w=15 kN/m. Find reaction contribution.",
+        "ar": "مؤلف: المساحة المحملة الجبرية لخط رد فعل2.4 m تحت w=15 kN/m. أوجد مساهمة رد الفعل."
+      },
+      "hints": [
+        {
+          "en": "Multiply intensity by area.",
+          "ar": "اضرب الشدة في المساحة."
+        },
+        {
+          "en": "Multiply the load intensity by the signed loaded influence area: R=wA.",
+          "ar": "اضرب شدة الحمل في مساحة التأثير الجبرية المحمّلة: R=wA."
+        }
+      ],
+      "solution": {
+        "en": "15×2.4=36 kN.",
+        "ar": "15×2.4=36 kN."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "23",
+          "page": 22,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ],
+      "expected": 36,
+      "tolerance": 0.01,
+      "unit": "kN"
+    },
+    {
+      "id": "im-q6",
+      "concept": "im-area",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored simple L10 beam, full UDL8 kN/m: find midspan moment.",
+        "ar": "كمرة بسيطة مؤلفة L10 وحمل موزع كامل8 kN/m: أوجد عزم المنتصف."
+      },
+      "hints": [
+        {
+          "en": "Influence area=12.5 m².",
+          "ar": "مساحة التأثير12.5 m²."
+        },
+        {
+          "en": "The triangular midspan influence diagram has area ½×10×2.5.",
+          "ar": "مساحة مثلث خط تأثير عزم المنتصف تساوي½×10×2.5."
+        }
+      ],
+      "solution": {
+        "en": "8×12.5=100 kN·m, also wL²/8.",
+        "ar": "8×12.5=100 kN·m، وكذلك wL²/8."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "23",
+          "page": 22,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ],
+      "expected": 100,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "im-q7",
+      "concept": "im-critical",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored 30/20 kN axles4 m apart cross simple L10 beam. Find maximum moment at its fixed midspan section.",
+        "ar": "محوران مؤلفان30/20 kN بتباعد4 m يعبران كمرة بسيطة L10. أوجد أكبر عزم عند مقطع المنتصف الثابت."
+      },
+      "hints": [
+        {
+          "en": "Compare heavy axle at midspan with light axle at midspan.",
+          "ar": "قارن وضع المحور الثقيل بالمنتصف بوضع الخفيف بالمنتصف."
+        },
+        {
+          "en": "Compare the two candidates with an axle at x=5 and also entry/exit boundaries.",
+          "ar": "قارن مرشحي وجود أحد المحورين عند x=5 وحدود دخول وخروج القطار."
+        }
+      ],
+      "solution": {
+        "en": "Heavy at5/light at9 gives85; heavy at1/light at5 gives65. Entry/exit candidates are lower. Maximum=85 kN·m.",
+        "ar": "الثقيل عند5 والخفيف عند9 يعطيان85، والثقيل عند1 والخفيف عند5 يعطيان65. مرشحو الدخول والخروج أقل؛ الأكبر85 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "07",
+          "page": 1,
+          "filename": "influence line stru.pdf"
+        },
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "expected": 85,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "im-q8",
+      "concept": "im-critical",
+      "type": "conceptual",
+      "prompt": {
+        "en": "On a smooth curved influence line, which condition identifies interior candidate train positions?",
+        "ar": "على خط تأثير أملس منحني، أي شرط يحدد مواضع قطار مرشحة داخلية؟"
+      },
+      "hints": [
+        {
+          "en": "Differentiate the whole train response.",
+          "ar": "اشتق استجابة القطار كاملاً."
+        },
+        {
+          "en": "Differentiate the sum of load contributions with respect to one common position a.",
+          "ar": "اشتق مجموع مساهمات الأحمال بالنسبة إلى موضع مشترك واحد a."
+        }
+      ],
+      "solution": {
+        "en": "Solve ΣPiη′(a+di)=0, then compare with boundaries and other candidates.",
+        "ar": "حل ΣPiη′(a+di)=0 ثم قارن بالحدود وبقية المرشحين."
+      },
+      "sources": [
+        {
+          "doc": "07",
+          "page": 1,
+          "filename": "influence line stru.pdf"
+        },
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Place every axle at an endpoint",
+          "ar": "ضع كل محور عند طرف"
+        },
+        {
+          "en": "Set whole-response derivative to zero",
+          "ar": "اجعل مشتقة الاستجابة الكلية صفراً"
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "im-q9",
+      "concept": "im-patch",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored simple L10 beam, exactly4 m of UDL10 kN/m. Find the maximum midspan moment.",
+        "ar": "كمرة بسيطة مؤلفة L10 ورقعة حمل10 kN/m بطول4 m بالضبط. أوجد أكبر عزم منتصف."
+      },
+      "hints": [
+        {
+          "en": "Center the patch on midspan; integrate from3 to7.",
+          "ar": "وسط الرقعة عند المنتصف وكامل من3 إلى7."
+        },
+        {
+          "en": "A symmetric 4 m patch spans x=3 to7 around the midspan peak. Integrate that trapezoid.",
+          "ar": "يغطي شريط متماثل بطول4 m المنطقة x=3 إلى7 حول قمة المنتصف؛ احسب مساحة شبه المنحرف."
+        }
+      ],
+      "solution": {
+        "en": "Area under the moment line from3 to7 is8 m². Moment=10×8=80 kN·m.",
+        "ar": "المساحة تحت خط العزم من3 إلى7 تساوي8 m²؛ العزم10×8=80 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "expected": 80,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    },
+    {
+      "id": "im-q10",
+      "concept": "im-patch",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At an interior optimum for a fixed-length UDL patch, what should its endpoint ordinates satisfy?",
+        "ar": "عند موضع داخلي أمثل لرقعة حمل موزع ثابتة الطول، ماذا يحقق إحداثيا الحافتين؟"
+      },
+      "hints": [
+        {
+          "en": "The entering and leaving strips balance.",
+          "ar": "يتوازن أثر الشريط الداخل والخارج."
+        },
+        {
+          "en": "For E(a)=w∫[a,a+l]η(x)dx, differentiate: E′=w[η(a+l)−η(a)].",
+          "ar": "إذا E(a)=w∫[a,a+l]η(x)dx، فالمشتقة E′=w[η(a+l)−η(a)]."
+        }
+      ],
+      "solution": {
+        "en": "η(right)=η(left), so the first derivative vanishes. Check boundaries and second-order/global comparison too.",
+        "ar": "η(يمين)=η(يسار)، فتنعدم المشتقة الأولى. افحص الحدود والمقارنة العالمية أيضاً."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "They are equal",
+          "ar": "متساويان"
+        },
+        {
+          "en": "Both always zero",
+          "ar": "كلاهما صفر دائماً"
+        }
+      ],
+      "correct": 0
+    },
+    {
+      "id": "im-q11",
+      "concept": "im-extremes",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Which sentence is safe when reporting maximum absolute moment?",
+        "ar": "أي عبارة صحيحة عند تقرير أكبر مقدار مطلق للعزم؟"
+      },
+      "hints": [
+        {
+          "en": "Magnitude alone loses sign information.",
+          "ar": "المقدار وحده يخفي الإشارة."
+        },
+        {
+          "en": "An absolute maximum alone hides whether the structure is sagging or hogging.",
+          "ar": "إعطاء القيمة المطلقة وحدها يخفي ما إذا كان الانحناء ترخيمًا أو تحديبًا."
+        }
+      ],
+      "solution": {
+        "en": "Report the magnitude together with its sign, section and loading arrangement.",
+        "ar": "اذكر المقدار مع الإشارة والمقطع وترتيب التحميل."
+      },
+      "sources": [
+        {
+          "doc": "23",
+          "page": 22,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Omit the section and sign",
+          "ar": "احذف المقطع والإشارة"
+        },
+        {
+          "en": "Give magnitude, sign, section and load arrangement",
+          "ar": "اذكر المقدار والإشارة والمقطع وترتيب الحمل"
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "im-q12",
+      "concept": "im-extremes",
+      "type": "mixed",
+      "prompt": {
+        "en": "Supplied propped L12 beam: midpoint influence area is +9 m². Find maximum positive M6 under optional UDL10 kN/m.",
+        "ar": "الكابولي المسند المرفق L12: مساحة تأثير المنتصف+9 m². أوجد أكبر M6 موجب تحت حمل موزع اختياري10 kN/m."
+      },
+      "hints": [
+        {
+          "en": "Load the favorable nonnegative line.",
+          "ar": "حمّل الخط غير السالب المناسب."
+        },
+        {
+          "en": "The stated midpoint influence line is positive throughout its interior, so load the entire positive region.",
+          "ar": "خط التأثير المعطى لعزم المنتصف موجب داخل البحر؛ حمّل المنطقة الموجبة كاملة."
+        }
+      ],
+      "solution": {
+        "en": "M6=10×9=+90 kN·m. Fixed support internal moment −180 is a different response.",
+        "ar": "M6=10×9=+90 kN·m. عزم التثبيت الداخلي−180 استجابة مختلفة."
+      },
+      "sources": [
+        {
+          "doc": "23",
+          "page": 22,
+          "filename": "Structure II_019+020TESTS&solutions.pdf"
+        }
+      ],
+      "expected": 90,
+      "tolerance": 0.01,
+      "unit": "kN·m"
+    }
+  ],
+  "cards": [
+    {
+      "id": "im-c1",
+      "concept": "im-point",
+      "kind": "calculation",
+      "q": {
+        "en": "A30 kN load on a moment ordinate1.2 m gives?",
+        "ar": "حمل30 kN على إحداثي عزم1.2 m يعطي؟"
+      },
+      "a": {
+        "en": "36 kN·m, with the ordinate sign.",
+        "ar": "36 kN·m مع إشارة الإحداثي."
+      }
+    },
+    {
+      "id": "im-c2",
+      "concept": "im-point",
+      "kind": "interpretation",
+      "q": {
+        "en": "Influence line versus actual effect?",
+        "ar": "خط التأثير مقابل الأثر الحقيقي؟"
+      },
+      "a": {
+        "en": "The line is unit-load sensitivity; scale it by the actual concentrated load.",
+        "ar": "الخط حساسية حمل الوحدة؛ اضربه في الحمل المركز الحقيقي."
+      }
+    },
+    {
+      "id": "im-c3",
+      "concept": "im-train",
+      "kind": "decision",
+      "q": {
+        "en": "What must remain fixed while moving a truck?",
+        "ar": "ما الذي يبقى ثابتاً عند تحريك شاحنة؟"
+      },
+      "a": {
+        "en": "Axle forces, axle spacings and the permitted travel orientation.",
+        "ar": "قوى المحاور وتباعدها واتجاه الحركة المسموح."
+      }
+    },
+    {
+      "id": "im-c4",
+      "concept": "im-train",
+      "kind": "misconception",
+      "q": {
+        "en": "Can isolated axle maxima simply be added?",
+        "ar": "هل يمكن جمع القيم القصوى المنفردة للمحاور مباشرة؟"
+      },
+      "a": {
+        "en": "Usually no: those positions may violate fixed spacing. Evaluate one whole train placement at a time.",
+        "ar": "غالباً لا؛ قد تخالف تلك المواضع التباعد الثابت. قيّم موضعاً كاملاً للقطار كل مرة."
+      }
+    },
+    {
+      "id": "im-c5",
+      "concept": "im-area",
+      "kind": "interpretation",
+      "q": {
+        "en": "UDL effect rule?",
+        "ar": "ما قاعدة أثر الحمل الموزع؟"
+      },
+      "a": {
+        "en": "Intensity times signed influence area over exactly the loaded region.",
+        "ar": "الشدة مضروبة في مساحة التأثير الجبرية على المنطقة المحملة تحديداً."
+      }
+    },
+    {
+      "id": "im-c6",
+      "concept": "im-area",
+      "kind": "calculation",
+      "q": {
+        "en": "w=6 kN/m; moment-line area5 m². Moment?",
+        "ar": "w=6 kN/m ومساحة خط العزم5 m². ما العزم؟"
+      },
+      "a": {
+        "en": "30 kN·m.",
+        "ar": "30 kN·m."
+      }
+    },
+    {
+      "id": "im-c7",
+      "concept": "im-critical",
+      "kind": "decision",
+      "q": {
+        "en": "Critical candidates on piecewise linear lines?",
+        "ar": "ما المرشحون الحرجون للخطوط متعددة القطع المستقيمة؟"
+      },
+      "a": {
+        "en": "Axles at line breakpoints, entry/exit events and allowed travel boundaries.",
+        "ar": "المحاور عند نقاط انكسار الخط وأحداث الدخول والخروج وحدود الحركة المسموحة."
+      }
+    },
+    {
+      "id": "im-c8",
+      "concept": "im-critical",
+      "kind": "misconception",
+      "q": {
+        "en": "Maximum at one section equals absolute maximum anywhere?",
+        "ar": "هل الأكبر عند مقطع واحد هو الأكبر المطلق في كل الكمرة؟"
+      },
+      "a": {
+        "en": "No. A fixed-section optimization and an all-section optimization are different tasks.",
+        "ar": "لا. تحسين مقطع ثابت وتحسين جميع المقاطع مسألتان مختلفتان."
+      }
+    },
+    {
+      "id": "im-c9",
+      "concept": "im-patch",
+      "kind": "prediction",
+      "q": {
+        "en": "Patch right edge ordinate exceeds left: moving right does what?",
+        "ar": "إحداثي يمين الرقعة أكبر من يسارها: ماذا تفعل حركتها يميناً؟"
+      },
+      "a": {
+        "en": "Initially increases response because E′=w(ηright−ηleft)>0.",
+        "ar": "تزيد الاستجابة أولياً لأن E′=w(ηيمين−ηيسار)>0."
+      }
+    },
+    {
+      "id": "im-c10",
+      "concept": "im-patch",
+      "kind": "decision",
+      "q": {
+        "en": "Interior UDL-patch optimum condition?",
+        "ar": "ما شرط الموضع الأمثل الداخلي لرقعة حمل موزع؟"
+      },
+      "a": {
+        "en": "Equal endpoint ordinates, then compare all valid candidates and boundaries.",
+        "ar": "تساوي إحداثيي الطرفين ثم مقارنة جميع المرشحين والحدود الصحيحة."
+      }
+    },
+    {
+      "id": "im-c11",
+      "concept": "im-extremes",
+      "kind": "interpretation",
+      "q": {
+        "en": "Maximum positive versus maximum absolute?",
+        "ar": "القيمة الموجبة العظمى مقابل أكبر مقدار مطلق؟"
+      },
+      "a": {
+        "en": "One compares signed values; the other compares magnitudes and must retain the governing sign.",
+        "ar": "الأولى تقارن القيم الجبرية؛ والثانية تقارن المقادير مع ذكر الإشارة الحاكمة."
+      }
+    },
+    {
+      "id": "im-c12",
+      "concept": "im-extremes",
+      "kind": "misconception",
+      "q": {
+        "en": "May favorable-lobe loading violate a fixed4 m patch limit?",
+        "ar": "هل يجوز تحميل الفص المناسب مخالفاً رقعة محددة بطول4 m؟"
+      },
+      "a": {
+        "en": "No. Influence-line optimization must respect real loading constraints.",
+        "ar": "لا. يجب أن يحترم تحسين خط التأثير قيود التحميل الفعلية."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "07",
+      "page": 1,
+      "filename": "influence line stru.pdf"
+    },
+    {
+      "doc": "18",
+      "page": 2,
+      "filename": "Lecture (6) - influence lines ..pdf"
+    },
+    {
+      "doc": "23",
+      "page": 22,
+      "filename": "Structure II_019+020TESTS&solutions.pdf"
+    }
+  ],
+  "videoIds": [
+    "iLVyd3bPQZc",
+    "EsRm3lcGmHc"
+  ]
+}

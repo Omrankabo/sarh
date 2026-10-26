@@ -1,0 +1,1419 @@
+{
+  "id": "ee-irr-payback",
+  "family": "ee-comparison",
+  "title": {
+    "en": "IRR, present-worth curves and payback traps",
+    "ar": "العائد الداخلي ومنحنى الحالية وأخطاء الاسترداد"
+  },
+  "summary": {
+    "en": "A project’s response to the discount rate is a curve, not one magic percentage. Find roots, check their meaning, and separate return from recovery speed.",
+    "ar": "استجابة المشروع للمعدل منحنى لا نسبة سحرية واحدة. أوجد الجذور وافحص معناها وافصل العائد عن سرعة الاسترداد."
+  },
+  "outcomes": [
+    {
+      "en": "Sketch PW against the rate before solving",
+      "ar": "ارسم الحالية مع المعدل قبل الحل"
+    },
+    {
+      "en": "IRR is a zero of the project’s worth",
+      "ar": "العائد الداخلي صفر قيمة المشروع"
+    },
+    {
+      "en": "Bracket and interpolate, then verify",
+      "ar": "أحط الجذر واستوفِ ثم تحقق"
+    },
+    {
+      "en": "Multiple IRRs are real, not calculator failure",
+      "ar": "تعدد العائد حقيقي لا عطل آلة"
+    },
+    {
+      "en": "Payback measures recovery speed, not full worth",
+      "ar": "يقيس الاسترداد سرعة العودة لا القيمة كاملة"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-powers"
+  ],
+  "concepts": [
+    {
+      "id": "ee-irr-payback-s01-concept",
+      "title": {
+        "en": "Sketch PW against the rate before solving",
+        "ar": "ارسم الحالية مع المعدل قبل الحل"
+      }
+    },
+    {
+      "id": "ee-irr-payback-s02-concept",
+      "title": {
+        "en": "IRR is a zero of the project’s worth",
+        "ar": "العائد الداخلي صفر قيمة المشروع"
+      }
+    },
+    {
+      "id": "ee-irr-payback-s03-concept",
+      "title": {
+        "en": "Bracket and interpolate, then verify",
+        "ar": "أحط الجذر واستوفِ ثم تحقق"
+      }
+    },
+    {
+      "id": "ee-irr-payback-s04-concept",
+      "title": {
+        "en": "Multiple IRRs are real, not calculator failure",
+        "ar": "تعدد العائد حقيقي لا عطل آلة"
+      }
+    },
+    {
+      "id": "ee-irr-payback-s05-concept",
+      "title": {
+        "en": "Payback measures recovery speed, not full worth",
+        "ar": "يقيس الاسترداد سرعة العودة لا القيمة كاملة"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-irr-payback-s01",
+      "title": {
+        "en": "Sketch PW against the rate before solving",
+        "ar": "ارسم الحالية مع المعدل قبل الحل"
+      },
+      "predict": {
+        "en": "Does every project’s PW decrease monotonically as rate rises?",
+        "ar": "هل تتناقص حالية كل مشروع رتيبًا مع المعدل؟"
+      },
+      "options": [
+        {
+          "en": "No; future negative flows can change the curve’s shape.",
+          "ar": "لا؛ قد تغير التدفقات السالبة المستقبلية الشكل."
+        },
+        {
+          "en": "Yes; discounting guarantees the same curve shape for all signs.",
+          "ar": "نعم؛ يضمن الخصم الشكل نفسه لكل الإشارات."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; future negative flows can change the curve’s shape. Inspect all signs before predicting the rate response.",
+        "ar": "لا؛ قد تغير التدفقات السالبة المستقبلية الشكل. افحص جميع الإشارات قبل توقع استجابة المعدل."
+      },
+      "explain": {
+        "en": "For an initial cost followed only by positive future receipts, increasing the discount rate reduces PW. At zero, PW is the undiscounted signed sum; at very high positive rates, future flows vanish and PW tends to C0. These endpoints reveal whether a positive-rate crossing is possible. Mixed-sign future cash can create a nonmonotonic curve; do not extend the conventional shape to every project.",
+        "ar": "لتكلفة أولية تليها مقبوضات موجبة فقط تنخفض الحالية بزيادة المعدل. عند صفر هي المجموع الموقّع غير المخصوم، وعند موجب كبير تزول آثار المستقبل فتؤول إلى C0. يكشف الطرفان إمكان التقاطع الموجب. قد تصنع الإشارات المستقبلية المختلطة منحنى غير رتيب؛ فلا تعمم شكل المشروع التقليدي."
+      },
+      "formula": "PW(0)=ΣCt; lim i→∞ PW(i)=C0 for future t>0",
+      "symbols": {
+        "en": "The high-rate limit assumes finite cash amounts at strictly positive future dates.",
+        "ar": "تفترض نهاية المعدل العالي مبالغ محدودة في تواريخ مستقبلية موجبة."
+      },
+      "assumptions": {
+        "en": "Monotonic decrease applies to a negative C0 with nonnegative future receipts, not all cash-flow patterns.",
+        "ar": "يخص التناقص C0 سالبًا ومقبوضات مستقبلية غير سالبة، لا كل الأنماط."
+      },
+      "example": {
+        "en": "Cost 1000 then receipts 600,600.",
+        "ar": "تكلفة 1000 ثم مقبوضان 600 و 600."
+      },
+      "calculation": {
+        "en": "PW(0)=200; high-rate limit=−1000; there is one positive crossing for this conventional stream.",
+        "ar": "الحالية عند صفر 200 ونهايتها−1000؛ لهذا النمط التقليدي تقاطع موجب واحد."
+      },
+      "interpret": {
+        "en": "Inspect all signs before predicting the rate response.",
+        "ar": "افحص جميع الإشارات قبل توقع استجابة المعدل."
+      },
+      "check": {
+        "prompt": {
+          "en": "A cleanup payment is due at the project’s end. Can the ordinary “higher rate always lowers PW” story be assumed?",
+          "ar": "تستحق دفعة تنظيف في نهاية المشروع. هل يفترض أن ارتفاع المعدل يخفض الحالية دائمًا؟"
+        },
+        "answer": {
+          "en": "No; discounting also reduces the magnitude of that future cost.",
+          "ar": "لا؛ يقلل الخصم أيضًا مقدار تلك التكلفة المستقبلية."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-irr-payback-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 8,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 9,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 10,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-irr-payback-s02",
+      "title": {
+        "en": "IRR is a zero of the project’s worth",
+        "ar": "العائد الداخلي صفر قيمة المشروع"
+      },
+      "predict": {
+        "en": "Is IRR found by setting nominal total receipts equal to costs without dates?",
+        "ar": "هل يوجد العائد بمساواة مجاميع المقبوضات والتكاليف دون تواريخ؟"
+      },
+      "options": [
+        {
+          "en": "Yes; timing does not affect a percentage return.",
+          "ar": "نعم؛ لا يؤثر التوقيت في نسبة العائد."
+        },
+        {
+          "en": "No; solve the dated discounted-equivalence equation.",
+          "ar": "لا؛ حل معادلة التكافؤ المخصوم المؤرخة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; solve the dated discounted-equivalence equation. A return index is defined by the complete signed investment stream.",
+        "ar": "لا؛ حل معادلة التكافؤ المخصوم المؤرخة. يعرف مؤشر العائد بالسلسلة الاستثمارية الموقعة كاملة."
+      },
+      "explain": {
+        "en": "The internal rate solves PW(i*)=0. A conventional project with one positive IRR clears a lower MARR and fails a higher one. IRR describes a break-even discount rate for the forecast cash flows; it is not a promised cash yield. For a one-period project it can be found directly. For a longer series, bracket a sign change and solve numerically, then substitute the rate back into the original dated cash flows.",
+        "ar": "يحل العائد الداخلي PW(i*)=0. يجاوز المشروع التقليدي ذو العائد الموجب الوحيد معدل قبول أدنى منه ويخفق عند معدل أعلى. يصف العائد معدل خصم التعادل للتدفقات المتوقعة، وليس دخلًا نقديًا مضمونًا. يحل مباشرة لفترة واحدة؛ ولغيرها أحط تغير الإشارة ثم حل عدديًا وعوض في التدفقات الأصلية."
+      },
+      "formula": "PW(i*)=0; for one period i*=F/P−1",
+      "symbols": {
+        "en": "i* is effective per modeled cash-flow period; compare with MARR on the same basis.",
+        "ar": "i* فعّال لفترة النموذج ويقارن بمعدل قبول على الأساس نفسه."
+      },
+      "assumptions": {
+        "en": "Simple accept/reject comparison assumes an independent conventional project with a unique relevant IRR.",
+        "ar": "تفترض مقارنة القبول البسيطة مشروعًا مستقلًا تقليديًا ذا عائد مناسب وحيد."
+      },
+      "example": {
+        "en": "Pay 1000 now and receive 1200 at year 1.",
+        "ar": "ادفع 1000 الآن واستلم 1200 عند 1."
+      },
+      "calculation": {
+        "en": "−1000+1200/(1+i*)=0 → i*=20%. At MARR 15%, PW>0.",
+        "ar": "يحل المعدل 20%؛ وعند قبول 15% تكون الحالية موجبة."
+      },
+      "interpret": {
+        "en": "A return index is defined by the complete signed investment stream.",
+        "ar": "يعرف مؤشر العائد بالسلسلة الاستثمارية الموقعة كاملة."
+      },
+      "check": {
+        "prompt": {
+          "en": "For cost 3000 followed by 500/year for 10 years, does an IRR computation need to include the initial 3000 at t=0?",
+          "ar": "لتكلفة 3000 ثم 500 سنويًا لعشرسنوات، هل يدخل الأصل عند الصفر في العائد؟"
+        },
+        "answer": {
+          "en": "Yes:−3000+500(P/A,i*,10)=0.",
+          "ar": "نعم؛ −3000+500(P/A,i*,10)=0."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-irr-payback-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 38,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 52,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 53,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-irr-payback-s03",
+      "title": {
+        "en": "Bracket and interpolate, then verify",
+        "ar": "أحط الجذر واستوفِ ثم تحقق"
+      },
+      "predict": {
+        "en": "Does linear interpolation automatically give an exact IRR?",
+        "ar": "هل يعطي الاستيفاء الخطي عائدًا داخليًا دقيقًا تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "No; verify the residual or refine the bracket.",
+          "ar": "لا؛ تحقق من الباقي أو حسّن الإحاطة."
+        },
+        {
+          "en": "Yes; every PW curve is a straight line in i.",
+          "ar": "نعم؛ كل منحنيات الحالية خطوط مستقيمة في i."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; verify the residual or refine the bracket. An interpolation formula cannot supply missing sign evidence.",
+        "ar": "لا؛ تحقق من الباقي أو حسّن الإحاطة. لا توفر معادلة الاستيفاء دليل إشارة مفقودًا."
+      },
+      "explain": {
+        "en": "If PW is positive at a lower rate and negative at a higher rate, a continuous conventional PW curve crosses zero in between. Linear interpolation estimates that crossing using a chord. It is generally not exact because PW is curved in the rate. Narrow the bracket or use bisection for a checked root. Substituting the final rate into the original PW is the decisive residual check.",
+        "ar": "عندما تكون الحالية موجبة عند معدل أقل وسالبة عند أعلى يتقاطع منحنى تقليدي متصل بينهما. يقدر الاستيفاء الخطي التقاطع بوتر، ولا يكون دقيقًا غالبًا لانحناء الحالية مع المعدل. ضيق الإحاطة أو استخدم التنصيف لجذر متحقق. والتعويض في الحالية الأصلية فحص الباقي الحاسم."
+      },
+      "formula": "i*≈iL+PWL(iH−iL)/(PWL−PWH)",
+      "symbols": {
+        "en": "PWL>0 and PWH<0 in the chosen conventional bracket. Keep rate units consistent.",
+        "ar": "الحالية السفلى موجبة والعليا سالبة ضمن الإحاطة التقليدية؛ وحد وحدة المعدل."
+      },
+      "assumptions": {
+        "en": "Approximate interpolation; the bracket must contain the intended root. Multiple-root streams need additional care.",
+        "ar": "استيفاء تقريبي وإحاطة بالجذر المقصود؛ وتحتاج السلاسل متعددة الجذور عناية إضافية."
+      },
+      "example": {
+        "en": "PWL=100 at 10%; PWH=−50 at 15%.",
+        "ar": "الحالية 100 عند 10% و−50 عند 15%."
+      },
+      "calculation": {
+        "en": "Estimate i*=10+100/(100+50)×5=13.333333%. Then evaluate actual PW at that rate.",
+        "ar": "التقدير 13.333333%؛ ثم قيّم الحالية الحقيقية عنده."
+      },
+      "interpret": {
+        "en": "An interpolation formula cannot supply missing sign evidence.",
+        "ar": "لا توفر معادلة الاستيفاء دليل إشارة مفقودًا."
+      },
+      "check": {
+        "prompt": {
+          "en": "The two trial PW values are both positive. Is their chord a verified root bracket?",
+          "ar": "قيمتا الحالية التجريبيتان موجبتان. هل يشكل وترهما إحاطة مثبتة للجذر؟"
+        },
+        "answer": {
+          "en": "No; find a sign-changing bracket or explain that no such bracket has been established.",
+          "ar": "لا؛ أوجد تغير إشارة أو صرح بعدم وجود إحاطة مثبتة."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-irr-payback-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 16,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 38,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-irr-payback-s04",
+      "title": {
+        "en": "Multiple IRRs are real, not calculator failure",
+        "ar": "تعدد العائد حقيقي لا عطل آلة"
+      },
+      "predict": {
+        "en": "Do three cash-flow sign changes prove exactly three usable positive IRRs for every stream?",
+        "ar": "هل تثبت ثلاثة تغيرات إشارة ثلاثة عوائد موجبة صالحة لكل سلسلة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; sign changes are a complete list of rates.",
+          "ar": "نعم؛ تغيرات الإشارة قائمة كاملة بالمعدلات."
+        },
+        {
+          "en": "No; the rule is a root bound; actual roots and their economic domain must be checked.",
+          "ar": "لا؛ القاعدة حد للجذور ويجب فحصها ومجالها."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; the rule is a root bound; actual roots and their economic domain must be checked. A numerical root finder finds a root; it does not certify uniqueness.",
+        "ar": "لا؛ القاعدة حد للجذور ويجب فحصها ومجالها. يجد الحلال العددي جذرًا ولا يثبت وحدانيته."
+      },
+      "explain": {
+        "en": "The lecture’s nonconventional stream−1000,+4700,−7200,+3600 has three sign changes and three positive IRRs. Multiplying PW by(1+i)^3 produces a cubic in x=1+i, factoring at x=1.2,1.5,2.0. Thus 20%,50%,100% all zero the same stream. A sign-change rule gives a bound on roots, not permission to pick a favorite. Use PW at the stated MARR and explain why a single IRR rule is ambiguous.",
+        "ar": "لسلسلة المحاضرة−1000 و 4700 و−7200 و 3600 ثلاثة تغيرات إشارة وثلاثة عوائد موجبة. يكوّن ضرب الحالية في(1+i)^3 كثيرة حدود في x=1+i جذورها 1.2 و 1.5 و 2؛ فتصفّر 20% و 50% و 100% السلسلة نفسها. تعطي قاعدة تغير الإشارة حدًا للجذور لا إذنًا باختيار المفضل. استخدم الحالية عند معدل القبول وفسر التباس قاعدة عائد مفرد."
+      },
+      "formula": "−1000x³+4700x²−7200x+3600=0; x=1+i",
+      "symbols": {
+        "en": "A positive polynomial root x need not imply positive i unless x>1; verify the actual economic rate.",
+        "ar": "لا يعني الجذر الموجب x معدلًا موجبًا إلا إذا x>1؛ تحقق من المعدل الاقتصادي نفسه."
+      },
+      "assumptions": {
+        "en": "Nonconventional signed stream; exclude undefined rate−100% in the original discrete model.",
+        "ar": "سلسلة بإشارات غير تقليدية مع استبعاد المعدل−100% غير المعرف في النموذج الأصلي."
+      },
+      "example": {
+        "en": "Use the lecture’s four cash flows at years 0,1,2,3.",
+        "ar": "استخدم تدفقات المحاضرة الأربعة في 0 و 1 و 2 و 3."
+      },
+      "calculation": {
+        "en": "At i=20%,50%,100%, substitute and get PW=0 each time; never average these roots as a decision index.",
+        "ar": "عند 20% و 50% و 100% يعطي التعويض صفرًا؛ ولا تتوسط الجذور مؤشرًا للقرار."
+      },
+      "interpret": {
+        "en": "A numerical root finder finds a root; it does not certify uniqueness.",
+        "ar": "يجد الحلال العددي جذرًا ولا يثبت وحدانيته."
+      },
+      "check": {
+        "prompt": {
+          "en": "A solver returns 50% for that stream. Is it justified to report “the unique IRR is 50%”?",
+          "ar": "يعيد الحلال 50% لهذه السلسلة. هل يبرر قول العائد الوحيد 50%؟"
+        },
+        "answer": {
+          "en": "No; other roots exist, so inspect the PW curve and decision rate.",
+          "ar": "لا؛ توجد جذور أخرى، فافحص المنحنى ومعدل القرار."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-irr-payback-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 10,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 19,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 22,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-irr-payback-s05",
+      "title": {
+        "en": "Payback measures recovery speed, not full worth",
+        "ar": "يقيس الاسترداد سرعة العودة لا القيمة كاملة"
+      },
+      "predict": {
+        "en": "Can equal payback periods hide very different later benefits?",
+        "ar": "هل قد تخفي مدتا استرداد متساويتان منافع لاحقة شديدة الاختلاف؟"
+      },
+      "options": [
+        {
+          "en": "Yes; ordinary payback ignores later magnitude and time value.",
+          "ar": "نعم؛ يهمل العادي حجم ما بعده وأثر الزمن."
+        },
+        {
+          "en": "No; payback fully ranks project profitability.",
+          "ar": "لا؛ يرتب الاسترداد الربحية كاملة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Yes; ordinary payback ignores later magnitude and time value. Recovery speed is one partial measure, not a substitute for full-project equivalence.",
+        "ar": "نعم؛ يهمل العادي حجم ما بعده وأثر الزمن. سرعة الاسترداد مقياس جزئي لا بديل لتكافؤ المشروع كاملًا."
+      },
+      "explain": {
+        "en": "Ordinary payback cumulates undiscounted net cash flows until the initial outlay is recovered. A later negative operating cash flow must also be included; do not count only receipts. Discounted payback is a separate variant. Fractional recovery inside a year requires an assumption about within-year receipts; if all flows are end-year arrows, recovery is first achieved at an actual payment date. Neither rule values cash beyond the recovery point fully.",
+        "ar": "يجمع الاسترداد العادي صافي التدفقات دون خصم حتى يعود الإنفاق الأول. تدخل المدفوعات التشغيلية اللاحقة السالبة ولا تعد المقبوضات وحدها. والاسترداد المخصوم نوع مستقل. يحتاج كسر السنة فرض ورود داخلها؛ أما سهام نهايات السنوات فتسترد عند تاريخ دفع فعلي. ولا يقيم أي منهما كل ما يأتي بعد الاسترداد."
+      },
+      "formula": "ordinary cumulative balance at k=Σt=0…k Ct",
+      "symbols": {
+        "en": "Payback is the earliest allowed date with recovered cumulative outlay. Units are time, not percent.",
+        "ar": "الاسترداد أول تاريخ مسموح يحقق عودة الإنفاق؛ وحدته الزمن لا النسبة."
+      },
+      "assumptions": {
+        "en": "State ordinary or discounted and discrete-year or within-year interpolation convention.",
+        "ar": "حدد العادي أو المخصوم، والسنوات المتقطعة أو فرض الاستيفاء داخل السنة."
+      },
+      "example": {
+        "en": "Pay 1000 now, then receive 300,400,500 at year-ends.",
+        "ar": "ادفع 1000 الآن ثم استلم 300 و 400 و 500 نهايةالسنوات."
+      },
+      "calculation": {
+        "en": "Balances−1000,−700,−300,+200. Discrete payback=3 years. With uniform receipts through year 3, interpolated payback=2+300/500=2.6 years.",
+        "ar": "الأرصدة−1000 و−700 و−300 و+200؛ الاسترداد المتقطع 3 سنوات، أو 2.6 بفرض ورود منتظم داخل الثالثة."
+      },
+      "interpret": {
+        "en": "Recovery speed is one partial measure, not a substitute for full-project equivalence.",
+        "ar": "سرعة الاسترداد مقياس جزئي لا بديل لتكافؤ المشروع كاملًا."
+      },
+      "check": {
+        "prompt": {
+          "en": "A pays back in 2 years then has a huge year 5 cleanup bill; B pays back in 3 years with no later bill. Can payback alone select A soundly?",
+          "ar": "يسترد A خلالسنتين ثم يدفع تنظيفًا ضخمًا عند 5؛ ويسترد B خلال 3 دون الفاتورة. هل يكفي الاسترداد لاختيار A؟"
+        },
+        "answer": {
+          "en": "No; evaluate the complete dated cash flows on a common worth basis.",
+          "ar": "لا؛ قيّم التدفقات المؤرخة كاملة بأساس قيمة مشترك."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-irr-payback-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 42,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 43,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 44,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-irr-payback-s01-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 8,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 9,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 10,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The high-rate limit assumes finite cash amounts at strictly positive future dates.",
+          "ar": "تفترض نهاية المعدل العالي مبالغ محدودة في تواريخ مستقبلية موجبة."
+        },
+        {
+          "en": "PW(0)=ΣCt; lim i→∞ PW(i)=C0 for future t>0\nMonotonic decrease applies to a negative C0 with nonnegative future receipts, not all cash-flow patterns.",
+          "ar": "PW(0)=ΣCt; lim i→∞ PW(i)=C0 for future t>0\nيخص التناقص C0 سالبًا ومقبوضات مستقبلية غير سالبة، لا كل الأنماط."
+        }
+      ],
+      "id": "ee-irr-payback-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does every project’s PW decrease monotonically as rate rises?",
+        "ar": "هل تتناقص حالية كل مشروع رتيبًا مع المعدل؟"
+      },
+      "options": [
+        {
+          "en": "No; future negative flows can change the curve’s shape.",
+          "ar": "لا؛ قد تغير التدفقات السالبة المستقبلية الشكل."
+        },
+        {
+          "en": "Yes; discounting guarantees the same curve shape for all signs.",
+          "ar": "نعم؛ يضمن الخصم الشكل نفسه لكل الإشارات."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; future negative flows can change the curve’s shape. For an initial cost followed only by positive future receipts, increasing the discount rate reduces PW. At zero, PW is the undiscounted signed sum; at very high positive rates, future flows vanish and PW tends to C0. These endpoints reveal whether a positive-rate crossing is possible. Mixed-sign future cash can create a nonmonotonic curve; do not extend the conventional shape to every project.",
+        "ar": "لا؛ قد تغير التدفقات السالبة المستقبلية الشكل. لتكلفة أولية تليها مقبوضات موجبة فقط تنخفض الحالية بزيادة المعدل. عند صفر هي المجموع الموقّع غير المخصوم، وعند موجب كبير تزول آثار المستقبل فتؤول إلى C0. يكشف الطرفان إمكان التقاطع الموجب. قد تصنع الإشارات المستقبلية المختلطة منحنى غير رتيب؛ فلا تعمم شكل المشروع التقليدي."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s01-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 8,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 9,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 10,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The high-rate limit assumes finite cash amounts at strictly positive future dates.",
+          "ar": "تفترض نهاية المعدل العالي مبالغ محدودة في تواريخ مستقبلية موجبة."
+        },
+        {
+          "en": "PW(0)=ΣCt; lim i→∞ PW(i)=C0 for future t>0\nMonotonic decrease applies to a negative C0 with nonnegative future receipts, not all cash-flow patterns.",
+          "ar": "PW(0)=ΣCt; lim i→∞ PW(i)=C0 for future t>0\nيخص التناقص C0 سالبًا ومقبوضات مستقبلية غير سالبة، لا كل الأنماط."
+        }
+      ],
+      "id": "ee-irr-payback-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Cash flows at 0,1,2 are−1500,+900,+800. Find PW at zero rate.",
+        "ar": "التدفقات عند 0 و 1 و 2 هي−1500 و+900 و+800. أوجد الحالية عندمعدلصفر."
+      },
+      "expected": 200,
+      "tolerance": 0.005,
+      "unit": "CU",
+      "solution": {
+        "en": "−1500+900+800=200; do not discount at i=0.",
+        "ar": "المجموع 200 دون خصم عند صفر."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s01-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 8,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 9,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 10,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The high-rate limit assumes finite cash amounts at strictly positive future dates.",
+          "ar": "تفترض نهاية المعدل العالي مبالغ محدودة في تواريخ مستقبلية موجبة."
+        },
+        {
+          "en": "PW(0)=ΣCt; lim i→∞ PW(i)=C0 for future t>0\nMonotonic decrease applies to a negative C0 with nonnegative future receipts, not all cash-flow patterns.",
+          "ar": "PW(0)=ΣCt; lim i→∞ PW(i)=C0 for future t>0\nيخص التناقص C0 سالبًا ومقبوضات مستقبلية غير سالبة، لا كل الأنماط."
+        }
+      ],
+      "id": "ee-irr-payback-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A cleanup payment is due at the project’s end. Can the ordinary “higher rate always lowers PW” story be assumed?",
+        "ar": "تستحق دفعة تنظيف في نهاية المشروع. هل يفترض أن ارتفاع المعدل يخفض الحالية دائمًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; only receipts are affected by the rate.",
+          "ar": "نعم؛ تتأثر المقبوضات فقط بالمعدل."
+        },
+        {
+          "en": "No; discounting also reduces the magnitude of that future cost.",
+          "ar": "لا؛ يقلل الخصم أيضًا مقدار تلك التكلفة المستقبلية."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; discounting also reduces the magnitude of that future cost. Inspect all signs before predicting the rate response.",
+        "ar": "لا؛ يقلل الخصم أيضًا مقدار تلك التكلفة المستقبلية. افحص جميع الإشارات قبل توقع استجابة المعدل."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s02-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 38,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 52,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 53,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "i* is effective per modeled cash-flow period; compare with MARR on the same basis.",
+          "ar": "i* فعّال لفترة النموذج ويقارن بمعدل قبول على الأساس نفسه."
+        },
+        {
+          "en": "PW(i*)=0; for one period i*=F/P−1\nSimple accept/reject comparison assumes an independent conventional project with a unique relevant IRR.",
+          "ar": "PW(i*)=0; for one period i*=F/P−1\nتفترض مقارنة القبول البسيطة مشروعًا مستقلًا تقليديًا ذا عائد مناسب وحيد."
+        }
+      ],
+      "id": "ee-irr-payback-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Is IRR found by setting nominal total receipts equal to costs without dates?",
+        "ar": "هل يوجد العائد بمساواة مجاميع المقبوضات والتكاليف دون تواريخ؟"
+      },
+      "options": [
+        {
+          "en": "Yes; timing does not affect a percentage return.",
+          "ar": "نعم؛ لا يؤثر التوقيت في نسبة العائد."
+        },
+        {
+          "en": "No; solve the dated discounted-equivalence equation.",
+          "ar": "لا؛ حل معادلة التكافؤ المخصوم المؤرخة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; solve the dated discounted-equivalence equation. The internal rate solves PW(i*)=0. A conventional project with one positive IRR clears a lower MARR and fails a higher one. IRR describes a break-even discount rate for the forecast cash flows; it is not a promised cash yield. For a one-period project it can be found directly. For a longer series, bracket a sign change and solve numerically, then substitute the rate back into the original dated cash flows.",
+        "ar": "لا؛ حل معادلة التكافؤ المخصوم المؤرخة. يحل العائد الداخلي PW(i*)=0. يجاوز المشروع التقليدي ذو العائد الموجب الوحيد معدل قبول أدنى منه ويخفق عند معدل أعلى. يصف العائد معدل خصم التعادل للتدفقات المتوقعة، وليس دخلًا نقديًا مضمونًا. يحل مباشرة لفترة واحدة؛ ولغيرها أحط تغير الإشارة ثم حل عدديًا وعوض في التدفقات الأصلية."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s02-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 38,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 52,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 53,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "i* is effective per modeled cash-flow period; compare with MARR on the same basis.",
+          "ar": "i* فعّال لفترة النموذج ويقارن بمعدل قبول على الأساس نفسه."
+        },
+        {
+          "en": "PW(i*)=0; for one period i*=F/P−1\nSimple accept/reject comparison assumes an independent conventional project with a unique relevant IRR.",
+          "ar": "PW(i*)=0; for one period i*=F/P−1\nتفترض مقارنة القبول البسيطة مشروعًا مستقلًا تقليديًا ذا عائد مناسب وحيد."
+        }
+      ],
+      "id": "ee-irr-payback-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Pay 2000 now and receive 2420 in 2 years with no other flows. Find annual effective IRR as a percent.",
+        "ar": "ادفع 2000 الآن واستلم 2420 بعد سنتين دون غيرهما. أوجد العائد السنوي الفعّال المئوي."
+      },
+      "expected": 10,
+      "tolerance": 0.005,
+      "unit": "percent",
+      "solution": {
+        "en": "(2420/2000)^(1/2)−1=0.10=10%.",
+        "ar": "جذر 1.21 ناقص 1 يساوي 10%."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s02-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 38,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 52,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 53,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "i* is effective per modeled cash-flow period; compare with MARR on the same basis.",
+          "ar": "i* فعّال لفترة النموذج ويقارن بمعدل قبول على الأساس نفسه."
+        },
+        {
+          "en": "PW(i*)=0; for one period i*=F/P−1\nSimple accept/reject comparison assumes an independent conventional project with a unique relevant IRR.",
+          "ar": "PW(i*)=0; for one period i*=F/P−1\nتفترض مقارنة القبول البسيطة مشروعًا مستقلًا تقليديًا ذا عائد مناسب وحيد."
+        }
+      ],
+      "id": "ee-irr-payback-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "For cost 3000 followed by 500/year for 10 years, does an IRR computation need to include the initial 3000 at t=0?",
+        "ar": "لتكلفة 3000 ثم 500 سنويًا لعشرسنوات، هل يدخل الأصل عند الصفر في العائد؟"
+      },
+      "options": [
+        {
+          "en": "Yes:−3000+500(P/A,i*,10)=0.",
+          "ar": "نعم؛ −3000+500(P/A,i*,10)=0."
+        },
+        {
+          "en": "No; only positive cash flows determine the root.",
+          "ar": "لا؛ تحدد المقبوضات الموجبة وحدها الجذر."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Yes:−3000+500(P/A,i*,10)=0. A return index is defined by the complete signed investment stream.",
+        "ar": "نعم؛ −3000+500(P/A,i*,10)=0. يعرف مؤشر العائد بالسلسلة الاستثمارية الموقعة كاملة."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s03-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 16,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 38,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "PWL>0 and PWH<0 in the chosen conventional bracket. Keep rate units consistent.",
+          "ar": "الحالية السفلى موجبة والعليا سالبة ضمن الإحاطة التقليدية؛ وحد وحدة المعدل."
+        },
+        {
+          "en": "i*≈iL+PWL(iH−iL)/(PWL−PWH)\nApproximate interpolation; the bracket must contain the intended root. Multiple-root streams need additional care.",
+          "ar": "i*≈iL+PWL(iH−iL)/(PWL−PWH)\nاستيفاء تقريبي وإحاطة بالجذر المقصود؛ وتحتاج السلاسل متعددة الجذور عناية إضافية."
+        }
+      ],
+      "id": "ee-irr-payback-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does linear interpolation automatically give an exact IRR?",
+        "ar": "هل يعطي الاستيفاء الخطي عائدًا داخليًا دقيقًا تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "No; verify the residual or refine the bracket.",
+          "ar": "لا؛ تحقق من الباقي أو حسّن الإحاطة."
+        },
+        {
+          "en": "Yes; every PW curve is a straight line in i.",
+          "ar": "نعم؛ كل منحنيات الحالية خطوط مستقيمة في i."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; verify the residual or refine the bracket. If PW is positive at a lower rate and negative at a higher rate, a continuous conventional PW curve crosses zero in between. Linear interpolation estimates that crossing using a chord. It is generally not exact because PW is curved in the rate. Narrow the bracket or use bisection for a checked root. Substituting the final rate into the original PW is the decisive residual check.",
+        "ar": "لا؛ تحقق من الباقي أو حسّن الإحاطة. عندما تكون الحالية موجبة عند معدل أقل وسالبة عند أعلى يتقاطع منحنى تقليدي متصل بينهما. يقدر الاستيفاء الخطي التقاطع بوتر، ولا يكون دقيقًا غالبًا لانحناء الحالية مع المعدل. ضيق الإحاطة أو استخدم التنصيف لجذر متحقق. والتعويض في الحالية الأصلية فحص الباقي الحاسم."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s03-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 16,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 38,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "PWL>0 and PWH<0 in the chosen conventional bracket. Keep rate units consistent.",
+          "ar": "الحالية السفلى موجبة والعليا سالبة ضمن الإحاطة التقليدية؛ وحد وحدة المعدل."
+        },
+        {
+          "en": "i*≈iL+PWL(iH−iL)/(PWL−PWH)\nApproximate interpolation; the bracket must contain the intended root. Multiple-root streams need additional care.",
+          "ar": "i*≈iL+PWL(iH−iL)/(PWL−PWH)\nاستيفاء تقريبي وإحاطة بالجذر المقصود؛ وتحتاج السلاسل متعددة الجذور عناية إضافية."
+        }
+      ],
+      "id": "ee-irr-payback-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "PW=+240 at 8% and−60 at 12%. Find the linearly interpolated rate in percent.",
+        "ar": "الحالية+240 عند 8% و−60 عند 12%. أوجد معدل الاستيفاء الخطي المئوي."
+      },
+      "expected": 11.2,
+      "tolerance": 0.005,
+      "unit": "percent",
+      "solution": {
+        "en": "8+240/(240+60)×(12−8)=11.2%.",
+        "ar": "المعدل 11.2%."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s03-concept",
+      "sources": [
+        {
+          "doc": "EE07",
+          "page": 16,
+          "filename": "chapter 4 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 38,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "PWL>0 and PWH<0 in the chosen conventional bracket. Keep rate units consistent.",
+          "ar": "الحالية السفلى موجبة والعليا سالبة ضمن الإحاطة التقليدية؛ وحد وحدة المعدل."
+        },
+        {
+          "en": "i*≈iL+PWL(iH−iL)/(PWL−PWH)\nApproximate interpolation; the bracket must contain the intended root. Multiple-root streams need additional care.",
+          "ar": "i*≈iL+PWL(iH−iL)/(PWL−PWH)\nاستيفاء تقريبي وإحاطة بالجذر المقصود؛ وتحتاج السلاسل متعددة الجذور عناية إضافية."
+        }
+      ],
+      "id": "ee-irr-payback-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "The two trial PW values are both positive. Is their chord a verified root bracket?",
+        "ar": "قيمتا الحالية التجريبيتان موجبتان. هل يشكل وترهما إحاطة مثبتة للجذر؟"
+      },
+      "options": [
+        {
+          "en": "Yes; two rates always bracket a root.",
+          "ar": "نعم؛ يحيط أي معدلين بجذر."
+        },
+        {
+          "en": "No; find a sign-changing bracket or explain that no such bracket has been established.",
+          "ar": "لا؛ أوجد تغير إشارة أو صرح بعدم وجود إحاطة مثبتة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; find a sign-changing bracket or explain that no such bracket has been established. An interpolation formula cannot supply missing sign evidence.",
+        "ar": "لا؛ أوجد تغير إشارة أو صرح بعدم وجود إحاطة مثبتة. لا توفر معادلة الاستيفاء دليل إشارة مفقودًا."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s04-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 10,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 19,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 22,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A positive polynomial root x need not imply positive i unless x>1; verify the actual economic rate.",
+          "ar": "لا يعني الجذر الموجب x معدلًا موجبًا إلا إذا x>1؛ تحقق من المعدل الاقتصادي نفسه."
+        },
+        {
+          "en": "−1000x³+4700x²−7200x+3600=0; x=1+i\nNonconventional signed stream; exclude undefined rate−100% in the original discrete model.",
+          "ar": "−1000x³+4700x²−7200x+3600=0; x=1+i\nسلسلة بإشارات غير تقليدية مع استبعاد المعدل−100% غير المعرف في النموذج الأصلي."
+        }
+      ],
+      "id": "ee-irr-payback-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Do three cash-flow sign changes prove exactly three usable positive IRRs for every stream?",
+        "ar": "هل تثبت ثلاثة تغيرات إشارة ثلاثة عوائد موجبة صالحة لكل سلسلة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; sign changes are a complete list of rates.",
+          "ar": "نعم؛ تغيرات الإشارة قائمة كاملة بالمعدلات."
+        },
+        {
+          "en": "No; the rule is a root bound; actual roots and their economic domain must be checked.",
+          "ar": "لا؛ القاعدة حد للجذور ويجب فحصها ومجالها."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; the rule is a root bound; actual roots and their economic domain must be checked. The lecture’s nonconventional stream−1000,+4700,−7200,+3600 has three sign changes and three positive IRRs. Multiplying PW by(1+i)^3 produces a cubic in x=1+i, factoring at x=1.2,1.5,2.0. Thus 20%,50%,100% all zero the same stream. A sign-change rule gives a bound on roots, not permission to pick a favorite. Use PW at the stated MARR and explain why a single IRR rule is ambiguous.",
+        "ar": "لا؛ القاعدة حد للجذور ويجب فحصها ومجالها. لسلسلة المحاضرة−1000 و 4700 و−7200 و 3600 ثلاثة تغيرات إشارة وثلاثة عوائد موجبة. يكوّن ضرب الحالية في(1+i)^3 كثيرة حدود في x=1+i جذورها 1.2 و 1.5 و 2؛ فتصفّر 20% و 50% و 100% السلسلة نفسها. تعطي قاعدة تغير الإشارة حدًا للجذور لا إذنًا باختيار المفضل. استخدم الحالية عند معدل القبول وفسر التباس قاعدة عائد مفرد."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s04-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 10,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 19,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 22,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A positive polynomial root x need not imply positive i unless x>1; verify the actual economic rate.",
+          "ar": "لا يعني الجذر الموجب x معدلًا موجبًا إلا إذا x>1؛ تحقق من المعدل الاقتصادي نفسه."
+        },
+        {
+          "en": "−1000x³+4700x²−7200x+3600=0; x=1+i\nNonconventional signed stream; exclude undefined rate−100% in the original discrete model.",
+          "ar": "−1000x³+4700x²−7200x+3600=0; x=1+i\nسلسلة بإشارات غير تقليدية مع استبعاد المعدل−100% غير المعرف في النموذج الأصلي."
+        }
+      ],
+      "id": "ee-irr-payback-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "For the lecture stream−1000,4700,−7200,3600, how many of the rates 20%,50%,100% give PW=0?",
+        "ar": "لسلسلة−1000 و 4700 و−7200 و 3600، كم معدلًا من 20% و 50% و 100% يعطي صفرًا؟"
+      },
+      "expected": 3,
+      "tolerance": 0.005,
+      "unit": "rates",
+      "solution": {
+        "en": "All 3; direct substitution at each rate verifies the factored polynomial.",
+        "ar": "المعدلات الثلاثة؛ ويؤكد التعويض التحليل."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s04-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 10,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 19,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 22,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "A positive polynomial root x need not imply positive i unless x>1; verify the actual economic rate.",
+          "ar": "لا يعني الجذر الموجب x معدلًا موجبًا إلا إذا x>1؛ تحقق من المعدل الاقتصادي نفسه."
+        },
+        {
+          "en": "−1000x³+4700x²−7200x+3600=0; x=1+i\nNonconventional signed stream; exclude undefined rate−100% in the original discrete model.",
+          "ar": "−1000x³+4700x²−7200x+3600=0; x=1+i\nسلسلة بإشارات غير تقليدية مع استبعاد المعدل−100% غير المعرف في النموذج الأصلي."
+        }
+      ],
+      "id": "ee-irr-payback-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A solver returns 50% for that stream. Is it justified to report “the unique IRR is 50%”?",
+        "ar": "يعيد الحلال 50% لهذه السلسلة. هل يبرر قول العائد الوحيد 50%؟"
+      },
+      "options": [
+        {
+          "en": "No; other roots exist, so inspect the PW curve and decision rate.",
+          "ar": "لا؛ توجد جذور أخرى، فافحص المنحنى ومعدل القرار."
+        },
+        {
+          "en": "Yes; the first root found is always the only relevant one.",
+          "ar": "نعم؛ أول جذر هو المناسب الوحيد دائمًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; other roots exist, so inspect the PW curve and decision rate. A numerical root finder finds a root; it does not certify uniqueness.",
+        "ar": "لا؛ توجد جذور أخرى، فافحص المنحنى ومعدل القرار. يجد الحلال العددي جذرًا ولا يثبت وحدانيته."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s05-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 42,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 43,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 44,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Payback is the earliest allowed date with recovered cumulative outlay. Units are time, not percent.",
+          "ar": "الاسترداد أول تاريخ مسموح يحقق عودة الإنفاق؛ وحدته الزمن لا النسبة."
+        },
+        {
+          "en": "ordinary cumulative balance at k=Σt=0…k Ct\nState ordinary or discounted and discrete-year or within-year interpolation convention.",
+          "ar": "ordinary cumulative balance at k=Σt=0…k Ct\nحدد العادي أو المخصوم، والسنوات المتقطعة أو فرض الاستيفاء داخل السنة."
+        }
+      ],
+      "id": "ee-irr-payback-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can equal payback periods hide very different later benefits?",
+        "ar": "هل قد تخفي مدتا استرداد متساويتان منافع لاحقة شديدة الاختلاف؟"
+      },
+      "options": [
+        {
+          "en": "Yes; ordinary payback ignores later magnitude and time value.",
+          "ar": "نعم؛ يهمل العادي حجم ما بعده وأثر الزمن."
+        },
+        {
+          "en": "No; payback fully ranks project profitability.",
+          "ar": "لا؛ يرتب الاسترداد الربحية كاملة."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Yes; ordinary payback ignores later magnitude and time value. Ordinary payback cumulates undiscounted net cash flows until the initial outlay is recovered. A later negative operating cash flow must also be included; do not count only receipts. Discounted payback is a separate variant. Fractional recovery inside a year requires an assumption about within-year receipts; if all flows are end-year arrows, recovery is first achieved at an actual payment date. Neither rule values cash beyond the recovery point fully.",
+        "ar": "نعم؛ يهمل العادي حجم ما بعده وأثر الزمن. يجمع الاسترداد العادي صافي التدفقات دون خصم حتى يعود الإنفاق الأول. تدخل المدفوعات التشغيلية اللاحقة السالبة ولا تعد المقبوضات وحدها. والاسترداد المخصوم نوع مستقل. يحتاج كسر السنة فرض ورود داخلها؛ أما سهام نهايات السنوات فتسترد عند تاريخ دفع فعلي. ولا يقيم أي منهما كل ما يأتي بعد الاسترداد."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s05-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 42,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 43,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 44,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Payback is the earliest allowed date with recovered cumulative outlay. Units are time, not percent.",
+          "ar": "الاسترداد أول تاريخ مسموح يحقق عودة الإنفاق؛ وحدته الزمن لا النسبة."
+        },
+        {
+          "en": "ordinary cumulative balance at k=Σt=0…k Ct\nState ordinary or discounted and discrete-year or within-year interpolation convention.",
+          "ar": "ordinary cumulative balance at k=Σt=0…k Ct\nحدد العادي أو المخصوم، والسنوات المتقطعة أو فرض الاستيفاء داخل السنة."
+        }
+      ],
+      "id": "ee-irr-payback-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Cost 900 at 0; receipts 250 at 1,350 at 2,500 at 3. Assume uniform receipt during year 3. Find interpolated ordinary payback.",
+        "ar": "تكلفة 900 عند 0 ومقبوض 250 ثم 350 ثم 500. افترض ورود الثالثة منتظمًا. أوجد الاسترداد العادي المستوفى."
+      },
+      "expected": 2.6,
+      "tolerance": 0.005,
+      "unit": "years",
+      "solution": {
+        "en": "Unrecovered after 2 years=900−250−350=300; time=2+300/500=2.6.",
+        "ar": "المتبقي 300 بعد سنتين؛ والاسترداد 2.6."
+      }
+    },
+    {
+      "concept": "ee-irr-payback-s05-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 42,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 43,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 44,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Payback is the earliest allowed date with recovered cumulative outlay. Units are time, not percent.",
+          "ar": "الاسترداد أول تاريخ مسموح يحقق عودة الإنفاق؛ وحدته الزمن لا النسبة."
+        },
+        {
+          "en": "ordinary cumulative balance at k=Σt=0…k Ct\nState ordinary or discounted and discrete-year or within-year interpolation convention.",
+          "ar": "ordinary cumulative balance at k=Σt=0…k Ct\nحدد العادي أو المخصوم، والسنوات المتقطعة أو فرض الاستيفاء داخل السنة."
+        }
+      ],
+      "id": "ee-irr-payback-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A pays back in 2 years then has a huge year 5 cleanup bill; B pays back in 3 years with no later bill. Can payback alone select A soundly?",
+        "ar": "يسترد A خلالسنتين ثم يدفع تنظيفًا ضخمًا عند 5؛ ويسترد B خلال 3 دون الفاتورة. هل يكفي الاسترداد لاختيار A؟"
+      },
+      "options": [
+        {
+          "en": "Yes; the fastest recovery is always economically best.",
+          "ar": "نعم؛ أسرع استرداد الأفضل دائمًا."
+        },
+        {
+          "en": "No; evaluate the complete dated cash flows on a common worth basis.",
+          "ar": "لا؛ قيّم التدفقات المؤرخة كاملة بأساس قيمة مشترك."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; evaluate the complete dated cash flows on a common worth basis. Recovery speed is one partial measure, not a substitute for full-project equivalence.",
+        "ar": "لا؛ قيّم التدفقات المؤرخة كاملة بأساس قيمة مشترك. سرعة الاسترداد مقياس جزئي لا بديل لتكافؤ المشروع كاملًا."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-irr-payback-s01-recall",
+      "concept": "ee-irr-payback-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Sketch PW against the rate before solving",
+        "ar": "اشرح: ارسم الحالية مع المعدل قبل الحل"
+      },
+      "a": {
+        "en": "Inspect all signs before predicting the rate response.",
+        "ar": "افحص جميع الإشارات قبل توقع استجابة المعدل."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s01-formula",
+      "concept": "ee-irr-payback-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nPW(0)=ΣCt; lim i→∞ PW(i)=C0 for future t>0",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nPW(0)=ΣCt; lim i→∞ PW(i)=C0 for future t>0"
+      },
+      "a": {
+        "en": "The high-rate limit assumes finite cash amounts at strictly positive future dates. Monotonic decrease applies to a negative C0 with nonnegative future receipts, not all cash-flow patterns.",
+        "ar": "تفترض نهاية المعدل العالي مبالغ محدودة في تواريخ مستقبلية موجبة. يخص التناقص C0 سالبًا ومقبوضات مستقبلية غير سالبة، لا كل الأنماط."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s01-trap",
+      "concept": "ee-irr-payback-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; discounting guarantees the same curve shape for all signs.",
+        "ar": "يقول متعلم: نعم؛ يضمن الخصم الشكل نفسه لكل الإشارات."
+      },
+      "a": {
+        "en": "No; future negative flows can change the curve’s shape. Inspect all signs before predicting the rate response.",
+        "ar": "لا؛ قد تغير التدفقات السالبة المستقبلية الشكل. افحص جميع الإشارات قبل توقع استجابة المعدل."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s02-recall",
+      "concept": "ee-irr-payback-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: IRR is a zero of the project’s worth",
+        "ar": "اشرح: العائد الداخلي صفر قيمة المشروع"
+      },
+      "a": {
+        "en": "A return index is defined by the complete signed investment stream.",
+        "ar": "يعرف مؤشر العائد بالسلسلة الاستثمارية الموقعة كاملة."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s02-formula",
+      "concept": "ee-irr-payback-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nPW(i*)=0; for one period i*=F/P−1",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nPW(i*)=0; for one period i*=F/P−1"
+      },
+      "a": {
+        "en": "i* is effective per modeled cash-flow period; compare with MARR on the same basis. Simple accept/reject comparison assumes an independent conventional project with a unique relevant IRR.",
+        "ar": "i* فعّال لفترة النموذج ويقارن بمعدل قبول على الأساس نفسه. تفترض مقارنة القبول البسيطة مشروعًا مستقلًا تقليديًا ذا عائد مناسب وحيد."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s02-trap",
+      "concept": "ee-irr-payback-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; timing does not affect a percentage return.",
+        "ar": "يقول متعلم: نعم؛ لا يؤثر التوقيت في نسبة العائد."
+      },
+      "a": {
+        "en": "No; solve the dated discounted-equivalence equation. A return index is defined by the complete signed investment stream.",
+        "ar": "لا؛ حل معادلة التكافؤ المخصوم المؤرخة. يعرف مؤشر العائد بالسلسلة الاستثمارية الموقعة كاملة."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s03-recall",
+      "concept": "ee-irr-payback-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Bracket and interpolate, then verify",
+        "ar": "اشرح: أحط الجذر واستوفِ ثم تحقق"
+      },
+      "a": {
+        "en": "An interpolation formula cannot supply missing sign evidence.",
+        "ar": "لا توفر معادلة الاستيفاء دليل إشارة مفقودًا."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s03-formula",
+      "concept": "ee-irr-payback-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\ni*≈iL+PWL(iH−iL)/(PWL−PWH)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\ni*≈iL+PWL(iH−iL)/(PWL−PWH)"
+      },
+      "a": {
+        "en": "PWL>0 and PWH<0 in the chosen conventional bracket. Keep rate units consistent. Approximate interpolation; the bracket must contain the intended root. Multiple-root streams need additional care.",
+        "ar": "الحالية السفلى موجبة والعليا سالبة ضمن الإحاطة التقليدية؛ وحد وحدة المعدل. استيفاء تقريبي وإحاطة بالجذر المقصود؛ وتحتاج السلاسل متعددة الجذور عناية إضافية."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s03-trap",
+      "concept": "ee-irr-payback-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; every PW curve is a straight line in i.",
+        "ar": "يقول متعلم: نعم؛ كل منحنيات الحالية خطوط مستقيمة في i."
+      },
+      "a": {
+        "en": "No; verify the residual or refine the bracket. An interpolation formula cannot supply missing sign evidence.",
+        "ar": "لا؛ تحقق من الباقي أو حسّن الإحاطة. لا توفر معادلة الاستيفاء دليل إشارة مفقودًا."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s04-recall",
+      "concept": "ee-irr-payback-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Multiple IRRs are real, not calculator failure",
+        "ar": "اشرح: تعدد العائد حقيقي لا عطل آلة"
+      },
+      "a": {
+        "en": "A numerical root finder finds a root; it does not certify uniqueness.",
+        "ar": "يجد الحلال العددي جذرًا ولا يثبت وحدانيته."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s04-formula",
+      "concept": "ee-irr-payback-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\n−1000x³+4700x²−7200x+3600=0; x=1+i",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\n−1000x³+4700x²−7200x+3600=0; x=1+i"
+      },
+      "a": {
+        "en": "A positive polynomial root x need not imply positive i unless x>1; verify the actual economic rate. Nonconventional signed stream; exclude undefined rate−100% in the original discrete model.",
+        "ar": "لا يعني الجذر الموجب x معدلًا موجبًا إلا إذا x>1؛ تحقق من المعدل الاقتصادي نفسه. سلسلة بإشارات غير تقليدية مع استبعاد المعدل−100% غير المعرف في النموذج الأصلي."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s04-trap",
+      "concept": "ee-irr-payback-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; sign changes are a complete list of rates.",
+        "ar": "يقول متعلم: نعم؛ تغيرات الإشارة قائمة كاملة بالمعدلات."
+      },
+      "a": {
+        "en": "No; the rule is a root bound; actual roots and their economic domain must be checked. A numerical root finder finds a root; it does not certify uniqueness.",
+        "ar": "لا؛ القاعدة حد للجذور ويجب فحصها ومجالها. يجد الحلال العددي جذرًا ولا يثبت وحدانيته."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s05-recall",
+      "concept": "ee-irr-payback-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Payback measures recovery speed, not full worth",
+        "ar": "اشرح: يقيس الاسترداد سرعة العودة لا القيمة كاملة"
+      },
+      "a": {
+        "en": "Recovery speed is one partial measure, not a substitute for full-project equivalence.",
+        "ar": "سرعة الاسترداد مقياس جزئي لا بديل لتكافؤ المشروع كاملًا."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s05-formula",
+      "concept": "ee-irr-payback-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nordinary cumulative balance at k=Σt=0…k Ct",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nordinary cumulative balance at k=Σt=0…k Ct"
+      },
+      "a": {
+        "en": "Payback is the earliest allowed date with recovered cumulative outlay. Units are time, not percent. State ordinary or discounted and discrete-year or within-year interpolation convention.",
+        "ar": "الاسترداد أول تاريخ مسموح يحقق عودة الإنفاق؛ وحدته الزمن لا النسبة. حدد العادي أو المخصوم، والسنوات المتقطعة أو فرض الاستيفاء داخل السنة."
+      }
+    },
+    {
+      "id": "ee-irr-payback-s05-trap",
+      "concept": "ee-irr-payback-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: No; payback fully ranks project profitability.",
+        "ar": "يقول متعلم: لا؛ يرتب الاسترداد الربحية كاملة."
+      },
+      "a": {
+        "en": "Yes; ordinary payback ignores later magnitude and time value. Recovery speed is one partial measure, not a substitute for full-project equivalence.",
+        "ar": "نعم؛ يهمل العادي حجم ما بعده وأثر الزمن. سرعة الاسترداد مقياس جزئي لا بديل لتكافؤ المشروع كاملًا."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE09",
+      "page": 8,
+      "filename": "chapter 6 EnEc.pdf"
+    },
+    {
+      "doc": "EE09",
+      "page": 19,
+      "filename": "chapter 6 EnEc.pdf"
+    },
+    {
+      "doc": "EE09",
+      "page": 38,
+      "filename": "chapter 6 EnEc.pdf"
+    },
+    {
+      "doc": "EE09",
+      "page": 42,
+      "filename": "chapter 6 EnEc.pdf"
+    }
+  ],
+  "videoIds": [
+    "U8VE4w-UXA8",
+    "96GcUS4FieU"
+  ]
+}

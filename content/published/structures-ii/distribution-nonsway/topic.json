@@ -1,0 +1,1187 @@
+{
+  "id": "distribution-nonsway",
+  "family": "distribution",
+  "title": {
+    "en": "Moment distribution: non-sway frames",
+    "ar": "توزيع العزوم: إطارات دون انزياح جانبي"
+  },
+  "summary": {
+    "en": "Solve the same real frame by a different route. Every column and beam participates according to its end restraint, and a known overhang moment must remain in the joint balance.",
+    "ar": "حل الإطار الحقيقي نفسه بطريقة أخرى. يشارك كل عمود وكمرة بحسب قيود طرفيه، ويظل عزم الكابولي المعلوم جزءاً من اتزان العقدة."
+  },
+  "outcomes": [
+    {
+      "en": "Build joint factors for beams, columns, hinges and fixed ends together.",
+      "ar": "بناء معاملات العقد للكمرات والأعمدة والمفاصل والأطراف المثبتة معاً."
+    },
+    {
+      "en": "Iterate with correct carry-over and an explicit residual tolerance.",
+      "ar": "التكرار بانتقال صحيح وحد متبقيات صريح."
+    },
+    {
+      "en": "Match slope-deflection and verify the whole-frame reactions.",
+      "ar": "مطابقة حل الميل والهبوط والتحقق من ردود أفعال الإطار كله."
+    }
+  ],
+  "prereqIds": [
+    "units",
+    "algebra",
+    "forces",
+    "supports",
+    "loads",
+    "diagrams",
+    "shape",
+    "rigidity",
+    "compatibility"
+  ],
+  "concepts": [
+    {
+      "id": "dn-model",
+      "title": {
+        "en": "Non-sway restraint model",
+        "ar": "نموذج القيود المانع للانزياح"
+      }
+    },
+    {
+      "id": "dn-loads",
+      "title": {
+        "en": "A complete starting moment row",
+        "ar": "صف عزوم ابتدائي كامل"
+      }
+    },
+    {
+      "id": "dn-factors",
+      "title": {
+        "en": "Frame-joint distribution factors",
+        "ar": "معاملات التوزيع لعقد الإطار"
+      }
+    },
+    {
+      "id": "dn-iterations",
+      "title": {
+        "en": "Balancing connected joints",
+        "ar": "موازنة العقد المتصلة"
+      }
+    },
+    {
+      "id": "dn-converge",
+      "title": {
+        "en": "Residuals and independent agreement",
+        "ar": "المتبقيات والتطابق المستقل"
+      }
+    },
+    {
+      "id": "dn-reactions",
+      "title": {
+        "en": "Global reactions from local moments",
+        "ar": "ردود الأفعال العامة من العزوم المحلية"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "nonsway-distribution-1",
+      "title": {
+        "en": "1 · Reuse the physics, change the solving method",
+        "ar": "١ · أبق الفيزياء وغيّر طريقة الحل"
+      },
+      "predict": {
+        "en": "Does using moment distribution remove the need to decide whether a frame sways?",
+        "ar": "هل يعفي توزيع العزوم من تحديد قابلية الإطار للانزياح؟"
+      },
+      "options": [
+        {
+          "en": "Yes, the table handles any movement automatically.",
+          "ar": "نعم، يعالج الجدول أي حركة تلقائياً."
+        },
+        {
+          "en": "No, a restrained-sway table solves a different model if sway is allowed.",
+          "ar": "لا، جدول منع الانزياح يحل نموذجاً مختلفاً إذا كانت الحركة مسموحة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "The frame is the lecture AB–BC–CD beam with BF and CE columns. A anchors horizontal translation, so the axially inextensible beam restrains the sway coordinate.",
+        "ar": "الإطار هو كمرة المحاضرة AB–BC–CD وعموداها BF وCE. يقيد A الانتقال الأفقي، لذا تمنع الكمرة غير القابلة للاستطالة إحداثي الانزياح."
+      },
+      "explain": {
+        "en": "AB=4 m with 2I; BC=6 m with 2I; BF=3 m with I; CE=3 m with 1.5I. A and F are true hinges, E fixed, and CD is a 2 m free overhang. Only B and C are distributed.",
+        "ar": "AB=4 m بعزم مساحة 2I وBC=6 m بعزم 2I وBF=3 m بعزم I وCE=3 m بعزم 1.5I. A وF مفصلان حقيقيان وE مثبت وCD كابولي حر بطول 2 m. يوزع العزم عند B وC فقط."
+      },
+      "formula": "Δ=0; distribute at B,C; retain MAB=MFB=0",
+      "symbols": {
+        "en": "I denotes the reference second moment of area; EI₀ is the common reference flexural rigidity.",
+        "ar": "I عزم المساحة المرجعي؛ وEI₀ الجساءة المرجعية المشتركة."
+      },
+      "assumptions": {
+        "en": "Small-displacement elastic prismatic bending; axial strains neglected. Clockwise member-end couples are positive. The worked geometry is lecture 14 page 3, re-solved here by moment distribution, not a different source example.",
+        "ar": "انحناء منشوري مرن بإزاحات صغيرة وإهمال الانفعالات المحورية. العزوم الطرفية مع عقارب الساعة موجبة. هندسة المثال من المحاضرة 14 صفحة 3، ونعيد حلها هنا بتوزيع العزوم وليست مثالاً مختلفاً منسوباً للمصدر."
+      },
+      "example": {
+        "en": "Compare the physical freedoms with the slope-deflection non-sway journey.",
+        "ar": "قارن درجات الحرية الفيزيائية برحلة الميل والهبوط دون الانزياح."
+      },
+      "calculation": {
+        "en": "Both methods represent the same two independent joint rotations after hinge condensation. Moment distribution solves their equilibrium iteratively.",
+        "ar": "تمثل الطريقتان الدورانين المستقلين نفسيهما بعد اختزال المفاصل. ويحل توزيع العزوم اتزانهما تكرارياً."
+      },
+      "interpret": {
+        "en": "A solving method is interchangeable; boundary conditions are not.",
+        "ar": "يمكن تبديل طريقة الحل، لكن لا يمكن تبديل الشروط الحدية دون تغيير المسألة."
+      },
+      "check": {
+        "prompt": {
+          "en": "What are the two active distribution joints?",
+          "ar": "ما عقدتا التوزيع الفعالتان؟"
+        },
+        "answer": {
+          "en": "B and C. Fixed E does not release; hinged A,F have already been condensed.",
+          "ar": "B وC. لا يحرر E المثبت، وقد اختزل المفصلان A وF."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "dn-model"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 3,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nonsway-distribution-2",
+      "title": {
+        "en": "2 · Keep every external cause of joint moment",
+        "ar": "٢ · احتفظ بكل سبب خارجي لعزم العقدة"
+      },
+      "predict": {
+        "en": "The overhang has a free tip. May its joint moment be omitted from C?",
+        "ar": "نهاية الكابولي حرة. هل يمكن إهمال عزمه عند C؟"
+      },
+      "options": [
+        {
+          "en": "Yes, because its stiffness is zero.",
+          "ar": "نعم لأن جساءته صفر."
+        },
+        {
+          "en": "No, zero rotational stiffness does not mean zero load effect.",
+          "ar": "لا، انعدام الجساءة الدورانية لا يعني انعدام أثر الحمل."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "The overhang contributes no rotational restraint but its 6 kN end load still requires a 12 kN·m root moment.",
+        "ar": "لا يضيف الكابولي تقييداً دورانياً، لكن حمله الطرفي 6 kN يستلزم عزم جذر مقداره 12 kN·m."
+      },
+      "explain": {
+        "en": "Condense the loaded hinge at A first. At B use MBA=24, MBC=−52 and MBF=0. At C use MCB=68, MCE=−15 and MCD=−12. Retain MEC=+15 as the fixed-end starting value at E.",
+        "ar": "اختزل المفصل المحمّل عند A أولاً. عند B استخدم MBA=24 وMBC=−52 وMBF=0. وعند C استخدم MCB=68 وMCE=−15 وMCD=−12. واحتفظ بـMEC=+15 قيمة ابتدائية عند E."
+      },
+      "formula": "UB=24−52+0=−28; UC,initial=68−15−12=41 kN·m",
+      "symbols": {
+        "en": "These are signed starting moments after true-hinge condensation. CD has zero distribution factor but a known −12 kN·m moment.",
+        "ar": "هذه عزوم بداية بإشاراتها بعد اختزال المفاصل الحقيقية. معامل توزيع CD صفر لكن عزمه المعلوم −12 kN·m."
+      },
+      "assumptions": {
+        "en": "Small-displacement elastic prismatic bending; axial strains neglected. Clockwise member-end couples are positive. The worked geometry is lecture 14 page 3, re-solved here by moment distribution, not a different source example.",
+        "ar": "انحناء منشوري مرن بإزاحات صغيرة وإهمال الانفعالات المحورية. العزوم الطرفية مع عقارب الساعة موجبة. هندسة المثال من المحاضرة 14 صفحة 3، ونعيد حلها هنا بتوزيع العزوم وليست مثالاً مختلفاً منسوباً للمصدر."
+      },
+      "example": {
+        "en": "The source loads are 12 kN/m on AB and BC, 36 kN at 4 m from B on BC, 40 kN leftward at mid-height of CE, and 6 kN downward at D.",
+        "ar": "أحمال المصدر 12 kN/m على AB وBC، وحمل 36 kN على بعد 4 m من B على BC، وحمل 40 kN يساراً عند منتصف CE، وحمل 6 kN للأسفل عند D."
+      },
+      "calculation": {
+        "en": "For AB, MBA,released=16−½(−16)=24. For CD, MCD=−6·2=−12. The starting C sum is 41, before any carry-over from B.",
+        "ar": "لـAB: MBA,released=16−½(−16)=24. ولـCD: MCD=−6·2=−12. مجموع C الابتدائي 41 قبل أي انتقال من B."
+      },
+      "interpret": {
+        "en": "A zero factor describes the response to joint rotation; a load term describes the action of applied loads. Do not conflate them.",
+        "ar": "المعامل الصفري يصف الاستجابة لدوران العقدة، وحد الحمل يصف فعل الأحمال المطبقة. لا تخلط بينهما."
+      },
+      "check": {
+        "prompt": {
+          "en": "What error follows from omitting CD?",
+          "ar": "ما الخطأ الناتج عن إهمال CD؟"
+        },
+        "answer": {
+          "en": "C is balanced against the wrong total moment, so all coupled member moments change.",
+          "ar": "توازن C ضد مجموع عزم خاطئ، فتتغير عزوم جميع الأعضاء المترابطة."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "dn-loads"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 10,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nonsway-distribution-3",
+      "title": {
+        "en": "3 · Build factors from the actual far restraints",
+        "ar": "٣ · ابن المعاملات من قيود الأطراف البعيدة الفعلية"
+      },
+      "predict": {
+        "en": "At B, should BF receive 4EI/3 if F is a true hinge?",
+        "ar": "عند B، هل يأخذ BF جساءة 4EI/3 رغم أن F مفصل حقيقي؟"
+      },
+      "options": [
+        {
+          "en": "No; use 3EI/3.",
+          "ar": "لا؛ استخدم 3EI/3."
+        },
+        {
+          "en": "Yes; every column uses 4EI/L.",
+          "ar": "نعم؛ كل عمود يستخدم 4EI/L."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Beam and column labels do not determine stiffness. Far-end freedom does.",
+        "ar": "لا يحدد وصف العضو ككمرة أو عمود جساءته، بل تحددها حرية طرفه البعيد."
+      },
+      "explain": {
+        "en": "B sees BA with a far hinge, BC with its far joint temporarily held during local balancing, and BF with a far hinge. C sees CB and CE with held far ends. CD remains a known load action.",
+        "ar": "ترى B العضو BA بمفصل بعيد وBC بعقدة بعيدة مقيدة مؤقتاً أثناء الموازنة المحلية وBF بمفصل بعيد. وترى C العضوين CB وCE بطرفين بعيدين مقيدين. ويبقى CD فعلاً معلوماً للحمل."
+      },
+      "formula": "KB/EI₀=[3(2)/4,4(2)/6,3(1)/3]=[3/2,4/3,1]; KC/EI₀=[4/3,2]",
+      "symbols": {
+        "en": "Order at B: BA,BC,BF. Order at C: CB,CE. Factors are dimensionless ratios of these stiffnesses.",
+        "ar": "الترتيب عند B: BA وBC وBF، وعند C: CB وCE. المعاملات نسب دون وحدات لهذه الجساءات."
+      },
+      "assumptions": {
+        "en": "Small-displacement elastic prismatic bending; axial strains neglected. Clockwise member-end couples are positive. The worked geometry is lecture 14 page 3, re-solved here by moment distribution, not a different source example.",
+        "ar": "انحناء منشوري مرن بإزاحات صغيرة وإهمال الانفعالات المحورية. العزوم الطرفية مع عقارب الساعة موجبة. هندسة المثال من المحاضرة 14 صفحة 3، ونعيد حلها هنا بتوزيع العزوم وليست مثالاً مختلفاً منسوباً للمصدر."
+      },
+      "example": {
+        "en": "Normalize each joint independently.",
+        "ar": "طبّع كل عقدة على حدة."
+      },
+      "calculation": {
+        "en": "ΣKB/EI₀=23/6. DFB=[9/23,8/23,6/23]. ΣKC/EI₀=10/3. DFC=[2/5,3/5].",
+        "ar": "ΣKB/EI₀=23/6. معاملات B هي [9/23,8/23,6/23]. وΣKC/EI₀=10/3. معاملات C هي [2/5,3/5]."
+      },
+      "interpret": {
+        "en": "More branches at a joint do not imply equal shares. The support and rigidity model determines each share.",
+        "ar": "زيادة عدد فروع العقدة لا تعني تساوي الحصص؛ فنموذج القيود والجساءة يحدد حصة كل عضو."
+      },
+      "check": {
+        "prompt": {
+          "en": "Why is the carry-over BA→AB zero while BC→CB is one half?",
+          "ar": "لماذا انتقال BA إلى AB صفر بينما BC إلى CB يساوي النصف؟"
+        },
+        "answer": {
+          "en": "A is a condensed real hinge, whereas C is a held rigid joint during the B balancing operation.",
+          "ar": "لأن A مفصل حقيقي مختزل، بينما C عقدة جسئة مقيدة أثناء موازنة B."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "dn-factors"
+      ],
+      "sources": [
+        {
+          "doc": "15",
+          "page": 4,
+          "filename": "Lecture (3)-Moment distribution method.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nonsway-distribution-4",
+      "title": {
+        "en": "4 · Follow one full balancing sweep",
+        "ar": "٤ · تتبع دورة موازنة كاملة"
+      },
+      "predict": {
+        "en": "After balancing B, can you balance C using its untouched initial sum of 41?",
+        "ar": "بعد موازنة B، هل يمكنك موازنة C باستخدام مجموعها الابتدائي 41 دون تعديل؟"
+      },
+      "options": [
+        {
+          "en": "No; include the incoming carry-over from B.",
+          "ar": "لا؛ ضمّن العزم المنتقل الوارد من B."
+        },
+        {
+          "en": "Yes; all joints are independent.",
+          "ar": "نعم؛ جميع العقد مستقلة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Balancing B changes BC, so half of that increment reaches CB. C now faces a different sum.",
+        "ar": "تغيّر موازنة B عزم BC، فيصل نصف الزيادة إلى CB. وتواجه C الآن مجموعاً مختلفاً."
+      },
+      "explain": {
+        "en": "Apply the full B correction +28 in its three factors. Carry only half the BC increment to CB. Then balance C with its updated sum, carry half the CB increment back to BC and half the CE increment to EC.",
+        "ar": "طبّق تصحيح B الكامل +28 وفق معاملاتها الثلاثة. انقل نصف زيادة BC فقط إلى CB. ثم وازن C بمجموعها المحدّث وانقل نصف زيادة CB إلى BC ونصف زيادة CE إلى EC."
+      },
+      "formula": "ΔMB=[9/23,8/23,6/23](28); ΔMC=[2/5,3/5](−UC)",
+      "symbols": {
+        "en": "Each increment is kN·m; signs are the same during ordinary prismatic carry-over. Hinges receive zero carry-over.",
+        "ar": "كل زيادة بوحدة kN·m؛ وتظل الإشارة نفسها في انتقال العضو المنشوري العادي. المفاصل لا تستقبل عزماً منتقلاً."
+      },
+      "assumptions": {
+        "en": "Small-displacement elastic prismatic bending; axial strains neglected. Clockwise member-end couples are positive. The worked geometry is lecture 14 page 3, re-solved here by moment distribution, not a different source example.",
+        "ar": "انحناء منشوري مرن بإزاحات صغيرة وإهمال الانفعالات المحورية. العزوم الطرفية مع عقارب الساعة موجبة. هندسة المثال من المحاضرة 14 صفحة 3، ونعيد حلها هنا بتوزيع العزوم وليست مثالاً مختلفاً منسوباً للمصدر."
+      },
+      "example": {
+        "en": "Start from UB=−28 and UC,initial=41.",
+        "ar": "ابدأ بـUB=−28 وUC,initial=41."
+      },
+      "calculation": {
+        "en": "B increments=[10.956522,9.739130,7.304348]. Incoming at C=4.869565; UC=45.869565. C increments=[−18.347826,−27.521739]; carry back to BC=−9.173913 and to EC=−13.760870.",
+        "ar": "زيادات B=[10.956522,9.739130,7.304348]. الوارد إلى C=4.869565؛ لذا UC=45.869565. زيادتا C=[−18.347826,−27.521739]، والانتقال العائد إلى BC=−9.173913 وإلى EC=−13.760870."
+      },
+      "interpret": {
+        "en": "The first sweep reopens a residual at B. That is expected; it is why the process is iterative.",
+        "ar": "تعيد الدورة الأولى توليد متبقٍ عند B. وهذا متوقع، ولذلك تكون العملية تكرارية."
+      },
+      "check": {
+        "prompt": {
+          "en": "Which free joint needs balancing next?",
+          "ar": "أي عقدة حرة تحتاج الموازنة بعد ذلك؟"
+        },
+        "answer": {
+          "en": "B, because the C correction carried back into BC.",
+          "ar": "B لأن تصحيح C انتقل عائداً إلى BC."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "dn-iterations"
+      ],
+      "sources": [
+        {
+          "doc": "15",
+          "page": 2,
+          "filename": "Lecture (3)-Moment distribution method.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nonsway-distribution-5",
+      "title": {
+        "en": "5 · Stop at a checked answer, not a pretty table",
+        "ar": "٥ · توقف عند حل متحقق لا عند جدول جميل"
+      },
+      "predict": {
+        "en": "Is a small last correction alone enough to certify convergence?",
+        "ar": "هل تكفي زيادة أخيرة صغيرة وحدها لإثبات التقارب؟"
+      },
+      "options": [
+        {
+          "en": "No; evaluate residuals at every free joint after all carry-over.",
+          "ar": "لا؛ احسب المتبقي عند كل عقدة حرة بعد كل الانتقالات."
+        },
+        {
+          "en": "Yes, regardless of the other joints.",
+          "ar": "نعم مهما كانت بقية العقد."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "With continued balancing, the moment table approaches the exact solution of the same two simultaneous rotation equations.",
+        "ar": "مع استمرار الموازنة يقترب جدول العزوم من الحل الدقيق لمعادلتَي الدوران الآنيتين نفسيهما."
+      },
+      "explain": {
+        "en": "Use a stated moment tolerance, such as 0.001 kN·m for this example, and test both B and C after a complete sweep. Retain full precision internally and round only the reported final values.",
+        "ar": "استخدم سماحية عزوم معلنة، مثل 0.001 kN·m لهذا المثال، وافحص B وC بعد دورة كاملة. احتفظ بالدقة داخلياً وقرّب القيم النهائية المعروضة فقط."
+      },
+      "formula": "max(|MBA+MBC+MBF|,|MCB+MCE+MCD|)<0.001 kN·m",
+      "symbols": {
+        "en": "A tolerance controls remaining equilibrium error; it is not permission to ignore a wrong support or load.",
+        "ar": "تحد السماحية من خطأ الاتزان المتبقي؛ ولا تبرر إهمال مسند أو حمل خاطئ."
+      },
+      "assumptions": {
+        "en": "Small-displacement elastic prismatic bending; axial strains neglected. Clockwise member-end couples are positive. The worked geometry is lecture 14 page 3, re-solved here by moment distribution, not a different source example.",
+        "ar": "انحناء منشوري مرن بإزاحات صغيرة وإهمال الانفعالات المحورية. العزوم الطرفية مع عقارب الساعة موجبة. هندسة المثال من المحاضرة 14 صفحة 3، ونعيد حلها هنا بتوزيع العزوم وليست مثالاً مختلفاً منسوباً للمصدر."
+      },
+      "example": {
+        "en": "Compare the converged result to the independently solved slope-deflection benchmark.",
+        "ar": "قارن النتيجة المتقاربة بمعيار الميل والهبوط المحلول استقلالياً."
+      },
+      "calculation": {
+        "en": "[MBA,MBC,MCB,MBF,MCE,MEC]=[38.675676,−48.459459,55.513514,9.783784,−43.513514,0.743243] kN·m. Both joint sums vanish before rounding.",
+        "ar": "[MBA,MBC,MCB,MBF,MCE,MEC]=[38.675676,−48.459459,55.513514,9.783784,−43.513514,0.743243] kN·m. ينعدم مجموعا العقدتين قبل التقريب."
+      },
+      "interpret": {
+        "en": "Agreement between two independent methods is strong evidence only when both used the same correctly transcribed physical model.",
+        "ar": "تطابق طريقتين مستقلتين دليل قوي فقط عندما تستخدمان النموذج الفيزيائي نفسه المنقول بدقة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Why is MEC particularly sensitive to early rounding?",
+          "ar": "لماذا MEC حساسة خاصة للتقريب المبكر؟"
+        },
+        "answer": {
+          "en": "It is a small remainder after adding the initial +15 and negative carry-over increments.",
+          "ar": "لأنها فرق صغير بعد جمع القيمة الابتدائية +15 وزيادات الانتقال السالبة."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "dn-converge"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 12,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nonsway-distribution-6",
+      "title": {
+        "en": "6 · Close the global reaction audit",
+        "ar": "٦ · أكمل تدقيق ردود الأفعال العامة"
+      },
+      "predict": {
+        "en": "Do the two columns carry equal vertical forces in this asymmetric frame?",
+        "ar": "هل يحمل العمودان قوتين رأسيتين متساويتين في هذا الإطار غير المتماثل؟"
+      },
+      "options": [
+        {
+          "en": "Yes, because both are 3 m tall.",
+          "ar": "نعم لأن ارتفاعهما 3 m."
+        },
+        {
+          "en": "No; solve each member and joint force balance.",
+          "ar": "لا؛ حل اتزان القوى لكل عضو وعقدة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "The load paths are unequal. Column height alone cannot determine the axial forces or support reactions.",
+        "ar": "مسارا الأحمال غير متساويين. ارتفاع العمود وحده لا يحدد قواه المحورية أو ردود أفعال مسانده."
+      },
+      "explain": {
+        "en": "Take global right/up positive. For AB and BC obtain vertical end forces by span moment equilibrium. Sum forces at B and C, including the overhang. For horizontal reactions, use each loaded column’s full free body, including the 40 kN leftward force on CE.",
+        "ar": "اعتبر اليمين والأعلى موجبين عامّاً. احسب قوتي الطرفين الرأسيتين لـAB وBC باتزان العزوم. اجمع القوى عند B وC مع الكابولي. وللردود الأفقية استخدم مخطط الجسم الحر الكامل لكل عمود، بما فيه القوة 40 kN إلى اليسار على CE."
+      },
+      "formula": "ΣRy=162 kN; ΣRx=40 kN; ΣMA=0",
+      "symbols": {
+        "en": "Support locations: A(0,0), F(4,−3), E(10,−3). The upward reaction at F includes all vertical force transferred at B; at E it includes all at C.",
+        "ar": "مواقع المساند: A(0,0) وF(4,−3) وE(10,−3). يتضمن رد F الرأسي كل القوة المنقولة عند B، ويتضمن رد E كل المنقول عند C."
+      },
+      "assumptions": {
+        "en": "Small-displacement elastic prismatic bending; axial strains neglected. Clockwise member-end couples are positive. The worked geometry is lecture 14 page 3, re-solved here by moment distribution, not a different source example.",
+        "ar": "انحناء منشوري مرن بإزاحات صغيرة وإهمال الانفعالات المحورية. العزوم الطرفية مع عقارب الساعة موجبة. هندسة المثال من المحاضرة 14 صفحة 3، ونعيد حلها هنا بتوزيع العزوم وليست مثالاً مختلفاً منسوباً للمصدر."
+      },
+      "example": {
+        "en": "Use the verified final end moments from the preceding step.",
+        "ar": "استخدم عزوم الأطراف النهائية المتحققة في الخطوة السابقة."
+      },
+      "calculation": {
+        "en": "Ry[A,F,E]=[14.331081,80.493243,67.175676] kN. Rx[A,F,E]=[30.995495,3.261261,5.743243] kN. The E reaction couple is clockwise 0.743243 kN·m. ΣRy=162 and ΣRx=40 oppose the applied loads.",
+        "ar": "Ry[A,F,E]=[14.331081,80.493243,67.175676] kN، وRx[A,F,E]=[30.995495,3.261261,5.743243] kN. عزم رد الفعل عند E مع عقارب الساعة 0.743243 kN·m. المجموعان ΣRy=162 وΣRx=40 يعاكسان الأحمال المطبقة."
+      },
+      "interpret": {
+        "en": "Whole-frame moment equilibrium about A additionally checks the column-load lever arm and the fixed-support couple.",
+        "ar": "يفحص اتزان عزوم الإطار كله حول A أيضاً ذراع حمل العمود وعزم المسند المثبت."
+      },
+      "check": {
+        "prompt": {
+          "en": "Write the full global moment check about A, counterclockwise positive.",
+          "ar": "اكتب فحص العزوم العام حول A مع جعل عكس عقارب الساعة موجباً."
+        },
+        "answer": {
+          "en": "4RyF+10RyE+3RxF+3RxE−120·5−36·8−6·12−40·1.5−0.743243≈0.",
+          "ar": "4RyF+10RyE+3RxF+3RxE−120·5−36·8−6·12−40·1.5−0.743243≈0."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "dn-reactions"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 3,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "dn-q1",
+      "concept": "dn-model",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does a moment-distribution table automatically solve sway?",
+        "ar": "هل يحل جدول توزيع العزوم الانزياح تلقائياً؟"
+      },
+      "options": [
+        {
+          "en": "Yes.",
+          "ar": "نعم."
+        },
+        {
+          "en": "No; a sway-capable frame requires translation equilibrium or a sway correction.",
+          "ar": "لا؛ الإطار القابل للانزياح يحتاج اتزاناً انتقالياً أو تصحيح انزياح."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Distinguish load action from rotational restraint.",
+          "ar": "ميّز أثر الحمل عن التقييد الدوراني."
+        },
+        {
+          "en": "Use this relationship: Δ=0; distribute at B,C; retain MAB=MFB=0",
+          "ar": "استخدم العلاقة: Δ=0; distribute at B,C; retain MAB=MFB=0"
+        }
+      ],
+      "solution": {
+        "en": "A table with translations restrained is a restrained model until corrected.",
+        "ar": "الجدول ذو الانتقالات المقيدة يحل نموذجاً مقيداً حتى يضاف التصحيح."
+      },
+      "sources": [
+        {
+          "doc": "16",
+          "page": 9,
+          "filename": "lecture (4)-Moment distribution method.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-q2",
+      "concept": "dn-model",
+      "type": "numerical",
+      "prompt": {
+        "en": "How many active distribution joints remain in the lecture 14 non-sway frame after true-hinge condensation?",
+        "ar": "كم عقدة توزيع فعالة تبقى في إطار المحاضرة 14 المانع للانزياح بعد اختزال المفاصل الحقيقية؟"
+      },
+      "expected": 2,
+      "tolerance": 0.002,
+      "unit": "",
+      "hints": [
+        {
+          "en": "Use the stated source geometry and signed condensed moments.",
+          "ar": "استخدم هندسة المصدر المذكورة والعزوم المختزلة بإشاراتها."
+        },
+        {
+          "en": "Use this relationship: Δ=0; distribute at B,C; retain MAB=MFB=0",
+          "ar": "استخدم العلاقة: Δ=0; distribute at B,C; retain MAB=MFB=0"
+        }
+      ],
+      "solution": {
+        "en": "B and C are active. A,F are condensed hinges; E is fixed.",
+        "ar": "B وC فعالتان؛ A وF مفصلان مختزلان وE مثبت."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 3,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-q3",
+      "concept": "dn-loads",
+      "type": "conceptual",
+      "prompt": {
+        "en": "The free overhang has DF=0 at C. What about its 6 kN tip load?",
+        "ar": "الكابولي الحر له DF=0 عند C. ماذا عن حمله الطرفي 6 kN؟"
+      },
+      "options": [
+        {
+          "en": "Its root moment remains in C equilibrium.",
+          "ar": "يبقى عزم جذره في اتزان C."
+        },
+        {
+          "en": "It has no effect anywhere.",
+          "ar": "لا يؤثر في أي موضع."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Distinguish load action from rotational restraint.",
+          "ar": "ميّز أثر الحمل عن التقييد الدوراني."
+        },
+        {
+          "en": "Use this relationship: UB=24−52+0=−28; UC,initial=68−15−12=41 kN·m",
+          "ar": "استخدم العلاقة: UB=24−52+0=−28; UC,initial=68−15−12=41 kN·m"
+        }
+      ],
+      "solution": {
+        "en": "The overhang carries load even though it adds no rotational restraint.",
+        "ar": "يحمل الكابولي حملاً رغم عدم إضافته قيداً دورانياً."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 3,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-q4",
+      "concept": "dn-loads",
+      "type": "numerical",
+      "prompt": {
+        "en": "Find the starting C sum using MCB=68, MCE=−15 and MCD=−12 kN·m.",
+        "ar": "أوجد مجموع C الابتدائي من MCB=68 وMCE=−15 وMCD=−12 kN·m."
+      },
+      "expected": 41,
+      "tolerance": 0.041,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "Use the stated source geometry and signed condensed moments.",
+          "ar": "استخدم هندسة المصدر المذكورة والعزوم المختزلة بإشاراتها."
+        },
+        {
+          "en": "Use this relationship: UB=24−52+0=−28; UC,initial=68−15−12=41 kN·m",
+          "ar": "استخدم العلاقة: UB=24−52+0=−28; UC,initial=68−15−12=41 kN·m"
+        }
+      ],
+      "solution": {
+        "en": "68−15−12=41 before carry-over.",
+        "ar": "68−15−12=41 قبل الانتقال."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 10,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-q5",
+      "concept": "dn-factors",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Why use 3EI/L for BF but 4EI/L for BC during B balancing?",
+        "ar": "لماذا نستخدم 3EI/L لـBF و4EI/L لـBC أثناء موازنة B؟"
+      },
+      "options": [
+        {
+          "en": "F is a real far hinge; C is temporarily held while balancing B.",
+          "ar": "F مفصل بعيد حقيقي، أما C فتقيد مؤقتاً أثناء موازنة B."
+        },
+        {
+          "en": "Columns are always softer than beams.",
+          "ar": "الأعمدة دائماً أقل جساءة من الكمرات."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Distinguish load action from rotational restraint.",
+          "ar": "ميّز أثر الحمل عن التقييد الدوراني."
+        },
+        {
+          "en": "Use this relationship: KB/EI₀=[3(2)/4,4(2)/6,3(1)/3]=[3/2,4/3,1]; KC/EI₀=[4/3,2]",
+          "ar": "استخدم العلاقة: KB/EI₀=[3(2)/4,4(2)/6,3(1)/3]=[3/2,4/3,1]; KC/EI₀=[4/3,2]"
+        }
+      ],
+      "solution": {
+        "en": "Boundary conditions, not member names, determine the stiffness.",
+        "ar": "تحدد الشروط الحدية الجساءة، لا أسماء الأعضاء."
+      },
+      "sources": [
+        {
+          "doc": "16",
+          "page": 2,
+          "filename": "lecture (4)-Moment distribution method.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-q6",
+      "concept": "dn-factors",
+      "type": "mixed",
+      "prompt": {
+        "en": "For B stiffness ratios [3/2,4/3,1], enter DFBC.",
+        "ar": "عند نسب جساءات B وهي [3/2,4/3,1]، أدخل DFBC."
+      },
+      "expected": 0.34782608695652173,
+      "tolerance": 0.001,
+      "unit": "",
+      "hints": [
+        {
+          "en": "Use the stated source geometry and signed condensed moments.",
+          "ar": "استخدم هندسة المصدر المذكورة والعزوم المختزلة بإشاراتها."
+        },
+        {
+          "en": "Use this relationship: KB/EI₀=[3(2)/4,4(2)/6,3(1)/3]=[3/2,4/3,1]; KC/EI₀=[4/3,2]",
+          "ar": "استخدم العلاقة: KB/EI₀=[3(2)/4,4(2)/6,3(1)/3]=[3/2,4/3,1]; KC/EI₀=[4/3,2]"
+        }
+      ],
+      "solution": {
+        "en": "DFBC=(4/3)/(23/6)=8/23=0.347826087.",
+        "ar": "DFBC=(4/3)/(23/6)=8/23=0.347826087."
+      },
+      "sources": [
+        {
+          "doc": "15",
+          "page": 4,
+          "filename": "Lecture (3)-Moment distribution method.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-q7",
+      "concept": "dn-iterations",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Before balancing C after B, which sum should you use?",
+        "ar": "قبل موازنة C بعد B، أي مجموع تستخدم؟"
+      },
+      "options": [
+        {
+          "en": "The initial sum only.",
+          "ar": "المجموع الابتدائي فقط."
+        },
+        {
+          "en": "The initial sum plus every incoming carry-over already applied.",
+          "ar": "المجموع الابتدائي مضافاً إليه كل انتقال وارد طُبّق بالفعل."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Distinguish load action from rotational restraint.",
+          "ar": "ميّز أثر الحمل عن التقييد الدوراني."
+        },
+        {
+          "en": "Use this relationship: ΔMB=[9/23,8/23,6/23](28); ΔMC=[2/5,3/5](−UC)",
+          "ar": "استخدم العلاقة: ΔMB=[9/23,8/23,6/23](28); ΔMC=[2/5,3/5](−UC)"
+        }
+      ],
+      "solution": {
+        "en": "Otherwise joint coupling is lost and the iterative method is no longer consistent.",
+        "ar": "وإلا فُقد ترابط العقد ولم تعد الطريقة التكرارية متسقة."
+      },
+      "sources": [
+        {
+          "doc": "15",
+          "page": 2,
+          "filename": "Lecture (3)-Moment distribution method.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-q8",
+      "concept": "dn-iterations",
+      "type": "numerical",
+      "prompt": {
+        "en": "After the first B correction +28, ΔMBC=28·8/23. What is C total before its first balance?",
+        "ar": "بعد تصحيح B الأول +28، فإن ΔMBC=28·8/23. ما مجموع C قبل أول موازنة لها؟"
+      },
+      "expected": 45.869565217,
+      "tolerance": 0.045869565217,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "Use the stated source geometry and signed condensed moments.",
+          "ar": "استخدم هندسة المصدر المذكورة والعزوم المختزلة بإشاراتها."
+        },
+        {
+          "en": "Use this relationship: ΔMB=[9/23,8/23,6/23](28); ΔMC=[2/5,3/5](−UC)",
+          "ar": "استخدم العلاقة: ΔMB=[9/23,8/23,6/23](28); ΔMC=[2/5,3/5](−UC)"
+        }
+      ],
+      "solution": {
+        "en": "UC=41+½(28·8/23)=45.869565217.",
+        "ar": "UC=41+½(28·8/23)=45.869565217."
+      },
+      "sources": [
+        {
+          "doc": "15",
+          "page": 2,
+          "filename": "Lecture (3)-Moment distribution method.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-q9",
+      "concept": "dn-converge",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A last correction is tiny but a different free joint has a large residual. Stop?",
+        "ar": "التصحيح الأخير صغير لكن متبقي عقدة حرة أخرى كبير. هل نتوقف؟"
+      },
+      "options": [
+        {
+          "en": "No; evaluate all free-joint residuals after all carry-over.",
+          "ar": "لا؛ احسب متبقيات كل العقد الحرة بعد جميع الانتقالات."
+        },
+        {
+          "en": "Yes; one small correction is enough.",
+          "ar": "نعم؛ يكفي تصحيح صغير واحد."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Distinguish load action from rotational restraint.",
+          "ar": "ميّز أثر الحمل عن التقييد الدوراني."
+        },
+        {
+          "en": "Use this relationship: max(|MBA+MBC+MBF|,|MCB+MCE+MCD|)<0.001 kN·m",
+          "ar": "استخدم العلاقة: max(|MBA+MBC+MBF|,|MCB+MCE+MCD|)<0.001 kN·m"
+        }
+      ],
+      "solution": {
+        "en": "Convergence is a property of the assembled equilibrium system.",
+        "ar": "التقارب خاصية لمنظومة الاتزان المجمعة."
+      },
+      "sources": [
+        {
+          "doc": "15",
+          "page": 4,
+          "filename": "Lecture (3)-Moment distribution method.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-q10",
+      "concept": "dn-converge",
+      "type": "numerical",
+      "prompt": {
+        "en": "Enter the converged MBA for the source frame.",
+        "ar": "أدخل MBA المتقاربة لإطار المصدر."
+      },
+      "expected": 38.675675676,
+      "tolerance": 0.038675675676,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "Use the stated source geometry and signed condensed moments.",
+          "ar": "استخدم هندسة المصدر المذكورة والعزوم المختزلة بإشاراتها."
+        },
+        {
+          "en": "Use this relationship: max(|MBA+MBC+MBF|,|MCB+MCE+MCD|)<0.001 kN·m",
+          "ar": "استخدم العلاقة: max(|MBA+MBC+MBF|,|MCB+MCE+MCD|)<0.001 kN·m"
+        }
+      ],
+      "solution": {
+        "en": "MBA=24+1.5(9.783783784)=38.675675676, matching slope-deflection.",
+        "ar": "MBA=24+1.5(9.783783784)=38.675675676، مطابقاً للميل والهبوط."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 12,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-q11",
+      "concept": "dn-reactions",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can equal column heights alone imply equal vertical reactions?",
+        "ar": "هل يكفي تساوي ارتفاعي العمودين لفرض تساوي ردي فعلهما الرأسيين؟"
+      },
+      "options": [
+        {
+          "en": "No; load paths and member equilibrium determine them.",
+          "ar": "لا؛ تحددهما مسارات الأحمال واتزان الأعضاء."
+        },
+        {
+          "en": "Yes.",
+          "ar": "نعم."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Distinguish load action from rotational restraint.",
+          "ar": "ميّز أثر الحمل عن التقييد الدوراني."
+        },
+        {
+          "en": "Use this relationship: ΣRy=162 kN; ΣRx=40 kN; ΣMA=0",
+          "ar": "استخدم العلاقة: ΣRy=162 kN; ΣRx=40 kN; ΣMA=0"
+        }
+      ],
+      "solution": {
+        "en": "The source frame has unequal loading, spans and restraint conditions.",
+        "ar": "لإطار المصدر أحمال وفتحات وقيود غير متساوية."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 3,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-q12",
+      "concept": "dn-reactions",
+      "type": "mixed",
+      "prompt": {
+        "en": "For the source frame enter the total upward support reactions summed over A,F,E.",
+        "ar": "لإطار المصدر أدخل مجموع ردود الأفعال للأعلى عند A وF وE."
+      },
+      "expected": 162,
+      "tolerance": 0.162,
+      "unit": "kN",
+      "hints": [
+        {
+          "en": "Use the stated source geometry and signed condensed moments.",
+          "ar": "استخدم هندسة المصدر المذكورة والعزوم المختزلة بإشاراتها."
+        },
+        {
+          "en": "Use this relationship: ΣRy=162 kN; ΣRx=40 kN; ΣMA=0",
+          "ar": "استخدم العلاقة: ΣRy=162 kN; ΣRx=40 kN; ΣMA=0"
+        }
+      ],
+      "solution": {
+        "en": "12·(4+6)+36+6=162 kN. The horizontal 40 kN load adds no vertical resultant.",
+        "ar": "12·(4+6)+36+6=162 kN. لا يضيف الحمل الأفقي 40 kN محصلة رأسية."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 3,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "dn-card-1",
+      "concept": "dn-model",
+      "kind": "interpretation",
+      "q": {
+        "en": "Does a moment-distribution table automatically solve sway?",
+        "ar": "هل يحل جدول توزيع العزوم الانزياح تلقائياً؟"
+      },
+      "a": {
+        "en": "A table with translations restrained is a restrained model until corrected.",
+        "ar": "الجدول ذو الانتقالات المقيدة يحل نموذجاً مقيداً حتى يضاف التصحيح."
+      }
+    },
+    {
+      "id": "dn-card-2",
+      "concept": "dn-model",
+      "kind": "calculation",
+      "q": {
+        "en": "How many active distribution joints remain in the lecture 14 non-sway frame after true-hinge condensation?",
+        "ar": "كم عقدة توزيع فعالة تبقى في إطار المحاضرة 14 المانع للانزياح بعد اختزال المفاصل الحقيقية؟"
+      },
+      "a": {
+        "en": "B and C are active. A,F are condensed hinges; E is fixed.",
+        "ar": "B وC فعالتان؛ A وF مفصلان مختزلان وE مثبت."
+      }
+    },
+    {
+      "id": "dn-card-3",
+      "concept": "dn-loads",
+      "kind": "interpretation",
+      "q": {
+        "en": "The free overhang has DF=0 at C. What about its 6 kN tip load?",
+        "ar": "الكابولي الحر له DF=0 عند C. ماذا عن حمله الطرفي 6 kN؟"
+      },
+      "a": {
+        "en": "The overhang carries load even though it adds no rotational restraint.",
+        "ar": "يحمل الكابولي حملاً رغم عدم إضافته قيداً دورانياً."
+      }
+    },
+    {
+      "id": "dn-card-4",
+      "concept": "dn-loads",
+      "kind": "calculation",
+      "q": {
+        "en": "Find the starting C sum using MCB=68, MCE=−15 and MCD=−12 kN·m.",
+        "ar": "أوجد مجموع C الابتدائي من MCB=68 وMCE=−15 وMCD=−12 kN·m."
+      },
+      "a": {
+        "en": "68−15−12=41 before carry-over.",
+        "ar": "68−15−12=41 قبل الانتقال."
+      }
+    },
+    {
+      "id": "dn-card-5",
+      "concept": "dn-factors",
+      "kind": "interpretation",
+      "q": {
+        "en": "Why use 3EI/L for BF but 4EI/L for BC during B balancing?",
+        "ar": "لماذا نستخدم 3EI/L لـBF و4EI/L لـBC أثناء موازنة B؟"
+      },
+      "a": {
+        "en": "Boundary conditions, not member names, determine the stiffness.",
+        "ar": "تحدد الشروط الحدية الجساءة، لا أسماء الأعضاء."
+      }
+    },
+    {
+      "id": "dn-card-6",
+      "concept": "dn-factors",
+      "kind": "calculation",
+      "q": {
+        "en": "For B stiffness ratios [3/2,4/3,1], enter DFBC.",
+        "ar": "عند نسب جساءات B وهي [3/2,4/3,1]، أدخل DFBC."
+      },
+      "a": {
+        "en": "DFBC=(4/3)/(23/6)=8/23=0.347826087.",
+        "ar": "DFBC=(4/3)/(23/6)=8/23=0.347826087."
+      }
+    },
+    {
+      "id": "dn-card-7",
+      "concept": "dn-iterations",
+      "kind": "interpretation",
+      "q": {
+        "en": "Before balancing C after B, which sum should you use?",
+        "ar": "قبل موازنة C بعد B، أي مجموع تستخدم؟"
+      },
+      "a": {
+        "en": "Otherwise joint coupling is lost and the iterative method is no longer consistent.",
+        "ar": "وإلا فُقد ترابط العقد ولم تعد الطريقة التكرارية متسقة."
+      }
+    },
+    {
+      "id": "dn-card-8",
+      "concept": "dn-iterations",
+      "kind": "calculation",
+      "q": {
+        "en": "After the first B correction +28, ΔMBC=28·8/23. What is C total before its first balance?",
+        "ar": "بعد تصحيح B الأول +28، فإن ΔMBC=28·8/23. ما مجموع C قبل أول موازنة لها؟"
+      },
+      "a": {
+        "en": "UC=41+½(28·8/23)=45.869565217.",
+        "ar": "UC=41+½(28·8/23)=45.869565217."
+      }
+    },
+    {
+      "id": "dn-card-9",
+      "concept": "dn-converge",
+      "kind": "interpretation",
+      "q": {
+        "en": "A last correction is tiny but a different free joint has a large residual. Stop?",
+        "ar": "التصحيح الأخير صغير لكن متبقي عقدة حرة أخرى كبير. هل نتوقف؟"
+      },
+      "a": {
+        "en": "Convergence is a property of the assembled equilibrium system.",
+        "ar": "التقارب خاصية لمنظومة الاتزان المجمعة."
+      }
+    },
+    {
+      "id": "dn-card-10",
+      "concept": "dn-converge",
+      "kind": "calculation",
+      "q": {
+        "en": "Enter the converged MBA for the source frame.",
+        "ar": "أدخل MBA المتقاربة لإطار المصدر."
+      },
+      "a": {
+        "en": "MBA=24+1.5(9.783783784)=38.675675676, matching slope-deflection.",
+        "ar": "MBA=24+1.5(9.783783784)=38.675675676، مطابقاً للميل والهبوط."
+      }
+    },
+    {
+      "id": "dn-card-11",
+      "concept": "dn-reactions",
+      "kind": "interpretation",
+      "q": {
+        "en": "Can equal column heights alone imply equal vertical reactions?",
+        "ar": "هل يكفي تساوي ارتفاعي العمودين لفرض تساوي ردي فعلهما الرأسيين؟"
+      },
+      "a": {
+        "en": "The source frame has unequal loading, spans and restraint conditions.",
+        "ar": "لإطار المصدر أحمال وفتحات وقيود غير متساوية."
+      }
+    },
+    {
+      "id": "dn-card-12",
+      "concept": "dn-reactions",
+      "kind": "calculation",
+      "q": {
+        "en": "For the source frame enter the total upward support reactions summed over A,F,E.",
+        "ar": "لإطار المصدر أدخل مجموع ردود الأفعال للأعلى عند A وF وE."
+      },
+      "a": {
+        "en": "12·(4+6)+36+6=162 kN. The horizontal 40 kN load adds no vertical resultant.",
+        "ar": "12·(4+6)+36+6=162 kN. لا يضيف الحمل الأفقي 40 kN محصلة رأسية."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "14",
+      "page": 3,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 5,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 10,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 11,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 12,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "15",
+      "page": 2,
+      "filename": "Lecture (3)-Moment distribution method.pdf"
+    },
+    {
+      "doc": "15",
+      "page": 3,
+      "filename": "Lecture (3)-Moment distribution method.pdf"
+    },
+    {
+      "doc": "15",
+      "page": 4,
+      "filename": "Lecture (3)-Moment distribution method.pdf"
+    },
+    {
+      "doc": "16",
+      "page": 2,
+      "filename": "lecture (4)-Moment distribution method.pdf"
+    },
+    {
+      "doc": "16",
+      "page": 9,
+      "filename": "lecture (4)-Moment distribution method.pdf"
+    },
+    {
+      "doc": "16",
+      "page": 10,
+      "filename": "lecture (4)-Moment distribution method.pdf"
+    },
+    {
+      "doc": "16",
+      "page": 11,
+      "filename": "lecture (4)-Moment distribution method.pdf"
+    }
+  ],
+  "videoIds": [
+    "Fa0RQeY1XyE",
+    "nKVDcnq-clc",
+    "BjbVlb6HvMc",
+    "MvBqCeZllpQ"
+  ]
+}

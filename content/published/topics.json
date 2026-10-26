@@ -1,0 +1,122 @@
+[
+  {
+    "id": "slope-beams",
+    "subject": "structures-ii",
+    "file": "structures-ii/slope-beams/topic.json"
+  },
+  {
+    "id": "slope-nonsway",
+    "subject": "structures-ii",
+    "file": "structures-ii/slope-nonsway/topic.json"
+  },
+  {
+    "id": "slope-sway",
+    "subject": "structures-ii",
+    "file": "structures-ii/slope-sway/topic.json"
+  },
+  {
+    "id": "slope-inclined",
+    "subject": "structures-ii",
+    "file": "structures-ii/slope-inclined/topic.json"
+  },
+  {
+    "id": "distribution-beams",
+    "subject": "structures-ii",
+    "file": "structures-ii/distribution-beams/topic.json"
+  },
+  {
+    "id": "distribution-nonsway",
+    "subject": "structures-ii",
+    "file": "structures-ii/distribution-nonsway/topic.json"
+  },
+  {
+    "id": "distribution-sway",
+    "subject": "structures-ii",
+    "file": "structures-ii/distribution-sway/topic.json"
+  },
+  {
+    "id": "influence-qualitative",
+    "subject": "structures-ii",
+    "file": "structures-ii/influence-qualitative/topic.json"
+  },
+  {
+    "id": "influence-numerical",
+    "subject": "structures-ii",
+    "file": "structures-ii/influence-numerical/topic.json"
+  },
+  {
+    "id": "influence-moving",
+    "subject": "structures-ii",
+    "file": "structures-ii/influence-moving/topic.json"
+  },
+  {
+    "id": "models-beams",
+    "subject": "structures-ii",
+    "file": "structures-ii/models-beams/topic.json"
+  },
+  {
+    "id": "models-frames",
+    "subject": "structures-ii",
+    "file": "structures-ii/models-frames/topic.json"
+  },
+  {
+    "id": "ee-foundations",
+    "file": "engineering-economics/ee-foundations/topic.json"
+  },
+  {
+    "id": "ee-markets",
+    "file": "engineering-economics/ee-markets/topic.json"
+  },
+  {
+    "id": "ee-interest-context",
+    "file": "engineering-economics/ee-interest-context/topic.json"
+  },
+  {
+    "id": "ee-single-payments",
+    "file": "engineering-economics/ee-single-payments/topic.json"
+  },
+  {
+    "id": "ee-uniform-series",
+    "file": "engineering-economics/ee-uniform-series/topic.json"
+  },
+  {
+    "id": "ee-gradients",
+    "file": "engineering-economics/ee-gradients/topic.json"
+  },
+  {
+    "id": "ee-rates",
+    "file": "engineering-economics/ee-rates/topic.json"
+  },
+  {
+    "id": "ee-continuous-flows",
+    "file": "engineering-economics/ee-continuous-flows/topic.json"
+  },
+  {
+    "id": "ee-equivalence",
+    "file": "engineering-economics/ee-equivalence/topic.json"
+  },
+  {
+    "id": "ee-depreciation",
+    "file": "engineering-economics/ee-depreciation/topic.json"
+  },
+  {
+    "id": "ee-worth",
+    "file": "engineering-economics/ee-worth/topic.json"
+  },
+  {
+    "id": "ee-irr-payback",
+    "file": "engineering-economics/ee-irr-payback/topic.json"
+  },
+  {
+    "id": "ee-capitalized-prospective",
+    "file": "engineering-economics/ee-capitalized-prospective/topic.json"
+  },
+  {
+    "id": "ee-fe-pe",
+    "file": "engineering-economics/ee-fe-pe/topic.json"
+  },
+  {
+    "id": "ee-risk-inventory",
+    "file": "engineering-economics/ee-risk-inventory/topic.json"
+  }
+]

@@ -1,0 +1,1414 @@
+{
+  "id": "ee-foundations",
+  "family": "ee-foundations",
+  "title": {
+    "en": "Engineering decisions: worth, cost and the whole system",
+    "ar": "القرار الهندسي: القيمة والتكلفة والنظام كاملًا"
+  },
+  "summary": {
+    "en": "Imagine choosing a pump for a village. A machine must work physically, serve people and use scarce resources wisely. Learn what the economic question is before reaching for a factor.",
+    "ar": "تخيّل اختيار مضخة لقرية. يجب أن تعمل الآلة فيزيائيًا وتخدم الناس وتستخدم الموارد المحدودة بحكمة. افهم السؤال الاقتصادي قبل البحث عن عامل حسابي."
+  },
+  "outcomes": [
+    {
+      "en": "One engineering problem lives in two environments",
+      "ar": "المسألة الهندسية تعيش في بيئتين"
+    },
+    {
+      "en": "Physical efficiency is not economic efficiency",
+      "ar": "الكفاءة الفيزيائية ليست الكفاءة الاقتصادية"
+    },
+    {
+      "en": "Name the cost before using it",
+      "ar": "سمّ التكلفة قبل استخدامها"
+    },
+    {
+      "en": "Utility, value, price and an exchange",
+      "ar": "المنفعة والقيمة والسعر والتبادل"
+    },
+    {
+      "en": "A worker story: include the machine’s time",
+      "ar": "قصة عامل: احسب وقت الآلة أيضًا"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-powers"
+  ],
+  "concepts": [
+    {
+      "id": "ee-foundations-s01-concept",
+      "title": {
+        "en": "One engineering problem lives in two environments",
+        "ar": "المسألة الهندسية تعيش في بيئتين"
+      }
+    },
+    {
+      "id": "ee-foundations-s02-concept",
+      "title": {
+        "en": "Physical efficiency is not economic efficiency",
+        "ar": "الكفاءة الفيزيائية ليست الكفاءة الاقتصادية"
+      }
+    },
+    {
+      "id": "ee-foundations-s03-concept",
+      "title": {
+        "en": "Name the cost before using it",
+        "ar": "سمّ التكلفة قبل استخدامها"
+      }
+    },
+    {
+      "id": "ee-foundations-s04-concept",
+      "title": {
+        "en": "Utility, value, price and an exchange",
+        "ar": "المنفعة والقيمة والسعر والتبادل"
+      }
+    },
+    {
+      "id": "ee-foundations-s05-concept",
+      "title": {
+        "en": "A worker story: include the machine’s time",
+        "ar": "قصة عامل: احسب وقت الآلة أيضًا"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-foundations-s01",
+      "title": {
+        "en": "One engineering problem lives in two environments",
+        "ar": "المسألة الهندسية تعيش في بيئتين"
+      },
+      "predict": {
+        "en": "Does the lowest purchase price automatically identify the best engineering solution?",
+        "ar": "هل يحدد أقل سعر شراء أفضل حل هندسي تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "No; compare feasible alternatives providing the same service over a stated horizon.",
+          "ar": "لا؛ قارن بدائل ممكنة تقدم الخدمة نفسها خلال أفق محدد."
+        },
+        {
+          "en": "Yes; the initial price already contains every consequence.",
+          "ar": "نعم؛ السعر الأولي يتضمن كل النتائج."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; compare feasible alternatives providing the same service over a stated horizon. A useful economic decision starts with feasible service, not a list of prices.",
+        "ar": "لا؛ قارن بدائل ممكنة تقدم الخدمة نفسها خلال أفق محدد. يبدأ القرار الاقتصادي المفيد بخدمة ممكنة، لا بقائمة أسعار."
+      },
+      "explain": {
+        "en": "A bridge that cannot carry its load fails physically. A bridge that costs more than the community can support may fail economically even if it is strong. Start with the need, the constraints and feasible alternatives. Microeconomics follows a household, firm or market; macroeconomics studies aggregate output, employment and prices. The lecture also distinguishes the specialist, the coordinator and the manager: each connects technical knowledge to decisions at a different scale.",
+        "ar": "الجسر الذي لا يحمل أحماله يفشل فيزيائيًا. والجسر الذي تتجاوز تكلفته قدرة المجتمع قد يفشل اقتصاديًا رغم متانته. ابدأ بالحاجة والقيود والبدائل الممكنة. الاقتصاد الجزئي يتتبع الأسرة أو المنشأة أو السوق، والكلي يدرس الإنتاج والتوظيف والأسعار الإجمالية. وتميز المحاضرة بين المتخصص والمنسق والمدير؛ كل منهم يربط المعرفة الفنية بالقرار على نطاق مختلف."
+      },
+      "formula": "feasible alternatives → common service → economic comparison",
+      "symbols": {
+        "en": "An alternative is a technically possible way to deliver the required service. Currency totals must refer to the same scope.",
+        "ar": "البديل وسيلة ممكنة فنيًا لتقديم الخدمة المطلوبة. يجب أن تمثل المجاميع النقدية النطاق نفسه."
+      },
+      "assumptions": {
+        "en": "Safety and service requirements are constraints; a cheap unsafe option is not a feasible alternative.",
+        "ar": "السلامة ومستوى الخدمة قيود؛ البديل الرخيص غير الآمن ليس بديلًا مقبولًا."
+      },
+      "example": {
+        "en": "Two feasible designs cost 12000 and 15000 CU now and deliver identical service.",
+        "ar": "تصميمان ممكنان يكلفان 12000 و 15000 وحدة نقدية الآن ويقدمان الخدمة نفسها."
+      },
+      "calculation": {
+        "en": "The initial saving is 15000−12000=3000 CU; this alone is a decision only if later costs and outcomes are also equal.",
+        "ar": "التوفير الأولي 15000−12000=3000 وحدة؛ يكفي وحده للقرار فقط إن تساوت أيضًا التكاليف والنتائج اللاحقة."
+      },
+      "interpret": {
+        "en": "A useful economic decision starts with feasible service, not a list of prices.",
+        "ar": "يبدأ القرار الاقتصادي المفيد بخدمة ممكنة، لا بقائمة أسعار."
+      },
+      "check": {
+        "prompt": {
+          "en": "A cheaper pump cannot deliver the required head. Include it in a price ranking?",
+          "ar": "مضخة أرخص لا تحقق الرفع المطلوب. هل تدخل مقارنة الأسعار؟"
+        },
+        "answer": {
+          "en": "Reject it as technically infeasible before economic ranking.",
+          "ar": "تستبعد لعدم صلاحيتها الفنية قبل الترتيب الاقتصادي."
+        }
+      },
+      "diagram": "econ-decision",
+      "concepts": [
+        "ee-foundations-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 5,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 7,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 11,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-foundations-s02",
+      "title": {
+        "en": "Physical efficiency is not economic efficiency",
+        "ar": "الكفاءة الفيزيائية ليست الكفاءة الاقتصادية"
+      },
+      "predict": {
+        "en": "Must economic efficiency be below 100% because energy efficiency is below 100%?",
+        "ar": "هل يجب أن تقل الكفاءة الاقتصادية عن 100% لأن كفاءة الطاقة أقل من 100%؟"
+      },
+      "options": [
+        {
+          "en": "Yes; worth can never exceed cost.",
+          "ar": "نعم؛ لا يمكن أن تتجاوز القيمة التكلفة."
+        },
+        {
+          "en": "No; monetary value and energy conservation measure different things.",
+          "ar": "لا؛ القيمة النقدية وحفظ الطاقة يقيسان أمرين مختلفين."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; monetary value and energy conservation measure different things. Convert physical quantities into their economic values before judging worth/cost.",
+        "ar": "لا؛ القيمة النقدية وحفظ الطاقة يقيسان أمرين مختلفين. حوّل الكميات الفيزيائية إلى قيمها الاقتصادية قبل الحكم على نسبة القيمة للتكلفة."
+      },
+      "explain": {
+        "en": "Picture fuel entering a power station and useful electricity leaving it. Physical efficiency compares compatible energy quantities. Economic efficiency compares monetary worth with the monetary cost of all inputs included in the model. A thermal station can have an energy efficiency below one while creating economic worth above its cost. Conversely, a technically efficient device can be uneconomic if its input is expensive or its output has little value.",
+        "ar": "تخيّل دخول الوقود وخروج الكهرباء المفيدة. الكفاءة الفيزيائية تقارن كميات طاقة متجانسة، والاقتصادية تقارن القيمة النقدية بتكلفة المدخلات الداخلة في النموذج. قد تكون الكفاءة الحرارية أقل من الواحد مع قيمة اقتصادية تفوق التكلفة، وقد تكون آلة كفؤة فنيًا غير مجدية لغلاء مدخلها أو ضعف قيمة مخرجها."
+      },
+      "formula": "ηph = useful output / physical input; ηec = worth / cost",
+      "symbols": {
+        "en": "Both efficiencies are dimensionless. For one input and one output: ηec=ηph×(output price per energy unit)/(input cost per energy unit).",
+        "ar": "الكفاءتان بلا أبعاد. لمدخل ومخرج واحدين: الكفاءة الاقتصادية=الفيزيائية×سعر وحدة طاقة المخرج/تكلفة وحدة طاقة المدخل."
+      },
+      "assumptions": {
+        "en": "Use the same energy unit and include the stated cost scope; fuel-only cost is not total plant cost.",
+        "ar": "استخدم وحدة طاقة واحدة ونطاق التكلفة المعطى؛ تكلفة الوقود وحده ليست إجمالي تكلفة المحطة."
+      },
+      "example": {
+        "en": "Electricity sells for seven times the fuel price per energy unit. Fuel is 50% of total cost. Require ηec=1.2.",
+        "ar": "سعر وحدة طاقة الكهرباء سبعة أمثال الوقود، والوقود نصف التكلفة الكلية. المطلوب كفاءة اقتصادية 1.2."
+      },
+      "calculation": {
+        "en": "ηec = ηph×7×0.5. Therefore ηph=1.2/3.5=0.342857, or 34.286%.",
+        "ar": "الكفاءة الاقتصادية=الفيزيائية×7×0.5؛ إذن الفيزيائية=1.2/3.5=0.342857 أي 34.286%."
+      },
+      "interpret": {
+        "en": "Convert physical quantities into their economic values before judging worth/cost.",
+        "ar": "حوّل الكميات الفيزيائية إلى قيمها الاقتصادية قبل الحكم على نسبة القيمة للتكلفة."
+      },
+      "check": {
+        "prompt": {
+          "en": "A station converts 40% of input energy; its price ratio is 7 and fuel is half of total cost. Is ηec above one?",
+          "ar": "محطة تحول 40% من طاقة الوقود، ونسبة الأسعار 7، والوقود نصف التكلفة. هل الكفاءة الاقتصادية فوق الواحد؟"
+        },
+        "answer": {
+          "en": "Yes: 0.4×7×0.5=1.4, within this cost model.",
+          "ar": "نعم: 0.4×7×0.5=1.4 وفق نطاق التكلفة."
+        }
+      },
+      "diagram": "econ-decision",
+      "concepts": [
+        "ee-foundations-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 16,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE13",
+          "page": 3,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-foundations-s03",
+      "title": {
+        "en": "Name the cost before using it",
+        "ar": "سمّ التكلفة قبل استخدامها"
+      },
+      "predict": {
+        "en": "Should an irrecoverable design fee paid last year decide between two future alternatives?",
+        "ar": "هل تحدد رسوم تصميم دفعت العام الماضي ولا تسترد الاختيار بين بديلين مستقبليين؟"
+      },
+      "options": [
+        {
+          "en": "No; compare the future differences and any current opportunity costs.",
+          "ar": "لا؛ قارن الفروق المستقبلية وتكاليف الفرصة الحالية."
+        },
+        {
+          "en": "Yes; recovering that historical expense is always the correct decision rule.",
+          "ar": "نعم؛ استرداد النفقة التاريخية قاعدة القرار دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; compare the future differences and any current opportunity costs. Past expenditure cannot be changed; a sale forgone today can.",
+        "ar": "لا؛ قارن الفروق المستقبلية وتكاليف الفرصة الحالية. لا يمكن تغيير الإنفاق الماضي، لكن يمكن تغيير قرار البيع المتروك اليوم."
+      },
+      "explain": {
+        "en": "First cost starts a project. Operating cost keeps it working. Fixed operating costs stay approximately unchanged over a relevant activity range; variable costs respond to production. Incremental cost asks what changes when the output changes. A sunk cost is already irrecoverable. An old invoice is sunk, but the resale value of a machine you could sell today is an opportunity cost and remains relevant.",
+        "ar": "التكلفة الأولية تبدأ المشروع، والتشغيلية تبقيه عاملًا. تبقى الثابتة شبه مستقرة ضمن مجال نشاط مناسب، وتتغير المتغيرة مع الإنتاج. والتكلفة الحدية تسأل عما يتغير عند تغير الإنتاج. التكلفة الغارقة وقعت ولا تسترد؛ فاتورة قديمة غارقة، لكن قيمة بيع آلة اليوم تكلفة فرصة بديلة ما زالت مؤثرة."
+      },
+      "formula": "C(Q)=F+vQ; average incremental cost=ΔC/ΔQ",
+      "symbols": {
+        "en": "F is cost per analysis period; v is cost/unit; Q is units per same period. ΔC/ΔQ has units CU/unit.",
+        "ar": "F تكلفة الفترة، و v تكلفة الوحدة، و Q إنتاج الفترة نفسها. وحدة ΔC/ΔQ نقد/وحدة."
+      },
+      "assumptions": {
+        "en": "The linear model is a local approximation; a fixed cost may change when capacity is expanded.",
+        "ar": "النموذج الخطي تقريب محلي؛ قد تتغير التكلفة الثابتة عند زيادة السعة."
+      },
+      "example": {
+        "en": "Fixed annual cost is 10000 CU and variable cost 10 CU/unit. Make 500 units.",
+        "ar": "التكلفة السنوية الثابتة 10000 والمتغيرة 10 للوحدة، والإنتاج 500 وحدة."
+      },
+      "calculation": {
+        "en": "C=10000+10×500=15000 CU/year. Another 100 units adds 1000 CU, not another 10000.",
+        "ar": "C=10000+10×500=15000 سنويًا. تضيف 100 وحدة أخرى 1000، لا تكلفة ثابتة جديدة قدرها 10000."
+      },
+      "interpret": {
+        "en": "Past expenditure cannot be changed; a sale forgone today can.",
+        "ar": "لا يمكن تغيير الإنفاق الماضي، لكن يمكن تغيير قرار البيع المتروك اليوم."
+      },
+      "check": {
+        "prompt": {
+          "en": "An existing machine cost 50000 CU but can be sold for 8000 today. What enters a keep-versus-replace comparison?",
+          "ar": "كلفت آلة قائمة 50000 ويمكن بيعها اليوم بـ 8000. ما الذي يدخل مقارنة الاحتفاظ والاستبدال؟"
+        },
+        "answer": {
+          "en": "The 8000 opportunity value; the historical 50000 is sunk.",
+          "ar": "قيمة الفرصة 8000؛ أما 50000 التاريخية فغارقة."
+        }
+      },
+      "diagram": "econ-market",
+      "concepts": [
+        "ee-foundations-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 18,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 20,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 22,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-foundations-s04",
+      "title": {
+        "en": "Utility, value, price and an exchange",
+        "ar": "المنفعة والقيمة والسعر والتبادل"
+      },
+      "predict": {
+        "en": "Are utility and market price the same concept?",
+        "ar": "هل المنفعة وسعر السوق مفهوم واحد؟"
+      },
+      "options": [
+        {
+          "en": "Yes; anything twice as useful must have twice the price.",
+          "ar": "نعم؛ كل ما تضاعفت منفعته يتضاعف سعره."
+        },
+        {
+          "en": "No; usefulness, assessed worth and exchange price have different meanings.",
+          "ar": "لا؛ الفائدة والقيمة المقدرة وسعر التبادل معان مختلفة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; usefulness, assessed worth and exchange price have different meanings. Classify by the service a good provides, not its price tag.",
+        "ar": "لا؛ الفائدة والقيمة المقدرة وسعر التبادل معان مختلفة. صنف السلعة حسب دورها، لا حسب بطاقة السعر."
+      },
+      "explain": {
+        "en": "Water may be essential while its price is low; a rare ornamental object can carry a high price. Utility describes usefulness to a person, value expresses an assessment of worth, and price is the monetary exchange amount. Consumer goods satisfy wants directly; producer goods help make other goods. Necessities and luxuries depend on context. The lecture uses exchange to connect two parties who value what they receive more than what they give. Keep those viewpoints separate.",
+        "ar": "قد يكون الماء ضروريًا وسعره منخفضًا، وقد يرتفع سعر شيء زيني نادر. المنفعة تصف الفائدة للشخص، والقيمة تقدير ما يستحقه الشيء، والسعر مبلغ التبادل. سلع الاستهلاك تلبي الحاجات مباشرة وسلع الإنتاج تساعد على صنع غيرها. الضرورة والكمال نسبيتان للسياق. وتربط المحاضرة التبادل بطرفين يقدّر كل منهما ما يأخذه أكثر مما يتركه؛ حافظ على اختلاف وجهتي النظر."
+      },
+      "formula": "net private benefit = perceived worth − price",
+      "symbols": {
+        "en": "Worth and price must use a common monetary scale if they are subtracted. Utility need not itself be measured in money.",
+        "ar": "يلزم مقياس نقدي مشترك لطرح القيمة والسعر؛ المنفعة نفسها ليست ملزمة بقياس نقدي."
+      },
+      "assumptions": {
+        "en": "A subjective benefit estimate is not a market quote or proof of a universal value.",
+        "ar": "التقدير الشخصي للمنفعة ليس سعر سوق ولا برهانًا على قيمة عامة."
+      },
+      "example": {
+        "en": "A maintenance tool costs 300 CU and is expected to save 450 CU of immediate work.",
+        "ar": "أداة صيانة تكلف 300 وتتوقع توفير عمل فوري قيمته 450."
+      },
+      "calculation": {
+        "en": "Estimated net immediate benefit=450−300=150 CU; check whether the saving is achievable.",
+        "ar": "صافي المنفعة الفورية المقدرة=450−300=150؛ تحقق من إمكان تحقيق التوفير."
+      },
+      "interpret": {
+        "en": "Classify by the service a good provides, not its price tag.",
+        "ar": "صنف السلعة حسب دورها، لا حسب بطاقة السعر."
+      },
+      "check": {
+        "prompt": {
+          "en": "Is a concrete mixer a producer good just because its purchase price is high?",
+          "ar": "هل الخلاطة سلعة إنتاجية لمجرد ارتفاع ثمنها؟"
+        },
+        "answer": {
+          "en": "No; it is a producer good because it helps produce construction output.",
+          "ar": "لا؛ هي إنتاجية لأنها تساعد على إنتاج أعمال البناء."
+        }
+      },
+      "diagram": "econ-decision",
+      "concepts": [
+        "ee-foundations-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 23,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 25,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 27,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-foundations-s05",
+      "title": {
+        "en": "A worker story: include the machine’s time",
+        "ar": "قصة عامل: احسب وقت الآلة أيضًا"
+      },
+      "predict": {
+        "en": "Will paying 90% of the wage to a worker producing 90% as many pieces preserve unit profit?",
+        "ar": "هل يحافظ دفع 90% من الأجر لعامل ينتج 90% من القطع على ربح الوحدة؟"
+      },
+      "options": [
+        {
+          "en": "Not when the same machine cost continues each hour.",
+          "ar": "ليس مع استمرار تكلفة الآلة الساعية نفسها."
+        },
+        {
+          "en": "Yes; labor productivity is the only cost that matters.",
+          "ar": "نعم؛ إنتاجية العمل هي التكلفة المؤثرة الوحيدة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Not when the same machine cost continues each hour. Preserve the full unit-cost balance, including equipment time.",
+        "ar": "ليس مع استمرار تكلفة الآلة الساعية نفسها. حافظ على موازنة تكلفة الوحدة كاملة، بما فيها وقت المعدات."
+      },
+      "explain": {
+        "en": "A worker produces 10 pieces each hour while using a machine that also costs money per hour. Paying a slower worker in direct proportion to output seems fair to the payroll calculation, but it spreads the same machine-hour cost across fewer pieces. Compare cost per finished piece. This is the lecture’s reason for insisting on the whole economy of a problem: design, materials, personnel and resource inputs interact. A saving in one column can create a larger loss in another.",
+        "ar": "ينتج عامل عشر قطع في الساعة ويستخدم آلة لها تكلفة ساعية. يبدو دفع أجر عامل أبطأ بنسبة إنتاجه مناسبًا لكشف الأجور، لكنه يوزع تكلفة ساعة الآلة على قطع أقل. قارن تكلفة القطعة المكتملة. لهذا تؤكد المحاضرة اقتصاد المسألة كاملًا؛ التصميم والمواد والأفراد والموارد مترابطة. وقد ينتج توفير في بند خسارة أكبر في بند آخر."
+      },
+      "formula": "unit cost=(wage/hour + machine cost/hour)/(pieces/hour)",
+      "symbols": {
+        "en": "Wage and machine rate are CU/h; dividing by pieces/h gives CU/piece.",
+        "ar": "الأجر وتكلفة الآلة نقد/ساعة؛ القسمة على قطعة/ساعة تعطي نقد/قطعة."
+      },
+      "assumptions": {
+        "en": "Same machine rate, selling price and other unit costs; no change in quality or rejects.",
+        "ar": "ثبات تكلفة الآلة والسعر وبقية تكاليف الوحدة وعدم اختلاف الجودة والمرفوضات."
+      },
+      "example": {
+        "en": "Worker 1: wage 6 CU/h, machine 6 CU/h, output 10/h. Worker 2 produces 9/h. Preserve unit profit.",
+        "ar": "العامل الأول أجره 6 والآلة 6 في الساعة والإنتاج 10. الثاني ينتج 9؛ حافظ على ربح الوحدة."
+      },
+      "calculation": {
+        "en": "Old unit cost=(6+6)/10=1.2. Set (w2+6)/9=1.2, giving w2=4.8 CU/h. At 5.4/h the unit cost is 1.26667.",
+        "ar": "التكلفة القديمة=(6+6)/10=1.2. من (w2+6)/9=1.2 ينتج w2=4.8 في الساعة. وعند 5.4 تصبح تكلفة الوحدة 1.26667."
+      },
+      "interpret": {
+        "en": "Preserve the full unit-cost balance, including equipment time.",
+        "ar": "حافظ على موازنة تكلفة الوحدة كاملة، بما فيها وقت المعدات."
+      },
+      "check": {
+        "prompt": {
+          "en": "In the lecture example, old profit is 0.05 CU/piece. Paying the slower worker 5.4/h raises cost by 0.066667/piece. What happens?",
+          "ar": "في مثال المحاضرة الربح القديم 0.05 للقطعة، ودفع 5.4 للأبطأ يزيد التكلفة 0.066667. ماذا يحدث؟"
+        },
+        "answer": {
+          "en": "Unit profit becomes about −0.016667 CU: a loss.",
+          "ar": "يصبح ربح الوحدة قرابة −0.016667؛ أي خسارة."
+        }
+      },
+      "diagram": "econ-decision",
+      "concepts": [
+        "ee-foundations-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 51,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 52,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 1,
+          "filename": "014 Tuts.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-foundations-s01-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 5,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 7,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 11,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "An alternative is a technically possible way to deliver the required service. Currency totals must refer to the same scope.",
+          "ar": "البديل وسيلة ممكنة فنيًا لتقديم الخدمة المطلوبة. يجب أن تمثل المجاميع النقدية النطاق نفسه."
+        },
+        {
+          "en": "feasible alternatives → common service → economic comparison\nSafety and service requirements are constraints; a cheap unsafe option is not a feasible alternative.",
+          "ar": "feasible alternatives → common service → economic comparison\nالسلامة ومستوى الخدمة قيود؛ البديل الرخيص غير الآمن ليس بديلًا مقبولًا."
+        }
+      ],
+      "id": "ee-foundations-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does the lowest purchase price automatically identify the best engineering solution?",
+        "ar": "هل يحدد أقل سعر شراء أفضل حل هندسي تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "No; compare feasible alternatives providing the same service over a stated horizon.",
+          "ar": "لا؛ قارن بدائل ممكنة تقدم الخدمة نفسها خلال أفق محدد."
+        },
+        {
+          "en": "Yes; the initial price already contains every consequence.",
+          "ar": "نعم؛ السعر الأولي يتضمن كل النتائج."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; compare feasible alternatives providing the same service over a stated horizon. A bridge that cannot carry its load fails physically. A bridge that costs more than the community can support may fail economically even if it is strong. Start with the need, the constraints and feasible alternatives. Microeconomics follows a household, firm or market; macroeconomics studies aggregate output, employment and prices. The lecture also distinguishes the specialist, the coordinator and the manager: each connects technical knowledge to decisions at a different scale.",
+        "ar": "لا؛ قارن بدائل ممكنة تقدم الخدمة نفسها خلال أفق محدد. الجسر الذي لا يحمل أحماله يفشل فيزيائيًا. والجسر الذي تتجاوز تكلفته قدرة المجتمع قد يفشل اقتصاديًا رغم متانته. ابدأ بالحاجة والقيود والبدائل الممكنة. الاقتصاد الجزئي يتتبع الأسرة أو المنشأة أو السوق، والكلي يدرس الإنتاج والتوظيف والأسعار الإجمالية. وتميز المحاضرة بين المتخصص والمنسق والمدير؛ كل منهم يربط المعرفة الفنية بالقرار على نطاق مختلف."
+      }
+    },
+    {
+      "concept": "ee-foundations-s01-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 5,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 7,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 11,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "An alternative is a technically possible way to deliver the required service. Currency totals must refer to the same scope.",
+          "ar": "البديل وسيلة ممكنة فنيًا لتقديم الخدمة المطلوبة. يجب أن تمثل المجاميع النقدية النطاق نفسه."
+        },
+        {
+          "en": "feasible alternatives → common service → economic comparison\nSafety and service requirements are constraints; a cheap unsafe option is not a feasible alternative.",
+          "ar": "feasible alternatives → common service → economic comparison\nالسلامة ومستوى الخدمة قيود؛ البديل الرخيص غير الآمن ليس بديلًا مقبولًا."
+        }
+      ],
+      "id": "ee-foundations-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "A and B provide equal service and all later effects are identical. Their initial costs are 18000 and 22500 CU. What initial saving does A provide?",
+        "ar": "يقدم A و B الخدمة نفسها وتتساوى آثارهما اللاحقة. تكلفتهما الأولية 18000 و 22500. كم يوفر A أوليًا؟"
+      },
+      "expected": 4500,
+      "tolerance": 0.09000000000000001,
+      "unit": "CU",
+      "solution": {
+        "en": "22500−18000=4500 CU. The equal-service assumption makes this comparison meaningful.",
+        "ar": "22500−18000=4500. افتراض الخدمة المتساوية هو ما يجعل المقارنة ذات معنى."
+      }
+    },
+    {
+      "concept": "ee-foundations-s01-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 5,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 7,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 11,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "An alternative is a technically possible way to deliver the required service. Currency totals must refer to the same scope.",
+          "ar": "البديل وسيلة ممكنة فنيًا لتقديم الخدمة المطلوبة. يجب أن تمثل المجاميع النقدية النطاق نفسه."
+        },
+        {
+          "en": "feasible alternatives → common service → economic comparison\nSafety and service requirements are constraints; a cheap unsafe option is not a feasible alternative.",
+          "ar": "feasible alternatives → common service → economic comparison\nالسلامة ومستوى الخدمة قيود؛ البديل الرخيص غير الآمن ليس بديلًا مقبولًا."
+        }
+      ],
+      "id": "ee-foundations-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A cheaper pump cannot deliver the required head. Include it in a price ranking?",
+        "ar": "مضخة أرخص لا تحقق الرفع المطلوب. هل تدخل مقارنة الأسعار؟"
+      },
+      "options": [
+        {
+          "en": "Select it because its purchase cost is lowest.",
+          "ar": "تختار لأن سعرها الأقل."
+        },
+        {
+          "en": "Reject it as technically infeasible before economic ranking.",
+          "ar": "تستبعد لعدم صلاحيتها الفنية قبل الترتيب الاقتصادي."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Reject it as technically infeasible before economic ranking. A useful economic decision starts with feasible service, not a list of prices.",
+        "ar": "تستبعد لعدم صلاحيتها الفنية قبل الترتيب الاقتصادي. يبدأ القرار الاقتصادي المفيد بخدمة ممكنة، لا بقائمة أسعار."
+      }
+    },
+    {
+      "concept": "ee-foundations-s02-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 16,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE13",
+          "page": 3,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Both efficiencies are dimensionless. For one input and one output: ηec=ηph×(output price per energy unit)/(input cost per energy unit).",
+          "ar": "الكفاءتان بلا أبعاد. لمدخل ومخرج واحدين: الكفاءة الاقتصادية=الفيزيائية×سعر وحدة طاقة المخرج/تكلفة وحدة طاقة المدخل."
+        },
+        {
+          "en": "ηph = useful output / physical input; ηec = worth / cost\nUse the same energy unit and include the stated cost scope; fuel-only cost is not total plant cost.",
+          "ar": "ηph = useful output / physical input; ηec = worth / cost\nاستخدم وحدة طاقة واحدة ونطاق التكلفة المعطى؛ تكلفة الوقود وحده ليست إجمالي تكلفة المحطة."
+        }
+      ],
+      "id": "ee-foundations-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Must economic efficiency be below 100% because energy efficiency is below 100%?",
+        "ar": "هل يجب أن تقل الكفاءة الاقتصادية عن 100% لأن كفاءة الطاقة أقل من 100%؟"
+      },
+      "options": [
+        {
+          "en": "Yes; worth can never exceed cost.",
+          "ar": "نعم؛ لا يمكن أن تتجاوز القيمة التكلفة."
+        },
+        {
+          "en": "No; monetary value and energy conservation measure different things.",
+          "ar": "لا؛ القيمة النقدية وحفظ الطاقة يقيسان أمرين مختلفين."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; monetary value and energy conservation measure different things. Picture fuel entering a power station and useful electricity leaving it. Physical efficiency compares compatible energy quantities. Economic efficiency compares monetary worth with the monetary cost of all inputs included in the model. A thermal station can have an energy efficiency below one while creating economic worth above its cost. Conversely, a technically efficient device can be uneconomic if its input is expensive or its output has little value.",
+        "ar": "لا؛ القيمة النقدية وحفظ الطاقة يقيسان أمرين مختلفين. تخيّل دخول الوقود وخروج الكهرباء المفيدة. الكفاءة الفيزيائية تقارن كميات طاقة متجانسة، والاقتصادية تقارن القيمة النقدية بتكلفة المدخلات الداخلة في النموذج. قد تكون الكفاءة الحرارية أقل من الواحد مع قيمة اقتصادية تفوق التكلفة، وقد تكون آلة كفؤة فنيًا غير مجدية لغلاء مدخلها أو ضعف قيمة مخرجها."
+      }
+    },
+    {
+      "concept": "ee-foundations-s02-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 16,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE13",
+          "page": 3,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Both efficiencies are dimensionless. For one input and one output: ηec=ηph×(output price per energy unit)/(input cost per energy unit).",
+          "ar": "الكفاءتان بلا أبعاد. لمدخل ومخرج واحدين: الكفاءة الاقتصادية=الفيزيائية×سعر وحدة طاقة المخرج/تكلفة وحدة طاقة المدخل."
+        },
+        {
+          "en": "ηph = useful output / physical input; ηec = worth / cost\nUse the same energy unit and include the stated cost scope; fuel-only cost is not total plant cost.",
+          "ar": "ηph = useful output / physical input; ηec = worth / cost\nاستخدم وحدة طاقة واحدة ونطاق التكلفة المعطى؛ تكلفة الوقود وحده ليست إجمالي تكلفة المحطة."
+        }
+      ],
+      "id": "ee-foundations-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Output energy sells at 6 times input energy cost; fuel is 40% of total cost. Find physical efficiency required for ηec=1.2, as a percentage.",
+        "ar": "تباع طاقة المخرج بستة أمثال تكلفة طاقة المدخل، والوقود 40% من التكلفة الكلية. أوجد الكفاءة الفيزيائية المئوية لتحقيق كفاءة اقتصادية 1.2."
+      },
+      "expected": 50,
+      "tolerance": 0.005,
+      "unit": "percent",
+      "solution": {
+        "en": "ηph=1.2/(6×0.4)=0.5=50%.",
+        "ar": "الكفاءة الفيزيائية=1.2/(6×0.4)=0.5=50%."
+      }
+    },
+    {
+      "concept": "ee-foundations-s02-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 16,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE13",
+          "page": 3,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Both efficiencies are dimensionless. For one input and one output: ηec=ηph×(output price per energy unit)/(input cost per energy unit).",
+          "ar": "الكفاءتان بلا أبعاد. لمدخل ومخرج واحدين: الكفاءة الاقتصادية=الفيزيائية×سعر وحدة طاقة المخرج/تكلفة وحدة طاقة المدخل."
+        },
+        {
+          "en": "ηph = useful output / physical input; ηec = worth / cost\nUse the same energy unit and include the stated cost scope; fuel-only cost is not total plant cost.",
+          "ar": "ηph = useful output / physical input; ηec = worth / cost\nاستخدم وحدة طاقة واحدة ونطاق التكلفة المعطى؛ تكلفة الوقود وحده ليست إجمالي تكلفة المحطة."
+        }
+      ],
+      "id": "ee-foundations-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A station converts 40% of input energy; its price ratio is 7 and fuel is half of total cost. Is ηec above one?",
+        "ar": "محطة تحول 40% من طاقة الوقود، ونسبة الأسعار 7، والوقود نصف التكلفة. هل الكفاءة الاقتصادية فوق الواحد؟"
+      },
+      "options": [
+        {
+          "en": "Yes: 0.4×7×0.5=1.4, within this cost model.",
+          "ar": "نعم: 0.4×7×0.5=1.4 وفق نطاق التكلفة."
+        },
+        {
+          "en": "No: the 60% energy loss forces an economic loss.",
+          "ar": "لا؛ فاقد الطاقة 60% يفرض خسارة اقتصادية."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Yes: 0.4×7×0.5=1.4, within this cost model. Convert physical quantities into their economic values before judging worth/cost.",
+        "ar": "نعم: 0.4×7×0.5=1.4 وفق نطاق التكلفة. حوّل الكميات الفيزيائية إلى قيمها الاقتصادية قبل الحكم على نسبة القيمة للتكلفة."
+      }
+    },
+    {
+      "concept": "ee-foundations-s03-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 18,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 20,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 22,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "F is cost per analysis period; v is cost/unit; Q is units per same period. ΔC/ΔQ has units CU/unit.",
+          "ar": "F تكلفة الفترة، و v تكلفة الوحدة، و Q إنتاج الفترة نفسها. وحدة ΔC/ΔQ نقد/وحدة."
+        },
+        {
+          "en": "C(Q)=F+vQ; average incremental cost=ΔC/ΔQ\nThe linear model is a local approximation; a fixed cost may change when capacity is expanded.",
+          "ar": "C(Q)=F+vQ; average incremental cost=ΔC/ΔQ\nالنموذج الخطي تقريب محلي؛ قد تتغير التكلفة الثابتة عند زيادة السعة."
+        }
+      ],
+      "id": "ee-foundations-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Should an irrecoverable design fee paid last year decide between two future alternatives?",
+        "ar": "هل تحدد رسوم تصميم دفعت العام الماضي ولا تسترد الاختيار بين بديلين مستقبليين؟"
+      },
+      "options": [
+        {
+          "en": "No; compare the future differences and any current opportunity costs.",
+          "ar": "لا؛ قارن الفروق المستقبلية وتكاليف الفرصة الحالية."
+        },
+        {
+          "en": "Yes; recovering that historical expense is always the correct decision rule.",
+          "ar": "نعم؛ استرداد النفقة التاريخية قاعدة القرار دائمًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; compare the future differences and any current opportunity costs. First cost starts a project. Operating cost keeps it working. Fixed operating costs stay approximately unchanged over a relevant activity range; variable costs respond to production. Incremental cost asks what changes when the output changes. A sunk cost is already irrecoverable. An old invoice is sunk, but the resale value of a machine you could sell today is an opportunity cost and remains relevant.",
+        "ar": "لا؛ قارن الفروق المستقبلية وتكاليف الفرصة الحالية. التكلفة الأولية تبدأ المشروع، والتشغيلية تبقيه عاملًا. تبقى الثابتة شبه مستقرة ضمن مجال نشاط مناسب، وتتغير المتغيرة مع الإنتاج. والتكلفة الحدية تسأل عما يتغير عند تغير الإنتاج. التكلفة الغارقة وقعت ولا تسترد؛ فاتورة قديمة غارقة، لكن قيمة بيع آلة اليوم تكلفة فرصة بديلة ما زالت مؤثرة."
+      }
+    },
+    {
+      "concept": "ee-foundations-s03-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 18,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 20,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 22,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "F is cost per analysis period; v is cost/unit; Q is units per same period. ΔC/ΔQ has units CU/unit.",
+          "ar": "F تكلفة الفترة، و v تكلفة الوحدة، و Q إنتاج الفترة نفسها. وحدة ΔC/ΔQ نقد/وحدة."
+        },
+        {
+          "en": "C(Q)=F+vQ; average incremental cost=ΔC/ΔQ\nThe linear model is a local approximation; a fixed cost may change when capacity is expanded.",
+          "ar": "C(Q)=F+vQ; average incremental cost=ΔC/ΔQ\nالنموذج الخطي تقريب محلي؛ قد تتغير التكلفة الثابتة عند زيادة السعة."
+        }
+      ],
+      "id": "ee-foundations-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "A cost rises from 24000 to 27600 CU when output rises from 600 to 900 units. Find average incremental cost.",
+        "ar": "زادت التكلفة من 24000 إلى 27600 عندما زاد الإنتاج من 600 إلى 900 وحدة. أوجد متوسط التكلفة الإضافية."
+      },
+      "expected": 12,
+      "tolerance": 0.005,
+      "unit": "CU/unit",
+      "solution": {
+        "en": "ΔC/ΔQ=3600/300=12 CU/unit; this differs from total cost divided by total output.",
+        "ar": "ΔC/ΔQ=3600/300=12 نقد/وحدة؛ وهي غير متوسط التكلفة الكلية."
+      }
+    },
+    {
+      "concept": "ee-foundations-s03-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 18,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 20,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 22,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "F is cost per analysis period; v is cost/unit; Q is units per same period. ΔC/ΔQ has units CU/unit.",
+          "ar": "F تكلفة الفترة، و v تكلفة الوحدة، و Q إنتاج الفترة نفسها. وحدة ΔC/ΔQ نقد/وحدة."
+        },
+        {
+          "en": "C(Q)=F+vQ; average incremental cost=ΔC/ΔQ\nThe linear model is a local approximation; a fixed cost may change when capacity is expanded.",
+          "ar": "C(Q)=F+vQ; average incremental cost=ΔC/ΔQ\nالنموذج الخطي تقريب محلي؛ قد تتغير التكلفة الثابتة عند زيادة السعة."
+        }
+      ],
+      "id": "ee-foundations-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "An existing machine cost 50000 CU but can be sold for 8000 today. What enters a keep-versus-replace comparison?",
+        "ar": "كلفت آلة قائمة 50000 ويمكن بيعها اليوم بـ 8000. ما الذي يدخل مقارنة الاحتفاظ والاستبدال؟"
+      },
+      "options": [
+        {
+          "en": "The historical 50000 only.",
+          "ar": "المبلغ التاريخي 50000 فقط."
+        },
+        {
+          "en": "The 8000 opportunity value; the historical 50000 is sunk.",
+          "ar": "قيمة الفرصة 8000؛ أما 50000 التاريخية فغارقة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "The 8000 opportunity value; the historical 50000 is sunk. Past expenditure cannot be changed; a sale forgone today can.",
+        "ar": "قيمة الفرصة 8000؛ أما 50000 التاريخية فغارقة. لا يمكن تغيير الإنفاق الماضي، لكن يمكن تغيير قرار البيع المتروك اليوم."
+      }
+    },
+    {
+      "concept": "ee-foundations-s04-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 23,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 25,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 27,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Worth and price must use a common monetary scale if they are subtracted. Utility need not itself be measured in money.",
+          "ar": "يلزم مقياس نقدي مشترك لطرح القيمة والسعر؛ المنفعة نفسها ليست ملزمة بقياس نقدي."
+        },
+        {
+          "en": "net private benefit = perceived worth − price\nA subjective benefit estimate is not a market quote or proof of a universal value.",
+          "ar": "net private benefit = perceived worth − price\nالتقدير الشخصي للمنفعة ليس سعر سوق ولا برهانًا على قيمة عامة."
+        }
+      ],
+      "id": "ee-foundations-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Are utility and market price the same concept?",
+        "ar": "هل المنفعة وسعر السوق مفهوم واحد؟"
+      },
+      "options": [
+        {
+          "en": "Yes; anything twice as useful must have twice the price.",
+          "ar": "نعم؛ كل ما تضاعفت منفعته يتضاعف سعره."
+        },
+        {
+          "en": "No; usefulness, assessed worth and exchange price have different meanings.",
+          "ar": "لا؛ الفائدة والقيمة المقدرة وسعر التبادل معان مختلفة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; usefulness, assessed worth and exchange price have different meanings. Water may be essential while its price is low; a rare ornamental object can carry a high price. Utility describes usefulness to a person, value expresses an assessment of worth, and price is the monetary exchange amount. Consumer goods satisfy wants directly; producer goods help make other goods. Necessities and luxuries depend on context. The lecture uses exchange to connect two parties who value what they receive more than what they give. Keep those viewpoints separate.",
+        "ar": "لا؛ الفائدة والقيمة المقدرة وسعر التبادل معان مختلفة. قد يكون الماء ضروريًا وسعره منخفضًا، وقد يرتفع سعر شيء زيني نادر. المنفعة تصف الفائدة للشخص، والقيمة تقدير ما يستحقه الشيء، والسعر مبلغ التبادل. سلع الاستهلاك تلبي الحاجات مباشرة وسلع الإنتاج تساعد على صنع غيرها. الضرورة والكمال نسبيتان للسياق. وتربط المحاضرة التبادل بطرفين يقدّر كل منهما ما يأخذه أكثر مما يتركه؛ حافظ على اختلاف وجهتي النظر."
+      }
+    },
+    {
+      "concept": "ee-foundations-s04-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 23,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 25,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 27,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Worth and price must use a common monetary scale if they are subtracted. Utility need not itself be measured in money.",
+          "ar": "يلزم مقياس نقدي مشترك لطرح القيمة والسعر؛ المنفعة نفسها ليست ملزمة بقياس نقدي."
+        },
+        {
+          "en": "net private benefit = perceived worth − price\nA subjective benefit estimate is not a market quote or proof of a universal value.",
+          "ar": "net private benefit = perceived worth − price\nالتقدير الشخصي للمنفعة ليس سعر سوق ولا برهانًا على قيمة عامة."
+        }
+      ],
+      "id": "ee-foundations-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "An immediate saving is valued at 725 CU and the required tool costs 480 CU. Find net immediate benefit.",
+        "ar": "تقدر فائدة فورية بـ 725 وتكلف الأداة 480. أوجد صافي المنفعة الفورية."
+      },
+      "expected": 245,
+      "tolerance": 0.005,
+      "unit": "CU",
+      "solution": {
+        "en": "725−480=245 CU, before any omitted costs.",
+        "ar": "725−480=245 قبل التكاليف المستبعدة من المعطيات."
+      }
+    },
+    {
+      "concept": "ee-foundations-s04-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 23,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 25,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 27,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Worth and price must use a common monetary scale if they are subtracted. Utility need not itself be measured in money.",
+          "ar": "يلزم مقياس نقدي مشترك لطرح القيمة والسعر؛ المنفعة نفسها ليست ملزمة بقياس نقدي."
+        },
+        {
+          "en": "net private benefit = perceived worth − price\nA subjective benefit estimate is not a market quote or proof of a universal value.",
+          "ar": "net private benefit = perceived worth − price\nالتقدير الشخصي للمنفعة ليس سعر سوق ولا برهانًا على قيمة عامة."
+        }
+      ],
+      "id": "ee-foundations-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Is a concrete mixer a producer good just because its purchase price is high?",
+        "ar": "هل الخلاطة سلعة إنتاجية لمجرد ارتفاع ثمنها؟"
+      },
+      "options": [
+        {
+          "en": "No; it is a producer good because it helps produce construction output.",
+          "ar": "لا؛ هي إنتاجية لأنها تساعد على إنتاج أعمال البناء."
+        },
+        {
+          "en": "Yes; expensive goods are always producer goods.",
+          "ar": "نعم؛ السلع الغالية دائمًا إنتاجية."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; it is a producer good because it helps produce construction output. Classify by the service a good provides, not its price tag.",
+        "ar": "لا؛ هي إنتاجية لأنها تساعد على إنتاج أعمال البناء. صنف السلعة حسب دورها، لا حسب بطاقة السعر."
+      }
+    },
+    {
+      "concept": "ee-foundations-s05-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 51,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 52,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 1,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Wage and machine rate are CU/h; dividing by pieces/h gives CU/piece.",
+          "ar": "الأجر وتكلفة الآلة نقد/ساعة؛ القسمة على قطعة/ساعة تعطي نقد/قطعة."
+        },
+        {
+          "en": "unit cost=(wage/hour + machine cost/hour)/(pieces/hour)\nSame machine rate, selling price and other unit costs; no change in quality or rejects.",
+          "ar": "unit cost=(wage/hour + machine cost/hour)/(pieces/hour)\nثبات تكلفة الآلة والسعر وبقية تكاليف الوحدة وعدم اختلاف الجودة والمرفوضات."
+        }
+      ],
+      "id": "ee-foundations-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Will paying 90% of the wage to a worker producing 90% as many pieces preserve unit profit?",
+        "ar": "هل يحافظ دفع 90% من الأجر لعامل ينتج 90% من القطع على ربح الوحدة؟"
+      },
+      "options": [
+        {
+          "en": "Not when the same machine cost continues each hour.",
+          "ar": "ليس مع استمرار تكلفة الآلة الساعية نفسها."
+        },
+        {
+          "en": "Yes; labor productivity is the only cost that matters.",
+          "ar": "نعم؛ إنتاجية العمل هي التكلفة المؤثرة الوحيدة."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Not when the same machine cost continues each hour. A worker produces 10 pieces each hour while using a machine that also costs money per hour. Paying a slower worker in direct proportion to output seems fair to the payroll calculation, but it spreads the same machine-hour cost across fewer pieces. Compare cost per finished piece. This is the lecture’s reason for insisting on the whole economy of a problem: design, materials, personnel and resource inputs interact. A saving in one column can create a larger loss in another.",
+        "ar": "ليس مع استمرار تكلفة الآلة الساعية نفسها. ينتج عامل عشر قطع في الساعة ويستخدم آلة لها تكلفة ساعية. يبدو دفع أجر عامل أبطأ بنسبة إنتاجه مناسبًا لكشف الأجور، لكنه يوزع تكلفة ساعة الآلة على قطع أقل. قارن تكلفة القطعة المكتملة. لهذا تؤكد المحاضرة اقتصاد المسألة كاملًا؛ التصميم والمواد والأفراد والموارد مترابطة. وقد ينتج توفير في بند خسارة أكبر في بند آخر."
+      }
+    },
+    {
+      "concept": "ee-foundations-s05-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 51,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 52,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 1,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Wage and machine rate are CU/h; dividing by pieces/h gives CU/piece.",
+          "ar": "الأجر وتكلفة الآلة نقد/ساعة؛ القسمة على قطعة/ساعة تعطي نقد/قطعة."
+        },
+        {
+          "en": "unit cost=(wage/hour + machine cost/hour)/(pieces/hour)\nSame machine rate, selling price and other unit costs; no change in quality or rejects.",
+          "ar": "unit cost=(wage/hour + machine cost/hour)/(pieces/hour)\nثبات تكلفة الآلة والسعر وبقية تكاليف الوحدة وعدم اختلاف الجودة والمرفوضات."
+        }
+      ],
+      "id": "ee-foundations-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Worker A earns 10 CU/h, machine cost is 5 CU/h, output is 15/h. Worker B makes 12/h. What hourly wage preserves unit cost?",
+        "ar": "أجر A يساوي 10 والآلة 5 في الساعة والإنتاج 15. ينتج B اثنتي عشرة قطعة. ما أجره الساعي للمحافظة على تكلفة الوحدة؟"
+      },
+      "expected": 7,
+      "tolerance": 0.005,
+      "unit": "CU/h",
+      "solution": {
+        "en": "Old cost=(10+5)/15=1 CU/piece. wB=12×1−5=7 CU/h.",
+        "ar": "التكلفة القديمة=(10+5)/15=1 للقطعة؛ أجر B=12×1−5=7 للساعة."
+      }
+    },
+    {
+      "concept": "ee-foundations-s05-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 51,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 52,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 1,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Wage and machine rate are CU/h; dividing by pieces/h gives CU/piece.",
+          "ar": "الأجر وتكلفة الآلة نقد/ساعة؛ القسمة على قطعة/ساعة تعطي نقد/قطعة."
+        },
+        {
+          "en": "unit cost=(wage/hour + machine cost/hour)/(pieces/hour)\nSame machine rate, selling price and other unit costs; no change in quality or rejects.",
+          "ar": "unit cost=(wage/hour + machine cost/hour)/(pieces/hour)\nثبات تكلفة الآلة والسعر وبقية تكاليف الوحدة وعدم اختلاف الجودة والمرفوضات."
+        }
+      ],
+      "id": "ee-foundations-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "In the lecture example, old profit is 0.05 CU/piece. Paying the slower worker 5.4/h raises cost by 0.066667/piece. What happens?",
+        "ar": "في مثال المحاضرة الربح القديم 0.05 للقطعة، ودفع 5.4 للأبطأ يزيد التكلفة 0.066667. ماذا يحدث؟"
+      },
+      "options": [
+        {
+          "en": "Profit stays at 0.05 because the wage was reduced.",
+          "ar": "يبقى الربح 0.05 لأن الأجر خُفض."
+        },
+        {
+          "en": "Unit profit becomes about −0.016667 CU: a loss.",
+          "ar": "يصبح ربح الوحدة قرابة −0.016667؛ أي خسارة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Unit profit becomes about −0.016667 CU: a loss. Preserve the full unit-cost balance, including equipment time.",
+        "ar": "يصبح ربح الوحدة قرابة −0.016667؛ أي خسارة. حافظ على موازنة تكلفة الوحدة كاملة، بما فيها وقت المعدات."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-foundations-s01-recall",
+      "concept": "ee-foundations-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: One engineering problem lives in two environments",
+        "ar": "اشرح: المسألة الهندسية تعيش في بيئتين"
+      },
+      "a": {
+        "en": "A useful economic decision starts with feasible service, not a list of prices.",
+        "ar": "يبدأ القرار الاقتصادي المفيد بخدمة ممكنة، لا بقائمة أسعار."
+      }
+    },
+    {
+      "id": "ee-foundations-s01-formula",
+      "concept": "ee-foundations-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nfeasible alternatives → common service → economic comparison",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nfeasible alternatives → common service → economic comparison"
+      },
+      "a": {
+        "en": "An alternative is a technically possible way to deliver the required service. Currency totals must refer to the same scope. Safety and service requirements are constraints; a cheap unsafe option is not a feasible alternative.",
+        "ar": "البديل وسيلة ممكنة فنيًا لتقديم الخدمة المطلوبة. يجب أن تمثل المجاميع النقدية النطاق نفسه. السلامة ومستوى الخدمة قيود؛ البديل الرخيص غير الآمن ليس بديلًا مقبولًا."
+      }
+    },
+    {
+      "id": "ee-foundations-s01-trap",
+      "concept": "ee-foundations-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; the initial price already contains every consequence.",
+        "ar": "يقول متعلم: نعم؛ السعر الأولي يتضمن كل النتائج."
+      },
+      "a": {
+        "en": "No; compare feasible alternatives providing the same service over a stated horizon. A useful economic decision starts with feasible service, not a list of prices.",
+        "ar": "لا؛ قارن بدائل ممكنة تقدم الخدمة نفسها خلال أفق محدد. يبدأ القرار الاقتصادي المفيد بخدمة ممكنة، لا بقائمة أسعار."
+      }
+    },
+    {
+      "id": "ee-foundations-s02-recall",
+      "concept": "ee-foundations-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Physical efficiency is not economic efficiency",
+        "ar": "اشرح: الكفاءة الفيزيائية ليست الكفاءة الاقتصادية"
+      },
+      "a": {
+        "en": "Convert physical quantities into their economic values before judging worth/cost.",
+        "ar": "حوّل الكميات الفيزيائية إلى قيمها الاقتصادية قبل الحكم على نسبة القيمة للتكلفة."
+      }
+    },
+    {
+      "id": "ee-foundations-s02-formula",
+      "concept": "ee-foundations-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nηph = useful output / physical input; ηec = worth / cost",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nηph = useful output / physical input; ηec = worth / cost"
+      },
+      "a": {
+        "en": "Both efficiencies are dimensionless. For one input and one output: ηec=ηph×(output price per energy unit)/(input cost per energy unit). Use the same energy unit and include the stated cost scope; fuel-only cost is not total plant cost.",
+        "ar": "الكفاءتان بلا أبعاد. لمدخل ومخرج واحدين: الكفاءة الاقتصادية=الفيزيائية×سعر وحدة طاقة المخرج/تكلفة وحدة طاقة المدخل. استخدم وحدة طاقة واحدة ونطاق التكلفة المعطى؛ تكلفة الوقود وحده ليست إجمالي تكلفة المحطة."
+      }
+    },
+    {
+      "id": "ee-foundations-s02-trap",
+      "concept": "ee-foundations-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; worth can never exceed cost.",
+        "ar": "يقول متعلم: نعم؛ لا يمكن أن تتجاوز القيمة التكلفة."
+      },
+      "a": {
+        "en": "No; monetary value and energy conservation measure different things. Convert physical quantities into their economic values before judging worth/cost.",
+        "ar": "لا؛ القيمة النقدية وحفظ الطاقة يقيسان أمرين مختلفين. حوّل الكميات الفيزيائية إلى قيمها الاقتصادية قبل الحكم على نسبة القيمة للتكلفة."
+      }
+    },
+    {
+      "id": "ee-foundations-s03-recall",
+      "concept": "ee-foundations-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Name the cost before using it",
+        "ar": "اشرح: سمّ التكلفة قبل استخدامها"
+      },
+      "a": {
+        "en": "Past expenditure cannot be changed; a sale forgone today can.",
+        "ar": "لا يمكن تغيير الإنفاق الماضي، لكن يمكن تغيير قرار البيع المتروك اليوم."
+      }
+    },
+    {
+      "id": "ee-foundations-s03-formula",
+      "concept": "ee-foundations-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nC(Q)=F+vQ; average incremental cost=ΔC/ΔQ",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nC(Q)=F+vQ; average incremental cost=ΔC/ΔQ"
+      },
+      "a": {
+        "en": "F is cost per analysis period; v is cost/unit; Q is units per same period. ΔC/ΔQ has units CU/unit. The linear model is a local approximation; a fixed cost may change when capacity is expanded.",
+        "ar": "F تكلفة الفترة، و v تكلفة الوحدة، و Q إنتاج الفترة نفسها. وحدة ΔC/ΔQ نقد/وحدة. النموذج الخطي تقريب محلي؛ قد تتغير التكلفة الثابتة عند زيادة السعة."
+      }
+    },
+    {
+      "id": "ee-foundations-s03-trap",
+      "concept": "ee-foundations-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; recovering that historical expense is always the correct decision rule.",
+        "ar": "يقول متعلم: نعم؛ استرداد النفقة التاريخية قاعدة القرار دائمًا."
+      },
+      "a": {
+        "en": "No; compare the future differences and any current opportunity costs. Past expenditure cannot be changed; a sale forgone today can.",
+        "ar": "لا؛ قارن الفروق المستقبلية وتكاليف الفرصة الحالية. لا يمكن تغيير الإنفاق الماضي، لكن يمكن تغيير قرار البيع المتروك اليوم."
+      }
+    },
+    {
+      "id": "ee-foundations-s04-recall",
+      "concept": "ee-foundations-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Utility, value, price and an exchange",
+        "ar": "اشرح: المنفعة والقيمة والسعر والتبادل"
+      },
+      "a": {
+        "en": "Classify by the service a good provides, not its price tag.",
+        "ar": "صنف السلعة حسب دورها، لا حسب بطاقة السعر."
+      }
+    },
+    {
+      "id": "ee-foundations-s04-formula",
+      "concept": "ee-foundations-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nnet private benefit = perceived worth − price",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nnet private benefit = perceived worth − price"
+      },
+      "a": {
+        "en": "Worth and price must use a common monetary scale if they are subtracted. Utility need not itself be measured in money. A subjective benefit estimate is not a market quote or proof of a universal value.",
+        "ar": "يلزم مقياس نقدي مشترك لطرح القيمة والسعر؛ المنفعة نفسها ليست ملزمة بقياس نقدي. التقدير الشخصي للمنفعة ليس سعر سوق ولا برهانًا على قيمة عامة."
+      }
+    },
+    {
+      "id": "ee-foundations-s04-trap",
+      "concept": "ee-foundations-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; anything twice as useful must have twice the price.",
+        "ar": "يقول متعلم: نعم؛ كل ما تضاعفت منفعته يتضاعف سعره."
+      },
+      "a": {
+        "en": "No; usefulness, assessed worth and exchange price have different meanings. Classify by the service a good provides, not its price tag.",
+        "ar": "لا؛ الفائدة والقيمة المقدرة وسعر التبادل معان مختلفة. صنف السلعة حسب دورها، لا حسب بطاقة السعر."
+      }
+    },
+    {
+      "id": "ee-foundations-s05-recall",
+      "concept": "ee-foundations-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: A worker story: include the machine’s time",
+        "ar": "اشرح: قصة عامل: احسب وقت الآلة أيضًا"
+      },
+      "a": {
+        "en": "Preserve the full unit-cost balance, including equipment time.",
+        "ar": "حافظ على موازنة تكلفة الوحدة كاملة، بما فيها وقت المعدات."
+      }
+    },
+    {
+      "id": "ee-foundations-s05-formula",
+      "concept": "ee-foundations-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nunit cost=(wage/hour + machine cost/hour)/(pieces/hour)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nunit cost=(wage/hour + machine cost/hour)/(pieces/hour)"
+      },
+      "a": {
+        "en": "Wage and machine rate are CU/h; dividing by pieces/h gives CU/piece. Same machine rate, selling price and other unit costs; no change in quality or rejects.",
+        "ar": "الأجر وتكلفة الآلة نقد/ساعة؛ القسمة على قطعة/ساعة تعطي نقد/قطعة. ثبات تكلفة الآلة والسعر وبقية تكاليف الوحدة وعدم اختلاف الجودة والمرفوضات."
+      }
+    },
+    {
+      "id": "ee-foundations-s05-trap",
+      "concept": "ee-foundations-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; labor productivity is the only cost that matters.",
+        "ar": "يقول متعلم: نعم؛ إنتاجية العمل هي التكلفة المؤثرة الوحيدة."
+      },
+      "a": {
+        "en": "Not when the same machine cost continues each hour. Preserve the full unit-cost balance, including equipment time.",
+        "ar": "ليس مع استمرار تكلفة الآلة الساعية نفسها. حافظ على موازنة تكلفة الوحدة كاملة، بما فيها وقت المعدات."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE04",
+      "page": 3,
+      "filename": "chapter 1 EnEc.pdf"
+    },
+    {
+      "doc": "EE04",
+      "page": 16,
+      "filename": "chapter 1 EnEc.pdf"
+    },
+    {
+      "doc": "EE04",
+      "page": 52,
+      "filename": "chapter 1 EnEc.pdf"
+    }
+  ],
+  "videoIds": [
+    "fo0L6NZGZX8",
+    "733mgqrzNKs"
+  ]
+}

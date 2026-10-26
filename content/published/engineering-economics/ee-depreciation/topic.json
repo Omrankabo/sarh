@@ -1,0 +1,1520 @@
+{
+  "id": "ee-depreciation",
+  "family": "ee-assets",
+  "title": {
+    "en": "Depreciation: follow the value, not an imaginary cash payment",
+    "ar": "الإهلاك: تتبع القيمة لا دفعة نقدية وهمية"
+  },
+  "summary": {
+    "en": "A machine ages, becomes obsolete and acquires a book value. Trace how each model allocates its depreciable amount, including the lecturer’s special rate convention and fractional switch example.",
+    "ar": "تتقادم الآلة ويصبح لها رصيد دفتري. تتبع كيف يوزع كل نموذج مبلغها القابل للإهلاك، مع اتفاق المعدل الخاص بالمحاضرة ومثال التحويل عند زمن كسري."
+  },
+  "outcomes": [
+    {
+      "en": "A depreciation charge is an allocation",
+      "ar": "قسط الإهلاك توزيع للقيمة"
+    },
+    {
+      "en": "Straight-line: equal slices of the depreciable base",
+      "ar": "القسط الثابت: شرائح متساوية من الأساس"
+    },
+    {
+      "en": "Sum-of-years digits: heavier early slices",
+      "ar": "مجموع أرقام السنين: شرائح مبكرة أثقل"
+    },
+    {
+      "en": "Declining balance: a constant rate on a shrinking base",
+      "ar": "الرصيد المتناقص: معدل ثابت على أساس يتناقص"
+    },
+    {
+      "en": "Switch models at a shared book value",
+      "ar": "حوّل النماذج عند قيمة دفترية مشتركة"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-powers"
+  ],
+  "concepts": [
+    {
+      "id": "ee-depreciation-s01-concept",
+      "title": {
+        "en": "A depreciation charge is an allocation",
+        "ar": "قسط الإهلاك توزيع للقيمة"
+      }
+    },
+    {
+      "id": "ee-depreciation-s02-concept",
+      "title": {
+        "en": "Straight-line: equal slices of the depreciable base",
+        "ar": "القسط الثابت: شرائح متساوية من الأساس"
+      }
+    },
+    {
+      "id": "ee-depreciation-s03-concept",
+      "title": {
+        "en": "Sum-of-years digits: heavier early slices",
+        "ar": "مجموع أرقام السنين: شرائح مبكرة أثقل"
+      }
+    },
+    {
+      "id": "ee-depreciation-s04-concept",
+      "title": {
+        "en": "Declining balance: a constant rate on a shrinking base",
+        "ar": "الرصيد المتناقص: معدل ثابت على أساس يتناقص"
+      }
+    },
+    {
+      "id": "ee-depreciation-s05-concept",
+      "title": {
+        "en": "Switch models at a shared book value",
+        "ar": "حوّل النماذج عند قيمة دفترية مشتركة"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-depreciation-s01",
+      "title": {
+        "en": "A depreciation charge is an allocation",
+        "ar": "قسط الإهلاك توزيع للقيمة"
+      },
+      "predict": {
+        "en": "Is an annual depreciation charge automatically an annual cash payment?",
+        "ar": "هل قسط الإهلاك السنوي دفعة نقدية سنوية تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "No; it allocates asset cost, with cash effects only through separately modeled consequences.",
+          "ar": "لا؛ هو توزيع تكلفة الأصل، وآثاره النقدية تمر بنتائج أخرى ممثلة صراحة."
+        },
+        {
+          "en": "Yes; subtract it as an extra operating payment even in a before-tax cash model.",
+          "ar": "نعم؛ اطرحه دفعًا تشغيليًا إضافيًا حتى قبل الضرائب."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; it allocates asset cost, with cash effects only through separately modeled consequences. Loss of service suitability need not require physical failure.",
+        "ar": "لا؛ هو توزيع تكلفة الأصل، وآثاره النقدية تمر بنتائج أخرى ممثلة صراحة. لا يتطلب فقد صلاحية الخدمة عطلًا ماديًا."
+      },
+      "explain": {
+        "en": "You pay for a machine when you buy it, but an accounting model allocates its depreciable amount across service years. The annual depreciation charge D is therefore not another purchase payment. Physical deterioration concerns wear and damage; functional depreciation includes obsolescence or inadequate capacity. Book value, estimated resale value and market price need not be equal. Taxes, if modeled, connect an accounting charge to cash indirectly through the tax calculation.",
+        "ar": "تدفع ثمن الآلة عند شرائها، لكن النموذج المحاسبي يوزع مبلغها القابل للإهلاك على سنوات الخدمة. لذلك ليس قسط D دفعة شراء جديدة. يشمل الإهلاك المادي البلى والتلف، والوظيفي التقادم أو عدم كفاية السعة. ولا يلزم تساوي القيمة الدفترية والخردة المقدرة وسعر السوق. إن أدخلت الضرائب فإنها تصل القسط بالنقد بصورة غير مباشرة."
+      },
+      "formula": "Bt=P−Σj=1…t Dj; depreciable base=P−S",
+      "symbols": {
+        "en": "P is acquisition basis, S estimated terminal salvage, D charge during a year, B book value after that year.",
+        "ar": "P أساس الاقتناء و S خردة النهاية المقدرة و D قسط السنة و B القيمة الدفترية بعدها."
+      },
+      "assumptions": {
+        "en": "Accounting model and salvage assumptions must be identified; no tax rule is implied by the formula alone.",
+        "ar": "يجب تحديد النموذج المحاسبي وفرض الخردة؛ ولا تحدد المعادلة وحدها قاعدة ضريبية."
+      },
+      "example": {
+        "en": "P=8000, S=2000, accumulated depreciation=3000.",
+        "ar": "الأصل 8000 والخردة 2000 والإهلاك المتراكم 3000."
+      },
+      "calculation": {
+        "en": "Depreciable base=6000; current book value=8000−3000=5000 CU.",
+        "ar": "الأساس القابل للإهلاك 6000 والحالية الدفترية 5000."
+      },
+      "interpret": {
+        "en": "Loss of service suitability need not require physical failure.",
+        "ar": "لا يتطلب فقد صلاحية الخدمة عطلًا ماديًا."
+      },
+      "check": {
+        "prompt": {
+          "en": "A computer works physically but cannot run the required software. Which lecture category fits?",
+          "ar": "يعمل حاسوب ماديًا لكنه لا يشغل البرمجيات المطلوبة. ما تصنيف المحاضرة المناسب؟"
+        },
+        "answer": {
+          "en": "Functional depreciation through obsolescence or inadequacy.",
+          "ar": "إهلاك وظيفي بسبب التقادم أو عدم الكفاية."
+        }
+      },
+      "diagram": "econ-depreciation",
+      "concepts": [
+        "ee-depreciation-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 3,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 7,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 10,
+          "filename": "chapter 5 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-depreciation-s02",
+      "title": {
+        "en": "Straight-line: equal slices of the depreciable base",
+        "ar": "القسط الثابت: شرائح متساوية من الأساس"
+      },
+      "predict": {
+        "en": "Is(P−S)/n the asset’s book value at year n?",
+        "ar": "هل(P−S)/n قيمة الأصل الدفترية في نهاية n؟"
+      },
+      "options": [
+        {
+          "en": "Yes; the yearly charge and closing balance are identical.",
+          "ar": "نعم؛ القسط والرصيد الختامي شيء واحد."
+        },
+        {
+          "en": "No; it is the annual charge; the terminal book value is S.",
+          "ar": "لا؛ هو القسط السنوي والقيمة النهائية S."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; it is the annual charge; the terminal book value is S. The salvage assumption defines the amount being allocated.",
+        "ar": "لا؛ هو القسط السنوي والقيمة النهائية S. يحدد فرض الخردة المبلغ الموزع."
+      },
+      "explain": {
+        "en": "The straight-line model spreads P−S uniformly over n years. Its book-value line connects P at zero to S at the end of life. D is the yearly drop, not the remaining value. Check both endpoints and check that n charges sum to P−S. A fractional year can be evaluated along this line when the problem explicitly treats depreciation continuously within the year.",
+        "ar": "يوزع القسط الثابت P−S بالتساوي على n سنوات. يصل خطه بين P عند الصفر و S في النهاية. و D مقدار الانخفاض السنوي لا القيمة المتبقية. تحقق من الطرفين ومن أن مجموع الأقساط يساوي P−S. يمكن تقييم سنة كسرية على الخط إن اعتمد السؤال توزيعًا مستمرًا داخل السنة."
+      },
+      "formula": "D=(P−S)/n; Bt=P−t(P−S)/n",
+      "symbols": {
+        "en": "D is CU/year; B,P,S are CU; t and n use years.",
+        "ar": "D نقد/سنة و B و P و S نقد، و t و n بالسنوات."
+      },
+      "assumptions": {
+        "en": "Straight-line allocation over stated life, with the same terminal salvage and any fractional-year convention declared.",
+        "ar": "توزيع ثابت على العمر المعطى وبالخردة نفسها مع إعلان اتفاق كسور السنة."
+      },
+      "example": {
+        "en": "P=8000, S=2000, n=4 years. Find D and B2.",
+        "ar": "الأصل 8000 والخردة 2000 والعمر 4؛ أوجد القسط وقيمة نهاية 2."
+      },
+      "calculation": {
+        "en": "D=1500/year; B2=8000−2×1500=5000; B4=2000.",
+        "ar": "القسط 1500 سنويًا وقيمة 2 تساوي 5000 ونهاية 4 تساوي 2000."
+      },
+      "interpret": {
+        "en": "The salvage assumption defines the amount being allocated.",
+        "ar": "يحدد فرض الخردة المبلغ الموزع."
+      },
+      "check": {
+        "prompt": {
+          "en": "For P=5000,S=1000,n=5, should total straight-line depreciation be 5000?",
+          "ar": "لأصل 5000 وخردة 1000 وعمر 5، هل مجموع الإهلاك 5000؟"
+        },
+        "answer": {
+          "en": "No; it is 4000, leaving the 1000 salvage book value.",
+          "ar": "لا؛ هو 4000 ويترك دفترية الخردة 1000."
+        }
+      },
+      "diagram": "econ-depreciation",
+      "concepts": [
+        "ee-depreciation-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 16,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 17,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE03",
+          "page": 3,
+          "filename": "015 Tut.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-depreciation-s03",
+      "title": {
+        "en": "Sum-of-years digits: heavier early slices",
+        "ar": "مجموع أرقام السنين: شرائح مبكرة أثقل"
+      },
+      "predict": {
+        "en": "Does accelerated depreciation change total depreciable base?",
+        "ar": "هل يغير الإهلاك المعجل مجموع الأساس القابل للإهلاك؟"
+      },
+      "options": [
+        {
+          "en": "No; it changes when the allocation occurs.",
+          "ar": "لا؛ يغير توقيت توزيعه."
+        },
+        {
+          "en": "Yes; early large charges create a larger total cost basis.",
+          "ar": "نعم؛ تخلق الأقساط المبكرة أساس تكلفة أكبر."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; it changes when the allocation occurs. Rounding should not create or destroy the depreciable amount.",
+        "ar": "لا؛ يغير توقيت توزيعه. لا ينبغي أن يخلق التقريب مبلغ إهلاك أو يفنيه."
+      },
+      "explain": {
+        "en": "SYD gives the remaining-life number to each year: for five years the weights are 5,4,3,2,1. The denominator is their sum 15. These weights accelerate allocation without changing the total P−S. The book value after t years equals salvage plus the still-unallocated triangular share. Be careful with the year index: the first charge uses n, while the final charge uses 1.",
+        "ar": "يمنح مجموع أرقام السنين كل سنة وزن عمرها المتبقي؛ لخمس سنوات 5 و 4 و 3 و 2 و 1 ومقامها 15. تسرع الأوزان التوزيع دون تغيير مجموع P−S. تساوي الدفترية بعد t الخردة مضافًا إليها الجزء المثلثي غير الموزع. انتبه للترتيب؛ وزن الأولى n ووزن الأخيرة 1."
+      },
+      "formula": "Dt=(n−t+1)(P−S)/[n(n+1)/2]; Bt=S+(P−S)(n−t)(n−t+1)/[n(n+1)]",
+      "symbols": {
+        "en": "t=1 is the first charge; B0=P and Bn=S.",
+        "ar": "t=1 أول قسط و B0=P و Bn=S."
+      },
+      "assumptions": {
+        "en": "Integer year-end SYD schedule; use a separately stated rule for partial-year charges.",
+        "ar": "جدول نهايات سنوات صحيحة؛ وتحتاج كسور السنة قاعدة مستقلة."
+      },
+      "example": {
+        "en": "P=5000,S=1000,n=5.",
+        "ar": "الأصل 5000 والخردة 1000 والعمر 5."
+      },
+      "calculation": {
+        "en": "D1=5/15×4000=1333.333333; D5=1/15×4000=266.666667. B2=5000−1333.333333−1066.666667=2600.",
+        "ar": "الأول 1333.333333 والأخير 266.666667 والدفترية بعد 2 تساوي 2600."
+      },
+      "interpret": {
+        "en": "Rounding should not create or destroy the depreciable amount.",
+        "ar": "لا ينبغي أن يخلق التقريب مبلغ إهلاك أو يفنيه."
+      },
+      "check": {
+        "prompt": {
+          "en": "The source rounds the final SYD charge of 4000/15 to 267. What should a precise schedule do?",
+          "ar": "يقرب المصدر القسط الأخير 4000/15 إلى 267. كيف يتصرف جدول دقيق؟"
+        },
+        "answer": {
+          "en": "Retain internal precision and round only displayed values, reconciling the total with P−S.",
+          "ar": "يحفظ الدقة الداخلية ويقرب العرض فقط مع مطابقة الإجمالي P−S."
+        }
+      },
+      "diagram": "econ-depreciation",
+      "concepts": [
+        "ee-depreciation-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 19,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 20,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-depreciation-s04",
+      "title": {
+        "en": "Declining balance: a constant rate on a shrinking base",
+        "ar": "الرصيد المتناقص: معدل ثابت على أساس يتناقص"
+      },
+      "predict": {
+        "en": "Does a constant DB percentage produce constant annual depreciation amounts?",
+        "ar": "هل ينتج معدل تناقص ثابت أقساطًا سنوية ثابتة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; a fixed percentage means a fixed cash amount.",
+          "ar": "نعم؛ النسبة الثابتة تعني مبلغًا ثابتًا."
+        },
+        {
+          "en": "No; each charge acts on a smaller opening book value.",
+          "ar": "لا؛ يطبق كل قسط على دفترية افتتاح أصغر."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; each charge acts on a smaller opening book value. A mathematical decay curve and an accounting schedule with a terminal constraint are different models.",
+        "ar": "لا؛ يطبق كل قسط على دفترية افتتاح أصغر. منحنى الاضمحلال وجدول محاسبي بقيد نهائي نموذجان مختلفان."
+      },
+      "explain": {
+        "en": "DB multiplies the opening book value by R each year. The percentage can stay fixed while charges decrease because the base shrinks. To pass through a specified terminal S, solve R=1−(S/P)^(1/n). The lecture additionally introduces n*=nP/(P−S) and a course rate range based on n*. Standard textbook DDB often uses 2/n instead. These conventions are not identical when S>0. State the convention; the source table itself mixes 0.36 and 0.40 for one example.",
+        "ar": "يضرب الرصيد المتناقص قيمة افتتاح السنة في R؛ فتثبت النسبة وتتراجع الأقساط لأن الأساس يتناقص. للمرور بخردة S حل R=1−(S/P)^(1/n). وتقدم المحاضرة n*=nP/(P−S) وحدود معدل مرتبطة بها، بينما يستخدم القسط المضاعف الشائع 2/n. يختلف الاتفاقان عند S>0؛ صرح بالاتفاق، فجدول المصدر نفسه يمزج 0.36 و 0.40 في مثال."
+      },
+      "formula": "Bt=P(1−R)^t; Dt=R Bt−1; Rfit=1−(S/P)^(1/n)",
+      "symbols": {
+        "en": "R is annual DB fraction; n* is the source’s extended straight-line life to zero, not the actual service life n.",
+        "ar": "R نسبة تناقص سنوية، و n* العمر الممتد للصفر عند المصدر وليست عمر الخدمة n."
+      },
+      "assumptions": {
+        "en": "Unclipped DB equation unless a salvage floor or switch is imposed. Course-specific rate limits are not presented as current tax law.",
+        "ar": "معادلة تناقص غير مقيدة إلا مع فرض حد خردة أو تحويل. حدود معدل المقرر ليست عرضًا لقانون ضريبي حالي."
+      },
+      "example": {
+        "en": "P=10000,S=1000,n=5.",
+        "ar": "الأصل 10000 والخردة 1000 والعمر 5."
+      },
+      "calculation": {
+        "en": "n*=5×10000/9000=5.555556; course 2/n*=0.36; conventional 2/n=0.40. Rfit=1−0.1^(1/5)≈0.369043. Flag the convention conflict.",
+        "ar": "n*=5.555556؛ وحد المقرر 0.36 والشائع 0.40، ومعدل مطابقة الخردة 0.369043؛ بين تعارض الاتفاق."
+      },
+      "interpret": {
+        "en": "A mathematical decay curve and an accounting schedule with a terminal constraint are different models.",
+        "ar": "منحنى الاضمحلال وجدول محاسبي بقيد نهائي نموذجان مختلفان."
+      },
+      "check": {
+        "prompt": {
+          "en": "Raw DDB gives book value below a separately imposed salvage floor. What should the model do?",
+          "ar": "تعطي صيغة التناقص المضاعف قيمة أدنى من حد خردة مفروض مستقلًا. ما المطلوب؟"
+        },
+        "answer": {
+          "en": "Apply the stated floor or switching rule; label the raw curve separately.",
+          "ar": "طبق الحد أو قاعدة التحويل المعلنة وميز المنحنى الخام."
+        }
+      },
+      "diagram": "econ-depreciation",
+      "concepts": [
+        "ee-depreciation-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 22,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 24,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 25,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 29,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 30,
+          "filename": "chapter 5 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-depreciation-s05",
+      "title": {
+        "en": "Switch models at a shared book value",
+        "ar": "حوّل النماذج عند قيمة دفترية مشتركة"
+      },
+      "predict": {
+        "en": "Should the straight-line equation after a4.5-year switch use global t=5 as elapsed time?",
+        "ar": "هل تستخدم معادلة الخط بعد تحويل 4.5 الزمن العام 5 مدةً منقضية؟"
+      },
+      "options": [
+        {
+          "en": "No; the elapsed time at year 5 is only 0.5 year since the switch.",
+          "ar": "لا؛ المنقضي منذ التحويل عند 5 هو 0.5 سنة فقط."
+        },
+        {
+          "en": "Yes; a new model must start counting from original year 0.",
+          "ar": "نعم؛ يجب أن يعد النموذج الجديد من الصفر الأصلي."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; the elapsed time at year 5 is only 0.5 year since the switch. Book-value continuity and the annual difference give two independent checks.",
+        "ar": "لا؛ المنقضي منذ التحويل عند 5 هو 0.5 سنة فقط. يعطي اتصال الدفترية والفرق السنوي تحققين مستقلين."
+      },
+      "explain": {
+        "en": "A hybrid schedule uses DB first and straight-line later. The switch point must have one book value shared by both pieces. Reset the local time to zero there and distribute only the remaining difference to salvage over the remaining life. A year can straddle the switch: its annual charge is still opening B minus closing B, even if two models operated during it. The lecture’s4.5-year switch is an excellent test of local time.",
+        "ar": "يستخدم الجدول المركب التناقص أولًا ثم القسط الثابت. يجب أن تشترك القطعتان في دفترية واحدة عند التحويل. أعد الزمن المحلي للصفر ووزع الفرق الباقي للخردة على العمر الباقي. قد تعبر سنة نقطة التحويل؛ ويبقى قسطها دفترية الافتتاح ناقص الختام رغم عمل نموذجين. يختبر مثال 4.5 سنة في المحاضرة الزمن المحلي جيدًا."
+      },
+      "formula": "Bs=P(1−R)^s; Bt=Bs−(t−s)(Bs−S)/(n−s), t≥s",
+      "symbols": {
+        "en": "s is the switch date; t−s is time since switch; Dt=Bt−1−Bt.",
+        "ar": "s تاريخ التحويل و t−s الزمن بعده، وقسط السنة فرق الدفتريتين."
+      },
+      "assumptions": {
+        "en": "The switch is prescribed, with linear fractional-year allocation after s. This is not an automatic optimal-switch algorithm.",
+        "ar": "التحويل مفروض والتوزيع بعده خطي لكسور السنة؛ ليس خوارزمية تحويل أمثل تلقائية."
+      },
+      "example": {
+        "en": "P=5000,R=25%,s=4.5,n=8,S=500.",
+        "ar": "الأصل 5000 والمعدل 25% والتحويل 4.5 والعمر 8 والخردة 500."
+      },
+      "calculation": {
+        "en": "B4=1582.03125; B4.5≈1370.079252; remaining annual slope≈248.594072. B5≈1245.782216; D5≈336.249034.",
+        "ar": "الدفترية عند 4 هي 1582.03125 وعند 4.5 قرابة 1370.079838؛ وعند 5 قرابة 1245.782718 وقسط 5 قرابة 336.248532."
+      },
+      "interpret": {
+        "en": "Book-value continuity and the annual difference give two independent checks.",
+        "ar": "يعطي اتصال الدفترية والفرق السنوي تحققين مستقلين."
+      },
+      "check": {
+        "prompt": {
+          "en": "The year of the switch spans two model segments. How is its annual depreciation checked?",
+          "ar": "تعبر سنة التحويل جزأي نموذجين. كيف يتحقق قسطها السنوي؟"
+        },
+        "answer": {
+          "en": "Subtract closing book value from opening book value across the whole year.",
+          "ar": "اطرح دفترية الختام من الافتتاح للسنة كاملة."
+        }
+      },
+      "diagram": "econ-depreciation",
+      "concepts": [
+        "ee-depreciation-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 32,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 33,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 34,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 35,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 21,
+          "filename": "014 Tuts.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-depreciation-s01-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 3,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 7,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 10,
+          "filename": "chapter 5 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P is acquisition basis, S estimated terminal salvage, D charge during a year, B book value after that year.",
+          "ar": "P أساس الاقتناء و S خردة النهاية المقدرة و D قسط السنة و B القيمة الدفترية بعدها."
+        },
+        {
+          "en": "Bt=P−Σj=1…t Dj; depreciable base=P−S\nAccounting model and salvage assumptions must be identified; no tax rule is implied by the formula alone.",
+          "ar": "Bt=P−Σj=1…t Dj; depreciable base=P−S\nيجب تحديد النموذج المحاسبي وفرض الخردة؛ ولا تحدد المعادلة وحدها قاعدة ضريبية."
+        }
+      ],
+      "id": "ee-depreciation-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Is an annual depreciation charge automatically an annual cash payment?",
+        "ar": "هل قسط الإهلاك السنوي دفعة نقدية سنوية تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "No; it allocates asset cost, with cash effects only through separately modeled consequences.",
+          "ar": "لا؛ هو توزيع تكلفة الأصل، وآثاره النقدية تمر بنتائج أخرى ممثلة صراحة."
+        },
+        {
+          "en": "Yes; subtract it as an extra operating payment even in a before-tax cash model.",
+          "ar": "نعم؛ اطرحه دفعًا تشغيليًا إضافيًا حتى قبل الضرائب."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; it allocates asset cost, with cash effects only through separately modeled consequences. You pay for a machine when you buy it, but an accounting model allocates its depreciable amount across service years. The annual depreciation charge D is therefore not another purchase payment. Physical deterioration concerns wear and damage; functional depreciation includes obsolescence or inadequate capacity. Book value, estimated resale value and market price need not be equal. Taxes, if modeled, connect an accounting charge to cash indirectly through the tax calculation.",
+        "ar": "لا؛ هو توزيع تكلفة الأصل، وآثاره النقدية تمر بنتائج أخرى ممثلة صراحة. تدفع ثمن الآلة عند شرائها، لكن النموذج المحاسبي يوزع مبلغها القابل للإهلاك على سنوات الخدمة. لذلك ليس قسط D دفعة شراء جديدة. يشمل الإهلاك المادي البلى والتلف، والوظيفي التقادم أو عدم كفاية السعة. ولا يلزم تساوي القيمة الدفترية والخردة المقدرة وسعر السوق. إن أدخلت الضرائب فإنها تصل القسط بالنقد بصورة غير مباشرة."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s01-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 3,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 7,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 10,
+          "filename": "chapter 5 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P is acquisition basis, S estimated terminal salvage, D charge during a year, B book value after that year.",
+          "ar": "P أساس الاقتناء و S خردة النهاية المقدرة و D قسط السنة و B القيمة الدفترية بعدها."
+        },
+        {
+          "en": "Bt=P−Σj=1…t Dj; depreciable base=P−S\nAccounting model and salvage assumptions must be identified; no tax rule is implied by the formula alone.",
+          "ar": "Bt=P−Σj=1…t Dj; depreciable base=P−S\nيجب تحديد النموذج المحاسبي وفرض الخردة؛ ولا تحدد المعادلة وحدها قاعدة ضريبية."
+        }
+      ],
+      "id": "ee-depreciation-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "An asset cost 12000 CU and accumulated depreciation is 4500. Find book value.",
+        "ar": "كلف أصل 12000 وإهلاكه المتراكم 4500. أوجد قيمته الدفترية."
+      },
+      "expected": 7500,
+      "tolerance": 0.15000000000000002,
+      "unit": "CU",
+      "solution": {
+        "en": "B=12000−4500=7500. Market resale price is a separate datum.",
+        "ar": "القيمة 7500؛ وسعر إعادة البيع معطى مستقل."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s01-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 3,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 7,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 10,
+          "filename": "chapter 5 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P is acquisition basis, S estimated terminal salvage, D charge during a year, B book value after that year.",
+          "ar": "P أساس الاقتناء و S خردة النهاية المقدرة و D قسط السنة و B القيمة الدفترية بعدها."
+        },
+        {
+          "en": "Bt=P−Σj=1…t Dj; depreciable base=P−S\nAccounting model and salvage assumptions must be identified; no tax rule is implied by the formula alone.",
+          "ar": "Bt=P−Σj=1…t Dj; depreciable base=P−S\nيجب تحديد النموذج المحاسبي وفرض الخردة؛ ولا تحدد المعادلة وحدها قاعدة ضريبية."
+        }
+      ],
+      "id": "ee-depreciation-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A computer works physically but cannot run the required software. Which lecture category fits?",
+        "ar": "يعمل حاسوب ماديًا لكنه لا يشغل البرمجيات المطلوبة. ما تصنيف المحاضرة المناسب؟"
+      },
+      "options": [
+        {
+          "en": "Only physical wear because every value change is damage.",
+          "ar": "بلى مادي فقط لأن كل تغير قيمة تلف."
+        },
+        {
+          "en": "Functional depreciation through obsolescence or inadequacy.",
+          "ar": "إهلاك وظيفي بسبب التقادم أو عدم الكفاية."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Functional depreciation through obsolescence or inadequacy. Loss of service suitability need not require physical failure.",
+        "ar": "إهلاك وظيفي بسبب التقادم أو عدم الكفاية. لا يتطلب فقد صلاحية الخدمة عطلًا ماديًا."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s02-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 16,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 17,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE03",
+          "page": 3,
+          "filename": "015 Tut.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "D is CU/year; B,P,S are CU; t and n use years.",
+          "ar": "D نقد/سنة و B و P و S نقد، و t و n بالسنوات."
+        },
+        {
+          "en": "D=(P−S)/n; Bt=P−t(P−S)/n\nStraight-line allocation over stated life, with the same terminal salvage and any fractional-year convention declared.",
+          "ar": "D=(P−S)/n; Bt=P−t(P−S)/n\nتوزيع ثابت على العمر المعطى وبالخردة نفسها مع إعلان اتفاق كسور السنة."
+        }
+      ],
+      "id": "ee-depreciation-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Is(P−S)/n the asset’s book value at year n?",
+        "ar": "هل(P−S)/n قيمة الأصل الدفترية في نهاية n؟"
+      },
+      "options": [
+        {
+          "en": "Yes; the yearly charge and closing balance are identical.",
+          "ar": "نعم؛ القسط والرصيد الختامي شيء واحد."
+        },
+        {
+          "en": "No; it is the annual charge; the terminal book value is S.",
+          "ar": "لا؛ هو القسط السنوي والقيمة النهائية S."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; it is the annual charge; the terminal book value is S. The straight-line model spreads P−S uniformly over n years. Its book-value line connects P at zero to S at the end of life. D is the yearly drop, not the remaining value. Check both endpoints and check that n charges sum to P−S. A fractional year can be evaluated along this line when the problem explicitly treats depreciation continuously within the year.",
+        "ar": "لا؛ هو القسط السنوي والقيمة النهائية S. يوزع القسط الثابت P−S بالتساوي على n سنوات. يصل خطه بين P عند الصفر و S في النهاية. و D مقدار الانخفاض السنوي لا القيمة المتبقية. تحقق من الطرفين ومن أن مجموع الأقساط يساوي P−S. يمكن تقييم سنة كسرية على الخط إن اعتمد السؤال توزيعًا مستمرًا داخل السنة."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s02-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 16,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 17,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE03",
+          "page": 3,
+          "filename": "015 Tut.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "D is CU/year; B,P,S are CU; t and n use years.",
+          "ar": "D نقد/سنة و B و P و S نقد، و t و n بالسنوات."
+        },
+        {
+          "en": "D=(P−S)/n; Bt=P−t(P−S)/n\nStraight-line allocation over stated life, with the same terminal salvage and any fractional-year convention declared.",
+          "ar": "D=(P−S)/n; Bt=P−t(P−S)/n\nتوزيع ثابت على العمر المعطى وبالخردة نفسها مع إعلان اتفاق كسور السنة."
+        }
+      ],
+      "id": "ee-depreciation-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "P=15000,S=3000,n=6 years. Find B4 under straight-line.",
+        "ar": "الأصل 15000 والخردة 3000 والعمر 6. أوجد الدفترية عند 4 بالقسط الثابت."
+      },
+      "expected": 7000,
+      "tolerance": 0.14,
+      "unit": "CU",
+      "solution": {
+        "en": "D=(15000−3000)/6=2000; B4=15000−8000=7000.",
+        "ar": "القسط 2000 والدفترية عند 4 تساوي 7000."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s02-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 16,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 17,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE03",
+          "page": 3,
+          "filename": "015 Tut.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "D is CU/year; B,P,S are CU; t and n use years.",
+          "ar": "D نقد/سنة و B و P و S نقد، و t و n بالسنوات."
+        },
+        {
+          "en": "D=(P−S)/n; Bt=P−t(P−S)/n\nStraight-line allocation over stated life, with the same terminal salvage and any fractional-year convention declared.",
+          "ar": "D=(P−S)/n; Bt=P−t(P−S)/n\nتوزيع ثابت على العمر المعطى وبالخردة نفسها مع إعلان اتفاق كسور السنة."
+        }
+      ],
+      "id": "ee-depreciation-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "For P=5000,S=1000,n=5, should total straight-line depreciation be 5000?",
+        "ar": "لأصل 5000 وخردة 1000 وعمر 5، هل مجموع الإهلاك 5000؟"
+      },
+      "options": [
+        {
+          "en": "No; it is 4000, leaving the 1000 salvage book value.",
+          "ar": "لا؛ هو 4000 ويترك دفترية الخردة 1000."
+        },
+        {
+          "en": "Yes; every method must write the asset to zero.",
+          "ar": "نعم؛ يجب أن يصفر كل نموذج الأصل."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; it is 4000, leaving the 1000 salvage book value. The salvage assumption defines the amount being allocated.",
+        "ar": "لا؛ هو 4000 ويترك دفترية الخردة 1000. يحدد فرض الخردة المبلغ الموزع."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s03-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 19,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 20,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "t=1 is the first charge; B0=P and Bn=S.",
+          "ar": "t=1 أول قسط و B0=P و Bn=S."
+        },
+        {
+          "en": "Dt=(n−t+1)(P−S)/[n(n+1)/2]; Bt=S+(P−S)(n−t)(n−t+1)/[n(n+1)]\nInteger year-end SYD schedule; use a separately stated rule for partial-year charges.",
+          "ar": "Dt=(n−t+1)(P−S)/[n(n+1)/2]; Bt=S+(P−S)(n−t)(n−t+1)/[n(n+1)]\nجدول نهايات سنوات صحيحة؛ وتحتاج كسور السنة قاعدة مستقلة."
+        }
+      ],
+      "id": "ee-depreciation-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does accelerated depreciation change total depreciable base?",
+        "ar": "هل يغير الإهلاك المعجل مجموع الأساس القابل للإهلاك؟"
+      },
+      "options": [
+        {
+          "en": "No; it changes when the allocation occurs.",
+          "ar": "لا؛ يغير توقيت توزيعه."
+        },
+        {
+          "en": "Yes; early large charges create a larger total cost basis.",
+          "ar": "نعم؛ تخلق الأقساط المبكرة أساس تكلفة أكبر."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; it changes when the allocation occurs. SYD gives the remaining-life number to each year: for five years the weights are 5,4,3,2,1. The denominator is their sum 15. These weights accelerate allocation without changing the total P−S. The book value after t years equals salvage plus the still-unallocated triangular share. Be careful with the year index: the first charge uses n, while the final charge uses 1.",
+        "ar": "لا؛ يغير توقيت توزيعه. يمنح مجموع أرقام السنين كل سنة وزن عمرها المتبقي؛ لخمس سنوات 5 و 4 و 3 و 2 و 1 ومقامها 15. تسرع الأوزان التوزيع دون تغيير مجموع P−S. تساوي الدفترية بعد t الخردة مضافًا إليها الجزء المثلثي غير الموزع. انتبه للترتيب؛ وزن الأولى n ووزن الأخيرة 1."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s03-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 19,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 20,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "t=1 is the first charge; B0=P and Bn=S.",
+          "ar": "t=1 أول قسط و B0=P و Bn=S."
+        },
+        {
+          "en": "Dt=(n−t+1)(P−S)/[n(n+1)/2]; Bt=S+(P−S)(n−t)(n−t+1)/[n(n+1)]\nInteger year-end SYD schedule; use a separately stated rule for partial-year charges.",
+          "ar": "Dt=(n−t+1)(P−S)/[n(n+1)/2]; Bt=S+(P−S)(n−t)(n−t+1)/[n(n+1)]\nجدول نهايات سنوات صحيحة؛ وتحتاج كسور السنة قاعدة مستقلة."
+        }
+      ],
+      "id": "ee-depreciation-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "P=45000,S=10500,n=10. Find B9 under SYD.",
+        "ar": "الأصل 45000 والخردة 10500 والعمر 10. أوجد دفترية نهاية 9 وفق مجموع أرقام السنين."
+      },
+      "expected": 11127.272727272728,
+      "tolerance": 0.22254545454545457,
+      "unit": "CU",
+      "solution": {
+        "en": "B9=10500+34500(1×2)/(10×11)=11127.272727 CU.",
+        "ar": "القيمة 11127.272727."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s03-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 19,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 20,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "t=1 is the first charge; B0=P and Bn=S.",
+          "ar": "t=1 أول قسط و B0=P و Bn=S."
+        },
+        {
+          "en": "Dt=(n−t+1)(P−S)/[n(n+1)/2]; Bt=S+(P−S)(n−t)(n−t+1)/[n(n+1)]\nInteger year-end SYD schedule; use a separately stated rule for partial-year charges.",
+          "ar": "Dt=(n−t+1)(P−S)/[n(n+1)/2]; Bt=S+(P−S)(n−t)(n−t+1)/[n(n+1)]\nجدول نهايات سنوات صحيحة؛ وتحتاج كسور السنة قاعدة مستقلة."
+        }
+      ],
+      "id": "ee-depreciation-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "The source rounds the final SYD charge of 4000/15 to 267. What should a precise schedule do?",
+        "ar": "يقرب المصدر القسط الأخير 4000/15 إلى 267. كيف يتصرف جدول دقيق؟"
+      },
+      "options": [
+        {
+          "en": "Use 267 in every later computation with no reconciliation.",
+          "ar": "يستخدم 267 في كل حساب لاحق دون مطابقة."
+        },
+        {
+          "en": "Retain internal precision and round only displayed values, reconciling the total with P−S.",
+          "ar": "يحفظ الدقة الداخلية ويقرب العرض فقط مع مطابقة الإجمالي P−S."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Retain internal precision and round only displayed values, reconciling the total with P−S. Rounding should not create or destroy the depreciable amount.",
+        "ar": "يحفظ الدقة الداخلية ويقرب العرض فقط مع مطابقة الإجمالي P−S. لا ينبغي أن يخلق التقريب مبلغ إهلاك أو يفنيه."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s04-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 22,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 24,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 25,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 29,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 30,
+          "filename": "chapter 5 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "R is annual DB fraction; n* is the source’s extended straight-line life to zero, not the actual service life n.",
+          "ar": "R نسبة تناقص سنوية، و n* العمر الممتد للصفر عند المصدر وليست عمر الخدمة n."
+        },
+        {
+          "en": "Bt=P(1−R)^t; Dt=R Bt−1; Rfit=1−(S/P)^(1/n)\nUnclipped DB equation unless a salvage floor or switch is imposed. Course-specific rate limits are not presented as current tax law.",
+          "ar": "Bt=P(1−R)^t; Dt=R Bt−1; Rfit=1−(S/P)^(1/n)\nمعادلة تناقص غير مقيدة إلا مع فرض حد خردة أو تحويل. حدود معدل المقرر ليست عرضًا لقانون ضريبي حالي."
+        }
+      ],
+      "id": "ee-depreciation-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does a constant DB percentage produce constant annual depreciation amounts?",
+        "ar": "هل ينتج معدل تناقص ثابت أقساطًا سنوية ثابتة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; a fixed percentage means a fixed cash amount.",
+          "ar": "نعم؛ النسبة الثابتة تعني مبلغًا ثابتًا."
+        },
+        {
+          "en": "No; each charge acts on a smaller opening book value.",
+          "ar": "لا؛ يطبق كل قسط على دفترية افتتاح أصغر."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; each charge acts on a smaller opening book value. DB multiplies the opening book value by R each year. The percentage can stay fixed while charges decrease because the base shrinks. To pass through a specified terminal S, solve R=1−(S/P)^(1/n). The lecture additionally introduces n*=nP/(P−S) and a course rate range based on n*. Standard textbook DDB often uses 2/n instead. These conventions are not identical when S>0. State the convention; the source table itself mixes 0.36 and 0.40 for one example.",
+        "ar": "لا؛ يطبق كل قسط على دفترية افتتاح أصغر. يضرب الرصيد المتناقص قيمة افتتاح السنة في R؛ فتثبت النسبة وتتراجع الأقساط لأن الأساس يتناقص. للمرور بخردة S حل R=1−(S/P)^(1/n). وتقدم المحاضرة n*=nP/(P−S) وحدود معدل مرتبطة بها، بينما يستخدم القسط المضاعف الشائع 2/n. يختلف الاتفاقان عند S>0؛ صرح بالاتفاق، فجدول المصدر نفسه يمزج 0.36 و 0.40 في مثال."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s04-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 22,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 24,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 25,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 29,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 30,
+          "filename": "chapter 5 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "R is annual DB fraction; n* is the source’s extended straight-line life to zero, not the actual service life n.",
+          "ar": "R نسبة تناقص سنوية، و n* العمر الممتد للصفر عند المصدر وليست عمر الخدمة n."
+        },
+        {
+          "en": "Bt=P(1−R)^t; Dt=R Bt−1; Rfit=1−(S/P)^(1/n)\nUnclipped DB equation unless a salvage floor or switch is imposed. Course-specific rate limits are not presented as current tax law.",
+          "ar": "Bt=P(1−R)^t; Dt=R Bt−1; Rfit=1−(S/P)^(1/n)\nمعادلة تناقص غير مقيدة إلا مع فرض حد خردة أو تحويل. حدود معدل المقرر ليست عرضًا لقانون ضريبي حالي."
+        }
+      ],
+      "id": "ee-depreciation-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "P=5000,R=20%. Find raw DB book value at end of 3 years.",
+        "ar": "الأصل 5000 ومعدل التناقص 20%. أوجد الدفترية غير المقيدة بعد 3 سنوات."
+      },
+      "expected": 2560,
+      "tolerance": 0.0512,
+      "unit": "CU",
+      "solution": {
+        "en": "B3=5000(0.8)^3=2560; D3=0.2×3200=640.",
+        "ar": "الدفترية 2560 وقسط الثالثة 640."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s04-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 22,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 24,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 25,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 29,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 30,
+          "filename": "chapter 5 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "R is annual DB fraction; n* is the source’s extended straight-line life to zero, not the actual service life n.",
+          "ar": "R نسبة تناقص سنوية، و n* العمر الممتد للصفر عند المصدر وليست عمر الخدمة n."
+        },
+        {
+          "en": "Bt=P(1−R)^t; Dt=R Bt−1; Rfit=1−(S/P)^(1/n)\nUnclipped DB equation unless a salvage floor or switch is imposed. Course-specific rate limits are not presented as current tax law.",
+          "ar": "Bt=P(1−R)^t; Dt=R Bt−1; Rfit=1−(S/P)^(1/n)\nمعادلة تناقص غير مقيدة إلا مع فرض حد خردة أو تحويل. حدود معدل المقرر ليست عرضًا لقانون ضريبي حالي."
+        }
+      ],
+      "id": "ee-depreciation-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Raw DDB gives book value below a separately imposed salvage floor. What should the model do?",
+        "ar": "تعطي صيغة التناقص المضاعف قيمة أدنى من حد خردة مفروض مستقلًا. ما المطلوب؟"
+      },
+      "options": [
+        {
+          "en": "Apply the stated floor or switching rule; label the raw curve separately.",
+          "ar": "طبق الحد أو قاعدة التحويل المعلنة وميز المنحنى الخام."
+        },
+        {
+          "en": "Ignore the floor because every DB equation supersedes it.",
+          "ar": "تجاهل الحد لأن معادلة التناقص تتقدم عليه."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Apply the stated floor or switching rule; label the raw curve separately. A mathematical decay curve and an accounting schedule with a terminal constraint are different models.",
+        "ar": "طبق الحد أو قاعدة التحويل المعلنة وميز المنحنى الخام. منحنى الاضمحلال وجدول محاسبي بقيد نهائي نموذجان مختلفان."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s05-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 32,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 33,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 34,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 35,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 21,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "s is the switch date; t−s is time since switch; Dt=Bt−1−Bt.",
+          "ar": "s تاريخ التحويل و t−s الزمن بعده، وقسط السنة فرق الدفتريتين."
+        },
+        {
+          "en": "Bs=P(1−R)^s; Bt=Bs−(t−s)(Bs−S)/(n−s), t≥s\nThe switch is prescribed, with linear fractional-year allocation after s. This is not an automatic optimal-switch algorithm.",
+          "ar": "Bs=P(1−R)^s; Bt=Bs−(t−s)(Bs−S)/(n−s), t≥s\nالتحويل مفروض والتوزيع بعده خطي لكسور السنة؛ ليس خوارزمية تحويل أمثل تلقائية."
+        }
+      ],
+      "id": "ee-depreciation-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Should the straight-line equation after a4.5-year switch use global t=5 as elapsed time?",
+        "ar": "هل تستخدم معادلة الخط بعد تحويل 4.5 الزمن العام 5 مدةً منقضية؟"
+      },
+      "options": [
+        {
+          "en": "No; the elapsed time at year 5 is only 0.5 year since the switch.",
+          "ar": "لا؛ المنقضي منذ التحويل عند 5 هو 0.5 سنة فقط."
+        },
+        {
+          "en": "Yes; a new model must start counting from original year 0.",
+          "ar": "نعم؛ يجب أن يعد النموذج الجديد من الصفر الأصلي."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; the elapsed time at year 5 is only 0.5 year since the switch. A hybrid schedule uses DB first and straight-line later. The switch point must have one book value shared by both pieces. Reset the local time to zero there and distribute only the remaining difference to salvage over the remaining life. A year can straddle the switch: its annual charge is still opening B minus closing B, even if two models operated during it. The lecture’s4.5-year switch is an excellent test of local time.",
+        "ar": "لا؛ المنقضي منذ التحويل عند 5 هو 0.5 سنة فقط. يستخدم الجدول المركب التناقص أولًا ثم القسط الثابت. يجب أن تشترك القطعتان في دفترية واحدة عند التحويل. أعد الزمن المحلي للصفر ووزع الفرق الباقي للخردة على العمر الباقي. قد تعبر سنة نقطة التحويل؛ ويبقى قسطها دفترية الافتتاح ناقص الختام رغم عمل نموذجين. يختبر مثال 4.5 سنة في المحاضرة الزمن المحلي جيدًا."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s05-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 32,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 33,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 34,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 35,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 21,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "s is the switch date; t−s is time since switch; Dt=Bt−1−Bt.",
+          "ar": "s تاريخ التحويل و t−s الزمن بعده، وقسط السنة فرق الدفتريتين."
+        },
+        {
+          "en": "Bs=P(1−R)^s; Bt=Bs−(t−s)(Bs−S)/(n−s), t≥s\nThe switch is prescribed, with linear fractional-year allocation after s. This is not an automatic optimal-switch algorithm.",
+          "ar": "Bs=P(1−R)^s; Bt=Bs−(t−s)(Bs−S)/(n−s), t≥s\nالتحويل مفروض والتوزيع بعده خطي لكسور السنة؛ ليس خوارزمية تحويل أمثل تلقائية."
+        }
+      ],
+      "id": "ee-depreciation-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "P=4000,R=25%; switch at 2 years to straight-line, ending at S=500 in year 5. Find B3.",
+        "ar": "الأصل 4000 والمعدل 25%؛ التحويل عند 2 إلى ثابت ينتهي بخردة 500 في 5. أوجد دفترية 3."
+      },
+      "expected": 1666.6666666666665,
+      "tolerance": 0.03333333333333333,
+      "unit": "CU",
+      "solution": {
+        "en": "B2=4000×0.75²=2250. Remaining life 3 years; B3=2250−(2250−500)/3=1666.666667.",
+        "ar": "دفترية 2 تساوي 2250؛ وباقي العمر 3 فتصبح دفترية 3 قرابة 1666.666667."
+      }
+    },
+    {
+      "concept": "ee-depreciation-s05-concept",
+      "sources": [
+        {
+          "doc": "EE08",
+          "page": 32,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 33,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 34,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE08",
+          "page": 35,
+          "filename": "chapter 5 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 21,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "s is the switch date; t−s is time since switch; Dt=Bt−1−Bt.",
+          "ar": "s تاريخ التحويل و t−s الزمن بعده، وقسط السنة فرق الدفتريتين."
+        },
+        {
+          "en": "Bs=P(1−R)^s; Bt=Bs−(t−s)(Bs−S)/(n−s), t≥s\nThe switch is prescribed, with linear fractional-year allocation after s. This is not an automatic optimal-switch algorithm.",
+          "ar": "Bs=P(1−R)^s; Bt=Bs−(t−s)(Bs−S)/(n−s), t≥s\nالتحويل مفروض والتوزيع بعده خطي لكسور السنة؛ ليس خوارزمية تحويل أمثل تلقائية."
+        }
+      ],
+      "id": "ee-depreciation-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "The year of the switch spans two model segments. How is its annual depreciation checked?",
+        "ar": "تعبر سنة التحويل جزأي نموذجين. كيف يتحقق قسطها السنوي؟"
+      },
+      "options": [
+        {
+          "en": "Apply the old rate to both segments regardless of the specified switch.",
+          "ar": "طبق المعدل القديم على الجزأين بغض النظر عن التحويل."
+        },
+        {
+          "en": "Subtract closing book value from opening book value across the whole year.",
+          "ar": "اطرح دفترية الختام من الافتتاح للسنة كاملة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Subtract closing book value from opening book value across the whole year. Book-value continuity and the annual difference give two independent checks.",
+        "ar": "اطرح دفترية الختام من الافتتاح للسنة كاملة. يعطي اتصال الدفترية والفرق السنوي تحققين مستقلين."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-depreciation-s01-recall",
+      "concept": "ee-depreciation-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: A depreciation charge is an allocation",
+        "ar": "اشرح: قسط الإهلاك توزيع للقيمة"
+      },
+      "a": {
+        "en": "Loss of service suitability need not require physical failure.",
+        "ar": "لا يتطلب فقد صلاحية الخدمة عطلًا ماديًا."
+      }
+    },
+    {
+      "id": "ee-depreciation-s01-formula",
+      "concept": "ee-depreciation-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nBt=P−Σj=1…t Dj; depreciable base=P−S",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nBt=P−Σj=1…t Dj; depreciable base=P−S"
+      },
+      "a": {
+        "en": "P is acquisition basis, S estimated terminal salvage, D charge during a year, B book value after that year. Accounting model and salvage assumptions must be identified; no tax rule is implied by the formula alone.",
+        "ar": "P أساس الاقتناء و S خردة النهاية المقدرة و D قسط السنة و B القيمة الدفترية بعدها. يجب تحديد النموذج المحاسبي وفرض الخردة؛ ولا تحدد المعادلة وحدها قاعدة ضريبية."
+      }
+    },
+    {
+      "id": "ee-depreciation-s01-trap",
+      "concept": "ee-depreciation-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; subtract it as an extra operating payment even in a before-tax cash model.",
+        "ar": "يقول متعلم: نعم؛ اطرحه دفعًا تشغيليًا إضافيًا حتى قبل الضرائب."
+      },
+      "a": {
+        "en": "No; it allocates asset cost, with cash effects only through separately modeled consequences. Loss of service suitability need not require physical failure.",
+        "ar": "لا؛ هو توزيع تكلفة الأصل، وآثاره النقدية تمر بنتائج أخرى ممثلة صراحة. لا يتطلب فقد صلاحية الخدمة عطلًا ماديًا."
+      }
+    },
+    {
+      "id": "ee-depreciation-s02-recall",
+      "concept": "ee-depreciation-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Straight-line: equal slices of the depreciable base",
+        "ar": "اشرح: القسط الثابت: شرائح متساوية من الأساس"
+      },
+      "a": {
+        "en": "The salvage assumption defines the amount being allocated.",
+        "ar": "يحدد فرض الخردة المبلغ الموزع."
+      }
+    },
+    {
+      "id": "ee-depreciation-s02-formula",
+      "concept": "ee-depreciation-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nD=(P−S)/n; Bt=P−t(P−S)/n",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nD=(P−S)/n; Bt=P−t(P−S)/n"
+      },
+      "a": {
+        "en": "D is CU/year; B,P,S are CU; t and n use years. Straight-line allocation over stated life, with the same terminal salvage and any fractional-year convention declared.",
+        "ar": "D نقد/سنة و B و P و S نقد، و t و n بالسنوات. توزيع ثابت على العمر المعطى وبالخردة نفسها مع إعلان اتفاق كسور السنة."
+      }
+    },
+    {
+      "id": "ee-depreciation-s02-trap",
+      "concept": "ee-depreciation-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; the yearly charge and closing balance are identical.",
+        "ar": "يقول متعلم: نعم؛ القسط والرصيد الختامي شيء واحد."
+      },
+      "a": {
+        "en": "No; it is the annual charge; the terminal book value is S. The salvage assumption defines the amount being allocated.",
+        "ar": "لا؛ هو القسط السنوي والقيمة النهائية S. يحدد فرض الخردة المبلغ الموزع."
+      }
+    },
+    {
+      "id": "ee-depreciation-s03-recall",
+      "concept": "ee-depreciation-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Sum-of-years digits: heavier early slices",
+        "ar": "اشرح: مجموع أرقام السنين: شرائح مبكرة أثقل"
+      },
+      "a": {
+        "en": "Rounding should not create or destroy the depreciable amount.",
+        "ar": "لا ينبغي أن يخلق التقريب مبلغ إهلاك أو يفنيه."
+      }
+    },
+    {
+      "id": "ee-depreciation-s03-formula",
+      "concept": "ee-depreciation-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nDt=(n−t+1)(P−S)/[n(n+1)/2]; Bt=S+(P−S)(n−t)(n−t+1)/[n(n+1)]",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nDt=(n−t+1)(P−S)/[n(n+1)/2]; Bt=S+(P−S)(n−t)(n−t+1)/[n(n+1)]"
+      },
+      "a": {
+        "en": "t=1 is the first charge; B0=P and Bn=S. Integer year-end SYD schedule; use a separately stated rule for partial-year charges.",
+        "ar": "t=1 أول قسط و B0=P و Bn=S. جدول نهايات سنوات صحيحة؛ وتحتاج كسور السنة قاعدة مستقلة."
+      }
+    },
+    {
+      "id": "ee-depreciation-s03-trap",
+      "concept": "ee-depreciation-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; early large charges create a larger total cost basis.",
+        "ar": "يقول متعلم: نعم؛ تخلق الأقساط المبكرة أساس تكلفة أكبر."
+      },
+      "a": {
+        "en": "No; it changes when the allocation occurs. Rounding should not create or destroy the depreciable amount.",
+        "ar": "لا؛ يغير توقيت توزيعه. لا ينبغي أن يخلق التقريب مبلغ إهلاك أو يفنيه."
+      }
+    },
+    {
+      "id": "ee-depreciation-s04-recall",
+      "concept": "ee-depreciation-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Declining balance: a constant rate on a shrinking base",
+        "ar": "اشرح: الرصيد المتناقص: معدل ثابت على أساس يتناقص"
+      },
+      "a": {
+        "en": "A mathematical decay curve and an accounting schedule with a terminal constraint are different models.",
+        "ar": "منحنى الاضمحلال وجدول محاسبي بقيد نهائي نموذجان مختلفان."
+      }
+    },
+    {
+      "id": "ee-depreciation-s04-formula",
+      "concept": "ee-depreciation-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nBt=P(1−R)^t; Dt=R Bt−1; Rfit=1−(S/P)^(1/n)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nBt=P(1−R)^t; Dt=R Bt−1; Rfit=1−(S/P)^(1/n)"
+      },
+      "a": {
+        "en": "R is annual DB fraction; n* is the source’s extended straight-line life to zero, not the actual service life n. Unclipped DB equation unless a salvage floor or switch is imposed. Course-specific rate limits are not presented as current tax law.",
+        "ar": "R نسبة تناقص سنوية، و n* العمر الممتد للصفر عند المصدر وليست عمر الخدمة n. معادلة تناقص غير مقيدة إلا مع فرض حد خردة أو تحويل. حدود معدل المقرر ليست عرضًا لقانون ضريبي حالي."
+      }
+    },
+    {
+      "id": "ee-depreciation-s04-trap",
+      "concept": "ee-depreciation-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; a fixed percentage means a fixed cash amount.",
+        "ar": "يقول متعلم: نعم؛ النسبة الثابتة تعني مبلغًا ثابتًا."
+      },
+      "a": {
+        "en": "No; each charge acts on a smaller opening book value. A mathematical decay curve and an accounting schedule with a terminal constraint are different models.",
+        "ar": "لا؛ يطبق كل قسط على دفترية افتتاح أصغر. منحنى الاضمحلال وجدول محاسبي بقيد نهائي نموذجان مختلفان."
+      }
+    },
+    {
+      "id": "ee-depreciation-s05-recall",
+      "concept": "ee-depreciation-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Switch models at a shared book value",
+        "ar": "اشرح: حوّل النماذج عند قيمة دفترية مشتركة"
+      },
+      "a": {
+        "en": "Book-value continuity and the annual difference give two independent checks.",
+        "ar": "يعطي اتصال الدفترية والفرق السنوي تحققين مستقلين."
+      }
+    },
+    {
+      "id": "ee-depreciation-s05-formula",
+      "concept": "ee-depreciation-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nBs=P(1−R)^s; Bt=Bs−(t−s)(Bs−S)/(n−s), t≥s",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nBs=P(1−R)^s; Bt=Bs−(t−s)(Bs−S)/(n−s), t≥s"
+      },
+      "a": {
+        "en": "s is the switch date; t−s is time since switch; Dt=Bt−1−Bt. The switch is prescribed, with linear fractional-year allocation after s. This is not an automatic optimal-switch algorithm.",
+        "ar": "s تاريخ التحويل و t−s الزمن بعده، وقسط السنة فرق الدفتريتين. التحويل مفروض والتوزيع بعده خطي لكسور السنة؛ ليس خوارزمية تحويل أمثل تلقائية."
+      }
+    },
+    {
+      "id": "ee-depreciation-s05-trap",
+      "concept": "ee-depreciation-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; a new model must start counting from original year 0.",
+        "ar": "يقول متعلم: نعم؛ يجب أن يعد النموذج الجديد من الصفر الأصلي."
+      },
+      "a": {
+        "en": "No; the elapsed time at year 5 is only 0.5 year since the switch. Book-value continuity and the annual difference give two independent checks.",
+        "ar": "لا؛ المنقضي منذ التحويل عند 5 هو 0.5 سنة فقط. يعطي اتصال الدفترية والفرق السنوي تحققين مستقلين."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE08",
+      "page": 3,
+      "filename": "chapter 5 EnEc.pdf"
+    },
+    {
+      "doc": "EE08",
+      "page": 16,
+      "filename": "chapter 5 EnEc.pdf"
+    },
+    {
+      "doc": "EE08",
+      "page": 25,
+      "filename": "chapter 5 EnEc.pdf"
+    },
+    {
+      "doc": "EE08",
+      "page": 34,
+      "filename": "chapter 5 EnEc.pdf"
+    }
+  ],
+  "videoIds": [
+    "30Br5MCv_gk",
+    "6CzX1anbEDo",
+    "3RvC0eI2Go4"
+  ]
+}

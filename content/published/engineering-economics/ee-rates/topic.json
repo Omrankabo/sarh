@@ -1,0 +1,1374 @@
+{
+  "id": "ee-rates",
+  "family": "ee-timing",
+  "title": {
+    "en": "Rate conversion: choose one clock",
+    "ar": "تحويل المعدلات: اختر ساعة واحدة"
+  },
+  "summary": {
+    "en": "An annual label, a compounding period and a payment period are three different clocks. Convert them deliberately before using any interest factor.",
+    "ar": "الوصف السنوي وفترة التركيب وفترة الدفع ثلاث ساعات مختلفة. حوّل بينها عمدًا قبل استخدام أي عامل."
+  },
+  "outcomes": [
+    {
+      "en": "A nominal annual quote is a label",
+      "ar": "المعدل الاسمي السنوي وصف لا عائد محقق"
+    },
+    {
+      "en": "Effective rate means actual growth over the interval",
+      "ar": "الفعّال يعني النمو الفعلي خلال الفترة"
+    },
+    {
+      "en": "Convert directly to the payment interval",
+      "ar": "حوّل مباشرة إلى فترة الدفع"
+    },
+    {
+      "en": "Continuous compounding is a limit, not continuous payment",
+      "ar": "التركيب المستمر نهاية لا دفع مستمر"
+    },
+    {
+      "en": "Rates that change create a chain of growth factors",
+      "ar": "المعدلات المتغيرة سلسلة عوامل نمو"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-powers"
+  ],
+  "concepts": [
+    {
+      "id": "ee-rates-s01-concept",
+      "title": {
+        "en": "A nominal annual quote is a label",
+        "ar": "المعدل الاسمي السنوي وصف لا عائد محقق"
+      }
+    },
+    {
+      "id": "ee-rates-s02-concept",
+      "title": {
+        "en": "Effective rate means actual growth over the interval",
+        "ar": "الفعّال يعني النمو الفعلي خلال الفترة"
+      }
+    },
+    {
+      "id": "ee-rates-s03-concept",
+      "title": {
+        "en": "Convert directly to the payment interval",
+        "ar": "حوّل مباشرة إلى فترة الدفع"
+      }
+    },
+    {
+      "id": "ee-rates-s04-concept",
+      "title": {
+        "en": "Continuous compounding is a limit, not continuous payment",
+        "ar": "التركيب المستمر نهاية لا دفع مستمر"
+      }
+    },
+    {
+      "id": "ee-rates-s05-concept",
+      "title": {
+        "en": "Rates that change create a chain of growth factors",
+        "ar": "المعدلات المتغيرة سلسلة عوامل نمو"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-rates-s01",
+      "title": {
+        "en": "A nominal annual quote is a label",
+        "ar": "المعدل الاسمي السنوي وصف لا عائد محقق"
+      },
+      "predict": {
+        "en": "Can a nominal annual quote be inserted unchanged into a monthly factor?",
+        "ar": "هل يدخل المعدل الاسمي السنوي دون تغيير في عامل شهري؟"
+      },
+      "options": [
+        {
+          "en": "No; first obtain the effective rate of the modeled period.",
+          "ar": "لا؛ أوجد أولًا المعدل الفعّال للفترة المستخدمة."
+        },
+        {
+          "en": "Yes; a percent sign makes the time unit irrelevant.",
+          "ar": "نعم؛ علامة النسبة تلغي أهمية الزمن."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; first obtain the effective rate of the modeled period. Nominal and effective rates encode different information.",
+        "ar": "لا؛ أوجد أولًا المعدل الفعّال للفترة المستخدمة. يحمل المعدل الاسمي والفعّال معلومات مختلفة."
+      },
+      "explain": {
+        "en": "A nominal 12% compounded monthly means 1% per month, not an effective 12% earned over a whole year. Nominal r is divided by the stated compounding frequency m to obtain the period rate. The resulting monthly balance then compounds. First write a small rate card: quoted nominal annual rate, compounds per year, and the rate actually used in each recurrence. This prevents attaching the right number to the wrong time unit.",
+        "ar": "يعني الاسمي 12% المركب شهريًا 1% لكل شهر، وليس عائدًا فعّالًا 12% للسنة كاملة. نقسم الاسمي r على عدد مرات التركيب m للحصول على معدل الفترة ثم نركب الرصيد. اكتب بطاقة معدل تضم الوصف السنوي وعدد مرات التركيب والمعدل المستخدم في التكرار؛ كيلا تربط رقمًا صحيحًا بوحدة زمن خاطئة."
+      },
+      "formula": "iperiod=rnominal/m",
+      "symbols": {
+        "en": "r is nominal annual decimal; m is compounds/year; iperiod is per compounding period.",
+        "ar": "r معدل اسمي سنوي عشري و m مرات التركيب في السنة، والناتج معدل فترة التركيب."
+      },
+      "assumptions": {
+        "en": "The quote explicitly states nominal annual rate and frequency. Never divide an effective annual rate this way.",
+        "ar": "يجب أن ينص الوصف على معدل سنوي اسمي وتواتر تركيبه. لا تقسم المعدل السنوي الفعّال بهذه الطريقة."
+      },
+      "example": {
+        "en": "Nominal 12% compounded monthly for 2 years.",
+        "ar": "اسمي 12% يركب شهريًا لمدة سنتين."
+      },
+      "calculation": {
+        "en": "iperiod=0.12/12=0.01; n=24; F/P=1.01^24.",
+        "ar": "المعدل الشهري 0.01 وعدد الفترات 24 وعامل النمو 1.01^24."
+      },
+      "interpret": {
+        "en": "Nominal and effective rates encode different information.",
+        "ar": "يحمل المعدل الاسمي والفعّال معلومات مختلفة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Is effective annual 12% equivalent to monthly 1%?",
+          "ar": "هل الفعّال السنوي 12% يكافئ 1% شهريًا؟"
+        },
+        "answer": {
+          "en": "No; monthly 1% produces an effective annual rate of about 12.6825%.",
+          "ar": "لا؛ ينتج 1% شهريًا فعّالًا سنويًا يقارب 12.6825%."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-rates-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 50,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 51,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-rates-s02",
+      "title": {
+        "en": "Effective rate means actual growth over the interval",
+        "ar": "الفعّال يعني النمو الفعلي خلال الفترة"
+      },
+      "predict": {
+        "en": "At a fixed positive nominal rate, does more frequent compounding lower the effective annual rate?",
+        "ar": "عند اسمي موجب ثابت، هل تقلل كثرة التركيب الفعّال السنوي؟"
+      },
+      "options": [
+        {
+          "en": "Yes; smaller individual period rates always lower the annual total.",
+          "ar": "نعم؛ صغر معدل الفترة يخفض الإجمالي السنوي دائمًا."
+        },
+        {
+          "en": "No; the effective annual rate rises toward its continuous limit.",
+          "ar": "لا؛ يرتفع الفعّال نحو نهايته المستمرة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; the effective annual rate rises toward its continuous limit. Compare growth over a shared interval, not percentages with different clocks.",
+        "ar": "لا؛ يرتفع الفعّال نحو نهايته المستمرة. قارن النمو خلال فترة مشتركة، لا نسبًا لساعات مختلفة."
+      },
+      "explain": {
+        "en": "Take one currency unit through every compounding interval in a year. Subtract the original unit to obtain the effective annual rate. This definition gives a fair common basis for comparing differently compounded quotes. Increasing compounding frequency at a fixed positive nominal rate raises effective annual growth; it does not raise the nominal label. A rate comparison must also keep the other contractual assumptions equal.",
+        "ar": "نمِّ وحدة نقدية عبر كل فترات التركيب في السنة ثم اطرح الأصل للحصول على المعدل السنوي الفعّال. يتيح هذا أساسًا مشتركًا لمقارنة أوصاف مختلفة التركيب. تزيد كثرة التركيب النمو السنوي الفعلي عند اسمي موجب ثابت، لكنها لا تغير الوصف الاسمي. وتتطلب مقارنة المعدلات ثبات الافتراضات التعاقدية الأخرى."
+      },
+      "formula": "ieff,year=(1+r/m)^m−1",
+      "symbols": {
+        "en": "The result is annual effective growth; multiply by 100 only for a percent display.",
+        "ar": "الناتج نمو سنوي فعّال؛ اضرب في 100 لعرضه نسبة مئوية فقط."
+      },
+      "assumptions": {
+        "en": "Constant nominal rate and periodic compounding with no intervening flows or fees.",
+        "ar": "معدل اسمي ثابت وتركيب دوري دون تدفقات أو رسوم وسطية."
+      },
+      "example": {
+        "en": "Nominal 12%, monthly compounding.",
+        "ar": "اسمي 12% مركب شهريًا."
+      },
+      "calculation": {
+        "en": "ieff=1.01^12−1=0.12682503, or 12.682503%.",
+        "ar": "الفعّال 0.12682503 أي 12.682503%."
+      },
+      "interpret": {
+        "en": "Compare growth over a shared interval, not percentages with different clocks.",
+        "ar": "قارن النمو خلال فترة مشتركة، لا نسبًا لساعات مختلفة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Compare 1.5% per month with 9.25% per half-year using annual effective rates. Which is larger?",
+          "ar": "قارن 1.5% شهريًا مع 9.25% لكل نصف سنة على أساس سنوي فعّال. أيهما أكبر؟"
+        },
+        "answer": {
+          "en": "1.5% monthly: about 19.56% versus 19.36% annually.",
+          "ar": "1.5% شهريًا؛ قرابة 19.56% مقابل 19.36% سنويًا."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-rates-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 56,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 58,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 17,
+          "filename": "014 Tuts.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-rates-s03",
+      "title": {
+        "en": "Convert directly to the payment interval",
+        "ar": "حوّل مباشرة إلى فترة الدفع"
+      },
+      "predict": {
+        "en": "Can the effective annual rate simply be divided by the number of annual payments?",
+        "ar": "هل يقسم الفعّال السنوي ببساطة على عدد دفعات السنة؟"
+      },
+      "options": [
+        {
+          "en": "No; take the appropriate growth-factor root.",
+          "ar": "لا؛ خذ الجذر المناسب لعامل النمو."
+        },
+        {
+          "en": "Yes; effective rates are always additive across time.",
+          "ar": "نعم؛ المعدلات الفعّالة تجمع زمنيًا دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; take the appropriate growth-factor root. The factor clock follows the payment spacing after rate conversion.",
+        "ar": "لا؛ خذ الجذر المناسب لعامل النمو. تتبع ساعة العامل تباعد الدفعات بعد تحويل المعدل."
+      },
+      "explain": {
+        "en": "Suppose payments are quarterly but interest compounds monthly. One quarter contains three compound periods, so its effective rate is(1+monthly rate)^3−1. More generally, if there are p payments/year, each payment interval spans m/p compound periods. This is the rate needed by an ordinary payment factor. Do not compound for the whole year and then divide that effective result by four.",
+        "ar": "إن كانت الدفعات ربع سنوية والتركيب شهريًا فالربع ثلاث فترات تركيب، ومعدله الفعّال(1+الشهري)^3−1. عمومًا مع p دفعة في السنة تضم فترة الدفع m/p فترات تركيب. هذا معدل العامل المنتظم المطلوب. لا تحسب الفعّال السنوي ثم تقسمه على أربعة."
+      },
+      "formula": "ipayment=(1+r/m)^(m/p)−1",
+      "symbols": {
+        "en": "p is payment intervals/year; m is compounding intervals/year. The exponent is dimensionless.",
+        "ar": "p فترات الدفع في السنة و m فترات التركيب فيها، والأس بلا أبعاد."
+      },
+      "assumptions": {
+        "en": "Fractional-period equivalence is allowed by this mathematical model. If a bank specifies a different within-period credit rule, follow it explicitly.",
+        "ar": "يفترض النموذج السماح بالتكافؤ لفترات كسرية؛ إن حدد السؤال قاعدة قيد مختلفة داخل الفترة فاتبعها صراحة."
+      },
+      "example": {
+        "en": "Nominal 12% monthly, quarterly payments.",
+        "ar": "اسمي 12% شهري التركيب مع دفعات ربع سنوية."
+      },
+      "calculation": {
+        "en": "iquarter=1.01^3−1=0.030301=3.0301%. For 3 years use n=12 quarterly payments.",
+        "ar": "معدل الربع 3.0301%؛ ولثلاث سنوات استخدم 12 دفعة ربع سنوية."
+      },
+      "interpret": {
+        "en": "The factor clock follows the payment spacing after rate conversion.",
+        "ar": "تتبع ساعة العامل تباعد الدفعات بعد تحويل المعدل."
+      },
+      "check": {
+        "prompt": {
+          "en": "Quarterly deposits and monthly compounding at nominal 18%: which n and i describe 3 years?",
+          "ar": "إيداعات ربع سنوية وتركيب شهري عند اسمي 18%؛ أي n و i يصفان 3 سنوات؟"
+        },
+        "answer": {
+          "en": "n=12 and i=(1.015)^3−1 per quarter.",
+          "ar": "n=12 و i=(1.015)^3−1 لكل ربع."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-rates-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 64,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 73,
+          "filename": "chapter 4 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-rates-s04",
+      "title": {
+        "en": "Continuous compounding is a limit, not continuous payment",
+        "ar": "التركيب المستمر نهاية لا دفع مستمر"
+      },
+      "predict": {
+        "en": "If interest compounds continuously, must deposits also be continuous?",
+        "ar": "إذا كان التركيب مستمرًا فهل يجب أن تكون الإيداعات مستمرة أيضًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; a single dated payment becomes an infinite stream.",
+          "ar": "نعم؛ تتحول الدفعة المؤرخة إلى سيل لا نهائي."
+        },
+        {
+          "en": "No; compounding and cash-payment patterns are separate choices.",
+          "ar": "لا؛ التركيب ونمط دفع النقد اختياران مختلفان."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; compounding and cash-payment patterns are separate choices. The factor needs effective growth over the gap between cash arrows.",
+        "ar": "لا؛ التركيب ونمط دفع النقد اختياران مختلفان. يحتاج العامل النمو الفعلي بين سهمي النقد."
+      },
+      "explain": {
+        "en": "Let the number of compounding intervals grow without bound while holding the nominal annual force r fixed. The growth factor approaches e^(rt). Payments can still occur once a year or on any isolated dates. The effective one-year rate is e^r−1, while the continuous force equivalent to an effective i is ln(1+i). Keep a lump-sum cash arrow distinct from a flow spread continuously over time.",
+        "ar": "زد عدد فترات التركيب بلا حد مع تثبيت القوة السنوية الاسمية r؛ فيقترب عامل النمو من e^(rt). قد تبقى الدفعات سنوية أو في تواريخ مفردة. الفعّال السنوي e^r−1، والقوة المكافئة لمعدل فعّال i هي ln(1+i). ميّز سهم المبلغ المفرد عن تدفق موزع باستمرار عبر الزمن."
+      },
+      "formula": "F=P e^(rt); ieff=e^r−1; r=ln(1+ieff)",
+      "symbols": {
+        "en": "r is a continuous force per year and t is years; r×t must be dimensionless.",
+        "ar": "r قوة تركيب مستمرة لكل سنة و t سنوات؛ ويلزم أن يكون rt بلا أبعاد."
+      },
+      "assumptions": {
+        "en": "Constant continuous force. This does not imply money is deposited continuously.",
+        "ar": "قوة مستمرة ثابتة؛ ولا يعني ذلك إيداع المال بصورة مستمرة."
+      },
+      "example": {
+        "en": "1000 CU, r=12% continuously for 2 years.",
+        "ar": "أصل 1000 وقوة 12% مستمرة لسنتين."
+      },
+      "calculation": {
+        "en": "F=1000e^0.24≈1271.24915; annual effective=e^0.12−1≈12.749685%.",
+        "ar": "النهائي 1271.24915 تقريبًا، والفعّال السنوي 12.749685% تقريبًا."
+      },
+      "interpret": {
+        "en": "The factor needs effective growth over the gap between cash arrows.",
+        "ar": "يحتاج العامل النمو الفعلي بين سهمي النقد."
+      },
+      "check": {
+        "prompt": {
+          "en": "Use a discrete annual-payment factor under a continuous force r. Which effective rate belongs inside that factor?",
+          "ar": "عند استخدام عامل دفعات سنوية متقطعة مع قوة مستمرة r، ما المعدل داخله؟"
+        },
+        "answer": {
+          "en": "i=e^r−1, not r.",
+          "ar": "i=e^r−1، لا r نفسها."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-rates-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 62,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 72,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 73,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-rates-s05",
+      "title": {
+        "en": "Rates that change create a chain of growth factors",
+        "ar": "المعدلات المتغيرة سلسلة عوامل نمو"
+      },
+      "predict": {
+        "en": "Does an arithmetic mean of changing rates always preserve the final amount?",
+        "ar": "هل يحافظ المتوسط الحسابي للمعدلات المتغيرة دائمًا على النهائي؟"
+      },
+      "options": [
+        {
+          "en": "No; multiply the actual growth factors over the applicable intervals.",
+          "ar": "لا؛ اضرب عوامل النمو الفعلية للفترات المعنية."
+        },
+        {
+          "en": "Yes; only the total years matter.",
+          "ar": "نعم؛ المهم مجموع السنوات فقط."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; multiply the actual growth factors over the applicable intervals. Money accrues only across intervals during which it exists in the model.",
+        "ar": "لا؛ اضرب عوامل النمو الفعلية للفترات المعنية. ينمو المال فقط عبر الفترات التي يوجد فيها داخل النموذج."
+      },
+      "explain": {
+        "en": "If the rate changes, a payment crossing both regimes experiences both growth factors in sequence. A payment after the change experiences only the later regime. Break the timeline at the rate-change date, accumulate the earlier payments to that boundary, then combine them with later payments. A single arithmetic average rate generally does not preserve the project’s equivalence.",
+        "ar": "إذا تغير المعدل فإن مبلغًا يعبر النظامين يمر بعامليهما بالتتابع، بينما لا يتأثر المبلغ اللاحق إلا بالنظام الأخير. اقسم الخط عند التغير ونمِّ الدفعات القديمة إلى الحد ثم اجمعها مع اللاحقة. لا يحافظ المتوسط الحسابي الواحد للمعدلات عمومًا على التكافؤ."
+      },
+      "formula": "F=P Πk(1+ik)^nk; discount with reciprocal products",
+      "symbols": {
+        "en": "Each ik applies only over nk periods of its own regime.",
+        "ar": "يطبق كل ik على nk من فترات نظامه فقط."
+      },
+      "assumptions": {
+        "en": "Known rates and boundaries; payments at a boundary are assigned once.",
+        "ar": "معدلات وحدود معلومة، وتحتسب الدفعة الواقعة عند الحد مرة واحدة."
+      },
+      "example": {
+        "en": "1000 earns 5% in year 1 then 10% in year 2.",
+        "ar": "تنمو 1000 بمعدل 5% في الأولى ثم 10% في الثانية."
+      },
+      "calculation": {
+        "en": "F=1000×1.05×1.10=1155; using 7.5% twice gives 1155.625 and is not exactly equivalent.",
+        "ar": "النهائي 1155؛ بينما يعطي 7.5% مرتين 1155.625 فلا يتطابق تمامًا."
+      },
+      "interpret": {
+        "en": "Money accrues only across intervals during which it exists in the model.",
+        "ar": "ينمو المال فقط عبر الفترات التي يوجد فيها داخل النموذج."
+      },
+      "check": {
+        "prompt": {
+          "en": "A new deposit is made immediately after the rate changes. Should it receive the earlier regime’s growth?",
+          "ar": "يتم إيداع جديد بعد تغير المعدل مباشرة. هل يحصل على نمو النظام السابق؟"
+        },
+        "answer": {
+          "en": "No; it was not present during that regime.",
+          "ar": "لا؛ لم يكن موجودًا خلاله."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-rates-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        },
+        {
+          "doc": "EE01",
+          "page": 17,
+          "filename": "013 Tut .pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-rates-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 50,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 51,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "r is nominal annual decimal; m is compounds/year; iperiod is per compounding period.",
+          "ar": "r معدل اسمي سنوي عشري و m مرات التركيب في السنة، والناتج معدل فترة التركيب."
+        },
+        {
+          "en": "iperiod=rnominal/m\nThe quote explicitly states nominal annual rate and frequency. Never divide an effective annual rate this way.",
+          "ar": "iperiod=rnominal/m\nيجب أن ينص الوصف على معدل سنوي اسمي وتواتر تركيبه. لا تقسم المعدل السنوي الفعّال بهذه الطريقة."
+        }
+      ],
+      "id": "ee-rates-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can a nominal annual quote be inserted unchanged into a monthly factor?",
+        "ar": "هل يدخل المعدل الاسمي السنوي دون تغيير في عامل شهري؟"
+      },
+      "options": [
+        {
+          "en": "No; first obtain the effective rate of the modeled period.",
+          "ar": "لا؛ أوجد أولًا المعدل الفعّال للفترة المستخدمة."
+        },
+        {
+          "en": "Yes; a percent sign makes the time unit irrelevant.",
+          "ar": "نعم؛ علامة النسبة تلغي أهمية الزمن."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; first obtain the effective rate of the modeled period. A nominal 12% compounded monthly means 1% per month, not an effective 12% earned over a whole year. Nominal r is divided by the stated compounding frequency m to obtain the period rate. The resulting monthly balance then compounds. First write a small rate card: quoted nominal annual rate, compounds per year, and the rate actually used in each recurrence. This prevents attaching the right number to the wrong time unit.",
+        "ar": "لا؛ أوجد أولًا المعدل الفعّال للفترة المستخدمة. يعني الاسمي 12% المركب شهريًا 1% لكل شهر، وليس عائدًا فعّالًا 12% للسنة كاملة. نقسم الاسمي r على عدد مرات التركيب m للحصول على معدل الفترة ثم نركب الرصيد. اكتب بطاقة معدل تضم الوصف السنوي وعدد مرات التركيب والمعدل المستخدم في التكرار؛ كيلا تربط رقمًا صحيحًا بوحدة زمن خاطئة."
+      }
+    },
+    {
+      "concept": "ee-rates-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 50,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 51,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "r is nominal annual decimal; m is compounds/year; iperiod is per compounding period.",
+          "ar": "r معدل اسمي سنوي عشري و m مرات التركيب في السنة، والناتج معدل فترة التركيب."
+        },
+        {
+          "en": "iperiod=rnominal/m\nThe quote explicitly states nominal annual rate and frequency. Never divide an effective annual rate this way.",
+          "ar": "iperiod=rnominal/m\nيجب أن ينص الوصف على معدل سنوي اسمي وتواتر تركيبه. لا تقسم المعدل السنوي الفعّال بهذه الطريقة."
+        }
+      ],
+      "id": "ee-rates-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Nominal 18% annually, compounded monthly. Find the monthly rate in percent.",
+        "ar": "المعدل الاسمي السنوي 18% يركب شهريًا. أوجد المعدل الشهري المئوي."
+      },
+      "expected": 1.5,
+      "tolerance": 0.005,
+      "unit": "percent/month",
+      "solution": {
+        "en": "18/12=1.5% per month; decimal 0.015.",
+        "ar": "18/12=1.5% شهريًا، أي 0.015 عشريًا."
+      }
+    },
+    {
+      "concept": "ee-rates-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 50,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 51,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "r is nominal annual decimal; m is compounds/year; iperiod is per compounding period.",
+          "ar": "r معدل اسمي سنوي عشري و m مرات التركيب في السنة، والناتج معدل فترة التركيب."
+        },
+        {
+          "en": "iperiod=rnominal/m\nThe quote explicitly states nominal annual rate and frequency. Never divide an effective annual rate this way.",
+          "ar": "iperiod=rnominal/m\nيجب أن ينص الوصف على معدل سنوي اسمي وتواتر تركيبه. لا تقسم المعدل السنوي الفعّال بهذه الطريقة."
+        }
+      ],
+      "id": "ee-rates-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Is effective annual 12% equivalent to monthly 1%?",
+        "ar": "هل الفعّال السنوي 12% يكافئ 1% شهريًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; divide every annual rate by 12.",
+          "ar": "نعم؛ اقسم أي معدل سنوي على 12."
+        },
+        {
+          "en": "No; monthly 1% produces an effective annual rate of about 12.6825%.",
+          "ar": "لا؛ ينتج 1% شهريًا فعّالًا سنويًا يقارب 12.6825%."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; monthly 1% produces an effective annual rate of about 12.6825%. Nominal and effective rates encode different information.",
+        "ar": "لا؛ ينتج 1% شهريًا فعّالًا سنويًا يقارب 12.6825%. يحمل المعدل الاسمي والفعّال معلومات مختلفة."
+      }
+    },
+    {
+      "concept": "ee-rates-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 56,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 58,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 17,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The result is annual effective growth; multiply by 100 only for a percent display.",
+          "ar": "الناتج نمو سنوي فعّال؛ اضرب في 100 لعرضه نسبة مئوية فقط."
+        },
+        {
+          "en": "ieff,year=(1+r/m)^m−1\nConstant nominal rate and periodic compounding with no intervening flows or fees.",
+          "ar": "ieff,year=(1+r/m)^m−1\nمعدل اسمي ثابت وتركيب دوري دون تدفقات أو رسوم وسطية."
+        }
+      ],
+      "id": "ee-rates-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At a fixed positive nominal rate, does more frequent compounding lower the effective annual rate?",
+        "ar": "عند اسمي موجب ثابت، هل تقلل كثرة التركيب الفعّال السنوي؟"
+      },
+      "options": [
+        {
+          "en": "Yes; smaller individual period rates always lower the annual total.",
+          "ar": "نعم؛ صغر معدل الفترة يخفض الإجمالي السنوي دائمًا."
+        },
+        {
+          "en": "No; the effective annual rate rises toward its continuous limit.",
+          "ar": "لا؛ يرتفع الفعّال نحو نهايته المستمرة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; the effective annual rate rises toward its continuous limit. Take one currency unit through every compounding interval in a year. Subtract the original unit to obtain the effective annual rate. This definition gives a fair common basis for comparing differently compounded quotes. Increasing compounding frequency at a fixed positive nominal rate raises effective annual growth; it does not raise the nominal label. A rate comparison must also keep the other contractual assumptions equal.",
+        "ar": "لا؛ يرتفع الفعّال نحو نهايته المستمرة. نمِّ وحدة نقدية عبر كل فترات التركيب في السنة ثم اطرح الأصل للحصول على المعدل السنوي الفعّال. يتيح هذا أساسًا مشتركًا لمقارنة أوصاف مختلفة التركيب. تزيد كثرة التركيب النمو السنوي الفعلي عند اسمي موجب ثابت، لكنها لا تغير الوصف الاسمي. وتتطلب مقارنة المعدلات ثبات الافتراضات التعاقدية الأخرى."
+      }
+    },
+    {
+      "concept": "ee-rates-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 56,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 58,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 17,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The result is annual effective growth; multiply by 100 only for a percent display.",
+          "ar": "الناتج نمو سنوي فعّال؛ اضرب في 100 لعرضه نسبة مئوية فقط."
+        },
+        {
+          "en": "ieff,year=(1+r/m)^m−1\nConstant nominal rate and periodic compounding with no intervening flows or fees.",
+          "ar": "ieff,year=(1+r/m)^m−1\nمعدل اسمي ثابت وتركيب دوري دون تدفقات أو رسوم وسطية."
+        }
+      ],
+      "id": "ee-rates-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Nominal 10% compounded quarterly. Find effective annual rate as a percent.",
+        "ar": "اسمي 10% مركب ربع سنويًا. أوجد الفعّال السنوي المئوي."
+      },
+      "expected": 10.381289062499954,
+      "tolerance": 0.005,
+      "unit": "percent",
+      "solution": {
+        "en": "(1.025^4−1)×100=10.381289%.",
+        "ar": "الفعّال 10.381289%."
+      }
+    },
+    {
+      "concept": "ee-rates-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 56,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 58,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE02",
+          "page": 17,
+          "filename": "014 Tuts.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "The result is annual effective growth; multiply by 100 only for a percent display.",
+          "ar": "الناتج نمو سنوي فعّال؛ اضرب في 100 لعرضه نسبة مئوية فقط."
+        },
+        {
+          "en": "ieff,year=(1+r/m)^m−1\nConstant nominal rate and periodic compounding with no intervening flows or fees.",
+          "ar": "ieff,year=(1+r/m)^m−1\nمعدل اسمي ثابت وتركيب دوري دون تدفقات أو رسوم وسطية."
+        }
+      ],
+      "id": "ee-rates-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Compare 1.5% per month with 9.25% per half-year using annual effective rates. Which is larger?",
+        "ar": "قارن 1.5% شهريًا مع 9.25% لكل نصف سنة على أساس سنوي فعّال. أيهما أكبر؟"
+      },
+      "options": [
+        {
+          "en": "1.5% monthly: about 19.56% versus 19.36% annually.",
+          "ar": "1.5% شهريًا؛ قرابة 19.56% مقابل 19.36% سنويًا."
+        },
+        {
+          "en": "9.25% per half-year must be larger because 9.25>1.5.",
+          "ar": "نصف السنوي أكبر حتمًا لأن 9.25 أكبر من 1.5."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "1.5% monthly: about 19.56% versus 19.36% annually. Compare growth over a shared interval, not percentages with different clocks.",
+        "ar": "1.5% شهريًا؛ قرابة 19.56% مقابل 19.36% سنويًا. قارن النمو خلال فترة مشتركة، لا نسبًا لساعات مختلفة."
+      }
+    },
+    {
+      "concept": "ee-rates-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 64,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 73,
+          "filename": "chapter 4 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "p is payment intervals/year; m is compounding intervals/year. The exponent is dimensionless.",
+          "ar": "p فترات الدفع في السنة و m فترات التركيب فيها، والأس بلا أبعاد."
+        },
+        {
+          "en": "ipayment=(1+r/m)^(m/p)−1\nFractional-period equivalence is allowed by this mathematical model. If a bank specifies a different within-period credit rule, follow it explicitly.",
+          "ar": "ipayment=(1+r/m)^(m/p)−1\nيفترض النموذج السماح بالتكافؤ لفترات كسرية؛ إن حدد السؤال قاعدة قيد مختلفة داخل الفترة فاتبعها صراحة."
+        }
+      ],
+      "id": "ee-rates-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can the effective annual rate simply be divided by the number of annual payments?",
+        "ar": "هل يقسم الفعّال السنوي ببساطة على عدد دفعات السنة؟"
+      },
+      "options": [
+        {
+          "en": "No; take the appropriate growth-factor root.",
+          "ar": "لا؛ خذ الجذر المناسب لعامل النمو."
+        },
+        {
+          "en": "Yes; effective rates are always additive across time.",
+          "ar": "نعم؛ المعدلات الفعّالة تجمع زمنيًا دائمًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; take the appropriate growth-factor root. Suppose payments are quarterly but interest compounds monthly. One quarter contains three compound periods, so its effective rate is(1+monthly rate)^3−1. More generally, if there are p payments/year, each payment interval spans m/p compound periods. This is the rate needed by an ordinary payment factor. Do not compound for the whole year and then divide that effective result by four.",
+        "ar": "لا؛ خذ الجذر المناسب لعامل النمو. إن كانت الدفعات ربع سنوية والتركيب شهريًا فالربع ثلاث فترات تركيب، ومعدله الفعّال(1+الشهري)^3−1. عمومًا مع p دفعة في السنة تضم فترة الدفع m/p فترات تركيب. هذا معدل العامل المنتظم المطلوب. لا تحسب الفعّال السنوي ثم تقسمه على أربعة."
+      }
+    },
+    {
+      "concept": "ee-rates-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 64,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 73,
+          "filename": "chapter 4 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "p is payment intervals/year; m is compounding intervals/year. The exponent is dimensionless.",
+          "ar": "p فترات الدفع في السنة و m فترات التركيب فيها، والأس بلا أبعاد."
+        },
+        {
+          "en": "ipayment=(1+r/m)^(m/p)−1\nFractional-period equivalence is allowed by this mathematical model. If a bank specifies a different within-period credit rule, follow it explicitly.",
+          "ar": "ipayment=(1+r/m)^(m/p)−1\nيفترض النموذج السماح بالتكافؤ لفترات كسرية؛ إن حدد السؤال قاعدة قيد مختلفة داخل الفترة فاتبعها صراحة."
+        }
+      ],
+      "id": "ee-rates-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Effective annual rate is 21%. Find the effective half-year rate, as a percent.",
+        "ar": "الفعّال السنوي 21%. أوجد الفعّال لنصف سنة نسبة مئوية."
+      },
+      "expected": 10,
+      "tolerance": 0.005,
+      "unit": "percent/half-year",
+      "solution": {
+        "en": "sqrt(1.21)−1=0.1=10%. Check 1.1²=1.21.",
+        "ar": "جذر 1.21 ناقص 1 يساوي 10%، ويتحقق من 1.1²=1.21."
+      }
+    },
+    {
+      "concept": "ee-rates-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 64,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE07",
+          "page": 73,
+          "filename": "chapter 4 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "p is payment intervals/year; m is compounding intervals/year. The exponent is dimensionless.",
+          "ar": "p فترات الدفع في السنة و m فترات التركيب فيها، والأس بلا أبعاد."
+        },
+        {
+          "en": "ipayment=(1+r/m)^(m/p)−1\nFractional-period equivalence is allowed by this mathematical model. If a bank specifies a different within-period credit rule, follow it explicitly.",
+          "ar": "ipayment=(1+r/m)^(m/p)−1\nيفترض النموذج السماح بالتكافؤ لفترات كسرية؛ إن حدد السؤال قاعدة قيد مختلفة داخل الفترة فاتبعها صراحة."
+        }
+      ],
+      "id": "ee-rates-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Quarterly deposits and monthly compounding at nominal 18%: which n and i describe 3 years?",
+        "ar": "إيداعات ربع سنوية وتركيب شهري عند اسمي 18%؛ أي n و i يصفان 3 سنوات؟"
+      },
+      "options": [
+        {
+          "en": "n=36 and i=18% for the quarterly payment factor.",
+          "ar": "n=36 و i=18% لعامل الدفعات الربع سنوية."
+        },
+        {
+          "en": "n=12 and i=(1.015)^3−1 per quarter.",
+          "ar": "n=12 و i=(1.015)^3−1 لكل ربع."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "n=12 and i=(1.015)^3−1 per quarter. The factor clock follows the payment spacing after rate conversion.",
+        "ar": "n=12 و i=(1.015)^3−1 لكل ربع. تتبع ساعة العامل تباعد الدفعات بعد تحويل المعدل."
+      }
+    },
+    {
+      "concept": "ee-rates-s04-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 62,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 72,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 73,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "r is a continuous force per year and t is years; r×t must be dimensionless.",
+          "ar": "r قوة تركيب مستمرة لكل سنة و t سنوات؛ ويلزم أن يكون rt بلا أبعاد."
+        },
+        {
+          "en": "F=P e^(rt); ieff=e^r−1; r=ln(1+ieff)\nConstant continuous force. This does not imply money is deposited continuously.",
+          "ar": "F=P e^(rt); ieff=e^r−1; r=ln(1+ieff)\nقوة مستمرة ثابتة؛ ولا يعني ذلك إيداع المال بصورة مستمرة."
+        }
+      ],
+      "id": "ee-rates-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "If interest compounds continuously, must deposits also be continuous?",
+        "ar": "إذا كان التركيب مستمرًا فهل يجب أن تكون الإيداعات مستمرة أيضًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; a single dated payment becomes an infinite stream.",
+          "ar": "نعم؛ تتحول الدفعة المؤرخة إلى سيل لا نهائي."
+        },
+        {
+          "en": "No; compounding and cash-payment patterns are separate choices.",
+          "ar": "لا؛ التركيب ونمط دفع النقد اختياران مختلفان."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; compounding and cash-payment patterns are separate choices. Let the number of compounding intervals grow without bound while holding the nominal annual force r fixed. The growth factor approaches e^(rt). Payments can still occur once a year or on any isolated dates. The effective one-year rate is e^r−1, while the continuous force equivalent to an effective i is ln(1+i). Keep a lump-sum cash arrow distinct from a flow spread continuously over time.",
+        "ar": "لا؛ التركيب ونمط دفع النقد اختياران مختلفان. زد عدد فترات التركيب بلا حد مع تثبيت القوة السنوية الاسمية r؛ فيقترب عامل النمو من e^(rt). قد تبقى الدفعات سنوية أو في تواريخ مفردة. الفعّال السنوي e^r−1، والقوة المكافئة لمعدل فعّال i هي ln(1+i). ميّز سهم المبلغ المفرد عن تدفق موزع باستمرار عبر الزمن."
+      }
+    },
+    {
+      "concept": "ee-rates-s04-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 62,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 72,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 73,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "r is a continuous force per year and t is years; r×t must be dimensionless.",
+          "ar": "r قوة تركيب مستمرة لكل سنة و t سنوات؛ ويلزم أن يكون rt بلا أبعاد."
+        },
+        {
+          "en": "F=P e^(rt); ieff=e^r−1; r=ln(1+ieff)\nConstant continuous force. This does not imply money is deposited continuously.",
+          "ar": "F=P e^(rt); ieff=e^r−1; r=ln(1+ieff)\nقوة مستمرة ثابتة؛ ولا يعني ذلك إيداع المال بصورة مستمرة."
+        }
+      ],
+      "id": "ee-rates-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Find F for 2000 CU at a continuous force of 8% per year over 3 years.",
+        "ar": "أوجد النهائي لأصل 2000 بقوة مستمرة 8% سنويًا لثلاث سنوات."
+      },
+      "expected": 2542.4983006428097,
+      "tolerance": 0.0508499660128562,
+      "unit": "CU",
+      "solution": {
+        "en": "F=2000e^(0.08×3)=2542.498301 CU.",
+        "ar": "النهائي 2542.498301."
+      }
+    },
+    {
+      "concept": "ee-rates-s04-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 62,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 72,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 73,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "r is a continuous force per year and t is years; r×t must be dimensionless.",
+          "ar": "r قوة تركيب مستمرة لكل سنة و t سنوات؛ ويلزم أن يكون rt بلا أبعاد."
+        },
+        {
+          "en": "F=P e^(rt); ieff=e^r−1; r=ln(1+ieff)\nConstant continuous force. This does not imply money is deposited continuously.",
+          "ar": "F=P e^(rt); ieff=e^r−1; r=ln(1+ieff)\nقوة مستمرة ثابتة؛ ولا يعني ذلك إيداع المال بصورة مستمرة."
+        }
+      ],
+      "id": "ee-rates-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Use a discrete annual-payment factor under a continuous force r. Which effective rate belongs inside that factor?",
+        "ar": "عند استخدام عامل دفعات سنوية متقطعة مع قوة مستمرة r، ما المعدل داخله؟"
+      },
+      "options": [
+        {
+          "en": "i=e^r−1, not r.",
+          "ar": "i=e^r−1، لا r نفسها."
+        },
+        {
+          "en": "i=r automatically, because both are annual.",
+          "ar": "i=r تلقائيًا لأن كليهما سنوي."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "i=e^r−1, not r. The factor needs effective growth over the gap between cash arrows.",
+        "ar": "i=e^r−1، لا r نفسها. يحتاج العامل النمو الفعلي بين سهمي النقد."
+      }
+    },
+    {
+      "concept": "ee-rates-s05-concept",
+      "sources": [
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        },
+        {
+          "doc": "EE01",
+          "page": 17,
+          "filename": "013 Tut .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Each ik applies only over nk periods of its own regime.",
+          "ar": "يطبق كل ik على nk من فترات نظامه فقط."
+        },
+        {
+          "en": "F=P Πk(1+ik)^nk; discount with reciprocal products\nKnown rates and boundaries; payments at a boundary are assigned once.",
+          "ar": "F=P Πk(1+ik)^nk; discount with reciprocal products\nمعدلات وحدود معلومة، وتحتسب الدفعة الواقعة عند الحد مرة واحدة."
+        }
+      ],
+      "id": "ee-rates-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does an arithmetic mean of changing rates always preserve the final amount?",
+        "ar": "هل يحافظ المتوسط الحسابي للمعدلات المتغيرة دائمًا على النهائي؟"
+      },
+      "options": [
+        {
+          "en": "No; multiply the actual growth factors over the applicable intervals.",
+          "ar": "لا؛ اضرب عوامل النمو الفعلية للفترات المعنية."
+        },
+        {
+          "en": "Yes; only the total years matter.",
+          "ar": "نعم؛ المهم مجموع السنوات فقط."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; multiply the actual growth factors over the applicable intervals. If the rate changes, a payment crossing both regimes experiences both growth factors in sequence. A payment after the change experiences only the later regime. Break the timeline at the rate-change date, accumulate the earlier payments to that boundary, then combine them with later payments. A single arithmetic average rate generally does not preserve the project’s equivalence.",
+        "ar": "لا؛ اضرب عوامل النمو الفعلية للفترات المعنية. إذا تغير المعدل فإن مبلغًا يعبر النظامين يمر بعامليهما بالتتابع، بينما لا يتأثر المبلغ اللاحق إلا بالنظام الأخير. اقسم الخط عند التغير ونمِّ الدفعات القديمة إلى الحد ثم اجمعها مع اللاحقة. لا يحافظ المتوسط الحسابي الواحد للمعدلات عمومًا على التكافؤ."
+      }
+    },
+    {
+      "concept": "ee-rates-s05-concept",
+      "sources": [
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        },
+        {
+          "doc": "EE01",
+          "page": 17,
+          "filename": "013 Tut .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Each ik applies only over nk periods of its own regime.",
+          "ar": "يطبق كل ik على nk من فترات نظامه فقط."
+        },
+        {
+          "en": "F=P Πk(1+ik)^nk; discount with reciprocal products\nKnown rates and boundaries; payments at a boundary are assigned once.",
+          "ar": "F=P Πk(1+ik)^nk; discount with reciprocal products\nمعدلات وحدود معلومة، وتحتسب الدفعة الواقعة عند الحد مرة واحدة."
+        }
+      ],
+      "id": "ee-rates-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "1000 CU grows 8% for 2 years then 6% for 1 year. Find final balance.",
+        "ar": "تنمو 1000 بمعدل 8% لسنتين ثم 6% لسنة. أوجد الرصيد النهائي."
+      },
+      "expected": 1236.3840000000002,
+      "tolerance": 0.024727680000000005,
+      "unit": "CU",
+      "solution": {
+        "en": "1000(1.08)^2(1.06)=1236.384 CU.",
+        "ar": "النهائي 1236.384."
+      }
+    },
+    {
+      "concept": "ee-rates-s05-concept",
+      "sources": [
+        {
+          "doc": "EE12",
+          "page": 2,
+          "filename": "Economics tests.pdf"
+        },
+        {
+          "doc": "EE01",
+          "page": 17,
+          "filename": "013 Tut .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Each ik applies only over nk periods of its own regime.",
+          "ar": "يطبق كل ik على nk من فترات نظامه فقط."
+        },
+        {
+          "en": "F=P Πk(1+ik)^nk; discount with reciprocal products\nKnown rates and boundaries; payments at a boundary are assigned once.",
+          "ar": "F=P Πk(1+ik)^nk; discount with reciprocal products\nمعدلات وحدود معلومة، وتحتسب الدفعة الواقعة عند الحد مرة واحدة."
+        }
+      ],
+      "id": "ee-rates-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A new deposit is made immediately after the rate changes. Should it receive the earlier regime’s growth?",
+        "ar": "يتم إيداع جديد بعد تغير المعدل مباشرة. هل يحصل على نمو النظام السابق؟"
+      },
+      "options": [
+        {
+          "en": "Yes; every deposit in the account uses every historical rate.",
+          "ar": "نعم؛ تستخدم كل دفعة كل المعدلات التاريخية."
+        },
+        {
+          "en": "No; it was not present during that regime.",
+          "ar": "لا؛ لم يكن موجودًا خلاله."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; it was not present during that regime. Money accrues only across intervals during which it exists in the model.",
+        "ar": "لا؛ لم يكن موجودًا خلاله. ينمو المال فقط عبر الفترات التي يوجد فيها داخل النموذج."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-rates-s01-recall",
+      "concept": "ee-rates-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: A nominal annual quote is a label",
+        "ar": "اشرح: المعدل الاسمي السنوي وصف لا عائد محقق"
+      },
+      "a": {
+        "en": "Nominal and effective rates encode different information.",
+        "ar": "يحمل المعدل الاسمي والفعّال معلومات مختلفة."
+      }
+    },
+    {
+      "id": "ee-rates-s01-formula",
+      "concept": "ee-rates-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\niperiod=rnominal/m",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\niperiod=rnominal/m"
+      },
+      "a": {
+        "en": "r is nominal annual decimal; m is compounds/year; iperiod is per compounding period. The quote explicitly states nominal annual rate and frequency. Never divide an effective annual rate this way.",
+        "ar": "r معدل اسمي سنوي عشري و m مرات التركيب في السنة، والناتج معدل فترة التركيب. يجب أن ينص الوصف على معدل سنوي اسمي وتواتر تركيبه. لا تقسم المعدل السنوي الفعّال بهذه الطريقة."
+      }
+    },
+    {
+      "id": "ee-rates-s01-trap",
+      "concept": "ee-rates-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; a percent sign makes the time unit irrelevant.",
+        "ar": "يقول متعلم: نعم؛ علامة النسبة تلغي أهمية الزمن."
+      },
+      "a": {
+        "en": "No; first obtain the effective rate of the modeled period. Nominal and effective rates encode different information.",
+        "ar": "لا؛ أوجد أولًا المعدل الفعّال للفترة المستخدمة. يحمل المعدل الاسمي والفعّال معلومات مختلفة."
+      }
+    },
+    {
+      "id": "ee-rates-s02-recall",
+      "concept": "ee-rates-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Effective rate means actual growth over the interval",
+        "ar": "اشرح: الفعّال يعني النمو الفعلي خلال الفترة"
+      },
+      "a": {
+        "en": "Compare growth over a shared interval, not percentages with different clocks.",
+        "ar": "قارن النمو خلال فترة مشتركة، لا نسبًا لساعات مختلفة."
+      }
+    },
+    {
+      "id": "ee-rates-s02-formula",
+      "concept": "ee-rates-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nieff,year=(1+r/m)^m−1",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nieff,year=(1+r/m)^m−1"
+      },
+      "a": {
+        "en": "The result is annual effective growth; multiply by 100 only for a percent display. Constant nominal rate and periodic compounding with no intervening flows or fees.",
+        "ar": "الناتج نمو سنوي فعّال؛ اضرب في 100 لعرضه نسبة مئوية فقط. معدل اسمي ثابت وتركيب دوري دون تدفقات أو رسوم وسطية."
+      }
+    },
+    {
+      "id": "ee-rates-s02-trap",
+      "concept": "ee-rates-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; smaller individual period rates always lower the annual total.",
+        "ar": "يقول متعلم: نعم؛ صغر معدل الفترة يخفض الإجمالي السنوي دائمًا."
+      },
+      "a": {
+        "en": "No; the effective annual rate rises toward its continuous limit. Compare growth over a shared interval, not percentages with different clocks.",
+        "ar": "لا؛ يرتفع الفعّال نحو نهايته المستمرة. قارن النمو خلال فترة مشتركة، لا نسبًا لساعات مختلفة."
+      }
+    },
+    {
+      "id": "ee-rates-s03-recall",
+      "concept": "ee-rates-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Convert directly to the payment interval",
+        "ar": "اشرح: حوّل مباشرة إلى فترة الدفع"
+      },
+      "a": {
+        "en": "The factor clock follows the payment spacing after rate conversion.",
+        "ar": "تتبع ساعة العامل تباعد الدفعات بعد تحويل المعدل."
+      }
+    },
+    {
+      "id": "ee-rates-s03-formula",
+      "concept": "ee-rates-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nipayment=(1+r/m)^(m/p)−1",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nipayment=(1+r/m)^(m/p)−1"
+      },
+      "a": {
+        "en": "p is payment intervals/year; m is compounding intervals/year. The exponent is dimensionless. Fractional-period equivalence is allowed by this mathematical model. If a bank specifies a different within-period credit rule, follow it explicitly.",
+        "ar": "p فترات الدفع في السنة و m فترات التركيب فيها، والأس بلا أبعاد. يفترض النموذج السماح بالتكافؤ لفترات كسرية؛ إن حدد السؤال قاعدة قيد مختلفة داخل الفترة فاتبعها صراحة."
+      }
+    },
+    {
+      "id": "ee-rates-s03-trap",
+      "concept": "ee-rates-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; effective rates are always additive across time.",
+        "ar": "يقول متعلم: نعم؛ المعدلات الفعّالة تجمع زمنيًا دائمًا."
+      },
+      "a": {
+        "en": "No; take the appropriate growth-factor root. The factor clock follows the payment spacing after rate conversion.",
+        "ar": "لا؛ خذ الجذر المناسب لعامل النمو. تتبع ساعة العامل تباعد الدفعات بعد تحويل المعدل."
+      }
+    },
+    {
+      "id": "ee-rates-s04-recall",
+      "concept": "ee-rates-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Continuous compounding is a limit, not continuous payment",
+        "ar": "اشرح: التركيب المستمر نهاية لا دفع مستمر"
+      },
+      "a": {
+        "en": "The factor needs effective growth over the gap between cash arrows.",
+        "ar": "يحتاج العامل النمو الفعلي بين سهمي النقد."
+      }
+    },
+    {
+      "id": "ee-rates-s04-formula",
+      "concept": "ee-rates-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nF=P e^(rt); ieff=e^r−1; r=ln(1+ieff)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nF=P e^(rt); ieff=e^r−1; r=ln(1+ieff)"
+      },
+      "a": {
+        "en": "r is a continuous force per year and t is years; r×t must be dimensionless. Constant continuous force. This does not imply money is deposited continuously.",
+        "ar": "r قوة تركيب مستمرة لكل سنة و t سنوات؛ ويلزم أن يكون rt بلا أبعاد. قوة مستمرة ثابتة؛ ولا يعني ذلك إيداع المال بصورة مستمرة."
+      }
+    },
+    {
+      "id": "ee-rates-s04-trap",
+      "concept": "ee-rates-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; a single dated payment becomes an infinite stream.",
+        "ar": "يقول متعلم: نعم؛ تتحول الدفعة المؤرخة إلى سيل لا نهائي."
+      },
+      "a": {
+        "en": "No; compounding and cash-payment patterns are separate choices. The factor needs effective growth over the gap between cash arrows.",
+        "ar": "لا؛ التركيب ونمط دفع النقد اختياران مختلفان. يحتاج العامل النمو الفعلي بين سهمي النقد."
+      }
+    },
+    {
+      "id": "ee-rates-s05-recall",
+      "concept": "ee-rates-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Rates that change create a chain of growth factors",
+        "ar": "اشرح: المعدلات المتغيرة سلسلة عوامل نمو"
+      },
+      "a": {
+        "en": "Money accrues only across intervals during which it exists in the model.",
+        "ar": "ينمو المال فقط عبر الفترات التي يوجد فيها داخل النموذج."
+      }
+    },
+    {
+      "id": "ee-rates-s05-formula",
+      "concept": "ee-rates-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nF=P Πk(1+ik)^nk; discount with reciprocal products",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nF=P Πk(1+ik)^nk; discount with reciprocal products"
+      },
+      "a": {
+        "en": "Each ik applies only over nk periods of its own regime. Known rates and boundaries; payments at a boundary are assigned once.",
+        "ar": "يطبق كل ik على nk من فترات نظامه فقط. معدلات وحدود معلومة، وتحتسب الدفعة الواقعة عند الحد مرة واحدة."
+      }
+    },
+    {
+      "id": "ee-rates-s05-trap",
+      "concept": "ee-rates-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; only the total years matter.",
+        "ar": "يقول متعلم: نعم؛ المهم مجموع السنوات فقط."
+      },
+      "a": {
+        "en": "No; multiply the actual growth factors over the applicable intervals. Money accrues only across intervals during which it exists in the model.",
+        "ar": "لا؛ اضرب عوامل النمو الفعلية للفترات المعنية. ينمو المال فقط عبر الفترات التي يوجد فيها داخل النموذج."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE06",
+      "page": 50,
+      "filename": "chapter 3 EnEc.pdf"
+    },
+    {
+      "doc": "EE06",
+      "page": 62,
+      "filename": "chapter 3 EnEc.pdf"
+    },
+    {
+      "doc": "EE06",
+      "page": 72,
+      "filename": "chapter 3 EnEc.pdf"
+    }
+  ],
+  "videoIds": [
+    "-_Zc8KNpTkw",
+    "ddVaiumu0tI"
+  ]
+}

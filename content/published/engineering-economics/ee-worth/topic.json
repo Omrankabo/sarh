@@ -1,0 +1,1356 @@
+{
+  "id": "ee-worth",
+  "family": "ee-comparison",
+  "title": {
+    "en": "Present, future and annual worth: compare the same service",
+    "ar": "القيمة الحالية والمستقبلية والسنوية: قارن الخدمة نفسها"
+  },
+  "summary": {
+    "en": "Two machines can look different in price, upkeep and salvage. Give them the same time basis and service requirement, then explain the economic consequence instead of merely choosing the largest number.",
+    "ar": "تختلف آلتان في الشراء والصيانة والخردة. وحّد الزمن والخدمة ثم اشرح النتيجة الاقتصادية بدل اختيار أكبر رقم بلا تفسير."
+  },
+  "outcomes": [
+    {
+      "en": "Present worth condenses the whole timeline",
+      "ar": "تختصر القيمة الحالية الخط كله"
+    },
+    {
+      "en": "Future worth changes the reference date",
+      "ar": "تغير القيمة المستقبلية تاريخ المرجع"
+    },
+    {
+      "en": "Annual worth and capital recovery",
+      "ar": "القيمة السنوية واسترداد رأس المال"
+    },
+    {
+      "en": "Different lives need a service horizon",
+      "ar": "الأعمار المختلفة تحتاج أفق خدمة"
+    },
+    {
+      "en": "Incremental choice: is the extra investment justified?",
+      "ar": "الاختيار الإضافي: هل يستحق الإنفاق الزائد؟"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-powers"
+  ],
+  "concepts": [
+    {
+      "id": "ee-worth-s01-concept",
+      "title": {
+        "en": "Present worth condenses the whole timeline",
+        "ar": "تختصر القيمة الحالية الخط كله"
+      }
+    },
+    {
+      "id": "ee-worth-s02-concept",
+      "title": {
+        "en": "Future worth changes the reference date",
+        "ar": "تغير القيمة المستقبلية تاريخ المرجع"
+      }
+    },
+    {
+      "id": "ee-worth-s03-concept",
+      "title": {
+        "en": "Annual worth and capital recovery",
+        "ar": "القيمة السنوية واسترداد رأس المال"
+      }
+    },
+    {
+      "id": "ee-worth-s04-concept",
+      "title": {
+        "en": "Different lives need a service horizon",
+        "ar": "الأعمار المختلفة تحتاج أفق خدمة"
+      }
+    },
+    {
+      "id": "ee-worth-s05-concept",
+      "title": {
+        "en": "Incremental choice: is the extra investment justified?",
+        "ar": "الاختيار الإضافي: هل يستحق الإنفاق الزائد؟"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-worth-s01",
+      "title": {
+        "en": "Present worth condenses the whole timeline",
+        "ar": "تختصر القيمة الحالية الخط كله"
+      },
+      "predict": {
+        "en": "Can a project with total receipts exceeding its total cost still have negative PW?",
+        "ar": "هل تكون الحالية سالبة رغم تجاوز مجموع المقبوضات مجموع التكلفة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; timing and the chosen discount rate can reverse that impression.",
+          "ar": "نعم؛ قد يغير التوقيت والمعدل هذا الانطباع."
+        },
+        {
+          "en": "No; nominal profit automatically implies positive PW.",
+          "ar": "لا؛ الربح الاسمي يعني حالية موجبة تلقائيًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Yes; timing and the chosen discount rate can reverse that impression. Keep signed worth and positive cost magnitudes distinct.",
+        "ar": "نعم؛ قد يغير التوقيت والمعدل هذا الانطباع. ميّز القيمة بإشارتها عن مقدار التكلفة الموجب."
+      },
+      "explain": {
+        "en": "A project’s present worth is the signed sum of every receipt and disbursement moved to the chosen zero. Initial cost is already at zero and is not discounted one extra year. Positive PW for a conventional independent project means the forecast clears the chosen hurdle rate under the model. It is not a guarantee that uncertain forecasts will happen. For mutually exclusive alternatives, compare feasible same-service options on a common horizon.",
+        "ar": "الحالية مجموع كل المقبوضات والمدفوعات بإشاراتها بعد نقلها للصفر. التكلفة الأولية عند الصفر أصلًا فلا تخصم سنة إضافية. تعني الحالية الموجبة لمشروع مستقل تقليدي تجاوز معدل القبول المختار وفق التوقعات، لا ضمان تحققها. للبدائل المتنافية قارن الخدمة الممكنة نفسها خلال أفق واحد."
+      },
+      "formula": "PW(i)=Σt=0…n Ct(1+i)^−t",
+      "symbols": {
+        "en": "Ct is signed money at t; i is the effective discount rate matching t; MARR is a decision assumption.",
+        "ar": "Ct نقد بإشارته عند t، و i معدل خصم فعّال متوافق معه؛ ومعدل القبول فرض قرار."
+      },
+      "assumptions": {
+        "en": "All relevant incremental cash effects included once, same basis, no hidden financing double count.",
+        "ar": "تضمين كل الآثار النقدية الإضافية ذات الصلة مرة واحدة وبأساس مشترك ودون عد التمويل مرتين."
+      },
+      "example": {
+        "en": "Cost 10000 now, receipts 4000 in years 1…3, i=10%.",
+        "ar": "تكلفة 10000 الآن ومقبوض 4000 في 1 إلى 3 عند 10%."
+      },
+      "calculation": {
+        "en": "PW=−10000+4000(P/A,10%,3)=−52.592036 CU. A near-positive nominal total 12000 is not enough.",
+        "ar": "الحالية−52.592036؛ ولا يكفي الإجمالي الاسمي 12000."
+      },
+      "interpret": {
+        "en": "Keep signed worth and positive cost magnitudes distinct.",
+        "ar": "ميّز القيمة بإشارتها عن مقدار التكلفة الموجب."
+      },
+      "check": {
+        "prompt": {
+          "en": "A cost-only alternative has PW=−9000 and another−10000 with equal service. Which is less costly?",
+          "ar": "بديل تكلفة فقط حاليته−9000 وآخر−10000 لخدمة واحدة. أيهما أقل تكلفة؟"
+        },
+        "answer": {
+          "en": "−9000, the higher signed worth and lower cost magnitude.",
+          "ar": "−9000؛ قيمته الموقعة أعلى ومقدار تكلفته أقل."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-worth-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 3,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 6,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "experiment": "npv"
+    },
+    {
+      "id": "ee-worth-s02",
+      "title": {
+        "en": "Future worth changes the reference date",
+        "ar": "تغير القيمة المستقبلية تاريخ المرجع"
+      },
+      "predict": {
+        "en": "Can consistent PW and FW calculations give opposite feasibility signs?",
+        "ar": "هل تعطي الحالية والمستقبلية المتسقتان إشارتين متعاكستين للجدوى؟"
+      },
+      "options": [
+        {
+          "en": "Yes; future worth is a different project.",
+          "ar": "نعم؛ المستقبلية مشروع مختلف."
+        },
+        {
+          "en": "No; a positive common growth factor preserves sign.",
+          "ar": "لا؛ يحفظ عامل النمو المشترك الموجب الإشارة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; a positive common growth factor preserves sign. A comparison metric has a time coordinate as well as an amount.",
+        "ar": "لا؛ يحفظ عامل النمو المشترك الموجب الإشارة. للمؤشر إحداثي زمني إلى جانب المبلغ."
+      },
+      "explain": {
+        "en": "Once every cash arrow has been included in PW, moving that combined amount to year n gives FW. It must agree with growing each original arrow individually to n. For the same horizon and positive growth factor, PW and FW have the same sign and give the same ranking. That equivalence fails if one alternative is grown to a different endpoint without a meaningful service comparison.",
+        "ar": "بعد إدخال كل سهم في الحالية، يعطي نقل المجموع إلى n القيمة المستقبلية. ويجب أن تطابق تنمية السهام الأصلية منفردة إلى n. للأفق نفسه وعامل نمو موجب تتطابق إشارة الحالية والمستقبلية وترتيبهما. لا يصح ذلك إذا نُمي بديل إلى نهاية مختلفة دون مقارنة خدمة ذات معنى."
+      },
+      "formula": "FW(i,n)=PW(i)(1+i)^n=Σ Ct(1+i)^(n−t)",
+      "symbols": {
+        "en": "n is the shared future comparison date; future cash at t=n has exponent 0.",
+        "ar": "n تاريخ المقارنة المستقبلي المشترك، وللنقد عند n أس صفر."
+      },
+      "assumptions": {
+        "en": "Same rate, cash flows and horizon for both methods.",
+        "ar": "المعدل والتدفقات والأفق نفسها للطريقتين."
+      },
+      "example": {
+        "en": "Use cost 1000 at 0 and 600 at 1 and 2, i=10%.",
+        "ar": "تكلفة 1000 عند 0 ومقبوض 600 عند 1 و 2 بمعدل 10%."
+      },
+      "calculation": {
+        "en": "FW 2=−1000(1.1)²+600(1.1)+600=50; PW=50/1.21=41.322314.",
+        "ar": "المستقبلية 50 والحالية 50/1.21=41.322314."
+      },
+      "interpret": {
+        "en": "A comparison metric has a time coordinate as well as an amount.",
+        "ar": "للمؤشر إحداثي زمني إلى جانب المبلغ."
+      },
+      "check": {
+        "prompt": {
+          "en": "A checks PW over 5 years while B checks FW over 8 years. Is comparing the two numbers directly valid?",
+          "ar": "يقاس A بحالية 5 سنوات و B بمستقبلية 8 سنوات. هل تقارن الرقمين مباشرة؟"
+        },
+        "answer": {
+          "en": "No; establish a common horizon and focal date.",
+          "ar": "لا؛ حدد أفقًا وتاريخًا مرجعيًا مشتركين."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-worth-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 24,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 51,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-worth-s03",
+      "title": {
+        "en": "Annual worth and capital recovery",
+        "ar": "القيمة السنوية واسترداد رأس المال"
+      },
+      "predict": {
+        "en": "Is EUAC simply purchase cost divided by life when i>0 and salvage exists?",
+        "ar": "هل EUAC مجرد سعر الشراء مقسومًا على العمر مع معدل موجب وخردة؟"
+      },
+      "options": [
+        {
+          "en": "No; include time value and the dated salvage credit.",
+          "ar": "لا؛ أدخل أثر الزمن ورصيد الخردة المؤرخ."
+        },
+        {
+          "en": "Yes; interest and salvage are irrelevant to annual cost.",
+          "ar": "نعم؛ لا يؤثر المعدل والخردة في السنوية."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; include time value and the dated salvage credit. Factor identities can expose a missing salvage-return term.",
+        "ar": "لا؛ أدخل أثر الزمن ورصيد الخردة المؤرخ. تكشف هويات العوامل بند عائد الخردة المفقود."
+      },
+      "explain": {
+        "en": "An annual equivalent replaces the project by equal year-end amounts over its stated life. For a cost-only machine, recover its purchase cost, credit its eventual salvage and add annual operating cost. The salvage reduces annual cost but does not cancel the entire purchase. The identity CR=(P−S)(A/P)+iS is useful for checking the more familiar P(A/P)−S(A/F).",
+        "ar": "يستبدل المكافئ السنوي المشروع بمبالغ متساوية آخر السنوات على عمره. للآلة ذات التكلفة فقط استرد الشراء واطرح رصيد الخردة وأضف التشغيل السنوي. تقلل الخردة السنوية ولا تلغي الشراء. تفيد هوية CR=(P−S)(A/P)+iS في تدقيق الصيغة P(A/P)−S(A/F)."
+      },
+      "formula": "AW=PW(A/P,i,n); EUAC=P(A/P)−S(A/F)+O&M",
+      "symbols": {
+        "en": "EUAC is positive equivalent annual cost; AW is signed annual worth. O&M is an equal annual expense.",
+        "ar": "EUAC مقدار تكلفة سنوية مكافئة موجب و AW قيمة سنوية موقعة؛ والتشغيل مصروف سنوي متساوٍ."
+      },
+      "assumptions": {
+        "en": "Same life and rate within each machine calculation; unequal-life ranking additionally needs a service/repeatability assumption.",
+        "ar": "عمر ومعدل متوافقان داخل كل حساب؛ ومقارنة الأعمار المختلفة تحتاج فرض خدمة وتكرار."
+      },
+      "example": {
+        "en": "P=10000,S=2000,n=5,i=10%,annual O&M=500.",
+        "ar": "الأصل 10000 والخردة 2000 والعمر 5 والمعدل 10% والتشغيل 500 سنويًا."
+      },
+      "calculation": {
+        "en": "EUAC=10000(A/P,10%,5)−2000(A/F,10%,5)+500≈2810.379846 CU/year.",
+        "ar": "التكلفة السنوية المكافئة 2810.379846 تقريبًا."
+      },
+      "interpret": {
+        "en": "Factor identities can expose a missing salvage-return term.",
+        "ar": "تكشف هويات العوامل بند عائد الخردة المفقود."
+      },
+      "check": {
+        "prompt": {
+          "en": "Two CR expressions differ by iS. What identity should be checked?",
+          "ar": "تختلف صيغتا استرداد رأس المال بمقدار iS. ما الهوية المطلوبة؟"
+        },
+        "answer": {
+          "en": "A/P=A/F+i, so(P−S)(A/P)+iS equals P(A/P)−S(A/F).",
+          "ar": "A/P=A/F+i، فتتساوى الصيغتان المذكورتان."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-worth-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 25,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 33,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 35,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-worth-s04",
+      "title": {
+        "en": "Different lives need a service horizon",
+        "ar": "الأعمار المختلفة تحتاج أفق خدمة"
+      },
+      "predict": {
+        "en": "Does taking the least common multiple automatically prove repeatability?",
+        "ar": "هل يثبت أخذ المضاعف المشترك الأصغر إمكان التكرار تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; arithmetic guarantees identical future technologies.",
+          "ar": "نعم؛ يضمن الحساب التقنيات المستقبلية نفسها."
+        },
+        {
+          "en": "No; repeatability is an assumption about future service and costs.",
+          "ar": "لا؛ التكرار فرض عن الخدمة والتكاليف المستقبلية."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; repeatability is an assumption about future service and costs. Asset life and the owner’s required service horizon are separate inputs.",
+        "ar": "لا؛ التكرار فرض عن الخدمة والتكاليف المستقبلية. عمر الأصل وأفق الخدمة المطلوب مدخلان منفصلان."
+      },
+      "explain": {
+        "en": "A four-year machine and a six-year machine cannot be compared by their first-cycle PW alone if both are supposed to provide 12 years of service. Repeat each cycle to the 12-year common multiple only if repeatability is credible. Alternatively, use the actual common study period with replacement and terminal values. Annual worth gives a convenient comparison under repeatable identical cycles; it does not make all future replacements free.",
+        "ar": "لا تقارن حالية دورة آلة 4 سنوات وأخرى 6 إذا كان المطلوب خدمة 12 سنة دون تمثيل الباقي. كرر الدورات إلى المضاعف المشترك فقط إن كان التكرار معقولًا، أو استخدم فترة الدراسة الفعلية مع الاستبدال والقيم النهائية. تسهل السنوية المقارنة بدورات متكررة متطابقة ولا تجعل الاستبدالات مجانية."
+      },
+      "formula": "common-horizon PW=Σcycle PW/(1+i)^(cycle start)",
+      "symbols": {
+        "en": "Cycle starts and replacement cash must be dated; salvage and repurchase at one boundary may be netted once.",
+        "ar": "تؤرخ بدايات الدورات والاستبدالات، ويمكن تجميع البيع وإعادة الشراء في الحد نفسه مرة واحدة."
+      },
+      "assumptions": {
+        "en": "Equivalent service and explicitly repeatable cycles, or a stated finite study period with terminal values.",
+        "ar": "خدمة متكافئة ودورات قابلة للتكرار صراحة، أو أفق محدود بقيم نهائية محددة."
+      },
+      "example": {
+        "en": "Machine lives 4 and 6 years; repeatability assumed; choose 12 year horizon.",
+        "ar": "عمرا الآلتين 4 و 6 والتكرار مفروض؛ اختر أفق 12 سنة."
+      },
+      "calculation": {
+        "en": "4-year option repeats 3 cycles;6-year option repeats 2. A replacement at year 12 is outside the service horizon, but the final salvage at 12 is included.",
+        "ar": "الأولى 3 دورات والثانيةدورتان. الشراء الجديد عند 12 خارج الأفق، لكن خردة النهاية عند 12 داخله."
+      },
+      "interpret": {
+        "en": "Asset life and the owner’s required service horizon are separate inputs.",
+        "ar": "عمر الأصل وأفق الخدمة المطلوب مدخلان منفصلان."
+      },
+      "check": {
+        "prompt": {
+          "en": "A real project ends in 7 years while one machine lasts 10. What is needed?",
+          "ar": "ينتهي المشروع بعد 7 سنوات وعمر آلة 10. ما المطلوب؟"
+        },
+        "answer": {
+          "en": "Its value at year 7 and a comparison on the actual 7-year service horizon.",
+          "ar": "قيمتها عند 7 ومقارنة على أفق الخدمة الفعلي 7 سنوات."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-worth-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 10,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE10",
+          "page": 11,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-worth-s05",
+      "title": {
+        "en": "Incremental choice: is the extra investment justified?",
+        "ar": "الاختيار الإضافي: هل يستحق الإنفاق الزائد؟"
+      },
+      "predict": {
+        "en": "Should the largest standalone IRR always win among mutually exclusive projects?",
+        "ar": "هل يفوز أعلى عائد داخلي منفرد دائمًا بين مشاريع متنافية؟"
+      },
+      "options": [
+        {
+          "en": "No; examine the incremental cash flows and the common decision basis.",
+          "ar": "لا؛ افحص التدفقات الإضافية والأساس المشترك للقرار."
+        },
+        {
+          "en": "Yes; scale never matters.",
+          "ar": "نعم؛ لا يؤثر حجم المشروع أبدًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; examine the incremental cash flows and the common decision basis. Incremental analysis refines a feasible decision; it does not remove its constraints.",
+        "ar": "لا؛ افحص التدفقات الإضافية والأساس المشترك للقرار. يحسن التحليل الإضافي قرارًا ممكنًا ولا يحذف قيوده."
+      },
+      "explain": {
+        "en": "For mutually exclusive alternatives, the question is whether paying extra for the larger option creates enough extra benefit. Subtract lower-investment cash flows from higher-investment flows at every date. A positive incremental PW at the common hurdle rate supports the extra investment, provided the base alternative itself is feasible. A high standalone percentage return is not enough to rank projects of different scale.",
+        "ar": "للبدائل المتنافية اسأل هل يخلق ثمن الأكبر الإضافي منفعة إضافية كافية. اطرح تدفقات الأقل استثمارًا من الأعلى عند كل تاريخ. تدعم الحالية الإضافية الموجبة الإنفاق الزائد بالمعدل المشترك مع صلاحية البديل الأساسي. ولا تكفي أعلى نسبة عائد منفردة لترتيب أحجام مختلفة."
+      },
+      "formula": "ΔPW=PWlarge−PWsmall; choose extra investment if ΔPW>0",
+      "symbols": {
+        "en": "Differences are between matching dates, service and horizon.",
+        "ar": "الفروق بين تواريخ وخدمة وأفق متطابقة."
+      },
+      "assumptions": {
+        "en": "Mutually exclusive feasible alternatives, common MARR and consistent service assumptions.",
+        "ar": "بدائل متنافية ممكنة ومعدل قبول مشترك وافتراضات خدمة متسقة."
+      },
+      "example": {
+        "en": "Extra initial cost 2000 CU buys extra annual savings 600 for 5 years at 10%.",
+        "ar": "تكلفة أولية إضافية 2000 تشتري توفيرًا إضافيًا 600 سنويًا لخمسسنوات عند 10%."
+      },
+      "calculation": {
+        "en": "ΔPW=−2000+600(P/A,10%,5)≈274.472062 CU, so the increment clears this hurdle.",
+        "ar": "الحالية الإضافية 274.472062 تقريبًا، فتجتاز الزيادة هذا المعدل."
+      },
+      "interpret": {
+        "en": "Incremental analysis refines a feasible decision; it does not remove its constraints.",
+        "ar": "يحسن التحليل الإضافي قرارًا ممكنًا ولا يحذف قيوده."
+      },
+      "check": {
+        "prompt": {
+          "en": "Both alternatives fail a mandatory safety constraint. Does positive incremental PW make one acceptable?",
+          "ar": "يخفق البديلان في قيد سلامة إلزامي. هل تجيز الحالية الإضافية الموجبة أحدهما؟"
+        },
+        "answer": {
+          "en": "No; restore technical feasibility before economic ranking.",
+          "ar": "لا؛ حقق الصلاحية الفنية قبل الترتيب الاقتصادي."
+        }
+      },
+      "diagram": "econ-worth",
+      "concepts": [
+        "ee-worth-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 3,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE10",
+          "page": 13,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "experiment": "npv"
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-worth-s01-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 3,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 6,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Ct is signed money at t; i is the effective discount rate matching t; MARR is a decision assumption.",
+          "ar": "Ct نقد بإشارته عند t، و i معدل خصم فعّال متوافق معه؛ ومعدل القبول فرض قرار."
+        },
+        {
+          "en": "PW(i)=Σt=0…n Ct(1+i)^−t\nAll relevant incremental cash effects included once, same basis, no hidden financing double count.",
+          "ar": "PW(i)=Σt=0…n Ct(1+i)^−t\nتضمين كل الآثار النقدية الإضافية ذات الصلة مرة واحدة وبأساس مشترك ودون عد التمويل مرتين."
+        }
+      ],
+      "id": "ee-worth-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can a project with total receipts exceeding its total cost still have negative PW?",
+        "ar": "هل تكون الحالية سالبة رغم تجاوز مجموع المقبوضات مجموع التكلفة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; timing and the chosen discount rate can reverse that impression.",
+          "ar": "نعم؛ قد يغير التوقيت والمعدل هذا الانطباع."
+        },
+        {
+          "en": "No; nominal profit automatically implies positive PW.",
+          "ar": "لا؛ الربح الاسمي يعني حالية موجبة تلقائيًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Yes; timing and the chosen discount rate can reverse that impression. A project’s present worth is the signed sum of every receipt and disbursement moved to the chosen zero. Initial cost is already at zero and is not discounted one extra year. Positive PW for a conventional independent project means the forecast clears the chosen hurdle rate under the model. It is not a guarantee that uncertain forecasts will happen. For mutually exclusive alternatives, compare feasible same-service options on a common horizon.",
+        "ar": "نعم؛ قد يغير التوقيت والمعدل هذا الانطباع. الحالية مجموع كل المقبوضات والمدفوعات بإشاراتها بعد نقلها للصفر. التكلفة الأولية عند الصفر أصلًا فلا تخصم سنة إضافية. تعني الحالية الموجبة لمشروع مستقل تقليدي تجاوز معدل القبول المختار وفق التوقعات، لا ضمان تحققها. للبدائل المتنافية قارن الخدمة الممكنة نفسها خلال أفق واحد."
+      }
+    },
+    {
+      "concept": "ee-worth-s01-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 3,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 6,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Ct is signed money at t; i is the effective discount rate matching t; MARR is a decision assumption.",
+          "ar": "Ct نقد بإشارته عند t، و i معدل خصم فعّال متوافق معه؛ ومعدل القبول فرض قرار."
+        },
+        {
+          "en": "PW(i)=Σt=0…n Ct(1+i)^−t\nAll relevant incremental cash effects included once, same basis, no hidden financing double count.",
+          "ar": "PW(i)=Σt=0…n Ct(1+i)^−t\nتضمين كل الآثار النقدية الإضافية ذات الصلة مرة واحدة وبأساس مشترك ودون عد التمويل مرتين."
+        }
+      ],
+      "id": "ee-worth-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Initial 1000 cost, year 1 receipt 600 and year 2 receipt 600, i=10%. Find signed PW.",
+        "ar": "تكلفة 1000 الآن ومقبوض 600 عند 1 و 600 عند 2 بمعدل 10%. أوجد الحالية بإشارتها."
+      },
+      "expected": 41.32231404958662,
+      "tolerance": 0.005,
+      "unit": "CU",
+      "solution": {
+        "en": "−1000+600/1.1+600/1.1²=41.322314 CU.",
+        "ar": "الحالية 41.322314."
+      }
+    },
+    {
+      "concept": "ee-worth-s01-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 3,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 6,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Ct is signed money at t; i is the effective discount rate matching t; MARR is a decision assumption.",
+          "ar": "Ct نقد بإشارته عند t، و i معدل خصم فعّال متوافق معه؛ ومعدل القبول فرض قرار."
+        },
+        {
+          "en": "PW(i)=Σt=0…n Ct(1+i)^−t\nAll relevant incremental cash effects included once, same basis, no hidden financing double count.",
+          "ar": "PW(i)=Σt=0…n Ct(1+i)^−t\nتضمين كل الآثار النقدية الإضافية ذات الصلة مرة واحدة وبأساس مشترك ودون عد التمويل مرتين."
+        }
+      ],
+      "id": "ee-worth-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A cost-only alternative has PW=−9000 and another−10000 with equal service. Which is less costly?",
+        "ar": "بديل تكلفة فقط حاليته−9000 وآخر−10000 لخدمة واحدة. أيهما أقل تكلفة؟"
+      },
+      "options": [
+        {
+          "en": "−10000 because its absolute number is larger.",
+          "ar": "−10000 لأن مقداره المطلق أكبر."
+        },
+        {
+          "en": "−9000, the higher signed worth and lower cost magnitude.",
+          "ar": "−9000؛ قيمته الموقعة أعلى ومقدار تكلفته أقل."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "−9000, the higher signed worth and lower cost magnitude. Keep signed worth and positive cost magnitudes distinct.",
+        "ar": "−9000؛ قيمته الموقعة أعلى ومقدار تكلفته أقل. ميّز القيمة بإشارتها عن مقدار التكلفة الموجب."
+      }
+    },
+    {
+      "concept": "ee-worth-s02-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 24,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 51,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "n is the shared future comparison date; future cash at t=n has exponent 0.",
+          "ar": "n تاريخ المقارنة المستقبلي المشترك، وللنقد عند n أس صفر."
+        },
+        {
+          "en": "FW(i,n)=PW(i)(1+i)^n=Σ Ct(1+i)^(n−t)\nSame rate, cash flows and horizon for both methods.",
+          "ar": "FW(i,n)=PW(i)(1+i)^n=Σ Ct(1+i)^(n−t)\nالمعدل والتدفقات والأفق نفسها للطريقتين."
+        }
+      ],
+      "id": "ee-worth-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can consistent PW and FW calculations give opposite feasibility signs?",
+        "ar": "هل تعطي الحالية والمستقبلية المتسقتان إشارتين متعاكستين للجدوى؟"
+      },
+      "options": [
+        {
+          "en": "Yes; future worth is a different project.",
+          "ar": "نعم؛ المستقبلية مشروع مختلف."
+        },
+        {
+          "en": "No; a positive common growth factor preserves sign.",
+          "ar": "لا؛ يحفظ عامل النمو المشترك الموجب الإشارة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; a positive common growth factor preserves sign. Once every cash arrow has been included in PW, moving that combined amount to year n gives FW. It must agree with growing each original arrow individually to n. For the same horizon and positive growth factor, PW and FW have the same sign and give the same ranking. That equivalence fails if one alternative is grown to a different endpoint without a meaningful service comparison.",
+        "ar": "لا؛ يحفظ عامل النمو المشترك الموجب الإشارة. بعد إدخال كل سهم في الحالية، يعطي نقل المجموع إلى n القيمة المستقبلية. ويجب أن تطابق تنمية السهام الأصلية منفردة إلى n. للأفق نفسه وعامل نمو موجب تتطابق إشارة الحالية والمستقبلية وترتيبهما. لا يصح ذلك إذا نُمي بديل إلى نهاية مختلفة دون مقارنة خدمة ذات معنى."
+      }
+    },
+    {
+      "concept": "ee-worth-s02-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 24,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 51,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "n is the shared future comparison date; future cash at t=n has exponent 0.",
+          "ar": "n تاريخ المقارنة المستقبلي المشترك، وللنقد عند n أس صفر."
+        },
+        {
+          "en": "FW(i,n)=PW(i)(1+i)^n=Σ Ct(1+i)^(n−t)\nSame rate, cash flows and horizon for both methods.",
+          "ar": "FW(i,n)=PW(i)(1+i)^n=Σ Ct(1+i)^(n−t)\nالمعدل والتدفقات والأفق نفسها للطريقتين."
+        }
+      ],
+      "id": "ee-worth-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "PW=2500 CU at 8%; find FW after 4 years.",
+        "ar": "الحالية 2500 عند 8%. أوجد المستقبلية بعد 4 سنوات."
+      },
+      "expected": 3401.2224000000006,
+      "tolerance": 0.06802444800000002,
+      "unit": "CU",
+      "solution": {
+        "en": "FW=2500(1.08)^4=3401.2224 CU.",
+        "ar": "المستقبلية 3401.2224."
+      }
+    },
+    {
+      "concept": "ee-worth-s02-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 24,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 51,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "n is the shared future comparison date; future cash at t=n has exponent 0.",
+          "ar": "n تاريخ المقارنة المستقبلي المشترك، وللنقد عند n أس صفر."
+        },
+        {
+          "en": "FW(i,n)=PW(i)(1+i)^n=Σ Ct(1+i)^(n−t)\nSame rate, cash flows and horizon for both methods.",
+          "ar": "FW(i,n)=PW(i)(1+i)^n=Σ Ct(1+i)^(n−t)\nالمعدل والتدفقات والأفق نفسها للطريقتين."
+        }
+      ],
+      "id": "ee-worth-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A checks PW over 5 years while B checks FW over 8 years. Is comparing the two numbers directly valid?",
+        "ar": "يقاس A بحالية 5 سنوات و B بمستقبلية 8 سنوات. هل تقارن الرقمين مباشرة؟"
+      },
+      "options": [
+        {
+          "en": "No; establish a common horizon and focal date.",
+          "ar": "لا؛ حدد أفقًا وتاريخًا مرجعيًا مشتركين."
+        },
+        {
+          "en": "Yes; the larger currency amount wins regardless of date.",
+          "ar": "نعم؛ يفوز الأكبر بغض النظر عن التاريخ."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; establish a common horizon and focal date. A comparison metric has a time coordinate as well as an amount.",
+        "ar": "لا؛ حدد أفقًا وتاريخًا مرجعيًا مشتركين. للمؤشر إحداثي زمني إلى جانب المبلغ."
+      }
+    },
+    {
+      "concept": "ee-worth-s03-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 25,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 33,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 35,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "EUAC is positive equivalent annual cost; AW is signed annual worth. O&M is an equal annual expense.",
+          "ar": "EUAC مقدار تكلفة سنوية مكافئة موجب و AW قيمة سنوية موقعة؛ والتشغيل مصروف سنوي متساوٍ."
+        },
+        {
+          "en": "AW=PW(A/P,i,n); EUAC=P(A/P)−S(A/F)+O&M\nSame life and rate within each machine calculation; unequal-life ranking additionally needs a service/repeatability assumption.",
+          "ar": "AW=PW(A/P,i,n); EUAC=P(A/P)−S(A/F)+O&M\nعمر ومعدل متوافقان داخل كل حساب؛ ومقارنة الأعمار المختلفة تحتاج فرض خدمة وتكرار."
+        }
+      ],
+      "id": "ee-worth-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Is EUAC simply purchase cost divided by life when i>0 and salvage exists?",
+        "ar": "هل EUAC مجرد سعر الشراء مقسومًا على العمر مع معدل موجب وخردة؟"
+      },
+      "options": [
+        {
+          "en": "No; include time value and the dated salvage credit.",
+          "ar": "لا؛ أدخل أثر الزمن ورصيد الخردة المؤرخ."
+        },
+        {
+          "en": "Yes; interest and salvage are irrelevant to annual cost.",
+          "ar": "نعم؛ لا يؤثر المعدل والخردة في السنوية."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; include time value and the dated salvage credit. An annual equivalent replaces the project by equal year-end amounts over its stated life. For a cost-only machine, recover its purchase cost, credit its eventual salvage and add annual operating cost. The salvage reduces annual cost but does not cancel the entire purchase. The identity CR=(P−S)(A/P)+iS is useful for checking the more familiar P(A/P)−S(A/F).",
+        "ar": "لا؛ أدخل أثر الزمن ورصيد الخردة المؤرخ. يستبدل المكافئ السنوي المشروع بمبالغ متساوية آخر السنوات على عمره. للآلة ذات التكلفة فقط استرد الشراء واطرح رصيد الخردة وأضف التشغيل السنوي. تقلل الخردة السنوية ولا تلغي الشراء. تفيد هوية CR=(P−S)(A/P)+iS في تدقيق الصيغة P(A/P)−S(A/F)."
+      }
+    },
+    {
+      "concept": "ee-worth-s03-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 25,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 33,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 35,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "EUAC is positive equivalent annual cost; AW is signed annual worth. O&M is an equal annual expense.",
+          "ar": "EUAC مقدار تكلفة سنوية مكافئة موجب و AW قيمة سنوية موقعة؛ والتشغيل مصروف سنوي متساوٍ."
+        },
+        {
+          "en": "AW=PW(A/P,i,n); EUAC=P(A/P)−S(A/F)+O&M\nSame life and rate within each machine calculation; unequal-life ranking additionally needs a service/repeatability assumption.",
+          "ar": "AW=PW(A/P,i,n); EUAC=P(A/P)−S(A/F)+O&M\nعمر ومعدل متوافقان داخل كل حساب؛ ومقارنة الأعمار المختلفة تحتاج فرض خدمة وتكرار."
+        }
+      ],
+      "id": "ee-worth-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "P=6000,S=1000,n=5,i=0 and annual O&M=400. Find EUAC.",
+        "ar": "الأصل 6000 والخردة 1000 والعمر 5 والمعدلصفر والتشغيل 400 سنويًا. أوجد EUAC."
+      },
+      "expected": 1400,
+      "tolerance": 0.028,
+      "unit": "CU/year",
+      "solution": {
+        "en": "EUAC=(6000−1000)/5+400=1400.",
+        "ar": "السنوية 1400."
+      }
+    },
+    {
+      "concept": "ee-worth-s03-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 25,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 33,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE09",
+          "page": 35,
+          "filename": "chapter 6 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "EUAC is positive equivalent annual cost; AW is signed annual worth. O&M is an equal annual expense.",
+          "ar": "EUAC مقدار تكلفة سنوية مكافئة موجب و AW قيمة سنوية موقعة؛ والتشغيل مصروف سنوي متساوٍ."
+        },
+        {
+          "en": "AW=PW(A/P,i,n); EUAC=P(A/P)−S(A/F)+O&M\nSame life and rate within each machine calculation; unequal-life ranking additionally needs a service/repeatability assumption.",
+          "ar": "AW=PW(A/P,i,n); EUAC=P(A/P)−S(A/F)+O&M\nعمر ومعدل متوافقان داخل كل حساب؛ ومقارنة الأعمار المختلفة تحتاج فرض خدمة وتكرار."
+        }
+      ],
+      "id": "ee-worth-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Two CR expressions differ by iS. What identity should be checked?",
+        "ar": "تختلف صيغتا استرداد رأس المال بمقدار iS. ما الهوية المطلوبة؟"
+      },
+      "options": [
+        {
+          "en": "P/A=P/F+i for every life.",
+          "ar": "P/A=P/F+i لكل عمر."
+        },
+        {
+          "en": "A/P=A/F+i, so(P−S)(A/P)+iS equals P(A/P)−S(A/F).",
+          "ar": "A/P=A/F+i، فتتساوى الصيغتان المذكورتان."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "A/P=A/F+i, so(P−S)(A/P)+iS equals P(A/P)−S(A/F). Factor identities can expose a missing salvage-return term.",
+        "ar": "A/P=A/F+i، فتتساوى الصيغتان المذكورتان. تكشف هويات العوامل بند عائد الخردة المفقود."
+      }
+    },
+    {
+      "concept": "ee-worth-s04-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 10,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE10",
+          "page": 11,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Cycle starts and replacement cash must be dated; salvage and repurchase at one boundary may be netted once.",
+          "ar": "تؤرخ بدايات الدورات والاستبدالات، ويمكن تجميع البيع وإعادة الشراء في الحد نفسه مرة واحدة."
+        },
+        {
+          "en": "common-horizon PW=Σcycle PW/(1+i)^(cycle start)\nEquivalent service and explicitly repeatable cycles, or a stated finite study period with terminal values.",
+          "ar": "common-horizon PW=Σcycle PW/(1+i)^(cycle start)\nخدمة متكافئة ودورات قابلة للتكرار صراحة، أو أفق محدود بقيم نهائية محددة."
+        }
+      ],
+      "id": "ee-worth-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does taking the least common multiple automatically prove repeatability?",
+        "ar": "هل يثبت أخذ المضاعف المشترك الأصغر إمكان التكرار تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; arithmetic guarantees identical future technologies.",
+          "ar": "نعم؛ يضمن الحساب التقنيات المستقبلية نفسها."
+        },
+        {
+          "en": "No; repeatability is an assumption about future service and costs.",
+          "ar": "لا؛ التكرار فرض عن الخدمة والتكاليف المستقبلية."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; repeatability is an assumption about future service and costs. A four-year machine and a six-year machine cannot be compared by their first-cycle PW alone if both are supposed to provide 12 years of service. Repeat each cycle to the 12-year common multiple only if repeatability is credible. Alternatively, use the actual common study period with replacement and terminal values. Annual worth gives a convenient comparison under repeatable identical cycles; it does not make all future replacements free.",
+        "ar": "لا؛ التكرار فرض عن الخدمة والتكاليف المستقبلية. لا تقارن حالية دورة آلة 4 سنوات وأخرى 6 إذا كان المطلوب خدمة 12 سنة دون تمثيل الباقي. كرر الدورات إلى المضاعف المشترك فقط إن كان التكرار معقولًا، أو استخدم فترة الدراسة الفعلية مع الاستبدال والقيم النهائية. تسهل السنوية المقارنة بدورات متكررة متطابقة ولا تجعل الاستبدالات مجانية."
+      }
+    },
+    {
+      "concept": "ee-worth-s04-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 10,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE10",
+          "page": 11,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Cycle starts and replacement cash must be dated; salvage and repurchase at one boundary may be netted once.",
+          "ar": "تؤرخ بدايات الدورات والاستبدالات، ويمكن تجميع البيع وإعادة الشراء في الحد نفسه مرة واحدة."
+        },
+        {
+          "en": "common-horizon PW=Σcycle PW/(1+i)^(cycle start)\nEquivalent service and explicitly repeatable cycles, or a stated finite study period with terminal values.",
+          "ar": "common-horizon PW=Σcycle PW/(1+i)^(cycle start)\nخدمة متكافئة ودورات قابلة للتكرار صراحة، أو أفق محدود بقيم نهائية محددة."
+        }
+      ],
+      "id": "ee-worth-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Lives 3 and 5 years, identical-cycle repeatability assumed. What is the shortest common multiple horizon?",
+        "ar": "العمران 3 و 5 والتكرار المتطابق مفروض. ما أقصر أفق مشترك؟"
+      },
+      "expected": 15,
+      "tolerance": 0.005,
+      "unit": "years",
+      "solution": {
+        "en": "LCM(3,5)=15 years; use 5 and 3 cycles respectively.",
+        "ar": "المضاعف المشترك 15 سنة؛ بعدد 5 دورات و 3 دورات."
+      }
+    },
+    {
+      "concept": "ee-worth-s04-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 10,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE10",
+          "page": 11,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Cycle starts and replacement cash must be dated; salvage and repurchase at one boundary may be netted once.",
+          "ar": "تؤرخ بدايات الدورات والاستبدالات، ويمكن تجميع البيع وإعادة الشراء في الحد نفسه مرة واحدة."
+        },
+        {
+          "en": "common-horizon PW=Σcycle PW/(1+i)^(cycle start)\nEquivalent service and explicitly repeatable cycles, or a stated finite study period with terminal values.",
+          "ar": "common-horizon PW=Σcycle PW/(1+i)^(cycle start)\nخدمة متكافئة ودورات قابلة للتكرار صراحة، أو أفق محدود بقيم نهائية محددة."
+        }
+      ],
+      "id": "ee-worth-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A real project ends in 7 years while one machine lasts 10. What is needed?",
+        "ar": "ينتهي المشروع بعد 7 سنوات وعمر آلة 10. ما المطلوب؟"
+      },
+      "options": [
+        {
+          "en": "Its value at year 7 and a comparison on the actual 7-year service horizon.",
+          "ar": "قيمتها عند 7 ومقارنة على أفق الخدمة الفعلي 7 سنوات."
+        },
+        {
+          "en": "Force the project to 10 years to match the asset.",
+          "ar": "مدد المشروع إلى 10 سنوات لمطابقة الأصل."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Its value at year 7 and a comparison on the actual 7-year service horizon. Asset life and the owner’s required service horizon are separate inputs.",
+        "ar": "قيمتها عند 7 ومقارنة على أفق الخدمة الفعلي 7 سنوات. عمر الأصل وأفق الخدمة المطلوب مدخلان منفصلان."
+      }
+    },
+    {
+      "concept": "ee-worth-s05-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 3,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE10",
+          "page": 13,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Differences are between matching dates, service and horizon.",
+          "ar": "الفروق بين تواريخ وخدمة وأفق متطابقة."
+        },
+        {
+          "en": "ΔPW=PWlarge−PWsmall; choose extra investment if ΔPW>0\nMutually exclusive feasible alternatives, common MARR and consistent service assumptions.",
+          "ar": "ΔPW=PWlarge−PWsmall; choose extra investment if ΔPW>0\nبدائل متنافية ممكنة ومعدل قبول مشترك وافتراضات خدمة متسقة."
+        }
+      ],
+      "id": "ee-worth-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Should the largest standalone IRR always win among mutually exclusive projects?",
+        "ar": "هل يفوز أعلى عائد داخلي منفرد دائمًا بين مشاريع متنافية؟"
+      },
+      "options": [
+        {
+          "en": "No; examine the incremental cash flows and the common decision basis.",
+          "ar": "لا؛ افحص التدفقات الإضافية والأساس المشترك للقرار."
+        },
+        {
+          "en": "Yes; scale never matters.",
+          "ar": "نعم؛ لا يؤثر حجم المشروع أبدًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; examine the incremental cash flows and the common decision basis. For mutually exclusive alternatives, the question is whether paying extra for the larger option creates enough extra benefit. Subtract lower-investment cash flows from higher-investment flows at every date. A positive incremental PW at the common hurdle rate supports the extra investment, provided the base alternative itself is feasible. A high standalone percentage return is not enough to rank projects of different scale.",
+        "ar": "لا؛ افحص التدفقات الإضافية والأساس المشترك للقرار. للبدائل المتنافية اسأل هل يخلق ثمن الأكبر الإضافي منفعة إضافية كافية. اطرح تدفقات الأقل استثمارًا من الأعلى عند كل تاريخ. تدعم الحالية الإضافية الموجبة الإنفاق الزائد بالمعدل المشترك مع صلاحية البديل الأساسي. ولا تكفي أعلى نسبة عائد منفردة لترتيب أحجام مختلفة."
+      }
+    },
+    {
+      "concept": "ee-worth-s05-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 3,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE10",
+          "page": 13,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Differences are between matching dates, service and horizon.",
+          "ar": "الفروق بين تواريخ وخدمة وأفق متطابقة."
+        },
+        {
+          "en": "ΔPW=PWlarge−PWsmall; choose extra investment if ΔPW>0\nMutually exclusive feasible alternatives, common MARR and consistent service assumptions.",
+          "ar": "ΔPW=PWlarge−PWsmall; choose extra investment if ΔPW>0\nبدائل متنافية ممكنة ومعدل قبول مشترك وافتراضات خدمة متسقة."
+        }
+      ],
+      "id": "ee-worth-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "PWsmall=3500 and PWlarge=4200 CU on a common basis. Find incremental PWlarge−small.",
+        "ar": "حالية الأصغر 3500 والأكبر 4200 على أساس واحد. أوجد الحالية الإضافية."
+      },
+      "expected": 700,
+      "tolerance": 0.014,
+      "unit": "CU",
+      "solution": {
+        "en": "4200−3500=700, supporting the increment under the shared assumptions.",
+        "ar": "الفرق 700 ويدعم الزيادة وفق الفروض المشتركة."
+      }
+    },
+    {
+      "concept": "ee-worth-s05-concept",
+      "sources": [
+        {
+          "doc": "EE09",
+          "page": 3,
+          "filename": "chapter 6 EnEc.pdf"
+        },
+        {
+          "doc": "EE10",
+          "page": 13,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Differences are between matching dates, service and horizon.",
+          "ar": "الفروق بين تواريخ وخدمة وأفق متطابقة."
+        },
+        {
+          "en": "ΔPW=PWlarge−PWsmall; choose extra investment if ΔPW>0\nMutually exclusive feasible alternatives, common MARR and consistent service assumptions.",
+          "ar": "ΔPW=PWlarge−PWsmall; choose extra investment if ΔPW>0\nبدائل متنافية ممكنة ومعدل قبول مشترك وافتراضات خدمة متسقة."
+        }
+      ],
+      "id": "ee-worth-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Both alternatives fail a mandatory safety constraint. Does positive incremental PW make one acceptable?",
+        "ar": "يخفق البديلان في قيد سلامة إلزامي. هل تجيز الحالية الإضافية الموجبة أحدهما؟"
+      },
+      "options": [
+        {
+          "en": "Yes; positive extra worth overrides every requirement.",
+          "ar": "نعم؛ تتقدم القيمة الإضافية على كل المتطلبات."
+        },
+        {
+          "en": "No; restore technical feasibility before economic ranking.",
+          "ar": "لا؛ حقق الصلاحية الفنية قبل الترتيب الاقتصادي."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; restore technical feasibility before economic ranking. Incremental analysis refines a feasible decision; it does not remove its constraints.",
+        "ar": "لا؛ حقق الصلاحية الفنية قبل الترتيب الاقتصادي. يحسن التحليل الإضافي قرارًا ممكنًا ولا يحذف قيوده."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-worth-s01-recall",
+      "concept": "ee-worth-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Present worth condenses the whole timeline",
+        "ar": "اشرح: تختصر القيمة الحالية الخط كله"
+      },
+      "a": {
+        "en": "Keep signed worth and positive cost magnitudes distinct.",
+        "ar": "ميّز القيمة بإشارتها عن مقدار التكلفة الموجب."
+      }
+    },
+    {
+      "id": "ee-worth-s01-formula",
+      "concept": "ee-worth-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nPW(i)=Σt=0…n Ct(1+i)^−t",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nPW(i)=Σt=0…n Ct(1+i)^−t"
+      },
+      "a": {
+        "en": "Ct is signed money at t; i is the effective discount rate matching t; MARR is a decision assumption. All relevant incremental cash effects included once, same basis, no hidden financing double count.",
+        "ar": "Ct نقد بإشارته عند t، و i معدل خصم فعّال متوافق معه؛ ومعدل القبول فرض قرار. تضمين كل الآثار النقدية الإضافية ذات الصلة مرة واحدة وبأساس مشترك ودون عد التمويل مرتين."
+      }
+    },
+    {
+      "id": "ee-worth-s01-trap",
+      "concept": "ee-worth-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: No; nominal profit automatically implies positive PW.",
+        "ar": "يقول متعلم: لا؛ الربح الاسمي يعني حالية موجبة تلقائيًا."
+      },
+      "a": {
+        "en": "Yes; timing and the chosen discount rate can reverse that impression. Keep signed worth and positive cost magnitudes distinct.",
+        "ar": "نعم؛ قد يغير التوقيت والمعدل هذا الانطباع. ميّز القيمة بإشارتها عن مقدار التكلفة الموجب."
+      }
+    },
+    {
+      "id": "ee-worth-s02-recall",
+      "concept": "ee-worth-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Future worth changes the reference date",
+        "ar": "اشرح: تغير القيمة المستقبلية تاريخ المرجع"
+      },
+      "a": {
+        "en": "A comparison metric has a time coordinate as well as an amount.",
+        "ar": "للمؤشر إحداثي زمني إلى جانب المبلغ."
+      }
+    },
+    {
+      "id": "ee-worth-s02-formula",
+      "concept": "ee-worth-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nFW(i,n)=PW(i)(1+i)^n=Σ Ct(1+i)^(n−t)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nFW(i,n)=PW(i)(1+i)^n=Σ Ct(1+i)^(n−t)"
+      },
+      "a": {
+        "en": "n is the shared future comparison date; future cash at t=n has exponent 0. Same rate, cash flows and horizon for both methods.",
+        "ar": "n تاريخ المقارنة المستقبلي المشترك، وللنقد عند n أس صفر. المعدل والتدفقات والأفق نفسها للطريقتين."
+      }
+    },
+    {
+      "id": "ee-worth-s02-trap",
+      "concept": "ee-worth-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; future worth is a different project.",
+        "ar": "يقول متعلم: نعم؛ المستقبلية مشروع مختلف."
+      },
+      "a": {
+        "en": "No; a positive common growth factor preserves sign. A comparison metric has a time coordinate as well as an amount.",
+        "ar": "لا؛ يحفظ عامل النمو المشترك الموجب الإشارة. للمؤشر إحداثي زمني إلى جانب المبلغ."
+      }
+    },
+    {
+      "id": "ee-worth-s03-recall",
+      "concept": "ee-worth-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Annual worth and capital recovery",
+        "ar": "اشرح: القيمة السنوية واسترداد رأس المال"
+      },
+      "a": {
+        "en": "Factor identities can expose a missing salvage-return term.",
+        "ar": "تكشف هويات العوامل بند عائد الخردة المفقود."
+      }
+    },
+    {
+      "id": "ee-worth-s03-formula",
+      "concept": "ee-worth-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nAW=PW(A/P,i,n); EUAC=P(A/P)−S(A/F)+O&M",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nAW=PW(A/P,i,n); EUAC=P(A/P)−S(A/F)+O&M"
+      },
+      "a": {
+        "en": "EUAC is positive equivalent annual cost; AW is signed annual worth. O&M is an equal annual expense. Same life and rate within each machine calculation; unequal-life ranking additionally needs a service/repeatability assumption.",
+        "ar": "EUAC مقدار تكلفة سنوية مكافئة موجب و AW قيمة سنوية موقعة؛ والتشغيل مصروف سنوي متساوٍ. عمر ومعدل متوافقان داخل كل حساب؛ ومقارنة الأعمار المختلفة تحتاج فرض خدمة وتكرار."
+      }
+    },
+    {
+      "id": "ee-worth-s03-trap",
+      "concept": "ee-worth-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; interest and salvage are irrelevant to annual cost.",
+        "ar": "يقول متعلم: نعم؛ لا يؤثر المعدل والخردة في السنوية."
+      },
+      "a": {
+        "en": "No; include time value and the dated salvage credit. Factor identities can expose a missing salvage-return term.",
+        "ar": "لا؛ أدخل أثر الزمن ورصيد الخردة المؤرخ. تكشف هويات العوامل بند عائد الخردة المفقود."
+      }
+    },
+    {
+      "id": "ee-worth-s04-recall",
+      "concept": "ee-worth-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Different lives need a service horizon",
+        "ar": "اشرح: الأعمار المختلفة تحتاج أفق خدمة"
+      },
+      "a": {
+        "en": "Asset life and the owner’s required service horizon are separate inputs.",
+        "ar": "عمر الأصل وأفق الخدمة المطلوب مدخلان منفصلان."
+      }
+    },
+    {
+      "id": "ee-worth-s04-formula",
+      "concept": "ee-worth-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\ncommon-horizon PW=Σcycle PW/(1+i)^(cycle start)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\ncommon-horizon PW=Σcycle PW/(1+i)^(cycle start)"
+      },
+      "a": {
+        "en": "Cycle starts and replacement cash must be dated; salvage and repurchase at one boundary may be netted once. Equivalent service and explicitly repeatable cycles, or a stated finite study period with terminal values.",
+        "ar": "تؤرخ بدايات الدورات والاستبدالات، ويمكن تجميع البيع وإعادة الشراء في الحد نفسه مرة واحدة. خدمة متكافئة ودورات قابلة للتكرار صراحة، أو أفق محدود بقيم نهائية محددة."
+      }
+    },
+    {
+      "id": "ee-worth-s04-trap",
+      "concept": "ee-worth-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; arithmetic guarantees identical future technologies.",
+        "ar": "يقول متعلم: نعم؛ يضمن الحساب التقنيات المستقبلية نفسها."
+      },
+      "a": {
+        "en": "No; repeatability is an assumption about future service and costs. Asset life and the owner’s required service horizon are separate inputs.",
+        "ar": "لا؛ التكرار فرض عن الخدمة والتكاليف المستقبلية. عمر الأصل وأفق الخدمة المطلوب مدخلان منفصلان."
+      }
+    },
+    {
+      "id": "ee-worth-s05-recall",
+      "concept": "ee-worth-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Incremental choice: is the extra investment justified?",
+        "ar": "اشرح: الاختيار الإضافي: هل يستحق الإنفاق الزائد؟"
+      },
+      "a": {
+        "en": "Incremental analysis refines a feasible decision; it does not remove its constraints.",
+        "ar": "يحسن التحليل الإضافي قرارًا ممكنًا ولا يحذف قيوده."
+      }
+    },
+    {
+      "id": "ee-worth-s05-formula",
+      "concept": "ee-worth-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nΔPW=PWlarge−PWsmall; choose extra investment if ΔPW>0",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nΔPW=PWlarge−PWsmall; choose extra investment if ΔPW>0"
+      },
+      "a": {
+        "en": "Differences are between matching dates, service and horizon. Mutually exclusive feasible alternatives, common MARR and consistent service assumptions.",
+        "ar": "الفروق بين تواريخ وخدمة وأفق متطابقة. بدائل متنافية ممكنة ومعدل قبول مشترك وافتراضات خدمة متسقة."
+      }
+    },
+    {
+      "id": "ee-worth-s05-trap",
+      "concept": "ee-worth-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; scale never matters.",
+        "ar": "يقول متعلم: نعم؛ لا يؤثر حجم المشروع أبدًا."
+      },
+      "a": {
+        "en": "No; examine the incremental cash flows and the common decision basis. Incremental analysis refines a feasible decision; it does not remove its constraints.",
+        "ar": "لا؛ افحص التدفقات الإضافية والأساس المشترك للقرار. يحسن التحليل الإضافي قرارًا ممكنًا ولا يحذف قيوده."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE09",
+      "page": 3,
+      "filename": "chapter 6 EnEc.pdf"
+    },
+    {
+      "doc": "EE09",
+      "page": 24,
+      "filename": "chapter 6 EnEc.pdf"
+    },
+    {
+      "doc": "EE09",
+      "page": 33,
+      "filename": "chapter 6 EnEc.pdf"
+    }
+  ],
+  "videoIds": [
+    "96GcUS4FieU",
+    "SfzXFIMHUHw"
+  ]
+}

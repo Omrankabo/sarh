@@ -1,0 +1,1152 @@
+{
+  "id": "slope-sway",
+  "family": "slope",
+  "title": {
+    "en": "Slope-deflection: sway frames",
+    "ar": "زاوية الميل والهبوط: إطارات قابلة للانزياح"
+  },
+  "summary": {
+    "en": "A frame may drift sideways under an eccentric vertical load. Add the missing movement and close the problem with horizontal equilibrium.",
+    "ar": "قد ينزاح الإطار جانبياً بسبب حمل رأسي لا مركزي. أضف الحركة الناقصة وأكمل المسألة باتزان القوى الأفقية."
+  },
+  "outcomes": [
+    {
+      "en": "Distinguish permitted sway from sway caused by loading.",
+      "ar": "التمييز بين إمكانية الانزياح ووجوده فعلياً بسبب التحميل."
+    },
+    {
+      "en": "Build rotation and story-shear equations with compatible signs.",
+      "ar": "بناء معادلات الدوران وقص الطابق بإشارات متوافقة."
+    },
+    {
+      "en": "Solve and verify the lecture’s eccentric 72 kN portal.",
+      "ar": "حل إطار المحاضرة ذي الحمل اللامركزي 72 kN والتحقق منه."
+    }
+  ],
+  "prereqIds": [
+    "units",
+    "algebra",
+    "forces",
+    "supports",
+    "loads",
+    "diagrams",
+    "shape",
+    "rigidity",
+    "compatibility"
+  ],
+  "concepts": [
+    {
+      "id": "sw-freedoms",
+      "title": {
+        "en": "The independent sway freedom",
+        "ar": "درجة حرية الانزياح المستقلة"
+      }
+    },
+    {
+      "id": "sw-chord",
+      "title": {
+        "en": "Chord rotation versus section rotation",
+        "ar": "دوران الوتر ودوران القطاع"
+      }
+    },
+    {
+      "id": "sw-loading",
+      "title": {
+        "en": "Eccentric loads can cause sway",
+        "ar": "قد يسبب الحمل اللامركزي انزياحاً"
+      }
+    },
+    {
+      "id": "sw-equilibrium",
+      "title": {
+        "en": "Joint and horizontal equilibrium",
+        "ar": "اتزان العقد والاتزان الأفقي"
+      }
+    },
+    {
+      "id": "sw-solution",
+      "title": {
+        "en": "Solve the three freedoms together",
+        "ar": "حل درجات الحرية الثلاث معاً"
+      }
+    },
+    {
+      "id": "sw-checks",
+      "title": {
+        "en": "Drift and reaction checks",
+        "ar": "فحص الانزياح وردود الأفعال"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "sway-1",
+      "title": {
+        "en": "1 · Let the whole top move",
+        "ar": "١ · اسمح بانتقال قمة الإطار"
+      },
+      "predict": {
+        "en": "An unbraced portal has fixed bases. Are its top translations automatically zero?",
+        "ar": "إطار بلا تدعيم جانبي له قاعدتان مثبتتان. هل انتقالا قمته صفر تلقائياً؟"
+      },
+      "options": [
+        {
+          "en": "Yes, fixed bases freeze the whole frame.",
+          "ar": "نعم، تثبيت القاعدتين يمنع حركة الإطار كله."
+        },
+        {
+          "en": "No, column bending permits a common top translation.",
+          "ar": "لا، انحناء العمودين يسمح بانتقال مشترك للقمة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Both columns can bend while their bases remain fixed. The axially inextensible horizontal beam makes B and C share one lateral translation.",
+        "ar": "يمكن أن ينحني العمودان مع بقاء قاعدتيهما ثابتتين. والكمرة الأفقية غير القابلة للاستطالة محورياً تجعل B وC تشتركان في انتقال جانبي واحد."
+      },
+      "explain": {
+        "en": "Count motions before equations: θB, θC and Δ. There are two rigid-joint moment balances, so a third independent equilibrium equation is required.",
+        "ar": "احصر الحركات قبل المعادلات: θB وθC وΔ. لدينا معادلتا اتزان عزوم للعقدتين الجسئتين، لذا نحتاج معادلة اتزان مستقلة ثالثة."
+      },
+      "formula": "q = [θB, θC, Δ]; θA=θD=0",
+      "symbols": {
+        "en": "θ: radians; Δ: m. A rigid joint shares one rotation; the beam’s axial compatibility ties the two horizontal translations.",
+        "ar": "θ بالراديان وΔ بالمتر. تتشارك أعضاء العقدة الجسئة دوراناً واحداً، ويربط التوافق المحوري للكمرة انتقالي العقدتين الأفقيين."
+      },
+      "assumptions": {
+        "en": "Linear elastic, small movements; prismatic members; constant EI; ignore axial strain. Clockwise end couples and section rotations are positive. Positive Δ is the source figure’s rightward drift.",
+        "ar": "مرونة خطية وحركات صغيرة وأعضاء منشورية وEI ثابتة مع إهمال الانفعال المحوري. العزوم الطرفية ودورانات القطاعات مع عقارب الساعة موجبة. Δ الموجبة هي انزياح الرسم إلى اليمين."
+      },
+      "example": {
+        "en": "The source portal has AB=CD=3 m, BC=6 m and fixed A,D. A downward 72 kN load is 2 m from B and 4 m from C.",
+        "ar": "لإطار المصدر AB=CD=3 m وBC=6 m والقاعدتان A وD مثبتتان. الحمل 72 kN إلى الأسفل يبعد 2 m عن B و4 m عن C."
+      },
+      "calculation": {
+        "en": "The unknown count is 3, not 2 or 4. ΔB=ΔC=Δ while the fixed-base rotations are known zeros.",
+        "ar": "عدد المجاهيل 3 وليس 2 أو4. ΔB=ΔC=Δ بينما دورانا القاعدتين معلومان ويساويان صفراً."
+      },
+      "interpret": {
+        "en": "A load need not be horizontal to excite an allowed horizontal motion.",
+        "ar": "لا يشترط أن يكون الحمل أفقياً كي يسبب حركة أفقية مسموحاً بها."
+      },
+      "check": {
+        "prompt": {
+          "en": "Why is there only one sway coordinate for this portal?",
+          "ar": "لماذا يكفي إحداثي انزياح واحد لهذا الإطار؟"
+        },
+        "answer": {
+          "en": "The horizontal beam’s neglected axial strain enforces equal horizontal joint translations.",
+          "ar": "لأن إهمال الانفعال المحوري للكمرة الأفقية يفرض تساوي الانتقالين الأفقيين للعقدتين."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "sw-freedoms"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 13,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sway-2",
+      "title": {
+        "en": "2 · Separate turning from drifting",
+        "ar": "٢ · افصل الدوران عن الانتقال"
+      },
+      "predict": {
+        "en": "The top moves 6 mm across a 3 m column while its end sections stay unrotated. Does bending appear?",
+        "ar": "تتحرك القمة 6 mm لعمود ارتفاعه 3 m مع بقاء قطاعي طرفيه دون دوران. هل ينشأ انحناء؟"
+      },
+      "options": [
+        {
+          "en": "Yes; the sections resist the changed chord.",
+          "ar": "نعم؛ يقاوم القطاعان تغير الوتر."
+        },
+        {
+          "en": "No; zero section rotations means zero moments.",
+          "ar": "لا؛ انعدام دوران القطاعين يعني انعدام العزوم."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The straight line joining the ends tilts even when both end sections are held. Relative rotation between sections and chord produces bending.",
+        "ar": "يميل الخط المستقيم بين الطرفين حتى مع منع دوران قطاعيهما. ينشأ الانحناء من الدوران النسبي بين القطاعات والوتر."
+      },
+      "explain": {
+        "en": "A formula containing only θ cannot represent imposed translation. Include the chord term −3ψ in both end expressions. For a column of height h with rightward drift use the local orientation shown in the source.",
+        "ar": "المعادلة التي تتضمن θ فقط لا تمثل الانتقال المفروض. أضف حد الوتر −3ψ في معادلتي الطرفين. لعمود ارتفاعه h وانزياحه إلى اليمين اتبع اتجاه العضو الموضح بالمصدر."
+      },
+      "formula": "Mij=Fij+(2EI/L)(2θi+θj−3ψ); ψ=Δ⊥/L",
+      "symbols": {
+        "en": "Δ⊥ is transverse relative endpoint translation in the member’s signed local direction; ψ is radians. For the portal’s columns ψ=Δ/3 in the source equations.",
+        "ar": "Δ⊥ انتقال طرفي نسبي عرضي بإشارته المحلية؛ وψ بالراديان. لعمودي الإطار ψ=Δ/3 وفق معادلات المصدر."
+      },
+      "assumptions": {
+        "en": "Linear elastic, small movements; prismatic members; constant EI; ignore axial strain. Clockwise end couples and section rotations are positive. Positive Δ is the source figure’s rightward drift.",
+        "ar": "مرونة خطية وحركات صغيرة وأعضاء منشورية وEI ثابتة مع إهمال الانفعال المحوري. العزوم الطرفية ودورانات القطاعات مع عقارب الساعة موجبة. Δ الموجبة هي انزياح الرسم إلى اليمين."
+      },
+      "example": {
+        "en": "Authored scale check: EI=9000 kN·m², h=3 m, Δ=0.006 m and both rotations fixed.",
+        "ar": "فحص مقياس مؤلف: EI=9000 kN·m² وh=3 m وΔ=0.006 m مع منع دوران الطرفين."
+      },
+      "calculation": {
+        "en": "ψ=0.006/3=0.002 rad. M=−6EIΔ/h²=−36 kN·m at each held end under this convention.",
+        "ar": "ψ=0.006/3=0.002 rad. عند كل طرف مقيد M=−6EIΔ/h²=−36 kN·m بهذه الاتفاقية."
+      },
+      "interpret": {
+        "en": "Drift is a length; chord rotation is an angle. Substituting millimetres into a metre-based equation creates a thousandfold error.",
+        "ar": "الانزياح طول ودوران الوتر زاوية. إدخال المليمتر في معادلة مبنية على المتر يسبب خطأ قدره ألف ضعف."
+      },
+      "check": {
+        "prompt": {
+          "en": "If EI doubles while the imposed drift stays fixed, what happens to these held-end moments?",
+          "ar": "إذا تضاعفت EI وبقي الانزياح المفروض ثابتاً، ماذا يحدث لعزمي الطرفين المقيدين؟"
+        },
+        "answer": {
+          "en": "They double. This is imposed-displacement response, unlike a fixed-load frame where the drift adjusts.",
+          "ar": "يتضاعفان. هذه استجابة لإزاحة مفروضة، بخلاف الإطار المحمّل بقوى ثابتة الذي يتغير انزياحه."
+        }
+      },
+      "diagram": "frame",
+      "experiment": "sway",
+      "concepts": [
+        "sw-chord"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 14,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sway-3",
+      "title": {
+        "en": "3 · An eccentric vertical load asks an asymmetric question",
+        "ar": "٣ · الحمل الرأسي اللامركزي يكسر التماثل"
+      },
+      "predict": {
+        "en": "The portal geometry is symmetric, but the point load is at one third of the beam. Must Δ be zero?",
+        "ar": "هندسة الإطار متماثلة لكن الحمل المركز عند ثلث الكمرة. هل يلزم أن Δ=0؟"
+      },
+      "options": [
+        {
+          "en": "Yes, geometry alone guarantees no sway.",
+          "ar": "نعم، يكفي تماثل الهندسة لمنع الانزياح."
+        },
+        {
+          "en": "No, the loading must also satisfy the relevant symmetry.",
+          "ar": "لا؛ يجب أن يحقق التحميل أيضاً التماثل المطلوب."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Unequal fixed-end moments push the two joints differently. Column horizontal reactions must still balance because the external load is entirely vertical.",
+        "ar": "تدفع عزوم التثبيت غير المتساوية العقدتين بصورة مختلفة. ومع ذلك يجب أن تتزن ردود الأفعال الأفقية للعمودين لأن الحمل الخارجي رأسي فقط."
+      },
+      "explain": {
+        "en": "The beam load has a=2 m, b=4 m. Keep the sign convention consistent between load moments and rotation moments; do not import unsigned magnitudes into a signed equation.",
+        "ar": "للحمل على الكمرة a=2 m وb=4 m. حافظ على اتساق إشارات عزوم الحمل والدوران؛ لا تدخل مقادير مطلقة في معادلات ذات إشارات."
+      },
+      "formula": "FBC=−Pab²/L²; FCB=+Pa²b/L²",
+      "symbols": {
+        "en": "P=72 kN; L=6 m; a=2 m; b=4 m. The unloaded columns have zero fixed-load moments.",
+        "ar": "P=72 kN وL=6 m وa=2 m وb=4 m. عزوم الحمل الثابتة للعمودين غير المحمّلين تساوي صفراً."
+      },
+      "assumptions": {
+        "en": "Linear elastic, small movements; prismatic members; constant EI; ignore axial strain. Clockwise end couples and section rotations are positive. Positive Δ is the source figure’s rightward drift.",
+        "ar": "مرونة خطية وحركات صغيرة وأعضاء منشورية وEI ثابتة مع إهمال الانفعال المحوري. العزوم الطرفية ودورانات القطاعات مع عقارب الساعة موجبة. Δ الموجبة هي انزياح الرسم إلى اليمين."
+      },
+      "example": {
+        "en": "Calculate the two beam fixed-end moments before solving any freedoms.",
+        "ar": "احسب عزمي تثبيت الكمرة قبل حل درجات الحرية."
+      },
+      "calculation": {
+        "en": "FBC=−72·2·4²/6²=−64 kN·m; FCB=72·2²·4/6²=+32 kN·m.",
+        "ar": "FBC=−72·2·4²/6²=−64 kN·m وFCB=72·2²·4/6²=+32 kN·m."
+      },
+      "interpret": {
+        "en": "The unequal values anticipate an asymmetric rotation field, but the sign of sway must come from the complete equilibrium solution.",
+        "ar": "تشير القيم غير المتساوية إلى دورانات غير متماثلة، لكن اتجاه الانزياح يتحدد من حل الاتزان الكامل."
+      },
+      "check": {
+        "prompt": {
+          "en": "If the load moves to midspan on the otherwise symmetric frame, what symmetry prediction follows?",
+          "ar": "إذا نُقل الحمل إلى المنتصف في الإطار المتماثل، فما توقع التماثل؟"
+        },
+        "answer": {
+          "en": "With matching columns and supports, Δ=0 and θB=−θC. Verify this as a special case, not as a rule for eccentric loads.",
+          "ar": "مع تماثل العمودين والمساند يكون Δ=0 وθB=−θC. تحقق منها كحالة خاصة لا كقاعدة للحمل اللامركزي."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "sw-loading"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 13,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sway-4",
+      "title": {
+        "en": "4 · Add the equation the two corners cannot supply",
+        "ar": "٤ · أضف المعادلة التي لا توفرها العقدتان"
+      },
+      "predict": {
+        "en": "After writing two joint moment equations for three unknowns, what is still missing?",
+        "ar": "بعد كتابة معادلتي عزوم العقدتين لثلاثة مجاهيل، ما الناقص؟"
+      },
+      "options": [
+        {
+          "en": "An arbitrary zero rotation.",
+          "ar": "افتراض دوران صفري اعتباطي."
+        },
+        {
+          "en": "Horizontal force equilibrium, expressed through column shears.",
+          "ar": "اتزان القوى الأفقية بدلالة قص العمودين."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "A column end-moment pair implies transverse shear. The two column shears close the lateral equilibrium of the top assembly.",
+        "ar": "زوج عزوم طرفي العمود يستلزم قصاً عرضياً. ويكمل قصا العمودين الاتزان الجانبي للجزء العلوي."
+      },
+      "explain": {
+        "en": "For this unloaded-column portal, use HA=(MAB+MBA)/3 and HD=(MCD+MDC)/3 with the source’s signed reaction convention. There is no applied horizontal load, so HA+HD=0.",
+        "ar": "لعمودي هذا الإطار غير المحمّلين عرضياً استخدم HA=(MAB+MBA)/3 وHD=(MCD+MDC)/3 مع اتفاقية ردود الأفعال بالمصدر. لا يوجد حمل أفقي خارجي، لذا HA+HD=0."
+      },
+      "formula": "MBA+MBC=0; MCB+MCD=0; (MAB+MBA)/3+(MCD+MDC)/3=0",
+      "symbols": {
+        "en": "Let x=EIθB, y=EIθC and z=EIΔ. Then MAB=(2/3)(x−z), MBA=(2/3)(2x−z), MBC=(2x+y)/3−64, MCB=(x+2y)/3+32, MCD=(2/3)(2y−z), MDC=(2/3)(y−z).",
+        "ar": "ضع x=EIθB وy=EIθC وz=EIΔ. إذن MAB=(2/3)(x−z) وMBA=(2/3)(2x−z) وMBC=(2x+y)/3−64 وMCB=(x+2y)/3+32 وMCD=(2/3)(2y−z) وMDC=(2/3)(y−z)."
+      },
+      "assumptions": {
+        "en": "Linear elastic, small movements; prismatic members; constant EI; ignore axial strain. Clockwise end couples and section rotations are positive. Positive Δ is the source figure’s rightward drift.",
+        "ar": "مرونة خطية وحركات صغيرة وأعضاء منشورية وEI ثابتة مع إهمال الانفعال المحوري. العزوم الطرفية ودورانات القطاعات مع عقارب الساعة موجبة. Δ الموجبة هي انزياح الرسم إلى اليمين."
+      },
+      "example": {
+        "en": "Substitute these six end moments into the three equilibrium equations.",
+        "ar": "عوّض العزوم الطرفية الستة في معادلات الاتزان الثلاث."
+      },
+      "calculation": {
+        "en": "2x+y/3−2z/3=64; x/3+2y−2z/3=−32; 2x+2y−8z/3=0.",
+        "ar": "2x+y/3−2z/3=64؛ وx/3+2y−2z/3=−32؛ و2x+2y−8z/3=0."
+      },
+      "interpret": {
+        "en": "The third equation is a force-equilibrium condition after substitution. It is not another arbitrary rotation constraint.",
+        "ar": "المعادلة الثالثة تمثل اتزان القوى بعد التعويض، وليست قيد دوران اعتباطياً آخر."
+      },
+      "check": {
+        "prompt": {
+          "en": "Could you set HA=HD=0 separately because the applied load is vertical?",
+          "ar": "هل يمكن وضع HA=HD=0 كل على حدة لأن الحمل رأسي؟"
+        },
+        "answer": {
+          "en": "No. Horizontal reactions may be equal and opposite while their sum is zero.",
+          "ar": "لا. قد يكون ردا الفعل الأفقيان متساويين ومتعاكسين بينما مجموعهما صفر."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "sw-equilibrium"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 16,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sway-5",
+      "title": {
+        "en": "5 · Solve rotations and drift together",
+        "ar": "٥ · حل الدورانات والانزياح معاً"
+      },
+      "predict": {
+        "en": "If every EI is multiplied by two under the same loads, do the solved end moments double?",
+        "ar": "إذا تضاعفت EI لجميع الأعضاء مع ثبات الأحمال، هل تتضاعف عزوم الأطراف المحسوبة؟"
+      },
+      "options": [
+        {
+          "en": "No; moments stay the same while rotations and drift halve.",
+          "ar": "لا؛ تبقى العزوم نفسها وتنخفض الدورانات والانزياح إلى النصف."
+        },
+        {
+          "en": "Yes; stiffness always doubles all moments.",
+          "ar": "نعم؛ الجساءة تضاعف جميع العزوم دائماً."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The load-controlled frame adjusts its movements. The products EIθ and EIΔ stay unchanged when all rigidities are scaled together.",
+        "ar": "يعدّل الإطار المحكوم بالأحمال حركاته. تبقى المقادير EIθ وEIΔ ثابتة عند ضرب جساءات جميع الأعضاء بالعامل نفسه."
+      },
+      "explain": {
+        "en": "Solve the three linear equations without imposing a guessed symmetry. The source supplies the equations; the following values are independently calculated, rather than read from a rounded distribution table.",
+        "ar": "حل المعادلات الخطية الثلاث دون فرض تماثل متخيل. يوفّر المصدر المعادلات؛ والقيم التالية محسوبة استقلالياً وليست منقولة من جدول توزيع مقرب."
+      },
+      "formula": "x=40.8; y=−16.8; z=18; θB=x/EI; θC=y/EI; Δ=z/EI",
+      "symbols": {
+        "en": "Use EI in kN·m² to obtain θ in radians and Δ in m. Here x has units kN·m² and z has units kN·m³.",
+        "ar": "استخدم EI بوحدة kN·m² للحصول على θ بالراديان وΔ بالمتر. وحدة x هي kN·m² ووحدة z هي kN·m³."
+      },
+      "assumptions": {
+        "en": "Linear elastic, small movements; prismatic members; constant EI; ignore axial strain. Clockwise end couples and section rotations are positive. Positive Δ is the source figure’s rightward drift.",
+        "ar": "مرونة خطية وحركات صغيرة وأعضاء منشورية وEI ثابتة مع إهمال الانفعال المحوري. العزوم الطرفية ودورانات القطاعات مع عقارب الساعة موجبة. Δ الموجبة هي انزياح الرسم إلى اليمين."
+      },
+      "example": {
+        "en": "For an authored scale choice EI=18000 kN·m², interpret the movements.",
+        "ar": "لاختيار مقياس مؤلف EI=18000 kN·m²، فسّر الحركات."
+      },
+      "calculation": {
+        "en": "θB=0.002266667 rad; θC=−0.000933333 rad; Δ=0.001 m=1 mm. End moments [AB,BA,BC,CB,CD,DC]=[15.2,42.4,−42.4,34.4,−34.4,−23.2] kN·m.",
+        "ar": "θB=0.002266667 rad وθC=−0.000933333 rad وΔ=0.001 m=1 mm. العزوم [AB,BA,BC,CB,CD,DC]=[15.2,42.4,−42.4,34.4,−34.4,−23.2] kN·m."
+      },
+      "interpret": {
+        "en": "The frame drifts right even without an external horizontal load. Its horizontal reactions form a balanced internal restraint system.",
+        "ar": "ينزاح الإطار يميناً دون حمل أفقي خارجي. وتشكل ردود أفعاله الأفقية منظومة قوى تقييد متزنة."
+      },
+      "check": {
+        "prompt": {
+          "en": "What changes if EI=36000 kN·m² instead?",
+          "ar": "ماذا يتغير إذا أصبحت EI=36000 kN·m²؟"
+        },
+        "answer": {
+          "en": "Δ becomes 0.5 mm and both rotations halve; end moments remain the same under these force loads.",
+          "ar": "تصبح Δ=0.5 mm وينخفض الدورانان للنصف؛ وتبقى عزوم الأطراف نفسها تحت هذه الأحمال القوّية."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "sw-solution"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 17,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sway-6",
+      "title": {
+        "en": "6 · Make the whole frame pass a force audit",
+        "ar": "٦ · اجعل الإطار كله يجتاز تدقيق القوى"
+      },
+      "predict": {
+        "en": "Two joint balances pass. Is that enough to certify the sway solution?",
+        "ar": "تحقق اتزان العقدتين. هل يكفي ذلك لإثبات صحة حل الانزياح؟"
+      },
+      "options": [
+        {
+          "en": "Yes.",
+          "ar": "نعم."
+        },
+        {
+          "en": "No; check the lateral equation, vertical reactions and boundary conditions too.",
+          "ar": "لا؛ افحص المعادلة الجانبية وردود الأفعال الرأسية والشروط الحدية أيضاً."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "The computed column shears are equal and opposite, and the beam end forces add to the applied 72 kN load.",
+        "ar": "قصّا العمودين المحسوبان متساويان ومتعاكسان، وتساوي محصلة قوتي طرفي الكمرة الحمل 72 kN."
+      },
+      "explain": {
+        "en": "At BC, an explicit free-body gives VC=[P·a+MBC+MCB]/L and VB=P−VC. These upward forces are the vertical support reactions when column axial loading has no other vertical contribution.",
+        "ar": "على BC يعطي مخطط الجسم الحر VC=[P·a+MBC+MCB]/L وVB=P−VC. وتمثل هاتان القوتان للأعلى ردي الفعل الرأسيين إذا لم توجد مساهمات رأسية أخرى على العمودين."
+      },
+      "formula": "HA=+19.2; HD=−19.2; VA=49.333333; VD=22.666667 kN",
+      "symbols": {
+        "en": "All listed reactions use global right/up positive, with end-moment signs from the stated clockwise member convention.",
+        "ar": "تستخدم ردود الأفعال المذكورة اتجاهي اليمين والأعلى موجبين عالمياً، مع إشارات عزوم الأطراف وفق اتفاقية عقارب الساعة المذكورة."
+      },
+      "assumptions": {
+        "en": "Linear elastic, small movements; prismatic members; constant EI; ignore axial strain. Clockwise end couples and section rotations are positive. Positive Δ is the source figure’s rightward drift.",
+        "ar": "مرونة خطية وحركات صغيرة وأعضاء منشورية وEI ثابتة مع إهمال الانفعال المحوري. العزوم الطرفية ودورانات القطاعات مع عقارب الساعة موجبة. Δ الموجبة هي انزياح الرسم إلى اليمين."
+      },
+      "example": {
+        "en": "Use the solved moments to verify the horizontal and vertical sums.",
+        "ar": "استخدم العزوم المحسوبة للتحقق من مجموعي القوى الأفقية والرأسية."
+      },
+      "calculation": {
+        "en": "HA=(15.2+42.4)/3=19.2; HD=(−34.4−23.2)/3=−19.2. VC=(72·2−42.4+34.4)/6=22.666667; VB=72−VC=49.333333.",
+        "ar": "HA=(15.2+42.4)/3=19.2 وHD=(−34.4−23.2)/3=−19.2. كذلك VC=(72·2−42.4+34.4)/6=22.666667 وVB=72−VC=49.333333."
+      },
+      "interpret": {
+        "en": "A wrong sway sign often survives one equation but fails several independent checks. Keep a short residual audit in every final solution.",
+        "ar": "قد تنجو إشارة انزياح خاطئة من معادلة واحدة لكنها تفشل في فحوص مستقلة متعددة. احتفظ بتدقيق مختصر للمتبقيات في كل حل نهائي."
+      },
+      "check": {
+        "prompt": {
+          "en": "Evaluate the two joint moment sums.",
+          "ar": "احسب مجموع عزوم كل من العقدتين."
+        },
+        "answer": {
+          "en": "B:42.4−42.4=0. C:34.4−34.4=0. Also HA+HD=0 and VA+VD=72.",
+          "ar": "عند B:42.4−42.4=0. وعند C:34.4−34.4=0. كذلك HA+HD=0 وVA+VD=72."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "sw-checks"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 16,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "sw-q1",
+      "concept": "sw-freedoms",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can a vertically loaded portal sway?",
+        "ar": "هل يمكن لإطار محمّل رأسياً أن ينزاح جانبياً؟"
+      },
+      "options": [
+        {
+          "en": "Never.",
+          "ar": "أبداً."
+        },
+        {
+          "en": "Yes, when sway is permitted and load/stiffness symmetry does not suppress it.",
+          "ar": "نعم، إذا كان الانزياح مسموحاً ولم يمنعه تماثل التحميل والجساءة."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Sketch the allowed movement and identify the equation that controls it.",
+          "ar": "ارسم الحركة المسموح بها وحدد المعادلة التي تتحكم فيها."
+        },
+        {
+          "en": "Use this relationship: q = [θB, θC, Δ]; θA=θD=0",
+          "ar": "استخدم العلاقة: q = [θB, θC, Δ]; θA=θD=0"
+        }
+      ],
+      "solution": {
+        "en": "The 72 kN eccentric-load source example is a counterexample to “vertical load means no sway.”",
+        "ar": "مثال المصدر ذي الحمل اللامركزي 72 kN ينقض قاعدة أن الحمل الرأسي يمنع الانزياح."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 13,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sw-q2",
+      "concept": "sw-freedoms",
+      "type": "numerical",
+      "prompt": {
+        "en": "Count the independent freedoms for the source one-storey, fixed-base, axially inextensible portal.",
+        "ar": "احسب درجات الحرية المستقلة لإطار المصدر أحادي الطابق ثابت القاعدتين وغير القابل للاستطالة محورياً."
+      },
+      "expected": 3,
+      "tolerance": 0.003,
+      "unit": "",
+      "hints": [
+        {
+          "en": "Convert lengths to metres and use the source’s signed equation.",
+          "ar": "حوّل الأطوال إلى أمتار واستخدم معادلة المصدر بإشاراتها."
+        },
+        {
+          "en": "Use this relationship: q = [θB, θC, Δ]; θA=θD=0",
+          "ar": "استخدم العلاقة: q = [θB, θC, Δ]; θA=θD=0"
+        }
+      ],
+      "solution": {
+        "en": "θB, θC and one common lateral drift Δ.",
+        "ar": "θB وθC وانزياح جانبي مشترك Δ."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 13,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sw-q3",
+      "concept": "sw-chord",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A chord rotates while both end sections stay fixed. What happens?",
+        "ar": "يدور وتر العضو مع ثبات دوران قطاعي طرفيه. ماذا يحدث؟"
+      },
+      "options": [
+        {
+          "en": "No bending.",
+          "ar": "لا ينشأ انحناء."
+        },
+        {
+          "en": "Bending develops because section rotations differ from the chord rotation.",
+          "ar": "ينشأ انحناء لأن دوران القطاعين يختلف عن دوران الوتر."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Sketch the allowed movement and identify the equation that controls it.",
+          "ar": "ارسم الحركة المسموح بها وحدد المعادلة التي تتحكم فيها."
+        },
+        {
+          "en": "Use this relationship: Mij=Fij+(2EI/L)(2θi+θj−3ψ); ψ=Δ⊥/L",
+          "ar": "استخدم العلاقة: Mij=Fij+(2EI/L)(2θi+θj−3ψ); ψ=Δ⊥/L"
+        }
+      ],
+      "solution": {
+        "en": "The −3ψ terms remain even when both θ values are zero.",
+        "ar": "يبقى الحد −3ψ حتى مع انعدام θ عند الطرفين."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 14,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sw-q4",
+      "concept": "sw-chord",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored variant: a 4 m column has transverse relative displacement 8 mm. Find chord rotation ψ.",
+        "ar": "تمرين مؤلف: عمود طوله 4 m له انتقال عرضي نسبي 8 mm. أوجد دوران الوتر ψ."
+      },
+      "expected": 0.002,
+      "tolerance": 0.001,
+      "unit": "rad",
+      "hints": [
+        {
+          "en": "Convert lengths to metres and use the source’s signed equation.",
+          "ar": "حوّل الأطوال إلى أمتار واستخدم معادلة المصدر بإشاراتها."
+        },
+        {
+          "en": "Use this relationship: Mij=Fij+(2EI/L)(2θi+θj−3ψ); ψ=Δ⊥/L",
+          "ar": "استخدم العلاقة: Mij=Fij+(2EI/L)(2θi+θj−3ψ); ψ=Δ⊥/L"
+        }
+      ],
+      "solution": {
+        "en": "ψ=0.008/4=0.002 rad.",
+        "ar": "ψ=0.008/4=0.002 rad."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 14,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sw-q5",
+      "concept": "sw-loading",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Geometry and EI are symmetric but the load is eccentric. Which shortcut is unsafe?",
+        "ar": "الهندسة وEI متماثلتان لكن الحمل لا مركزي. أي اختصار غير آمن؟"
+      },
+      "options": [
+        {
+          "en": "Set Δ=0 merely from geometry.",
+          "ar": "وضع Δ=0 لمجرد تماثل الهندسة."
+        },
+        {
+          "en": "Compute signed fixed-end moments.",
+          "ar": "حساب عزوم التثبيت بإشاراتها."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Sketch the allowed movement and identify the equation that controls it.",
+          "ar": "ارسم الحركة المسموح بها وحدد المعادلة التي تتحكم فيها."
+        },
+        {
+          "en": "Use this relationship: FBC=−Pab²/L²; FCB=+Pa²b/L²",
+          "ar": "استخدم العلاقة: FBC=−Pab²/L²; FCB=+Pa²b/L²"
+        }
+      ],
+      "solution": {
+        "en": "Loading symmetry is necessary for the corresponding no-sway symmetry reduction.",
+        "ar": "يلزم تماثل التحميل لاستخدام اختزال التماثل الذي يمنع الانزياح."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 13,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sw-q6",
+      "concept": "sw-loading",
+      "type": "mixed",
+      "prompt": {
+        "en": "For P=72 kN, L=6 m, a=2 m and b=4 m, find FCB.",
+        "ar": "عند P=72 kN وL=6 m وa=2 m وb=4 m، أوجد FCB."
+      },
+      "expected": 32,
+      "tolerance": 0.032,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "Convert lengths to metres and use the source’s signed equation.",
+          "ar": "حوّل الأطوال إلى أمتار واستخدم معادلة المصدر بإشاراتها."
+        },
+        {
+          "en": "Use this relationship: FBC=−Pab²/L²; FCB=+Pa²b/L²",
+          "ar": "استخدم العلاقة: FBC=−Pab²/L²; FCB=+Pa²b/L²"
+        }
+      ],
+      "solution": {
+        "en": "FCB=Pa²b/L²=72·4·4/36=32.",
+        "ar": "FCB=Pa²b/L²=72·4·4/36=32."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 14,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sw-q7",
+      "concept": "sw-equilibrium",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Two corner moment equations leave three freedoms unknown. Choose the missing condition.",
+        "ar": "معادلتا عزوم الركنين تتركان ثلاث درجات حرية مجهولة. اختر الشرط الناقص."
+      },
+      "options": [
+        {
+          "en": "Set both horizontal reactions to zero.",
+          "ar": "ضع ردي الفعل الأفقيين صفراً."
+        },
+        {
+          "en": "Enforce total horizontal equilibrium using signed column shears.",
+          "ar": "حقق الاتزان الأفقي العام باستخدام قص العمودين بإشاراته."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Sketch the allowed movement and identify the equation that controls it.",
+          "ar": "ارسم الحركة المسموح بها وحدد المعادلة التي تتحكم فيها."
+        },
+        {
+          "en": "Use this relationship: MBA+MBC=0; MCB+MCD=0; (MAB+MBA)/3+(MCD+MDC)/3=0",
+          "ar": "استخدم العلاقة: MBA+MBC=0; MCB+MCD=0; (MAB+MBA)/3+(MCD+MDC)/3=0"
+        }
+      ],
+      "solution": {
+        "en": "With no horizontal external force only the sum of reactions is zero; the individual reactions need not vanish.",
+        "ar": "دون قوة أفقية خارجية يكون مجموع ردود الأفعال صفراً فقط، ولا يلزم انعدام كل رد فعل."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 16,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sw-q8",
+      "concept": "sw-equilibrium",
+      "type": "numerical",
+      "prompt": {
+        "en": "For MAB=15.2, MBA=42.4 kN·m and h=3 m, find HA=(MAB+MBA)/h.",
+        "ar": "عند MAB=15.2 وMBA=42.4 kN·m وh=3 m، أوجد HA=(MAB+MBA)/h."
+      },
+      "expected": 19.2,
+      "tolerance": 0.0192,
+      "unit": "kN",
+      "hints": [
+        {
+          "en": "Convert lengths to metres and use the source’s signed equation.",
+          "ar": "حوّل الأطوال إلى أمتار واستخدم معادلة المصدر بإشاراتها."
+        },
+        {
+          "en": "Use this relationship: MBA+MBC=0; MCB+MCD=0; (MAB+MBA)/3+(MCD+MDC)/3=0",
+          "ar": "استخدم العلاقة: MBA+MBC=0; MCB+MCD=0; (MAB+MBA)/3+(MCD+MDC)/3=0"
+        }
+      ],
+      "solution": {
+        "en": "(15.2+42.4)/3=19.2. The other reaction is −19.2 kN.",
+        "ar": "(15.2+42.4)/3=19.2. ورد الفعل الآخر −19.2 kN."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 16,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sw-q9",
+      "concept": "sw-solution",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Double all EI values with the same applied forces. What is unchanged?",
+        "ar": "ضاعف EI لجميع الأعضاء مع ثبات القوى المطبقة. ما الذي لا يتغير؟"
+      },
+      "options": [
+        {
+          "en": "The end moments in this linear model.",
+          "ar": "عزوم الأطراف في هذا النموذج الخطي."
+        },
+        {
+          "en": "All rotations.",
+          "ar": "جميع الدورانات."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Sketch the allowed movement and identify the equation that controls it.",
+          "ar": "ارسم الحركة المسموح بها وحدد المعادلة التي تتحكم فيها."
+        },
+        {
+          "en": "Use this relationship: x=40.8; y=−16.8; z=18; θB=x/EI; θC=y/EI; Δ=z/EI",
+          "ar": "استخدم العلاقة: x=40.8; y=−16.8; z=18; θB=x/EI; θC=y/EI; Δ=z/EI"
+        }
+      ],
+      "solution": {
+        "en": "Uniform stiffness scaling halves movements while keeping the force distribution unchanged for this force-loaded model.",
+        "ar": "مضاعفة الجساءة بشكل موحد تخفض الحركات للنصف مع ثبات توزيع القوى لهذا النموذج المحكوم بالأحمال."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 17,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sw-q10",
+      "concept": "sw-solution",
+      "type": "numerical",
+      "prompt": {
+        "en": "The solved EIΔ is 18 kN·m³. If EI=18000 kN·m², enter drift in mm.",
+        "ar": "الحل يعطي EIΔ=18 kN·m³. إذا EI=18000 kN·m²، فأدخل الانزياح بالمليمتر."
+      },
+      "expected": 1,
+      "tolerance": 0.001,
+      "unit": "mm",
+      "hints": [
+        {
+          "en": "Convert lengths to metres and use the source’s signed equation.",
+          "ar": "حوّل الأطوال إلى أمتار واستخدم معادلة المصدر بإشاراتها."
+        },
+        {
+          "en": "Use this relationship: x=40.8; y=−16.8; z=18; θB=x/EI; θC=y/EI; Δ=z/EI",
+          "ar": "استخدم العلاقة: x=40.8; y=−16.8; z=18; θB=x/EI; θC=y/EI; Δ=z/EI"
+        }
+      ],
+      "solution": {
+        "en": "Δ=18/18000=0.001 m=1 mm.",
+        "ar": "Δ=18/18000=0.001 m=1 mm."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 17,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sw-q11",
+      "concept": "sw-checks",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A result balances both joints but violates HA+HD=0 under vertical loading. Accept it?",
+        "ar": "حل يحقق اتزان العقدتين لكنه يخالف HA+HD=0 تحت حمل رأسي. هل نقبله؟"
+      },
+      "options": [
+        {
+          "en": "Yes; the lateral equation is optional.",
+          "ar": "نعم؛ المعادلة الجانبية اختيارية."
+        },
+        {
+          "en": "No; the sway equilibrium is unsatisfied.",
+          "ar": "لا؛ اتزان الانزياح غير متحقق."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Sketch the allowed movement and identify the equation that controls it.",
+          "ar": "ارسم الحركة المسموح بها وحدد المعادلة التي تتحكم فيها."
+        },
+        {
+          "en": "Use this relationship: HA=+19.2; HD=−19.2; VA=49.333333; VD=22.666667 kN",
+          "ar": "استخدم العلاقة: HA=+19.2; HD=−19.2; VA=49.333333; VD=22.666667 kN"
+        }
+      ],
+      "solution": {
+        "en": "All independent equilibrium conditions and movement constraints must be satisfied.",
+        "ar": "يجب تحقق جميع شروط الاتزان المستقلة وقيود الحركة."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 16,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sw-q12",
+      "concept": "sw-checks",
+      "type": "mixed",
+      "prompt": {
+        "en": "For BC, P=72 kN at a=2 m, L=6 m, MBC=−42.4 and MCB=34.4 kN·m. Find the upward reaction at C.",
+        "ar": "على BC حمل P=72 kN عند a=2 m وL=6 m وMBC=−42.4 وMCB=34.4 kN·m. أوجد رد الفعل للأعلى عند C."
+      },
+      "expected": 22.666666667,
+      "tolerance": 0.022666666667000002,
+      "unit": "kN",
+      "hints": [
+        {
+          "en": "Convert lengths to metres and use the source’s signed equation.",
+          "ar": "حوّل الأطوال إلى أمتار واستخدم معادلة المصدر بإشاراتها."
+        },
+        {
+          "en": "Use this relationship: HA=+19.2; HD=−19.2; VA=49.333333; VD=22.666667 kN",
+          "ar": "استخدم العلاقة: HA=+19.2; HD=−19.2; VA=49.333333; VD=22.666667 kN"
+        }
+      ],
+      "solution": {
+        "en": "VC=(72·2−42.4+34.4)/6=22.666666667.",
+        "ar": "VC=(72·2−42.4+34.4)/6=22.666666667."
+      },
+      "sources": [
+        {
+          "doc": "14",
+          "page": 16,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "sw-card-1",
+      "concept": "sw-freedoms",
+      "kind": "prediction",
+      "q": {
+        "en": "Can a vertically loaded portal sway?",
+        "ar": "هل يمكن لإطار محمّل رأسياً أن ينزاح جانبياً؟"
+      },
+      "a": {
+        "en": "The 72 kN eccentric-load source example is a counterexample to “vertical load means no sway.”",
+        "ar": "مثال المصدر ذي الحمل اللامركزي 72 kN ينقض قاعدة أن الحمل الرأسي يمنع الانزياح."
+      }
+    },
+    {
+      "id": "sw-card-2",
+      "concept": "sw-freedoms",
+      "kind": "calculation",
+      "q": {
+        "en": "Count the independent freedoms for the source one-storey, fixed-base, axially inextensible portal.",
+        "ar": "احسب درجات الحرية المستقلة لإطار المصدر أحادي الطابق ثابت القاعدتين وغير القابل للاستطالة محورياً."
+      },
+      "a": {
+        "en": "θB, θC and one common lateral drift Δ.",
+        "ar": "θB وθC وانزياح جانبي مشترك Δ."
+      }
+    },
+    {
+      "id": "sw-card-3",
+      "concept": "sw-chord",
+      "kind": "prediction",
+      "q": {
+        "en": "A chord rotates while both end sections stay fixed. What happens?",
+        "ar": "يدور وتر العضو مع ثبات دوران قطاعي طرفيه. ماذا يحدث؟"
+      },
+      "a": {
+        "en": "The −3ψ terms remain even when both θ values are zero.",
+        "ar": "يبقى الحد −3ψ حتى مع انعدام θ عند الطرفين."
+      }
+    },
+    {
+      "id": "sw-card-4",
+      "concept": "sw-chord",
+      "kind": "calculation",
+      "q": {
+        "en": "Authored variant: a 4 m column has transverse relative displacement 8 mm. Find chord rotation ψ.",
+        "ar": "تمرين مؤلف: عمود طوله 4 m له انتقال عرضي نسبي 8 mm. أوجد دوران الوتر ψ."
+      },
+      "a": {
+        "en": "ψ=0.008/4=0.002 rad.",
+        "ar": "ψ=0.008/4=0.002 rad."
+      }
+    },
+    {
+      "id": "sw-card-5",
+      "concept": "sw-loading",
+      "kind": "prediction",
+      "q": {
+        "en": "Geometry and EI are symmetric but the load is eccentric. Which shortcut is unsafe?",
+        "ar": "الهندسة وEI متماثلتان لكن الحمل لا مركزي. أي اختصار غير آمن؟"
+      },
+      "a": {
+        "en": "Loading symmetry is necessary for the corresponding no-sway symmetry reduction.",
+        "ar": "يلزم تماثل التحميل لاستخدام اختزال التماثل الذي يمنع الانزياح."
+      }
+    },
+    {
+      "id": "sw-card-6",
+      "concept": "sw-loading",
+      "kind": "calculation",
+      "q": {
+        "en": "For P=72 kN, L=6 m, a=2 m and b=4 m, find FCB.",
+        "ar": "عند P=72 kN وL=6 m وa=2 m وb=4 m، أوجد FCB."
+      },
+      "a": {
+        "en": "FCB=Pa²b/L²=72·4·4/36=32.",
+        "ar": "FCB=Pa²b/L²=72·4·4/36=32."
+      }
+    },
+    {
+      "id": "sw-card-7",
+      "concept": "sw-equilibrium",
+      "kind": "prediction",
+      "q": {
+        "en": "Two corner moment equations leave three freedoms unknown. Choose the missing condition.",
+        "ar": "معادلتا عزوم الركنين تتركان ثلاث درجات حرية مجهولة. اختر الشرط الناقص."
+      },
+      "a": {
+        "en": "With no horizontal external force only the sum of reactions is zero; the individual reactions need not vanish.",
+        "ar": "دون قوة أفقية خارجية يكون مجموع ردود الأفعال صفراً فقط، ولا يلزم انعدام كل رد فعل."
+      }
+    },
+    {
+      "id": "sw-card-8",
+      "concept": "sw-equilibrium",
+      "kind": "calculation",
+      "q": {
+        "en": "For MAB=15.2, MBA=42.4 kN·m and h=3 m, find HA=(MAB+MBA)/h.",
+        "ar": "عند MAB=15.2 وMBA=42.4 kN·m وh=3 m، أوجد HA=(MAB+MBA)/h."
+      },
+      "a": {
+        "en": "(15.2+42.4)/3=19.2. The other reaction is −19.2 kN.",
+        "ar": "(15.2+42.4)/3=19.2. ورد الفعل الآخر −19.2 kN."
+      }
+    },
+    {
+      "id": "sw-card-9",
+      "concept": "sw-solution",
+      "kind": "prediction",
+      "q": {
+        "en": "Double all EI values with the same applied forces. What is unchanged?",
+        "ar": "ضاعف EI لجميع الأعضاء مع ثبات القوى المطبقة. ما الذي لا يتغير؟"
+      },
+      "a": {
+        "en": "Uniform stiffness scaling halves movements while keeping the force distribution unchanged for this force-loaded model.",
+        "ar": "مضاعفة الجساءة بشكل موحد تخفض الحركات للنصف مع ثبات توزيع القوى لهذا النموذج المحكوم بالأحمال."
+      }
+    },
+    {
+      "id": "sw-card-10",
+      "concept": "sw-solution",
+      "kind": "calculation",
+      "q": {
+        "en": "The solved EIΔ is 18 kN·m³. If EI=18000 kN·m², enter drift in mm.",
+        "ar": "الحل يعطي EIΔ=18 kN·m³. إذا EI=18000 kN·m²، فأدخل الانزياح بالمليمتر."
+      },
+      "a": {
+        "en": "Δ=18/18000=0.001 m=1 mm.",
+        "ar": "Δ=18/18000=0.001 m=1 mm."
+      }
+    },
+    {
+      "id": "sw-card-11",
+      "concept": "sw-checks",
+      "kind": "prediction",
+      "q": {
+        "en": "A result balances both joints but violates HA+HD=0 under vertical loading. Accept it?",
+        "ar": "حل يحقق اتزان العقدتين لكنه يخالف HA+HD=0 تحت حمل رأسي. هل نقبله؟"
+      },
+      "a": {
+        "en": "All independent equilibrium conditions and movement constraints must be satisfied.",
+        "ar": "يجب تحقق جميع شروط الاتزان المستقلة وقيود الحركة."
+      }
+    },
+    {
+      "id": "sw-card-12",
+      "concept": "sw-checks",
+      "kind": "calculation",
+      "q": {
+        "en": "For BC, P=72 kN at a=2 m, L=6 m, MBC=−42.4 and MCB=34.4 kN·m. Find the upward reaction at C.",
+        "ar": "على BC حمل P=72 kN عند a=2 m وL=6 m وMBC=−42.4 وMCB=34.4 kN·m. أوجد رد الفعل للأعلى عند C."
+      },
+      "a": {
+        "en": "VC=(72·2−42.4+34.4)/6=22.666666667.",
+        "ar": "VC=(72·2−42.4+34.4)/6=22.666666667."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "14",
+      "page": 13,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 14,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 15,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 16,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 17,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    }
+  ],
+  "videoIds": [
+    "9R-tpqwr0W0",
+    "MvBqCeZllpQ",
+    "bPbQeptNxEo"
+  ]
+}

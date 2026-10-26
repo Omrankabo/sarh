@@ -1,0 +1,1276 @@
+{
+  "id": "influence-qualitative",
+  "family": "influence",
+  "title": {
+    "en": "Influence lines: release the right restraint",
+    "ar": "خطوط التأثير: حرّر القيد الصحيح"
+  },
+  "summary": {
+    "en": "Watch one load travel. Learn why a released structure reveals reactions, shear and bending moment without solving every load position.",
+    "ar": "راقب حملاً واحداً يتحرك. افهم كيف يكشف تحرير المنشأ عن ردود الأفعال والقص والعزم دون حل كل موضع للحمل منفرداً."
+  },
+  "outcomes": [
+    {
+      "en": "Distinguish a response diagram from an influence line.",
+      "ar": "ميّز بين مخطط الاستجابة وخط التأثير."
+    },
+    {
+      "en": "Apply reciprocal work with consistent directions.",
+      "ar": "طبّق العمل المتبادل باتجاهات متسقة."
+    },
+    {
+      "en": "Choose reaction, shear and moment releases, then normalize the movement.",
+      "ar": "اختر تحرير رد الفعل والقص والعزم ثم طبّع الحركة."
+    }
+  ],
+  "prereqIds": [
+    "forces",
+    "supports",
+    "diagrams",
+    "shape",
+    "rigidity",
+    "compatibility"
+  ],
+  "concepts": [
+    {
+      "id": "iq-definition",
+      "title": {
+        "en": "One effect, moving load",
+        "ar": "أثر واحد وحمل متحرك"
+      }
+    },
+    {
+      "id": "iq-reciprocity",
+      "title": {
+        "en": "Maxwell reciprocity",
+        "ar": "تبادلية ماكسويل"
+      }
+    },
+    {
+      "id": "iq-work",
+      "title": {
+        "en": "Betti reciprocal work",
+        "ar": "عمل بيتي المتبادل"
+      }
+    },
+    {
+      "id": "iq-reaction",
+      "title": {
+        "en": "Release a reaction",
+        "ar": "تحرير رد فعل"
+      }
+    },
+    {
+      "id": "iq-shear",
+      "title": {
+        "en": "Release shear",
+        "ar": "تحرير القص"
+      }
+    },
+    {
+      "id": "iq-moment",
+      "title": {
+        "en": "Release moment",
+        "ar": "تحرير العزم"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "iq-definition",
+      "title": {
+        "en": "Follow a truck, keep one question",
+        "ar": "اتبع الشاحنة واحتفظ بسؤال واحد"
+      },
+      "predict": {
+        "en": "If a truck crosses a bridge, does an influence line change the measured section at every point?",
+        "ar": "إذا عبرت شاحنة جسراً، فهل يتغير المقطع المدروس عند كل نقطة من خط التأثير؟"
+      },
+      "options": [
+        {
+          "en": "Yes: the section follows the truck.",
+          "ar": "نعم: المقطع يتحرك مع الشاحنة."
+        },
+        {
+          "en": "No: the effect stays fixed; the unit load moves.",
+          "ar": "لا: الأثر ثابت الموضع وحمل الوحدة يتحرك."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Choose reaction A. Slide a downward unit load from left to right. Every plotted ordinate answers the same question: what is reaction A now?",
+        "ar": "اختر رد الفعل عند A. حرّك وحدة حمل لأسفل من اليسار إلى اليمين. كل إحداثي يجيب السؤال نفسه: كم يساوي رد الفعل عند A الآن؟"
+      },
+      "explain": {
+        "en": "A bending-moment diagram varies the section under fixed loading. An influence line varies load position for one fixed response. Never exchange these horizontal-axis meanings.",
+        "ar": "مخطط العزم يغير المقطع تحت تحميل ثابت، بينما يغير خط التأثير موضع الحمل لأثر واحد ثابت. لا تخلط معنى المحور الأفقي بينهما."
+      },
+      "formula": "E(x)=P ηE(x)",
+      "symbols": {
+        "en": "E is the selected effect; P is a concentrated load; ηE is its influence ordinate. Reaction/shear ordinates are dimensionless; bending-moment ordinates have length units.",
+        "ar": "E هو الأثر المختار، وP حمل مركز، وηE إحداثي تأثيره. إحداثيات رد الفعل والقص بلا أبعاد، وإحداثيات العزم بوحدات طول."
+      },
+      "assumptions": {
+        "en": "Linear elastic response, small displacements, unchanged supports and a stable released system. Use the same positive directions in loads and movements.",
+        "ar": "استجابة خطية مرنة وإزاحات صغيرة ومساند ثابتة التعريف ومنشأ محرر مستقر. استخدم الاتجاهات الموجبة نفسها للقوى والحركات."
+      },
+      "example": {
+        "en": "Authored warm-up: ηRA=0.7 at a chosen position, with a 20 kN downward load.",
+        "ar": "تمرين تمهيدي مؤلف: إحداثي رد الفعل ηRA=0.7 عند موضع معين، والحمل لأسفل 20 kN."
+      },
+      "calculation": {
+        "en": "RA=20×0.7=14 kN upward under the stated positive convention.",
+        "ar": "RA=20×0.7=14 kN لأعلى وفق الاتجاه الموجب المعتمد."
+      },
+      "interpret": {
+        "en": "A negative ordinate means the selected effect reverses its defined direction; it is not a negative load location.",
+        "ar": "الإحداثي السالب يعني أن الأثر عكس اتجاهه الموجب المعتمد، ولا يعني أن موضع الحمل سالب."
+      },
+      "check": {
+        "prompt": {
+          "en": "For a fixed-section moment line, what moves?",
+          "ar": "في خط تأثير عزم مقطع ثابت، ما الذي يتحرك؟"
+        },
+        "answer": {
+          "en": "The unit load; the section stays fixed.",
+          "ar": "حمل الوحدة؛ يظل المقطع ثابتاً."
+        }
+      },
+      "diagram": "influence",
+      "concepts": [
+        "iq-definition"
+      ],
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ]
+    },
+    {
+      "id": "iq-reciprocity",
+      "title": {
+        "en": "Swap the load and the observer",
+        "ar": "بادل بين الحمل والمراقب"
+      },
+      "predict": {
+        "en": "Equal loads act separately at points 1 and 2. Which movement pair must match?",
+        "ar": "يؤثر حملان متساويان منفردين عند النقطتين 1 و2. أي حركتين تتساويان؟"
+      },
+      "options": [
+        {
+          "en": "The movement at 2 from load at 1, and at 1 from load at 2.",
+          "ar": "حركة 2 من حمل عند 1، وحركة 1 من حمل عند 2."
+        },
+        {
+          "en": "The two loaded-point movements must always match.",
+          "ar": "إزاحتا نقطتي التحميل تتساويان دائماً."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Press point 1 and measure point 2. Move the same press to point 2 and measure point 1. For this unchanged linear elastic structure, the cross-movements match.",
+        "ar": "اضغط عند 1 وقس حركة 2، ثم انقل الضغط نفسه إلى 2 وقس حركة 1. تتساوى الحركتان المتبادلتان في هذا المنشأ الخطي المرن غير المتغير."
+      },
+      "explain": {
+        "en": "Maxwell concerns matching load–movement directions. It does not say that every location has equal deflection. A vertical force pairs with vertical displacement; a couple pairs with rotation.",
+        "ar": "قانون ماكسويل يتعلق باتجاهات متوافقة للقوة والإزاحة. لا يقول إن جميع النقاط لها الترخيم نفسه. القوة الرأسية تقابل إزاحة رأسية والعزم يقابل دوراناً."
+      },
+      "formula": "f12=f21; δ2←1=P f21",
+      "symbols": {
+        "en": "fij is movement at i from a unit action at j. For translation/force it has units m/kN. Reciprocity requires the same structural stiffness and boundary conditions.",
+        "ar": "fij حركة النقطة i من فعل وحدة عند j. في حالة الإزاحة والقوة وحدته m/kN. يلزم ثبات صلابة المنشأ وشروط حدوده."
+      },
+      "assumptions": {
+        "en": "Linear elastic response, small displacements, unchanged supports and a stable released system. Use the same positive directions in loads and movements.",
+        "ar": "استجابة خطية مرنة وإزاحات صغيرة ومساند ثابتة التعريف ومنشأ محرر مستقر. استخدم الاتجاهات الموجبة نفسها للقوى والحركات."
+      },
+      "example": {
+        "en": "Authored check: 5 kN at 1 moves point 2 by 2 mm. Apply the same 5 kN at 2.",
+        "ar": "تحقق مؤلف: حمل 5 kN عند 1 يحرك 2 بمقدار 2 mm. طبّق 5 kN نفسها عند 2."
+      },
+      "calculation": {
+        "en": "Point 1 moves 2 mm. The cross-flexibility is 2/5=0.4 mm/kN.",
+        "ar": "تتحرك 1 بمقدار 2 mm. المرونة المتبادلة تساوي 2/5=0.4 mm/kN."
+      },
+      "interpret": {
+        "en": "If the second experiment changes a support or cracks the beam, it is no longer the same reciprocal experiment.",
+        "ar": "إذا غيّرت التجربة الثانية مسنداً أو سببت تشقق الكمرة، لم تعد تجربة تبادلية للمنشأ نفسه."
+      },
+      "check": {
+        "prompt": {
+          "en": "Does f12=f21 imply f11=f22?",
+          "ar": "هل f12=f21 تعني f11=f22؟"
+        },
+        "answer": {
+          "en": "No. Equal cross-flexibility does not require equal direct flexibility.",
+          "ar": "لا. تساوي المرونتين المتبادلتين لا يفرض تساوي المرونتين المباشرتين."
+        }
+      },
+      "diagram": "beam",
+      "concepts": [
+        "iq-reciprocity"
+      ],
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 3,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ]
+    },
+    {
+      "id": "iq-work",
+      "title": {
+        "en": "Compare two complete loading stories",
+        "ar": "قارن قصتي تحميل كاملتين"
+      },
+      "predict": {
+        "en": "In reciprocal work, should every force multiply the movement at its own point and direction caused by the other system?",
+        "ar": "في العمل المتبادل، هل تضرب كل قوة في إزاحة موضعها واتجاهها الناتجة من النظام الآخر؟"
+      },
+      "options": [
+        {
+          "en": "No; use only the largest force.",
+          "ar": "لا؛ نستخدم القوة الكبرى فقط."
+        },
+        {
+          "en": "Yes; include all conjugate force–movement pairs.",
+          "ar": "نعم؛ نضم جميع أزواج القوى والحركات المترافقة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "System P makes one displacement shape; system Q makes another. Cross-multiply P by movements from Q, and Q by movements from P. The totals agree.",
+        "ar": "ينتج نظام P شكلاً من الإزاحات وينتج Q شكلاً آخر. اضرب قوى P في إزاحات Q والعكس؛ يتساوى المجموعان."
+      },
+      "explain": {
+        "en": "Betti generalizes the two-point swap. Couples and rotations belong in the sum too. This is mutual work, not the strain energy of one gradually applied system; no extra factor 1/2 is inserted.",
+        "ar": "يعمم بيتي تبادل النقطتين. تدخل العزوم والدورانات في المجموع أيضاً. هذا عمل متبادل وليس طاقة نظام واحد يحمّل تدريجياً؛ لا نضيف معامل 1/2."
+      },
+      "formula": "ΣPi ui(Q)+ΣMi θi(Q)=ΣQi ui(P)+ΣCi θi(P)",
+      "symbols": {
+        "en": "Each term has work units, for example kN·m. Rotations must be radians; include algebraic signs and matching directions.",
+        "ar": "كل حد بوحدة شغل مثل kN·m. يلزم قياس الزوايا بالراديان ومراعاة الإشارات والاتجاهات المتوافقة."
+      },
+      "assumptions": {
+        "en": "Linear elastic response, small displacements, unchanged supports and a stable released system. Use the same positive directions in loads and movements.",
+        "ar": "استجابة خطية مرنة وإزاحات صغيرة ومساند ثابتة التعريف ومنشأ محرر مستقر. استخدم الاتجاهات الموجبة نفسها للقوى والحركات."
+      },
+      "example": {
+        "en": "Authored two-system example: P=10 kN acts where Q causes +3 mm; Q=5 kN acts where P causes an unknown displacement.",
+        "ar": "مثال مؤلف لنظامين: P=10 kN في نقطة يسبب فيها Q إزاحة +3 mm، وQ=5 kN في نقطة إزاحتها من P مجهولة."
+      },
+      "calculation": {
+        "en": "10×3=5×u gives u=6 mm. Both sides are 30 kN·mm.",
+        "ar": "10×3=5×u، إذن u=6 mm. كلا الطرفين 30 kN·mm."
+      },
+      "interpret": {
+        "en": "The equation is a route from measured model displacements to unknown prototype forces later in the course.",
+        "ar": "ستكون هذه المعادلة طريقاً من إزاحات النموذج المقاسة إلى قوى الأصل المجهولة لاحقاً."
+      },
+      "check": {
+        "prompt": {
+          "en": "A force is in kN and its movement in mm. Can you sum it with a kN·m couple-work term immediately?",
+          "ar": "قوة بوحدة kN وحركتها mm. هل تجمع حاصل ضربهما مباشرة مع حد شغل عزم بوحدة kN·m؟"
+        },
+        "answer": {
+          "en": "No. Convert all work terms to a common unit first.",
+          "ar": "لا. وحّد وحدات جميع حدود الشغل أولاً."
+        }
+      },
+      "diagram": "beam",
+      "concepts": [
+        "iq-work"
+      ],
+      "sources": [
+        {
+          "doc": "18",
+          "page": 4,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 5,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ]
+    },
+    {
+      "id": "iq-reaction",
+      "title": {
+        "en": "Lift exactly the support you want to measure",
+        "ar": "ارفع المسند الذي تريد قياس رد فعله"
+      },
+      "predict": {
+        "en": "For an upward support reaction, which restraint is released?",
+        "ar": "لرد فعل مسند رأسي لأعلى، أي قيد نحرر؟"
+      },
+      "options": [
+        {
+          "en": "Its vertical translation restraint only.",
+          "ar": "قيد الإزاحة الرأسية عنده فقط."
+        },
+        {
+          "en": "Every support and all rotations.",
+          "ar": "كل المساند وجميع الدورانات."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Remove vertical restraint B while keeping the other restraints. Lift B in the positive reaction direction and trace the beam shape. Normalize by the imposed lift.",
+        "ar": "أزل قيد الحركة الرأسية عند B وأبق بقية القيود. ارفع B في اتجاه رد الفعل الموجب وارسم شكل الكمرة ثم اقسم على الرفع المفروض."
+      },
+      "explain": {
+        "en": "Müller–Breslau converts the wanted action into its work-conjugate movement. A lift of 2 mm does not give unit ordinates until every measured displacement is divided by 2 mm.",
+        "ar": "يحوّل مبدأ مولر–برسلاو الفعل المطلوب إلى حركته المترافقة في الشغل. رفع بمقدار 2 mm لا يعطي إحداثيات وحدة قبل قسمة كل إزاحة عليه."
+      },
+      "formula": "ηRB(x)=y(x)/yB",
+      "symbols": {
+        "en": "y(x) is signed displacement of the released structure; yB is the imposed support displacement. The ratio is dimensionless.",
+        "ar": "y(x) الإزاحة الجبرية للمنشأ المحرر، وyB إزاحة المسند المفروضة. النسبة بلا أبعاد."
+      },
+      "assumptions": {
+        "en": "Linear elastic response, small displacements, unchanged supports and a stable released system. Use the same positive directions in loads and movements.",
+        "ar": "استجابة خطية مرنة وإزاحات صغيرة ومساند ثابتة التعريف ومنشأ محرر مستقر. استخدم الاتجاهات الموجبة نفسها للقوى والحركات."
+      },
+      "example": {
+        "en": "Authored normalization: lift B by +2 mm; point x moves −0.6 mm.",
+        "ar": "مثال تطبيع مؤلف: ارفع B بمقدار +2 mm فتحركت نقطة x بمقدار −0.6 mm."
+      },
+      "calculation": {
+        "en": "ηRB=−0.6/2=−0.3. A 50 kN load there contributes −15 kN to upward RB.",
+        "ar": "ηRB=−0.6/2=−0.3. حمل 50 kN هناك يساهم بمقدار −15 kN في رد الفعل الموجب لأعلى."
+      },
+      "interpret": {
+        "en": "Negative lobes are meaningful. Other supports may hold the beam down while this support tends toward uplift. Contact-only supports need a separate uplift check.",
+        "ar": "الفصوص السالبة ذات معنى؛ قد تتجه حركة المسند إلى الانفصال بينما تمسك بقية المساند بالكمرة. المسند غير المقاوم للشد يحتاج فحص انفصال منفصلاً."
+      },
+      "check": {
+        "prompt": {
+          "en": "If all imposed movements are doubled, does the normalized line change?",
+          "ar": "إذا تضاعفت جميع الحركات المفروضة، هل يتغير خط التأثير المطبع؟"
+        },
+        "answer": {
+          "en": "No; numerator and denominator double together in linear response.",
+          "ar": "لا؛ يتضاعف البسط والمقام معاً في الاستجابة الخطية."
+        }
+      },
+      "diagram": "influence",
+      "concepts": [
+        "iq-reaction"
+      ],
+      "sources": [
+        {
+          "doc": "18",
+          "page": 6,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 7,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ]
+    },
+    {
+      "id": "iq-shear",
+      "title": {
+        "en": "Let the two sides slide, not separate by a hinge",
+        "ar": "دع الجانبين ينزلقان دون تحويلهما إلى مفصل"
+      },
+      "predict": {
+        "en": "A shear influence line crosses the studied section. What feature should you expect?",
+        "ar": "يمر الحمل عبر المقطع المدروس في خط تأثير القص. ما السمة المتوقعة؟"
+      },
+      "options": [
+        {
+          "en": "A unit jump with sign set by the shear convention.",
+          "ar": "قفزة مقدارها وحدة تحدد إشارتها اصطلاحية القص."
+        },
+        {
+          "en": "It must be smooth at that point.",
+          "ar": "يجب أن يكون أملس عند تلك النقطة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Release shear transfer at the cut. Allow a relative transverse slip while preserving the other required connections. The normalized shape has distinct left and right ordinates at the cut.",
+        "ar": "حرر انتقال القص عند القطع واسمح بانزلاق عرضي نسبي مع إبقاء الاتصال الآخر المطلوب. للشكل المطبع إحداثيان مختلفان على جانبي القطع."
+      },
+      "explain": {
+        "en": "A pin removes bending resistance; it is not a shear release. For a standard positive left-segment shear V=RA minus loads to the left of the cut, a downward unit load crossing left-to-right gives a +1 jump.",
+        "ar": "المفصل يزيل مقاومة العزم ولا يمثل تحريراً للقص. عند اعتماد V=RA ناقص الأحمال يسار المقطع، يعطي انتقال حمل وحدة لأسفل من اليسار إلى اليمين قفزة +1."
+      },
+      "formula": "ηV(x)=ηRA(x)−H(s−x)",
+      "symbols": {
+        "en": "s is the fixed cut location; H(s−x)=1 when the unit load lies left of the cut and 0 to its right. Endpoints are evaluated with left/right limits.",
+        "ar": "s موضع القطع الثابت. H(s−x)=1 عندما يكون الحمل يسار القطع و0 عندما يكون يمينه. نستخدم النهايات من الجهتين عند المقطع."
+      },
+      "assumptions": {
+        "en": "Linear elastic response, small displacements, unchanged supports and a stable released system. Use the same positive directions in loads and movements.",
+        "ar": "استجابة خطية مرنة وإزاحات صغيرة ومساند ثابتة التعريف ومنشأ محرر مستقر. استخدم الاتجاهات الموجبة نفسها للقوى والحركات."
+      },
+      "example": {
+        "en": "Authored simple beam: L=10 m, cut s=4 m. Reaction ordinate at the cut is 0.6.",
+        "ar": "مثال كمرة بسيطة مؤلف: L=10 m والقطع s=4 m. إحداثي رد الفعل عند موضع القطع 0.6."
+      },
+      "calculation": {
+        "en": "ηV(s−)=0.6−1=−0.4; ηV(s+)=0.6. Jump=+1.",
+        "ar": "ηV(s−)=0.6−1=−0.4؛ ηV(s+)=0.6. القفزة +1."
+      },
+      "interpret": {
+        "en": "A jump is not a broken calculation. It represents the load changing which free-body segment contains it.",
+        "ar": "القفزة ليست خطأ حسابياً؛ إنها انتقال الحمل من جسم حر إلى الجسم المقابل."
+      },
+      "check": {
+        "prompt": {
+          "en": "Can you interpolate a single continuous curve across a shear jump?",
+          "ar": "هل يجوز استيفاء منحنى واحد متصل عبر قفزة القص؟"
+        },
+        "answer": {
+          "en": "No. Keep the two one-sided ordinates separate.",
+          "ar": "لا. احتفظ بإحداثيي النهايتين منفصلين."
+        }
+      },
+      "diagram": "influence",
+      "concepts": [
+        "iq-shear"
+      ],
+      "sources": [
+        {
+          "doc": "18",
+          "page": 8,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 9,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ]
+    },
+    {
+      "id": "iq-moment",
+      "title": {
+        "en": "Open a hinge and control the relative angle",
+        "ar": "أدخل مفصلاً وتحكم في الزاوية النسبية"
+      },
+      "predict": {
+        "en": "To obtain a section-moment influence line, which relative movement is prescribed?",
+        "ar": "لإنشاء خط تأثير عزم مقطع، أي حركة نسبية نفرض؟"
+      },
+      "options": [
+        {
+          "en": "A vertical slip of 1 m.",
+          "ar": "انزلاق رأسي مقداره 1 m."
+        },
+        {
+          "en": "A relative rotation of 1 radian after releasing the moment.",
+          "ar": "دوران نسبي مقداره راديان واحد بعد تحرير العزم."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Insert a hinge at the studied section and rotate its two sides relative to each other in the work-conjugate positive direction. Their displacements remain continuous, while the slopes differ.",
+        "ar": "أدخل مفصلاً عند المقطع ودوّر جانبيه نسبياً في الاتجاه الموجب المترافق في الشغل. تبقى الإزاحات متصلة بينما تختلف الميول."
+      },
+      "explain": {
+        "en": "Normalize by the difference between the two end rotations, not one arbitrary tangent angle. With rotation measured in radians, displacement divided by relative rotation has length units.",
+        "ar": "طبّع بفرق دوران الجانبين لا بزاوية مماس عشوائية واحدة. عند قياس الدوران بالراديان تكون وحدة الإزاحة مقسومة عليه طولاً."
+      },
+      "formula": "ηM(x)=y(x)/Δθ; M=ΣPηM",
+      "symbols": {
+        "en": "Δθ is signed relative hinge rotation in radians. ηM is in m when y is in m. Orient Δθ so the released displacement does positive work against the chosen moment.",
+        "ar": "Δθ الدوران النسبي الجبري عند المفصل بالراديان. ηM بوحدة m إذا كانت y بالمتر. اختر اتجاه الدوران بحيث يتوافق شغله مع العزم الموجب المحدد."
+      },
+      "assumptions": {
+        "en": "Linear elastic response, small displacements, unchanged supports and a stable released system. Use the same positive directions in loads and movements.",
+        "ar": "استجابة خطية مرنة وإزاحات صغيرة ومساند ثابتة التعريف ومنشأ محرر مستقر. استخدم الاتجاهات الموجبة نفسها للقوى والحركات."
+      },
+      "example": {
+        "en": "Authored example: Δθ=0.02 rad; the signed displacement at the load is 0.04 m.",
+        "ar": "مثال مؤلف: Δθ=0.02 rad والإزاحة الجبرية عند الحمل 0.04 m."
+      },
+      "calculation": {
+        "en": "ηM=0.04/0.02=2 m; a 30 kN load contributes +60 kN·m.",
+        "ar": "ηM=0.04/0.02=2 m؛ يساهم حمل 30 kN بعزم +60 kN·m."
+      },
+      "interpret": {
+        "en": "Moment lines are continuous at the section, typically with a change of tangent. Draw a slope change, not the vertical jump used for shear.",
+        "ar": "خطوط تأثير العزم متصلة عند المقطع وعادة يتغير المماس. ارسم تغير ميل، لا قفزة رأسية كالقص."
+      },
+      "check": {
+        "prompt": {
+          "en": "Why is 1 degree not a unit-radian release?",
+          "ar": "لماذا لا تعد درجة واحدة تحريراً بدوران وحدة؟"
+        },
+        "answer": {
+          "en": "1°=π/180 rad; use that actual denominator or prescribe 1 rad.",
+          "ar": "1°=π/180 rad؛ استخدم هذا المقام الفعلي أو افرض 1 rad."
+        }
+      },
+      "diagram": "influence",
+      "concepts": [
+        "iq-moment"
+      ],
+      "sources": [
+        {
+          "doc": "18",
+          "page": 8,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 9,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "iq-q1",
+      "concept": "iq-definition",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Which quantity is held fixed when drawing the influence line for moment at D?",
+        "ar": "ما الكمية التي تبقى ثابتة عند رسم خط تأثير العزم عند D؟"
+      },
+      "hints": [
+        {
+          "en": "Name the question you ask at every load position.",
+          "ar": "حدد السؤال الذي تكرره عند كل موضع للحمل."
+        },
+        {
+          "en": "Keep the response section D fixed while the unit load changes position.",
+          "ar": "ثبّت مقطع الاستجابة D وحرّك حمل الوحدة."
+        }
+      ],
+      "solution": {
+        "en": "The response location D is fixed. Only the unit-load position changes.",
+        "ar": "موضع الاستجابة D ثابت، والمتغير هو موضع حمل الوحدة."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Section D",
+          "ar": "المقطع D"
+        },
+        {
+          "en": "Load position",
+          "ar": "موضع الحمل"
+        },
+        {
+          "en": "The computed moment",
+          "ar": "قيمة العزم المحسوب"
+        }
+      ],
+      "correct": 0
+    },
+    {
+      "id": "iq-q2",
+      "concept": "iq-definition",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: a 40 kN load occupies reaction ordinate −0.25. Enter its signed contribution in kN.",
+        "ar": "مؤلف: حمل 40 kN عند إحداثي تأثير لرد فعل −0.25. أدخل مساهمته الجبرية بوحدة kN."
+      },
+      "hints": [
+        {
+          "en": "Multiply load by its ordinate.",
+          "ar": "اضرب الحمل في إحداثيه."
+        },
+        {
+          "en": "Use R=Pη with the negative ordinate unchanged.",
+          "ar": "استخدم R=Pη مع الاحتفاظ بالإحداثي السالب."
+        }
+      ],
+      "solution": {
+        "en": "40×(−0.25)=−10 kN. The contribution opposes the selected positive reaction.",
+        "ar": "40×(−0.25)=−10 kN. المساهمة عكس اتجاه رد الفعل الموجب المحدد."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "expected": -10,
+      "tolerance": 0.01,
+      "unit": "kN"
+    },
+    {
+      "id": "iq-q3",
+      "concept": "iq-reciprocity",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Which condition invalidates a direct use of Maxwell reciprocity between two tests?",
+        "ar": "أي حالة تمنع تطبيق تبادلية ماكسويل مباشرة بين تجربتين؟"
+      },
+      "hints": [
+        {
+          "en": "The stiffness operator must remain unchanged.",
+          "ar": "يجب أن تبقى صلابة المنشأ وشروطه دون تغيير."
+        },
+        {
+          "en": "A support change or nonlinear response changes the operator used by the two experiments.",
+          "ar": "تغيير المساند أو السلوك غير الخطي يغيّر مؤثر الجساءة بين التجربتين."
+        }
+      ],
+      "solution": {
+        "en": "Removing a support in only the second test changes the structural system, so the reciprocal comparison no longer applies.",
+        "ar": "إزالة مسند في التجربة الثانية فقط تغير المنشأ، فلا تنطبق المقارنة التبادلية."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 3,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Swapping two equal loads",
+          "ar": "تبادل موضعي حملين متساويين"
+        },
+        {
+          "en": "Removing a support in the second test",
+          "ar": "إزالة مسند في التجربة الثانية"
+        },
+        {
+          "en": "Measuring both movements in mm",
+          "ar": "قياس الحركتين بوحدة mm"
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "iq-q4",
+      "concept": "iq-reciprocity",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: 8 kN at A causes 3.2 mm at B. What movement in mm at A is caused by 5 kN at B?",
+        "ar": "مؤلف: حمل 8 kN عند A يسبب 3.2 mm عند B. ما حركة A بالملليمتر من حمل 5 kN عند B؟"
+      },
+      "hints": [
+        {
+          "en": "Find cross-flexibility per kN first.",
+          "ar": "أوجد المرونة المتبادلة لكل kN أولاً."
+        },
+        {
+          "en": "Use δ_A=(5/8)×3.2; load and movement form a cross-flexibility ratio.",
+          "ar": "استخدم δ_A=(5/8)×3.2؛ الحمل والإزاحة يحددان المرونة المتبادلة."
+        }
+      ],
+      "solution": {
+        "en": "fBA=3.2/8=0.4 mm/kN=fAB. Movement=5×0.4=2 mm.",
+        "ar": "fBA=3.2/8=0.4 mm/kN=fAB. الحركة 5×0.4=2 mm."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 2,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 3,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "expected": 2,
+      "tolerance": 0.01,
+      "unit": "mm"
+    },
+    {
+      "id": "iq-q5",
+      "concept": "iq-work",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Which pair contributes correctly to Betti work?",
+        "ar": "أي زوج يدخل بصورة صحيحة في شغل بيتي؟"
+      },
+      "hints": [
+        {
+          "en": "A generalized force pairs with its conjugate movement.",
+          "ar": "الفعل المعمم يقابل حركته المترافقة."
+        },
+        {
+          "en": "Pair a force with translation in its direction and a couple with its conjugate rotation.",
+          "ar": "قرن القوة بإزاحة في اتجاهها والعزم بدورانه المترافق."
+        }
+      ],
+      "solution": {
+        "en": "A couple times rotation in radians is work. A force times an unrelated rotation is not the matching pair.",
+        "ar": "العزم مضروباً في الدوران بالراديان يمثل شغلاً. القوة مضروبة في دوران غير مترافق ليست زوجاً صحيحاً."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 4,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 5,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Vertical force × unrelated rotation",
+          "ar": "قوة رأسية × دوران غير مترافق"
+        },
+        {
+          "en": "Couple × conjugate rotation in radians",
+          "ar": "عزم × دورانه المترافق بالراديان"
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "iq-q6",
+      "concept": "iq-work",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: 12 kN×5 mm=Q×3 mm in reciprocal work. Find Q in kN.",
+        "ar": "مؤلف: في العمل المتبادل 12 kN×5 mm=Q×3 mm. أوجد Q بوحدة kN."
+      },
+      "hints": [
+        {
+          "en": "Keep equal work on both sides.",
+          "ar": "ساوِ الشغل في الطرفين."
+        },
+        {
+          "en": "Rearrange Q=(12×5)/3 without mixing force and displacement units.",
+          "ar": "رتّب Q=(12×5)/3 دون خلط وحدات القوة والإزاحة."
+        }
+      ],
+      "solution": {
+        "en": "Q=12×5/3=20 kN. No half factor is needed for reciprocal cross-work.",
+        "ar": "Q=12×5/3=20 kN. لا يلزم معامل النصف للعمل المتبادل."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 4,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 5,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "expected": 20,
+      "tolerance": 0.01,
+      "unit": "kN"
+    },
+    {
+      "id": "iq-q7",
+      "concept": "iq-reaction",
+      "type": "conceptual",
+      "prompt": {
+        "en": "For the influence line of vertical reaction B, should rotational restraint at an originally fixed support B also be removed?",
+        "ar": "لخط تأثير رد الفعل الرأسي B، هل نزيل أيضاً قيد الدوران إذا كان B مثبتاً أصلاً؟"
+      },
+      "hints": [
+        {
+          "en": "Release only the restraint corresponding to the wanted reaction.",
+          "ar": "حرر القيد الموافق لرد الفعل المطلوب فقط."
+        },
+        {
+          "en": "For a vertical reaction, allow vertical translation but retain the other original restraints.",
+          "ar": "لرد فعل رأسي اسمح بالانتقال الرأسي مع إبقاء القيود الأصلية الأخرى."
+        }
+      ],
+      "solution": {
+        "en": "No. Remove the vertical restraint while retaining the rotational restraint; releasing both asks a different structural question.",
+        "ar": "لا. نزيل القيد الرأسي ونبقي قيد الدوران؛ إزالة الاثنين تغير المسألة."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 6,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 7,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "Yes, always release everything at B",
+          "ar": "نعم، نزيل كل القيود عند B دائماً"
+        },
+        {
+          "en": "No, retain the other restraints",
+          "ar": "لا، نبقي القيود الأخرى"
+        }
+      ],
+      "correct": 1
+    },
+    {
+      "id": "iq-q8",
+      "concept": "iq-reaction",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: support release +5 mm gives a load-point displacement −1.5 mm. Enter the reaction influence ordinate.",
+        "ar": "مؤلف: إزاحة مسند محرر +5 mm تعطي عند الحمل −1.5 mm. أدخل إحداثي تأثير رد الفعل."
+      },
+      "hints": [
+        {
+          "en": "Divide signed movement by the release movement.",
+          "ar": "اقسم الحركة الجبرية على إزاحة التحرير."
+        },
+        {
+          "en": "Use η=y(x)/δ_release, with both quantities expressed in the same length unit.",
+          "ar": "استخدم η=y(x)/δ_release مع توحيد وحدة الطول."
+        }
+      ],
+      "solution": {
+        "en": "η=−1.5/5=−0.3, dimensionless.",
+        "ar": "η=−1.5/5=−0.3، بلا أبعاد."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 6,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 7,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "expected": -0.3,
+      "tolerance": 0.001
+    },
+    {
+      "id": "iq-q9",
+      "concept": "iq-shear",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Which release creates a shear influence line?",
+        "ar": "أي تحرير ينشئ خط تأثير القص؟"
+      },
+      "hints": [
+        {
+          "en": "Ask which relative displacement does work against shear.",
+          "ar": "اسأل: أي إزاحة نسبية تبذل شغلاً مع القص؟"
+        },
+        {
+          "en": "Shear does work against the relative transverse displacement across a cut.",
+          "ar": "يبذل القص شغلًا مع الإزاحة العرضية النسبية على جانبي القطع."
+        }
+      ],
+      "solution": {
+        "en": "A relative transverse slide releases shear. A rotational hinge releases moment instead.",
+        "ar": "الانزلاق العرضي النسبي يحرر القص، بينما المفصل الدوراني يحرر العزم."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 8,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 9,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "A relative transverse slide at the cut",
+          "ar": "انزلاق عرضي نسبي عند القطع"
+        },
+        {
+          "en": "A rotational hinge only",
+          "ar": "مفصل دوراني فقط"
+        }
+      ],
+      "correct": 0
+    },
+    {
+      "id": "iq-q10",
+      "concept": "iq-shear",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: left-hand shear ordinate is −0.35; the conventional left-to-right jump is +1. Enter the right-hand ordinate.",
+        "ar": "مؤلف: إحداثي القص من اليسار −0.35 والقفزة من اليسار لليمين +1. أدخل إحداثي اليمين."
+      },
+      "hints": [
+        {
+          "en": "Add the jump to the left-hand limit.",
+          "ar": "أضف القفزة إلى النهاية اليسرى."
+        },
+        {
+          "en": "Write η_right=η_left+1 using the specified jump convention.",
+          "ar": "اكتب η_right=η_left+1 وفق اصطلاح القفزة المحدد."
+        }
+      ],
+      "solution": {
+        "en": "−0.35+1=0.65. Keep both limits in the drawing.",
+        "ar": "−0.35+1=0.65. احتفظ بالنهايتين في الرسم."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 8,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 9,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "expected": 0.65,
+      "tolerance": 0.001
+    },
+    {
+      "id": "iq-q11",
+      "concept": "iq-moment",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A moment release has left rotation 0.01 rad and right rotation −0.02 rad. Which normalization magnitude is required?",
+        "ar": "تحرير عزم له دوران أيسر 0.01 rad وأيمن −0.02 rad. ما مقدار التطبيع المطلوب؟"
+      },
+      "hints": [
+        {
+          "en": "Use relative angle, not one tangent alone.",
+          "ar": "استخدم فرق الزاويتين لا زاوية مماس واحدة."
+        },
+        {
+          "en": "Form |θ_left−θ_right|; opposite signed rotations add in the relative opening.",
+          "ar": "احسب |θ_left−θ_right|؛ الزاويتان المتعاكستان تزيدان فتحة الدوران النسبية."
+        }
+      ],
+      "solution": {
+        "en": "|0.01−(−0.02)|=0.03 rad. The sign depends on the selected moment direction.",
+        "ar": "|0.01−(−0.02)|=0.03 rad. تحدد إشارة الاتجاه وفق العزم الموجب المختار."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 8,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 9,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "options": [
+        {
+          "en": "0.01 rad",
+          "ar": "0.01 rad"
+        },
+        {
+          "en": "0.02 rad",
+          "ar": "0.02 rad"
+        },
+        {
+          "en": "0.03 rad",
+          "ar": "0.03 rad"
+        }
+      ],
+      "correct": 2
+    },
+    {
+      "id": "iq-q12",
+      "concept": "iq-moment",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored: signed release movement is 18 mm with relative rotation 0.006 rad. Enter the moment influence ordinate in metres.",
+        "ar": "مؤلف: الإزاحة الجبرية 18 mm والدوران النسبي 0.006 rad. أدخل إحداثي تأثير العزم بالمتر."
+      },
+      "hints": [
+        {
+          "en": "Convert millimetres to metres before dividing.",
+          "ar": "حوّل الملليمتر إلى متر قبل القسمة."
+        },
+        {
+          "en": "Use η_M=(18/1000)/0.006; its unit is metres.",
+          "ar": "استخدم η_M=(18/1000)/0.006؛ والوحدة متر."
+        }
+      ],
+      "solution": {
+        "en": "18 mm=0.018 m; ηM=0.018/0.006=3 m.",
+        "ar": "18 mm=0.018 m؛ ηM=0.018/0.006=3 m."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 8,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        },
+        {
+          "doc": "18",
+          "page": 9,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ],
+      "expected": 3,
+      "tolerance": 0.001,
+      "unit": "m"
+    },
+    {
+      "id": "iq-q13",
+      "concept": "iq-definition",
+      "type": "mixed",
+      "prompt": {
+        "en": "Authored: a20 kN load occupies moment ordinate−1.5 m. Enter the signed moment in kN·m, then choose its bending sense.",
+        "ar": "تدريب مؤلّف: حمل20 kN عند إحداثي تأثير عزم−1.5 m. أعطِ العزم الجبري kN·m واختر اتجاه الانحناء."
+      },
+      "expected": -30,
+      "tolerance": 0.01,
+      "unit": "kN·m",
+      "options": [
+        {
+          "en": "Sagging positive",
+          "ar": "ترخيم موجب"
+        },
+        {
+          "en": "Hogging negative",
+          "ar": "تحديب سالب"
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Multiply force by its signed ordinate.",
+          "ar": "اضرب القوة في إحداثيها الجبري."
+        },
+        {
+          "en": "M=Pη; retain the minus sign and the moment unit.",
+          "ar": "M=Pη؛ احتفظ بالسالب ووحدة العزم."
+        }
+      ],
+      "solution": {
+        "en": "M=20(−1.5)=−30 kN·m. With sagging-positive signs, this is hogging.",
+        "ar": "M=20(−1.5)=−30 kN·m؛ وهو تحديب عند اتخاذ الترخيم موجبًا."
+      },
+      "sources": [
+        {
+          "doc": "18",
+          "page": 8,
+          "filename": "Lecture (6) - influence lines ..pdf"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "iq-c1",
+      "concept": "iq-definition",
+      "kind": "interpretation",
+      "q": {
+        "en": "What changes along an influence line?",
+        "ar": "ما الذي يتغير على امتداد خط التأثير؟"
+      },
+      "a": {
+        "en": "The position of one unit load; the selected response and its location stay fixed.",
+        "ar": "موضع حمل وحدة واحد؛ الأثر المطلوب ومكانه ثابتان."
+      }
+    },
+    {
+      "id": "iq-c2",
+      "concept": "iq-definition",
+      "kind": "calculation",
+      "q": {
+        "en": "P=12 kN and η=−0.5. Contribution?",
+        "ar": "P=12 kN وη=−0.5. ما المساهمة؟"
+      },
+      "a": {
+        "en": "−6 in the response units: opposite the defined positive effect.",
+        "ar": "−6 بوحدة الأثر؛ عكس الاتجاه الموجب المحدد."
+      }
+    },
+    {
+      "id": "iq-c3",
+      "concept": "iq-reciprocity",
+      "kind": "prediction",
+      "q": {
+        "en": "Swap an equal force and a measured point on the same linear beam: what matches?",
+        "ar": "بادل بين قوة متساوية ونقطة قياس في كمرة خطية واحدة: ماذا يتساوى؟"
+      },
+      "a": {
+        "en": "The cross-displacements match in the corresponding directions.",
+        "ar": "تتساوى الإزاحتان المتبادلتان في الاتجاهين المتناظرين."
+      }
+    },
+    {
+      "id": "iq-c4",
+      "concept": "iq-reciprocity",
+      "kind": "misconception",
+      "q": {
+        "en": "Does reciprocity mean all points deflect equally?",
+        "ar": "هل تعني التبادلية أن كل النقاط تترخم بالتساوي؟"
+      },
+      "a": {
+        "en": "No. f12=f21; direct flexibilities f11 and f22 may differ.",
+        "ar": "لا. f12=f21؛ وقد تختلف f11 وf22."
+      }
+    },
+    {
+      "id": "iq-c5",
+      "concept": "iq-work",
+      "kind": "interpretation",
+      "q": {
+        "en": "What belongs in reciprocal work?",
+        "ar": "ما الذي يدخل في العمل المتبادل؟"
+      },
+      "a": {
+        "en": "Each force times its conjugate displacement from the other load system, including couples times rotations.",
+        "ar": "كل قوة في إزاحتها المترافقة من النظام الآخر، بما فيها العزوم في الدورانات."
+      }
+    },
+    {
+      "id": "iq-c6",
+      "concept": "iq-work",
+      "kind": "misconception",
+      "q": {
+        "en": "Must Betti cross-work include a half factor?",
+        "ar": "هل يتطلب شغل بيتي المتبادل معامل النصف؟"
+      },
+      "a": {
+        "en": "No. Do not confuse reciprocal cross-work with energy under gradual loading of one system.",
+        "ar": "لا. لا تخلط العمل المتبادل بطاقة التحميل التدريجي لنظام واحد."
+      }
+    },
+    {
+      "id": "iq-c7",
+      "concept": "iq-reaction",
+      "kind": "decision",
+      "q": {
+        "en": "How do you release an upward reaction?",
+        "ar": "كيف تحرر رد فعل لأعلى؟"
+      },
+      "a": {
+        "en": "Remove its translational restraint, retain all others, and impose movement in its positive direction.",
+        "ar": "أزل قيد إزاحته وأبق القيود الأخرى ثم افرض حركة في اتجاهه الموجب."
+      }
+    },
+    {
+      "id": "iq-c8",
+      "concept": "iq-reaction",
+      "kind": "calculation",
+      "q": {
+        "en": "y=−2 mm, imposed support lift=8 mm. Ordinate?",
+        "ar": "y=−2 mm ورفع المسند 8 mm. ما الإحداثي؟"
+      },
+      "a": {
+        "en": "−2/8=−0.25; it is dimensionless.",
+        "ar": "−2/8=−0.25؛ وهو بلا أبعاد."
+      }
+    },
+    {
+      "id": "iq-c9",
+      "concept": "iq-shear",
+      "kind": "prediction",
+      "q": {
+        "en": "What is special at a shear influence-line cut?",
+        "ar": "ما السمة الخاصة عند قطع خط تأثير القص؟"
+      },
+      "a": {
+        "en": "Separate left and right limits with a unit jump; its sign follows the shear convention.",
+        "ar": "نهايتان يسرى ويمنى بينهما قفزة وحدة؛ إشارتها حسب اصطلاح القص."
+      }
+    },
+    {
+      "id": "iq-c10",
+      "concept": "iq-shear",
+      "kind": "misconception",
+      "q": {
+        "en": "Does inserting a hinge release shear?",
+        "ar": "هل إدخال مفصل يحرر القص؟"
+      },
+      "a": {
+        "en": "No. A hinge releases moment; shear requires a relative transverse slide.",
+        "ar": "لا. المفصل يحرر العزم؛ القص يتطلب انزلاقاً عرضياً نسبياً."
+      }
+    },
+    {
+      "id": "iq-c11",
+      "concept": "iq-moment",
+      "kind": "decision",
+      "q": {
+        "en": "Which angle normalizes a moment release?",
+        "ar": "أي زاوية تطبّع تحرير العزم؟"
+      },
+      "a": {
+        "en": "The relative rotation between the two cut faces, in radians.",
+        "ar": "الدوران النسبي بين وجهي القطع، بالراديان."
+      }
+    },
+    {
+      "id": "iq-c12",
+      "concept": "iq-moment",
+      "kind": "interpretation",
+      "q": {
+        "en": "Why does a moment influence ordinate have length units?",
+        "ar": "لماذا لإحداثي تأثير العزم وحدة طول؟"
+      },
+      "a": {
+        "en": "It is displacement divided by dimensionless radians; multiplying by force gives moment.",
+        "ar": "لأنه إزاحة مقسومة على راديان بلا أبعاد؛ ضربه في القوة يعطي عزماً."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "18",
+      "page": 2,
+      "filename": "Lecture (6) - influence lines ..pdf"
+    },
+    {
+      "doc": "18",
+      "page": 4,
+      "filename": "Lecture (6) - influence lines ..pdf"
+    },
+    {
+      "doc": "18",
+      "page": 6,
+      "filename": "Lecture (6) - influence lines ..pdf"
+    },
+    {
+      "doc": "18",
+      "page": 9,
+      "filename": "Lecture (6) - influence lines ..pdf"
+    },
+    {
+      "doc": "07",
+      "page": 3,
+      "filename": "influence line stru.pdf"
+    }
+  ],
+  "videoIds": [
+    "iLVyd3bPQZc",
+    "EsRm3lcGmHc"
+  ]
+}

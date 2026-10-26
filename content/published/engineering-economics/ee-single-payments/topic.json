@@ -1,0 +1,1337 @@
+{
+  "id": "ee-single-payments",
+  "family": "ee-cashflows",
+  "title": {
+    "en": "One payment: draw time before choosing a factor",
+    "ar": "دفعة مفردة: ارسم الزمن قبل اختيار العامل"
+  },
+  "summary": {
+    "en": "You buy a small machine today and receive money later. Follow one amount along a timeline, then learn to reverse the journey without confusing principal, interest and final balance.",
+    "ar": "تشتري آلة اليوم وتتلقى المال لاحقًا. تتبع مبلغًا واحدًا على خط الزمن ثم اعكس الرحلة دون خلط الأصل والفائدة والرصيد النهائي."
+  },
+  "outcomes": [
+    {
+      "en": "Choose whose pocket and which date",
+      "ar": "اختر صاحب المال والتاريخ"
+    },
+    {
+      "en": "Simple interest uses the original principal",
+      "ar": "الفائدة البسيطة تستخدم الأصل الأول"
+    },
+    {
+      "en": "Compound growth remembers previous growth",
+      "ar": "النمو المركب يحمل نمو الفترات السابقة"
+    },
+    {
+      "en": "Discounting walks the same path backward",
+      "ar": "الخصم يعود على المسار نفسه"
+    },
+    {
+      "en": "Unknown time and irregular payments",
+      "ar": "زمن مجهول ودفعات غير منتظمة"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-powers"
+  ],
+  "concepts": [
+    {
+      "id": "ee-single-payments-s01-concept",
+      "title": {
+        "en": "Choose whose pocket and which date",
+        "ar": "اختر صاحب المال والتاريخ"
+      }
+    },
+    {
+      "id": "ee-single-payments-s02-concept",
+      "title": {
+        "en": "Simple interest uses the original principal",
+        "ar": "الفائدة البسيطة تستخدم الأصل الأول"
+      }
+    },
+    {
+      "id": "ee-single-payments-s03-concept",
+      "title": {
+        "en": "Compound growth remembers previous growth",
+        "ar": "النمو المركب يحمل نمو الفترات السابقة"
+      }
+    },
+    {
+      "id": "ee-single-payments-s04-concept",
+      "title": {
+        "en": "Discounting walks the same path backward",
+        "ar": "الخصم يعود على المسار نفسه"
+      }
+    },
+    {
+      "id": "ee-single-payments-s05-concept",
+      "title": {
+        "en": "Unknown time and irregular payments",
+        "ar": "زمن مجهول ودفعات غير منتظمة"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-single-payments-s01",
+      "title": {
+        "en": "Choose whose pocket and which date",
+        "ar": "اختر صاحب المال والتاريخ"
+      },
+      "predict": {
+        "en": "Can a year-2 net receipt be labeled present worth without conversion?",
+        "ar": "هل يسمى صافي مقبوض السنة 2 قيمة حالية دون تحويل؟"
+      },
+      "options": [
+        {
+          "en": "No; the date is part of the amount.",
+          "ar": "لا؛ التاريخ جزء من تعريف المبلغ."
+        },
+        {
+          "en": "Yes; currency amounts are interchangeable across dates.",
+          "ar": "نعم؛ المبالغ النقدية متبادلة بين التواريخ."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; the date is part of the amount. Sign is a viewpoint convention; it is not a change to the physical timing of payment.",
+        "ar": "لا؛ التاريخ جزء من تعريف المبلغ. الإشارة اتفاق منظور وليست تغييرًا في توقيت الدفع."
+      },
+      "explain": {
+        "en": "A loan receipt is positive for the borrower and negative for the lender. Neither sign is wrong: they describe different viewpoints. Choose one perspective, set t=0, mark the period length and place each receipt upward and each payment downward. You may net two amounts at the same instant. You may not simply add amounts from different dates when time value matters. The timeline is the model; the formula only moves its arrows.",
+        "ar": "استلام القرض موجب للمقترض وسالب للمقرض؛ كلا الإشارتين صحيح من منظور مختلف. اختر منظورًا واحدًا وحدد الصفر وطول الفترة وارسم المقبوض لأعلى والمدفوع لأسفل. يجوز جمع مبلغين في اللحظة نفسها، ولا تجمع مبالغ تواريخ مختلفة مباشرة مع أثر الزمن. الخط الزمني هو النموذج؛ المعادلة تنقل سهامه."
+      },
+      "formula": "Ct=receipts at t − payments at t",
+      "symbols": {
+        "en": "Ct is currency at date t; t counts the stated periods.",
+        "ar": "Ct مبلغ نقدي في التاريخ t الذي يعد الفترات المحددة."
+      },
+      "assumptions": {
+        "en": "One consistent viewpoint; same-date netting only. Year-end is assumed only when stated.",
+        "ar": "منظور واحد؛ والتجميع في التاريخ نفسه فقط. لا يفترض آخر السنة إلا عند النص عليه."
+      },
+      "example": {
+        "en": "At year 2, receive 700 and pay maintenance 200 CU.",
+        "ar": "في السنة 2 استلم 700 وادفع صيانة 200."
+      },
+      "calculation": {
+        "en": "C2=700−200=+500 CU at year 2, not at today.",
+        "ar": "التدفق في السنة 2 يساوي+500، وليس مبلغًا في الحاضر."
+      },
+      "interpret": {
+        "en": "Sign is a viewpoint convention; it is not a change to the physical timing of payment.",
+        "ar": "الإشارة اتفاق منظور وليست تغييرًا في توقيت الدفع."
+      },
+      "check": {
+        "prompt": {
+          "en": "A lender draws −1000 at t=0 and +1100 at t=1. What changes for the borrower?",
+          "ar": "يرسم المقرض−1000 عند الصفر و+1100 عند 1. ما الذي يتغير للمقترض؟"
+        },
+        "answer": {
+          "en": "Both cash-flow signs reverse; dates and agreed amounts remain.",
+          "ar": "تنعكس إشارتا التدفق ويبقى التاريخان والمبلغان."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-single-payments-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 8,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "experiment": "interest"
+    },
+    {
+      "id": "ee-single-payments-s02",
+      "title": {
+        "en": "Simple interest uses the original principal",
+        "ar": "الفائدة البسيطة تستخدم الأصل الأول"
+      },
+      "predict": {
+        "en": "Does simple interest at 10% add 10% of the new balance each year?",
+        "ar": "هل تضيف الفائدة البسيطة 10% من الرصيد الجديد كل سنة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; the base increases automatically.",
+          "ar": "نعم؛ يتزايد الأساس تلقائيًا."
+        },
+        {
+          "en": "No; it adds 10% of the original principal per year.",
+          "ar": "لا؛ تضيف 10% من الأصل الأول لكل سنة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; it adds 10% of the original principal per year. A charge and a closing balance are different requested quantities.",
+        "ar": "لا؛ تضيف 10% من الأصل الأول لكل سنة. الزيادة والرصيد الختامي مطلوبان مختلفان."
+      },
+      "explain": {
+        "en": "Under simple interest the charge for every period is based on the original principal, not the growing balance. Imagine placing the same small block next to your initial money every year. The final balance grows linearly with time. Separate the accumulated interest I from the final amount F=P+I. This distinction is often hidden by everyday language saying “interest amount” when the question wants the total due.",
+        "ar": "في الفائدة البسيطة تحسب زيادة كل فترة على الأصل الأول لا الرصيد المتزايد. تخيل إضافة كتلة متساوية بجواره سنويًا؛ فينمو النهائي خطيًا بالزمن. افصل الفائدة المتراكمة I عن المبلغ النهائي F=P+I. يخفي الكلام المعتاد هذا الفرق حين يقول مبلغ الفائدة ويطلب الإجمالي المستحق."
+      },
+      "formula": "I=P i n; F=P(1+i n)",
+      "symbols": {
+        "en": "P,F,I are currency; i is simple rate per period as a decimal; n is matching periods.",
+        "ar": "P و F و I نقد، و i معدل بسيط عشري لكل فترة، و n عدد فترات متطابقة."
+      },
+      "assumptions": {
+        "en": "Simple-interest contract, constant rate and explicitly stated period treatment.",
+        "ar": "نموذج فائدة بسيطة بمعدل ثابت ومعاملة زمن محددة صراحة."
+      },
+      "example": {
+        "en": "P=1000 CU, i=10%/year, n=3 years.",
+        "ar": "الأصل 1000 والمعدل 10% سنويًا والمدة 3 سنوات."
+      },
+      "calculation": {
+        "en": "I=1000×0.10×3=300; F=1300 CU.",
+        "ar": "الفائدة 300 والنهائي 1300."
+      },
+      "interpret": {
+        "en": "A charge and a closing balance are different requested quantities.",
+        "ar": "الزيادة والرصيد الختامي مطلوبان مختلفان."
+      },
+      "check": {
+        "prompt": {
+          "en": "For 1000 at 10% over 3 years, a learner reports 300 as the total due. What is missing?",
+          "ar": "لأصل 1000 بمعدل 10% لثلاث سنوات أعاد متعلم 300 إجماليًا. ما الناقص؟"
+        },
+        "answer": {
+          "en": "The original principal: total due is 1300.",
+          "ar": "الأصل؛ فالإجمالي 1300."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-single-payments-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 3,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 4,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-single-payments-s03",
+      "title": {
+        "en": "Compound growth remembers previous growth",
+        "ar": "النمو المركب يحمل نمو الفترات السابقة"
+      },
+      "predict": {
+        "en": "At positive rates, do simple and compound totals stay equal after the first period?",
+        "ar": "عند المعدلات الموجبة هل تبقى البسيطة والمركبة متساويتين بعد الفترة الأولى؟"
+      },
+      "options": [
+        {
+          "en": "No; compound growth includes growth on past increments.",
+          "ar": "لا؛ يشمل المركب نمو الزيادات السابقة."
+        },
+        {
+          "en": "Yes; the quoted percentage alone determines the same total.",
+          "ar": "نعم؛ النسبة المعلنة وحدها تعطي الإجمالي نفسه."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; compound growth includes growth on past increments. The rate and period counter must use the same clock.",
+        "ar": "لا؛ يشمل المركب نمو الزيادات السابقة. يجب أن يستخدم المعدل وعدد الفترات الساعة نفسها."
+      },
+      "explain": {
+        "en": "Now each new period begins with the previous closing balance. At 10%, 1000 becomes 1100, then 1210, then 1331. The second increment is larger because the base is larger. The single-payment compound-amount factor F/P is just this repeated multiplication written compactly. Before calculating, predict F>P for positive rates and positive time. The exponent counts periods, not automatically years.",
+        "ar": "تبدأ كل فترة الآن برصيد نهاية سابقتها. عند 10% تصبح 1000 ثم 1100 ثم 1210 ثم 1331. تكبر الزيادة الثانية لأن أساسها أكبر. عامل المبلغ المركب F/P هو هذا الضرب المتكرر بصياغة مختصرة. توقع أن يتجاوز النهائي الأصل عند معدل وزمن موجبين قبل الحساب؛ والأس عدد الفترات لا السنوات بالضرورة."
+      },
+      "formula": "F=P(F/P,i,n)=P(1+i)^n",
+      "symbols": {
+        "en": "F/P means find F given P; i is the effective rate of one modeled period.",
+        "ar": "F/P يعني إيجاد F من P، و i معدل الفترة الفعّال."
+      },
+      "assumptions": {
+        "en": "Constant effective rate, no intervening cash flows, consistent compounding periods.",
+        "ar": "معدل فعّال ثابت ودون تدفقات وسطية وفترات تركيب متوافقة."
+      },
+      "example": {
+        "en": "P=1000, i=10% effective annually, n=3.",
+        "ar": "الأصل 1000 ومعدل سنوي فعّال 10% والمدة 3."
+      },
+      "calculation": {
+        "en": "F=1000(1.1)^3=1331 CU. Compound interest=331 versus simple interest=300.",
+        "ar": "النهائي 1331؛ والزيادة المركبة 331 مقابل 300 بسيطة."
+      },
+      "interpret": {
+        "en": "The rate and period counter must use the same clock.",
+        "ar": "يجب أن يستخدم المعدل وعدد الفترات الساعة نفسها."
+      },
+      "check": {
+        "prompt": {
+          "en": "A monthly effective rate is 1% and duration is 2 years. Which exponent is consistent?",
+          "ar": "المعدل الشهري الفعّال 1% والمدة سنتان. أي أس متوافق؟"
+        },
+        "answer": {
+          "en": "24: F=P(1.01)^24.",
+          "ar": "24؛ فالنهائي=P(1.01)^24."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-single-payments-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 9,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 12,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 14,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "experiment": "interest"
+    },
+    {
+      "id": "ee-single-payments-s04",
+      "title": {
+        "en": "Discounting walks the same path backward",
+        "ar": "الخصم يعود على المسار نفسه"
+      },
+      "predict": {
+        "en": "At a positive rate, should present worth of a future positive receipt normally be smaller than the receipt?",
+        "ar": "عند معدل موجب هل تقل الحالية لمقبوض مستقبلي موجب عن المقبوض عادة؟"
+      },
+      "options": [
+        {
+          "en": "No; discounting always increases a positive amount.",
+          "ar": "لا؛ يزيد الخصم المبلغ الموجب دائمًا."
+        },
+        {
+          "en": "Yes; the earlier equivalent has time to grow.",
+          "ar": "نعم؛ لدى المكافئ المبكر وقت لينمو."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Yes; the earlier equivalent has time to grow. Inverse multiplication requires division by the growth factor, not subtraction of percentages.",
+        "ar": "نعم؛ لدى المكافئ المبكر وقت لينمو. يتطلب عكس الضرب القسمة على عامل النمو، لا طرح النسب."
+      },
+      "explain": {
+        "en": "Ask how much is needed today to grow into a known future receipt. Reverse the multiplication, so the P/F factor is the reciprocal of F/P. This is not removing a fraction of the future amount by subtracting i×n. With a positive rate, a future receipt is worth less at the earlier date; with zero rate the amount is unchanged. Re-expand the answer to its original date as a direct check.",
+        "ar": "اسأل عما يلزم اليوم ليصبح مقبوضًا معلومًا مستقبلًا. اعكس الضرب؛ فيكون P/F مقلوب F/P. ليس ذلك طرح i×n من المستقبل. عند معدل موجب تكون قيمة المقبوض أقل في التاريخ الأسبق، وعند صفر لا تتغير. أعد تنمية الجواب إلى تاريخه الأصلي للتحقق المباشر."
+      },
+      "formula": "P=F(P/F,i,n)=F/(1+i)^n",
+      "symbols": {
+        "en": "P is the value n matching periods before F, not necessarily calendar “today” unless that date is defined as zero.",
+        "ar": "P القيمة قبل F بعدد n من الفترات المتوافقة، وليست اليوم تقويميًا إلا إذا عُرّف صفرًا."
+      },
+      "assumptions": {
+        "en": "Same constant effective rate and no additional cash flows during the move.",
+        "ar": "المعدل الفعّال الثابت نفسه ودون تدفقات إضافية أثناء النقل."
+      },
+      "example": {
+        "en": "A receipt of 1331 CU is due in 3 years at 10% effective annually.",
+        "ar": "يستحق 1331 بعد 3 سنوات بمعدل 10% سنوي فعّال."
+      },
+      "calculation": {
+        "en": "P=1331/1.1^3=1000. Check 1000×1.1^3=1331.",
+        "ar": "الحالية 1000؛ والتحقق بتنميتها يعطي 1331."
+      },
+      "interpret": {
+        "en": "Inverse multiplication requires division by the growth factor, not subtraction of percentages.",
+        "ar": "يتطلب عكس الضرب القسمة على عامل النمو، لا طرح النسب."
+      },
+      "check": {
+        "prompt": {
+          "en": "A learner discounts 1000 due in 2 years at 10% as 1000(1−0.2)=800. Correct?",
+          "ar": "خصم متعلم 1000 بعد سنتين بمعدل 10% إلى 800. هل يصح؟"
+        },
+        "answer": {
+          "en": "No; compound present worth is 1000/1.1²≈826.45.",
+          "ar": "لا؛ الحالية المركبة 1000/1.1²≈826.45."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-single-payments-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 16,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 18,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-single-payments-s05",
+      "title": {
+        "en": "Unknown time and irregular payments",
+        "ar": "زمن مجهول ودفعات غير منتظمة"
+      },
+      "predict": {
+        "en": "May you apply a uniform-series factor directly to unequal receipts 110 and 121?",
+        "ar": "هل تطبق عامل الدفعات المتساوية مباشرة على 110 و 121؟"
+      },
+      "options": [
+        {
+          "en": "No; discount them separately or identify the correct growth pattern.",
+          "ar": "لا؛ اخصمهما منفصلين أو تعرف نمط النمو الصحيح."
+        },
+        {
+          "en": "Yes; any equally spaced cash flows have equal amounts.",
+          "ar": "نعم؛ كل تدفقات متساوية التباعد متساوية المقدار."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; discount them separately or identify the correct growth pattern. Equivalence is linear in amounts at a fixed rate; the dates determine the factors.",
+        "ar": "لا؛ اخصمهما منفصلين أو تعرف نمط النمو الصحيح. التكافؤ خطي في المبالغ عند معدل ثابت؛ وتحدد التواريخ عوامل النقل."
+      },
+      "explain": {
+        "en": "A single-payment equation can solve for time or rate, not only money. Logarithms answer how many repeated multiplications are needed. For several irregular payments, move each separately to the common date and add their signed equivalents. A factor is a shortcut for a pattern; it cannot create a regular series where none exists. Keep enough precision until the last result.",
+        "ar": "تحل معادلة الدفعة الواحدة الزمن والمعدل أيضًا. يجيب اللوغاريتم عن عدد مرات الضرب المتكرر. ولدفعات غير منتظمة انقل كل واحدة إلى التاريخ المشترك واجمع مكافئاتها بإشاراتها. العامل اختصار لنمط؛ ولا يصنع انتظامًا غير موجود. احتفظ بالدقة إلى النتيجة النهائية."
+      },
+      "formula": "n=ln(F/P)/ln(1+i); PW=Σ Ct/(1+i)^t",
+      "symbols": {
+        "en": "Logarithm arguments are dimensionless positive ratios; Ct is signed cash at t.",
+        "ar": "مدخل اللوغاريتم نسبة موجبة بلا أبعاد؛ و Ct نقد بإشارته عند t."
+      },
+      "assumptions": {
+        "en": "Constant positive effective rate for the time formula; a real-world payment may require rounding time up to a permitted date.",
+        "ar": "معدل فعّال موجب ثابت لصيغة الزمن؛ وقد يلزم تقريب الزمن لأعلى إلى موعد دفع مسموح."
+      },
+      "example": {
+        "en": "1000 doubles at 10% annually. Separately, receive 110 at year 1 and 121 at year 2.",
+        "ar": "يتضاعف 1000 عند 10% سنويًا. وبشكل مستقل تستلم 110 في 1 و 121 في 2."
+      },
+      "calculation": {
+        "en": "Doubling time=ln 2/ln 1.1≈7.27254 years. The two receipts have PW=110/1.1+121/1.1²=200 CU.",
+        "ar": "زمن المضاعفة≈7.27254 سنوات؛ وحالية المقبوضين 100+100=200."
+      },
+      "interpret": {
+        "en": "Equivalence is linear in amounts at a fixed rate; the dates determine the factors.",
+        "ar": "التكافؤ خطي في المبالغ عند معدل ثابت؛ وتحدد التواريخ عوامل النقل."
+      },
+      "check": {
+        "prompt": {
+          "en": "Receipts of 100 and 200 occur at the same year-end. Does discounting separately differ from netting first?",
+          "ar": "يحدث مقبوضا 100 و 200 في نهاية السنة نفسها. هل يختلف الخصم منفصلين عن الجمع أولًا؟"
+        },
+        "answer": {
+          "en": "No; the same date gives the same factor for both, so the result is identical.",
+          "ar": "لا؛ لهما العامل نفسه لتطابق التاريخ فتتساوى النتيجتان."
+        }
+      },
+      "diagram": "econ-cashflow",
+      "concepts": [
+        "ee-single-payments-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 19,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 127,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-single-payments-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 8,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Ct is currency at date t; t counts the stated periods.",
+          "ar": "Ct مبلغ نقدي في التاريخ t الذي يعد الفترات المحددة."
+        },
+        {
+          "en": "Ct=receipts at t − payments at t\nOne consistent viewpoint; same-date netting only. Year-end is assumed only when stated.",
+          "ar": "Ct=receipts at t − payments at t\nمنظور واحد؛ والتجميع في التاريخ نفسه فقط. لا يفترض آخر السنة إلا عند النص عليه."
+        }
+      ],
+      "id": "ee-single-payments-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can a year-2 net receipt be labeled present worth without conversion?",
+        "ar": "هل يسمى صافي مقبوض السنة 2 قيمة حالية دون تحويل؟"
+      },
+      "options": [
+        {
+          "en": "No; the date is part of the amount.",
+          "ar": "لا؛ التاريخ جزء من تعريف المبلغ."
+        },
+        {
+          "en": "Yes; currency amounts are interchangeable across dates.",
+          "ar": "نعم؛ المبالغ النقدية متبادلة بين التواريخ."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; the date is part of the amount. A loan receipt is positive for the borrower and negative for the lender. Neither sign is wrong: they describe different viewpoints. Choose one perspective, set t=0, mark the period length and place each receipt upward and each payment downward. You may net two amounts at the same instant. You may not simply add amounts from different dates when time value matters. The timeline is the model; the formula only moves its arrows.",
+        "ar": "لا؛ التاريخ جزء من تعريف المبلغ. استلام القرض موجب للمقترض وسالب للمقرض؛ كلا الإشارتين صحيح من منظور مختلف. اختر منظورًا واحدًا وحدد الصفر وطول الفترة وارسم المقبوض لأعلى والمدفوع لأسفل. يجوز جمع مبلغين في اللحظة نفسها، ولا تجمع مبالغ تواريخ مختلفة مباشرة مع أثر الزمن. الخط الزمني هو النموذج؛ المعادلة تنقل سهامه."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 8,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Ct is currency at date t; t counts the stated periods.",
+          "ar": "Ct مبلغ نقدي في التاريخ t الذي يعد الفترات المحددة."
+        },
+        {
+          "en": "Ct=receipts at t − payments at t\nOne consistent viewpoint; same-date netting only. Year-end is assumed only when stated.",
+          "ar": "Ct=receipts at t − payments at t\nمنظور واحد؛ والتجميع في التاريخ نفسه فقط. لا يفترض آخر السنة إلا عند النص عليه."
+        }
+      ],
+      "id": "ee-single-payments-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "At the same year-end receive 950 and pay 275 CU. Find the signed net cash flow.",
+        "ar": "في نهاية السنة نفسها تستلم 950 وتدفع 275. أوجد التدفق الصافي بإشارته."
+      },
+      "expected": 675,
+      "tolerance": 0.013500000000000002,
+      "unit": "CU at that date",
+      "solution": {
+        "en": "950−275=+675 CU at the specified year-end.",
+        "ar": "950−275=+675 في نهاية السنة المحددة."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s01-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 8,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Ct is currency at date t; t counts the stated periods.",
+          "ar": "Ct مبلغ نقدي في التاريخ t الذي يعد الفترات المحددة."
+        },
+        {
+          "en": "Ct=receipts at t − payments at t\nOne consistent viewpoint; same-date netting only. Year-end is assumed only when stated.",
+          "ar": "Ct=receipts at t − payments at t\nمنظور واحد؛ والتجميع في التاريخ نفسه فقط. لا يفترض آخر السنة إلا عند النص عليه."
+        }
+      ],
+      "id": "ee-single-payments-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A lender draws −1000 at t=0 and +1100 at t=1. What changes for the borrower?",
+        "ar": "يرسم المقرض−1000 عند الصفر و+1100 عند 1. ما الذي يتغير للمقترض؟"
+      },
+      "options": [
+        {
+          "en": "Only the interest rate changes sign.",
+          "ar": "تتغير إشارة المعدل فقط."
+        },
+        {
+          "en": "Both cash-flow signs reverse; dates and agreed amounts remain.",
+          "ar": "تنعكس إشارتا التدفق ويبقى التاريخان والمبلغان."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Both cash-flow signs reverse; dates and agreed amounts remain. Sign is a viewpoint convention; it is not a change to the physical timing of payment.",
+        "ar": "تنعكس إشارتا التدفق ويبقى التاريخان والمبلغان. الإشارة اتفاق منظور وليست تغييرًا في توقيت الدفع."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 3,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 4,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P,F,I are currency; i is simple rate per period as a decimal; n is matching periods.",
+          "ar": "P و F و I نقد، و i معدل بسيط عشري لكل فترة، و n عدد فترات متطابقة."
+        },
+        {
+          "en": "I=P i n; F=P(1+i n)\nSimple-interest contract, constant rate and explicitly stated period treatment.",
+          "ar": "I=P i n; F=P(1+i n)\nنموذج فائدة بسيطة بمعدل ثابت ومعاملة زمن محددة صراحة."
+        }
+      ],
+      "id": "ee-single-payments-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does simple interest at 10% add 10% of the new balance each year?",
+        "ar": "هل تضيف الفائدة البسيطة 10% من الرصيد الجديد كل سنة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; the base increases automatically.",
+          "ar": "نعم؛ يتزايد الأساس تلقائيًا."
+        },
+        {
+          "en": "No; it adds 10% of the original principal per year.",
+          "ar": "لا؛ تضيف 10% من الأصل الأول لكل سنة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; it adds 10% of the original principal per year. Under simple interest the charge for every period is based on the original principal, not the growing balance. Imagine placing the same small block next to your initial money every year. The final balance grows linearly with time. Separate the accumulated interest I from the final amount F=P+I. This distinction is often hidden by everyday language saying “interest amount” when the question wants the total due.",
+        "ar": "لا؛ تضيف 10% من الأصل الأول لكل سنة. في الفائدة البسيطة تحسب زيادة كل فترة على الأصل الأول لا الرصيد المتزايد. تخيل إضافة كتلة متساوية بجواره سنويًا؛ فينمو النهائي خطيًا بالزمن. افصل الفائدة المتراكمة I عن المبلغ النهائي F=P+I. يخفي الكلام المعتاد هذا الفرق حين يقول مبلغ الفائدة ويطلب الإجمالي المستحق."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 3,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 4,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P,F,I are currency; i is simple rate per period as a decimal; n is matching periods.",
+          "ar": "P و F و I نقد، و i معدل بسيط عشري لكل فترة، و n عدد فترات متطابقة."
+        },
+        {
+          "en": "I=P i n; F=P(1+i n)\nSimple-interest contract, constant rate and explicitly stated period treatment.",
+          "ar": "I=P i n; F=P(1+i n)\nنموذج فائدة بسيطة بمعدل ثابت ومعاملة زمن محددة صراحة."
+        }
+      ],
+      "id": "ee-single-payments-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Find total amount F for 2400 CU at 8% simple annual interest for 2.5 years.",
+        "ar": "أوجد المبلغ النهائي 2400 بفائدة بسيطة 8% سنويًا لمدة 2.5 سنة."
+      },
+      "expected": 2880,
+      "tolerance": 0.057600000000000005,
+      "unit": "CU",
+      "solution": {
+        "en": "F=2400(1+0.08×2.5)=2880; interest alone=480.",
+        "ar": "النهائي 2880؛ والفائدة وحدها 480."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s02-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 3,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 4,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P,F,I are currency; i is simple rate per period as a decimal; n is matching periods.",
+          "ar": "P و F و I نقد، و i معدل بسيط عشري لكل فترة، و n عدد فترات متطابقة."
+        },
+        {
+          "en": "I=P i n; F=P(1+i n)\nSimple-interest contract, constant rate and explicitly stated period treatment.",
+          "ar": "I=P i n; F=P(1+i n)\nنموذج فائدة بسيطة بمعدل ثابت ومعاملة زمن محددة صراحة."
+        }
+      ],
+      "id": "ee-single-payments-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "For 1000 at 10% over 3 years, a learner reports 300 as the total due. What is missing?",
+        "ar": "لأصل 1000 بمعدل 10% لثلاث سنوات أعاد متعلم 300 إجماليًا. ما الناقص؟"
+      },
+      "options": [
+        {
+          "en": "The original principal: total due is 1300.",
+          "ar": "الأصل؛ فالإجمالي 1300."
+        },
+        {
+          "en": "Another year’s interest: total due is 400.",
+          "ar": "فائدة سنة أخرى؛ فالإجمالي 400."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "The original principal: total due is 1300. A charge and a closing balance are different requested quantities.",
+        "ar": "الأصل؛ فالإجمالي 1300. الزيادة والرصيد الختامي مطلوبان مختلفان."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 9,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 12,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 14,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "F/P means find F given P; i is the effective rate of one modeled period.",
+          "ar": "F/P يعني إيجاد F من P، و i معدل الفترة الفعّال."
+        },
+        {
+          "en": "F=P(F/P,i,n)=P(1+i)^n\nConstant effective rate, no intervening cash flows, consistent compounding periods.",
+          "ar": "F=P(F/P,i,n)=P(1+i)^n\nمعدل فعّال ثابت ودون تدفقات وسطية وفترات تركيب متوافقة."
+        }
+      ],
+      "id": "ee-single-payments-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At positive rates, do simple and compound totals stay equal after the first period?",
+        "ar": "عند المعدلات الموجبة هل تبقى البسيطة والمركبة متساويتين بعد الفترة الأولى؟"
+      },
+      "options": [
+        {
+          "en": "No; compound growth includes growth on past increments.",
+          "ar": "لا؛ يشمل المركب نمو الزيادات السابقة."
+        },
+        {
+          "en": "Yes; the quoted percentage alone determines the same total.",
+          "ar": "نعم؛ النسبة المعلنة وحدها تعطي الإجمالي نفسه."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; compound growth includes growth on past increments. Now each new period begins with the previous closing balance. At 10%, 1000 becomes 1100, then 1210, then 1331. The second increment is larger because the base is larger. The single-payment compound-amount factor F/P is just this repeated multiplication written compactly. Before calculating, predict F>P for positive rates and positive time. The exponent counts periods, not automatically years.",
+        "ar": "لا؛ يشمل المركب نمو الزيادات السابقة. تبدأ كل فترة الآن برصيد نهاية سابقتها. عند 10% تصبح 1000 ثم 1100 ثم 1210 ثم 1331. تكبر الزيادة الثانية لأن أساسها أكبر. عامل المبلغ المركب F/P هو هذا الضرب المتكرر بصياغة مختصرة. توقع أن يتجاوز النهائي الأصل عند معدل وزمن موجبين قبل الحساب؛ والأس عدد الفترات لا السنوات بالضرورة."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 9,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 12,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 14,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "F/P means find F given P; i is the effective rate of one modeled period.",
+          "ar": "F/P يعني إيجاد F من P، و i معدل الفترة الفعّال."
+        },
+        {
+          "en": "F=P(F/P,i,n)=P(1+i)^n\nConstant effective rate, no intervening cash flows, consistent compounding periods.",
+          "ar": "F=P(F/P,i,n)=P(1+i)^n\nمعدل فعّال ثابت ودون تدفقات وسطية وفترات تركيب متوافقة."
+        }
+      ],
+      "id": "ee-single-payments-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Find future amount of 2000 CU at 6% effective annually after 4 years.",
+        "ar": "أوجد النهائي لأصل 2000 بمعدل سنوي فعّال 6% بعد 4 سنوات."
+      },
+      "expected": 2524.953920000001,
+      "tolerance": 0.05049907840000002,
+      "unit": "CU",
+      "solution": {
+        "en": "2000(1.06)^4=2524.95392 CU; do not use 2000(1+4×0.06).",
+        "ar": "2000(1.06)^4=2524.95392؛ ولا تستخدم الصيغة البسيطة."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s03-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 9,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 12,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 14,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "F/P means find F given P; i is the effective rate of one modeled period.",
+          "ar": "F/P يعني إيجاد F من P، و i معدل الفترة الفعّال."
+        },
+        {
+          "en": "F=P(F/P,i,n)=P(1+i)^n\nConstant effective rate, no intervening cash flows, consistent compounding periods.",
+          "ar": "F=P(F/P,i,n)=P(1+i)^n\nمعدل فعّال ثابت ودون تدفقات وسطية وفترات تركيب متوافقة."
+        }
+      ],
+      "id": "ee-single-payments-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A monthly effective rate is 1% and duration is 2 years. Which exponent is consistent?",
+        "ar": "المعدل الشهري الفعّال 1% والمدة سنتان. أي أس متوافق؟"
+      },
+      "options": [
+        {
+          "en": "2: F=P(1.01)^2.",
+          "ar": "2؛ فالنهائي=P(1.01)^2."
+        },
+        {
+          "en": "24: F=P(1.01)^24.",
+          "ar": "24؛ فالنهائي=P(1.01)^24."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "24: F=P(1.01)^24. The rate and period counter must use the same clock.",
+        "ar": "24؛ فالنهائي=P(1.01)^24. يجب أن يستخدم المعدل وعدد الفترات الساعة نفسها."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s04-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 16,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 18,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P is the value n matching periods before F, not necessarily calendar “today” unless that date is defined as zero.",
+          "ar": "P القيمة قبل F بعدد n من الفترات المتوافقة، وليست اليوم تقويميًا إلا إذا عُرّف صفرًا."
+        },
+        {
+          "en": "P=F(P/F,i,n)=F/(1+i)^n\nSame constant effective rate and no additional cash flows during the move.",
+          "ar": "P=F(P/F,i,n)=F/(1+i)^n\nالمعدل الفعّال الثابت نفسه ودون تدفقات إضافية أثناء النقل."
+        }
+      ],
+      "id": "ee-single-payments-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At a positive rate, should present worth of a future positive receipt normally be smaller than the receipt?",
+        "ar": "عند معدل موجب هل تقل الحالية لمقبوض مستقبلي موجب عن المقبوض عادة؟"
+      },
+      "options": [
+        {
+          "en": "No; discounting always increases a positive amount.",
+          "ar": "لا؛ يزيد الخصم المبلغ الموجب دائمًا."
+        },
+        {
+          "en": "Yes; the earlier equivalent has time to grow.",
+          "ar": "نعم؛ لدى المكافئ المبكر وقت لينمو."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Yes; the earlier equivalent has time to grow. Ask how much is needed today to grow into a known future receipt. Reverse the multiplication, so the P/F factor is the reciprocal of F/P. This is not removing a fraction of the future amount by subtracting i×n. With a positive rate, a future receipt is worth less at the earlier date; with zero rate the amount is unchanged. Re-expand the answer to its original date as a direct check.",
+        "ar": "نعم؛ لدى المكافئ المبكر وقت لينمو. اسأل عما يلزم اليوم ليصبح مقبوضًا معلومًا مستقبلًا. اعكس الضرب؛ فيكون P/F مقلوب F/P. ليس ذلك طرح i×n من المستقبل. عند معدل موجب تكون قيمة المقبوض أقل في التاريخ الأسبق، وعند صفر لا تتغير. أعد تنمية الجواب إلى تاريخه الأصلي للتحقق المباشر."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s04-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 16,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 18,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P is the value n matching periods before F, not necessarily calendar “today” unless that date is defined as zero.",
+          "ar": "P القيمة قبل F بعدد n من الفترات المتوافقة، وليست اليوم تقويميًا إلا إذا عُرّف صفرًا."
+        },
+        {
+          "en": "P=F(P/F,i,n)=F/(1+i)^n\nSame constant effective rate and no additional cash flows during the move.",
+          "ar": "P=F(P/F,i,n)=F/(1+i)^n\nالمعدل الفعّال الثابت نفسه ودون تدفقات إضافية أثناء النقل."
+        }
+      ],
+      "id": "ee-single-payments-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Find present worth of 5000 CU due in 5 years at 8% effective annually.",
+        "ar": "أوجد الحالية 5000 المستحقة بعد 5 سنوات بمعدل 8% سنوي فعّال."
+      },
+      "expected": 3402.9159851687646,
+      "tolerance": 0.0680583197033753,
+      "unit": "CU",
+      "solution": {
+        "en": "P=5000/(1.08)^5=3402.915985 CU. Growing this for 5 years recovers 5000.",
+        "ar": "الحالية 3402.915985؛ وإعادة نموها 5 سنوات تعيد 5000."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s04-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 16,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 18,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P is the value n matching periods before F, not necessarily calendar “today” unless that date is defined as zero.",
+          "ar": "P القيمة قبل F بعدد n من الفترات المتوافقة، وليست اليوم تقويميًا إلا إذا عُرّف صفرًا."
+        },
+        {
+          "en": "P=F(P/F,i,n)=F/(1+i)^n\nSame constant effective rate and no additional cash flows during the move.",
+          "ar": "P=F(P/F,i,n)=F/(1+i)^n\nالمعدل الفعّال الثابت نفسه ودون تدفقات إضافية أثناء النقل."
+        }
+      ],
+      "id": "ee-single-payments-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A learner discounts 1000 due in 2 years at 10% as 1000(1−0.2)=800. Correct?",
+        "ar": "خصم متعلم 1000 بعد سنتين بمعدل 10% إلى 800. هل يصح؟"
+      },
+      "options": [
+        {
+          "en": "No; compound present worth is 1000/1.1²≈826.45.",
+          "ar": "لا؛ الحالية المركبة 1000/1.1²≈826.45."
+        },
+        {
+          "en": "Yes; subtracting the total quoted percentages always reverses compounding.",
+          "ar": "نعم؛ طرح مجموع النسب يعكس التركيب دائمًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; compound present worth is 1000/1.1²≈826.45. Inverse multiplication requires division by the growth factor, not subtraction of percentages.",
+        "ar": "لا؛ الحالية المركبة 1000/1.1²≈826.45. يتطلب عكس الضرب القسمة على عامل النمو، لا طرح النسب."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s05-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 19,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 127,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Logarithm arguments are dimensionless positive ratios; Ct is signed cash at t.",
+          "ar": "مدخل اللوغاريتم نسبة موجبة بلا أبعاد؛ و Ct نقد بإشارته عند t."
+        },
+        {
+          "en": "n=ln(F/P)/ln(1+i); PW=Σ Ct/(1+i)^t\nConstant positive effective rate for the time formula; a real-world payment may require rounding time up to a permitted date.",
+          "ar": "n=ln(F/P)/ln(1+i); PW=Σ Ct/(1+i)^t\nمعدل فعّال موجب ثابت لصيغة الزمن؛ وقد يلزم تقريب الزمن لأعلى إلى موعد دفع مسموح."
+        }
+      ],
+      "id": "ee-single-payments-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "May you apply a uniform-series factor directly to unequal receipts 110 and 121?",
+        "ar": "هل تطبق عامل الدفعات المتساوية مباشرة على 110 و 121؟"
+      },
+      "options": [
+        {
+          "en": "No; discount them separately or identify the correct growth pattern.",
+          "ar": "لا؛ اخصمهما منفصلين أو تعرف نمط النمو الصحيح."
+        },
+        {
+          "en": "Yes; any equally spaced cash flows have equal amounts.",
+          "ar": "نعم؛ كل تدفقات متساوية التباعد متساوية المقدار."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; discount them separately or identify the correct growth pattern. A single-payment equation can solve for time or rate, not only money. Logarithms answer how many repeated multiplications are needed. For several irregular payments, move each separately to the common date and add their signed equivalents. A factor is a shortcut for a pattern; it cannot create a regular series where none exists. Keep enough precision until the last result.",
+        "ar": "لا؛ اخصمهما منفصلين أو تعرف نمط النمو الصحيح. تحل معادلة الدفعة الواحدة الزمن والمعدل أيضًا. يجيب اللوغاريتم عن عدد مرات الضرب المتكرر. ولدفعات غير منتظمة انقل كل واحدة إلى التاريخ المشترك واجمع مكافئاتها بإشاراتها. العامل اختصار لنمط؛ ولا يصنع انتظامًا غير موجود. احتفظ بالدقة إلى النتيجة النهائية."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s05-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 19,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 127,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Logarithm arguments are dimensionless positive ratios; Ct is signed cash at t.",
+          "ar": "مدخل اللوغاريتم نسبة موجبة بلا أبعاد؛ و Ct نقد بإشارته عند t."
+        },
+        {
+          "en": "n=ln(F/P)/ln(1+i); PW=Σ Ct/(1+i)^t\nConstant positive effective rate for the time formula; a real-world payment may require rounding time up to a permitted date.",
+          "ar": "n=ln(F/P)/ln(1+i); PW=Σ Ct/(1+i)^t\nمعدل فعّال موجب ثابت لصيغة الزمن؛ وقد يلزم تقريب الزمن لأعلى إلى موعد دفع مسموح."
+        }
+      ],
+      "id": "ee-single-payments-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "How many years does 1000 need to become 1500 at 5% effective annual growth? Give the mathematical time, without rounding to a whole year.",
+        "ar": "كم سنة تلزم 1000 لتصبح 1500 بمعدل 5% سنوي فعّال؟ أعط الزمن الرياضي دون تقريبه لسنة كاملة."
+      },
+      "expected": 8.310386222520561,
+      "tolerance": 0.005,
+      "unit": "years",
+      "solution": {
+        "en": "n=ln(1.5)/ln(1.05)=8.310386 years.",
+        "ar": "n=ln(1.5)/ln(1.05)=8.310386 سنة."
+      }
+    },
+    {
+      "concept": "ee-single-payments-s05-concept",
+      "sources": [
+        {
+          "doc": "EE06",
+          "page": 19,
+          "filename": "chapter 3 EnEc.pdf"
+        },
+        {
+          "doc": "EE06",
+          "page": 127,
+          "filename": "chapter 3 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Logarithm arguments are dimensionless positive ratios; Ct is signed cash at t.",
+          "ar": "مدخل اللوغاريتم نسبة موجبة بلا أبعاد؛ و Ct نقد بإشارته عند t."
+        },
+        {
+          "en": "n=ln(F/P)/ln(1+i); PW=Σ Ct/(1+i)^t\nConstant positive effective rate for the time formula; a real-world payment may require rounding time up to a permitted date.",
+          "ar": "n=ln(F/P)/ln(1+i); PW=Σ Ct/(1+i)^t\nمعدل فعّال موجب ثابت لصيغة الزمن؛ وقد يلزم تقريب الزمن لأعلى إلى موعد دفع مسموح."
+        }
+      ],
+      "id": "ee-single-payments-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Receipts of 100 and 200 occur at the same year-end. Does discounting separately differ from netting first?",
+        "ar": "يحدث مقبوضا 100 و 200 في نهاية السنة نفسها. هل يختلف الخصم منفصلين عن الجمع أولًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes; every cash-flow arrow must remain separate even at one instant.",
+          "ar": "نعم؛ يجب فصل كل سهم ولو في اللحظة نفسها."
+        },
+        {
+          "en": "No; the same date gives the same factor for both, so the result is identical.",
+          "ar": "لا؛ لهما العامل نفسه لتطابق التاريخ فتتساوى النتيجتان."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; the same date gives the same factor for both, so the result is identical. Equivalence is linear in amounts at a fixed rate; the dates determine the factors.",
+        "ar": "لا؛ لهما العامل نفسه لتطابق التاريخ فتتساوى النتيجتان. التكافؤ خطي في المبالغ عند معدل ثابت؛ وتحدد التواريخ عوامل النقل."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-single-payments-s01-recall",
+      "concept": "ee-single-payments-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Choose whose pocket and which date",
+        "ar": "اشرح: اختر صاحب المال والتاريخ"
+      },
+      "a": {
+        "en": "Sign is a viewpoint convention; it is not a change to the physical timing of payment.",
+        "ar": "الإشارة اتفاق منظور وليست تغييرًا في توقيت الدفع."
+      }
+    },
+    {
+      "id": "ee-single-payments-s01-formula",
+      "concept": "ee-single-payments-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nCt=receipts at t − payments at t",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nCt=receipts at t − payments at t"
+      },
+      "a": {
+        "en": "Ct is currency at date t; t counts the stated periods. One consistent viewpoint; same-date netting only. Year-end is assumed only when stated.",
+        "ar": "Ct مبلغ نقدي في التاريخ t الذي يعد الفترات المحددة. منظور واحد؛ والتجميع في التاريخ نفسه فقط. لا يفترض آخر السنة إلا عند النص عليه."
+      }
+    },
+    {
+      "id": "ee-single-payments-s01-trap",
+      "concept": "ee-single-payments-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; currency amounts are interchangeable across dates.",
+        "ar": "يقول متعلم: نعم؛ المبالغ النقدية متبادلة بين التواريخ."
+      },
+      "a": {
+        "en": "No; the date is part of the amount. Sign is a viewpoint convention; it is not a change to the physical timing of payment.",
+        "ar": "لا؛ التاريخ جزء من تعريف المبلغ. الإشارة اتفاق منظور وليست تغييرًا في توقيت الدفع."
+      }
+    },
+    {
+      "id": "ee-single-payments-s02-recall",
+      "concept": "ee-single-payments-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Simple interest uses the original principal",
+        "ar": "اشرح: الفائدة البسيطة تستخدم الأصل الأول"
+      },
+      "a": {
+        "en": "A charge and a closing balance are different requested quantities.",
+        "ar": "الزيادة والرصيد الختامي مطلوبان مختلفان."
+      }
+    },
+    {
+      "id": "ee-single-payments-s02-formula",
+      "concept": "ee-single-payments-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nI=P i n; F=P(1+i n)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nI=P i n; F=P(1+i n)"
+      },
+      "a": {
+        "en": "P,F,I are currency; i is simple rate per period as a decimal; n is matching periods. Simple-interest contract, constant rate and explicitly stated period treatment.",
+        "ar": "P و F و I نقد، و i معدل بسيط عشري لكل فترة، و n عدد فترات متطابقة. نموذج فائدة بسيطة بمعدل ثابت ومعاملة زمن محددة صراحة."
+      }
+    },
+    {
+      "id": "ee-single-payments-s02-trap",
+      "concept": "ee-single-payments-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; the base increases automatically.",
+        "ar": "يقول متعلم: نعم؛ يتزايد الأساس تلقائيًا."
+      },
+      "a": {
+        "en": "No; it adds 10% of the original principal per year. A charge and a closing balance are different requested quantities.",
+        "ar": "لا؛ تضيف 10% من الأصل الأول لكل سنة. الزيادة والرصيد الختامي مطلوبان مختلفان."
+      }
+    },
+    {
+      "id": "ee-single-payments-s03-recall",
+      "concept": "ee-single-payments-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Compound growth remembers previous growth",
+        "ar": "اشرح: النمو المركب يحمل نمو الفترات السابقة"
+      },
+      "a": {
+        "en": "The rate and period counter must use the same clock.",
+        "ar": "يجب أن يستخدم المعدل وعدد الفترات الساعة نفسها."
+      }
+    },
+    {
+      "id": "ee-single-payments-s03-formula",
+      "concept": "ee-single-payments-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nF=P(F/P,i,n)=P(1+i)^n",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nF=P(F/P,i,n)=P(1+i)^n"
+      },
+      "a": {
+        "en": "F/P means find F given P; i is the effective rate of one modeled period. Constant effective rate, no intervening cash flows, consistent compounding periods.",
+        "ar": "F/P يعني إيجاد F من P، و i معدل الفترة الفعّال. معدل فعّال ثابت ودون تدفقات وسطية وفترات تركيب متوافقة."
+      }
+    },
+    {
+      "id": "ee-single-payments-s03-trap",
+      "concept": "ee-single-payments-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; the quoted percentage alone determines the same total.",
+        "ar": "يقول متعلم: نعم؛ النسبة المعلنة وحدها تعطي الإجمالي نفسه."
+      },
+      "a": {
+        "en": "No; compound growth includes growth on past increments. The rate and period counter must use the same clock.",
+        "ar": "لا؛ يشمل المركب نمو الزيادات السابقة. يجب أن يستخدم المعدل وعدد الفترات الساعة نفسها."
+      }
+    },
+    {
+      "id": "ee-single-payments-s04-recall",
+      "concept": "ee-single-payments-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Discounting walks the same path backward",
+        "ar": "اشرح: الخصم يعود على المسار نفسه"
+      },
+      "a": {
+        "en": "Inverse multiplication requires division by the growth factor, not subtraction of percentages.",
+        "ar": "يتطلب عكس الضرب القسمة على عامل النمو، لا طرح النسب."
+      }
+    },
+    {
+      "id": "ee-single-payments-s04-formula",
+      "concept": "ee-single-payments-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nP=F(P/F,i,n)=F/(1+i)^n",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nP=F(P/F,i,n)=F/(1+i)^n"
+      },
+      "a": {
+        "en": "P is the value n matching periods before F, not necessarily calendar “today” unless that date is defined as zero. Same constant effective rate and no additional cash flows during the move.",
+        "ar": "P القيمة قبل F بعدد n من الفترات المتوافقة، وليست اليوم تقويميًا إلا إذا عُرّف صفرًا. المعدل الفعّال الثابت نفسه ودون تدفقات إضافية أثناء النقل."
+      }
+    },
+    {
+      "id": "ee-single-payments-s04-trap",
+      "concept": "ee-single-payments-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: No; discounting always increases a positive amount.",
+        "ar": "يقول متعلم: لا؛ يزيد الخصم المبلغ الموجب دائمًا."
+      },
+      "a": {
+        "en": "Yes; the earlier equivalent has time to grow. Inverse multiplication requires division by the growth factor, not subtraction of percentages.",
+        "ar": "نعم؛ لدى المكافئ المبكر وقت لينمو. يتطلب عكس الضرب القسمة على عامل النمو، لا طرح النسب."
+      }
+    },
+    {
+      "id": "ee-single-payments-s05-recall",
+      "concept": "ee-single-payments-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Unknown time and irregular payments",
+        "ar": "اشرح: زمن مجهول ودفعات غير منتظمة"
+      },
+      "a": {
+        "en": "Equivalence is linear in amounts at a fixed rate; the dates determine the factors.",
+        "ar": "التكافؤ خطي في المبالغ عند معدل ثابت؛ وتحدد التواريخ عوامل النقل."
+      }
+    },
+    {
+      "id": "ee-single-payments-s05-formula",
+      "concept": "ee-single-payments-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nn=ln(F/P)/ln(1+i); PW=Σ Ct/(1+i)^t",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nn=ln(F/P)/ln(1+i); PW=Σ Ct/(1+i)^t"
+      },
+      "a": {
+        "en": "Logarithm arguments are dimensionless positive ratios; Ct is signed cash at t. Constant positive effective rate for the time formula; a real-world payment may require rounding time up to a permitted date.",
+        "ar": "مدخل اللوغاريتم نسبة موجبة بلا أبعاد؛ و Ct نقد بإشارته عند t. معدل فعّال موجب ثابت لصيغة الزمن؛ وقد يلزم تقريب الزمن لأعلى إلى موعد دفع مسموح."
+      }
+    },
+    {
+      "id": "ee-single-payments-s05-trap",
+      "concept": "ee-single-payments-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; any equally spaced cash flows have equal amounts.",
+        "ar": "يقول متعلم: نعم؛ كل تدفقات متساوية التباعد متساوية المقدار."
+      },
+      "a": {
+        "en": "No; discount them separately or identify the correct growth pattern. Equivalence is linear in amounts at a fixed rate; the dates determine the factors.",
+        "ar": "لا؛ اخصمهما منفصلين أو تعرف نمط النمو الصحيح. التكافؤ خطي في المبالغ عند معدل ثابت؛ وتحدد التواريخ عوامل النقل."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE06",
+      "page": 3,
+      "filename": "chapter 3 EnEc.pdf"
+    },
+    {
+      "doc": "EE06",
+      "page": 8,
+      "filename": "chapter 3 EnEc.pdf"
+    },
+    {
+      "doc": "EE06",
+      "page": 16,
+      "filename": "chapter 3 EnEc.pdf"
+    }
+  ],
+  "videoIds": [
+    "fo0L6NZGZX8",
+    "ddVaiumu0tI",
+    "733mgqrzNKs"
+  ]
+}

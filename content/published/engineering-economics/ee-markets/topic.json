@@ -1,0 +1,1393 @@
+{
+  "id": "ee-markets",
+  "family": "ee-foundations",
+  "title": {
+    "en": "Markets, elasticity and the point of diminishing returns",
+    "ar": "السوق والمرونة ونقطة تناقص العائد"
+  },
+  "summary": {
+    "en": "A higher price can reduce the units sold. A larger crew can finish sooner but cost more. Learn to read those two stories with slopes, ratios and a clear definition of the comparison.",
+    "ar": "قد يقل البيع عند رفع السعر، وقد ينجز الطاقم الأكبر أسرع بتكلفة أعلى. تعلّم قراءة القصتين بالميل والنسب وتعريف المقارنة بوضوح."
+  },
+  "outcomes": [
+    {
+      "en": "Demand and supply tell different stories",
+      "ar": "الطلب والعرض قصتان مختلفتان"
+    },
+    {
+      "en": "Elasticity needs a declared percentage base",
+      "ar": "المرونة تحتاج أساسًا معلنًا للنسبة"
+    },
+    {
+      "en": "From an elasticity assumption to a price decision",
+      "ar": "من فرض المرونة إلى قرار السعر"
+    },
+    {
+      "en": "A faster crew can be a more expensive crew",
+      "ar": "قد يكون الطاقم الأسرع أغلى"
+    },
+    {
+      "en": "Break-even is a boundary, not a promise",
+      "ar": "التعادل حد فاصل لا وعد"
+    }
+  ],
+  "prereqIds": [
+    "ee-percent",
+    "ee-algebra",
+    "ee-timeline",
+    "ee-powers"
+  ],
+  "concepts": [
+    {
+      "id": "ee-markets-s01-concept",
+      "title": {
+        "en": "Demand and supply tell different stories",
+        "ar": "الطلب والعرض قصتان مختلفتان"
+      }
+    },
+    {
+      "id": "ee-markets-s02-concept",
+      "title": {
+        "en": "Elasticity needs a declared percentage base",
+        "ar": "المرونة تحتاج أساسًا معلنًا للنسبة"
+      }
+    },
+    {
+      "id": "ee-markets-s03-concept",
+      "title": {
+        "en": "From an elasticity assumption to a price decision",
+        "ar": "من فرض المرونة إلى قرار السعر"
+      }
+    },
+    {
+      "id": "ee-markets-s04-concept",
+      "title": {
+        "en": "A faster crew can be a more expensive crew",
+        "ar": "قد يكون الطاقم الأسرع أغلى"
+      }
+    },
+    {
+      "id": "ee-markets-s05-concept",
+      "title": {
+        "en": "Break-even is a boundary, not a promise",
+        "ar": "التعادل حد فاصل لا وعد"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "ee-markets-s01",
+      "title": {
+        "en": "Demand and supply tell different stories",
+        "ar": "الطلب والعرض قصتان مختلفتان"
+      },
+      "predict": {
+        "en": "Does a rise in an input’s cost necessarily mean movement along the same supply curve?",
+        "ar": "هل ارتفاع تكلفة المدخل حركة على منحنى العرض نفسه بالضرورة؟"
+      },
+      "options": [
+        {
+          "en": "No; it can shift the supply relationship.",
+          "ar": "لا؛ قد ينقل علاقة العرض نفسها."
+        },
+        {
+          "en": "Yes; every supply change is caused by the output’s own price.",
+          "ar": "نعم؛ كل تغير في العرض سببه سعر المنتج نفسه."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; it can shift the supply relationship. Interpret a market diagram through quantities at the same price, not curve names alone.",
+        "ar": "لا؛ قد ينقل علاقة العرض نفسها. فسّر الرسم بمقارنة الكميتين عند السعر نفسه، لا بأسماء المنحنيات وحدها."
+      },
+      "explain": {
+        "en": "Demand asks how much buyers want at a price, holding other influences fixed. Supply asks how much producers offer. Their intersection identifies equilibrium within the stated model. A change of the good’s own price moves along a curve; a change of income, technology or an input price may shift a curve. Economic relationships depend on behavior and assumptions; do not treat a sketch as an unchanging physical law.",
+        "ar": "يسأل الطلب عن كمية الشراء عند سعر معين مع ثبات المؤثرات الأخرى، ويسأل العرض عن كمية ما يقدمه المنتج. تقاطعهما يحدد الاتزان داخل النموذج. تغير سعر السلعة يحركنا على منحناها، بينما قد ينقل تغير الدخل أو التقنية أو سعر المدخل المنحنى نفسه. تعتمد العلاقات الاقتصادية على السلوك والافتراضات؛ فلا تعامل الرسم كقانون فيزيائي ثابت."
+      },
+      "formula": "Qd=a−bP; Qs=c+dP; equilibrium: Qd=Qs",
+      "symbols": {
+        "en": "Q is units/period; P is CU/unit; b,d are positive slope coefficients in these linear examples.",
+        "ar": "Q كمية الفترة و P سعر الوحدة، و b و d معاملا ميل موجبان في المثال الخطي."
+      },
+      "assumptions": {
+        "en": "Local linear curves with other demand/supply influences held constant.",
+        "ar": "منحنيات خطية محلية مع تثبيت المؤثرات الأخرى على العرض والطلب."
+      },
+      "example": {
+        "en": "Qd=100−2P and Qs=10+P. Find the intersection.",
+        "ar": "الطلب 100−2P والعرض 10+P. أوجد التقاطع."
+      },
+      "calculation": {
+        "en": "100−2P=10+P → P=30 CU/unit; Q=40 units/period. Substitute into both curves.",
+        "ar": "100−2P=10+P؛ إذن P=30 و Q=40. عوض في المنحنيين للتحقق."
+      },
+      "interpret": {
+        "en": "Interpret a market diagram through quantities at the same price, not curve names alone.",
+        "ar": "فسّر الرسم بمقارنة الكميتين عند السعر نفسه، لا بأسماء المنحنيات وحدها."
+      },
+      "check": {
+        "prompt": {
+          "en": "At a price above the intersection of ordinary upward supply and downward demand, what is expected?",
+          "ar": "عند سعر أعلى من تقاطع العرض الصاعد والطلب الهابط، ما المتوقع؟"
+        },
+        "answer": {
+          "en": "Quantity offered exceeds quantity demanded: a surplus in this model.",
+          "ar": "تتجاوز الكمية المعروضة المطلوبة؛ فائض في هذا النموذج."
+        }
+      },
+      "diagram": "econ-market",
+      "concepts": [
+        "ee-markets-s01-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 30,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 33,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 35,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-markets-s02",
+      "title": {
+        "en": "Elasticity needs a declared percentage base",
+        "ar": "المرونة تحتاج أساسًا معلنًا للنسبة"
+      },
+      "predict": {
+        "en": "Can you calculate an unambiguous finite-change elasticity without specifying percentage bases?",
+        "ar": "هل تحسب مرونة تغير محدود غير ملتبسة دون تحديد أسس النسب؟"
+      },
+      "options": [
+        {
+          "en": "Yes; all percentage conventions give identical finite-change values.",
+          "ar": "نعم؛ كل اتفاقات النسبة تعطي القيمة نفسها."
+        },
+        {
+          "en": "No; the percentage convention is part of the model.",
+          "ar": "لا؛ اتفاق النسبة جزء من النموذج."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; the percentage convention is part of the model. Revenue P×Q verifies the financial consequence; it does not remove the need to define percentage bases.",
+        "ar": "لا؛ اتفاق النسبة جزء من النموذج. يتحقق حاصل P×Q من الأثر النقدي، ولا يلغي تعريف أسس النسب."
+      },
+      "explain": {
+        "en": "Elasticity compares percentage quantity change to percentage price change, so it is not simply the slope ΔQ/ΔP. The lecture’s finite-change example uses the larger quantity and larger price as percentage bases. Other courses may use an initial-value or midpoint convention. These conventions can give different finite-change numbers. State the convention first and never silently replace the exam’s stated base. The magnitude is normally used for classifying demand. At the extremes, zero elasticity is perfectly inelastic demand (a vertical curve); infinite elasticity is the perfectly elastic limiting case (a horizontal curve).",
+        "ar": "تقارن المرونة تغير الكمية النسبي بتغير السعر النسبي؛ ليست مجرد الميل ΔQ/ΔP. يستخدم مثال المحاضرة الكمية الكبرى والسعر الأكبر أساسًا للنسب. وقد تستخدم مقررات أخرى القيمة الابتدائية أو المتوسط؛ فتختلف أرقام التغير المحدود. أعلن الاتفاق أولًا ولا تستبدل أساس الامتحان دون بيان. ويستخدم مقدار المرونة عادة لتصنيف الطلب. عند الحدين، المرونة صفر طلب عديم المرونة تمامًا ومنحناه رأسي، والمرونة غير المحدودة حالة تامة المرونة بمنحنى أفقي."
+      },
+      "formula": "|Ed|=(|ΔQ|/Qbase)/(|ΔP|/Pbase)",
+      "symbols": {
+        "en": "Ed is dimensionless. Elastic >1; inelastic <1; unit magnitude=1.",
+        "ar": "المرونة بلا أبعاد؛ مرن فوق 1 وغير مرن دون 1 ووحدي عندما يساوي المقدار 1."
+      },
+      "assumptions": {
+        "en": "Explicitly choose initial, larger-value or midpoint bases. This step’s worked example uses the lecture’s larger-value convention.",
+        "ar": "اختر أساس البداية أو القيمة الكبرى أو المتوسط صراحة. يستخدم المثال المحلول هنا اتفاق المحاضرة بالقيمة الكبرى."
+      },
+      "example": {
+        "en": "Price changes 30→60 CU; demand 16000→13000. Use Qbase=16000 and Pbase=60.",
+        "ar": "تغير السعر 30→60 والطلب 16000→13000؛ استخدم أساس الكمية 16000 والسعر 60."
+      },
+      "calculation": {
+        "en": "|Ed|=(3000/16000)/(30/60)=0.375. Revenue changes 480000→780000 CU/day.",
+        "ar": "المقدار=(3000/16000)/(30/60)=0.375؛ ويتغير الإيراد 480000→780000 يوميًا."
+      },
+      "interpret": {
+        "en": "Revenue P×Q verifies the financial consequence; it does not remove the need to define percentage bases.",
+        "ar": "يتحقق حاصل P×Q من الأثر النقدي، ولا يلغي تعريف أسس النسب."
+      },
+      "check": {
+        "prompt": {
+          "en": "Price 32→40 and quantity 15000→12000. The lecture reports Ed=1 using larger-value bases. What independent check is available?",
+          "ar": "السعر 32→40 والكمية 15000→12000. تعرض المحاضرة مرونة 1 بأساس القيم الكبرى. ما التحقق المستقل؟"
+        },
+        "answer": {
+          "en": "Both revenues are 480000; still state the elasticity convention.",
+          "ar": "الإيرادان 480000؛ مع ضرورة إعلان اتفاق المرونة."
+        }
+      },
+      "diagram": "econ-market",
+      "concepts": [
+        "ee-markets-s02-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 36,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 41,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE01",
+          "page": 2,
+          "filename": "013 Tut .pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-markets-s03",
+      "title": {
+        "en": "From an elasticity assumption to a price decision",
+        "ar": "من فرض المرونة إلى قرار السعر"
+      },
+      "predict": {
+        "en": "When each price case has the same initial condition, should you update the base after each case?",
+        "ar": "عندما تشترك حالات السعر في نقطة ابتدائية واحدة، هل تحدث الأساس بعد كل حالة؟"
+      },
+      "options": [
+        {
+          "en": "No; compare every case with the declared original point.",
+          "ar": "لا؛ قارن كل حالة بالنقطة الأصلية المعلنة."
+        },
+        {
+          "en": "Yes; always compound the previous quantity change.",
+          "ar": "نعم؛ ركّب تغير الكمية السابق دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; compare every case with the declared original point. Maximize the product of margin and quantity, within a valid demand range.",
+        "ar": "لا؛ قارن كل حالة بالنقطة الأصلية المعلنة. عظّم حاصل الهامش والكمية داخل مجال طلب صالح."
+      },
+      "explain": {
+        "en": "An exam may hold the initial price and demand fixed while testing several new prices. With an initial-base finite-change assumption, each scenario is compared with the original point, not chained to the previous scenario. Multiply the resulting demand by margin per unit to obtain total profit. Constant point elasticity, in contrast, leads to a power curve Q∝P^(−E); it is a different assumption. Keep the stated exam convention visible. The supplied older solutions also use the larger-price base for a price rise, giving Q=Q0[1−E(P−P0)/P]. Fixed initial conditions do not by themselves settle this denominator convention; declare it. At P=300 in the 250/50000/E=2.8 case, this convention gives 26666.666667 units and 1600000 CU contribution rather than 22000 and 1320000 under the initial-price-base rule.",
+        "ar": "قد يثبت الامتحان السعر والطلب الابتدائيين ويختبر أسعارًا جديدة. مع فرض التغير النسبي بأساس ابتدائي نقارن كل حالة بالنقطة الأصلية ولا نسلسلها بالحالة السابقة. اضرب الطلب الناتج في هامش الوحدة للحصول على الربح. أما المرونة الموضعية الثابتة فتعطي منحنى قوى Q∝P^(−E)، وهو فرض مختلف. أبقِ اتفاق الامتحان واضحًا. وتستخدم حلول قديمة في الأرشيف أساس السعر الأكبر عند الارتفاع، فتصبح Q=Q0[1−E(P−P0)/P]. لا تحسم عبارة تثبيت الشروط الابتدائية وحدها مقام النسبة. عند سعر 300 في مثال 250 و 50000 ومرونة 2.8، يعطي هذا الاتفاق 26666.666667 وحدة ومساهمة 1600000، مقابل 22000 و 1320000 بأساس السعر الابتدائي. أعلن الاتفاق قبل اختيار الجواب."
+      },
+      "formula": "initial-price base: Q=Q0[1−E(P−P0)/P0]; lecture larger-price base for a rise: Q=Q0[1−E(P−P0)/P]; Π=(P−c)Q",
+      "symbols": {
+        "en": "P0,Q0 are the fixed base point; E is the assumed initial-base finite-change elasticity; c is variable unit cost.",
+        "ar": "P0 و Q0 نقطة الأساس الثابتة؛ E مرونة التغير المحدود ذات الأساس الابتدائي، و c تكلفة الوحدة المتغيرة."
+      },
+      "assumptions": {
+        "en": "Use this linear scenario rule only when the problem explicitly fixes that initial-base convention. Require Q≥0.",
+        "ar": "تستخدم قاعدة السيناريو الخطي عندما ينص السؤال على الأساس الابتدائي الثابت، مع اشتراط عدم سالبية الطلب."
+      },
+      "example": {
+        "en": "P0=250, Q0=50000, E=2.8. At P=300 and c=240, find demand and gross contribution.",
+        "ar": "السعر الأصلي 250 والكمية 50000 والمرونة 2.8؛ عند سعر 300 وتكلفة 240 أوجد الطلب والمساهمة الإجمالية."
+      },
+      "calculation": {
+        "en": "Q=50000[1−2.8(50/250)]=22000; Π=(300−240)22000=1320000 CU before fixed costs.",
+        "ar": "Q=50000[1−2.8(50/250)]=22000؛ والمساهمة=(300−240)×22000=1320000 قبل الثابتة."
+      },
+      "interpret": {
+        "en": "Maximize the product of margin and quantity, within a valid demand range.",
+        "ar": "عظّم حاصل الهامش والكمية داخل مجال طلب صالح."
+      },
+      "check": {
+        "prompt": {
+          "en": "Under the explicitly stated initial-price-base rule, the 250/50000/E=2.8 model with c=240 has an interior optimum≈294.64. Should price rise without bound?",
+          "ar": "تحت قاعدة أساس السعر الابتدائي المعلنة صراحة، يكون أمثل نموذج 250 و 50000 ومرونة 2.8 وتكلفة 240 قرابة 294.64. هل يزاد السعر بلا حد؟"
+        },
+        "answer": {
+          "en": "No; falling demand eventually outweighs the larger unit margin.",
+          "ar": "لا؛ يتغلب انخفاض الطلب في النهاية على زيادة هامش الوحدة."
+        }
+      },
+      "diagram": "econ-market",
+      "concepts": [
+        "ee-markets-s03-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE11",
+          "page": 2,
+          "filename": "Economics Exams .pdf"
+        },
+        {
+          "doc": "EE13",
+          "page": 3,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-markets-s04",
+      "title": {
+        "en": "A faster crew can be a more expensive crew",
+        "ar": "قد يكون الطاقم الأسرع أغلى"
+      },
+      "predict": {
+        "en": "Does less elapsed time always mean lower labor cost?",
+        "ar": "هل قصر الزمن يعني دائمًا انخفاض تكلفة العمالة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; a shorter duration always lowers the wage bill.",
+          "ar": "نعم؛ المدة الأقصر تخفض الأجور دائمًا."
+        },
+        {
+          "en": "No; count paid worker-hours as well as elapsed hours.",
+          "ar": "لا؛ احسب ساعات جميع العمال المدفوعة أيضًا."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "No; count paid worker-hours as well as elapsed hours. Optimize only among alternatives that meet all required constraints.",
+        "ar": "لا؛ احسب ساعات جميع العمال المدفوعة أيضًا. حسّن القرار داخل البدائل التي تحقق القيود المطلوبة."
+      },
+      "explain": {
+        "en": "Keep one job fixed while adding workers. Elapsed hours may fall, but paid worker-hours are N×H(N). In the lecture’s table, four workers take 15 hours while five take 13. The fifth worker saves two hours of elapsed time but raises total paid hours from 60 to 65. Diminishing returns concerns the changing productivity of an added input; the minimum-cost crew and the shortest-time crew answer different questions. A deadline can change the recommended choice.",
+        "ar": "ثبت العمل ثم زد العمال. قد تنخفض ساعات الإنجاز، لكن ساعات العمل المدفوعة تساوي N×H(N). في جدول المحاضرة يحتاج أربعة عمال 15 ساعة وخمسة 13؛ يوفر الخامس ساعتين زمنتين لكنه يزيد ساعات الأجر من 60 إلى 65. يتعلق تناقص العائد بإنتاجية المدخل الإضافي؛ وأقل طاقم تكلفة وأسرع طاقم يجيبان عن سؤالين مختلفين. وقد يغير الموعد النهائي التوصية."
+      },
+      "formula": "labor cost=w×N×H(N)",
+      "symbols": {
+        "en": "w is CU/(worker·hour), N is workers, H is elapsed hours/job.",
+        "ar": "w أجر العامل في الساعة و N عدد العمال و H ساعات إنجاز المهمة."
+      },
+      "assumptions": {
+        "en": "Constant wage, comparable quality and no other crew-size costs. Additional equipment and delay costs require extra terms.",
+        "ar": "أجر ثابت وجودة متقاربة ودون تكاليف أخرى مرتبطة بالطاقم؛ تحتاج المعدات والتأخير بنودًا إضافية."
+      },
+      "example": {
+        "en": "Compare 4 workers×15 h and 5 workers×13 h, at 4 CU/(worker·h).",
+        "ar": "قارن 4 عمال×15 ساعة و 5×13 بأجر 4 للعامل في الساعة."
+      },
+      "calculation": {
+        "en": "Costs are 240 and 260 CU. Four workers are cheaper; five finish two hours earlier.",
+        "ar": "التكلفتان 240 و 260؛ الأربعة أرخص والخمسة ينتهون أبكر بساعتين."
+      },
+      "interpret": {
+        "en": "Optimize only among alternatives that meet all required constraints.",
+        "ar": "حسّن القرار داخل البدائل التي تحقق القيود المطلوبة."
+      },
+      "check": {
+        "prompt": {
+          "en": "The job must finish within 14 h. Among four workers at 15 h and five at 13 h, which is feasible?",
+          "ar": "يجب الإنجاز خلال 14 ساعة. أيهما ممكن: أربعة خلال 15 أم خمسة خلال 13؟"
+        },
+        "answer": {
+          "en": "Five workers; the cheaper four-worker option misses the constraint.",
+          "ar": "خمسة؛ البديل الأرخص من أربعة يخالف القيد."
+        }
+      },
+      "diagram": "econ-market",
+      "concepts": [
+        "ee-markets-s04-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 43,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 47,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 48,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ee-markets-s05",
+      "title": {
+        "en": "Break-even is a boundary, not a promise",
+        "ar": "التعادل حد فاصل لا وعد"
+      },
+      "predict": {
+        "en": "Does crossing break-even prove the forecast quantity will be sold?",
+        "ar": "هل تجاوز كمية التعادل يثبت إمكان بيعها؟"
+      },
+      "options": [
+        {
+          "en": "No; demand and capacity must independently support the forecast.",
+          "ar": "لا؛ يجب أن يدعم الطلب والسعة التوقع بصورة مستقلة."
+        },
+        {
+          "en": "Yes; the break-even equation guarantees a market.",
+          "ar": "نعم؛ معادلة التعادل تضمن وجود السوق."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "No; demand and capacity must independently support the forecast. Compare complete cost curves at the required output, not a single cost component.",
+        "ar": "لا؛ يجب أن يدعم الطلب والسعة التوقع بصورة مستقلة. قارن منحنيي التكلفة كاملين عند الإنتاج المطلوب، لا مكونًا واحدًا."
+      },
+      "explain": {
+        "en": "A small workshop pays rent even before making its first unit. Every sale contributes price minus variable unit cost toward that fixed bill. Break-even occurs when the contribution exactly covers fixed cost. If price does not exceed variable cost, selling additional units cannot cover a positive fixed cost in this linear model. A crossover between two machines is similar algebra but compares their two cost curves rather than revenue and cost.",
+        "ar": "تدفع الورشة الإيجار قبل إنتاج أول وحدة. تساهم كل عملية بيع بفرق السعر والتكلفة المتغيرة في تغطية هذا الثابت. يحدث التعادل حين تغطي المساهمة الفاتورة الثابتة تمامًا. إن لم يتجاوز السعر التكلفة المتغيرة فلن يغطي بيع وحدات أكثر تكلفة ثابتة موجبة في النموذج الخطي. وتشبه نقطة تقاطع آلتي إنتاج هذا الجبر لكنها تقارن منحنيي تكلفتين، لا الإيراد والتكلفة."
+      },
+      "formula": "Q*=F/(p−v); Π=(p−v)Q−F",
+      "symbols": {
+        "en": "F is fixed cost/period; p,v are CU/unit; Q* is units in that period.",
+        "ar": "F ثابتة الفترة و p و v نقد/وحدة و Q* وحدات الفترة."
+      },
+      "assumptions": {
+        "en": "Constant unit price and variable cost, p>v, sufficient demand and capacity, same analysis period.",
+        "ar": "سعر وتكلفة متغيرة ثابتان مع p>v وطلب وسعة كافيين والفترة نفسها."
+      },
+      "example": {
+        "en": "F=10000, p=30, v=10.",
+        "ar": "الثابتة 10000 والسعر 30 والمتغيرة 10."
+      },
+      "calculation": {
+        "en": "Q*=10000/(30−10)=500 units. At 600 units profit=20×600−10000=2000 CU.",
+        "ar": "التعادل 500 وحدة. وعند 600 وحدة يكون الربح 20×600−10000=2000."
+      },
+      "interpret": {
+        "en": "Compare complete cost curves at the required output, not a single cost component.",
+        "ar": "قارن منحنيي التكلفة كاملين عند الإنتاج المطلوب، لا مكونًا واحدًا."
+      },
+      "check": {
+        "prompt": {
+          "en": "A costs 10000+10Q and B costs 16000+6Q. Above the 1500-unit crossover, which costs less?",
+          "ar": "تكلفة A تساوي 10000+10Q و B تساوي 16000+6Q. أيهما أرخص فوق تقاطع 1500 وحدة؟"
+        },
+        "answer": {
+          "en": "B: its higher fixed cost is offset by the smaller variable slope.",
+          "ar": "B؛ تعوض قلة ميله المتغير ارتفاع التكلفة الثابتة."
+        }
+      },
+      "diagram": "econ-market",
+      "concepts": [
+        "ee-markets-s05-concept"
+      ],
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 15,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 20,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "concept": "ee-markets-s01-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 30,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 33,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 35,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Q is units/period; P is CU/unit; b,d are positive slope coefficients in these linear examples.",
+          "ar": "Q كمية الفترة و P سعر الوحدة، و b و d معاملا ميل موجبان في المثال الخطي."
+        },
+        {
+          "en": "Qd=a−bP; Qs=c+dP; equilibrium: Qd=Qs\nLocal linear curves with other demand/supply influences held constant.",
+          "ar": "Qd=a−bP; Qs=c+dP; equilibrium: Qd=Qs\nمنحنيات خطية محلية مع تثبيت المؤثرات الأخرى على العرض والطلب."
+        }
+      ],
+      "id": "ee-markets-s01-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does a rise in an input’s cost necessarily mean movement along the same supply curve?",
+        "ar": "هل ارتفاع تكلفة المدخل حركة على منحنى العرض نفسه بالضرورة؟"
+      },
+      "options": [
+        {
+          "en": "No; it can shift the supply relationship.",
+          "ar": "لا؛ قد ينقل علاقة العرض نفسها."
+        },
+        {
+          "en": "Yes; every supply change is caused by the output’s own price.",
+          "ar": "نعم؛ كل تغير في العرض سببه سعر المنتج نفسه."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; it can shift the supply relationship. Demand asks how much buyers want at a price, holding other influences fixed. Supply asks how much producers offer. Their intersection identifies equilibrium within the stated model. A change of the good’s own price moves along a curve; a change of income, technology or an input price may shift a curve. Economic relationships depend on behavior and assumptions; do not treat a sketch as an unchanging physical law.",
+        "ar": "لا؛ قد ينقل علاقة العرض نفسها. يسأل الطلب عن كمية الشراء عند سعر معين مع ثبات المؤثرات الأخرى، ويسأل العرض عن كمية ما يقدمه المنتج. تقاطعهما يحدد الاتزان داخل النموذج. تغير سعر السلعة يحركنا على منحناها، بينما قد ينقل تغير الدخل أو التقنية أو سعر المدخل المنحنى نفسه. تعتمد العلاقات الاقتصادية على السلوك والافتراضات؛ فلا تعامل الرسم كقانون فيزيائي ثابت."
+      }
+    },
+    {
+      "concept": "ee-markets-s01-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 30,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 33,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 35,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Q is units/period; P is CU/unit; b,d are positive slope coefficients in these linear examples.",
+          "ar": "Q كمية الفترة و P سعر الوحدة، و b و d معاملا ميل موجبان في المثال الخطي."
+        },
+        {
+          "en": "Qd=a−bP; Qs=c+dP; equilibrium: Qd=Qs\nLocal linear curves with other demand/supply influences held constant.",
+          "ar": "Qd=a−bP; Qs=c+dP; equilibrium: Qd=Qs\nمنحنيات خطية محلية مع تثبيت المؤثرات الأخرى على العرض والطلب."
+        }
+      ],
+      "id": "ee-markets-s01-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Qd=180−3P and Qs=20+P. Find equilibrium price.",
+        "ar": "الطلب 180−3P والعرض 20+P. أوجد سعر الاتزان."
+      },
+      "expected": 40,
+      "tolerance": 0.005,
+      "unit": "CU/unit",
+      "solution": {
+        "en": "180−3P=20+P gives 4P=160 and P=40; Q=60.",
+        "ar": "ينتج 4P=160 ومنه P=40، والكمية 60."
+      }
+    },
+    {
+      "concept": "ee-markets-s01-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 30,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 33,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 35,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Q is units/period; P is CU/unit; b,d are positive slope coefficients in these linear examples.",
+          "ar": "Q كمية الفترة و P سعر الوحدة، و b و d معاملا ميل موجبان في المثال الخطي."
+        },
+        {
+          "en": "Qd=a−bP; Qs=c+dP; equilibrium: Qd=Qs\nLocal linear curves with other demand/supply influences held constant.",
+          "ar": "Qd=a−bP; Qs=c+dP; equilibrium: Qd=Qs\nمنحنيات خطية محلية مع تثبيت المؤثرات الأخرى على العرض والطلب."
+        }
+      ],
+      "id": "ee-markets-s01-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "At a price above the intersection of ordinary upward supply and downward demand, what is expected?",
+        "ar": "عند سعر أعلى من تقاطع العرض الصاعد والطلب الهابط، ما المتوقع؟"
+      },
+      "options": [
+        {
+          "en": "Quantity demanded must exceed quantity supplied.",
+          "ar": "يلزم أن تتجاوز المطلوبة المعروضة."
+        },
+        {
+          "en": "Quantity offered exceeds quantity demanded: a surplus in this model.",
+          "ar": "تتجاوز الكمية المعروضة المطلوبة؛ فائض في هذا النموذج."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "Quantity offered exceeds quantity demanded: a surplus in this model. Interpret a market diagram through quantities at the same price, not curve names alone.",
+        "ar": "تتجاوز الكمية المعروضة المطلوبة؛ فائض في هذا النموذج. فسّر الرسم بمقارنة الكميتين عند السعر نفسه، لا بأسماء المنحنيات وحدها."
+      }
+    },
+    {
+      "concept": "ee-markets-s02-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 36,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 41,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE01",
+          "page": 2,
+          "filename": "013 Tut .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Ed is dimensionless. Elastic >1; inelastic <1; unit magnitude=1.",
+          "ar": "المرونة بلا أبعاد؛ مرن فوق 1 وغير مرن دون 1 ووحدي عندما يساوي المقدار 1."
+        },
+        {
+          "en": "|Ed|=(|ΔQ|/Qbase)/(|ΔP|/Pbase)\nExplicitly choose initial, larger-value or midpoint bases. This step’s worked example uses the lecture’s larger-value convention.",
+          "ar": "|Ed|=(|ΔQ|/Qbase)/(|ΔP|/Pbase)\nاختر أساس البداية أو القيمة الكبرى أو المتوسط صراحة. يستخدم المثال المحلول هنا اتفاق المحاضرة بالقيمة الكبرى."
+        }
+      ],
+      "id": "ee-markets-s02-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can you calculate an unambiguous finite-change elasticity without specifying percentage bases?",
+        "ar": "هل تحسب مرونة تغير محدود غير ملتبسة دون تحديد أسس النسب؟"
+      },
+      "options": [
+        {
+          "en": "Yes; all percentage conventions give identical finite-change values.",
+          "ar": "نعم؛ كل اتفاقات النسبة تعطي القيمة نفسها."
+        },
+        {
+          "en": "No; the percentage convention is part of the model.",
+          "ar": "لا؛ اتفاق النسبة جزء من النموذج."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; the percentage convention is part of the model. Elasticity compares percentage quantity change to percentage price change, so it is not simply the slope ΔQ/ΔP. The lecture’s finite-change example uses the larger quantity and larger price as percentage bases. Other courses may use an initial-value or midpoint convention. These conventions can give different finite-change numbers. State the convention first and never silently replace the exam’s stated base. The magnitude is normally used for classifying demand.",
+        "ar": "لا؛ اتفاق النسبة جزء من النموذج. تقارن المرونة تغير الكمية النسبي بتغير السعر النسبي؛ ليست مجرد الميل ΔQ/ΔP. يستخدم مثال المحاضرة الكمية الكبرى والسعر الأكبر أساسًا للنسب. وقد تستخدم مقررات أخرى القيمة الابتدائية أو المتوسط؛ فتختلف أرقام التغير المحدود. أعلن الاتفاق أولًا ولا تستبدل أساس الامتحان دون بيان. ويستخدم مقدار المرونة عادة لتصنيف الطلب."
+      }
+    },
+    {
+      "concept": "ee-markets-s02-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 36,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 41,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE01",
+          "page": 2,
+          "filename": "013 Tut .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Ed is dimensionless. Elastic >1; inelastic <1; unit magnitude=1.",
+          "ar": "المرونة بلا أبعاد؛ مرن فوق 1 وغير مرن دون 1 ووحدي عندما يساوي المقدار 1."
+        },
+        {
+          "en": "|Ed|=(|ΔQ|/Qbase)/(|ΔP|/Pbase)\nExplicitly choose initial, larger-value or midpoint bases. This step’s worked example uses the lecture’s larger-value convention.",
+          "ar": "|Ed|=(|ΔQ|/Qbase)/(|ΔP|/Pbase)\nاختر أساس البداية أو القيمة الكبرى أو المتوسط صراحة. يستخدم المثال المحلول هنا اتفاق المحاضرة بالقيمة الكبرى."
+        }
+      ],
+      "id": "ee-markets-s02-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Use larger-value bases: price 20→25, demand 1000→900. Find |Ed|.",
+        "ar": "استخدم أساس القيم الكبرى: السعر 20→25 والطلب 1000→900. أوجد مقدار المرونة."
+      },
+      "expected": 0.5,
+      "tolerance": 0.005,
+      "unit": "dimensionless",
+      "solution": {
+        "en": "(100/1000)/(5/25)=0.5. Initial-price convention would give 0.4, so name your convention.",
+        "ar": "(100/1000)/(5/25)=0.5؛ وبأساس السعر الابتدائي تصبح 0.4، لذا سمّ الاتفاق."
+      }
+    },
+    {
+      "concept": "ee-markets-s02-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 36,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 41,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE01",
+          "page": 2,
+          "filename": "013 Tut .pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "Ed is dimensionless. Elastic >1; inelastic <1; unit magnitude=1.",
+          "ar": "المرونة بلا أبعاد؛ مرن فوق 1 وغير مرن دون 1 ووحدي عندما يساوي المقدار 1."
+        },
+        {
+          "en": "|Ed|=(|ΔQ|/Qbase)/(|ΔP|/Pbase)\nExplicitly choose initial, larger-value or midpoint bases. This step’s worked example uses the lecture’s larger-value convention.",
+          "ar": "|Ed|=(|ΔQ|/Qbase)/(|ΔP|/Pbase)\nاختر أساس البداية أو القيمة الكبرى أو المتوسط صراحة. يستخدم المثال المحلول هنا اتفاق المحاضرة بالقيمة الكبرى."
+        }
+      ],
+      "id": "ee-markets-s02-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Price 32→40 and quantity 15000→12000. The lecture reports Ed=1 using larger-value bases. What independent check is available?",
+        "ar": "السعر 32→40 والكمية 15000→12000. تعرض المحاضرة مرونة 1 بأساس القيم الكبرى. ما التحقق المستقل؟"
+      },
+      "options": [
+        {
+          "en": "Both revenues are 480000; still state the elasticity convention.",
+          "ar": "الإيرادان 480000؛ مع ضرورة إعلان اتفاق المرونة."
+        },
+        {
+          "en": "The absolute quantity change alone proves unit elasticity.",
+          "ar": "تغير الكمية المطلق وحده يثبت المرونة الوحدية."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Both revenues are 480000; still state the elasticity convention. Revenue P×Q verifies the financial consequence; it does not remove the need to define percentage bases.",
+        "ar": "الإيرادان 480000؛ مع ضرورة إعلان اتفاق المرونة. يتحقق حاصل P×Q من الأثر النقدي، ولا يلغي تعريف أسس النسب."
+      }
+    },
+    {
+      "concept": "ee-markets-s03-concept",
+      "sources": [
+        {
+          "doc": "EE11",
+          "page": 2,
+          "filename": "Economics Exams .pdf"
+        },
+        {
+          "doc": "EE13",
+          "page": 3,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P0,Q0 are the fixed base point; E is the assumed initial-base finite-change elasticity; c is variable unit cost.",
+          "ar": "P0 و Q0 نقطة الأساس الثابتة؛ E مرونة التغير المحدود ذات الأساس الابتدائي، و c تكلفة الوحدة المتغيرة."
+        },
+        {
+          "en": "Q=Q0[1−E(P−P0)/P0]; Π=(P−c)Q\nUse this linear scenario rule only when the problem explicitly fixes that initial-base convention. Require Q≥0.",
+          "ar": "Q=Q0[1−E(P−P0)/P0]; Π=(P−c)Q\nتستخدم قاعدة السيناريو الخطي عندما ينص السؤال على الأساس الابتدائي الثابت، مع اشتراط عدم سالبية الطلب."
+        }
+      ],
+      "id": "ee-markets-s03-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "When each price case has the same initial condition, should you update the base after each case?",
+        "ar": "عندما تشترك حالات السعر في نقطة ابتدائية واحدة، هل تحدث الأساس بعد كل حالة؟"
+      },
+      "options": [
+        {
+          "en": "No; compare every case with the declared original point.",
+          "ar": "لا؛ قارن كل حالة بالنقطة الأصلية المعلنة."
+        },
+        {
+          "en": "Yes; always compound the previous quantity change.",
+          "ar": "نعم؛ ركّب تغير الكمية السابق دائمًا."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; compare every case with the declared original point. An exam may hold the initial price and demand fixed while testing several new prices. With an initial-base finite-change assumption, each scenario is compared with the original point, not chained to the previous scenario. Multiply the resulting demand by margin per unit to obtain total profit. Constant point elasticity, in contrast, leads to a power curve Q∝P^(−E); it is a different assumption. Keep the stated exam convention visible.",
+        "ar": "لا؛ قارن كل حالة بالنقطة الأصلية المعلنة. قد يثبت الامتحان السعر والطلب الابتدائيين ويختبر أسعارًا جديدة. مع فرض التغير النسبي بأساس ابتدائي نقارن كل حالة بالنقطة الأصلية ولا نسلسلها بالحالة السابقة. اضرب الطلب الناتج في هامش الوحدة للحصول على الربح. أما المرونة الموضعية الثابتة فتعطي منحنى قوى Q∝P^(−E)، وهو فرض مختلف. أبقِ اتفاق الامتحان واضحًا."
+      }
+    },
+    {
+      "concept": "ee-markets-s03-concept",
+      "sources": [
+        {
+          "doc": "EE11",
+          "page": 2,
+          "filename": "Economics Exams .pdf"
+        },
+        {
+          "doc": "EE13",
+          "page": 3,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P0,Q0 are the fixed base point; E is the assumed initial-base finite-change elasticity; c is variable unit cost.",
+          "ar": "P0 و Q0 نقطة الأساس الثابتة؛ E مرونة التغير المحدود ذات الأساس الابتدائي، و c تكلفة الوحدة المتغيرة."
+        },
+        {
+          "en": "Q=Q0[1−E(P−P0)/P0]; Π=(P−c)Q\nUse this linear scenario rule only when the problem explicitly fixes that initial-base convention. Require Q≥0.",
+          "ar": "Q=Q0[1−E(P−P0)/P0]; Π=(P−c)Q\nتستخدم قاعدة السيناريو الخطي عندما ينص السؤال على الأساس الابتدائي الثابت، مع اشتراط عدم سالبية الطلب."
+        }
+      ],
+      "id": "ee-markets-s03-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Initial-base rule: P0=100, Q0=10000, E=2. At P=110, find Q.",
+        "ar": "بقاعدة الأساس الابتدائي: P0=100 و Q0=10000 و E=2. أوجد الطلب عند P=110."
+      },
+      "expected": 8000,
+      "tolerance": 0.16,
+      "unit": "units",
+      "solution": {
+        "en": "Q=10000[1−2(10/100)]=8000.",
+        "ar": "الطلب=10000[1−2(10/100)]=8000."
+      }
+    },
+    {
+      "concept": "ee-markets-s03-concept",
+      "sources": [
+        {
+          "doc": "EE11",
+          "page": 2,
+          "filename": "Economics Exams .pdf"
+        },
+        {
+          "doc": "EE13",
+          "page": 3,
+          "filename": "Engineering_Economics _019+020Tutorials&solutions.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "P0,Q0 are the fixed base point; E is the assumed initial-base finite-change elasticity; c is variable unit cost.",
+          "ar": "P0 و Q0 نقطة الأساس الثابتة؛ E مرونة التغير المحدود ذات الأساس الابتدائي، و c تكلفة الوحدة المتغيرة."
+        },
+        {
+          "en": "Q=Q0[1−E(P−P0)/P0]; Π=(P−c)Q\nUse this linear scenario rule only when the problem explicitly fixes that initial-base convention. Require Q≥0.",
+          "ar": "Q=Q0[1−E(P−P0)/P0]; Π=(P−c)Q\nتستخدم قاعدة السيناريو الخطي عندما ينص السؤال على الأساس الابتدائي الثابت، مع اشتراط عدم سالبية الطلب."
+        }
+      ],
+      "id": "ee-markets-s03-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "Under the explicitly stated initial-price-base rule, the 250/50000/E=2.8 model with c=240 has an interior optimum≈294.64. Should price rise without bound?",
+        "ar": "تحت قاعدة أساس السعر الابتدائي المعلنة صراحة، يكون أمثل نموذج 250 و 50000 ومرونة 2.8 وتكلفة 240 قرابة 294.64. هل يزاد السعر بلا حد؟"
+      },
+      "options": [
+        {
+          "en": "Yes; a higher price always creates a higher total profit.",
+          "ar": "نعم؛ كل زيادة سعر ترفع الربح الكلي."
+        },
+        {
+          "en": "No; falling demand eventually outweighs the larger unit margin.",
+          "ar": "لا؛ يتغلب انخفاض الطلب في النهاية على زيادة هامش الوحدة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; falling demand eventually outweighs the larger unit margin. Maximize the product of margin and quantity, within a valid demand range.",
+        "ar": "لا؛ يتغلب انخفاض الطلب في النهاية على زيادة هامش الوحدة. عظّم حاصل الهامش والكمية داخل مجال طلب صالح."
+      }
+    },
+    {
+      "concept": "ee-markets-s04-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 43,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 47,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 48,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "w is CU/(worker·hour), N is workers, H is elapsed hours/job.",
+          "ar": "w أجر العامل في الساعة و N عدد العمال و H ساعات إنجاز المهمة."
+        },
+        {
+          "en": "labor cost=w×N×H(N)\nConstant wage, comparable quality and no other crew-size costs. Additional equipment and delay costs require extra terms.",
+          "ar": "labor cost=w×N×H(N)\nأجر ثابت وجودة متقاربة ودون تكاليف أخرى مرتبطة بالطاقم؛ تحتاج المعدات والتأخير بنودًا إضافية."
+        }
+      ],
+      "id": "ee-markets-s04-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does less elapsed time always mean lower labor cost?",
+        "ar": "هل قصر الزمن يعني دائمًا انخفاض تكلفة العمالة؟"
+      },
+      "options": [
+        {
+          "en": "Yes; a shorter duration always lowers the wage bill.",
+          "ar": "نعم؛ المدة الأقصر تخفض الأجور دائمًا."
+        },
+        {
+          "en": "No; count paid worker-hours as well as elapsed hours.",
+          "ar": "لا؛ احسب ساعات جميع العمال المدفوعة أيضًا."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "No; count paid worker-hours as well as elapsed hours. Keep one job fixed while adding workers. Elapsed hours may fall, but paid worker-hours are N×H(N). In the lecture’s table, four workers take 15 hours while five take 13. The fifth worker saves two hours of elapsed time but raises total paid hours from 60 to 65. Diminishing returns concerns the changing productivity of an added input; the minimum-cost crew and the shortest-time crew answer different questions. A deadline can change the recommended choice.",
+        "ar": "لا؛ احسب ساعات جميع العمال المدفوعة أيضًا. ثبت العمل ثم زد العمال. قد تنخفض ساعات الإنجاز، لكن ساعات العمل المدفوعة تساوي N×H(N). في جدول المحاضرة يحتاج أربعة عمال 15 ساعة وخمسة 13؛ يوفر الخامس ساعتين زمنتين لكنه يزيد ساعات الأجر من 60 إلى 65. يتعلق تناقص العائد بإنتاجية المدخل الإضافي؛ وأقل طاقم تكلفة وأسرع طاقم يجيبان عن سؤالين مختلفين. وقد يغير الموعد النهائي التوصية."
+      }
+    },
+    {
+      "concept": "ee-markets-s04-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 43,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 47,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 48,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "w is CU/(worker·hour), N is workers, H is elapsed hours/job.",
+          "ar": "w أجر العامل في الساعة و N عدد العمال و H ساعات إنجاز المهمة."
+        },
+        {
+          "en": "labor cost=w×N×H(N)\nConstant wage, comparable quality and no other crew-size costs. Additional equipment and delay costs require extra terms.",
+          "ar": "labor cost=w×N×H(N)\nأجر ثابت وجودة متقاربة ودون تكاليف أخرى مرتبطة بالطاقم؛ تحتاج المعدات والتأخير بنودًا إضافية."
+        }
+      ],
+      "id": "ee-markets-s04-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "A crew of 6 takes 11.5 hours at 4 CU/(worker·h). Find total labor cost.",
+        "ar": "طاقم 6 عمال يعمل 11.5 ساعة بأجر 4 للعامل/ساعة. أوجد تكلفة العمالة."
+      },
+      "expected": 276,
+      "tolerance": 0.005520000000000001,
+      "unit": "CU",
+      "solution": {
+        "en": "6×11.5×4=276 CU. Compare with 240 CU for four workers before recommending a larger crew.",
+        "ar": "6×11.5×4=276. قارنها بـ 240 للأربعة قبل التوصية بزيادة الطاقم."
+      }
+    },
+    {
+      "concept": "ee-markets-s04-concept",
+      "sources": [
+        {
+          "doc": "EE04",
+          "page": 43,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 47,
+          "filename": "chapter 1 EnEc.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 48,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "w is CU/(worker·hour), N is workers, H is elapsed hours/job.",
+          "ar": "w أجر العامل في الساعة و N عدد العمال و H ساعات إنجاز المهمة."
+        },
+        {
+          "en": "labor cost=w×N×H(N)\nConstant wage, comparable quality and no other crew-size costs. Additional equipment and delay costs require extra terms.",
+          "ar": "labor cost=w×N×H(N)\nأجر ثابت وجودة متقاربة ودون تكاليف أخرى مرتبطة بالطاقم؛ تحتاج المعدات والتأخير بنودًا إضافية."
+        }
+      ],
+      "id": "ee-markets-s04-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "The job must finish within 14 h. Among four workers at 15 h and five at 13 h, which is feasible?",
+        "ar": "يجب الإنجاز خلال 14 ساعة. أيهما ممكن: أربعة خلال 15 أم خمسة خلال 13؟"
+      },
+      "options": [
+        {
+          "en": "Five workers; the cheaper four-worker option misses the constraint.",
+          "ar": "خمسة؛ البديل الأرخص من أربعة يخالف القيد."
+        },
+        {
+          "en": "Four workers because minimum payroll overrides the deadline.",
+          "ar": "أربعة لأن أقل أجور تتقدم على الموعد."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "Five workers; the cheaper four-worker option misses the constraint. Optimize only among alternatives that meet all required constraints.",
+        "ar": "خمسة؛ البديل الأرخص من أربعة يخالف القيد. حسّن القرار داخل البدائل التي تحقق القيود المطلوبة."
+      }
+    },
+    {
+      "concept": "ee-markets-s05-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 15,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 20,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "F is fixed cost/period; p,v are CU/unit; Q* is units in that period.",
+          "ar": "F ثابتة الفترة و p و v نقد/وحدة و Q* وحدات الفترة."
+        },
+        {
+          "en": "Q*=F/(p−v); Π=(p−v)Q−F\nConstant unit price and variable cost, p>v, sufficient demand and capacity, same analysis period.",
+          "ar": "Q*=F/(p−v); Π=(p−v)Q−F\nسعر وتكلفة متغيرة ثابتان مع p>v وطلب وسعة كافيين والفترة نفسها."
+        }
+      ],
+      "id": "ee-markets-s05-C",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does crossing break-even prove the forecast quantity will be sold?",
+        "ar": "هل تجاوز كمية التعادل يثبت إمكان بيعها؟"
+      },
+      "options": [
+        {
+          "en": "No; demand and capacity must independently support the forecast.",
+          "ar": "لا؛ يجب أن يدعم الطلب والسعة التوقع بصورة مستقلة."
+        },
+        {
+          "en": "Yes; the break-even equation guarantees a market.",
+          "ar": "نعم؛ معادلة التعادل تضمن وجود السوق."
+        }
+      ],
+      "correct": 0,
+      "solution": {
+        "en": "No; demand and capacity must independently support the forecast. A small workshop pays rent even before making its first unit. Every sale contributes price minus variable unit cost toward that fixed bill. Break-even occurs when the contribution exactly covers fixed cost. If price does not exceed variable cost, selling additional units cannot cover a positive fixed cost in this linear model. A crossover between two machines is similar algebra but compares their two cost curves rather than revenue and cost.",
+        "ar": "لا؛ يجب أن يدعم الطلب والسعة التوقع بصورة مستقلة. تدفع الورشة الإيجار قبل إنتاج أول وحدة. تساهم كل عملية بيع بفرق السعر والتكلفة المتغيرة في تغطية هذا الثابت. يحدث التعادل حين تغطي المساهمة الفاتورة الثابتة تمامًا. إن لم يتجاوز السعر التكلفة المتغيرة فلن يغطي بيع وحدات أكثر تكلفة ثابتة موجبة في النموذج الخطي. وتشبه نقطة تقاطع آلتي إنتاج هذا الجبر لكنها تقارن منحنيي تكلفتين، لا الإيراد والتكلفة."
+      }
+    },
+    {
+      "concept": "ee-markets-s05-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 15,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 20,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "F is fixed cost/period; p,v are CU/unit; Q* is units in that period.",
+          "ar": "F ثابتة الفترة و p و v نقد/وحدة و Q* وحدات الفترة."
+        },
+        {
+          "en": "Q*=F/(p−v); Π=(p−v)Q−F\nConstant unit price and variable cost, p>v, sufficient demand and capacity, same analysis period.",
+          "ar": "Q*=F/(p−v); Π=(p−v)Q−F\nسعر وتكلفة متغيرة ثابتان مع p>v وطلب وسعة كافيين والفترة نفسها."
+        }
+      ],
+      "id": "ee-markets-s05-N",
+      "type": "numerical",
+      "prompt": {
+        "en": "Fixed cost 18000 CU/year; price 50 and variable cost 20 CU/unit. Find annual break-even output.",
+        "ar": "الثابتة 18000 سنويًا والسعر 50 والمتغيرة 20 للوحدة. أوجد إنتاج التعادل السنوي."
+      },
+      "expected": 600,
+      "tolerance": 0.012,
+      "unit": "units/year",
+      "solution": {
+        "en": "18000/(50−20)=600 units/year.",
+        "ar": "18000/(50−20)=600 وحدة سنويًا."
+      }
+    },
+    {
+      "concept": "ee-markets-s05-concept",
+      "sources": [
+        {
+          "doc": "EE10",
+          "page": 15,
+          "filename": "Econ-PE-ProblemBk.pdf"
+        },
+        {
+          "doc": "EE04",
+          "page": 20,
+          "filename": "chapter 1 EnEc.pdf"
+        }
+      ],
+      "hints": [
+        {
+          "en": "F is fixed cost/period; p,v are CU/unit; Q* is units in that period.",
+          "ar": "F ثابتة الفترة و p و v نقد/وحدة و Q* وحدات الفترة."
+        },
+        {
+          "en": "Q*=F/(p−v); Π=(p−v)Q−F\nConstant unit price and variable cost, p>v, sufficient demand and capacity, same analysis period.",
+          "ar": "Q*=F/(p−v); Π=(p−v)Q−F\nسعر وتكلفة متغيرة ثابتان مع p>v وطلب وسعة كافيين والفترة نفسها."
+        }
+      ],
+      "id": "ee-markets-s05-M",
+      "type": "mixed",
+      "prompt": {
+        "en": "A costs 10000+10Q and B costs 16000+6Q. Above the 1500-unit crossover, which costs less?",
+        "ar": "تكلفة A تساوي 10000+10Q و B تساوي 16000+6Q. أيهما أرخص فوق تقاطع 1500 وحدة؟"
+      },
+      "options": [
+        {
+          "en": "A because its fixed cost is always lower.",
+          "ar": "A لأن ثابتته دائمًا أقل."
+        },
+        {
+          "en": "B: its higher fixed cost is offset by the smaller variable slope.",
+          "ar": "B؛ تعوض قلة ميله المتغير ارتفاع التكلفة الثابتة."
+        }
+      ],
+      "correct": 1,
+      "solution": {
+        "en": "B: its higher fixed cost is offset by the smaller variable slope. Compare complete cost curves at the required output, not a single cost component.",
+        "ar": "B؛ تعوض قلة ميله المتغير ارتفاع التكلفة الثابتة. قارن منحنيي التكلفة كاملين عند الإنتاج المطلوب، لا مكونًا واحدًا."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ee-markets-s01-recall",
+      "concept": "ee-markets-s01-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Demand and supply tell different stories",
+        "ar": "اشرح: الطلب والعرض قصتان مختلفتان"
+      },
+      "a": {
+        "en": "Interpret a market diagram through quantities at the same price, not curve names alone.",
+        "ar": "فسّر الرسم بمقارنة الكميتين عند السعر نفسه، لا بأسماء المنحنيات وحدها."
+      }
+    },
+    {
+      "id": "ee-markets-s01-formula",
+      "concept": "ee-markets-s01-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nQd=a−bP; Qs=c+dP; equilibrium: Qd=Qs",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nQd=a−bP; Qs=c+dP; equilibrium: Qd=Qs"
+      },
+      "a": {
+        "en": "Q is units/period; P is CU/unit; b,d are positive slope coefficients in these linear examples. Local linear curves with other demand/supply influences held constant.",
+        "ar": "Q كمية الفترة و P سعر الوحدة، و b و d معاملا ميل موجبان في المثال الخطي. منحنيات خطية محلية مع تثبيت المؤثرات الأخرى على العرض والطلب."
+      }
+    },
+    {
+      "id": "ee-markets-s01-trap",
+      "concept": "ee-markets-s01-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; every supply change is caused by the output’s own price.",
+        "ar": "يقول متعلم: نعم؛ كل تغير في العرض سببه سعر المنتج نفسه."
+      },
+      "a": {
+        "en": "No; it can shift the supply relationship. Interpret a market diagram through quantities at the same price, not curve names alone.",
+        "ar": "لا؛ قد ينقل علاقة العرض نفسها. فسّر الرسم بمقارنة الكميتين عند السعر نفسه، لا بأسماء المنحنيات وحدها."
+      }
+    },
+    {
+      "id": "ee-markets-s02-recall",
+      "concept": "ee-markets-s02-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Elasticity needs a declared percentage base",
+        "ar": "اشرح: المرونة تحتاج أساسًا معلنًا للنسبة"
+      },
+      "a": {
+        "en": "Revenue P×Q verifies the financial consequence; it does not remove the need to define percentage bases.",
+        "ar": "يتحقق حاصل P×Q من الأثر النقدي، ولا يلغي تعريف أسس النسب."
+      }
+    },
+    {
+      "id": "ee-markets-s02-formula",
+      "concept": "ee-markets-s02-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\n|Ed|=(|ΔQ|/Qbase)/(|ΔP|/Pbase)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\n|Ed|=(|ΔQ|/Qbase)/(|ΔP|/Pbase)"
+      },
+      "a": {
+        "en": "Ed is dimensionless. Elastic >1; inelastic <1; unit magnitude=1. Explicitly choose initial, larger-value or midpoint bases. This step’s worked example uses the lecture’s larger-value convention.",
+        "ar": "المرونة بلا أبعاد؛ مرن فوق 1 وغير مرن دون 1 ووحدي عندما يساوي المقدار 1. اختر أساس البداية أو القيمة الكبرى أو المتوسط صراحة. يستخدم المثال المحلول هنا اتفاق المحاضرة بالقيمة الكبرى."
+      }
+    },
+    {
+      "id": "ee-markets-s02-trap",
+      "concept": "ee-markets-s02-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; all percentage conventions give identical finite-change values.",
+        "ar": "يقول متعلم: نعم؛ كل اتفاقات النسبة تعطي القيمة نفسها."
+      },
+      "a": {
+        "en": "No; the percentage convention is part of the model. Revenue P×Q verifies the financial consequence; it does not remove the need to define percentage bases.",
+        "ar": "لا؛ اتفاق النسبة جزء من النموذج. يتحقق حاصل P×Q من الأثر النقدي، ولا يلغي تعريف أسس النسب."
+      }
+    },
+    {
+      "id": "ee-markets-s03-recall",
+      "concept": "ee-markets-s03-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: From an elasticity assumption to a price decision",
+        "ar": "اشرح: من فرض المرونة إلى قرار السعر"
+      },
+      "a": {
+        "en": "Maximize the product of margin and quantity, within a valid demand range.",
+        "ar": "عظّم حاصل الهامش والكمية داخل مجال طلب صالح."
+      }
+    },
+    {
+      "id": "ee-markets-s03-formula",
+      "concept": "ee-markets-s03-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nQ=Q0[1−E(P−P0)/P0]; Π=(P−c)Q",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nQ=Q0[1−E(P−P0)/P0]; Π=(P−c)Q"
+      },
+      "a": {
+        "en": "P0,Q0 are the fixed base point; E is the assumed initial-base finite-change elasticity; c is variable unit cost. Use this linear scenario rule only when the problem explicitly fixes that initial-base convention. Require Q≥0.",
+        "ar": "P0 و Q0 نقطة الأساس الثابتة؛ E مرونة التغير المحدود ذات الأساس الابتدائي، و c تكلفة الوحدة المتغيرة. تستخدم قاعدة السيناريو الخطي عندما ينص السؤال على الأساس الابتدائي الثابت، مع اشتراط عدم سالبية الطلب."
+      }
+    },
+    {
+      "id": "ee-markets-s03-trap",
+      "concept": "ee-markets-s03-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; always compound the previous quantity change.",
+        "ar": "يقول متعلم: نعم؛ ركّب تغير الكمية السابق دائمًا."
+      },
+      "a": {
+        "en": "No; compare every case with the declared original point. Maximize the product of margin and quantity, within a valid demand range.",
+        "ar": "لا؛ قارن كل حالة بالنقطة الأصلية المعلنة. عظّم حاصل الهامش والكمية داخل مجال طلب صالح."
+      }
+    },
+    {
+      "id": "ee-markets-s04-recall",
+      "concept": "ee-markets-s04-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: A faster crew can be a more expensive crew",
+        "ar": "اشرح: قد يكون الطاقم الأسرع أغلى"
+      },
+      "a": {
+        "en": "Optimize only among alternatives that meet all required constraints.",
+        "ar": "حسّن القرار داخل البدائل التي تحقق القيود المطلوبة."
+      }
+    },
+    {
+      "id": "ee-markets-s04-formula",
+      "concept": "ee-markets-s04-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nlabor cost=w×N×H(N)",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nlabor cost=w×N×H(N)"
+      },
+      "a": {
+        "en": "w is CU/(worker·hour), N is workers, H is elapsed hours/job. Constant wage, comparable quality and no other crew-size costs. Additional equipment and delay costs require extra terms.",
+        "ar": "w أجر العامل في الساعة و N عدد العمال و H ساعات إنجاز المهمة. أجر ثابت وجودة متقاربة ودون تكاليف أخرى مرتبطة بالطاقم؛ تحتاج المعدات والتأخير بنودًا إضافية."
+      }
+    },
+    {
+      "id": "ee-markets-s04-trap",
+      "concept": "ee-markets-s04-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; a shorter duration always lowers the wage bill.",
+        "ar": "يقول متعلم: نعم؛ المدة الأقصر تخفض الأجور دائمًا."
+      },
+      "a": {
+        "en": "No; count paid worker-hours as well as elapsed hours. Optimize only among alternatives that meet all required constraints.",
+        "ar": "لا؛ احسب ساعات جميع العمال المدفوعة أيضًا. حسّن القرار داخل البدائل التي تحقق القيود المطلوبة."
+      }
+    },
+    {
+      "id": "ee-markets-s05-recall",
+      "concept": "ee-markets-s05-concept",
+      "kind": "interpretation",
+      "q": {
+        "en": "Explain: Break-even is a boundary, not a promise",
+        "ar": "اشرح: التعادل حد فاصل لا وعد"
+      },
+      "a": {
+        "en": "Compare complete cost curves at the required output, not a single cost component.",
+        "ar": "قارن منحنيي التكلفة كاملين عند الإنتاج المطلوب، لا مكونًا واحدًا."
+      }
+    },
+    {
+      "id": "ee-markets-s05-formula",
+      "concept": "ee-markets-s05-concept",
+      "kind": "calculation",
+      "q": {
+        "en": "What does this model mean, and when can you use it?\nQ*=F/(p−v); Π=(p−v)Q−F",
+        "ar": "ما معنى النموذج ومتى تستخدمه؟\nQ*=F/(p−v); Π=(p−v)Q−F"
+      },
+      "a": {
+        "en": "F is fixed cost/period; p,v are CU/unit; Q* is units in that period. Constant unit price and variable cost, p>v, sufficient demand and capacity, same analysis period.",
+        "ar": "F ثابتة الفترة و p و v نقد/وحدة و Q* وحدات الفترة. سعر وتكلفة متغيرة ثابتان مع p>v وطلب وسعة كافيين والفترة نفسها."
+      }
+    },
+    {
+      "id": "ee-markets-s05-trap",
+      "concept": "ee-markets-s05-concept",
+      "kind": "misconception",
+      "q": {
+        "en": "A learner says: Yes; the break-even equation guarantees a market.",
+        "ar": "يقول متعلم: نعم؛ معادلة التعادل تضمن وجود السوق."
+      },
+      "a": {
+        "en": "No; demand and capacity must independently support the forecast. Compare complete cost curves at the required output, not a single cost component.",
+        "ar": "لا؛ يجب أن يدعم الطلب والسعة التوقع بصورة مستقلة. قارن منحنيي التكلفة كاملين عند الإنتاج المطلوب، لا مكونًا واحدًا."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "EE04",
+      "page": 33,
+      "filename": "chapter 1 EnEc.pdf"
+    },
+    {
+      "doc": "EE04",
+      "page": 41,
+      "filename": "chapter 1 EnEc.pdf"
+    },
+    {
+      "doc": "EE04",
+      "page": 47,
+      "filename": "chapter 1 EnEc.pdf"
+    }
+  ],
+  "videoIds": [
+    "ShzPtU7IOXs"
+  ]
+}

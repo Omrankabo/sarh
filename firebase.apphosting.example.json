@@ -1,0 +1,13 @@
+{
+  "apphosting": [
+    {
+      "backendId": "REPLACE_WITH_YOUR_BACKEND_ID",
+      "rootDir": ".",
+      "ignore": [
+        "node_modules", ".git", ".next", ".runtime", "reports",
+        "private-study-archive", "**/*.pdf", "**/audit-renders/**",
+        "**/review-round2/**", "**/qa-notebook*.json", "*.log"
+      ]
+    }
+  ]
+}

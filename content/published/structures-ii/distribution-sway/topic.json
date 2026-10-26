@@ -1,0 +1,1201 @@
+{
+  "id": "distribution-sway",
+  "family": "distribution",
+  "title": {
+    "en": "Moment distribution: sway and inclined frames",
+    "ar": "توزيع العزوم: الإطارات القابلة للانزياح والمائلة"
+  },
+  "summary": {
+    "en": "Add a temporary restraint, solve, then remove exactly its force with compatible sway. The correction is controlled by force equilibrium, not by guessing a drift.",
+    "ar": "أضف قيداً مؤقتاً وحل، ثم أزل قوته تماماً بانزياح متوافق. يتحكم اتزان القوى بالتصحيح، لا تخمين الانزياح."
+  },
+  "outcomes": [
+    {
+      "en": "Combine converged restrained and trial-sway moment distributions.",
+      "ar": "جمع توزيعي العزوم المتقاربين لحالتي التقييد والانزياح التجريبي."
+    },
+    {
+      "en": "Replace the source’s truncated numerical table with checked converged results.",
+      "ar": "استبدال جدول المصدر الرقمي المتوقف مبكراً بنتائج متقاربة متحققة."
+    },
+    {
+      "en": "Extend the method to multiple translations and inclined members.",
+      "ar": "توسيع الطريقة إلى انتقالات متعددة وأعضاء مائلة."
+    }
+  ],
+  "prereqIds": [
+    "units",
+    "algebra",
+    "forces",
+    "supports",
+    "loads",
+    "diagrams",
+    "shape",
+    "rigidity",
+    "compatibility"
+  ],
+  "concepts": [
+    {
+      "id": "ds-superposition",
+      "title": {
+        "en": "Restrained plus correction response",
+        "ar": "استجابة التقييد مضافاً إليها التصحيح"
+      }
+    },
+    {
+      "id": "ds-restraint",
+      "title": {
+        "en": "Restrained analysis with actual stiffness",
+        "ar": "تحليل التقييد بالجساءات الفعلية"
+      }
+    },
+    {
+      "id": "ds-trial",
+      "title": {
+        "en": "A compatible trial sway",
+        "ar": "انزياح تجريبي متوافق"
+      }
+    },
+    {
+      "id": "ds-scale",
+      "title": {
+        "en": "Scale the trial by force equilibrium",
+        "ar": "تقييس التجربة باتزان القوى"
+      }
+    },
+    {
+      "id": "ds-stories",
+      "title": {
+        "en": "Independent story movements",
+        "ar": "حركات الطوابق المستقلة"
+      }
+    },
+    {
+      "id": "ds-audit",
+      "title": {
+        "en": "Convergence and inclined-frame force checks",
+        "ar": "التقارب وفحص قوى الإطار المائل"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "sway-distribution-1",
+      "title": {
+        "en": "1 · Temporarily prevent the motion you cannot yet solve",
+        "ar": "١ · امنع مؤقتاً الحركة التي لم تحلها بعد"
+      },
+      "predict": {
+        "en": "If you add a lateral support to a sway frame, can you keep its final reaction in the original solution?",
+        "ar": "إذا أضفت مسنداً جانبياً لإطار قابل للانزياح، هل يمكنك إبقاء رد فعله في حل المنشأ الأصلي؟"
+      },
+      "options": [
+        {
+          "en": "Yes; it improves stability.",
+          "ar": "نعم؛ فهو يزيد الاستقرار."
+        },
+        {
+          "en": "No; remove its action with an equal corrective response.",
+          "ar": "لا؛ أزل أثره باستجابة تصحيحية مكافئة."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "The added support lets ordinary moment distribution solve the restrained frame. Its reaction is an artificial force that must disappear from the final original model.",
+        "ar": "يسمح المسند المضاف بحل الإطار المقيد بتوزيع العزوم العادي. ورد فعله قوة مصطنعة يجب أن تختفي من نموذج المنشأ الأصلي النهائي."
+      },
+      "explain": {
+        "en": "Use two linear systems: the original loads with sway restrained, and a compatible trial sway with no original member loads. Superpose the latter at the scale that restores lateral force equilibrium.",
+        "ar": "استخدم نظامين خطيين: الأحمال الأصلية مع منع الانزياح، وانزياحاً تجريبياً متوافقاً بلا أحمال الأعضاء الأصلية. اجمع الثاني بالمقياس الذي يعيد الاتزان الأفقي."
+      },
+      "formula": "Mfinal=M0+kM1; residual0+k·residual1=0",
+      "symbols": {
+        "en": "M0 is the converged restrained moment vector; M1 is the converged trial-sway vector; residual is the signed unbalanced horizontal force after including original loads.",
+        "ar": "M0 متجه عزوم التقييد المتقارب، وM1 متجه عزوم التجربة المتقارب، والمتبقي هو عدم اتزان القوة الأفقية بإشارته بعد تضمين الأحمال الأصلية."
+      },
+      "assumptions": {
+        "en": "Linear elastic superposition, small movements, prismatic members and neglected axial strain. Clockwise member-end couples are positive; positive lateral applied forces and drift point right. Each restrained/trial distribution must converge before scaling.",
+        "ar": "تراكب مرن خطي وحركات صغيرة وأعضاء منشورية وإهمال الانفعال المحوري. العزوم الطرفية مع عقارب الساعة موجبة، والقوى والإزاحات الجانبية الموجبة لليمين. يجب تقارب كل توزيع لحالتي التقييد والتجربة قبل التقييس."
+      },
+      "example": {
+        "en": "The source example has AB=7.5 m, CD=5 m and BC=6 m. Column rigidity is EI₀, beam rigidity 2EI₀. A and D are fixed.",
+        "ar": "لمثال المصدر AB=7.5 m وCD=5 m وBC=6 m. جساءة العمودين EI₀ وجساءة الكمرة 2EI₀. A وD مثبتان."
+      },
+      "calculation": {
+        "en": "Loads: 96 kN downward at beam midspan; 48 kN rightward on AB at 4.5 m above A. One independent sway coordinate is required.",
+        "ar": "الأحمال: 96 kN للأسفل عند منتصف الكمرة، و48 kN يميناً على AB عند ارتفاع 4.5 m عن A. نحتاج إحداثي انزياح مستقل واحد."
+      },
+      "interpret": {
+        "en": "Superposition combines complete compatible solutions. Adding arbitrary end-moment numbers without a common sway pattern is invalid.",
+        "ar": "يجمع التراكب حلولاً كاملة متوافقة. ولا يصح جمع عزوم طرفية اعتباطية دون نمط انزياح مشترك."
+      },
+      "check": {
+        "prompt": {
+          "en": "What physical force is removed by the correction?",
+          "ar": "أي قوة فيزيائية يزيلها التصحيح؟"
+        },
+        "answer": {
+          "en": "The artificial reaction at the temporary sway restraint.",
+          "ar": "رد الفعل المصطنع عند قيد منع الانزياح المؤقت."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "ds-superposition"
+      ],
+      "sources": [
+        {
+          "doc": "17",
+          "page": 4,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sway-distribution-2",
+      "title": {
+        "en": "2 · Solve the restrained frame to convergence",
+        "ar": "٢ · حل الإطار المقيد حتى التقارب"
+      },
+      "predict": {
+        "en": "Should the 7.5 m and 5 m columns receive equal trial stiffness or fixed-end moments just because their EI matches?",
+        "ar": "هل يأخذ عمودا 7.5 m و5 m جساءة أو عزوم انزياح متساوية لمجرد تساوي EI؟"
+      },
+      "options": [
+        {
+          "en": "No; the lengths enter both stiffness and displacement moments.",
+          "ar": "لا؛ تدخل الأطوال في الجساءة وعزوم الإزاحة."
+        },
+        {
+          "en": "Yes; equal EI is sufficient.",
+          "ar": "نعم؛ تساوي EI يكفي."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "At each corner the beam and column share rotation, but stiffness ratios differ between B and C.",
+        "ar": "تتشاطر الكمرة والعمود دوران كل ركن، لكن نسب الجساءة تختلف بين B وC."
+      },
+      "explain": {
+        "en": "Use actual geometry rather than a garbled extracted denominator. DF at B is [2/7,5/7] for BA,BC; at C [5/8,3/8] for CB,CD. Source fixed-load moments are [−34.56,+51.84,−72,+72,0,0] in order AB,BA,BC,CB,CD,DC.",
+        "ar": "استخدم الهندسة الفعلية بدلاً من مقام مشوه في استخراج النص. معاملات B هي [2/7,5/7] للعضوين BA وBC، ومعاملات C هي [5/8,3/8] للعضوين CB وCD. عزوم الحمل الثابتة بالمصدر [−34.56,+51.84,−72,+72,0,0] بترتيب AB وBA وBC وCB وCD وDC."
+      },
+      "formula": "DFBA=(1/7.5)/(1/7.5+2/6)=2/7; DFCB=(2/6)/(2/6+1/5)=5/8",
+      "symbols": {
+        "en": "Reference EI₀ factors cancel in DF. All listed end moments are clockwise kN·m.",
+        "ar": "تختزل عوامل EI₀ المرجعية في DF. جميع العزوم المذكورة مع عقارب الساعة بوحدة kN·m."
+      },
+      "assumptions": {
+        "en": "Linear elastic superposition, small movements, prismatic members and neglected axial strain. Clockwise member-end couples are positive; positive lateral applied forces and drift point right. Each restrained/trial distribution must converge before scaling.",
+        "ar": "تراكب مرن خطي وحركات صغيرة وأعضاء منشورية وإهمال الانفعال المحوري. العزوم الطرفية مع عقارب الساعة موجبة، والقوى والإزاحات الجانبية الموجبة لليمين. يجب تقارب كل توزيع لحالتي التقييد والتجربة قبل التقييس."
+      },
+      "example": {
+        "en": "Iterate restrained rotation balances until joint residuals are below 0.001 kN·m.",
+        "ar": "كرر موازنة الدورانات المقيدة حتى تصبح متبقيات العقد أقل من 0.001 kN·m."
+      },
+      "calculation": {
+        "en": "M0=[−27.700101,65.559799,−65.559799,33.431156,−33.431156,−16.715578]. The signed horizontal residual with the original 48 kN load is +23.818613 kN; the temporary support supplies −23.818613 kN.",
+        "ar": "M0=[−27.700101,65.559799,−65.559799,33.431156,−33.431156,−16.715578]. متبقي القوة الأفقية مع الحمل الأصلي 48 kN هو +23.818613 kN؛ ويوفّر المسند المؤقت −23.818613 kN."
+      },
+      "interpret": {
+        "en": "The printed lecture table stops early. Its rounded restrained values are demonstrations of the iteration, not the converged benchmark used here.",
+        "ar": "يتوقف جدول المحاضرة المطبوع مبكراً. قيمه المقربة تعرض التكرار، لكنها ليست المعيار المتقارب المستخدم هنا."
+      },
+      "check": {
+        "prompt": {
+          "en": "How is the left-column load included in the restrained lateral residual?",
+          "ar": "كيف يدخل حمل العمود الأيسر في متبقي الاتزان الأفقي للحالة المقيدة؟"
+        },
+        "answer": {
+          "en": "HA=(MAB+MBA)/7.5−48·3/7.5; HD=(MCD+MDC)/5; residual=HA+HD+48.",
+          "ar": "HA=(MAB+MBA)/7.5−48·3/7.5 وHD=(MCD+MDC)/5 والمتبقي=HA+HD+48."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "ds-restraint"
+      ],
+      "sources": [
+        {
+          "doc": "17",
+          "page": 5,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sway-distribution-3",
+      "title": {
+        "en": "3 · Give the trial columns one compatible drift",
+        "ar": "٣ · امنح عمودي التجربة انزياحاً متوافقاً واحداً"
+      },
+      "predict": {
+        "en": "For equal EI and equal imposed drift, which column has the larger held-end sway moments: 7.5 m or 5 m?",
+        "ar": "مع تساوي EI والانزياح المفروض، أي العمودين له عزوم انزياح مقيدة أكبر: 7.5 m أم 5 m؟"
+      },
+      "options": [
+        {
+          "en": "The 5 m column, because the effect scales with 1/h².",
+          "ar": "العمود 5 m لأن الأثر يتناسب مع 1/h²."
+        },
+        {
+          "en": "Both are equal.",
+          "ar": "كلاهما متساوٍ."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The same roof translation rotates the shorter column’s chord more. Combined with its larger bending coefficient this yields the inverse-square height dependence.",
+        "ar": "يدير انتقال القمة نفسه وتر العمود الأقصر أكثر. ومع معامل انحنائه الأكبر ينتج اعتماد عكسي على مربع الارتفاع."
+      },
+      "explain": {
+        "en": "Choose a convenient trial z1=EI₀Δ1=1000 kN·m³. Hold section rotations first to build its initial column moments, then unlock the corner rotations through ordinary distribution. The beam has no direct chord rotation in this geometry.",
+        "ar": "اختر تجربة ملائمة z1=EI₀Δ1=1000 kN·m³. امنع دوران القطاعات أولاً لبناء عزوم العمودين الابتدائية، ثم اسمح بدوران الركنين باستخدام التوزيع العادي. لا يدور وتر الكمرة مباشرة في هذه الهندسة."
+      },
+      "formula": "Ftrial,column=−6EI₀Δ1/h²; rightward Δ1 gives negative clockwise trial moments here",
+      "symbols": {
+        "en": "z1 carries units kN·m³; moments are kN·m. Only relative trial scaling matters, provided the trial remains a compatible linear displacement pattern.",
+        "ar": "وحدة z1 هي kN·m³ والعزوم kN·m. المهم مقياس التجربة النسبي بشرط أن يكون نمط الإزاحة متوافقاً وخطياً."
+      },
+      "assumptions": {
+        "en": "Linear elastic superposition, small movements, prismatic members and neglected axial strain. Clockwise member-end couples are positive; positive lateral applied forces and drift point right. Each restrained/trial distribution must converge before scaling.",
+        "ar": "تراكب مرن خطي وحركات صغيرة وأعضاء منشورية وإهمال الانفعال المحوري. العزوم الطرفية مع عقارب الساعة موجبة، والقوى والإزاحات الجانبية الموجبة لليمين. يجب تقارب كل توزيع لحالتي التقييد والتجربة قبل التقييس."
+      },
+      "example": {
+        "en": "Build and converge the trial for AB=7.5 m and CD=5 m.",
+        "ar": "أنشئ التجربة وكررها حتى التقارب للعمودين AB=7.5 m وCD=5 m."
+      },
+      "calculation": {
+        "en": "Initial column moments: AB=BA=−106.666667; CD=DC=−240. Converged M1=[−101.574539,−96.482412,96.482412,154.773869,−154.773869,−197.386935]. Trial lateral residual=−96.839754 kN.",
+        "ar": "عزوم العمودين الابتدائية: AB=BA=−106.666667 وCD=DC=−240. بعد التقارب M1=[−101.574539,−96.482412,96.482412,154.773869,−154.773869,−197.386935]. متبقي القوة الجانبية للتجربة=−96.839754 kN."
+      },
+      "interpret": {
+        "en": "Equal trial end moments in the two unequal-height columns would represent incompatible drifts.",
+        "ar": "فرض عزوم تجربة متساوية على عمودين مختلفي الارتفاع يمثل انزياحين غير متوافقين."
+      },
+      "check": {
+        "prompt": {
+          "en": "What is the ratio of initial 5 m to 7.5 m trial moment magnitudes?",
+          "ar": "ما نسبة مقدار عزم التجربة الابتدائي للعمود 5 m إلى العمود 7.5 m؟"
+        },
+        "answer": {
+          "en": "(7.5/5)²=2.25.",
+          "ar": "(7.5/5)²=2.25."
+        }
+      },
+      "diagram": "frame",
+      "experiment": "sway",
+      "concepts": [
+        "ds-trial"
+      ],
+      "sources": [
+        {
+          "doc": "17",
+          "page": 8,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sway-distribution-4",
+      "title": {
+        "en": "4 · Scale by the force that must disappear",
+        "ar": "٤ · قيّس التجربة بالقوة الواجب إزالتها"
+      },
+      "predict": {
+        "en": "May you choose k by matching one attractive-looking end moment?",
+        "ar": "هل يمكنك اختيار k بمطابقة عزم طرفي يبدو مناسباً؟"
+      },
+      "options": [
+        {
+          "en": "No; k must cancel the lateral force residual.",
+          "ar": "لا؛ يجب أن تلغي k متبقي القوة الجانبية."
+        },
+        {
+          "en": "Yes; any one moment is enough.",
+          "ar": "نعم؛ يكفي أي عزم واحد."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The trial is arbitrary in size. Only the force-equilibrium condition tells how much of it belongs in the real structure.",
+        "ar": "حجم التجربة اعتباطي. وحده شرط اتزان القوى يحدد مقدار التجربة اللازم للمنشأ الحقيقي."
+      },
+      "explain": {
+        "en": "Use the converged residuals of both cases. Do not mix a converged moment vector with a truncated table’s scaling factor.",
+        "ar": "استخدم متبقيات متقاربة لكلتا الحالتين. لا تخلط متجه عزوم متقارباً مع عامل تقييس من جدول متوقف مبكراً."
+      },
+      "formula": "k=−residual0/residual1; Mfinal=M0+kM1",
+      "symbols": {
+        "en": "k is dimensionless; original drift satisfies EI₀Δ=k·1000 kN·m³.",
+        "ar": "k دون وحدات؛ والانزياح الأصلي يحقق EI₀Δ=k·1000 kN·m³."
+      },
+      "assumptions": {
+        "en": "Linear elastic superposition, small movements, prismatic members and neglected axial strain. Clockwise member-end couples are positive; positive lateral applied forces and drift point right. Each restrained/trial distribution must converge before scaling.",
+        "ar": "تراكب مرن خطي وحركات صغيرة وأعضاء منشورية وإهمال الانفعال المحوري. العزوم الطرفية مع عقارب الساعة موجبة، والقوى والإزاحات الجانبية الموجبة لليمين. يجب تقارب كل توزيع لحالتي التقييد والتجربة قبل التقييس."
+      },
+      "example": {
+        "en": "Use residual0=+23.818613 and residual1=−96.839754 kN.",
+        "ar": "استخدم residual0=+23.818613 وresidual1=−96.839754 kN."
+      },
+      "calculation": {
+        "en": "k=0.245959041; EI₀Δ=245.959041. Final [AB,BA,BC,CB,CD,DC]=[−52.683277,41.829077,−41.829077,71.499188,−71.499188,−65.264679] kN·m.",
+        "ar": "k=0.245959041 وEI₀Δ=245.959041. النتيجة [AB,BA,BC,CB,CD,DC]=[−52.683277,41.829077,−41.829077,71.499188,−71.499188,−65.264679] kN·m."
+      },
+      "interpret": {
+        "en": "These replace the source’s approximate final table. With EI₀=20000 kN·m² as an authored scale choice, Δ=12.297952 mm.",
+        "ar": "تحل هذه القيم محل الجدول النهائي التقريبي للمصدر. ولجساءة مقياس مؤلفة EI₀=20000 kN·m² يكون Δ=12.297952 mm."
+      },
+      "check": {
+        "prompt": {
+          "en": "If you double the entire trial displacement and recompute its moments, what changes?",
+          "ar": "إذا ضاعفت إزاحة التجربة كاملة وأعدت حساب عزومها، ماذا يتغير؟"
+        },
+        "answer": {
+          "en": "M1 and residual1 double, k halves, and the physical final response is unchanged.",
+          "ar": "يتضاعف M1 ومتبقي التجربة، وتنخفض k للنصف، وتبقى الاستجابة النهائية الفيزيائية نفسها."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "ds-scale"
+      ],
+      "sources": [
+        {
+          "doc": "17",
+          "page": 11,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sway-distribution-5",
+      "title": {
+        "en": "5 · Two independent movements need two corrections",
+        "ar": "٥ · حركتان مستقلتان تحتاجان تصحيحين"
+      },
+      "predict": {
+        "en": "A two-storey frame has two independent story translations. Can one trial pattern generally remove both artificial restraints?",
+        "ar": "لإطار من طابقين انتقالان مستقلان. هل يزيل نمط تجربة واحد عموماً قيدي التقييد المصطنعين؟"
+      },
+      "options": [
+        {
+          "en": "No; use two independent trial patterns and two force equations.",
+          "ar": "لا؛ استخدم نمطي تجربة مستقلين ومعادلتي قوى."
+        },
+        {
+          "en": "Yes; scale the same pattern twice.",
+          "ar": "نعم؛ قيّس النمط نفسه مرتين."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A trial that moves only one independent coordinate can still produce forces at several restraint levels. This coupling is exactly what the small simultaneous system records.",
+        "ar": "قد تولّد تجربة تحرك إحداثياً مستقلاً واحداً قوى عند عدة مستويات من القيود. وهذا الترابط هو ما يسجله النظام الآني الصغير."
+      },
+      "explain": {
+        "en": "The second source example introduces two sway freedoms. Build a restrained solution plus independent unit patterns. Put each trial’s reaction effects into one matrix column and solve for both scales together.",
+        "ar": "يقدم مثال المصدر الثاني درجتي انزياح. أنشئ حلاً مقيداً ونمطين وحديين مستقلين. ضع تأثيرات ردود فعل كل تجربة في عمود من المصفوفة، ثم حل معاملي التقييس معاً."
+      },
+      "formula": "R0+A·k=0; M=M0+k1M1+k2M2",
+      "symbols": {
+        "en": "Aij is reaction residual at restrained coordinate i from trial j. Trials must be independent; an almost singular matrix may indicate a mechanism or redundant trial patterns.",
+        "ar": "Aij متبقي رد الفعل عند الإحداثي المقيد i الناتج عن التجربة j. يجب استقلال التجارب؛ وقد تدل مصفوفة شبه منفردة على آلية حركة أو تكرار أنماط التجربة."
+      },
+      "assumptions": {
+        "en": "Linear elastic superposition, small movements, prismatic members and neglected axial strain. Clockwise member-end couples are positive; positive lateral applied forces and drift point right. Each restrained/trial distribution must converge before scaling.",
+        "ar": "تراكب مرن خطي وحركات صغيرة وأعضاء منشورية وإهمال الانفعال المحوري. العزوم الطرفية مع عقارب الساعة موجبة، والقوى والإزاحات الجانبية الموجبة لليمين. يجب تقارب كل توزيع لحالتي التقييد والتجربة قبل التقييس."
+      },
+      "example": {
+        "en": "Authored two-coordinate stiffness check: K=[[10,−4],[−4,8]] kN/mm and force vector [20,12] kN.",
+        "ar": "فحص جساءة مؤلف لإحداثيين: K=[[10,−4],[−4,8]] kN/mm ومتجه القوى [20,12] kN."
+      },
+      "calculation": {
+        "en": "10Δ1−4Δ2=20 and −4Δ1+8Δ2=12 give Δ1=3.25 mm, Δ2=3.125 mm. The off-diagonal terms represent coupled response.",
+        "ar": "10Δ1−4Δ2=20 و−4Δ1+8Δ2=12 تعطيان Δ1=3.25 mm وΔ2=3.125 mm. تمثل الحدود خارج القطر الاستجابة المترابطة."
+      },
+      "interpret": {
+        "en": "This authored matrix is a training check, not the numerical solution of the source’s second frame. Source geometry must be transcribed before solving that separate problem.",
+        "ar": "هذه المصفوفة المؤلفة فحص تدريبي وليست الحل الرقمي للإطار الثاني بالمصدر. يجب نقل هندسة المصدر قبل حل تلك المسألة المستقلة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Why can you not solve each floor independently by dividing its load by a diagonal stiffness?",
+          "ar": "لماذا لا يمكنك حل كل طابق مستقلاً بقسمة حمله على جساءته القطرية؟"
+        },
+        "answer": {
+          "en": "The off-diagonal coupling forces are nonzero, so the floors influence one another.",
+          "ar": "لأن قوى الترابط خارج القطر غير صفرية، فتؤثر الطوابق بعضها في بعض."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "ds-stories"
+      ],
+      "sources": [
+        {
+          "doc": "17",
+          "page": 12,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sway-distribution-6",
+      "title": {
+        "en": "6 · Finish with independent force checks and inclined geometry",
+        "ar": "٦ · اختم بفحوص قوى مستقلة وهندسة الأعضاء المائلة"
+      },
+      "predict": {
+        "en": "For an inclined leg, can its horizontal force always be written as the sum of end moments divided by vertical height?",
+        "ar": "للرجل المائلة، هل تساوي قوتها الأفقية دائماً مجموع عزمي الطرفين مقسوماً على الارتفاع الرأسي؟"
+      },
+      "options": [
+        {
+          "en": "Yes; inclination is irrelevant.",
+          "ar": "نعم؛ الميل غير مهم."
+        },
+        {
+          "en": "No; include the other end-force components and their lever arms.",
+          "ar": "لا؛ ضمّن مركبات قوى الأطراف الأخرى وأذرعها."
+        }
+      ],
+      "correct": 1,
+      "observe": {
+        "en": "Sway correction principles stay the same for inclined frames, but the compatible trial movement and the global-force calculation change.",
+        "ar": "تبقى مبادئ تصحيح الانزياح نفسها للإطار المائل، لكن تتغير حركة التجربة المتوافقة وحساب القوى العامة."
+      },
+      "explain": {
+        "en": "Use local-vector projection to find each member’s transverse relative displacement; project distributed loads as needed. Compute trial forces with full member free bodies. For the lecture 17 vertical-column benchmark the converged solution can be checked independently with global reactions.",
+        "ar": "استخدم إسقاط المتجهات المحلية لإيجاد الإزاحة العرضية النسبية لكل عضو، وأسقط الأحمال الموزعة عند الحاجة. احسب قوى التجربة بمخططات جسم حر كاملة. ويمكن فحص معيار المحاضرة 17 ذي العمودين الرأسيين استقلالياً بردود الأفعال العامة."
+      },
+      "formula": "ψCW=−n·(uj−ui)/L; Fglobal=N e+V n; ΣFx=ΣFy=ΣM=0",
+      "symbols": {
+        "en": "e: local unit tangent; n: local unit normal; N,V: signed local forces. For source 17, support D is 2.5 m above A because the column heights differ.",
+        "ar": "e متجه الوحدة المماسي المحلي وn العمودي المحلي وN وV القوتان المحليتان بإشارتيهما. في المصدر 17 يقع المسند D أعلى A بمقدار 2.5 m لاختلاف ارتفاعي العمودين."
+      },
+      "assumptions": {
+        "en": "Linear elastic superposition, small movements, prismatic members and neglected axial strain. Clockwise member-end couples are positive; positive lateral applied forces and drift point right. Each restrained/trial distribution must converge before scaling.",
+        "ar": "تراكب مرن خطي وحركات صغيرة وأعضاء منشورية وإهمال الانفعال المحوري. العزوم الطرفية مع عقارب الساعة موجبة، والقوى والإزاحات الجانبية الموجبة لليمين. يجب تقارب كل توزيع لحالتي التقييد والتجربة قبل التقييس."
+      },
+      "example": {
+        "en": "Use global right/up positive for the converged source-17 answer.",
+        "ar": "اجعل اليمين والأعلى موجبين عامّاً للحل المتقارب من المصدر 17."
+      },
+      "calculation": {
+        "en": "HA=−20.647227, HD=−27.352773, VA=43.054982, VD=52.945018 kN. Check HA+HD+48=0; VA+VD−96=0. About A: 6VD−2.5HD−MAB−MDC−96·3−48·4.5=0.",
+        "ar": "HA=−20.647227 وHD=−27.352773 وVA=43.054982 وVD=52.945018 kN. تحقق من HA+HD+48=0 وVA+VD−96=0. حول A: 6VD−2.5HD−MAB−MDC−96·3−48·4.5=0."
+      },
+      "interpret": {
+        "en": "The D horizontal-reaction lever arm is easy to miss because the beam is horizontal but the bases have different levels.",
+        "ar": "يسهل إغفال ذراع رد D الأفقي لأن الكمرة أفقية رغم اختلاف منسوبي القاعدتين."
+      },
+      "check": {
+        "prompt": {
+          "en": "Which three final checks would expose a wrong trial-sway scale?",
+          "ar": "ما الفحوص النهائية الثلاثة التي تكشف عامل تقييس انزياح خاطئاً؟"
+        },
+        "answer": {
+          "en": "Rigid-joint moment residuals, cancellation of artificial lateral reactions, and independent whole-frame force/moment equilibrium.",
+          "ar": "متبقيات عزوم العقد الجسئة، وإلغاء ردود الأفعال الجانبية المصطنعة، واتزان قوى وعزوم الإطار كله بصورة مستقلة."
+        }
+      },
+      "diagram": "frame",
+      "concepts": [
+        "ds-audit"
+      ],
+      "sources": [
+        {
+          "doc": "14",
+          "page": 21,
+          "filename": "lecture (2) Slope deflection method -frames.pdf"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "ds-q1",
+      "concept": "ds-superposition",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Why add and later remove a temporary sway restraint?",
+        "ar": "لماذا نضيف قيد انزياح مؤقتاً ثم نزيله؟"
+      },
+      "options": [
+        {
+          "en": "To create a restrained problem that ordinary distribution can solve, then restore the original freedom.",
+          "ar": "لإنشاء مسألة مقيدة يمكن للتوزيع العادي حلها ثم استعادة الحرية الأصلية."
+        },
+        {
+          "en": "To permanently change the structure.",
+          "ar": "لتغيير المنشأ بصورة دائمة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Track the artificial support force through the restrained and correction cases.",
+          "ar": "تتبع قوة المسند المصطنع في حالتي التقييد والتصحيح."
+        },
+        {
+          "en": "Use this relationship: Mfinal=M0+kM1; residual0+k·residual1=0",
+          "ar": "استخدم العلاقة: Mfinal=M0+kM1; residual0+k·residual1=0"
+        }
+      ],
+      "solution": {
+        "en": "The correction cancels the artificial reaction; it is part of the original elastic solution.",
+        "ar": "يلغي التصحيح رد الفعل المصطنع، وهو جزء من حل المنشأ المرن الأصلي."
+      },
+      "sources": [
+        {
+          "doc": "17",
+          "page": 4,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ds-q2",
+      "concept": "ds-superposition",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored superposition variant: M0=−30, M1=+20 kN·m and k=0.4. Find Mfinal.",
+        "ar": "تمرين تراكب مؤلف: M0=−30 وM1=+20 kN·m وk=0.4. أوجد Mfinal."
+      },
+      "expected": -22,
+      "tolerance": 0.022,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "Use the converged benchmark, not the printed truncated table.",
+          "ar": "استخدم المعيار المتقارب لا الجدول المطبوع المتوقف مبكراً."
+        },
+        {
+          "en": "Use this relationship: Mfinal=M0+kM1; residual0+k·residual1=0",
+          "ar": "استخدم العلاقة: Mfinal=M0+kM1; residual0+k·residual1=0"
+        }
+      ],
+      "solution": {
+        "en": "Mfinal=−30+0.4·20=−22.",
+        "ar": "Mfinal=−30+0.4·20=−22."
+      },
+      "sources": [
+        {
+          "doc": "17",
+          "page": 2,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ds-q3",
+      "concept": "ds-restraint",
+      "type": "conceptual",
+      "prompt": {
+        "en": "What is wrong with scaling an unconverged restrained table using a converged trial?",
+        "ar": "ما الخطأ في تقييس جدول تقييد غير متقارب باستخدام تجربة متقاربة؟"
+      },
+      "options": [
+        {
+          "en": "Nothing; the errors cancel automatically.",
+          "ar": "لا شيء؛ تتلاشى الأخطاء تلقائياً."
+        },
+        {
+          "en": "Its residual and moment field do not describe a sufficiently equilibrated base solution.",
+          "ar": "متبقياته وحقل عزومه لا يصفان حلاً أساسياً متزناً بما يكفي."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Track the artificial support force through the restrained and correction cases.",
+          "ar": "تتبع قوة المسند المصطنع في حالتي التقييد والتصحيح."
+        },
+        {
+          "en": "Use this relationship: DFBA=(1/7.5)/(1/7.5+2/6)=2/7; DFCB=(2/6)/(2/6+1/5)=5/8",
+          "ar": "استخدم العلاقة: DFBA=(1/7.5)/(1/7.5+2/6)=2/7; DFCB=(2/6)/(2/6+1/5)=5/8"
+        }
+      ],
+      "solution": {
+        "en": "Converge both component solutions, then form their residuals and scale.",
+        "ar": "اجعل الحلين الجزئيين متقاربين ثم احسب المتبقيات وعامل التقييس."
+      },
+      "sources": [
+        {
+          "doc": "17",
+          "page": 6,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ds-q4",
+      "concept": "ds-restraint",
+      "type": "numerical",
+      "prompt": {
+        "en": "For BA stiffness proportional to 1/7.5 and BC to 2/6, enter DFBA.",
+        "ar": "إذا تناسبت جساءة BA مع 1/7.5 وجساءة BC مع 2/6، أدخل DFBA."
+      },
+      "expected": 0.2857142857142857,
+      "tolerance": 0.001,
+      "unit": "",
+      "hints": [
+        {
+          "en": "Use the converged benchmark, not the printed truncated table.",
+          "ar": "استخدم المعيار المتقارب لا الجدول المطبوع المتوقف مبكراً."
+        },
+        {
+          "en": "Use this relationship: DFBA=(1/7.5)/(1/7.5+2/6)=2/7; DFCB=(2/6)/(2/6+1/5)=5/8",
+          "ar": "استخدم العلاقة: DFBA=(1/7.5)/(1/7.5+2/6)=2/7; DFCB=(2/6)/(2/6+1/5)=5/8"
+        }
+      ],
+      "solution": {
+        "en": "DFBA=(1/7.5)/(1/7.5+2/6)=2/7.",
+        "ar": "DFBA=(1/7.5)/(1/7.5+2/6)=2/7."
+      },
+      "sources": [
+        {
+          "doc": "17",
+          "page": 5,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ds-q5",
+      "concept": "ds-trial",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Equal EI columns have heights 7.5 and 5 m under one common trial drift. Their held-end sway moments are:",
+        "ar": "لعمودين EI متساوية وارتفاعاهما 7.5 و5 m انزياح تجريبي مشترك. عزوم انزياحهما المقيدة تكون:"
+      },
+      "options": [
+        {
+          "en": "Equal.",
+          "ar": "متساوية."
+        },
+        {
+          "en": "In inverse proportion to the squares of their heights.",
+          "ar": "متناسبة عكسياً مع مربعي ارتفاعيهما."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Track the artificial support force through the restrained and correction cases.",
+          "ar": "تتبع قوة المسند المصطنع في حالتي التقييد والتصحيح."
+        },
+        {
+          "en": "Use this relationship: Ftrial,column=−6EI₀Δ1/h²; rightward Δ1 gives negative clockwise trial moments here",
+          "ar": "استخدم العلاقة: Ftrial,column=−6EI₀Δ1/h²; rightward Δ1 gives negative clockwise trial moments here"
+        }
+      ],
+      "solution": {
+        "en": "The displacement moment term is −6EIΔ/h².",
+        "ar": "حد عزم الإزاحة −6EIΔ/h²."
+      },
+      "sources": [
+        {
+          "doc": "17",
+          "page": 8,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ds-q6",
+      "concept": "ds-trial",
+      "type": "mixed",
+      "prompt": {
+        "en": "For EI₀Δ1=1000 kN·m³ and h=5 m, find a held-end trial column moment.",
+        "ar": "عند EI₀Δ1=1000 kN·m³ وh=5 m، أوجد عزم طرف العمود التجريبي المقيد."
+      },
+      "expected": -240,
+      "tolerance": 0.24,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "Use the converged benchmark, not the printed truncated table.",
+          "ar": "استخدم المعيار المتقارب لا الجدول المطبوع المتوقف مبكراً."
+        },
+        {
+          "en": "Use this relationship: Ftrial,column=−6EI₀Δ1/h²; rightward Δ1 gives negative clockwise trial moments here",
+          "ar": "استخدم العلاقة: Ftrial,column=−6EI₀Δ1/h²; rightward Δ1 gives negative clockwise trial moments here"
+        }
+      ],
+      "solution": {
+        "en": "M=−6·1000/25=−240.",
+        "ar": "M=−6·1000/25=−240."
+      },
+      "sources": [
+        {
+          "doc": "17",
+          "page": 8,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ds-q7",
+      "concept": "ds-scale",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Double the trial displacement and recompute the trial solution. What happens to the final physical answer?",
+        "ar": "ضاعف إزاحة التجربة وأعد حساب حلها. ماذا يحدث للنتيجة الفيزيائية النهائية؟"
+      },
+      "options": [
+        {
+          "en": "It doubles.",
+          "ar": "تتضاعف."
+        },
+        {
+          "en": "It is unchanged because the scale factor halves.",
+          "ar": "لا تتغير لأن عامل التقييس ينخفض للنصف."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Track the artificial support force through the restrained and correction cases.",
+          "ar": "تتبع قوة المسند المصطنع في حالتي التقييد والتصحيح."
+        },
+        {
+          "en": "Use this relationship: k=−residual0/residual1; Mfinal=M0+kM1",
+          "ar": "استخدم العلاقة: k=−residual0/residual1; Mfinal=M0+kM1"
+        }
+      ],
+      "solution": {
+        "en": "Both trial moments and trial force residual double, so kM1 is invariant.",
+        "ar": "يتضاعف كل من عزوم التجربة ومتبقي قوتها، لذا يبقى kM1 ثابتاً."
+      },
+      "sources": [
+        {
+          "doc": "17",
+          "page": 11,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ds-q8",
+      "concept": "ds-scale",
+      "type": "numerical",
+      "prompt": {
+        "en": "Using residual0=23.818613065 and residual1=−96.839754327 kN, find k.",
+        "ar": "باستخدام residual0=23.818613065 وresidual1=−96.839754327 kN، أوجد k."
+      },
+      "expected": 0.24595904059,
+      "tolerance": 0.001,
+      "unit": "",
+      "hints": [
+        {
+          "en": "Use the converged benchmark, not the printed truncated table.",
+          "ar": "استخدم المعيار المتقارب لا الجدول المطبوع المتوقف مبكراً."
+        },
+        {
+          "en": "Use this relationship: k=−residual0/residual1; Mfinal=M0+kM1",
+          "ar": "استخدم العلاقة: k=−residual0/residual1; Mfinal=M0+kM1"
+        }
+      ],
+      "solution": {
+        "en": "k=−23.818613065/(−96.839754327)=0.24595904059.",
+        "ar": "k=−23.818613065/(−96.839754327)=0.24595904059."
+      },
+      "sources": [
+        {
+          "doc": "17",
+          "page": 11,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ds-q9",
+      "concept": "ds-stories",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A frame has two independent sway coordinates. How many independent trial patterns are generally needed?",
+        "ar": "لإطار إحداثيا انزياح مستقلان. كم نمط تجربة مستقلاً نحتاج عادة؟"
+      },
+      "options": [
+        {
+          "en": "One, copied twice.",
+          "ar": "واحد يكرر مرتين."
+        },
+        {
+          "en": "Two, assembled into a coupled two-equation force system.",
+          "ar": "اثنان يجمعان في نظام قوى مترابط من معادلتين."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Track the artificial support force through the restrained and correction cases.",
+          "ar": "تتبع قوة المسند المصطنع في حالتي التقييد والتصحيح."
+        },
+        {
+          "en": "Use this relationship: R0+A·k=0; M=M0+k1M1+k2M2",
+          "ar": "استخدم العلاقة: R0+A·k=0; M=M0+k1M1+k2M2"
+        }
+      ],
+      "solution": {
+        "en": "Independent coordinate count determines the number of correction coefficients.",
+        "ar": "يحدد عدد الإحداثيات المستقلة عدد معاملات التصحيح."
+      },
+      "sources": [
+        {
+          "doc": "17",
+          "page": 12,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ds-q10",
+      "concept": "ds-stories",
+      "type": "numerical",
+      "prompt": {
+        "en": "Authored two-coordinate check: 10Δ1−4Δ2=20 and −4Δ1+8Δ2=12, units kN and mm. Find Δ1.",
+        "ar": "فحص مؤلف لإحداثيين: 10Δ1−4Δ2=20 و−4Δ1+8Δ2=12 بوحدتي kN وmm. أوجد Δ1."
+      },
+      "expected": 3.25,
+      "tolerance": 0.0032500000000000003,
+      "unit": "mm",
+      "hints": [
+        {
+          "en": "Use the converged benchmark, not the printed truncated table.",
+          "ar": "استخدم المعيار المتقارب لا الجدول المطبوع المتوقف مبكراً."
+        },
+        {
+          "en": "Use this relationship: R0+A·k=0; M=M0+k1M1+k2M2",
+          "ar": "استخدم العلاقة: R0+A·k=0; M=M0+k1M1+k2M2"
+        }
+      ],
+      "solution": {
+        "en": "Double the first equation and add the second:16Δ1=52 ⇒ Δ1=3.25; Δ2=3.125.",
+        "ar": "ضاعف الأولى واجمع الثانية:16Δ1=52، ومنه Δ1=3.25 وΔ2=3.125."
+      },
+      "sources": [
+        {
+          "doc": "17",
+          "page": 12,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ds-q11",
+      "concept": "ds-audit",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Why does the final global moment check include a 2.5HD term in the source-17 frame?",
+        "ar": "لماذا يتضمن فحص العزوم العام النهائي حد 2.5HD في إطار المصدر 17؟"
+      },
+      "options": [
+        {
+          "en": "The two column bases are at different elevations.",
+          "ar": "لأن قاعدتي العمودين على منسوبين مختلفين."
+        },
+        {
+          "en": "Because the beam has a hinge.",
+          "ar": "لأن الكمرة بها مفصل."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Track the artificial support force through the restrained and correction cases.",
+          "ar": "تتبع قوة المسند المصطنع في حالتي التقييد والتصحيح."
+        },
+        {
+          "en": "Use this relationship: ψCW=−n·(uj−ui)/L; Fglobal=N e+V n; ΣFx=ΣFy=ΣM=0",
+          "ar": "استخدم العلاقة: ψCW=−n·(uj−ui)/L; Fglobal=N e+V n; ΣFx=ΣFy=ΣM=0"
+        }
+      ],
+      "solution": {
+        "en": "AB is 7.5 m and CD 5 m beneath a common beam, so D lies 2.5 m above A.",
+        "ar": "يقع العمودان AB=7.5 m وCD=5 m أسفل كمرة مشتركة، لذا يرتفع D عن A بمقدار 2.5 m."
+      },
+      "sources": [
+        {
+          "doc": "17",
+          "page": 3,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ds-q12",
+      "concept": "ds-audit",
+      "type": "mixed",
+      "prompt": {
+        "en": "Enter the rightward-positive horizontal reaction HA for the converged source-17 example.",
+        "ar": "أدخل رد الفعل الأفقي HA مع جعل اليمين موجباً للمثال المتقارب من المصدر 17."
+      },
+      "expected": -20.647226568,
+      "tolerance": 0.020647226568000002,
+      "unit": "kN",
+      "hints": [
+        {
+          "en": "Use the converged benchmark, not the printed truncated table.",
+          "ar": "استخدم المعيار المتقارب لا الجدول المطبوع المتوقف مبكراً."
+        },
+        {
+          "en": "Use this relationship: ψCW=−n·(uj−ui)/L; Fglobal=N e+V n; ΣFx=ΣFy=ΣM=0",
+          "ar": "استخدم العلاقة: ψCW=−n·(uj−ui)/L; Fglobal=N e+V n; ΣFx=ΣFy=ΣM=0"
+        }
+      ],
+      "solution": {
+        "en": "HA=(−52.68327675+41.82907749)/7.5−48·3/7.5=−20.647226568.",
+        "ar": "HA=(−52.68327675+41.82907749)/7.5−48·3/7.5=−20.647226568."
+      },
+      "sources": [
+        {
+          "doc": "17",
+          "page": 7,
+          "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "ds-card-1",
+      "concept": "ds-superposition",
+      "kind": "prediction",
+      "q": {
+        "en": "Why add and later remove a temporary sway restraint?",
+        "ar": "لماذا نضيف قيد انزياح مؤقتاً ثم نزيله؟"
+      },
+      "a": {
+        "en": "The correction cancels the artificial reaction; it is part of the original elastic solution.",
+        "ar": "يلغي التصحيح رد الفعل المصطنع، وهو جزء من حل المنشأ المرن الأصلي."
+      }
+    },
+    {
+      "id": "ds-card-2",
+      "concept": "ds-superposition",
+      "kind": "calculation",
+      "q": {
+        "en": "Authored superposition variant: M0=−30, M1=+20 kN·m and k=0.4. Find Mfinal.",
+        "ar": "تمرين تراكب مؤلف: M0=−30 وM1=+20 kN·m وk=0.4. أوجد Mfinal."
+      },
+      "a": {
+        "en": "Mfinal=−30+0.4·20=−22.",
+        "ar": "Mfinal=−30+0.4·20=−22."
+      }
+    },
+    {
+      "id": "ds-card-3",
+      "concept": "ds-restraint",
+      "kind": "prediction",
+      "q": {
+        "en": "What is wrong with scaling an unconverged restrained table using a converged trial?",
+        "ar": "ما الخطأ في تقييس جدول تقييد غير متقارب باستخدام تجربة متقاربة؟"
+      },
+      "a": {
+        "en": "Converge both component solutions, then form their residuals and scale.",
+        "ar": "اجعل الحلين الجزئيين متقاربين ثم احسب المتبقيات وعامل التقييس."
+      }
+    },
+    {
+      "id": "ds-card-4",
+      "concept": "ds-restraint",
+      "kind": "calculation",
+      "q": {
+        "en": "For BA stiffness proportional to 1/7.5 and BC to 2/6, enter DFBA.",
+        "ar": "إذا تناسبت جساءة BA مع 1/7.5 وجساءة BC مع 2/6، أدخل DFBA."
+      },
+      "a": {
+        "en": "DFBA=(1/7.5)/(1/7.5+2/6)=2/7.",
+        "ar": "DFBA=(1/7.5)/(1/7.5+2/6)=2/7."
+      }
+    },
+    {
+      "id": "ds-card-5",
+      "concept": "ds-trial",
+      "kind": "prediction",
+      "q": {
+        "en": "Equal EI columns have heights 7.5 and 5 m under one common trial drift. Their held-end sway moments are:",
+        "ar": "لعمودين EI متساوية وارتفاعاهما 7.5 و5 m انزياح تجريبي مشترك. عزوم انزياحهما المقيدة تكون:"
+      },
+      "a": {
+        "en": "The displacement moment term is −6EIΔ/h².",
+        "ar": "حد عزم الإزاحة −6EIΔ/h²."
+      }
+    },
+    {
+      "id": "ds-card-6",
+      "concept": "ds-trial",
+      "kind": "calculation",
+      "q": {
+        "en": "For EI₀Δ1=1000 kN·m³ and h=5 m, find a held-end trial column moment.",
+        "ar": "عند EI₀Δ1=1000 kN·m³ وh=5 m، أوجد عزم طرف العمود التجريبي المقيد."
+      },
+      "a": {
+        "en": "M=−6·1000/25=−240.",
+        "ar": "M=−6·1000/25=−240."
+      }
+    },
+    {
+      "id": "ds-card-7",
+      "concept": "ds-scale",
+      "kind": "prediction",
+      "q": {
+        "en": "Double the trial displacement and recompute the trial solution. What happens to the final physical answer?",
+        "ar": "ضاعف إزاحة التجربة وأعد حساب حلها. ماذا يحدث للنتيجة الفيزيائية النهائية؟"
+      },
+      "a": {
+        "en": "Both trial moments and trial force residual double, so kM1 is invariant.",
+        "ar": "يتضاعف كل من عزوم التجربة ومتبقي قوتها، لذا يبقى kM1 ثابتاً."
+      }
+    },
+    {
+      "id": "ds-card-8",
+      "concept": "ds-scale",
+      "kind": "calculation",
+      "q": {
+        "en": "Using residual0=23.818613065 and residual1=−96.839754327 kN, find k.",
+        "ar": "باستخدام residual0=23.818613065 وresidual1=−96.839754327 kN، أوجد k."
+      },
+      "a": {
+        "en": "k=−23.818613065/(−96.839754327)=0.24595904059.",
+        "ar": "k=−23.818613065/(−96.839754327)=0.24595904059."
+      }
+    },
+    {
+      "id": "ds-card-9",
+      "concept": "ds-stories",
+      "kind": "prediction",
+      "q": {
+        "en": "A frame has two independent sway coordinates. How many independent trial patterns are generally needed?",
+        "ar": "لإطار إحداثيا انزياح مستقلان. كم نمط تجربة مستقلاً نحتاج عادة؟"
+      },
+      "a": {
+        "en": "Independent coordinate count determines the number of correction coefficients.",
+        "ar": "يحدد عدد الإحداثيات المستقلة عدد معاملات التصحيح."
+      }
+    },
+    {
+      "id": "ds-card-10",
+      "concept": "ds-stories",
+      "kind": "calculation",
+      "q": {
+        "en": "Authored two-coordinate check: 10Δ1−4Δ2=20 and −4Δ1+8Δ2=12, units kN and mm. Find Δ1.",
+        "ar": "فحص مؤلف لإحداثيين: 10Δ1−4Δ2=20 و−4Δ1+8Δ2=12 بوحدتي kN وmm. أوجد Δ1."
+      },
+      "a": {
+        "en": "Double the first equation and add the second:16Δ1=52 ⇒ Δ1=3.25; Δ2=3.125.",
+        "ar": "ضاعف الأولى واجمع الثانية:16Δ1=52، ومنه Δ1=3.25 وΔ2=3.125."
+      }
+    },
+    {
+      "id": "ds-card-11",
+      "concept": "ds-audit",
+      "kind": "prediction",
+      "q": {
+        "en": "Why does the final global moment check include a 2.5HD term in the source-17 frame?",
+        "ar": "لماذا يتضمن فحص العزوم العام النهائي حد 2.5HD في إطار المصدر 17؟"
+      },
+      "a": {
+        "en": "AB is 7.5 m and CD 5 m beneath a common beam, so D lies 2.5 m above A.",
+        "ar": "يقع العمودان AB=7.5 m وCD=5 m أسفل كمرة مشتركة، لذا يرتفع D عن A بمقدار 2.5 m."
+      }
+    },
+    {
+      "id": "ds-card-12",
+      "concept": "ds-audit",
+      "kind": "calculation",
+      "q": {
+        "en": "Enter the rightward-positive horizontal reaction HA for the converged source-17 example.",
+        "ar": "أدخل رد الفعل الأفقي HA مع جعل اليمين موجباً للمثال المتقارب من المصدر 17."
+      },
+      "a": {
+        "en": "HA=(−52.68327675+41.82907749)/7.5−48·3/7.5=−20.647226568.",
+        "ar": "HA=(−52.68327675+41.82907749)/7.5−48·3/7.5=−20.647226568."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "17",
+      "page": 2,
+      "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+    },
+    {
+      "doc": "17",
+      "page": 3,
+      "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+    },
+    {
+      "doc": "17",
+      "page": 4,
+      "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+    },
+    {
+      "doc": "17",
+      "page": 5,
+      "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+    },
+    {
+      "doc": "17",
+      "page": 6,
+      "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+    },
+    {
+      "doc": "17",
+      "page": 7,
+      "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+    },
+    {
+      "doc": "17",
+      "page": 8,
+      "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+    },
+    {
+      "doc": "17",
+      "page": 9,
+      "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+    },
+    {
+      "doc": "17",
+      "page": 10,
+      "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+    },
+    {
+      "doc": "17",
+      "page": 11,
+      "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+    },
+    {
+      "doc": "17",
+      "page": 12,
+      "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+    },
+    {
+      "doc": "17",
+      "page": 16,
+      "filename": "Lecture (5) -moment distribution frames with sway.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 19,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 20,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    },
+    {
+      "doc": "14",
+      "page": 21,
+      "filename": "lecture (2) Slope deflection method -frames.pdf"
+    }
+  ],
+  "videoIds": [
+    "9R-tpqwr0W0",
+    "MvBqCeZllpQ"
+  ]
+}
