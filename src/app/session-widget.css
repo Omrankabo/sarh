@@ -5,6 +5,12 @@
 .minimal-shell[dir=rtl] .navigation-popover{direction:rtl}
 .minimal-header .wordmark{margin-right:auto}
 .minimal-header:not(:has(.session-widget)) .wordmark{margin-right:0;margin-left:auto}
+.header-navigation-group{display:flex;align-items:center;gap:14px;flex:1;min-width:0}
+.minimal-header .header-navigation-group .wordmark{margin:0}
+.minimal-header:not(:has(.session-widget)) .header-navigation-group{justify-content:space-between}
+.minimal-shell[dir=rtl] .header-navigation-group{justify-content:space-between}
+.minimal-shell[dir=rtl] .session-widget{position:absolute;right:82px}
+.navigation-popover{left:auto;right:auto;inset-inline-start:0;inset-inline-end:auto}
 .session-widget{display:flex;align-items:center;gap:8px;flex:0 0 auto;min-height:60px;padding:4px 6px 4px 12px;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:0 3px 16px #263c3509;color:var(--ink);font-family:var(--font-en),var(--font-ar),sans-serif}
 .session-widget-ring{width:34px;height:34px;position:relative;flex-shrink:0}
 .session-widget-ring svg{display:block;width:100%;height:100%;transform:rotate(-90deg)}
@@ -21,22 +27,25 @@
 .session-widget-actions button:hover:not(:disabled){background:#e3ebdd;box-shadow:none}
 .session-widget.is-paused .ring-value{stroke:#a55933}
 .session-widget.is-paused .session-widget-caption{color:#89401f}
-.minimal-shell .learning-context{top:104px}
-.minimal-shell .topic-tabs{top:156px}
-.minimal-shell .story-map,.minimal-shell .question-list{top:234px}
+.minimal-shell .learning-context{top:var(--header-height,92px)}
+.minimal-shell .main-content:has(.learning-context){padding-top:0}
+.minimal-shell .topic-tabs{top:calc(var(--header-height,92px) + var(--learning-context-height,52px))}
+.minimal-shell .story-map,.minimal-shell .question-list{top:calc(var(--header-height,92px) + var(--learning-context-height,52px) + var(--topic-tabs-height,58px) + 16px)}
 .timer-toast{top:104px}
 @media(max-width:900px){.minimal-shell .story-map,.minimal-shell .question-list{top:0}}
 @media(max-width:700px){
+ .minimal-header .navigation-popover{position:fixed;top:var(--header-height,82px);left:16px;right:16px;inset-inline:16px;min-width:0}
  .minimal-header{gap:6px;padding:10px 16px;min-height:82px}
  .minimal-header .wordmark{font-size:26px}
+ .header-navigation-group{gap:6px}
+ .minimal-shell[dir=rtl] .session-widget{right:66px}
  .session-widget{gap:5px;padding:3px 4px 3px 8px;min-height:58px;border-radius:16px}
  .session-widget-readout{min-width:65px}.session-widget-clock{font-size:21px}
  .session-widget-caption{font-size:8px}
  .session-widget-ring{width:30px;height:30px}
  .session-widget-icon{width:24px;margin-inline:3px}
- .minimal-shell .learning-context{top:90px}
- .minimal-shell .topic-tabs{top:140px}
  .timer-toast{top:90px;right:16px}
 }
-@media(max-width:360px){.minimal-header{padding-inline:10px;gap:4px}.minimal-header .wordmark{font-size:23px}.session-widget{gap:3px;padding-left:6px}.session-widget-readout{min-width:62px}.session-widget-ring{width:27px;height:27px}}
+@media(max-width:360px){.minimal-header{padding-inline:10px;gap:4px}.minimal-header .wordmark{font-size:23px}.session-widget{gap:3px;padding-left:6px}.session-widget-readout{min-width:62px}.session-widget-ring{width:27px;height:27px}.minimal-shell[dir=rtl] .session-widget{right:58px}}
 @media(prefers-reduced-motion:reduce){.ring-value{transition:none}}
+@media(max-width:360px){.minimal-header:has(.session-widget.is-running,.session-widget.is-paused) .wordmark{font-size:20px}}

@@ -1,0 +1,354 @@
+[
+  {
+    "id": "structures-ii",
+    "kind": "course",
+    "asset": "/illustrations/v1/courses/structures-ii.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a wide introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape composition 3:2 with generous quiet margins and all essential objects in the central 80%. Hand-drawn editorial architecture sketch, fine charcoal pencil and loose ink, subtle paper grain, soft watercolor washes. Near-white warm teal paper background, mint green and electric blue accents, small energetic orange highlights, occasional tiny golden yellow detail. Calm, inviting, clever, light and uncluttered. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. This is a conceptual introduction, not a calculation diagram. Make the scene physically plausible and visually legible at card size.\nSubject: Theory of Structures II course cover. A graceful small continuous bridge with three aligned supports transforms from a solid structural model at the left into a light pencil framework at the right, with one restrained blue curved line suggesting bending response below it. A small hinged structural frame model sits nearby on the same drawing table. Clearly connected beam spans, recognizable supports, precise architectural perspective; no unnecessary arrows."
+  },
+  {
+    "id": "engineering-economics",
+    "kind": "course",
+    "asset": "/illustrations/v1/courses/engineering-economics.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A compact tabletop civil-engineering project model of a small bridge beside an open blank notebook; a delicate blue timeline-like ribbon runs between a small initial stack of copper tokens and three future token stacks; comparing the useful structure with its resources over time, no currency symbols."
+  },
+  {
+    "id": "soil-mechanics-ii",
+    "kind": "course",
+    "asset": "/illustrations/v1/courses/soil-mechanics-ii.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: An elegant cutaway block of earth with three visibly different soil layers, a small square building footing on top, blue groundwater within the lower sandy layer, a magnified cluster of touching mineral grains with blue water between them. Geotechnical engineering, not a geology landscape."
+  },
+  {
+    "id": "hydraulics",
+    "kind": "course",
+    "asset": "/illustrations/v1/courses/hydraulics.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A small civil-engineering open-channel flume in perspective, clear blue water flowing along an open rectangular channel through a broad smooth constriction; subtle ripples, water depth visible at a clean cutaway edge, a tiny downstream measuring gauge without markings."
+  },
+  {
+    "id": "environmental-i",
+    "kind": "course",
+    "asset": "/illustrations/v1/courses/environmental-i.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A compact cutaway water-treatment landscape: river intake feeding a round mixing tank and settling basin through short blue pipes, then a clean-water reservoir beside a small town. Mint vegetation, unmistakably water treatment rather than wastewater, miniature editorial model."
+  },
+  {
+    "id": "steel-ii",
+    "kind": "course",
+    "asset": "/illustrations/v1/courses/steel-ii.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A beautifully legible steel construction model: a short portal with exposed I-section columns and beam, small orange bolted connection plates, one detached built-up I-section detail nearby. Recognizable steel flanges, web and realistic fasteners, thoughtful structural craft."
+  },
+  {
+    "id": "slope-beams",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/slope-beams.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A miniature straight steel I-beam resting on three concrete support plinths, making two continuous spans. The beam is one seamless unbroken piece all the way across the middle support: absolutely NO split, notch, hinge, seam, or joint at the middle. Restrained blue watercolor on the steel and tiny orange bearing pads. A gentle oblique architectural perspective, ample white space. No arrows, deformation curves, graph, diagrams or symbols. An inviting physical structural model."
+  },
+  {
+    "id": "slope-sway",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/slope-sway.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A single-bay miniature steel rigid moment frame with two vertical columns fixed on concrete bases and one horizontal beam. Both top joints have rectangular bolted end plates: absolutely NO circular pins or hinge symbols. A small orange horizontal force arrow at the top and a very faint blue displaced frame silhouette shifted slightly to the right suggest lateral movement. Avoid exact bending diagrams; this is an introductory architectural sketch, not a response calculation."
+  },
+  {
+    "id": "slope-nonsway",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/slope-nonsway.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A single-bay rigid portal frame with a delicate diagonal brace preventing lateral movement. Its beam bends slightly under three small downward orange load arrows; the column bases remain in place. A faint undeformed pencil outline accompanies the blue bent shape."
+  },
+  {
+    "id": "slope-inclined",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/slope-inclined.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: An elegant pitched-roof gable frame miniature with two columns and sloping rafters meeting at a clearly connected ridge. Orange roof load details and a fine blue displaced outline hint at combined rotation and movement. Keep frame geometry coherent."
+  },
+  {
+    "id": "distribution-nonsway",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/distribution-nonsway.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A braced rigid portal-frame model, its beam-column joints emphasized with restrained blue and orange curved arcs. A small balancing mobile made from two unequal slender members beside it suggests stiffness-based sharing. No sideways deformation."
+  },
+  {
+    "id": "distribution-beams",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/distribution-beams.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A small two-span beam model on three supports with a close-up of its central rigid joint. Three small curved blue and orange arcs around the joint suggest balancing and passing moment to neighboring span ends. Conceptual moment-distribution process, no equations."
+  },
+  {
+    "id": "ee-foundations",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-foundations.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: Two miniature civil-engineering alternatives, a short bridge and a compact road culvert, beside a blank decision notebook and a few copper resource tokens. A balanced comparison of function, resources and alternatives; simple thoughtful composition."
+  },
+  {
+    "id": "ee-interest-context",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-interest-context.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: Two open blank contracts on a drawing desk beside a compact productive workshop model: on one side a simple loan represented by copper tokens along a straight time ribbon; on the other a shared project with two partners' small token groups. Neutral conceptual comparison of financing agreements, no religious symbols or judgment."
+  },
+  {
+    "id": "ee-markets",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-markets.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A small open-air model marketplace with a tiny stack of construction materials and two hands exchanging a plain unmarked copper token. Two translucent simple blue and orange curves cross quietly on an unmarked background sheet. Economic choices and market balance, no text."
+  },
+  {
+    "id": "ee-single-payments",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-single-payments.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: One small copper token stack at the near end of a fine blue time ribbon, with a larger stack farther away and one gentle sweeping orange curve connecting them. A small hourglass subtly represents time. Single present and future amounts, uncluttered."
+  },
+  {
+    "id": "ee-uniform-series",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-uniform-series.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: Five equal-height copper token stacks evenly spaced along a straight blue ribbon, leading to one consolidated stack on a small tray. Visually equal repeated payments; a very small calendar-like stack of blank sheets nearby, no dates or digits."
+  },
+  {
+    "id": "ee-gradients",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-gradients.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: Two neat rows of copper token stacks along two separate thin blue ribbons. The first grows by an equal added layer each step; the second grows more sharply in proportion. Clear distinction between arithmetic and geometric growth, no graph axes or labels."
+  },
+  {
+    "id": "ee-rates",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-rates.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: Two transparent circular timing rings divided into different counts of subtle tick marks, surrounding small copper token stacks and one understated blue growth ribbon. A handheld mechanical clock without numbers suggests compounding at different frequencies. No percent signs."
+  },
+  {
+    "id": "ee-continuous-flows",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-continuous-flows.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A fine uninterrupted stream of tiny copper-colored beads follows a smooth blue curved channel into a glass collection bowl, contrasted with a few discrete separated token stacks nearby. A calm physical metaphor for continuous cash flow rather than equal discrete payments."
+  },
+  {
+    "id": "ee-worth",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-worth.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: Three alternative small infrastructure models on matching platforms, a pump station, a small bridge and a solar-powered water pump, with differently arranged token streams converging toward one common blue reference ribbon. Choosing between projects on a consistent worth basis."
+  },
+  {
+    "id": "ee-depreciation",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-depreciation.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: Three small models of the same construction excavator, from new blue paint through gently worn paint to older but useful equipment. Beneath them, copper token stacks decrease across time. Clean educational illustration of book-value loss and residual value, no labels."
+  },
+  {
+    "id": "ee-equivalence",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-equivalence.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: Two distinct groups of differently sized copper token stacks placed at different positions on a common blue timeline ribbon, both connected by fine pencil lines to the same central orange focal point. An elegant small balance nearby suggests equivalence at one date, no equality sign."
+  },
+  {
+    "id": "ee-irr-payback",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-irr-payback.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A compact machinery investment beside a shallow transparent trough: a small initial copper-token outlay on one side and returning token groups gradually filling it on the other. A slender blue growth path bends toward a small neutral balance marker. Recovering investment over time, no guaranteed-profit promise."
+  },
+  {
+    "id": "ee-fe-pe",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-fe-pe.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A clean engineering practice desk with a blank open calculation notebook, a simple calculator with blank unnumbered keys, a small civil bridge model and carefully arranged copper cash-flow tokens along a blue ribbon. Focused engineering economics practice, no exam logos, no text."
+  },
+  {
+    "id": "ee-risk-inventory",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-risk-inventory.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: Three small warehouse bins containing different amounts of construction bolts, a copper-token tray and two branching blue paths leading toward subtly different project outcomes. A restrained uncertainty ribbon and small delivery cart suggest inventory and risk decisions without casino imagery."
+  },
+  {
+    "id": "ee-capitalized-prospective",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/ee-capitalized-prospective.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: An enduring miniature water reservoir and maintenance tools beside a gentle loop of blue ribbon carrying small recurring copper token groups. A tiny hourglass and a separate future reserve jar suggest long-lived infrastructure and replacement needs. No infinity symbol or equations."
+  },
+  {
+    "id": "soil-effective-stress",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/soil-effective-stress.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A close-up conceptual cutaway under a small footing: interlocking sandy grains in contact with each other, blue pore water in the spaces, an orange downward load resting on the grains, and a slender open piezometer nearby. Distinguish grain skeleton and pore water clearly."
+  },
+  {
+    "id": "soil-triaxial",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/soil-triaxial.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A recognizable transparent triaxial laboratory pressure cell enclosing a cylindrical soil specimen with a thin rubber membrane, top loading piston and blue surrounding water. Small drainage tubes connected at base. A second faint soil cylinder with a slight diagonal shear band nearby. Lab clarity."
+  },
+  {
+    "id": "soil-shear",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/soil-shear.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A direct-shear laboratory box split horizontally, holding a compact sand specimen; the upper half is gently displaced sideways while an orange vertical load cap bears on the sample. An enlarged sketched band of grains sliding along the central plane. No random cracks."
+  },
+  {
+    "id": "hydro-uniform",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/hydro-uniform.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A long straight gently sloping rough-bottomed open channel in perspective, carrying blue water at almost constant visible depth. Tiny waves and light directional strokes reveal downstream motion; bed slope and water surface are parallel. No hydraulic jump or obstruction."
+  },
+  {
+    "id": "hydro-geometry",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/hydro-geometry.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A neat cutaway length of trapezoidal open channel containing clear blue water. The wetted bottom and side boundaries highlighted subtly in orange, free surface distinct, and a second small rectangular channel section nearby for comparison. Physical channel geometry, no dimensions."
+  },
+  {
+    "id": "hydro-critical",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/hydro-critical.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: An open-channel flume smoothly narrowing into a broad raised throat, blue upstream deeper water transitions smoothly through a shallower faster throat downstream. A separate understated blue U-shaped energy curve on blank paper suggests two possible depths. No abrupt waterfall."
+  },
+  {
+    "id": "env-quality",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/env-quality.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A clean water-testing lab scene with three transparent sample bottles containing subtly different water turbidity, a simple glass beaker, pipette and small testing instrument with a blank screen. Tiny magnified particles in one circular inset, no fake chemistry or labels."
+  },
+  {
+    "id": "env-coagulation",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/env-coagulation.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A compact jar-test laboratory arrangement of three clear beakers with small stirring paddles above them. Left has many tiny suspended particles, middle shows fine aggregates forming, right has larger flocs settling with clearer water above. Blue water and restrained orange particle accents, no arrows or text."
+  },
+  {
+    "id": "env-demand",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/env-demand.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A miniature town with homes, a school and a small factory connected by clean blue pipes to an elevated water storage tank. Subtle different water-droplet sizes beside buildings suggest varied demand. Gentle green landscape, compact water-supply model."
+  },
+  {
+    "id": "steel-ltb",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/steel-ltb.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: An isolated slender steel I-beam on clear end supports, its middle gently displaced sideways with a subtle twist of the top flange. A thin gray undeformed centerline and a small mint lateral brace at one point clarify stability. Small deformation, recognizable flanges and web, no collapse."
+  },
+  {
+    "id": "steel-compound",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/steel-compound.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A close oblique engineering sketch of a short built-up steel I-section with two cover plates neatly fastened to flanges using aligned orange bolt heads. A small nearby exploded connection detail shows how a plate joins the section. Structurally recognizable steel assembly, no impossible floating members."
+  },
+  {
+    "id": "distribution-sway",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/distribution-sway.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: Two small clear rigid frame models: one vertical orthogonal portal and one with a gently inclined beam. Blue ghost outlines shift their upper joints sideways, small orange curved joint arcs suggest balancing sway and rotational response. No labels.\nFor all rigid beam-column connections, use seamless rigid corners or visible bolted end plates, never circular hinge symbols. Any curved overlay is only a conceptual accent, not a computed deflection."
+  },
+  {
+    "id": "influence-qualitative",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/influence-qualitative.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A simple bridge deck on two end supports with one tiny orange vehicle above it and a single blue tent-like influence shape drawn on paper below the bridge. A softly lifted joint model nearby suggests the displaced shape idea. Not a bending-moment calculation.\nFor all rigid beam-column connections, use seamless rigid corners or visible bolted end plates, never circular hinge symbols. Any curved overlay is only a conceptual accent, not a computed deflection."
+  },
+  {
+    "id": "influence-numerical",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/influence-numerical.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A simply supported beam model on drawing paper with a small sliding load marker above it. Directly below, a separate slender conjugate-beam-like model and a smooth blue response curve have clean fine vertical projection lines between them. No numeric ordinates or axes labels.\nFor all rigid beam-column connections, use seamless rigid corners or visible bolted end plates, never circular hinge symbols. Any curved overlay is only a conceptual accent, not a computed deflection."
+  },
+  {
+    "id": "influence-moving",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/influence-moving.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A small orange two-axle truck crossing a straight bridge deck on two clear end supports. Three very faint ghost positions along the bridge suggest movement. One restrained blue influence curve below the deck suggests finding the critical load location.\nFor all rigid beam-column connections, use seamless rigid corners or visible bolted end plates, never circular hinge symbols. Any curved overlay is only a conceptual accent, not a computed deflection."
+  },
+  {
+    "id": "models-beams",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/models-beams.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A simple physical continuous-beam model on three supports transitions into a sparse wireframe beam-and-joint model. A small orange restrained support and blue fine curved response line connect physical behavior with idealization. No software screens.\nFor all rigid beam-column connections, use seamless rigid corners or visible bolted end plates, never circular hinge symbols. Any curved overlay is only a conceptual accent, not a computed deflection."
+  },
+  {
+    "id": "models-frames",
+    "kind": "topic",
+    "asset": "/illustrations/v1/topics/models-frames.webp",
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Asset type: a conceptual introductory illustration for Sarh, a bilingual civil-engineering study app. Landscape 3:2. Minimal hand-drawn editorial architectural sketch: fine charcoal pencil outlines and restrained translucent watercolor, mostly unpainted near-white soft teal paper (#F0F7F6). Muted mint green, electric blue accents and a few warm orange details. A single coherent subject, centered with generous quiet margins, uncluttered background, no busy scenery or room setting. Clear at small card size. Tactile and inviting. No text, letters, numbers, formulas, logos, watermarks, UI, border or caption. Not a calculation diagram. Physically plausible. All important objects fully within the frame.\nSubject: A short two-storey structural frame miniature transitions from solid columns and beams to thin analytical centerlines with distinct joints. One tiny lateral arrow and a light blue deflected silhouette show load path and modeled movement. Recognizable member connectivity.\nFor all rigid beam-column connections, use seamless rigid corners or visible bolted end plates, never circular hinge symbols. Any curved overlay is only a conceptual accent, not a computed deflection."
+  }
+]

@@ -1,0 +1,25 @@
+import type {CourseSketch as Sketch,Lang} from '@/lib/types';
+import {text} from '@/lib/types';
+import {channelSection,mohrCircle,platedSection} from '@/lib/course-calculations';
+
+/** Original vector drawings from the final checked inputs; no source page images. */
+export default function CourseSketch({data,lang}:{data:Sketch;lang:Lang}){
+ const {kind,values:v}=data,ar=lang==='ar';let drawing:React.ReactNode;
+ if(kind==='channel'){
+  const {b,y,m}=v,s=channelSection(b,y,m),scale=Math.min(400/s.top,160/y),bottom=b*scale,side=m*y*scale,height=y*scale,left=300-bottom/2;
+  drawing=<><path d={`M${left-side} ${210-height}L${left} 210H${left+bottom}L${left+bottom+side} ${210-height}`} fill="#d7edf5" stroke="#315c6c" strokeWidth="3"/><path d={`M${left-side} ${210-height}H${left+bottom+side}`} stroke="#0066aa" strokeWidth="2"/><path d={`M${left} 235H${left+bottom}`} stroke="#9b5634"/><text x="300" y="258" textAnchor="middle">b = {b} m</text><text x="300" y={195-height} textAnchor="middle">T = {s.top.toFixed(2)} m</text><text x="20" y="100">y = {y} m</text><text x="20" y="124">m = {m} H:1V</text><text x="300" y="168" textAnchor="middle">A = {s.area.toFixed(3)} m²</text><text x="20" y="285">P = {s.perimeter.toFixed(3)} m; R = {s.radius.toFixed(3)} m; D = {s.depth.toFixed(3)} m</text></>;
+ }else if(kind==='mohr'){
+  const knownPore=v.pore!==undefined,c=mohrCircle(v.major,v.minor,v.pore||0),total=mohrCircle(v.major,v.minor),scale=440/Math.max(v.major,1),x=(n:number)=>85+n*scale;
+  drawing=<><path d="M55 210H570M85 230V30" stroke="#52615c"/><text x="550" y="238">σ (kPa)</text><text x="10" y="30">τ</text><path d={`M${x(total.left)} 210A${total.radius*scale} ${total.radius*scale} 0 0 1 ${x(total.right)} 210`} fill="none" stroke="#8b9692" strokeDasharray="6 5"/><path d={`M${x(c.left)} 210A${c.radius*scale} ${c.radius*scale} 0 0 1 ${x(c.right)} 210`} fill="none" stroke="#0066aa" strokeWidth="3"/><text x={x(c.left)} y="235" textAnchor="middle">{c.left.toFixed(1)}</text><text x={x(c.right)} y="235" textAnchor="middle">{c.right.toFixed(1)}</text><text x="100" y="275">{knownPore?`u = ${v.pore} kPa; C′ = ${c.center.toFixed(1)}`:`C = ${c.center.toFixed(1)}`}; r = {c.radius.toFixed(1)} kPa</text><text x="310" y="35" fill="#0066aa">{knownPore?(ar?'الفعّال: خط متصل':'Effective: solid'):(ar?'أساس الإجهاد المعطى':'Stated stress basis')}</text><text x="310" y="60">{knownPore?(ar?'الكلي: خط متقطع':'Total: dashed'):(ar?'ضغط المسام غير معطى':'Pore pressure not supplied')}</text></>;
+ }else if(kind==='envelope'){
+  const phi=v.phi*Math.PI/180,scaleX=1.1,scaleY=1,base=245,normal=v.normal??100,tau=v.c+normal*Math.tan(phi);
+  drawing=<><path d="M70 250H550M70 250V35" stroke="#52615c"/><path d={`M70 ${base-v.c}L510 ${base-(v.c+400*Math.tan(phi))}`} stroke="#315c6c" strokeWidth="3"/><circle cx={70+normal*scaleX} cy={base-tau*scaleY} r="6" fill="#b04d25"/><text x="365" y="275">σ′n (kPa)</text><text x="12" y="30">τf (kPa)</text><text x="300" y="38">τf = {v.c} + σ′n tan({v.phi}°)</text><text x="90" y="295">σ′n = {normal}; τf = {tau.toFixed(2)} kPa</text><text x="90" y="60">{ar?'غلاف خطي مختار؛ ليس شكل جهاز':'Selected linear envelope; not apparatus geometry'}</text></>;
+ }else if(kind==='treatment'){
+  drawing=<>{[0,1,2].map(i=><g key={i}><rect x={95+i*145} y="95" width="125" height="125" rx="10" fill={['#d7edf5','#e3ecda','#f3dfcb'][i]} stroke="#52615c" strokeWidth="2"/><path d={`M${157+i*145} 105V195M${135+i*145} 175H${179+i*145}`} stroke="#315c6c" strokeWidth="3"/><text x={157+i*145} y="246" textAnchor="middle">{v['g'+(i+1)]??[40,30,20][i]} s⁻¹</text></g>)}<path d="M25 155H85M520 155H585" stroke="#0066aa" strokeWidth="3"/><text x="300" y="45" textAnchor="middle">Q = {v.flow} m³/day; V = {v.volume?.toFixed(2)} m³</text><text x="300" y="285" textAnchor="middle">{ar?'تلبيد متدرج: G1 ثم G2 ثم G3':'Tapered flocculation: G1 → G2 → G3'}</text></>;
+ }else{
+  const d=v.depth||400,b=v.width||200,t=v.thickness||10,sc=180/(d+2*t),cx=300,top=55;
+  const section=platedSection(v.baseI||200e6,d,b,t);
+  drawing=<><path d={`M${cx-70} ${top+t*sc}H${cx+70}V${top+16+t*sc}H${cx+8}V${top+(d-16+t)*sc}H${cx+70}V${top+(d+t)*sc}H${cx-70}V${top+(d-16+t)*sc}H${cx-8}V${top+16+t*sc}H${cx-70}Z`} fill="#dfe5e3" stroke="#52615c" strokeWidth="2"/><rect x={cx-b*sc/2} y={top} width={b*sc} height={t*sc} fill="#edb088" stroke="#9b5634"/><rect x={cx-b*sc/2} y={top+(d+t)*sc} width={b*sc} height={t*sc} fill="#edb088" stroke="#9b5634"/><path d="M100 145H500" stroke="#0066aa" strokeDasharray="6 5"/><text x="20" y="35">B={b} mm; t={t} mm; D={d} mm</text><text x="300" y="277" textAnchor="middle">Inew = {(section.inertia/1e6).toFixed(3)} × 10⁶ mm⁴</text><text x="300" y="299" textAnchor="middle">{ar?'مخطط توضيحي؛ سُمك الصفيحة مكبّر عند الحاجة':'Schematic; thin plates exaggerated where needed'}</text></>;
+ }
+ return <figure className="course-figure"><svg viewBox="0 0 600 320" role="img" aria-label={text(data.caption,lang)} direction="ltr">{drawing}</svg><figcaption>{text(data.caption,lang)}</figcaption></figure>;
+}

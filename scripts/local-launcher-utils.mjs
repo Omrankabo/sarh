@@ -33,9 +33,12 @@ export function completeBuild(root) {
   if(!fs.readFileSync(path.join(root,'.next/BUILD_ID'),'utf8').trim())return false;
   const assets=JSON.parse(fs.readFileSync(path.join(root,'public/offline-assets.json'),'utf8'));
   return Array.isArray(assets)&&assets.some(a=>typeof a==='string'&&a.endsWith('.css'))&&assets.some(a=>typeof a==='string'&&a.endsWith('.js'))&&assets.every(asset=>{
-   if(typeof asset!=='string'||!asset.startsWith('/_next/static/'))return false;
-   const file=path.resolve(root,'.next',asset.slice('/_next/'.length));
-   const relative=path.relative(path.join(root,'.next/static'),file);
+   if(typeof asset!=='string')return false;
+   const illustration=/^\/illustrations\/v1\/(?:courses|topics)\/[a-z0-9-]+\.webp$/.test(asset);
+   if(!illustration&&!asset.startsWith('/_next/static/'))return false;
+   const base=path.join(root,illustration?'public/illustrations':'.next/static');
+   const file=illustration?path.resolve(root,'public',asset.slice(1)):path.resolve(root,'.next',asset.slice('/_next/'.length));
+   const relative=path.relative(base,file);
    return relative!==''&&!relative.startsWith('..')&&!path.isAbsolute(relative)&&fs.existsSync(file)&&fs.statSync(file).size>0;
   });
  }catch{return false;}

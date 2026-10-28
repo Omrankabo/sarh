@@ -1,4 +1,5 @@
 import type {T} from './types';
+import {remainingSemesterSeven} from './semester-seven';
 
 export type Subject={
  id:string;
@@ -7,6 +8,8 @@ export type Subject={
  semester:number;
  topicIds:string[];
  studyPlan?:T;
+ curriculum?:T[];
+ publication?:'building'|'planned';
 };
 
 // Add future courses here; existing topic IDs and notebook records stay stable.
@@ -23,9 +26,19 @@ export const subjects:Subject[]=[{
  semester:7,
  topicIds:['ee-foundations','ee-markets','ee-interest-context','ee-single-payments','ee-uniform-series','ee-gradients','ee-rates','ee-continuous-flows','ee-equivalence','ee-depreciation','ee-worth','ee-irr-payback','ee-capitalized-prospective','ee-fe-pe','ee-risk-inventory'],
  studyPlan:{en:'Week 1: decisions, markets and the interest-context chapter; then single payments. Week 2: equal payments, gradients, rate conversion and timing. Week 3: continuous flows, depreciation and worth comparisons. Week 4: IRR, payback, capitalized/prospective value, then mixed tutorial and exam practice. In each session: explain one idea from memory, draw its timeline, solve an unseen numerical variant, and repair one error. Start with the readiness checks; shorten a session only after you can explain both the formula and its limits.',ar:'الأسبوع ١: القرار والسوق وفصل سياق الفائدة، ثم الدفعات المفردة. الأسبوع ٢: الدفعات المنتظمة والتدرج وتحويل المعدلات والتوقيت. الأسبوع ٣: التدفقات المستمرة والإهلاك ومقارنة القيم. الأسبوع ٤: العائد والاسترداد والقيمة الرأسمالية والمستقبلية، ثم تدريب مختلط من التمارين والاختبارات. في كل جلسة: اشرح فكرة من الذاكرة، وارسم خطها الزمني، وحل مسألة متغيرة، وأصلح خطأ واحدًا. ابدأ بفحص المتطلبات؛ لا تختصر الجلسة قبل شرح المعادلة وحدودها.'},
-}];
+},...remainingSemesterSeven];
 
 export const topicFamilies=[
+ {id:'soil-strength',en:'Shear strength & drainage',ar:'مقاومة القص والتصريف'},
+ {id:'hyd-foundations',en:'Channel foundations',ar:'أساسيات القنوات'},
+ {id:'hyd-resistance',en:'Resistance & normal depth',ar:'المقاومة والعمق العادي'},
+ {id:'hyd-energy',en:'Energy & flow controls',ar:'الطاقة والتحكم بالجريان'},
+ {id:'env-supply',en:'Demand & water supply',ar:'الطلب والإمداد المائي'},
+ {id:'env-quality',en:'Quality & chemistry',ar:'الجودة والكيمياء'},
+ {id:'env-treatment',en:'Treatment processes',ar:'عمليات المعالجة'},
+ {id:'steel-stability',en:'Beam stability',ar:'استقرار الكمرات'},
+ {id:'steel-builtup',en:'Built-up sections & connections',ar:'القطاعات المجمعة والوصلات'},
+ {id:'soil-stress',en:'Stress in soil',ar:'الإجهاد في التربة'},
  {id:'slope',en:'Slope-deflection',ar:'الانحدار والانحراف'},
  {id:'distribution',en:'Moment distribution',ar:'توزيع العزوم'},
  {id:'influence',en:'Influence lines',ar:'خطوط التأثير'},

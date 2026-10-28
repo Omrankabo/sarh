@@ -1,0 +1,1803 @@
+{
+  "id": "env-quality",
+  "family": "env-quality",
+  "title": {
+    "en": "Water quality: turn a sample into evidence",
+    "ar": "جودة الماء: حوّل العينة إلى دليل"
+  },
+  "summary": {
+    "en": "Separate solids, turbidity and dissolved ions. Convert concentration correctly, understand pH and audit a water analysis before designing treatment.",
+    "ar": "ميّز المواد الصلبة والعكارة والأيونات الذائبة. حوّل التركيز وافهم pH ودقّق تحليل الماء قبل تصميم المعالجة."
+  },
+  "outcomes": [
+    {
+      "en": "Concentration needs a denominator",
+      "ar": "التركيز يحتاج مقامًا"
+    },
+    {
+      "en": "Filter first, then name the fraction",
+      "ar": "رشّح أولًا ثم سمِّ الجزء"
+    },
+    {
+      "en": "Turbidity is an optical signal",
+      "ar": "العكارة إشارة بصرية"
+    },
+    {
+      "en": "Convert mass into electrical equivalents",
+      "ar": "حوّل الكتلة إلى مكافئات الشحنة"
+    },
+    {
+      "en": "A pH step is a tenfold change",
+      "ar": "درجة pH تعني تغيّرًا عشريًا"
+    }
+  ],
+  "prereqIds": [
+    "hyd-units",
+    "env-mass",
+    "env-chemistry",
+    "course-algebra"
+  ],
+  "videoIds": [
+    "6Ot2t9YyzKU"
+  ],
+  "concepts": [
+    {
+      "id": "env-quality-mass",
+      "title": {
+        "en": "Concentration needs a denominator",
+        "ar": "التركيز يحتاج مقامًا"
+      }
+    },
+    {
+      "id": "env-quality-solids",
+      "title": {
+        "en": "Filter first, then name the fraction",
+        "ar": "رشّح أولًا ثم سمِّ الجزء"
+      }
+    },
+    {
+      "id": "env-quality-optical",
+      "title": {
+        "en": "Turbidity is an optical signal",
+        "ar": "العكارة إشارة بصرية"
+      }
+    },
+    {
+      "id": "env-quality-charge",
+      "title": {
+        "en": "Convert mass into electrical equivalents",
+        "ar": "حوّل الكتلة إلى مكافئات الشحنة"
+      }
+    },
+    {
+      "id": "env-quality-ph",
+      "title": {
+        "en": "A pH step is a tenfold change",
+        "ar": "درجة pH تعني تغيّرًا عشريًا"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "env-quality-mass",
+      "title": {
+        "en": "Concentration needs a denominator",
+        "ar": "التركيز يحتاج مقامًا"
+      },
+      "predict": {
+        "en": "5 mg residue from100 mL corresponds to5 mg/L?",
+        "ar": "هل5 mg راسب من100 mL تعادل5 mg/L؟"
+      },
+      "options": [
+        {
+          "en": "No. It corresponds to50 mg/L.",
+          "ar": "لا. تعادل50 mg/L."
+        },
+        {
+          "en": "Yes. Sample size never matters.",
+          "ar": "نعم. حجم العينة غير مهم."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "An unrecorded sample volume makes the reported mass unusable as concentration.",
+        "ar": "يجعل حجم العينة غير المسجل الكتلة غير قابلة للاستعمال كتركيز."
+      },
+      "explain": {
+        "en": "Mass concentration tells you how much material is in a known sample volume. A milligram in100 mL is not1 mg/L: the sample contains one tenth of a litre. For dilute water, mg/L is approximately ppm by mass only when density is near1 kg/L; the meanings are not universally identical.",
+        "ar": "يخبرك التركيز الكتلي بكم المادة في حجم عينة معلوم. ميليغرام في100 mL ليس1 mg/L؛ فالعينة عُشر لتر. في الماء المخفف تقارب mg/L قيمة ppm الكتلية فقط عندما تقارب الكثافة1 kg/L؛ والمعنيان ليسا متطابقين دائمًا."
+      },
+      "formula": "C=m/V; C(mg/L)=m(mg)×1000/V(mL)",
+      "symbols": {
+        "en": "m mass above tare/blank in mg; V sample volume; C mg/L.",
+        "ar": "m الكتلة فوق الفارغ أو البلانك بالميليغرام؛ V حجم العينة؛ C بوحدة mg/L."
+      },
+      "assumptions": {
+        "en": "Representative sample and consistent analytical preparation; density assumption must be stated when converting ppm by mass.",
+        "ar": "عينة ممثلة وتحضير تحليلي متسق؛ يجب ذكر فرض الكثافة عند تحويل ppm الكتلية."
+      },
+      "example": {
+        "en": "A dried dish gains12 mg from200 mL.",
+        "ar": "زاد وزن طبق مجفف12 mg من200 mL."
+      },
+      "calculation": {
+        "en": "C=12×1000/200=60 mg/L. Subtract the empty-dish mass first.",
+        "ar": "C=12×1000/200=60 mg/L. اطرح كتلة الطبق الفارغ أولًا."
+      },
+      "interpret": {
+        "en": "An unrecorded sample volume makes the reported mass unusable as concentration.",
+        "ar": "يجعل حجم العينة غير المسجل الكتلة غير قابلة للاستعمال كتركيز."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "An unrecorded sample volume makes the reported mass unusable as concentration. Representative sample and consistent analytical preparation; density assumption must be stated when converting ppm by mass.",
+          "ar": "يجعل حجم العينة غير المسجل الكتلة غير قابلة للاستعمال كتركيز. عينة ممثلة وتحضير تحليلي متسق؛ يجب ذكر فرض الكثافة عند تحويل ppm الكتلية."
+        }
+      },
+      "diagram": "course-env-quality",
+      "concepts": [
+        "env-quality-mass"
+      ],
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 5
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 2
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "env-quality-solids",
+      "title": {
+        "en": "Filter first, then name the fraction",
+        "ar": "رشّح أولًا ثم سمِّ الجزء"
+      },
+      "predict": {
+        "en": "A filter retains material. Is that retained fraction measured as TDS?",
+        "ar": "احتجز المرشح مادة. هل تُقاس المادة المحتجزة كـTDS؟"
+      },
+      "options": [
+        {
+          "en": "No. It contributes to TSS.",
+          "ar": "لا. تسهم في TSS."
+        },
+        {
+          "en": "Yes. Retained always means dissolved.",
+          "ar": "نعم. المحتجز يعني الذائب دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Knowing the solids fraction points to an appropriate separation mechanism.",
+        "ar": "تحديد جزء الصلبات يوجّه إلى آلية الفصل المناسبة."
+      },
+      "explain": {
+        "en": "Total solids come from the whole sample’s dried residue. Suspended solids are retained on the specified filter, while dissolved solids are measured in its filtrate. Their separation is operational: filter and drying method define the result. For consistent tests on the same sample, TS is approximated by TSS+TDS. Different drying temperatures and volatile material can prevent perfect closure.",
+        "ar": "تأتي الصلبات الكلية من راسب تجفيف العينة الكاملة. تُحتجز العالقة على المرشح المحدد وتُقاس الذائبة في الراشح. الفصل إجرائي؛ فالمرشح والتجفيف يحددان النتيجة. لاختبارات متسقة للعينة نفسها تقارب TS مجموع TSS+TDS. قد يمنع اختلاف الحرارة والمواد المتطايرة تطابق الاتزان تمامًا."
+      },
+      "formula": "TS ≈ TSS + TDS; TDS ≈ TS − TSS",
+      "symbols": {
+        "en": "All concentrations in mg/L for the same sample; “dissolved” is defined by the selected filtration protocol.",
+        "ar": "التركيزات كلها mg/L للعينة نفسها؛ تعريف «ذائب» مرتبط ببروتوكول الترشيح."
+      },
+      "assumptions": {
+        "en": "Compatible methods and sample bases; this is not a claim that an arbitrary household filter removes all dissolved material.",
+        "ar": "طرق ومراجع عينات متوافقة؛ لا يعني هذا أن أي مرشح منزلي يزيل كل الذائب."
+      },
+      "example": {
+        "en": "TS=450,TSS=80 mg/L. Estimate TDS.",
+        "ar": "TS=450 وTSS=80 mg/L. قدّر TDS."
+      },
+      "calculation": {
+        "en": "TDS≈450−80=370 mg/L. Check370+80=450.",
+        "ar": "TDS≈450−80=370 mg/L. تحقق370+80=450."
+      },
+      "interpret": {
+        "en": "Knowing the solids fraction points to an appropriate separation mechanism.",
+        "ar": "تحديد جزء الصلبات يوجّه إلى آلية الفصل المناسبة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Knowing the solids fraction points to an appropriate separation mechanism. Compatible methods and sample bases; this is not a claim that an arbitrary household filter removes all dissolved material.",
+          "ar": "تحديد جزء الصلبات يوجّه إلى آلية الفصل المناسبة. طرق ومراجع عينات متوافقة؛ لا يعني هذا أن أي مرشح منزلي يزيل كل الذائب."
+        }
+      },
+      "diagram": "course-env-quality",
+      "concepts": [
+        "env-quality-solids"
+      ],
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 5
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "env-quality-optical",
+      "title": {
+        "en": "Turbidity is an optical signal",
+        "ar": "العكارة إشارة بصرية"
+      },
+      "predict": {
+        "en": "Can you convert any NTU value directly to mg/L with one universal factor?",
+        "ar": "هل يمكن تحويل أي NTU إلى mg/L بمعامل عام واحد؟"
+      },
+      "options": [
+        {
+          "en": "No. Scattering depends on the particles and method.",
+          "ar": "لا. يتبع التشتت الجسيمات والطريقة."
+        },
+        {
+          "en": "Yes. NTU and mg/L are the same unit.",
+          "ar": "نعم. NTU وmg/L الوحدة نفسها."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Do not turn an empirical proxy into a direct measurement or a safety verdict.",
+        "ar": "لا تحول المؤشر التجريبي إلى قياس مباشر أو حكم سلامة."
+      },
+      "explain": {
+        "en": "Turbidity measures how particles scatter light in a specified instrument; it is not a direct mass concentration. Two waters with the same suspended mass can scatter differently because particle size, shape and optical properties differ. Conductivity responds to dissolved ions and can estimate TDS only with an appropriate empirical conversion for that water. Neither clear appearance nor one TDS reading proves microbial safety.",
+        "ar": "تقيس العكارة تشتت الضوء بالجسيمات وفق جهاز محدد ولا تقيس التركيز الكتلي مباشرة. قد يتشتت الضوء بصورة مختلفة لعيني ماء لهما كتلة عالقة متساوية لاختلاف حجم الجسيمات وشكلها وخواصها البصرية. تستجيب الموصلية للأيونات الذائبة ويمكن تقدير TDS منها بمعامل تجريبي مناسب للماء نفسه. لا يثبت الصفاء ولا قياس TDS وحده السلامة الميكروبية."
+      },
+      "formula": "TDS_est (mg/L) = k × EC (µS/cm)",
+      "symbols": {
+        "en": "EC electrical conductivity at stated temperature; k a water-specific empirical factor, not a universal constant.",
+        "ar": "EC الموصلية الكهربائية عند حرارة محددة؛ k معامل تجريبي خاص بالماء لا ثابت عام."
+      },
+      "assumptions": {
+        "en": "Use measured calibration if available. The lecture’s0.55–0.7 range is an estimate, not a regulatory limit or direct NTU conversion.",
+        "ar": "استعمل معايرة مقاسة عند توفرها. مجال المحاضرة0.55–0.7 تقدير لا حد تنظيمي ولا تحويل مباشر من NTU."
+      },
+      "example": {
+        "en": "EC=500 µS/cm and calibrated k=0.6.",
+        "ar": "EC=500 µS/cm وk المعايرة=0.6."
+      },
+      "calculation": {
+        "en": "TDS_est=0.6×500=300 mg/L. Retain the temperature and calibration information.",
+        "ar": "TDS_est=0.6×500=300 mg/L. احتفظ بمعلومة الحرارة والمعايرة."
+      },
+      "interpret": {
+        "en": "Do not turn an empirical proxy into a direct measurement or a safety verdict.",
+        "ar": "لا تحول المؤشر التجريبي إلى قياس مباشر أو حكم سلامة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Do not turn an empirical proxy into a direct measurement or a safety verdict. Use measured calibration if available. The lecture’s0.55–0.7 range is an estimate, not a regulatory limit or direct NTU conversion.",
+          "ar": "لا تحول المؤشر التجريبي إلى قياس مباشر أو حكم سلامة. استعمل معايرة مقاسة عند توفرها. مجال المحاضرة0.55–0.7 تقدير لا حد تنظيمي ولا تحويل مباشر من NTU."
+        }
+      },
+      "diagram": "course-env-quality",
+      "concepts": [
+        "env-quality-optical"
+      ],
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 8
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 10
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "env-quality-charge",
+      "title": {
+        "en": "Convert mass into electrical equivalents",
+        "ar": "حوّل الكتلة إلى مكافئات الشحنة"
+      },
+      "predict": {
+        "en": "May you sum cation and anion mg/L directly to test electroneutrality?",
+        "ar": "هل تجمع mg/L للكاتيونات والأنيونات مباشرة لاختبار التعادل؟"
+      },
+      "options": [
+        {
+          "en": "No. Convert each ion to equivalents first.",
+          "ar": "لا. حوّل كل أيون إلى مكافئات أولًا."
+        },
+        {
+          "en": "Yes. Equal mass always means equal charge.",
+          "ar": "نعم. تساوي الكتلة يعني تساوي الشحنة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The lecture example’s mass-to-charge conversion can be checked without guessing a health limit.",
+        "ar": "يمكن التحقق من تحويل الكتلة إلى شحنة في المثال دون تخمين حد صحي."
+      },
+      "explain": {
+        "en": "A calcium ion carries twice the charge of a sodium ion, so equal mg/L values are not equal charge contributions. Divide ionic mass concentration by equivalent weight to obtain meq/L. Sum positive and negative charge separately. Electroneutrality provides an analytical audit but cannot prove that every unmeasured contaminant is absent.",
+        "ar": "يحمل أيون الكالسيوم ضعف شحنة الصوديوم، فلا تتساوى مساهمة الشحنة بتساوي mg/L. اقسم التركيز الكتلي على الوزن المكافئ للحصول على meq/L. اجمع الموجب والسالب منفصلين. يوفر التعادل الكهربائي تدقيقًا تحليليًا لكنه لا يثبت غياب الملوثات غير المقاسة."
+      },
+      "formula": "EW=MW/|z|; meq/L=(mg/L)/(mg/meq); charge error=100(C−A)/(C+A)",
+      "symbols": {
+        "en": "MW molar mass, |z| ionic charge magnitude; C and A sums in meq/L; error here is signed percent.",
+        "ar": "MW الكتلة المولية و|z| مقدار شحنة الأيون؛ C وA مجموعان بـmeq/L؛ والخطأ هنا نسبة موقعة."
+      },
+      "assumptions": {
+        "en": "Use concentrations of individual ionic species and the stated atomic weights. An acceptance tolerance belongs to a selected analytical protocol.",
+        "ar": "استعمل تراكيز الأنواع الأيونية منفردة والأوزان الذرية المعطاة. حد القبول مرتبط ببروتوكول تحليلي محدد."
+      },
+      "example": {
+        "en": "Calcium93.8 mg/L; use MW40 and charge2.",
+        "ar": "الكالسيوم93.8 mg/L؛ استعمل MW40 وشحنة2."
+      },
+      "calculation": {
+        "en": "EW=40/2=20 mg/meq; calcium=93.8/20=4.69 meq/L.",
+        "ar": "EW=40/2=20 mg/meq؛ الكالسيوم=93.8/20=4.69 meq/L."
+      },
+      "interpret": {
+        "en": "The lecture example’s mass-to-charge conversion can be checked without guessing a health limit.",
+        "ar": "يمكن التحقق من تحويل الكتلة إلى شحنة في المثال دون تخمين حد صحي."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "The lecture example’s mass-to-charge conversion can be checked without guessing a health limit. Use concentrations of individual ionic species and the stated atomic weights. An acceptance tolerance belongs to a selected analytical protocol.",
+          "ar": "يمكن التحقق من تحويل الكتلة إلى شحنة في المثال دون تخمين حد صحي. استعمل تراكيز الأنواع الأيونية منفردة والأوزان الذرية المعطاة. حد القبول مرتبط ببروتوكول تحليلي محدد."
+        }
+      },
+      "diagram": "course-env-quality",
+      "concepts": [
+        "env-quality-charge"
+      ],
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 14
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 15
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 16
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 17
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 5
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "env-quality-ph",
+      "title": {
+        "en": "A pH step is a tenfold change",
+        "ar": "درجة pH تعني تغيّرًا عشريًا"
+      },
+      "predict": {
+        "en": "A sample moves frompH7 to6. Does hydrogen activity double?",
+        "ar": "انتقلت عينة منpH7 إلى6. هل تضاعف نشاط الهيدروجين مرتين؟"
+      },
+      "options": [
+        {
+          "en": "No. It increases tenfold.",
+          "ar": "لا. يزيد عشرة أضعاف."
+        },
+        {
+          "en": "Yes. The scale is linear.",
+          "ar": "نعم. المقياس خطي."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Separate the state variable pH from the chemical capacity alkalinity.",
+        "ar": "افصل pH كمتغير حالة عن القلوية كقدرة كيميائية."
+      },
+      "explain": {
+        "en": "pH is minus the base10 logarithm of hydrogen-ion activity. A drop from7 to6 means ten times the hydrogen-ion activity, not one more unit of acid mass. In dilute ideal calculations concentration approximates activity. Buffering and alkalinity control how much chemical is needed to change pH; pH alone cannot determine an acid or coagulant dose.",
+        "ar": "pH هو سالب لوغاريتم نشاط أيون الهيدروجين للأساس10. الانخفاض من7 إلى6 يعني عشرة أضعاف النشاط لا زيادة وحدة كتلة حمض واحدة. في الحساب المخفف المثالي يقارب التركيز النشاط. يحدد التنظيم والقلوية كمية المادة اللازمة لتغيير pH؛ لا تحدد pH وحدها جرعة الحمض أو المخثّر."
+      },
+      "formula": "pH=−log10(aH+); ideal dilute [H+]≈10^(−pH) mol/L\nat25°C: [H+][OH−]≈10^(−14)",
+      "symbols": {
+        "en": "aH+ is dimensionless activity; concentrations mol/L in the dilute ideal relation. Temperature affects Kw.",
+        "ar": "aH+ نشاط بلا وحدة؛ التركيز mol/L في العلاقة المخففة المثالية. تؤثر الحرارة في Kw."
+      },
+      "assumptions": {
+        "en": "State the ideal-dilute and25°C assumptions; do not treat a pH change as a direct chemical-dose prescription.",
+        "ar": "صرّح بفرض التخفيف المثالي و25°C؛ لا تجعل تغير pH وصفة جرعة مباشرة."
+      },
+      "example": {
+        "en": "Find the hydrogen concentration ratio frompH8 topH6.",
+        "ar": "أوجد نسبة تركيز الهيدروجين منpH8 إلىpH6."
+      },
+      "calculation": {
+        "en": "10^(−6)/10^(−8)=100. The water’s buffering still determines the dose needed to achieve this change.",
+        "ar": "10^(−6)/10^(−8)=100. تظل قدرة الماء التنظيمية هي المحددة لجرعة تحقيق التغيّر."
+      },
+      "interpret": {
+        "en": "Separate the state variable pH from the chemical capacity alkalinity.",
+        "ar": "افصل pH كمتغير حالة عن القلوية كقدرة كيميائية."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Separate the state variable pH from the chemical capacity alkalinity. State the ideal-dilute and25°C assumptions; do not treat a pH change as a direct chemical-dose prescription.",
+          "ar": "افصل pH كمتغير حالة عن القلوية كقدرة كيميائية. صرّح بفرض التخفيف المثالي و25°C؛ لا تجعل تغير pH وصفة جرعة مباشرة."
+        }
+      },
+      "diagram": "course-env-quality",
+      "concepts": [
+        "env-quality-ph"
+      ],
+      "sources": [
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 14
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 17
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 18
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 19
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 20
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "C01",
+      "concept": "env-quality-mass",
+      "type": "conceptual",
+      "prompt": {
+        "en": "5 mg residue from100 mL corresponds to5 mg/L?",
+        "ar": "هل5 mg راسب من100 mL تعادل5 mg/L؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Sample size never matters.",
+          "ar": "نعم. حجم العينة غير مهم."
+        },
+        {
+          "en": "No. It corresponds to50 mg/L.",
+          "ar": "لا. تعادل50 mg/L."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "Mass concentration tells you how much material is in a known sample volume. A milligram in100 mL is not1 mg/L: the sample contains one tenth of a litre. For dilute water, mg/L is approximately ppm by mass only when density is near1 kg/L; the meanings are not universally identical. An unrecorded sample volume makes the reported mass unusable as concentration.",
+        "ar": "يخبرك التركيز الكتلي بكم المادة في حجم عينة معلوم. ميليغرام في100 mL ليس1 mg/L؛ فالعينة عُشر لتر. في الماء المخفف تقارب mg/L قيمة ppm الكتلية فقط عندما تقارب الكثافة1 kg/L؛ والمعنيان ليسا متطابقين دائمًا. يجعل حجم العينة غير المسجل الكتلة غير قابلة للاستعمال كتركيز."
+      },
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 5
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 2
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "N01",
+      "concept": "env-quality-mass",
+      "type": "numerical",
+      "prompt": {
+        "en": "8 mg from250 mL. Find C.",
+        "ar": "8 mg من250 mL. أوجد C."
+      },
+      "expected": 32,
+      "tolerance": 0.064,
+      "unit": "mg/L",
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "8/0.25=32 mg/L.",
+        "ar": "8/0.25=32 mg/L."
+      },
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 5
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 2
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "concept": "env-quality-mass",
+      "type": "mixed",
+      "prompt": {
+        "en": "2 mg from50 mL. Enter C and choose the denominator.",
+        "ar": "2 mg من50 mL. أدخل C واختر المقام."
+      },
+      "expected": 40,
+      "tolerance": 0.08,
+      "unit": "mg/L",
+      "options": [
+        {
+          "en": "0.050 litre.",
+          "ar": "0.050 لتر."
+        },
+        {
+          "en": "50 litres.",
+          "ar": "50 لترًا."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "2/0.050=40 mg/L.",
+        "ar": "2/0.050=40 mg/L."
+      },
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 5
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 2
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "concept": "env-quality-solids",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A filter retains material. Is that retained fraction measured as TDS?",
+        "ar": "احتجز المرشح مادة. هل تُقاس المادة المحتجزة كـTDS؟"
+      },
+      "options": [
+        {
+          "en": "No. It contributes to TSS.",
+          "ar": "لا. تسهم في TSS."
+        },
+        {
+          "en": "Yes. Retained always means dissolved.",
+          "ar": "نعم. المحتجز يعني الذائب دائمًا."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "Total solids come from the whole sample’s dried residue. Suspended solids are retained on the specified filter, while dissolved solids are measured in its filtrate. Their separation is operational: filter and drying method define the result. For consistent tests on the same sample, TS is approximated by TSS+TDS. Different drying temperatures and volatile material can prevent perfect closure. Knowing the solids fraction points to an appropriate separation mechanism.",
+        "ar": "تأتي الصلبات الكلية من راسب تجفيف العينة الكاملة. تُحتجز العالقة على المرشح المحدد وتُقاس الذائبة في الراشح. الفصل إجرائي؛ فالمرشح والتجفيف يحددان النتيجة. لاختبارات متسقة للعينة نفسها تقارب TS مجموع TSS+TDS. قد يمنع اختلاف الحرارة والمواد المتطايرة تطابق الاتزان تمامًا. تحديد جزء الصلبات يوجّه إلى آلية الفصل المناسبة."
+      },
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 5
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "N02",
+      "concept": "env-quality-solids",
+      "type": "numerical",
+      "prompt": {
+        "en": "TS=600,TSS=150 mg/L. Find estimated TDS.",
+        "ar": "TS=600 وTSS=150 mg/L. أوجد TDS المقدرة."
+      },
+      "expected": 450,
+      "tolerance": 0.9,
+      "unit": "mg/L",
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "600−150=450 mg/L.",
+        "ar": "600−150=450 mg/L."
+      },
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 5
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "concept": "env-quality-solids",
+      "type": "mixed",
+      "prompt": {
+        "en": "TDS=300,TSS=40 mg/L. Enter estimated TS and choose the fraction on a test filter.",
+        "ar": "TDS=300 وTSS=40 mg/L. أدخل TS المقدرة واختر جزء مرشح الاختبار."
+      },
+      "expected": 340,
+      "tolerance": 0.68,
+      "unit": "mg/L",
+      "options": [
+        {
+          "en": "All retained material is TDS.",
+          "ar": "كل المحتجز TDS."
+        },
+        {
+          "en": "Retained material belongs to TSS.",
+          "ar": "المحتجز ينتمي إلى TSS."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "TS≈300+40=340 mg/L.",
+        "ar": "TS≈300+40=340 mg/L."
+      },
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 5
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "concept": "env-quality-optical",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can you convert any NTU value directly to mg/L with one universal factor?",
+        "ar": "هل يمكن تحويل أي NTU إلى mg/L بمعامل عام واحد؟"
+      },
+      "options": [
+        {
+          "en": "Yes. NTU and mg/L are the same unit.",
+          "ar": "نعم. NTU وmg/L الوحدة نفسها."
+        },
+        {
+          "en": "No. Scattering depends on the particles and method.",
+          "ar": "لا. يتبع التشتت الجسيمات والطريقة."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "Turbidity measures how particles scatter light in a specified instrument; it is not a direct mass concentration. Two waters with the same suspended mass can scatter differently because particle size, shape and optical properties differ. Conductivity responds to dissolved ions and can estimate TDS only with an appropriate empirical conversion for that water. Neither clear appearance nor one TDS reading proves microbial safety. Do not turn an empirical proxy into a direct measurement or a safety verdict.",
+        "ar": "تقيس العكارة تشتت الضوء بالجسيمات وفق جهاز محدد ولا تقيس التركيز الكتلي مباشرة. قد يتشتت الضوء بصورة مختلفة لعيني ماء لهما كتلة عالقة متساوية لاختلاف حجم الجسيمات وشكلها وخواصها البصرية. تستجيب الموصلية للأيونات الذائبة ويمكن تقدير TDS منها بمعامل تجريبي مناسب للماء نفسه. لا يثبت الصفاء ولا قياس TDS وحده السلامة الميكروبية. لا تحول المؤشر التجريبي إلى قياس مباشر أو حكم سلامة."
+      },
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 8
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 10
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "N03",
+      "concept": "env-quality-optical",
+      "type": "numerical",
+      "prompt": {
+        "en": "EC=400 µS/cm,k=0.65. Estimate TDS.",
+        "ar": "EC=400 µS/cm وk=0.65. قدّر TDS."
+      },
+      "expected": 260,
+      "tolerance": 0.52,
+      "unit": "mg/L",
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "0.65×400=260 mg/L.",
+        "ar": "0.65×400=260 mg/L."
+      },
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 8
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 10
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "concept": "env-quality-optical",
+      "type": "mixed",
+      "prompt": {
+        "en": "EC=600,k=0.6. Enter estimated TDS and choose the claim supported.",
+        "ar": "EC=600 وk=0.6. أدخل TDS المقدرة واختر الاستنتاج المسموح."
+      },
+      "expected": 360,
+      "tolerance": 0.72,
+      "unit": "mg/L",
+      "options": [
+        {
+          "en": "An empirical dissolved-solids estimate only.",
+          "ar": "تقدير تجريبي للصلبات الذائبة فقط."
+        },
+        {
+          "en": "Proof that pathogens are absent.",
+          "ar": "إثبات غياب الممرضات."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "0.6×600=360 mg/L; no microbiological test was made.",
+        "ar": "0.6×600=360 mg/L؛ لم يُجر فحص ميكروبي."
+      },
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 8
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 10
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "concept": "env-quality-charge",
+      "type": "conceptual",
+      "prompt": {
+        "en": "May you sum cation and anion mg/L directly to test electroneutrality?",
+        "ar": "هل تجمع mg/L للكاتيونات والأنيونات مباشرة لاختبار التعادل؟"
+      },
+      "options": [
+        {
+          "en": "No. Convert each ion to equivalents first.",
+          "ar": "لا. حوّل كل أيون إلى مكافئات أولًا."
+        },
+        {
+          "en": "Yes. Equal mass always means equal charge.",
+          "ar": "نعم. تساوي الكتلة يعني تساوي الشحنة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "A calcium ion carries twice the charge of a sodium ion, so equal mg/L values are not equal charge contributions. Divide ionic mass concentration by equivalent weight to obtain meq/L. Sum positive and negative charge separately. Electroneutrality provides an analytical audit but cannot prove that every unmeasured contaminant is absent. The lecture example’s mass-to-charge conversion can be checked without guessing a health limit.",
+        "ar": "يحمل أيون الكالسيوم ضعف شحنة الصوديوم، فلا تتساوى مساهمة الشحنة بتساوي mg/L. اقسم التركيز الكتلي على الوزن المكافئ للحصول على meq/L. اجمع الموجب والسالب منفصلين. يوفر التعادل الكهربائي تدقيقًا تحليليًا لكنه لا يثبت غياب الملوثات غير المقاسة. يمكن التحقق من تحويل الكتلة إلى شحنة في المثال دون تخمين حد صحي."
+      },
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 14
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 15
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 16
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 17
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 5
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "N04",
+      "concept": "env-quality-charge",
+      "type": "numerical",
+      "prompt": {
+        "en": "Ca=40 mg/L,EW=20 mg/meq. Find meq/L.",
+        "ar": "Ca=40 mg/L وEW=20 mg/meq. أوجد meq/L."
+      },
+      "expected": 2,
+      "tolerance": 0.01,
+      "unit": "meq/L",
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "40/20=2 meq/L.",
+        "ar": "40/20=2 meq/L."
+      },
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 14
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 15
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 16
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 17
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 5
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "concept": "env-quality-charge",
+      "type": "mixed",
+      "prompt": {
+        "en": "C=8.36,A=8.14 meq/L. Enter signed percent error and choose the units used in the sum.",
+        "ar": "C=8.36 وA=8.14 meq/L. أدخل خطأ النسبة الموقع واختر وحدة الجمع."
+      },
+      "expected": 1.3333333333333264,
+      "tolerance": 0.01,
+      "unit": "%",
+      "options": [
+        {
+          "en": "Raw mg/L values regardless of valence.",
+          "ar": "قيم mg/L الخام بغض النظر عن التكافؤ."
+        },
+        {
+          "en": "Charge equivalents, not raw ionic mass.",
+          "ar": "مكافئات الشحنة لا الكتل الخام للأيونات."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "100×0.22/16.50=1.3333%.",
+        "ar": "100×0.22/16.50=1.3333%."
+      },
+      "sources": [
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 14
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 15
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 16
+        },
+        {
+          "doc": "env-quality",
+          "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+          "page": 17
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 5
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "concept": "env-quality-ph",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A sample moves frompH7 to6. Does hydrogen activity double?",
+        "ar": "انتقلت عينة منpH7 إلى6. هل تضاعف نشاط الهيدروجين مرتين؟"
+      },
+      "options": [
+        {
+          "en": "Yes. The scale is linear.",
+          "ar": "نعم. المقياس خطي."
+        },
+        {
+          "en": "No. It increases tenfold.",
+          "ar": "لا. يزيد عشرة أضعاف."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "pH is minus the base10 logarithm of hydrogen-ion activity. A drop from7 to6 means ten times the hydrogen-ion activity, not one more unit of acid mass. In dilute ideal calculations concentration approximates activity. Buffering and alkalinity control how much chemical is needed to change pH; pH alone cannot determine an acid or coagulant dose. Separate the state variable pH from the chemical capacity alkalinity.",
+        "ar": "pH هو سالب لوغاريتم نشاط أيون الهيدروجين للأساس10. الانخفاض من7 إلى6 يعني عشرة أضعاف النشاط لا زيادة وحدة كتلة حمض واحدة. في الحساب المخفف المثالي يقارب التركيز النشاط. يحدد التنظيم والقلوية كمية المادة اللازمة لتغيير pH؛ لا تحدد pH وحدها جرعة الحمض أو المخثّر. افصل pH كمتغير حالة عن القلوية كقدرة كيميائية."
+      },
+      "sources": [
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 14
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 17
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 18
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 19
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "N05",
+      "concept": "env-quality-ph",
+      "type": "numerical",
+      "prompt": {
+        "en": "Find hydrogen activity ratio pH7→pH5.",
+        "ar": "أوجد نسبة نشاط الهيدروجين عند الانتقال pH7→pH5."
+      },
+      "expected": 100,
+      "tolerance": 0.2,
+      "unit": "times",
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "10^(7−5)=100.",
+        "ar": "10^(7−5)=100."
+      },
+      "sources": [
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 14
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 17
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 18
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 19
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "concept": "env-quality-ph",
+      "type": "mixed",
+      "prompt": {
+        "en": "At25°C ideal dilute pH6, enter pOH and choose a valid inference.",
+        "ar": "عند25°C وللمحلول المخفف المثالي pH6، أدخل pOH واختر الاستنتاج الصحيح."
+      },
+      "expected": 8,
+      "tolerance": 0.016,
+      "unit": "—",
+      "options": [
+        {
+          "en": "pH+pOH≈14; dose still needs buffering data.",
+          "ar": "pH+pOH≈14؛ الجرعة ما زالت تحتاج بيانات التنظيم."
+        },
+        {
+          "en": "pH alone gives the required alum mass.",
+          "ar": "pH وحدها تعطي كتلة الشب المطلوبة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Name the measured fraction and the sample volume first. Convert mass and volume before comparing results.",
+          "ar": "سمِّ الجزء المقاس وحجم العينة أولًا. حوّل الكتلة والحجم قبل مقارنة النتائج."
+        },
+        {
+          "en": "mg/L is mass concentration, meq/L is charge concentration, and pH is logarithmic. Do not add unlike quantities.",
+          "ar": "mg/L تركيز كتلي وmeq/L تركيز شحنة وpH لوغاريتمي. لا تجمع مقادير مختلفة."
+        }
+      ],
+      "solution": {
+        "en": "pOH=14−6=8.",
+        "ar": "pOH=14−6=8."
+      },
+      "sources": [
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 14
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 17
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 18
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 19
+        },
+        {
+          "doc": "env-chemistry",
+          "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+          "page": 20
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "meaning-01",
+      "concept": "env-quality-mass",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Concentration needs a denominator",
+        "ar": "اشرح: التركيز يحتاج مقامًا"
+      },
+      "a": {
+        "en": "Mass concentration tells you how much material is in a known sample volume. A milligram in100 mL is not1 mg/L: the sample contains one tenth of a litre. For dilute water, mg/L is approximately ppm by mass only when density is near1 kg/L; the meanings are not universally identical.",
+        "ar": "يخبرك التركيز الكتلي بكم المادة في حجم عينة معلوم. ميليغرام في100 mL ليس1 mg/L؛ فالعينة عُشر لتر. في الماء المخفف تقارب mg/L قيمة ppm الكتلية فقط عندما تقارب الكثافة1 kg/L؛ والمعنيان ليسا متطابقين دائمًا."
+      }
+    },
+    {
+      "id": "prediction-01",
+      "concept": "env-quality-mass",
+      "kind": "prediction",
+      "q": {
+        "en": "5 mg residue from100 mL corresponds to5 mg/L?",
+        "ar": "هل5 mg راسب من100 mL تعادل5 mg/L؟"
+      },
+      "a": {
+        "en": "No. It corresponds to50 mg/L. An unrecorded sample volume makes the reported mass unusable as concentration.",
+        "ar": "لا. تعادل50 mg/L. يجعل حجم العينة غير المسجل الكتلة غير قابلة للاستعمال كتركيز."
+      }
+    },
+    {
+      "id": "calculation-01",
+      "concept": "env-quality-mass",
+      "kind": "calculation",
+      "q": {
+        "en": "8 mg from250 mL. Find C.",
+        "ar": "8 mg من250 mL. أوجد C."
+      },
+      "a": {
+        "en": "8/0.25=32 mg/L.",
+        "ar": "8/0.25=32 mg/L."
+      }
+    },
+    {
+      "id": "decision-01",
+      "concept": "env-quality-mass",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Concentration needs a denominator?",
+        "ar": "متى يصح هذا النموذج: التركيز يحتاج مقامًا؟"
+      },
+      "a": {
+        "en": "Representative sample and consistent analytical preparation; density assumption must be stated when converting ppm by mass. Symbols: m mass above tare/blank in mg; V sample volume; C mg/L.",
+        "ar": "عينة ممثلة وتحضير تحليلي متسق؛ يجب ذكر فرض الكثافة عند تحويل ppm الكتلية. الرموز: m الكتلة فوق الفارغ أو البلانك بالميليغرام؛ V حجم العينة؛ C بوحدة mg/L."
+      }
+    },
+    {
+      "id": "meaning-02",
+      "concept": "env-quality-solids",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Filter first, then name the fraction",
+        "ar": "اشرح: رشّح أولًا ثم سمِّ الجزء"
+      },
+      "a": {
+        "en": "Total solids come from the whole sample’s dried residue. Suspended solids are retained on the specified filter, while dissolved solids are measured in its filtrate. Their separation is operational: filter and drying method define the result. For consistent tests on the same sample, TS is approximated by TSS+TDS. Different drying temperatures and volatile material can prevent perfect closure.",
+        "ar": "تأتي الصلبات الكلية من راسب تجفيف العينة الكاملة. تُحتجز العالقة على المرشح المحدد وتُقاس الذائبة في الراشح. الفصل إجرائي؛ فالمرشح والتجفيف يحددان النتيجة. لاختبارات متسقة للعينة نفسها تقارب TS مجموع TSS+TDS. قد يمنع اختلاف الحرارة والمواد المتطايرة تطابق الاتزان تمامًا."
+      }
+    },
+    {
+      "id": "prediction-02",
+      "concept": "env-quality-solids",
+      "kind": "prediction",
+      "q": {
+        "en": "A filter retains material. Is that retained fraction measured as TDS?",
+        "ar": "احتجز المرشح مادة. هل تُقاس المادة المحتجزة كـTDS؟"
+      },
+      "a": {
+        "en": "No. It contributes to TSS. Knowing the solids fraction points to an appropriate separation mechanism.",
+        "ar": "لا. تسهم في TSS. تحديد جزء الصلبات يوجّه إلى آلية الفصل المناسبة."
+      }
+    },
+    {
+      "id": "calculation-02",
+      "concept": "env-quality-solids",
+      "kind": "calculation",
+      "q": {
+        "en": "TS=600,TSS=150 mg/L. Find estimated TDS.",
+        "ar": "TS=600 وTSS=150 mg/L. أوجد TDS المقدرة."
+      },
+      "a": {
+        "en": "600−150=450 mg/L.",
+        "ar": "600−150=450 mg/L."
+      }
+    },
+    {
+      "id": "decision-02",
+      "concept": "env-quality-solids",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Filter first, then name the fraction?",
+        "ar": "متى يصح هذا النموذج: رشّح أولًا ثم سمِّ الجزء؟"
+      },
+      "a": {
+        "en": "Compatible methods and sample bases; this is not a claim that an arbitrary household filter removes all dissolved material. Symbols: All concentrations in mg/L for the same sample; “dissolved” is defined by the selected filtration protocol.",
+        "ar": "طرق ومراجع عينات متوافقة؛ لا يعني هذا أن أي مرشح منزلي يزيل كل الذائب. الرموز: التركيزات كلها mg/L للعينة نفسها؛ تعريف «ذائب» مرتبط ببروتوكول الترشيح."
+      }
+    },
+    {
+      "id": "meaning-03",
+      "concept": "env-quality-optical",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Turbidity is an optical signal",
+        "ar": "اشرح: العكارة إشارة بصرية"
+      },
+      "a": {
+        "en": "Turbidity measures how particles scatter light in a specified instrument; it is not a direct mass concentration. Two waters with the same suspended mass can scatter differently because particle size, shape and optical properties differ. Conductivity responds to dissolved ions and can estimate TDS only with an appropriate empirical conversion for that water. Neither clear appearance nor one TDS reading proves microbial safety.",
+        "ar": "تقيس العكارة تشتت الضوء بالجسيمات وفق جهاز محدد ولا تقيس التركيز الكتلي مباشرة. قد يتشتت الضوء بصورة مختلفة لعيني ماء لهما كتلة عالقة متساوية لاختلاف حجم الجسيمات وشكلها وخواصها البصرية. تستجيب الموصلية للأيونات الذائبة ويمكن تقدير TDS منها بمعامل تجريبي مناسب للماء نفسه. لا يثبت الصفاء ولا قياس TDS وحده السلامة الميكروبية."
+      }
+    },
+    {
+      "id": "prediction-03",
+      "concept": "env-quality-optical",
+      "kind": "prediction",
+      "q": {
+        "en": "Can you convert any NTU value directly to mg/L with one universal factor?",
+        "ar": "هل يمكن تحويل أي NTU إلى mg/L بمعامل عام واحد؟"
+      },
+      "a": {
+        "en": "No. Scattering depends on the particles and method. Do not turn an empirical proxy into a direct measurement or a safety verdict.",
+        "ar": "لا. يتبع التشتت الجسيمات والطريقة. لا تحول المؤشر التجريبي إلى قياس مباشر أو حكم سلامة."
+      }
+    },
+    {
+      "id": "calculation-03",
+      "concept": "env-quality-optical",
+      "kind": "calculation",
+      "q": {
+        "en": "EC=400 µS/cm,k=0.65. Estimate TDS.",
+        "ar": "EC=400 µS/cm وk=0.65. قدّر TDS."
+      },
+      "a": {
+        "en": "0.65×400=260 mg/L.",
+        "ar": "0.65×400=260 mg/L."
+      }
+    },
+    {
+      "id": "decision-03",
+      "concept": "env-quality-optical",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Turbidity is an optical signal?",
+        "ar": "متى يصح هذا النموذج: العكارة إشارة بصرية؟"
+      },
+      "a": {
+        "en": "Use measured calibration if available. The lecture’s0.55–0.7 range is an estimate, not a regulatory limit or direct NTU conversion. Symbols: EC electrical conductivity at stated temperature; k a water-specific empirical factor, not a universal constant.",
+        "ar": "استعمل معايرة مقاسة عند توفرها. مجال المحاضرة0.55–0.7 تقدير لا حد تنظيمي ولا تحويل مباشر من NTU. الرموز: EC الموصلية الكهربائية عند حرارة محددة؛ k معامل تجريبي خاص بالماء لا ثابت عام."
+      }
+    },
+    {
+      "id": "meaning-04",
+      "concept": "env-quality-charge",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Convert mass into electrical equivalents",
+        "ar": "اشرح: حوّل الكتلة إلى مكافئات الشحنة"
+      },
+      "a": {
+        "en": "A calcium ion carries twice the charge of a sodium ion, so equal mg/L values are not equal charge contributions. Divide ionic mass concentration by equivalent weight to obtain meq/L. Sum positive and negative charge separately. Electroneutrality provides an analytical audit but cannot prove that every unmeasured contaminant is absent.",
+        "ar": "يحمل أيون الكالسيوم ضعف شحنة الصوديوم، فلا تتساوى مساهمة الشحنة بتساوي mg/L. اقسم التركيز الكتلي على الوزن المكافئ للحصول على meq/L. اجمع الموجب والسالب منفصلين. يوفر التعادل الكهربائي تدقيقًا تحليليًا لكنه لا يثبت غياب الملوثات غير المقاسة."
+      }
+    },
+    {
+      "id": "prediction-04",
+      "concept": "env-quality-charge",
+      "kind": "prediction",
+      "q": {
+        "en": "May you sum cation and anion mg/L directly to test electroneutrality?",
+        "ar": "هل تجمع mg/L للكاتيونات والأنيونات مباشرة لاختبار التعادل؟"
+      },
+      "a": {
+        "en": "No. Convert each ion to equivalents first. The lecture example’s mass-to-charge conversion can be checked without guessing a health limit.",
+        "ar": "لا. حوّل كل أيون إلى مكافئات أولًا. يمكن التحقق من تحويل الكتلة إلى شحنة في المثال دون تخمين حد صحي."
+      }
+    },
+    {
+      "id": "calculation-04",
+      "concept": "env-quality-charge",
+      "kind": "calculation",
+      "q": {
+        "en": "Ca=40 mg/L,EW=20 mg/meq. Find meq/L.",
+        "ar": "Ca=40 mg/L وEW=20 mg/meq. أوجد meq/L."
+      },
+      "a": {
+        "en": "40/20=2 meq/L.",
+        "ar": "40/20=2 meq/L."
+      }
+    },
+    {
+      "id": "decision-04",
+      "concept": "env-quality-charge",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Convert mass into electrical equivalents?",
+        "ar": "متى يصح هذا النموذج: حوّل الكتلة إلى مكافئات الشحنة؟"
+      },
+      "a": {
+        "en": "Use concentrations of individual ionic species and the stated atomic weights. An acceptance tolerance belongs to a selected analytical protocol. Symbols: MW molar mass, |z| ionic charge magnitude; C and A sums in meq/L; error here is signed percent.",
+        "ar": "استعمل تراكيز الأنواع الأيونية منفردة والأوزان الذرية المعطاة. حد القبول مرتبط ببروتوكول تحليلي محدد. الرموز: MW الكتلة المولية و|z| مقدار شحنة الأيون؛ C وA مجموعان بـmeq/L؛ والخطأ هنا نسبة موقعة."
+      }
+    },
+    {
+      "id": "meaning-05",
+      "concept": "env-quality-ph",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: A pH step is a tenfold change",
+        "ar": "اشرح: درجة pH تعني تغيّرًا عشريًا"
+      },
+      "a": {
+        "en": "pH is minus the base10 logarithm of hydrogen-ion activity. A drop from7 to6 means ten times the hydrogen-ion activity, not one more unit of acid mass. In dilute ideal calculations concentration approximates activity. Buffering and alkalinity control how much chemical is needed to change pH; pH alone cannot determine an acid or coagulant dose.",
+        "ar": "pH هو سالب لوغاريتم نشاط أيون الهيدروجين للأساس10. الانخفاض من7 إلى6 يعني عشرة أضعاف النشاط لا زيادة وحدة كتلة حمض واحدة. في الحساب المخفف المثالي يقارب التركيز النشاط. يحدد التنظيم والقلوية كمية المادة اللازمة لتغيير pH؛ لا تحدد pH وحدها جرعة الحمض أو المخثّر."
+      }
+    },
+    {
+      "id": "prediction-05",
+      "concept": "env-quality-ph",
+      "kind": "prediction",
+      "q": {
+        "en": "A sample moves frompH7 to6. Does hydrogen activity double?",
+        "ar": "انتقلت عينة منpH7 إلى6. هل تضاعف نشاط الهيدروجين مرتين؟"
+      },
+      "a": {
+        "en": "No. It increases tenfold. Separate the state variable pH from the chemical capacity alkalinity.",
+        "ar": "لا. يزيد عشرة أضعاف. افصل pH كمتغير حالة عن القلوية كقدرة كيميائية."
+      }
+    },
+    {
+      "id": "calculation-05",
+      "concept": "env-quality-ph",
+      "kind": "calculation",
+      "q": {
+        "en": "Find hydrogen activity ratio pH7→pH5.",
+        "ar": "أوجد نسبة نشاط الهيدروجين عند الانتقال pH7→pH5."
+      },
+      "a": {
+        "en": "10^(7−5)=100.",
+        "ar": "10^(7−5)=100."
+      }
+    },
+    {
+      "id": "decision-05",
+      "concept": "env-quality-ph",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: A pH step is a tenfold change?",
+        "ar": "متى يصح هذا النموذج: درجة pH تعني تغيّرًا عشريًا؟"
+      },
+      "a": {
+        "en": "State the ideal-dilute and25°C assumptions; do not treat a pH change as a direct chemical-dose prescription. Symbols: aH+ is dimensionless activity; concentrations mol/L in the dilute ideal relation. Temperature affects Kw.",
+        "ar": "صرّح بفرض التخفيف المثالي و25°C؛ لا تجعل تغير pH وصفة جرعة مباشرة. الرموز: aH+ نشاط بلا وحدة؛ التركيز mol/L في العلاقة المخففة المثالية. تؤثر الحرارة في Kw."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "env-quality",
+      "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+      "page": 5
+    },
+    {
+      "doc": "env-quality",
+      "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+      "page": 6
+    },
+    {
+      "doc": "env-quality",
+      "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+      "page": 7
+    },
+    {
+      "doc": "env-chemistry",
+      "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+      "page": 2
+    },
+    {
+      "doc": "env-chemistry",
+      "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+      "page": 3
+    },
+    {
+      "doc": "env-quality",
+      "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+      "page": 8
+    },
+    {
+      "doc": "env-quality",
+      "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+      "page": 9
+    },
+    {
+      "doc": "env-quality",
+      "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+      "page": 10
+    },
+    {
+      "doc": "env-quality",
+      "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+      "page": 15
+    },
+    {
+      "doc": "env-quality",
+      "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+      "page": 14
+    },
+    {
+      "doc": "env-quality",
+      "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+      "page": 16
+    },
+    {
+      "doc": "env-quality",
+      "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+      "page": 17
+    },
+    {
+      "doc": "env-chemistry",
+      "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+      "page": 5
+    },
+    {
+      "doc": "env-chemistry",
+      "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+      "page": 6
+    },
+    {
+      "doc": "env-chemistry",
+      "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+      "page": 7
+    },
+    {
+      "doc": "env-chemistry",
+      "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+      "page": 21
+    },
+    {
+      "doc": "env-chemistry",
+      "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+      "page": 14
+    },
+    {
+      "doc": "env-chemistry",
+      "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+      "page": 17
+    },
+    {
+      "doc": "env-chemistry",
+      "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+      "page": 18
+    },
+    {
+      "doc": "env-chemistry",
+      "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+      "page": 19
+    },
+    {
+      "doc": "env-chemistry",
+      "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+      "page": 20
+    }
+  ]
+}

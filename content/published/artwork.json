@@ -1,0 +1,579 @@
+{
+  "version": 1,
+  "courses": {
+    "structures-ii": {
+      "src": "/illustrations/v1/courses/structures-ii.webp",
+      "thumbnail": "/illustrations/v1/courses/structures-ii-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A bridge model becoming a pencil framework, with a small structural frame on the drawing table.",
+        "ar": "نموذج جسر يتحول إلى هيكل مرسوم بالقلم، وبجواره إطار إنشائي على طاولة الرسم."
+      },
+      "bytes": 188452,
+      "thumbnailBytes": 46846,
+      "sha256": "5b5444c0a89ac417ba5b091138f8bdd1a0d86eb2254db209ea1e38656a059464"
+    },
+    "engineering-economics": {
+      "src": "/illustrations/v1/courses/engineering-economics.webp",
+      "thumbnail": "/illustrations/v1/courses/engineering-economics-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A bridge project, blank notebook and token stacks connected across time.",
+        "ar": "مشروع جسر ودفتر مفتوح وأكوام قطع نقدية متصلة عبر الزمن."
+      },
+      "bytes": 85252,
+      "thumbnailBytes": 21582,
+      "sha256": "d1dacf58b75bf9a7e11d618089444cad9986f7d1d5b0176128fab2cb15a83f0a"
+    },
+    "soil-mechanics-ii": {
+      "src": "/illustrations/v1/courses/soil-mechanics-ii.webp",
+      "thumbnail": "/illustrations/v1/courses/soil-mechanics-ii-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A footing above a layered soil cutaway, with groundwater and enlarged grain contacts.",
+        "ar": "قاعدة فوق قطاع من طبقات التربة، مع المياه الجوفية وتكبير لتلامس الحبيبات."
+      },
+      "bytes": 146698,
+      "thumbnailBytes": 34434,
+      "sha256": "d7b4069f3b294178c1425f5a293cd63c3fe92e44ba59b949d51ea081ae490e5e"
+    },
+    "hydraulics": {
+      "src": "/illustrations/v1/courses/hydraulics.webp",
+      "thumbnail": "/illustrations/v1/courses/hydraulics-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Blue water flowing through an open-channel flume with a smooth constriction.",
+        "ar": "مياه زرقاء تجري في قناة مفتوحة ذات تضييق سلس."
+      },
+      "bytes": 93372,
+      "thumbnailBytes": 20054,
+      "sha256": "9447737b0d87d51d969c00493fe00fe7d6e6224e4aa854b1a758e557edce442b"
+    },
+    "environmental-i": {
+      "src": "/illustrations/v1/courses/environmental-i.webp",
+      "thumbnail": "/illustrations/v1/courses/environmental-i-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "An intake, mixing tank, settling basin and reservoir serving a small town.",
+        "ar": "مأخذ مياه وخزان خلط وحوض ترسيب وخزان يخدم بلدة صغيرة."
+      },
+      "bytes": 139044,
+      "thumbnailBytes": 35154,
+      "sha256": "6017606a11376a4f56048202325f344cb649c9b8ee51a9e356b8992ee0c73060"
+    },
+    "steel-ii": {
+      "src": "/illustrations/v1/courses/steel-ii.webp",
+      "thumbnail": "/illustrations/v1/courses/steel-ii-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "An exposed steel portal frame with bolted plates and a separate I-section detail.",
+        "ar": "إطار فولاذي مكشوف بصفائح مثبتة بالبراغي وتفصيل منفصل لقطاع على شكل I."
+      },
+      "bytes": 75794,
+      "thumbnailBytes": 16210,
+      "sha256": "9253d7d36c4d6bca0d37517e06a5962e3ee4ecf76d9e8e008f734b29d128a37c"
+    }
+  },
+  "topics": {
+    "slope-beams": {
+      "src": "/illustrations/v1/topics/slope-beams.webp",
+      "thumbnail": "/illustrations/v1/topics/slope-beams-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "One unbroken steel beam resting on three supports to form two continuous spans.",
+        "ar": "كمرة فولاذية متصلة فوق ثلاثة مساند تشكل بحرين مستمرين."
+      },
+      "bytes": 45086,
+      "thumbnailBytes": 10656,
+      "sha256": "abefa0d338936af2105d0ab5202a7bc632e99c0b9eb19e65b6870887179224e9"
+    },
+    "slope-sway": {
+      "src": "/illustrations/v1/topics/slope-sway.webp",
+      "thumbnail": "/illustrations/v1/topics/slope-sway-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A rigid steel portal with bolted corners, a lateral arrow and a faint displaced outline.",
+        "ar": "إطار فولاذي صلب بوصلات مثبتة بالبراغي وسهم جانبي وحدود باهتة لوضعه المزاح."
+      },
+      "bytes": 50818,
+      "thumbnailBytes": 11016,
+      "sha256": "160cad4c30728dcbb002c74c27e06132ea12f2662f9e28eda97bad56d5283692"
+    },
+    "slope-nonsway": {
+      "src": "/illustrations/v1/topics/slope-nonsway.webp",
+      "thumbnail": "/illustrations/v1/topics/slope-nonsway-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A diagonally braced portal frame with a gently bending beam and vertical load arrows.",
+        "ar": "إطار مدعم بقطر مائل، وكمرته تنحني قليلًا تحت أسهم حمل رأسية."
+      },
+      "bytes": 42846,
+      "thumbnailBytes": 11718,
+      "sha256": "cea48d886f29697c91a39f9fcfae0a9d6c20d27c86c4847dd4a89789653f19d0"
+    },
+    "slope-inclined": {
+      "src": "/illustrations/v1/topics/slope-inclined.webp",
+      "thumbnail": "/illustrations/v1/topics/slope-inclined-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A pitched-roof gable frame with sloping rafters and a connected ridge.",
+        "ar": "إطار سقف جمالوني برافدتين مائلتين وقمة متصلة."
+      },
+      "bytes": 43300,
+      "thumbnailBytes": 11974,
+      "sha256": "d464230a5f7f1ee9dc9e9fbbf3d3051ad3d351b422a78c6c48f168498bf63af3"
+    },
+    "distribution-nonsway": {
+      "src": "/illustrations/v1/topics/distribution-nonsway.webp",
+      "thumbnail": "/illustrations/v1/topics/distribution-nonsway-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A braced frame with colored joint arcs beside a small balancing mobile.",
+        "ar": "إطار مدعم بأقواس ملونة حول الوصلات، وبجواره نموذج صغير للاتزان."
+      },
+      "bytes": 48384,
+      "thumbnailBytes": 12176,
+      "sha256": "23c42586b0a7d3c8e2a3b3399bf40c1041580a1c3216063abda50739e57e84e1"
+    },
+    "distribution-beams": {
+      "src": "/illustrations/v1/topics/distribution-beams.webp",
+      "thumbnail": "/illustrations/v1/topics/distribution-beams-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A two-span steel beam with colored rotational accents around its central connection.",
+        "ar": "كمرة فولاذية من بحرين مع أقواس دورانية ملونة حول وصلتها الوسطى."
+      },
+      "bytes": 44084,
+      "thumbnailBytes": 9296,
+      "sha256": "3df530aa173b5f05d24df0b931b2831a7a127f86013778e455316acff1286d32"
+    },
+    "ee-foundations": {
+      "src": "/illustrations/v1/topics/ee-foundations.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-foundations-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A bridge and culvert alternative beside a decision notebook and resource tokens.",
+        "ar": "بديلان من جسر وعبّارة بجوار دفتر قرار وقطع ترمز إلى الموارد."
+      },
+      "bytes": 125560,
+      "thumbnailBytes": 30092,
+      "sha256": "ce778b8139f281b8d3b42180c22bdd155a0f82a46259dda403df5a8e98812f3e"
+    },
+    "ee-interest-context": {
+      "src": "/illustrations/v1/topics/ee-interest-context.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-interest-context-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Two financing contracts compare token payments and partnership in a construction project.",
+        "ar": "عقدان للتمويل يقارنان الدفعات والمشاركة في مشروع بناء."
+      },
+      "bytes": 108152,
+      "thumbnailBytes": 26786,
+      "sha256": "1a42e1bb1cb4457ca4f6a8d74c0a38fd2256c3e73325deb442d7356c8264b70d"
+    },
+    "ee-markets": {
+      "src": "/illustrations/v1/topics/ee-markets.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-markets-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "An exchange of a token above construction materials and two crossing market curves.",
+        "ar": "تبادل قطعة نقدية فوق مواد بناء ومنحنيين متقاطعين للسوق."
+      },
+      "bytes": 111858,
+      "thumbnailBytes": 27822,
+      "sha256": "755a2404c8f611c86aaceb7943bdfcb1cd1ab828d8b8131c6b1863de2765e629"
+    },
+    "ee-single-payments": {
+      "src": "/illustrations/v1/topics/ee-single-payments.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-single-payments-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A small present token stack and a larger future stack separated by an hourglass.",
+        "ar": "كومة نقدية صغيرة حاضرة وأخرى أكبر مستقبلية بينهما ساعة رملية."
+      },
+      "bytes": 61030,
+      "thumbnailBytes": 14372,
+      "sha256": "9f022baeb47a074dc60470d004351f2384c3410fd63b5de55eaeffd0914b1d47"
+    },
+    "ee-uniform-series": {
+      "src": "/illustrations/v1/topics/ee-uniform-series.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-uniform-series-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Equal token stacks repeat along a timeline toward a collection tray.",
+        "ar": "أكوام نقدية متساوية تتكرر على خط زمني وصولًا إلى صينية تجميع."
+      },
+      "bytes": 39468,
+      "thumbnailBytes": 10714,
+      "sha256": "cd644f3c5e7a853d7f8362dd048a8660a14efb8ea40ed781e3cfa7a6c2c6c6e8"
+    },
+    "ee-gradients": {
+      "src": "/illustrations/v1/topics/ee-gradients.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-gradients-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Two rows of growing token stacks suggest arithmetic and proportional growth.",
+        "ar": "صفان من الأكوام النقدية المتزايدة يوضحان تصوريًا الزيادة الحسابية والنسبية."
+      },
+      "bytes": 55916,
+      "thumbnailBytes": 14764,
+      "sha256": "9283b5851a5bd7da71debd8d3f03c2168dacd83fb1420b165faad8bbcbd5812b"
+    },
+    "ee-rates": {
+      "src": "/illustrations/v1/topics/ee-rates.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-rates-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A mechanical clock, timing rings and token stacks suggest compounding frequency.",
+        "ar": "ساعة ميكانيكية وحلقات زمنية وأكوام نقدية تشير إلى تكرار التركيب."
+      },
+      "bytes": 59888,
+      "thumbnailBytes": 16828,
+      "sha256": "e48e805a4c175af53cdba5c5ebca2d01fbdb7e146e9f9c7b6aacdee3c053ecae"
+    },
+    "ee-continuous-flows": {
+      "src": "/illustrations/v1/topics/ee-continuous-flows.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-continuous-flows-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A continuous stream of copper beads runs through a channel into a bowl.",
+        "ar": "تيار مستمر من حبات نحاسية يمر في مجرى ويصب في وعاء."
+      },
+      "bytes": 95134,
+      "thumbnailBytes": 24554,
+      "sha256": "349e7983c59d05777ba5a60d6bd82fe5a72726c424d8f2c0f7990025071953fa"
+    },
+    "ee-worth": {
+      "src": "/illustrations/v1/topics/ee-worth.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-worth-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Alternative infrastructure models connect their resource streams to a common basis.",
+        "ar": "نماذج بديلة للبنية التحتية تتصل تدفقات مواردها بأساس مشترك للمقارنة."
+      },
+      "bytes": 102578,
+      "thumbnailBytes": 24420,
+      "sha256": "12c50ab41c795684d0727ecb0f43983e17d7e5d19b77c004c3ebd429c53ee5ae"
+    },
+    "ee-depreciation": {
+      "src": "/illustrations/v1/topics/ee-depreciation.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-depreciation-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Three excavators age from new to worn as their associated token stacks shrink.",
+        "ar": "ثلاث حفارات تتدرج من الجديدة إلى المستعملة، وتتناقص معها الأكوام النقدية."
+      },
+      "bytes": 101732,
+      "thumbnailBytes": 25252,
+      "sha256": "7b68d28aaad40bb5e615ab359990dd86b21131e98cafe275ed16e56b61f802ba"
+    },
+    "ee-equivalence": {
+      "src": "/illustrations/v1/topics/ee-equivalence.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-equivalence-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Different token streams connect to one focal date beside a balance.",
+        "ar": "تدفقات نقدية مختلفة تتصل بتاريخ مرجعي واحد بجوار ميزان."
+      },
+      "bytes": 43298,
+      "thumbnailBytes": 11790,
+      "sha256": "c5ea902be76765a5995dbdaf0ca7b1c875da193693154ee4ef79bc7a4c6cc78a"
+    },
+    "ee-irr-payback": {
+      "src": "/illustrations/v1/topics/ee-irr-payback.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-irr-payback-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "An investment machine and returning token groups suggest recovery over time.",
+        "ar": "آلة استثمار ومجموعات نقدية عائدة تشير إلى استرداد التكلفة مع الزمن."
+      },
+      "bytes": 83966,
+      "thumbnailBytes": 21222,
+      "sha256": "66da5c9ff196ea3d99836abdaad5978dc452afcf8650ba6930aba4d2671a742e"
+    },
+    "ee-fe-pe": {
+      "src": "/illustrations/v1/topics/ee-fe-pe.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-fe-pe-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "An engineering notebook, calculator, bridge model and cash-flow tokens on a practice desk.",
+        "ar": "دفتر هندسي وآلة حاسبة ونموذج جسر وقطع تدفقات نقدية على مكتب للتدريب."
+      },
+      "bytes": 126668,
+      "thumbnailBytes": 31444,
+      "sha256": "b57bce81b3dafad6a0ef5d64fdd08cc1c1ef1d35706375936d169420fcb22006"
+    },
+    "ee-risk-inventory": {
+      "src": "/illustrations/v1/topics/ee-risk-inventory.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-risk-inventory-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Warehouse bins, delivery cart and branching project paths connect stock and uncertainty.",
+        "ar": "حاويات مخزون وعربة نقل ومسارات مشروعات متفرعة تربط المخزون بعدم اليقين."
+      },
+      "bytes": 110116,
+      "thumbnailBytes": 27304,
+      "sha256": "24a3dd27f38bdf09f120ae7647086f5c18174875c6b0d323d6245fd1820be27b"
+    },
+    "ee-capitalized-prospective": {
+      "src": "/illustrations/v1/topics/ee-capitalized-prospective.webp",
+      "thumbnail": "/illustrations/v1/topics/ee-capitalized-prospective-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A lasting reservoir, recurring token groups and maintenance tools suggest long-term cost.",
+        "ar": "خزان طويل العمر ومجموعات نقدية متكررة وأدوات صيانة تشير إلى تكلفة المدى الطويل."
+      },
+      "bytes": 140402,
+      "thumbnailBytes": 34472,
+      "sha256": "023ec14fc12216b23bc33ae5e6bbc7a7c3e90a4ff1949f64a16a56f0704f40ae"
+    },
+    "soil-effective-stress": {
+      "src": "/illustrations/v1/topics/soil-effective-stress.webp",
+      "thumbnail": "/illustrations/v1/topics/soil-effective-stress-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A footing loads touching soil grains, with blue pore water and a piezometer nearby.",
+        "ar": "قاعدة تحمل على حبيبات تربة متلامسة، وبينها ماء مسام وبجوارها أنبوب بيزومتر."
+      },
+      "bytes": 162470,
+      "thumbnailBytes": 38256,
+      "sha256": "11584ed9da7bc4ebff870849696f6627ac2fe5dc7ec8abeda4ac3a1edb925352"
+    },
+    "soil-triaxial": {
+      "src": "/illustrations/v1/topics/soil-triaxial.webp",
+      "thumbnail": "/illustrations/v1/topics/soil-triaxial-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A transparent pressure cell surrounds a cylindrical soil specimen with loading and drainage tubes.",
+        "ar": "خلية ضغط شفافة تحيط بعينة تربة أسطوانية مع مكبس تحميل وأنابيب تصريف."
+      },
+      "bytes": 84366,
+      "thumbnailBytes": 18592,
+      "sha256": "aa6bcb35629edb83246e34102cfcee8a5005e920f8faef0f8c9f5db3f6dad950"
+    },
+    "soil-shear": {
+      "src": "/illustrations/v1/topics/soil-shear.webp",
+      "thumbnail": "/illustrations/v1/topics/soil-shear-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A split direct-shear box holds sand under a vertical load and horizontal movement.",
+        "ar": "صندوق قص مباشر منقسم يحمل رملًا تحت حمل رأسي وحركة أفقية."
+      },
+      "bytes": 121644,
+      "thumbnailBytes": 29154,
+      "sha256": "4a92e64eeda84bc02443a92cfbe0d88189c6ce6f1e6fcc4071b0617ed2900e9d"
+    },
+    "hydro-uniform": {
+      "src": "/illustrations/v1/topics/hydro-uniform.webp",
+      "thumbnail": "/illustrations/v1/topics/hydro-uniform-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A straight open channel carries water at a nearly constant visible depth.",
+        "ar": "قناة مفتوحة مستقيمة تجري فيها المياه بعمق ظاهر شبه ثابت."
+      },
+      "bytes": 179088,
+      "thumbnailBytes": 41948,
+      "sha256": "c1821d1dd9a6709e896f6cf1611ed58ac70b2cd16f575787b59ff22fe70f2094"
+    },
+    "hydro-geometry": {
+      "src": "/illustrations/v1/topics/hydro-geometry.webp",
+      "thumbnail": "/illustrations/v1/topics/hydro-geometry-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Trapezoidal and rectangular water channels with their wetted boundaries highlighted.",
+        "ar": "قناتان مائيتان شبه منحرفة ومستطيلة مع إبراز الحدود المبتلة."
+      },
+      "bytes": 101876,
+      "thumbnailBytes": 22612,
+      "sha256": "a2c6a1d0a9e059e269ae523f180a0e561f88d17328645e475e13ba0b53f3bcd0"
+    },
+    "hydro-critical": {
+      "src": "/illustrations/v1/topics/hydro-critical.webp",
+      "thumbnail": "/illustrations/v1/topics/hydro-critical-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Deeper water becomes shallower over a smooth channel throat beside an energy-curve motif.",
+        "ar": "ماء عميق يصبح أقل عمقًا فوق اختناق سلس للقناة وبجواره شكل تصوري لمنحنى الطاقة."
+      },
+      "bytes": 91612,
+      "thumbnailBytes": 19408,
+      "sha256": "07f11f7596d960c333149fabe56b1bb1c5e4fe59484527bbce839bfd03654845"
+    },
+    "env-quality": {
+      "src": "/illustrations/v1/topics/env-quality.webp",
+      "thumbnail": "/illustrations/v1/topics/env-quality-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Water sample bottles, a pipette and testing instrument beside enlarged suspended particles.",
+        "ar": "زجاجات عينات مياه وماصة وجهاز فحص، وبجوارها تكبير للجسيمات العالقة."
+      },
+      "bytes": 81768,
+      "thumbnailBytes": 20730,
+      "sha256": "4e5dcd33d311216fa97c8198170f4d50a99f5d62630bfc37aa7de32ebbf82cfa"
+    },
+    "env-coagulation": {
+      "src": "/illustrations/v1/topics/env-coagulation.webp",
+      "thumbnail": "/illustrations/v1/topics/env-coagulation-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Three jar-test beakers show particles gathering into larger settling flocs.",
+        "ar": "ثلاثة كؤوس لاختبار الجرة تُظهر تجمع الجسيمات في ندف أكبر قابلة للترسيب."
+      },
+      "bytes": 146418,
+      "thumbnailBytes": 33294,
+      "sha256": "56a2844d885c738285a3f652ff33d39c01b8dd612733727777d0545dd6cc9b73"
+    },
+    "env-demand": {
+      "src": "/illustrations/v1/topics/env-demand.webp",
+      "thumbnail": "/illustrations/v1/topics/env-demand-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A water tower supplies houses, a school and a factory through blue pipes.",
+        "ar": "برج مياه يغذي منازل ومدرسة ومصنعًا عبر أنابيب زرقاء."
+      },
+      "bytes": 155358,
+      "thumbnailBytes": 40510,
+      "sha256": "b22775c9f920443d752871fa903752549bb2e9d6a183121b636618ba2a01bab5"
+    },
+    "steel-ltb": {
+      "src": "/illustrations/v1/topics/steel-ltb.webp",
+      "thumbnail": "/illustrations/v1/topics/steel-ltb-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A slender I-beam with a slight sideways twist and a visible lateral brace.",
+        "ar": "كمرة رفيعة على شكل I مع التواء جانبي بسيط وتدعيم جانبي ظاهر."
+      },
+      "bytes": 50410,
+      "thumbnailBytes": 11488,
+      "sha256": "9374015e0803ac743cbfe329ff803692e9b4d3da684c7e4e1cefc34068cb61a7"
+    },
+    "steel-compound": {
+      "src": "/illustrations/v1/topics/steel-compound.webp",
+      "thumbnail": "/illustrations/v1/topics/steel-compound-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A steel I-section with bolted cover plates and an exploded plate connection.",
+        "ar": "قطاع فولاذي على شكل I بصفائح تقوية مثبتة بالبراغي وتفصيل مفكك للوصلة."
+      },
+      "bytes": 100072,
+      "thumbnailBytes": 22428,
+      "sha256": "a01e816467b9ae9bb2cd170b825a7d0f4759a9ac6148e5a92c493fde81778b95"
+    },
+    "distribution-sway": {
+      "src": "/illustrations/v1/topics/distribution-sway.webp",
+      "thumbnail": "/illustrations/v1/topics/distribution-sway-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Upright and inclined rigid frames with faint outlines suggesting lateral movement.",
+        "ar": "إطاران صلبان، أحدهما قائم والآخر مائل الكمرة، وحدود باهتة تشير إلى الحركة الجانبية."
+      },
+      "bytes": 47604,
+      "thumbnailBytes": 11558,
+      "sha256": "4ade16cc3c0674ef49c70195c57cbf7c72def429546997e24aac48a67aa3c3e9"
+    },
+    "influence-qualitative": {
+      "src": "/illustrations/v1/topics/influence-qualitative.webp",
+      "thumbnail": "/illustrations/v1/topics/influence-qualitative-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A vehicle on a bridge above a conceptual triangular influence shape.",
+        "ar": "مركبة على جسر فوق شكل تصوري مثلث لخط التأثير."
+      },
+      "bytes": 73866,
+      "thumbnailBytes": 18480,
+      "sha256": "0c839cb36dba92bb3c1150fc301c8f308a826b5cf9ff75ad4e786cef10386603"
+    },
+    "influence-numerical": {
+      "src": "/illustrations/v1/topics/influence-numerical.webp",
+      "thumbnail": "/illustrations/v1/topics/influence-numerical-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A moving-load beam and a second beam connected visually to a blue response curve.",
+        "ar": "كمرة بحمل متحرك وكمرة أخرى مرتبطتان بصريًا بمنحنى استجابة أزرق."
+      },
+      "bytes": 41650,
+      "thumbnailBytes": 10566,
+      "sha256": "82ae55e93f5bf6f5380b990e6e9a430425a34096d6e19ef4477eb9486e26c805"
+    },
+    "influence-moving": {
+      "src": "/illustrations/v1/topics/influence-moving.webp",
+      "thumbnail": "/illustrations/v1/topics/influence-moving-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "An orange truck crossing a bridge, with faint positions showing its travel.",
+        "ar": "شاحنة برتقالية تعبر جسرًا، مع مواضع باهتة توضح حركتها."
+      },
+      "bytes": 67712,
+      "thumbnailBytes": 16884,
+      "sha256": "514c8d133a11e415e22a6c85494b41b675b7f048e75cfd5cdec6c575d0beba05"
+    },
+    "models-beams": {
+      "src": "/illustrations/v1/topics/models-beams.webp",
+      "thumbnail": "/illustrations/v1/topics/models-beams-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A continuous beam changes from a solid model into sparse analytical lines.",
+        "ar": "كمرة مستمرة تنتقل من نموذج مجسم إلى خطوط تحليلية بسيطة."
+      },
+      "bytes": 41852,
+      "thumbnailBytes": 9554,
+      "sha256": "c02f14d906b3c518da07b814a760e2759d289183cc283a5538cc61f4f6fd6e8d"
+    },
+    "models-frames": {
+      "src": "/illustrations/v1/topics/models-frames.webp",
+      "thumbnail": "/illustrations/v1/topics/models-frames-card.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "A two-storey frame transitions from solid members to an analytical framework.",
+        "ar": "إطار من طابقين ينتقل من عناصر مجسمة إلى هيكل تحليلي."
+      },
+      "bytes": 64998,
+      "thumbnailBytes": 16160,
+      "sha256": "7238bf7a08507f3baa318f36fff74c52b7fcf019fff624458d5e0b9309742bb7"
+    }
+  }
+}

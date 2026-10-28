@@ -1,7 +1,8 @@
-const CACHE='sarh-app-v5-validated-assets';
+const CACHE='sarh-app-v8-course-artwork';
 function validAsset(url,response){
  if(!response.ok)return false;
  const pathname=new URL(url,self.location.origin).pathname,type=response.headers.get('content-type')||'';
+ if(pathname.startsWith('/illustrations/')&&pathname.endsWith('.webp'))return /image\/webp/i.test(type);
  if(pathname.startsWith('/_next/static/')&&pathname.endsWith('.css'))return /text\/css/i.test(type);
  if(pathname.startsWith('/_next/static/')&&pathname.endsWith('.js'))return /(?:java|ecma)script/i.test(type);
  return true;

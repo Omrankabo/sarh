@@ -736,5 +736,607 @@
         "language": "English"
       }
     ]
+  },
+  {
+    "id": "soil-units",
+    "title": {
+      "en": "Force, area and unit weight",
+      "ar": "القوة والمساحة والوزن الحجمي"
+    },
+    "why": {
+      "en": "The stress balance only works with compatible units.",
+      "ar": "لا يتزن حساب الإجهاد دون وحدات متوافقة."
+    },
+    "refresher": {
+      "en": "Stress is force/area. Unit weight is weight/volume; multiply by thickness to obtain force/area.",
+      "ar": "الإجهاد قوة/مساحة. الوزن الحجمي وزن/حجم، وضربه في السمك يعطي قوة/مساحة."
+    },
+    "example": {
+      "en": "18 kN/m³ × 2 m = 36 kPa.",
+      "ar": "18 kN/m³ × 2 m = 36 kPa."
+    },
+    "question": {
+      "en": "20 kN/m³ over 3 m gives which pressure?",
+      "ar": "ما ضغط 20 kN/m³ خلال 3 m؟"
+    },
+    "options": [
+      {
+        "en": "60 kPa",
+        "ar": "60 kPa"
+      },
+      {
+        "en": "6.67 kPa",
+        "ar": "6.67 kPa"
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "Multiply unit weight by depth: 60 kN/m².",
+      "ar": "اضرب الوزن الحجمي في العمق: 60 kN/m²."
+    },
+    "videos": [
+      {
+        "id": "c2KhOBz3y7s",
+        "title": "Dimensional analysis",
+        "author": "Khan Academy India - English",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "soil-phase",
+    "title": {
+      "en": "Saturated soil and phase ratios",
+      "ar": "التربة المشبعة ونسب الأطوار"
+    },
+    "why": {
+      "en": "Tutorial Q2 gives water content and grain specific gravity rather than unit weight.",
+      "ar": "يعطي س2 المحتوى المائي والكثافة النوعية بدل الوزن الحجمي."
+    },
+    "refresher": {
+      "en": "w is water mass/solid mass, e is void volume/solid volume, S is degree of saturation. Se=wGs; for saturated soil S=1. Convert percent to a decimal.",
+      "ar": "w كتلة الماء/كتلة الحبيبات، وe حجم الفراغات/حجم الحبيبات، وS درجة التشبع. العلاقة Se=wGs، وللمشبعة S=1. حوّل النسبة المئوية إلى كسر عشري."
+    },
+    "example": {
+      "en": "w=0.56, Gs=2.75, S=1 → e=1.54. γsat=γw(Gs+e)/(1+e).",
+      "ar": "w=0.56 وGs=2.75 وS=1 تعطي e=1.54. γsat=γw(Gs+e)/(1+e)."
+    },
+    "question": {
+      "en": "For w=56%, Gs=2.75 and S=1, what is e?",
+      "ar": "إذا w=56% وGs=2.75 وS=1، فما e؟"
+    },
+    "options": [
+      {
+        "en": "1.54",
+        "ar": "1.54"
+      },
+      {
+        "en": "154",
+        "ar": "154"
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "0.56×2.75=1.54. Void ratio can exceed one.",
+      "ar": "0.56×2.75=1.54. يجوز أن تزيد نسبة الفراغات عن واحد."
+    },
+    "videos": [
+      {
+        "id": "ySUr60U6jiM",
+        "title": "Effective Stress - I: saturated-soil context",
+        "author": "NPTEL · IIT Bombay",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "soil-hydrostatic",
+    "title": {
+      "en": "Hydrostatic gauge pressure",
+      "ar": "ضغط الماء الساكن بالنسبة للجو"
+    },
+    "why": {
+      "en": "You need the water head above the point, not an arbitrary depth.",
+      "ar": "تحتاج ارتفاع الماء فوق النقطة، لا عمقًا اعتباطيًا."
+    },
+    "refresher": {
+      "en": "Still connected water has gauge pressure γw h below its atmospheric free surface. Gauge pressure at that surface is zero. Flow and suction require different head information.",
+      "ar": "ضغط الماء الساكن المتصل يساوي γw h أسفل سطحه الحر المعرض للجو. الضغط المقاس عند ذلك السطح صفر. السريان والشفط يحتاجان معلومات رأس مختلفة."
+    },
+    "example": {
+      "en": "A point 2 m below static WT has u=19.62 kPa.",
+      "ar": "نقطة 2 m تحت الماء الساكن لها u=19.62 kPa."
+    },
+    "question": {
+      "en": "WT at 3 m and P at 8 m below ground: water head?",
+      "ar": "الماء عند 3 m وP عند 8 m تحت الأرض: ما ارتفاع العمود؟"
+    },
+    "options": [
+      {
+        "en": "5 m",
+        "ar": "5 m"
+      },
+      {
+        "en": "8 m",
+        "ar": "8 m"
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "8−3=5 m; use one datum for both depths.",
+      "ar": "8−3=5 m؛ استخدم مرجعًا واحدًا للعمقين."
+    },
+    "videos": [
+      {
+        "id": "ySUr60U6jiM",
+        "title": "Effective Stress - I",
+        "author": "NPTEL · IIT Bombay",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "soil-effective",
+    "title": {
+      "en": "Effective stress before strength",
+      "ar": "الإجهاد الفعّال قبل المقاومة"
+    },
+    "why": {
+      "en": "Friction is mobilised by grain contact stress, not pore water support.",
+      "ar": "يُستنهض الاحتكاك بإجهاد تلامس الحبيبات لا بدعم ماء المسام."
+    },
+    "refresher": {
+      "en": "For saturated soilσ′=σ−u. Subtract measured water pressure once. A drained condition can still have hydrostatic u.",
+      "ar": "للتربة المشبعةσ′=σ−u. اطرح ضغط الماء المقاس مرة واحدة. قد يبقىu هيدروستاتيكيًا في الحالة المصروفة."
+    },
+    "example": {
+      "en": "σ=100,u=40 kPa givesσ′=60 kPa.",
+      "ar": "σ=100 وu=40 kPa تعطيσ′=60 kPa."
+    },
+    "question": {
+      "en": "At fixedσ,raiseu. What happens toσ′?",
+      "ar": "مع ثباتσ ارفعu. ماذا يحدث لـσ′؟"
+    },
+    "options": [
+      {
+        "en": "It decreases by the same increment.",
+        "ar": "تنخفض بالمقدار نفسه."
+      },
+      {
+        "en": "It necessarily increases.",
+        "ar": "تزيد بالضرورة."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "The skeleton loses that part of normal load support.",
+      "ar": "يفقد الهيكل هذا الجزء من دعم الحمل العمودي."
+    },
+    "videos": [
+      {
+        "id": "ySUr60U6jiM",
+        "title": "Lecture - 17 Effective Stress - I",
+        "author": "nptelhrd · Prof. B. V. S. Viswanadham, IIT Bombay",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "soil-trig",
+    "title": {
+      "en": "Angles, tangent and a circle",
+      "ar": "الزوايا والظل والدائرة"
+    },
+    "why": {
+      "en": "Failure-envelope slopes and Mohr-circle orientations use different angle relationships.",
+      "ar": "تستعمل ميول غلاف الفشل واتجاهات دائرة مور علاقات زوايا مختلفة."
+    },
+    "refresher": {
+      "en": "Slope=rise/run=tanφ. Recoverφ with atan in degree mode. A Mohr-circle angle is twice the physical plane rotation.",
+      "ar": "الميل=الارتفاع/الامتداد=tanφ. استخرجφ بـatan في وضع الدرجات. زاوية دائرة مور ضعف دوران السطح الفيزيائي."
+    },
+    "example": {
+      "en": "Slope0.5 givesφ=26.565°, not0.5°.",
+      "ar": "الميل0.5 يعطيφ=26.565° وليس0.5°."
+    },
+    "question": {
+      "en": "If slope=1,what isφ?",
+      "ar": "إذا الميل1، فماφ؟"
+    },
+    "options": [
+      {
+        "en": "45°.",
+        "ar": "45°."
+      },
+      {
+        "en": "1°.",
+        "ar": "1°."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "tan45°=1. Keep degree/radian modes explicit.",
+      "ar": "tan45°=1. صرّح بوضع الدرجة أو الراديان."
+    },
+    "videos": [
+      {
+        "id": "uGTs5O3ds7k",
+        "title": "Lec 27 : Triaxial test",
+        "author": "NPTEL IIT Guwahati",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "hyd-units",
+    "title": {
+      "en": "Flow units and slope",
+      "ar": "وحدات التصريف والميل"
+    },
+    "why": {
+      "en": "A wrong day/second conversion can change an entire tank or channel design.",
+      "ar": "يغيّر خطأ اليوم والثانية تصميم الحوض أو القناة كله."
+    },
+    "refresher": {
+      "en": "Q is volume/time.1 L=0.001 m³,1 day=86400 s. A slope of0.1% is0.001 m/m.",
+      "ar": "Q حجم/زمن.1 L=0.001 m³ واليوم86400 s. ميل0.1% يساوي0.001 m/m."
+    },
+    "example": {
+      "en": "8640 m³/day=0.1 m³/s.",
+      "ar": "8640 m³/day=0.1 m³/s."
+    },
+    "question": {
+      "en": "Convert0.1% slope to a decimal.",
+      "ar": "حوّل ميل0.1% إلى كسر عشري."
+    },
+    "options": [
+      {
+        "en": "0.001.",
+        "ar": "0.001."
+      },
+      {
+        "en": "0.1.",
+        "ar": "0.1."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "Divide the percentage number by100.",
+      "ar": "اقسم الرقم المئوي على100."
+    },
+    "videos": [
+      {
+        "id": "8gu5oGySrCI",
+        "title": "Equation of continuity energy",
+        "author": "nptelhrd",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "hyd-geometry",
+    "title": {
+      "en": "Area, boundary and free-surface width",
+      "ar": "المساحة والحدود وعرض السطح"
+    },
+    "why": {
+      "en": "Resistance and gravity waves need different hydraulic lengths.",
+      "ar": "تحتاج المقاومة وموجات الجاذبية طولين هيدروليكيين مختلفين."
+    },
+    "refresher": {
+      "en": "Rectangle:A=by,P=b+2y,T=b. Trapezoid:A=y(b+my),P=b+2y√(1+m²),T=b+2my. P excludes the surface.",
+      "ar": "المستطيل:A=by وP=b+2y وT=b. شبه المنحرف:A=y(b+my) وP=b+2y√(1+m²) وT=b+2my. يستبعدP السطح."
+    },
+    "example": {
+      "en": "Rectangleb=4,y=2 givesA=8,P=8,T=4.",
+      "ar": "مستطيلb=4 وy=2 يعطيA=8 وP=8 وT=4."
+    },
+    "question": {
+      "en": "Which denominator gives hydraulic depthD?",
+      "ar": "أي مقام يعطي العمق الهيدروليكيD؟"
+    },
+    "options": [
+      {
+        "en": "Free-surface widthT.",
+        "ar": "عرض السطحT."
+      },
+      {
+        "en": "Wetted perimeterP.",
+        "ar": "المحيط المبتلP."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "D=A/T;R=A/P.",
+      "ar": "D=A/T؛ R=A/P."
+    },
+    "videos": [
+      {
+        "id": "CAZNIuQTE-0",
+        "title": "Lecture 28: Introduction to Open Channel Flow and Uniform Flow",
+        "author": "NPTEL IIT Kharagpur",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "hyd-energy-basics",
+    "title": {
+      "en": "Head and one fixed datum",
+      "ar": "الرأس ومرجع ثابت واحد"
+    },
+    "why": {
+      "en": "A raised bed consumes specific energy without creating total head.",
+      "ar": "يستهلك ارتفاع القاع طاقة نوعية دون توليد رأس كلي."
+    },
+    "refresher": {
+      "en": "Energy per weight has units of length. H=z+y+αV²/(2g);E=H−z. Record wherez=0.",
+      "ar": "للطاقة لكل وزن وحدة طول. H=z+y+αV²/(2g) وE=H−z. سجّل موضعz=0."
+    },
+    "example": {
+      "en": "z=10,E=2 givesH=12 m.",
+      "ar": "z=10 وE=2 تعطيH=12 m."
+    },
+    "question": {
+      "en": "Ifz rises0.5 m withH constant,what happens toE?",
+      "ar": "إذا زادتz بمقدار0.5 m مع ثباتH، ماذا يحدث لـE؟"
+    },
+    "options": [
+      {
+        "en": "E falls0.5 m.",
+        "ar": "تنخفضE بمقدار0.5 m."
+      },
+      {
+        "en": "E rises0.5 m.",
+        "ar": "تزيدE بمقدار0.5 m."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "E=H−z,using the same fixed datum forH,z.",
+      "ar": "E=H−z مع مرجع ثابت واحد لـH وz."
+    },
+    "videos": [
+      {
+        "id": "Tz7EPLL4PTQ",
+        "title": "Specific energy critical flow",
+        "author": "nptelhrd",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "env-mass",
+    "title": {
+      "en": "Mass, concentration and a water balance",
+      "ar": "الكتلة والتركيز واتزان الماء"
+    },
+    "why": {
+      "en": "Chemical doses and water demand combine a rate with a concentration.",
+      "ar": "تجمع الجرعات الكيميائية والطلب معدلًا وتركيزًا."
+    },
+    "refresher": {
+      "en": "C=m/V. Convert samplemL toL before reportingmg/L. For daily chemical mass,Qm³/day×Cmg/L÷1000 giveskg/day.",
+      "ar": "C=m/V. حوّلmL العينة إلىL قبلmg/L. الكتلة اليوميةQm³/day×Cmg/L÷1000 تعطيkg/day."
+    },
+    "example": {
+      "en": "1000 m³/day at10 mg/L uses10 kg/day.",
+      "ar": "1000 m³/day بجرعة10 mg/L تستهلك10 kg/day."
+    },
+    "question": {
+      "en": "5 mg in100 mL equals?",
+      "ar": "5 mg في100 mL تساوي؟"
+    },
+    "options": [
+      {
+        "en": "50 mg/L.",
+        "ar": "50 mg/L."
+      },
+      {
+        "en": "5 mg/L.",
+        "ar": "5 mg/L."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "100 mL=0.1 L;5/0.1=50.",
+      "ar": "100 mL=0.1 L؛ 5/0.1=50."
+    },
+    "videos": [
+      {
+        "id": "6Ot2t9YyzKU",
+        "title": "#4 Water Quality Parameters | Environmental Quality Monitoring & Analysis",
+        "author": "NPTEL-NOC IITM",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "env-chemistry",
+    "title": {
+      "en": "Ionic charge, pH and test conditions",
+      "ar": "شحنة الأيون وpH وشروط الاختبار"
+    },
+    "why": {
+      "en": "Coagulation and analysis depend on chemistry, not only water appearance.",
+      "ar": "يتبع التخثير والتحليل الكيمياء لا مظهر الماء وحده."
+    },
+    "refresher": {
+      "en": "pH is logarithmic. Charge concentration uses equivalents, not raw ionic mass. A jar test controls pH,dose and mixing for representative raw water.",
+      "ar": "pH لوغاريتمية. يستعمل تركيز الشحنة المكافئات لا الكتلة الأيونية الخام. يضبط اختبار الجرّةpH والجرعة والخلط لماء ممثل."
+    },
+    "example": {
+      "en": "Ca²⁺ equivalent weight≈40/2=20 mg/meq.",
+      "ar": "الوزن المكافئ لـCa²⁺ يقارب40/2=20 mg/meq."
+    },
+    "question": {
+      "en": "A fall frompH7 to6 changes hydrogen activity by?",
+      "ar": "انخفاضpH من7 إلى6 يغيّر نشاط الهيدروجين بمقدار؟"
+    },
+    "options": [
+      {
+        "en": "Tenfold increase.",
+        "ar": "زيادة عشرة أضعاف."
+      },
+      {
+        "en": "One unit ofmg/L.",
+        "ar": "وحدةmg/L واحدة."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "10⁻⁶/10⁻⁷=10;the scale is not linear.",
+      "ar": "10⁻⁶/10⁻⁷=10؛ المقياس ليس خطيًا."
+    },
+    "videos": [
+      {
+        "id": "C8ghKCUfcQk",
+        "title": "Lecture 10 Coagulation and Flocculation",
+        "author": "nptelhrd",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "steel-units",
+    "title": {
+      "en": "Steel force, length and section units",
+      "ar": "وحدات القوة والطول والقطاع للفولاذ"
+    },
+    "why": {
+      "en": "Section tables and applied loads often use different powers ofmm,cm andm.",
+      "ar": "تستعمل جداول القطاعات والأحمال أسسًا مختلفة منmm وcm وm."
+    },
+    "refresher": {
+      "en": "1 kN·m=10⁶ N·mm;1 cm³=1000 mm³;1 cm⁴=10000 mm⁴. MultiplyW(mm³)byfy(N/mm²) to obtainN·mm.",
+      "ar": "1 kN·m=10⁶ N·mm و1 cm³=1000 mm³ و1 cm⁴=10000 mm⁴. ضربW(mm³) فيfy(N/mm²) يعطيN·mm."
+    },
+    "example": {
+      "en": "W=1000 cm³ atfy=275 gives275 kN·m before partial factors.",
+      "ar": "W=1000 cm³ معfy=275 تعطي275 kN·m قبل المعاملات الجزئية."
+    },
+    "question": {
+      "en": "How manyN·mm are in1 kN·m?",
+      "ar": "كمN·mm في1 kN·m؟"
+    },
+    "options": [
+      {
+        "en": "1000000.",
+        "ar": "1000000."
+      },
+      {
+        "en": "1000.",
+        "ar": "1000."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "1000N per kN times1000mm per metre.",
+      "ar": "1000N لكلkN مضروبة في1000mm لكل متر."
+    },
+    "videos": [
+      {
+        "id": "kRSKLXoaN54",
+        "title": "Mod-6 Lec-4 Design of Laterally Unsupported Beams",
+        "author": "nptelhrd",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "steel-bending",
+    "title": {
+      "en": "Bending, section properties and load path",
+      "ar": "الانحناء وخواص القطاع ومسار الحمل"
+    },
+    "why": {
+      "en": "A larger section must still transfer force and remain stable.",
+      "ar": "يجب أن ينقل القطاع الأكبر القوى ويبقى مستقرًا."
+    },
+    "refresher": {
+      "en": "Elasticσ=My/I andWel=I/ymax. I measures stiffness;W relates moment to extreme stress. PlasticW uses force blocks,notI/y. Connect reactions to supports before resistance checks.",
+      "ar": "مرنًاσ=My/I وWel=I/ymax. يقيسI الصلابة ويربطW العزم بإجهاد الليف الأبعد. يستعملW اللدن كتل قوى لاI/y. اربط الردود بالمساند قبل المقاومة."
+    },
+    "example": {
+      "en": "Two equal opposite flange forcesF separated byd make momentFd.",
+      "ar": "قوتا جناح متساويتان متعاكستانF تبعدانd تشكلان عزمًاFd."
+    },
+    "question": {
+      "en": "Which property belongs in elastic deflectionEI?",
+      "ar": "أي خاصية تدخل فيEI للترخيم المرن؟"
+    },
+    "options": [
+      {
+        "en": "Second moment of areaI.",
+        "ar": "عزم المساحة الثانيI."
+      },
+      {
+        "en": "AreaA alone.",
+        "ar": "المساحةA وحدها."
+      }
+    ],
+    "correct": 0,
+    "answer": {
+      "en": "Bending stiffness isEI;area alone cannot capture material placement.",
+      "ar": "صلابة الانحناءEI؛ المساحة وحدها لا تمثل توزيع المادة."
+    },
+    "videos": [
+      {
+        "id": "wjEQ6F4HCaU",
+        "title": "Mod-6 Lec-7 Design of a Built-Up Beams",
+        "author": "nptelhrd",
+        "language": "English"
+      }
+    ]
+  },
+  {
+    "id": "course-algebra",
+    "title": {
+      "en": "Simultaneous linear equations",
+      "ar": "المعادلات الخطية المتزامنة"
+    },
+    "why": {
+      "en": "Rearrange equations, solve a balance and check the original relation after substitution.",
+      "ar": "أعد ترتيب المعادلة وحل الاتزان ثم تحقق بالتعويض في العلاقة الأصلية."
+    },
+    "refresher": {
+      "en": "Two equations describe two restrictions on the same unknowns. Eliminate one unknown, solve for the other, then substitute back into both original equations.",
+      "ar": "تمثل معادلتان قيدين على المجهولات نفسها. احذف مجهولاً ثم حل الآخر وعوّض في المعادلتين الأصليتين."
+    },
+    "example": {
+      "en": "x + 0.5y = 10 and 0.5x + 3y = 2 give y = −12/11 and x = 116/11.",
+      "ar": "x + 0.5y = 10 و0.5x + 3y = 2 تعطيان y = −12/11 وx = 116/11."
+    },
+    "question": {
+      "en": "Which is a valid final check after solving two simultaneous equations?",
+      "ar": "ما التحقق الصحيح بعد حل معادلتين متزامنتين؟"
+    },
+    "options": [
+      {
+        "en": "Check just the easier equation.",
+        "ar": "افحص المعادلة الأسهل فقط."
+      },
+      {
+        "en": "Substitute the solution into both original equations.",
+        "ar": "عوّض الحل في المعادلتين الأصليتين."
+      },
+      {
+        "en": "Round both unknowns to integers.",
+        "ar": "قرّب المجهولين إلى عددين صحيحين."
+      }
+    ],
+    "correct": 1,
+    "answer": {
+      "en": "Both equations must be satisfied; a solution that fits only one condition cannot describe the joint movements.",
+      "ar": "يجب تحقيق المعادلتين؛ الحل الذي يحقق شرطاً واحداً لا يصف حركات العقد الصحيحة."
+    },
+    "videos": [
+      {
+        "title": "Solving systems of equations by elimination",
+        "author": "Khan Academy",
+        "id": "vA-55wZtLeE",
+        "language": "English"
+      }
+    ]
   }
 ]

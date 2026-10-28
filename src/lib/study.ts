@@ -1,4 +1,5 @@
 import type {Attempt,FocusSession,Notebook,Progress,Timer} from './types';
+import {validRecall} from './recall';
 export const uid=()=>globalThis.crypto.randomUUID();
 export const freshProgress=():Progress=>({step:0,tab:'start',completed:[],answers:{},cards:{},prereqs:{},predictions:{},errors:[]});
 export const freshNotebook=():Notebook=>({version:1,topics:{},attempts:[],sessions:[],timer:null,settings:{language:'ar',focus:25,break:5},imports:[],updatedAt:Date.now()});
@@ -25,6 +26,7 @@ export function settleTimer(book:Notebook,now=Date.now()):Notebook{if(!book.time
 export function validNotebook(x:unknown):x is Notebook{
  const record=(v:unknown):v is Record<string,any>=>!!v&&typeof v==='object'&&!Array.isArray(v);
  if(!record(x))return false;const b=x as unknown as Notebook;
+ if(b.recall!==undefined&&!validRecall(b.recall))return false;
  if(b.version!==1||!record(b.topics)||!record(b.settings)||!Array.isArray(b.attempts)||!Array.isArray(b.sessions)||!Array.isArray(b.imports)||!Number.isFinite(b.updatedAt))return false;
  if(!['ar','en'].includes(b.settings.language)||!Number.isFinite(b.settings.focus)||b.settings.focus<1||b.settings.focus>180||!Number.isFinite(b.settings.break)||b.settings.break<1||b.settings.break>60)return false;
  if((b.settings.sound!==undefined&&typeof b.settings.sound!=='boolean')||(b.settings.desktopAlerts!==undefined&&typeof b.settings.desktopAlerts!=='boolean'))return false;

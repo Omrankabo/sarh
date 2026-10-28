@@ -213,5 +213,90 @@
     "id": "EE16",
     "filename": "Questions.pdf",
     "pages": 14
+  },
+  {
+    "id": "soil-lecture-01",
+    "filename": "Lecture 1.pdf",
+    "pages": 11
+  },
+  {
+    "id": "soil-tutorial-01920",
+    "filename": "Soil II_019+020Tutorials&solutions.pdf",
+    "pages": 35
+  },
+  {
+    "id": "soil-lecture-02",
+    "filename": "Lecture 2.pdf",
+    "pages": 9
+  },
+  {
+    "id": "soil-lecture-03",
+    "filename": "Lecture 3.pdf",
+    "pages": 7
+  },
+  {
+    "id": "soil-lecture-04",
+    "filename": "Lecture 4-1.pdf",
+    "pages": 7
+  },
+  {
+    "id": "hyd-lecture-01",
+    "filename": "lec 1 مقدمة واساسيات.pdf",
+    "pages": 31
+  },
+  {
+    "id": "hyd-lecture-02",
+    "filename": "lec  العلاقات الاساسية2.pdf",
+    "pages": 15
+  },
+  {
+    "id": "hyd-lecture-03",
+    "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+    "pages": 12
+  },
+  {
+    "id": "hyd-lecture-04",
+    "filename": "lec 4 تحليل الجريان الحرج .pdf",
+    "pages": 30
+  },
+  {
+    "id": "hyd-uniform-notes",
+    "filename": "uni flow hyd.pdf",
+    "pages": 11
+  },
+  {
+    "id": "env-demand",
+    "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+    "pages": 25
+  },
+  {
+    "id": "env-quality",
+    "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+    "pages": 17
+  },
+  {
+    "id": "env-chemistry",
+    "filename": "6 Env.Eng. I-Unit 4 - Water Chemistry.pdf",
+    "pages": 25
+  },
+  {
+    "id": "env-coagulation",
+    "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+    "pages": 30
+  },
+  {
+    "id": "env-flocculation",
+    "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+    "pages": 14
+  },
+  {
+    "id": "steel-lecture-01",
+    "filename": "lec 1 Design of Unrestrained Beams .pdf",
+    "pages": 22
+  },
+  {
+    "id": "steel-lecture-02",
+    "filename": "lec 2 Design of Compound Beams.pdf",
+    "pages": 26
   }
 ]

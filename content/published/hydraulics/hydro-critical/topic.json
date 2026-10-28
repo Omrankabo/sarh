@@ -1,0 +1,1589 @@
+{
+  "id": "hydro-critical",
+  "family": "hyd-energy",
+  "title": {
+    "en": "Specific energy: the two-depth story",
+    "ar": "الطاقة النوعية: قصة العمقين"
+  },
+  "summary": {
+    "en": "See why one discharge can have shallow-fast and deep-slow states, locate critical depth, then predict what a raised bed can force the water to do.",
+    "ar": "افهم كيف يملك التصريف حالة ضحلة سريعة وأخرى عميقة بطيئة، وحدّد العمق الحرج ثم توقّع أثر رفع القاع."
+  },
+  "outcomes": [
+    {
+      "en": "Depth and speed share the energy budget",
+      "ar": "العمق والسرعة يتقاسمان ميزانية الطاقة"
+    },
+    {
+      "en": "The minimum is a capacity boundary",
+      "ar": "القيمة الدنيا حد للتمرير"
+    },
+    {
+      "en": "Can a surface signal travel upstream?",
+      "ar": "هل تستطيع إشارة سطحية التحرك عكس الماء؟"
+    },
+    {
+      "en": "Two depths can spend the same energy",
+      "ar": "عمقان قد ينفقان الطاقة نفسها"
+    },
+    {
+      "en": "A raised bed can choke the original flow",
+      "ar": "قد تخنق الحدبة الجريان الأصلي"
+    }
+  ],
+  "prereqIds": [
+    "hyd-units",
+    "hyd-geometry",
+    "course-algebra",
+    "hyd-energy-basics"
+  ],
+  "videoIds": [
+    "Tz7EPLL4PTQ",
+    "8gu5oGySrCI"
+  ],
+  "concepts": [
+    {
+      "id": "hydro-critical-head",
+      "title": {
+        "en": "Depth and speed share the energy budget",
+        "ar": "العمق والسرعة يتقاسمان ميزانية الطاقة"
+      }
+    },
+    {
+      "id": "hydro-critical-minimum",
+      "title": {
+        "en": "The minimum is a capacity boundary",
+        "ar": "القيمة الدنيا حد للتمرير"
+      }
+    },
+    {
+      "id": "hydro-critical-regime",
+      "title": {
+        "en": "Can a surface signal travel upstream?",
+        "ar": "هل تستطيع إشارة سطحية التحرك عكس الماء؟"
+      }
+    },
+    {
+      "id": "hydro-critical-alternate",
+      "title": {
+        "en": "Two depths can spend the same energy",
+        "ar": "عمقان قد ينفقان الطاقة نفسها"
+      }
+    },
+    {
+      "id": "hydro-critical-hump",
+      "title": {
+        "en": "A raised bed can choke the original flow",
+        "ar": "قد تخنق الحدبة الجريان الأصلي"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "hydro-critical-head",
+      "title": {
+        "en": "Depth and speed share the energy budget",
+        "ar": "العمق والسرعة يتقاسمان ميزانية الطاقة"
+      },
+      "predict": {
+        "en": "A bed rises with negligible loss. Must E stay constant?",
+        "ar": "يرتفع القاع مع فقد مهمل. هل تبقى E ثابتة؟"
+      },
+      "options": [
+        {
+          "en": "No. E falls as z rises while H stays constant.",
+          "ar": "لا. تنخفض E بارتفاع z مع ثبات H."
+        },
+        {
+          "en": "Yes. Specific energy includes the fixed datum already.",
+          "ar": "نعم. تتضمن الطاقة النوعية المرجع الثابت أصلًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Head terms have length units even though they describe energy per unit weight.",
+        "ar": "لحدود الرأس وحدة طول رغم وصفها طاقة لكل وزن."
+      },
+      "explain": {
+        "en": "Total head includes bed elevation z, depth y and velocity head. Specific energy removes only bed elevation: E=H−z. Its datum therefore changes with the bed. For a rectangle, V=q/y, so a shallower depth increases the velocity-head term strongly. A lossless reach conserves H, not automatically E when the bed rises.",
+        "ar": "يشمل الرأس الكلي منسوب القاع z والعمق y ورأس السرعة. تزيل الطاقة النوعية منسوب القاع فقط: E=H−z، لذا يتحرك مرجعها مع القاع. للمستطيل V=q/y، فيزيد الحد الحركي بقوة عندما يقل العمق. يحفظ المجرى بلا فقد H ولا يحفظ E تلقائيًا إذا ارتفع القاع."
+      },
+      "formula": "H=z+E; E=y+αV²/(2g); rectangular α=1: E=y+q²/(2gy²)",
+      "symbols": {
+        "en": "Heads z,E,H,y in m; q=Q/b in m²/s; α kinetic-energy coefficient, taken1 in examples.",
+        "ar": "الرؤوس z,E,H,y بالأمتار؛ q=Q/b بوحدة m²/s؛ α معامل تصحيح الطاقة الحركية ويؤخذ1 في الأمثلة."
+      },
+      "assumptions": {
+        "en": "Hydrostatic, small-slope section-averaged flow; no pump/turbine contribution in these examples.",
+        "ar": "جريان متوسط قطاعي هيدروستاتيكي صغير الميل؛ دون مضخة أو توربين في هذه الأمثلة."
+      },
+      "example": {
+        "en": "q=5.5 m²/s,y=2 m,α=1. Find E.",
+        "ar": "q=5.5 m²/s وy=2 m وα=1. أوجد E."
+      },
+      "calculation": {
+        "en": "V=2.75 m/s; E=2+2.75²/(2×9.81)=2.38545 m, matching the source table rounding.",
+        "ar": "V=2.75 m/s؛ E=2+2.75²/(2×9.81)=2.38545 m، مطابق لتقريب جدول المصدر."
+      },
+      "interpret": {
+        "en": "Head terms have length units even though they describe energy per unit weight.",
+        "ar": "لحدود الرأس وحدة طول رغم وصفها طاقة لكل وزن."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Head terms have length units even though they describe energy per unit weight. Hydrostatic, small-slope section-averaged flow; no pump/turbine contribution in these examples.",
+          "ar": "لحدود الرأس وحدة طول رغم وصفها طاقة لكل وزن. جريان متوسط قطاعي هيدروستاتيكي صغير الميل؛ دون مضخة أو توربين في هذه الأمثلة."
+        }
+      },
+      "diagram": "course-hydro-energy",
+      "concepts": [
+        "hydro-critical-head"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 2
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 3
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "hydro-critical-minimum",
+      "title": {
+        "en": "The minimum is a capacity boundary",
+        "ar": "القيمة الدنيا حد للتمرير"
+      },
+      "predict": {
+        "en": "Can a fixed rectangular q pass with E below Emin?",
+        "ar": "هل يمر q المستطيلي الثابت بطاقة أقل من Emin؟"
+      },
+      "options": [
+        {
+          "en": "No depth satisfies the ideal energy relation.",
+          "ar": "لا يوجد عمق يحقق علاقة الطاقة المثالية."
+        },
+        {
+          "en": "Yes, simply choose a negative depth.",
+          "ar": "نعم، اختر عمقًا سالبًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The minimum is a feasibility boundary, not a preferred operating depth for every canal.",
+        "ar": "القيمة الدنيا حد إمكانية وليست عمق التشغيل المفضل لكل قناة."
+      },
+      "explain": {
+        "en": "At fixed q, reducing depth eventually increases velocity head faster than it saves depth head. The E–y curve turns at its minimum. Setting dE/dy=0 gives q²=gyc³. The shallow and deep branches meet there. For a rectangle only, Emin=1.5yc; do not apply that factor unchanged to a trapezoid.",
+        "ar": "عند q ثابتة، يصل خفض العمق إلى نقطة تزيد فيها طاقة السرعة أسرع من توفير رأس العمق. ينعطف منحنى E–y عند قيمته الدنيا. بوضع dE/dy=0 نحصل على q²=gyc³. يلتقي الفرعان الضحل والعميق هناك. للمستطيل وحده Emin=1.5yc؛ لا تنقل المعامل نفسه لشبه المنحرف."
+      },
+      "formula": "dE/dy=1−q²/(gy³); yc=(q²/g)^(1/3); Emin=3yc/2",
+      "symbols": {
+        "en": "yc critical depth in m; Emin minimum specific energy in m for fixed rectangular q.",
+        "ar": "yc العمق الحرج بالمتر؛ Emin أقل طاقة نوعية بالمتر لتصريف q مستطيلي ثابت."
+      },
+      "assumptions": {
+        "en": "Rectangular horizontal/small-slope section with α=1; general sections use Q²T/(gA³)=1.",
+        "ar": "قطاع مستطيل أفقي أو صغير الميل مع α=1؛ للقطاع العام Q²T/(gA³)=1."
+      },
+      "example": {
+        "en": "Source q=5.5 m²/s. Find yc and Emin.",
+        "ar": "q المصدر=5.5 m²/s. أوجد yc وEmin."
+      },
+      "calculation": {
+        "en": "yc=(30.25/9.81)^(1/3)=1.45552 m; Emin=2.18328 m. At yc the source table gives Fr≈1.",
+        "ar": "yc=(30.25/9.81)^(1/3)=1.45552 m؛ Emin=2.18328 m. يعطي جدول المصدر Fr≈1 عند yc."
+      },
+      "interpret": {
+        "en": "The minimum is a feasibility boundary, not a preferred operating depth for every canal.",
+        "ar": "القيمة الدنيا حد إمكانية وليست عمق التشغيل المفضل لكل قناة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "The minimum is a feasibility boundary, not a preferred operating depth for every canal. Rectangular horizontal/small-slope section with α=1; general sections use Q²T/(gA³)=1.",
+          "ar": "القيمة الدنيا حد إمكانية وليست عمق التشغيل المفضل لكل قناة. قطاع مستطيل أفقي أو صغير الميل مع α=1؛ للقطاع العام Q²T/(gA³)=1."
+        }
+      },
+      "diagram": "course-hydro-energy",
+      "concepts": [
+        "hydro-critical-minimum"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 7
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "hydro-critical-regime",
+      "title": {
+        "en": "Can a surface signal travel upstream?",
+        "ar": "هل تستطيع إشارة سطحية التحرك عكس الماء؟"
+      },
+      "predict": {
+        "en": "At Fr>1, can a small long wave normally travel upstream in the fixed channel frame?",
+        "ar": "عند Fr>1، هل تتحرك موجة طويلة صغيرة عادةً إلى أعلى المجرى في المرجع الثابت؟"
+      },
+      "options": [
+        {
+          "en": "No. Flow sweeps it downstream.",
+          "ar": "لا. يجرفها الجريان إلى المصب."
+        },
+        {
+          "en": "Yes. Gravity waves always outrun the current.",
+          "ar": "نعم. موجات الجاذبية تتجاوز التيار دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A rapid shallow stream and a deep slow stream with the same q respond differently to controls.",
+        "ar": "تستجيب حالة ضحلة سريعة وأخرى عميقة بطيئة لهما q نفسها بصورة مختلفة للتحكم."
+      },
+      "explain": {
+        "en": "The long gravity-wave speed relative to shallow water is approximately √(gD). Compare the flow velocity with that speed. Below Fr=1, small disturbances can communicate upstream; above1, the current sweeps both directions downstream in the fixed frame. This is why downstream controls and boundary choices differ across regimes.",
+        "ar": "سرعة موجة الجاذبية الطويلة بالنسبة للماء الضحل تقارب √(gD). قارن بها سرعة الجريان. تحت Fr=1 يمكن للاضطراب الصغير التواصل مع أعلى المجرى؛ وفوق1 يجرف التيار الاتجاهين إلى المصب في المرجع الثابت. لذلك تختلف شروط الحدود وتحكم المصب بين النظامين."
+      },
+      "formula": "c=√(gD); Fr=V/c; critical Q²T/(gA³)=1",
+      "symbols": {
+        "en": "c wave celerity m/s, D=A/T m; Fr dimensionless. c is relative to the water.",
+        "ar": "c سرعة انتشار الموجة m/s وD=A/T بالمتر؛ Fr بلا وحدة. c بالنسبة للماء."
+      },
+      "assumptions": {
+        "en": "Small-amplitude long waves, hydrostatic pressure and small slope; not a turbulent eddy speed or an arbitrary wave model.",
+        "ar": "موجات طويلة صغيرة السعة وضغط هيدروستاتيكي وميل صغير؛ ليست سرعة دوامة اضطرابية أو نموذجًا لكل موجة."
+      },
+      "example": {
+        "en": "q=5.5,y=1 m in a rectangle.",
+        "ar": "q=5.5 وy=1 m في مستطيل."
+      },
+      "calculation": {
+        "en": "V=5.5 m/s,c=√9.81=3.1321,Fr=1.756>1: shallow supercritical branch.",
+        "ar": "V=5.5 m/s وc=√9.81=3.1321 وFr=1.756>1: فرع ضحل فوق حرج."
+      },
+      "interpret": {
+        "en": "A rapid shallow stream and a deep slow stream with the same q respond differently to controls.",
+        "ar": "تستجيب حالة ضحلة سريعة وأخرى عميقة بطيئة لهما q نفسها بصورة مختلفة للتحكم."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "A rapid shallow stream and a deep slow stream with the same q respond differently to controls. Small-amplitude long waves, hydrostatic pressure and small slope; not a turbulent eddy speed or an arbitrary wave model.",
+          "ar": "تستجيب حالة ضحلة سريعة وأخرى عميقة بطيئة لهما q نفسها بصورة مختلفة للتحكم. موجات طويلة صغيرة السعة وضغط هيدروستاتيكي وميل صغير؛ ليست سرعة دوامة اضطرابية أو نموذجًا لكل موجة."
+        }
+      },
+      "diagram": "course-hydro-energy",
+      "concepts": [
+        "hydro-critical-regime"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 12
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 27
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 28
+        }
+      ]
+    },
+    {
+      "id": "hydro-critical-alternate",
+      "title": {
+        "en": "Two depths can spend the same energy",
+        "ar": "عمقان قد ينفقان الطاقة نفسها"
+      },
+      "predict": {
+        "en": "Are alternate depths automatically hydraulic-jump conjugate depths?",
+        "ar": "هل الأعماق المتبادلة هي تلقائيًا أعماق القفزة المترافقة؟"
+      },
+      "options": [
+        {
+          "en": "No. The first pair shares energy; the jump pair shares momentum with loss.",
+          "ar": "لا. الأولى تتشارك الطاقة والثانية كمية الحركة مع فقد."
+        },
+        {
+          "en": "Yes. Equal discharge makes all depth pairs identical.",
+          "ar": "نعم. تساوي التصريف يجعل جميع الأزواج متطابقة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Check energy against Emin before asking for two distinct positive depths.",
+        "ar": "قارن الطاقة بـEmin قبل طلب عمقين موجبين مختلفين."
+      },
+      "explain": {
+        "en": "Above the minimum, a horizontal line of constant specific energy normally cuts the rectangular E–y curve twice: shallow-fast and deep-slow. These are alternate depths, not the conjugate depths of a hydraulic jump. Jump depths are linked by momentum while energy is lost. Never join two alternate depths and call that a physically lossless jump.",
+        "ar": "فوق القيمة الدنيا يقطع خط الطاقة الثابتة منحنى المستطيل عادةً مرتين: ضحل سريع وعميق بطيء. هذه أعماق متبادلة وليست الأعماق المترافقة للقفزة المائية. تربط كمية الحركة أعماق القفزة مع فقد الطاقة. لا تصل عمقين متبادلين وتصفهما قفزة بلا فقد."
+      },
+      "formula": "fixed q,E: y³−Ey²+q²/(2g)=0",
+      "symbols": {
+        "en": "Keep positive physical roots only; q in m²/s and y,E in m.",
+        "ar": "احتفظ بالجذور الفيزيائية الموجبة فقط؛ q بوحدة m²/s وy,E بالأمتار."
+      },
+      "assumptions": {
+        "en": "Rectangular section, α=1 and the same local bed datum; a root alone does not determine the actual branch.",
+        "ar": "مستطيل مع α=1 ومرجع القاع نفسه؛ لا يحدد الجذر وحده الفرع الفعلي."
+      },
+      "example": {
+        "en": "Choose q²/(2g)=4 m³ and E=3 m. Test y=2 m.",
+        "ar": "اختر q²/(2g)=4 m³ وE=3 m. اختبر y=2 m."
+      },
+      "calculation": {
+        "en": "E=2+4/4=3. Cubic y³−3y²+4=(y−2)²(y+1): this is the minimum, yc=2, so the two positive branches meet rather than forming distinct depths.",
+        "ar": "E=2+4/4=3. المعادلة y³−3y²+4=(y−2)²(y+1): هذه القيمة الدنيا yc=2، فيلتقي الفرعان بدل عمقين مختلفين."
+      },
+      "interpret": {
+        "en": "Check energy against Emin before asking for two distinct positive depths.",
+        "ar": "قارن الطاقة بـEmin قبل طلب عمقين موجبين مختلفين."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Check energy against Emin before asking for two distinct positive depths. Rectangular section, α=1 and the same local bed datum; a root alone does not determine the actual branch.",
+          "ar": "قارن الطاقة بـEmin قبل طلب عمقين موجبين مختلفين. مستطيل مع α=1 ومرجع القاع نفسه؛ لا يحدد الجذر وحده الفرع الفعلي."
+        }
+      },
+      "diagram": "course-hydro-energy",
+      "concepts": [
+        "hydro-critical-alternate"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 12
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "hydro-critical-hump",
+      "title": {
+        "en": "A raised bed can choke the original flow",
+        "ar": "قد تخنق الحدبة الجريان الأصلي"
+      },
+      "predict": {
+        "en": "If Δz exceeds E1−Emin in a lossless case, should you report a negative depth?",
+        "ar": "إذا تجاوزت Δz مقدار E1−Emin دون فقد، هل تبلغ عن عمق سالب؟"
+      },
+      "options": [
+        {
+          "en": "No. The original approach state is choked and must adjust.",
+          "ar": "لا. تختنق حالة الاقتراب الأصلية ويجب أن تتغير."
+        },
+        {
+          "en": "Yes. Negative depth is a valid branch.",
+          "ar": "نعم. العمق السالب فرع صالح."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Energy feasibility tells you when upstream conditions must be revisited.",
+        "ar": "تكشف إمكانية الطاقة متى يجب إعادة حساب حالة المنبع."
+      },
+      "explain": {
+        "en": "Over a short smooth hump with negligible loss, the rise in bed elevation consumes specific energy. On an initially subcritical branch depth decreases toward critical as the crest rises. The largest crest rise compatible with the original upstream state is E1−Emin. A higher crest forces a changed upstream state or discharge; do not continue the calculation into a nonexistent depth.",
+        "ar": "عبر حدبة قصيرة ملساء دون فقد مهم، يستهلك ارتفاع القاع طاقة نوعية. على الفرع دون الحرج ينخفض العمق نحو الحرج بارتفاع القمة. أكبر ارتفاع متوافق مع حالة المنبع الأصلية هو E1−Emin. ما فوقه يفرض تغير حالة المنبع أو التصريف؛ لا تواصل الحساب إلى عمق غير موجود."
+      },
+      "formula": "E2=E1−Δz−hL; allowable Δz at critical crest = E1−Emin−hL",
+      "symbols": {
+        "en": "Δz positive bed rise and hL head loss in m; q fixed in the stated rectangular example.",
+        "ar": "Δz ارتفاع قاع موجب وhL فقد الرأس بالمتر؛ q ثابتة في المثال المستطيلي."
+      },
+      "assumptions": {
+        "en": "Short transition, hydrostatic approach/control sections, selected upstream branch; include losses if significant.",
+        "ar": "انتقال قصير وقطاعا اقتراب وتحكم هيدروستاتيكيان وفرع منبع محدد؛ أضف الفواقد إذا كانت مؤثرة."
+      },
+      "example": {
+        "en": "q=5.5,y1=2 m. Find the lossless critical crest rise.",
+        "ar": "q=5.5 وy1=2 m. أوجد ارتفاع القمة الحرج دون فقد."
+      },
+      "calculation": {
+        "en": "E1=2.38545; Emin=2.18328; Δzmax=0.20217 m. A0.30 m rise cannot pass the same q with that unchanged approach state.",
+        "ar": "E1=2.38545 وEmin=2.18328؛ Δzmax=0.20217 m. ارتفاع0.30 m لا يمرر q نفسها مع ثبات حالة الاقتراب."
+      },
+      "interpret": {
+        "en": "Energy feasibility tells you when upstream conditions must be revisited.",
+        "ar": "تكشف إمكانية الطاقة متى يجب إعادة حساب حالة المنبع."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Energy feasibility tells you when upstream conditions must be revisited. Short transition, hydrostatic approach/control sections, selected upstream branch; include losses if significant.",
+          "ar": "تكشف إمكانية الطاقة متى يجب إعادة حساب حالة المنبع. انتقال قصير وقطاعا اقتراب وتحكم هيدروستاتيكيان وفرع منبع محدد؛ أضف الفواقد إذا كانت مؤثرة."
+        }
+      },
+      "diagram": "course-hydro-energy",
+      "concepts": [
+        "hydro-critical-hump"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 2
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 14
+        },
+        {
+          "doc": "hyd-lecture-02",
+          "filename": "lec  العلاقات الاساسية2.pdf",
+          "page": 13
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "C01",
+      "concept": "hydro-critical-head",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A bed rises with negligible loss. Must E stay constant?",
+        "ar": "يرتفع القاع مع فقد مهمل. هل تبقى E ثابتة؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Specific energy includes the fixed datum already.",
+          "ar": "نعم. تتضمن الطاقة النوعية المرجع الثابت أصلًا."
+        },
+        {
+          "en": "No. E falls as z rises while H stays constant.",
+          "ar": "لا. تنخفض E بارتفاع z مع ثبات H."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "Total head includes bed elevation z, depth y and velocity head. Specific energy removes only bed elevation: E=H−z. Its datum therefore changes with the bed. For a rectangle, V=q/y, so a shallower depth increases the velocity-head term strongly. A lossless reach conserves H, not automatically E when the bed rises. Head terms have length units even though they describe energy per unit weight.",
+        "ar": "يشمل الرأس الكلي منسوب القاع z والعمق y ورأس السرعة. تزيل الطاقة النوعية منسوب القاع فقط: E=H−z، لذا يتحرك مرجعها مع القاع. للمستطيل V=q/y، فيزيد الحد الحركي بقوة عندما يقل العمق. يحفظ المجرى بلا فقد H ولا يحفظ E تلقائيًا إذا ارتفع القاع. لحدود الرأس وحدة طول رغم وصفها طاقة لكل وزن."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 2
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 3
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "N01",
+      "concept": "hydro-critical-head",
+      "type": "numerical",
+      "prompt": {
+        "en": "q=3 m²/s,y=2 m. Find E with α=1.",
+        "ar": "q=3 m²/s وy=2 m. أوجد E مع α=1."
+      },
+      "expected": 2.114678899082569,
+      "tolerance": 0.01,
+      "unit": "m",
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "2+3²/(2×9.81×2²)=2.114679 m.",
+        "ar": "2+3²/(2×9.81×2²)=2.114679 m."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 2
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 3
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "concept": "hydro-critical-head",
+      "type": "mixed",
+      "prompt": {
+        "en": "z=10,E=2.5 m. Enter H and choose the reference used for E.",
+        "ar": "z=10 وE=2.5 m. أدخل H واختر مرجع E."
+      },
+      "expected": 12.5,
+      "tolerance": 0.025,
+      "unit": "m",
+      "options": [
+        {
+          "en": "Local channel bed.",
+          "ar": "قاع القناة المحلي."
+        },
+        {
+          "en": "A universal sea-level datum.",
+          "ar": "مرجع مستوى البحر دائمًا."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "H=z+E=12.5 m.",
+        "ar": "H=z+E=12.5 m."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 2
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 3
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "concept": "hydro-critical-minimum",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can a fixed rectangular q pass with E below Emin?",
+        "ar": "هل يمر q المستطيلي الثابت بطاقة أقل من Emin؟"
+      },
+      "options": [
+        {
+          "en": "No depth satisfies the ideal energy relation.",
+          "ar": "لا يوجد عمق يحقق علاقة الطاقة المثالية."
+        },
+        {
+          "en": "Yes, simply choose a negative depth.",
+          "ar": "نعم، اختر عمقًا سالبًا."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "At fixed q, reducing depth eventually increases velocity head faster than it saves depth head. The E–y curve turns at its minimum. Setting dE/dy=0 gives q²=gyc³. The shallow and deep branches meet there. For a rectangle only, Emin=1.5yc; do not apply that factor unchanged to a trapezoid. The minimum is a feasibility boundary, not a preferred operating depth for every canal.",
+        "ar": "عند q ثابتة، يصل خفض العمق إلى نقطة تزيد فيها طاقة السرعة أسرع من توفير رأس العمق. ينعطف منحنى E–y عند قيمته الدنيا. بوضع dE/dy=0 نحصل على q²=gyc³. يلتقي الفرعان الضحل والعميق هناك. للمستطيل وحده Emin=1.5yc؛ لا تنقل المعامل نفسه لشبه المنحرف. القيمة الدنيا حد إمكانية وليست عمق التشغيل المفضل لكل قناة."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 7
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "N02",
+      "concept": "hydro-critical-minimum",
+      "type": "numerical",
+      "prompt": {
+        "en": "q=3 m²/s. Find yc.",
+        "ar": "q=3 m²/s. أوجد yc."
+      },
+      "expected": 0.9716827674320039,
+      "tolerance": 0.01,
+      "unit": "m",
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "yc=(9/9.81)^(1/3)=0.971683 m.",
+        "ar": "yc=(9/9.81)^(1/3)=0.971683 m."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 7
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "concept": "hydro-critical-minimum",
+      "type": "mixed",
+      "prompt": {
+        "en": "q=3. Enter Emin and choose whether E=1 m can carry it.",
+        "ar": "q=3. أدخل Emin وحدّد هل E=1 m تسمح بتمريره."
+      },
+      "expected": 1.457524151148006,
+      "tolerance": 0.01,
+      "unit": "m",
+      "options": [
+        {
+          "en": "Any small positive E works if velocity is large.",
+          "ar": "أي E موجبة صغيرة تكفي إذا كبرت السرعة."
+        },
+        {
+          "en": "E=1 m is below the minimum, so no admissible depth.",
+          "ar": "E=1 m أقل من الدنيا، فلا يوجد عمق مقبول."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "Emin=1.457524 m>1 m.",
+        "ar": "Emin=1.457524 m>1 m."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 7
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "concept": "hydro-critical-regime",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At Fr>1, can a small long wave normally travel upstream in the fixed channel frame?",
+        "ar": "عند Fr>1، هل تتحرك موجة طويلة صغيرة عادةً إلى أعلى المجرى في المرجع الثابت؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Gravity waves always outrun the current.",
+          "ar": "نعم. موجات الجاذبية تتجاوز التيار دائمًا."
+        },
+        {
+          "en": "No. Flow sweeps it downstream.",
+          "ar": "لا. يجرفها الجريان إلى المصب."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "The long gravity-wave speed relative to shallow water is approximately √(gD). Compare the flow velocity with that speed. Below Fr=1, small disturbances can communicate upstream; above1, the current sweeps both directions downstream in the fixed frame. This is why downstream controls and boundary choices differ across regimes. A rapid shallow stream and a deep slow stream with the same q respond differently to controls.",
+        "ar": "سرعة موجة الجاذبية الطويلة بالنسبة للماء الضحل تقارب √(gD). قارن بها سرعة الجريان. تحت Fr=1 يمكن للاضطراب الصغير التواصل مع أعلى المجرى؛ وفوق1 يجرف التيار الاتجاهين إلى المصب في المرجع الثابت. لذلك تختلف شروط الحدود وتحكم المصب بين النظامين. تستجيب حالة ضحلة سريعة وأخرى عميقة بطيئة لهما q نفسها بصورة مختلفة للتحكم."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 12
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 27
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 28
+        }
+      ]
+    },
+    {
+      "id": "N03",
+      "concept": "hydro-critical-regime",
+      "type": "numerical",
+      "prompt": {
+        "en": "V=5.5,D=1 in SI. Find Fr.",
+        "ar": "V=5.5 وD=1 بوحدات SI. أوجد Fr."
+      },
+      "expected": 1.7560148562387774,
+      "tolerance": 0.01,
+      "unit": "—",
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "5.5/√9.81=1.75601.",
+        "ar": "5.5/√9.81=1.75601."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 12
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 27
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 28
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "concept": "hydro-critical-regime",
+      "type": "mixed",
+      "prompt": {
+        "en": "D=1 m,V=2 m/s. Enter wave speed c and select the flow regime.",
+        "ar": "D=1 m وV=2 m/s. أدخل c واختر نظام الجريان."
+      },
+      "expected": 3.132091952673165,
+      "tolerance": 0.01,
+      "unit": "m/s",
+      "options": [
+        {
+          "en": "Subcritical because V<c.",
+          "ar": "دون حرج لأن V<c."
+        },
+        {
+          "en": "Supercritical because velocity is nonzero.",
+          "ar": "فوق حرج لأن السرعة ليست صفرًا."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "c=3.13209;Fr=0.63855<1.",
+        "ar": "c=3.13209؛ Fr=0.63855<1."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 12
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 27
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 28
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "concept": "hydro-critical-alternate",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Are alternate depths automatically hydraulic-jump conjugate depths?",
+        "ar": "هل الأعماق المتبادلة هي تلقائيًا أعماق القفزة المترافقة؟"
+      },
+      "options": [
+        {
+          "en": "No. The first pair shares energy; the jump pair shares momentum with loss.",
+          "ar": "لا. الأولى تتشارك الطاقة والثانية كمية الحركة مع فقد."
+        },
+        {
+          "en": "Yes. Equal discharge makes all depth pairs identical.",
+          "ar": "نعم. تساوي التصريف يجعل جميع الأزواج متطابقة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "Above the minimum, a horizontal line of constant specific energy normally cuts the rectangular E–y curve twice: shallow-fast and deep-slow. These are alternate depths, not the conjugate depths of a hydraulic jump. Jump depths are linked by momentum while energy is lost. Never join two alternate depths and call that a physically lossless jump. Check energy against Emin before asking for two distinct positive depths.",
+        "ar": "فوق القيمة الدنيا يقطع خط الطاقة الثابتة منحنى المستطيل عادةً مرتين: ضحل سريع وعميق بطيء. هذه أعماق متبادلة وليست الأعماق المترافقة للقفزة المائية. تربط كمية الحركة أعماق القفزة مع فقد الطاقة. لا تصل عمقين متبادلين وتصفهما قفزة بلا فقد. قارن الطاقة بـEmin قبل طلب عمقين موجبين مختلفين."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 12
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "N04",
+      "concept": "hydro-critical-alternate",
+      "type": "numerical",
+      "prompt": {
+        "en": "q²/(2g)=4 m³,y=1 m. Calculate E.",
+        "ar": "q²/(2g)=4 m³ وy=1 m. احسب E."
+      },
+      "expected": 5,
+      "tolerance": 0.01,
+      "unit": "m",
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "E=1+4/1²=5 m.",
+        "ar": "E=1+4/1²=5 m."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 12
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "concept": "hydro-critical-alternate",
+      "type": "mixed",
+      "prompt": {
+        "en": "Same q, yc=2 m. Enter Emin and decide if E=3 gives distinct alternate depths.",
+        "ar": "q نفسها وyc=2 m. أدخل Emin وحدّد هل E=3 تعطي عمقين متبادلين مختلفين."
+      },
+      "expected": 3,
+      "tolerance": 0.01,
+      "unit": "m",
+      "options": [
+        {
+          "en": "Yes. Every E has two different positive depths.",
+          "ar": "نعم. لكل E عمقان موجبان مختلفان."
+        },
+        {
+          "en": "No. The positive roots merge at critical depth.",
+          "ar": "لا. يندمج الجذران الموجبان عند العمق الحرج."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "Emin=1.5×2=3 m; a repeated critical root.",
+        "ar": "Emin=1.5×2=3 m؛ جذر حرج مكرر."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 12
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "concept": "hydro-critical-hump",
+      "type": "conceptual",
+      "prompt": {
+        "en": "If Δz exceeds E1−Emin in a lossless case, should you report a negative depth?",
+        "ar": "إذا تجاوزت Δz مقدار E1−Emin دون فقد، هل تبلغ عن عمق سالب؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Negative depth is a valid branch.",
+          "ar": "نعم. العمق السالب فرع صالح."
+        },
+        {
+          "en": "No. The original approach state is choked and must adjust.",
+          "ar": "لا. تختنق حالة الاقتراب الأصلية ويجب أن تتغير."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "Over a short smooth hump with negligible loss, the rise in bed elevation consumes specific energy. On an initially subcritical branch depth decreases toward critical as the crest rises. The largest crest rise compatible with the original upstream state is E1−Emin. A higher crest forces a changed upstream state or discharge; do not continue the calculation into a nonexistent depth. Energy feasibility tells you when upstream conditions must be revisited.",
+        "ar": "عبر حدبة قصيرة ملساء دون فقد مهم، يستهلك ارتفاع القاع طاقة نوعية. على الفرع دون الحرج ينخفض العمق نحو الحرج بارتفاع القمة. أكبر ارتفاع متوافق مع حالة المنبع الأصلية هو E1−Emin. ما فوقه يفرض تغير حالة المنبع أو التصريف؛ لا تواصل الحساب إلى عمق غير موجود. تكشف إمكانية الطاقة متى يجب إعادة حساب حالة المنبع."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 2
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 14
+        },
+        {
+          "doc": "hyd-lecture-02",
+          "filename": "lec  العلاقات الاساسية2.pdf",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "id": "N05",
+      "concept": "hydro-critical-hump",
+      "type": "numerical",
+      "prompt": {
+        "en": "E1=3,Emin=2,hL=0.2 m. Find maximum crest rise.",
+        "ar": "E1=3 وEmin=2 وhL=0.2 m. أوجد أكبر ارتفاع قمة."
+      },
+      "expected": 0.8,
+      "tolerance": 0.01,
+      "unit": "m",
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "3−2−0.2=0.8 m.",
+        "ar": "3−2−0.2=0.8 m."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 2
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 14
+        },
+        {
+          "doc": "hyd-lecture-02",
+          "filename": "lec  العلاقات الاساسية2.pdf",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "concept": "hydro-critical-hump",
+      "type": "mixed",
+      "prompt": {
+        "en": "E1=3,Δz=0.5,hL=0.1. Enter E2 and choose the correct budget.",
+        "ar": "E1=3 وΔz=0.5 وhL=0.1. أدخل E2 واختر الميزانية الصحيحة."
+      },
+      "expected": 2.4,
+      "tolerance": 0.01,
+      "unit": "m",
+      "options": [
+        {
+          "en": "Bed rise and loss both consume available E.",
+          "ar": "ارتفاع القاع والفقد كلاهما يستهلك E المتاحة."
+        },
+        {
+          "en": "Bed rise creates additional total head.",
+          "ar": "ارتفاع القاع يولد رأسًا كليًا إضافيًا."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write discharge per width q=Q/b for a rectangle, then draw depth head and velocity head separately.",
+          "ar": "اكتب التصريف لكل عرض q=Q/b للمستطيل، ثم ارسم رأس العمق والسرعة منفصلين."
+        },
+        {
+          "en": "Use E=y+q²/(2gy²), yc=(q²/g)^(1/3), and Fr=V/√(gD). Identify which quantities are held fixed.",
+          "ar": "استعمل E=y+q²/(2gy²) وyc=(q²/g)^(1/3) وFr=V/√(gD). حدّد الثوابت."
+        }
+      ],
+      "solution": {
+        "en": "E2=3−0.5−0.1=2.4 m.",
+        "ar": "E2=3−0.5−0.1=2.4 m."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 2
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 14
+        },
+        {
+          "doc": "hyd-lecture-02",
+          "filename": "lec  العلاقات الاساسية2.pdf",
+          "page": 13
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "meaning-01",
+      "concept": "hydro-critical-head",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Depth and speed share the energy budget",
+        "ar": "اشرح: العمق والسرعة يتقاسمان ميزانية الطاقة"
+      },
+      "a": {
+        "en": "Total head includes bed elevation z, depth y and velocity head. Specific energy removes only bed elevation: E=H−z. Its datum therefore changes with the bed. For a rectangle, V=q/y, so a shallower depth increases the velocity-head term strongly. A lossless reach conserves H, not automatically E when the bed rises.",
+        "ar": "يشمل الرأس الكلي منسوب القاع z والعمق y ورأس السرعة. تزيل الطاقة النوعية منسوب القاع فقط: E=H−z، لذا يتحرك مرجعها مع القاع. للمستطيل V=q/y، فيزيد الحد الحركي بقوة عندما يقل العمق. يحفظ المجرى بلا فقد H ولا يحفظ E تلقائيًا إذا ارتفع القاع."
+      }
+    },
+    {
+      "id": "prediction-01",
+      "concept": "hydro-critical-head",
+      "kind": "prediction",
+      "q": {
+        "en": "A bed rises with negligible loss. Must E stay constant?",
+        "ar": "يرتفع القاع مع فقد مهمل. هل تبقى E ثابتة؟"
+      },
+      "a": {
+        "en": "No. E falls as z rises while H stays constant. Head terms have length units even though they describe energy per unit weight.",
+        "ar": "لا. تنخفض E بارتفاع z مع ثبات H. لحدود الرأس وحدة طول رغم وصفها طاقة لكل وزن."
+      }
+    },
+    {
+      "id": "calculation-01",
+      "concept": "hydro-critical-head",
+      "kind": "calculation",
+      "q": {
+        "en": "q=3 m²/s,y=2 m. Find E with α=1.",
+        "ar": "q=3 m²/s وy=2 m. أوجد E مع α=1."
+      },
+      "a": {
+        "en": "2+3²/(2×9.81×2²)=2.114679 m.",
+        "ar": "2+3²/(2×9.81×2²)=2.114679 m."
+      }
+    },
+    {
+      "id": "decision-01",
+      "concept": "hydro-critical-head",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Depth and speed share the energy budget?",
+        "ar": "متى يصح هذا النموذج: العمق والسرعة يتقاسمان ميزانية الطاقة؟"
+      },
+      "a": {
+        "en": "Hydrostatic, small-slope section-averaged flow; no pump/turbine contribution in these examples. Symbols: Heads z,E,H,y in m; q=Q/b in m²/s; α kinetic-energy coefficient, taken1 in examples.",
+        "ar": "جريان متوسط قطاعي هيدروستاتيكي صغير الميل؛ دون مضخة أو توربين في هذه الأمثلة. الرموز: الرؤوس z,E,H,y بالأمتار؛ q=Q/b بوحدة m²/s؛ α معامل تصحيح الطاقة الحركية ويؤخذ1 في الأمثلة."
+      }
+    },
+    {
+      "id": "meaning-02",
+      "concept": "hydro-critical-minimum",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: The minimum is a capacity boundary",
+        "ar": "اشرح: القيمة الدنيا حد للتمرير"
+      },
+      "a": {
+        "en": "At fixed q, reducing depth eventually increases velocity head faster than it saves depth head. The E–y curve turns at its minimum. Setting dE/dy=0 gives q²=gyc³. The shallow and deep branches meet there. For a rectangle only, Emin=1.5yc; do not apply that factor unchanged to a trapezoid.",
+        "ar": "عند q ثابتة، يصل خفض العمق إلى نقطة تزيد فيها طاقة السرعة أسرع من توفير رأس العمق. ينعطف منحنى E–y عند قيمته الدنيا. بوضع dE/dy=0 نحصل على q²=gyc³. يلتقي الفرعان الضحل والعميق هناك. للمستطيل وحده Emin=1.5yc؛ لا تنقل المعامل نفسه لشبه المنحرف."
+      }
+    },
+    {
+      "id": "prediction-02",
+      "concept": "hydro-critical-minimum",
+      "kind": "prediction",
+      "q": {
+        "en": "Can a fixed rectangular q pass with E below Emin?",
+        "ar": "هل يمر q المستطيلي الثابت بطاقة أقل من Emin؟"
+      },
+      "a": {
+        "en": "No depth satisfies the ideal energy relation. The minimum is a feasibility boundary, not a preferred operating depth for every canal.",
+        "ar": "لا يوجد عمق يحقق علاقة الطاقة المثالية. القيمة الدنيا حد إمكانية وليست عمق التشغيل المفضل لكل قناة."
+      }
+    },
+    {
+      "id": "calculation-02",
+      "concept": "hydro-critical-minimum",
+      "kind": "calculation",
+      "q": {
+        "en": "q=3 m²/s. Find yc.",
+        "ar": "q=3 m²/s. أوجد yc."
+      },
+      "a": {
+        "en": "yc=(9/9.81)^(1/3)=0.971683 m.",
+        "ar": "yc=(9/9.81)^(1/3)=0.971683 m."
+      }
+    },
+    {
+      "id": "decision-02",
+      "concept": "hydro-critical-minimum",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: The minimum is a capacity boundary?",
+        "ar": "متى يصح هذا النموذج: القيمة الدنيا حد للتمرير؟"
+      },
+      "a": {
+        "en": "Rectangular horizontal/small-slope section with α=1; general sections use Q²T/(gA³)=1. Symbols: yc critical depth in m; Emin minimum specific energy in m for fixed rectangular q.",
+        "ar": "قطاع مستطيل أفقي أو صغير الميل مع α=1؛ للقطاع العام Q²T/(gA³)=1. الرموز: yc العمق الحرج بالمتر؛ Emin أقل طاقة نوعية بالمتر لتصريف q مستطيلي ثابت."
+      }
+    },
+    {
+      "id": "meaning-03",
+      "concept": "hydro-critical-regime",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Can a surface signal travel upstream?",
+        "ar": "اشرح: هل تستطيع إشارة سطحية التحرك عكس الماء؟"
+      },
+      "a": {
+        "en": "The long gravity-wave speed relative to shallow water is approximately √(gD). Compare the flow velocity with that speed. Below Fr=1, small disturbances can communicate upstream; above1, the current sweeps both directions downstream in the fixed frame. This is why downstream controls and boundary choices differ across regimes.",
+        "ar": "سرعة موجة الجاذبية الطويلة بالنسبة للماء الضحل تقارب √(gD). قارن بها سرعة الجريان. تحت Fr=1 يمكن للاضطراب الصغير التواصل مع أعلى المجرى؛ وفوق1 يجرف التيار الاتجاهين إلى المصب في المرجع الثابت. لذلك تختلف شروط الحدود وتحكم المصب بين النظامين."
+      }
+    },
+    {
+      "id": "prediction-03",
+      "concept": "hydro-critical-regime",
+      "kind": "prediction",
+      "q": {
+        "en": "At Fr>1, can a small long wave normally travel upstream in the fixed channel frame?",
+        "ar": "عند Fr>1، هل تتحرك موجة طويلة صغيرة عادةً إلى أعلى المجرى في المرجع الثابت؟"
+      },
+      "a": {
+        "en": "No. Flow sweeps it downstream. A rapid shallow stream and a deep slow stream with the same q respond differently to controls.",
+        "ar": "لا. يجرفها الجريان إلى المصب. تستجيب حالة ضحلة سريعة وأخرى عميقة بطيئة لهما q نفسها بصورة مختلفة للتحكم."
+      }
+    },
+    {
+      "id": "calculation-03",
+      "concept": "hydro-critical-regime",
+      "kind": "calculation",
+      "q": {
+        "en": "V=5.5,D=1 in SI. Find Fr.",
+        "ar": "V=5.5 وD=1 بوحدات SI. أوجد Fr."
+      },
+      "a": {
+        "en": "5.5/√9.81=1.75601.",
+        "ar": "5.5/√9.81=1.75601."
+      }
+    },
+    {
+      "id": "decision-03",
+      "concept": "hydro-critical-regime",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Can a surface signal travel upstream??",
+        "ar": "متى يصح هذا النموذج: هل تستطيع إشارة سطحية التحرك عكس الماء؟؟"
+      },
+      "a": {
+        "en": "Small-amplitude long waves, hydrostatic pressure and small slope; not a turbulent eddy speed or an arbitrary wave model. Symbols: c wave celerity m/s, D=A/T m; Fr dimensionless. c is relative to the water.",
+        "ar": "موجات طويلة صغيرة السعة وضغط هيدروستاتيكي وميل صغير؛ ليست سرعة دوامة اضطرابية أو نموذجًا لكل موجة. الرموز: c سرعة انتشار الموجة m/s وD=A/T بالمتر؛ Fr بلا وحدة. c بالنسبة للماء."
+      }
+    },
+    {
+      "id": "meaning-04",
+      "concept": "hydro-critical-alternate",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Two depths can spend the same energy",
+        "ar": "اشرح: عمقان قد ينفقان الطاقة نفسها"
+      },
+      "a": {
+        "en": "Above the minimum, a horizontal line of constant specific energy normally cuts the rectangular E–y curve twice: shallow-fast and deep-slow. These are alternate depths, not the conjugate depths of a hydraulic jump. Jump depths are linked by momentum while energy is lost. Never join two alternate depths and call that a physically lossless jump.",
+        "ar": "فوق القيمة الدنيا يقطع خط الطاقة الثابتة منحنى المستطيل عادةً مرتين: ضحل سريع وعميق بطيء. هذه أعماق متبادلة وليست الأعماق المترافقة للقفزة المائية. تربط كمية الحركة أعماق القفزة مع فقد الطاقة. لا تصل عمقين متبادلين وتصفهما قفزة بلا فقد."
+      }
+    },
+    {
+      "id": "prediction-04",
+      "concept": "hydro-critical-alternate",
+      "kind": "prediction",
+      "q": {
+        "en": "Are alternate depths automatically hydraulic-jump conjugate depths?",
+        "ar": "هل الأعماق المتبادلة هي تلقائيًا أعماق القفزة المترافقة؟"
+      },
+      "a": {
+        "en": "No. The first pair shares energy; the jump pair shares momentum with loss. Check energy against Emin before asking for two distinct positive depths.",
+        "ar": "لا. الأولى تتشارك الطاقة والثانية كمية الحركة مع فقد. قارن الطاقة بـEmin قبل طلب عمقين موجبين مختلفين."
+      }
+    },
+    {
+      "id": "calculation-04",
+      "concept": "hydro-critical-alternate",
+      "kind": "calculation",
+      "q": {
+        "en": "q²/(2g)=4 m³,y=1 m. Calculate E.",
+        "ar": "q²/(2g)=4 m³ وy=1 m. احسب E."
+      },
+      "a": {
+        "en": "E=1+4/1²=5 m.",
+        "ar": "E=1+4/1²=5 m."
+      }
+    },
+    {
+      "id": "decision-04",
+      "concept": "hydro-critical-alternate",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Two depths can spend the same energy?",
+        "ar": "متى يصح هذا النموذج: عمقان قد ينفقان الطاقة نفسها؟"
+      },
+      "a": {
+        "en": "Rectangular section, α=1 and the same local bed datum; a root alone does not determine the actual branch. Symbols: Keep positive physical roots only; q in m²/s and y,E in m.",
+        "ar": "مستطيل مع α=1 ومرجع القاع نفسه؛ لا يحدد الجذر وحده الفرع الفعلي. الرموز: احتفظ بالجذور الفيزيائية الموجبة فقط؛ q بوحدة m²/s وy,E بالأمتار."
+      }
+    },
+    {
+      "id": "meaning-05",
+      "concept": "hydro-critical-hump",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: A raised bed can choke the original flow",
+        "ar": "اشرح: قد تخنق الحدبة الجريان الأصلي"
+      },
+      "a": {
+        "en": "Over a short smooth hump with negligible loss, the rise in bed elevation consumes specific energy. On an initially subcritical branch depth decreases toward critical as the crest rises. The largest crest rise compatible with the original upstream state is E1−Emin. A higher crest forces a changed upstream state or discharge; do not continue the calculation into a nonexistent depth.",
+        "ar": "عبر حدبة قصيرة ملساء دون فقد مهم، يستهلك ارتفاع القاع طاقة نوعية. على الفرع دون الحرج ينخفض العمق نحو الحرج بارتفاع القمة. أكبر ارتفاع متوافق مع حالة المنبع الأصلية هو E1−Emin. ما فوقه يفرض تغير حالة المنبع أو التصريف؛ لا تواصل الحساب إلى عمق غير موجود."
+      }
+    },
+    {
+      "id": "prediction-05",
+      "concept": "hydro-critical-hump",
+      "kind": "prediction",
+      "q": {
+        "en": "If Δz exceeds E1−Emin in a lossless case, should you report a negative depth?",
+        "ar": "إذا تجاوزت Δz مقدار E1−Emin دون فقد، هل تبلغ عن عمق سالب؟"
+      },
+      "a": {
+        "en": "No. The original approach state is choked and must adjust. Energy feasibility tells you when upstream conditions must be revisited.",
+        "ar": "لا. تختنق حالة الاقتراب الأصلية ويجب أن تتغير. تكشف إمكانية الطاقة متى يجب إعادة حساب حالة المنبع."
+      }
+    },
+    {
+      "id": "calculation-05",
+      "concept": "hydro-critical-hump",
+      "kind": "calculation",
+      "q": {
+        "en": "E1=3,Emin=2,hL=0.2 m. Find maximum crest rise.",
+        "ar": "E1=3 وEmin=2 وhL=0.2 m. أوجد أكبر ارتفاع قمة."
+      },
+      "a": {
+        "en": "3−2−0.2=0.8 m.",
+        "ar": "3−2−0.2=0.8 m."
+      }
+    },
+    {
+      "id": "decision-05",
+      "concept": "hydro-critical-hump",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: A raised bed can choke the original flow?",
+        "ar": "متى يصح هذا النموذج: قد تخنق الحدبة الجريان الأصلي؟"
+      },
+      "a": {
+        "en": "Short transition, hydrostatic approach/control sections, selected upstream branch; include losses if significant. Symbols: Δz positive bed rise and hL head loss in m; q fixed in the stated rectangular example.",
+        "ar": "انتقال قصير وقطاعا اقتراب وتحكم هيدروستاتيكيان وفرع منبع محدد؛ أضف الفواقد إذا كانت مؤثرة. الرموز: Δz ارتفاع قاع موجب وhL فقد الرأس بالمتر؛ q ثابتة في المثال المستطيلي."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "hyd-lecture-04",
+      "filename": "lec 4 تحليل الجريان الحرج .pdf",
+      "page": 2
+    },
+    {
+      "doc": "hyd-lecture-04",
+      "filename": "lec 4 تحليل الجريان الحرج .pdf",
+      "page": 3
+    },
+    {
+      "doc": "hyd-lecture-04",
+      "filename": "lec 4 تحليل الجريان الحرج .pdf",
+      "page": 8
+    },
+    {
+      "doc": "hyd-lecture-04",
+      "filename": "lec 4 تحليل الجريان الحرج .pdf",
+      "page": 5
+    },
+    {
+      "doc": "hyd-lecture-04",
+      "filename": "lec 4 تحليل الجريان الحرج .pdf",
+      "page": 7
+    },
+    {
+      "doc": "hyd-lecture-04",
+      "filename": "lec 4 تحليل الجريان الحرج .pdf",
+      "page": 12
+    },
+    {
+      "doc": "hyd-lecture-04",
+      "filename": "lec 4 تحليل الجريان الحرج .pdf",
+      "page": 27
+    },
+    {
+      "doc": "hyd-lecture-04",
+      "filename": "lec 4 تحليل الجريان الحرج .pdf",
+      "page": 28
+    },
+    {
+      "doc": "hyd-lecture-04",
+      "filename": "lec 4 تحليل الجريان الحرج .pdf",
+      "page": 14
+    },
+    {
+      "doc": "hyd-lecture-02",
+      "filename": "lec  العلاقات الاساسية2.pdf",
+      "page": 13
+    }
+  ]
+}

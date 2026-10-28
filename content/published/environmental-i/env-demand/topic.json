@@ -1,0 +1,1547 @@
+{
+  "id": "env-demand",
+  "family": "env-supply",
+  "title": {
+    "en": "Water demand: design for people and peaks",
+    "ar": "الطلب على الماء: صمّم للسكان والذروة"
+  },
+  "summary": {
+    "en": "Build a defensible demand ledger, forecast the design population, distinguish average and peak rates, and check the supplied ElObied calculation.",
+    "ar": "ابنِ سجل طلب مبررًا وتنبأ بسكان التصميم وميّز المتوسط والذروة وتحقق من حساب مدينة الأبيض في المقرر."
+  },
+  "outcomes": [
+    {
+      "en": "Count demand once",
+      "ar": "احسب كل طلب مرة واحدة"
+    },
+    {
+      "en": "Design for the population at the horizon",
+      "ar": "صمّم لسكان نهاية الفترة"
+    },
+    {
+      "en": "Turn people into a flow rate",
+      "ar": "حوّل السكان إلى معدل تصريف"
+    },
+    {
+      "en": "Peak hour is a rate, not a day volume",
+      "ar": "ساعة الذروة معدل لا حجم يوم"
+    },
+    {
+      "en": "Storage covers a cumulative deficit",
+      "ar": "التخزين يغطي عجزًا متراكمًا"
+    }
+  ],
+  "prereqIds": [
+    "hyd-units",
+    "env-mass",
+    "course-algebra"
+  ],
+  "videoIds": [
+    "XTkW5_I-NA0"
+  ],
+  "concepts": [
+    {
+      "id": "env-demand-ledger",
+      "title": {
+        "en": "Count demand once",
+        "ar": "احسب كل طلب مرة واحدة"
+      }
+    },
+    {
+      "id": "env-demand-forecast",
+      "title": {
+        "en": "Design for the population at the horizon",
+        "ar": "صمّم لسكان نهاية الفترة"
+      }
+    },
+    {
+      "id": "env-demand-average",
+      "title": {
+        "en": "Turn people into a flow rate",
+        "ar": "حوّل السكان إلى معدل تصريف"
+      }
+    },
+    {
+      "id": "env-demand-peaks",
+      "title": {
+        "en": "Peak hour is a rate, not a day volume",
+        "ar": "ساعة الذروة معدل لا حجم يوم"
+      }
+    },
+    {
+      "id": "env-demand-storage",
+      "title": {
+        "en": "Storage covers a cumulative deficit",
+        "ar": "التخزين يغطي عجزًا متراكمًا"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "env-demand-ledger",
+      "title": {
+        "en": "Count demand once",
+        "ar": "احسب كل طلب مرة واحدة"
+      },
+      "predict": {
+        "en": "If20% of production is lost, is production simply delivered demand×1.20?",
+        "ar": "إذا فُقد20% من الإنتاج، هل الإنتاج يساوي الطلب المسلم×1.20؟"
+      },
+      "options": [
+        {
+          "en": "No. Divide by0.80.",
+          "ar": "لا. اقسم على0.80."
+        },
+        {
+          "en": "Yes. The two percentage bases are identical.",
+          "ar": "نعم. أساسا النسبة متطابقان."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A percentage without its denominator is an incomplete engineering input.",
+        "ar": "النسبة دون مقامها معطى هندسي ناقص."
+      },
+      "explain": {
+        "en": "Write a ledger of domestic, commercial/industrial, public and unaccounted demand. A per-capita total may already include several of these. Adding the same losses again would double count. Source choice must consider dependable quantity and raw-water quality together; groundwater is not automatically untreated drinking water merely because it looks clear.",
+        "ar": "أنشئ سجلًا للطلب المنزلي والتجاري والصناعي والعام وغير المحسوب. قد يشمل مخصص الفرد الكلي عدة بنود منها. إضافة الفواقد نفسها ثانية يكرر العد. يجب اختيار المصدر وفق الكمية الموثوقة والجودة الخام معًا؛ فالماء الجوفي ليس صالحًا للشرب بلا معالجة تلقائيًا لمجرد صفائه."
+      },
+      "formula": "Qavg=P qpc; Qproduction=Qdelivered/(1−f_loss)",
+      "symbols": {
+        "en": "P persons; qpc m³/person/day; Q m³/day; f_loss fraction of produced water lost.",
+        "ar": "P عدد الأفراد؛ qpc بوحدة m³/فرد/يوم؛ Q بوحدة m³/day؛ f_loss كسر الماء المنتج المفقود."
+      },
+      "assumptions": {
+        "en": "Define loss fraction’s denominator. A percentage of production differs from an additive allowance on delivered demand.",
+        "ar": "حدّد مقام نسبة الفقد؛ النسبة من الإنتاج تختلف عن مخصص يضاف إلى الطلب المسلم."
+      },
+      "example": {
+        "en": "Delivered demand=8000 m³/day and loss fraction of production=0.20.",
+        "ar": "الطلب المسلم8000 m³/day ونسبة الفقد من الإنتاج0.20."
+      },
+      "calculation": {
+        "en": "Qproduction=8000/0.8=10000. Loss=2000 and delivery=8000, so the ledger closes.",
+        "ar": "Qproduction=8000/0.8=10000. الفقد2000 والتسليم8000 فيغلق السجل."
+      },
+      "interpret": {
+        "en": "A percentage without its denominator is an incomplete engineering input.",
+        "ar": "النسبة دون مقامها معطى هندسي ناقص."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "A percentage without its denominator is an incomplete engineering input. Define loss fraction’s denominator. A percentage of production differs from an additive allowance on delivered demand.",
+          "ar": "النسبة دون مقامها معطى هندسي ناقص. حدّد مقام نسبة الفقد؛ النسبة من الإنتاج تختلف عن مخصص يضاف إلى الطلب المسلم."
+        }
+      },
+      "diagram": "course-env-demand",
+      "concepts": [
+        "env-demand-ledger"
+      ],
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 3
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 8
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 10
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "env-demand-forecast",
+      "title": {
+        "en": "Design for the population at the horizon",
+        "ar": "صمّم لسكان نهاية الفترة"
+      },
+      "predict": {
+        "en": "The statement already supplies400000 people at30 years. Should you compound another arbitrary rate?",
+        "ar": "يعطي السؤال400000 شخص بعد30 سنة. هل تركّب معدلًا اعتباطيًا آخر؟"
+      },
+      "options": [
+        {
+          "en": "No. Use the stated design population.",
+          "ar": "لا. استعمل سكان التصميم المعطين."
+        },
+        {
+          "en": "Yes. Every design must add an extra growth assumption.",
+          "ar": "نعم. يجب إضافة افتراض نمو آخر لكل تصميم."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Forecast uncertainty belongs in the design reasoning; false precision in a calculator does not remove it.",
+        "ar": "عدم يقين التوقع جزء من منطق التصميم؛ لا تلغيه دقة الحاسبة الظاهرية."
+      },
+      "explain": {
+        "en": "Choose a design period and a population forecast consistent with the town’s evidence and system expandability. Arithmetic growth adds a fixed number each year; geometric growth adds a fixed fraction and compounds. The supplied ElObied problem already gives the future population, so inventing an extra growth rate would replace its data.",
+        "ar": "اختر فترة تصميم وتوقعًا سكانيًا ينسجمان مع بيانات المدينة وإمكانية التوسع. يضيف النمو الحسابي عددًا ثابتًا سنويًا ويضيف الهندسي نسبة ثابتة متراكمة. تعطي مسألة الأبيض السكان المستقبليين أصلًا؛ فاختراع معدل آخر يستبدل معطياتها."
+      },
+      "formula": "arithmetic Pn=P0+n a; geometric Pn=P0(1+r)^n",
+      "symbols": {
+        "en": "n years; a persons/year; r annual fractional growth, not a percentage number such as2.",
+        "ar": "n سنوات؛ a أفراد/سنة؛ r نسبة نمو سنوية عشرية لا رقمًا مئويًا مثل2."
+      },
+      "assumptions": {
+        "en": "These are forecasting models, not guarantees. Document the chosen method and evidence; use supplied future population if stated.",
+        "ar": "هذه نماذج توقع لا ضمانات. وثّق الطريقة والدليل واستعمل السكان المستقبليين المعطين إذا ذُكروا."
+      },
+      "example": {
+        "en": "P0=10000,r=2%/year,n=2.",
+        "ar": "P0=10000 وr=2%/سنة وn=2."
+      },
+      "calculation": {
+        "en": "Pn=10000(1.02)²=10404, not10400. The difference is compounding.",
+        "ar": "Pn=10000(1.02)²=10404 وليس10400. الفرق ناتج عن التركيب."
+      },
+      "interpret": {
+        "en": "Forecast uncertainty belongs in the design reasoning; false precision in a calculator does not remove it.",
+        "ar": "عدم يقين التوقع جزء من منطق التصميم؛ لا تلغيه دقة الحاسبة الظاهرية."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Forecast uncertainty belongs in the design reasoning; false precision in a calculator does not remove it. These are forecasting models, not guarantees. Document the chosen method and evidence; use supplied future population if stated.",
+          "ar": "عدم يقين التوقع جزء من منطق التصميم؛ لا تلغيه دقة الحاسبة الظاهرية. هذه نماذج توقع لا ضمانات. وثّق الطريقة والدليل واستعمل السكان المستقبليين المعطين إذا ذُكروا."
+        }
+      },
+      "diagram": "course-env-demand",
+      "concepts": [
+        "env-demand-forecast"
+      ],
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 21
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 23
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "env-demand-average",
+      "title": {
+        "en": "Turn people into a flow rate",
+        "ar": "حوّل السكان إلى معدل تصريف"
+      },
+      "predict": {
+        "en": "For400000 people at0.6 m³/person/day, is average demand24000 m³/day?",
+        "ar": "لـ400000 فرد بمخصص0.6 m³/فرد/يوم، هل المتوسط24000 m³/day؟"
+      },
+      "options": [
+        {
+          "en": "No. It is240000 m³/day.",
+          "ar": "لا. يساوي240000 m³/day."
+        },
+        {
+          "en": "Yes. One zero may be dropped during conversion.",
+          "ar": "نعم. يمكن حذف صفر أثناء التحويل."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Carry units and an order-of-magnitude check through each line.",
+        "ar": "احمل الوحدات وتحقق من رتبة المقدار في كل سطر."
+      },
+      "explain": {
+        "en": "Multiply the design population by the complete stated per-capita allowance. Convert litres before moving to cubic metres and seconds. In the lecture example,0.6 m³/person/day is a classroom design allowance, not a universal current requirement. Average daily demand is a volume per day; dividing by86400 gives the average continuous flow rate.",
+        "ar": "اضرب سكان التصميم في مخصص الفرد الكامل المعطى. حوّل اللترات قبل الانتقال إلى الأمتار المكعبة والثواني. المخصص0.6 m³/فرد/يوم في المثال قيمة تعليمية للتصميم لا اشتراطًا حاليًا عامًا. الطلب اليومي المتوسط حجم لكل يوم؛ قسمته على86400 تعطي معدل التدفق المستمر المتوسط."
+      },
+      "formula": "Qavg,d=P qpc; Qavg,s=Qavg,d/86400",
+      "symbols": {
+        "en": "Qavg,d m³/day; Qavg,s m³/s; qpc must be consistent with population and demand scope.",
+        "ar": "Qavg,d بوحدة m³/day وQavg,s بوحدة m³/s؛ يجب اتساق qpc مع السكان ونطاق الطلب."
+      },
+      "assumptions": {
+        "en": "Use the lecture allowance only for the stated exercise; actual projects require locally justified demand data.",
+        "ar": "استعمل مخصص المحاضرة للمسألة المحددة؛ المشروعات الفعلية تحتاج بيانات طلب محلية مبررة."
+      },
+      "example": {
+        "en": "Rebuild the source average before applying peaks.",
+        "ar": "أعد بناء متوسط المصدر قبل تطبيق الذروات."
+      },
+      "calculation": {
+        "en": "400000×0.6=240000 m³/day=2.77778 m³/s. The source’s following lines print24000 but use results consistent with240000.",
+        "ar": "400000×0.6=240000 m³/day=2.77778 m³/s. يطبع المصدر24000 في السطرين التاليين لكنه يعطي نتائج متوافقة مع240000."
+      },
+      "interpret": {
+        "en": "Carry units and an order-of-magnitude check through each line.",
+        "ar": "احمل الوحدات وتحقق من رتبة المقدار في كل سطر."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Carry units and an order-of-magnitude check through each line. Use the lecture allowance only for the stated exercise; actual projects require locally justified demand data.",
+          "ar": "احمل الوحدات وتحقق من رتبة المقدار في كل سطر. استعمل مخصص المحاضرة للمسألة المحددة؛ المشروعات الفعلية تحتاج بيانات طلب محلية مبررة."
+        }
+      },
+      "diagram": "course-env-demand",
+      "concepts": [
+        "env-demand-average"
+      ],
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 23
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "env-demand-peaks",
+      "title": {
+        "en": "Peak hour is a rate, not a day volume",
+        "ar": "ساعة الذروة معدل لا حجم يوم"
+      },
+      "predict": {
+        "en": "The peak-hour rate is648000 m³/day equivalent. Is that the water consumed during one hour?",
+        "ar": "معدل ساعة الذروة648000 m³/day مكافئ. هل هذا حجم الاستهلاك خلال ساعة؟"
+      },
+      "options": [
+        {
+          "en": "No. One hour consumes27000 m³ at that rate.",
+          "ar": "لا. حجم الساعة27000 m³ بهذا المعدل."
+        },
+        {
+          "en": "Yes. The daily unit can be ignored.",
+          "ar": "نعم. يمكن إهمال وحدة اليوم."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Use the rate and duration relevant to each component rather than one largest number everywhere.",
+        "ar": "استعمل المعدل والمدة المناسبين لكل عنصر بدل أكبر رقم لكل العناصر."
+      },
+      "explain": {
+        "en": "Use explicitly defined peak factors. Here the lecture takes maximum-day rate as1.8 times average and peak-hour rate as2.7 times the average rate. The peak-hour line is written in m³/day equivalent; divide by24 to get its one-hour volume. Do not multiply1.8 and2.7 together when2.7 is already relative to the average.",
+        "ar": "استعمل معاملات ذروة واضحة المرجع. تأخذ المحاضرة معدل أقصى يوم1.8 من المتوسط ومعدل أقصى ساعة2.7 من المتوسط. يُكتب سطر ساعة الذروة بوحدة m³/day المكافئة؛ اقسم على24 لحجم تلك الساعة. لا تضرب1.8 و2.7 معًا عندما تكون2.7 مرجعة أصلًا إلى المتوسط."
+      },
+      "formula": "Qmaxday=1.8Qavg; Qpeakhour,rate=2.7Qavg; Vpeakhour=2.7Qavg,d/24",
+      "symbols": {
+        "en": "Factors1.8,2.7 are the supplied exercise assumptions. Vpeakhour m³ over one hour.",
+        "ar": "المعاملان1.8 و2.7 فرضا المسألة التعليمية. Vpeakhour بالمتر المكعب خلال ساعة."
+      },
+      "assumptions": {
+        "en": "Specify factor bases. Peaks are planning assumptions, not simultaneous universal multipliers.",
+        "ar": "حدّد مرجع كل معامل؛ الذروات فروض تخطيطية لا معاملات عامة متزامنة."
+      },
+      "example": {
+        "en": "Apply the source peak factors to240000 m³/day.",
+        "ar": "طبّق معاملي المصدر على240000 m³/day."
+      },
+      "calculation": {
+        "en": "Maximum day432000 m³/day=5 m³/s. Peak-hour rate648000 m³/day equivalent=7.5 m³/s; hourly volume27000 m³.",
+        "ar": "أقصى يوم432000 m³/day=5 m³/s. معدل ساعة الذروة648000 m³/day مكافئ=7.5 m³/s؛ وحجمها27000 m³."
+      },
+      "interpret": {
+        "en": "Use the rate and duration relevant to each component rather than one largest number everywhere.",
+        "ar": "استعمل المعدل والمدة المناسبين لكل عنصر بدل أكبر رقم لكل العناصر."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Use the rate and duration relevant to each component rather than one largest number everywhere. Specify factor bases. Peaks are planning assumptions, not simultaneous universal multipliers.",
+          "ar": "استعمل المعدل والمدة المناسبين لكل عنصر بدل أكبر رقم لكل العناصر. حدّد مرجع كل معامل؛ الذروات فروض تخطيطية لا معاملات عامة متزامنة."
+        }
+      },
+      "diagram": "course-env-demand",
+      "concepts": [
+        "env-demand-peaks"
+      ],
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 21
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 22
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "env-demand-storage",
+      "title": {
+        "en": "Storage covers a cumulative deficit",
+        "ar": "التخزين يغطي عجزًا متراكمًا"
+      },
+      "predict": {
+        "en": "A short demand peak exceeds pump capacity. Must the pump always match it instantly?",
+        "ar": "ذروة قصيرة تتجاوز سعة المضخة. هل يجب أن تطابقها المضخة فورًا دائمًا؟"
+      },
+      "options": [
+        {
+          "en": "Not if usable storage supplies the deficit.",
+          "ar": "ليس إذا وفّر التخزين المتاح العجز."
+        },
+        {
+          "en": "Yes. Reservoirs cannot supply peak demand.",
+          "ar": "نعم. لا تستطيع الخزانات تغطية الذروة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A balance over the whole day can be zero while significant hourly storage is still needed.",
+        "ar": "قد يكون الاتزان اليومي صفرًا مع الحاجة إلى تخزين ساعي كبير."
+      },
+      "explain": {
+        "en": "A pump can deliver a steadier flow than a town withdraws because a reservoir stores the difference. Add supply minus demand over each time block; the working equalisation storage is the range between maximum and minimum cumulative net volume. Emergency and fire reserves are separate design allowances. An old empirical fire formula is not a current adopted fire standard without a jurisdiction and edition.",
+        "ar": "يمكن للمضخة إنتاج معدل أثبت من سحب المدينة لأن الخزان يخزن الفرق. اجمع الإمداد ناقص الطلب عبر كل فترة؛ سعة الموازنة التشغيلية هي الفرق بين أكبر وأصغر حجم تراكمي صافٍ. احتياط الطوارئ والحريق مخصصان منفصلان. معادلة حريق تجريبية قديمة ليست معيارًا حاليًا معتمدًا دون تحديد الجهة والإصدار."
+      },
+      "formula": "ΔV=(Qs−Qd)Δt; Vequalisation=max(ΣΔV)−min(ΣΔV)",
+      "symbols": {
+        "en": "Q m³/hour with Δt in hours gives volume m³; keep one sign convention.",
+        "ar": "Q بوحدة m³/hour مع Δt بالساعات تعطي m³؛ حافظ على اتفاق الإشارة."
+      },
+      "assumptions": {
+        "en": "A complete repeating demand/supply cycle for equalisation; add operational, dead and emergency volumes separately.",
+        "ar": "دورة طلب وإمداد متكررة كاملة للموازنة؛ تضاف الأحجام التشغيلية والميتة والطوارئ بصورة مستقلة."
+      },
+      "example": {
+        "en": "Two one-hour blocks: supply100 m³/h throughout; demand150 then50 m³/h.",
+        "ar": "فترتان كل منهما ساعة: إمداد100 m³/h طوالهما وطلب150 ثم50 m³/h."
+      },
+      "calculation": {
+        "en": "Net volumes−50,+50; cumulative0,−50,0. Storage range50 m³. A usable initial50 supplies the first block and is restored in the second.",
+        "ar": "الحجمان الصافيان−50 و+50؛ والتراكمي0 ثم−50 ثم0. مدى التخزين50 m³. يغطي حجم ابتدائي متاح50 الفترة الأولى ويُستعاد في الثانية."
+      },
+      "interpret": {
+        "en": "A balance over the whole day can be zero while significant hourly storage is still needed.",
+        "ar": "قد يكون الاتزان اليومي صفرًا مع الحاجة إلى تخزين ساعي كبير."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "A balance over the whole day can be zero while significant hourly storage is still needed. A complete repeating demand/supply cycle for equalisation; add operational, dead and emergency volumes separately.",
+          "ar": "قد يكون الاتزان اليومي صفرًا مع الحاجة إلى تخزين ساعي كبير. دورة طلب وإمداد متكررة كاملة للموازنة؛ تضاف الأحجام التشغيلية والميتة والطوارئ بصورة مستقلة."
+        }
+      },
+      "diagram": "course-env-demand",
+      "concepts": [
+        "env-demand-storage"
+      ],
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 22
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 25
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "C01",
+      "concept": "env-demand-ledger",
+      "type": "conceptual",
+      "prompt": {
+        "en": "If20% of production is lost, is production simply delivered demand×1.20?",
+        "ar": "إذا فُقد20% من الإنتاج، هل الإنتاج يساوي الطلب المسلم×1.20؟"
+      },
+      "options": [
+        {
+          "en": "Yes. The two percentage bases are identical.",
+          "ar": "نعم. أساسا النسبة متطابقان."
+        },
+        {
+          "en": "No. Divide by0.80.",
+          "ar": "لا. اقسم على0.80."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "Write a ledger of domestic, commercial/industrial, public and unaccounted demand. A per-capita total may already include several of these. Adding the same losses again would double count. Source choice must consider dependable quantity and raw-water quality together; groundwater is not automatically untreated drinking water merely because it looks clear. A percentage without its denominator is an incomplete engineering input.",
+        "ar": "أنشئ سجلًا للطلب المنزلي والتجاري والصناعي والعام وغير المحسوب. قد يشمل مخصص الفرد الكلي عدة بنود منها. إضافة الفواقد نفسها ثانية يكرر العد. يجب اختيار المصدر وفق الكمية الموثوقة والجودة الخام معًا؛ فالماء الجوفي ليس صالحًا للشرب بلا معالجة تلقائيًا لمجرد صفائه. النسبة دون مقامها معطى هندسي ناقص."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 3
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 8
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 10
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "N01",
+      "concept": "env-demand-ledger",
+      "type": "numerical",
+      "prompt": {
+        "en": "P=10000,qpc=150 L/person/day, already inclusive of losses. Find Qavg.",
+        "ar": "P=10000 وqpc=150 L/فرد/يوم شاملة الفواقد. أوجد Qavg."
+      },
+      "expected": 1500,
+      "tolerance": 3.0,
+      "unit": "m³/day",
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "10000×150/1000=1500 m³/day.",
+        "ar": "10000×150/1000=1500 m³/day."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 3
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 8
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 10
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "concept": "env-demand-ledger",
+      "type": "mixed",
+      "prompt": {
+        "en": "Delivered=9000 m³/day, loss20% of production. Enter production and choose the balance.",
+        "ar": "المسلم9000 m³/day والفقد20% من الإنتاج. أدخل الإنتاج واختر الاتزان."
+      },
+      "expected": 11250,
+      "tolerance": 22.5,
+      "unit": "m³/day",
+      "options": [
+        {
+          "en": "Delivered equals0.80 times production.",
+          "ar": "المسلم يساوي0.80 من الإنتاج."
+        },
+        {
+          "en": "Production equals delivered minus losses.",
+          "ar": "الإنتاج يساوي المسلم ناقص الفقد."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "9000/0.8=11250; loss2250.",
+        "ar": "9000/0.8=11250؛ الفقد2250."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 3
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 8
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 10
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "concept": "env-demand-forecast",
+      "type": "conceptual",
+      "prompt": {
+        "en": "The statement already supplies400000 people at30 years. Should you compound another arbitrary rate?",
+        "ar": "يعطي السؤال400000 شخص بعد30 سنة. هل تركّب معدلًا اعتباطيًا آخر؟"
+      },
+      "options": [
+        {
+          "en": "No. Use the stated design population.",
+          "ar": "لا. استعمل سكان التصميم المعطين."
+        },
+        {
+          "en": "Yes. Every design must add an extra growth assumption.",
+          "ar": "نعم. يجب إضافة افتراض نمو آخر لكل تصميم."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "Choose a design period and a population forecast consistent with the town’s evidence and system expandability. Arithmetic growth adds a fixed number each year; geometric growth adds a fixed fraction and compounds. The supplied ElObied problem already gives the future population, so inventing an extra growth rate would replace its data. Forecast uncertainty belongs in the design reasoning; false precision in a calculator does not remove it.",
+        "ar": "اختر فترة تصميم وتوقعًا سكانيًا ينسجمان مع بيانات المدينة وإمكانية التوسع. يضيف النمو الحسابي عددًا ثابتًا سنويًا ويضيف الهندسي نسبة ثابتة متراكمة. تعطي مسألة الأبيض السكان المستقبليين أصلًا؛ فاختراع معدل آخر يستبدل معطياتها. عدم يقين التوقع جزء من منطق التصميم؛ لا تلغيه دقة الحاسبة الظاهرية."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 21
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 23
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "N02",
+      "concept": "env-demand-forecast",
+      "type": "numerical",
+      "prompt": {
+        "en": "Arithmetic growth: P0=20000,a=500 persons/year,n=10. Find Pn.",
+        "ar": "نمو حسابي P0=20000 وa=500 فرد/سنة وn=10. أوجد Pn."
+      },
+      "expected": 25000,
+      "tolerance": 50.0,
+      "unit": "persons",
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "20000+10×500=25000.",
+        "ar": "20000+10×500=25000."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 21
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 23
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "concept": "env-demand-forecast",
+      "type": "mixed",
+      "prompt": {
+        "en": "Geometric P0=10000,r=2%,n=2. Enter Pn and choose the model.",
+        "ar": "نمو هندسي P0=10000 وr=2% وn=2. أدخل Pn واختر النموذج."
+      },
+      "expected": 10404,
+      "tolerance": 20.808,
+      "unit": "persons",
+      "options": [
+        {
+          "en": "Add2 persons per year.",
+          "ar": "أضف شخصين كل سنة."
+        },
+        {
+          "en": "Multiply by1.02 each year.",
+          "ar": "اضرب في1.02 كل سنة."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "10000×1.02²=10404.",
+        "ar": "10000×1.02²=10404."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 21
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 23
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "concept": "env-demand-average",
+      "type": "conceptual",
+      "prompt": {
+        "en": "For400000 people at0.6 m³/person/day, is average demand24000 m³/day?",
+        "ar": "لـ400000 فرد بمخصص0.6 m³/فرد/يوم، هل المتوسط24000 m³/day؟"
+      },
+      "options": [
+        {
+          "en": "Yes. One zero may be dropped during conversion.",
+          "ar": "نعم. يمكن حذف صفر أثناء التحويل."
+        },
+        {
+          "en": "No. It is240000 m³/day.",
+          "ar": "لا. يساوي240000 m³/day."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "Multiply the design population by the complete stated per-capita allowance. Convert litres before moving to cubic metres and seconds. In the lecture example,0.6 m³/person/day is a classroom design allowance, not a universal current requirement. Average daily demand is a volume per day; dividing by86400 gives the average continuous flow rate. Carry units and an order-of-magnitude check through each line.",
+        "ar": "اضرب سكان التصميم في مخصص الفرد الكامل المعطى. حوّل اللترات قبل الانتقال إلى الأمتار المكعبة والثواني. المخصص0.6 m³/فرد/يوم في المثال قيمة تعليمية للتصميم لا اشتراطًا حاليًا عامًا. الطلب اليومي المتوسط حجم لكل يوم؛ قسمته على86400 تعطي معدل التدفق المستمر المتوسط. احمل الوحدات وتحقق من رتبة المقدار في كل سطر."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 23
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "N03",
+      "concept": "env-demand-average",
+      "type": "numerical",
+      "prompt": {
+        "en": "P=400000,qpc=0.6 m³/person/day. Find Qavg,d.",
+        "ar": "P=400000 وqpc=0.6 m³/فرد/يوم. أوجد Qavg,d."
+      },
+      "expected": 240000,
+      "tolerance": 480.0,
+      "unit": "m³/day",
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "400000×0.6=240000.",
+        "ar": "400000×0.6=240000."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 23
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "concept": "env-demand-average",
+      "type": "mixed",
+      "prompt": {
+        "en": "Convert240000 m³/day to m³/s and choose the interpretation.",
+        "ar": "حوّل240000 m³/day إلى m³/s واختر التفسير."
+      },
+      "expected": 2.7777777777777777,
+      "tolerance": 0.01,
+      "unit": "m³/s",
+      "options": [
+        {
+          "en": "A continuous equivalent average rate.",
+          "ar": "معدل متوسط مستمر مكافئ."
+        },
+        {
+          "en": "The volume consumed in one second is240000 m³.",
+          "ar": "حجم الاستهلاك في ثانية240000 m³."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "240000/86400=2.77778 m³/s.",
+        "ar": "240000/86400=2.77778 m³/s."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 23
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "concept": "env-demand-peaks",
+      "type": "conceptual",
+      "prompt": {
+        "en": "The peak-hour rate is648000 m³/day equivalent. Is that the water consumed during one hour?",
+        "ar": "معدل ساعة الذروة648000 m³/day مكافئ. هل هذا حجم الاستهلاك خلال ساعة؟"
+      },
+      "options": [
+        {
+          "en": "No. One hour consumes27000 m³ at that rate.",
+          "ar": "لا. حجم الساعة27000 m³ بهذا المعدل."
+        },
+        {
+          "en": "Yes. The daily unit can be ignored.",
+          "ar": "نعم. يمكن إهمال وحدة اليوم."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "Use explicitly defined peak factors. Here the lecture takes maximum-day rate as1.8 times average and peak-hour rate as2.7 times the average rate. The peak-hour line is written in m³/day equivalent; divide by24 to get its one-hour volume. Do not multiply1.8 and2.7 together when2.7 is already relative to the average. Use the rate and duration relevant to each component rather than one largest number everywhere.",
+        "ar": "استعمل معاملات ذروة واضحة المرجع. تأخذ المحاضرة معدل أقصى يوم1.8 من المتوسط ومعدل أقصى ساعة2.7 من المتوسط. يُكتب سطر ساعة الذروة بوحدة m³/day المكافئة؛ اقسم على24 لحجم تلك الساعة. لا تضرب1.8 و2.7 معًا عندما تكون2.7 مرجعة أصلًا إلى المتوسط. استعمل المعدل والمدة المناسبين لكل عنصر بدل أكبر رقم لكل العناصر."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 21
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 22
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "N04",
+      "concept": "env-demand-peaks",
+      "type": "numerical",
+      "prompt": {
+        "en": "Qavg=1000 m³/day; peak factor2.7 relative to average. Find peak-hour equivalent rate.",
+        "ar": "Qavg=1000 m³/day ومعامل ذروة2.7 من المتوسط. أوجد المعدل اليومي المكافئ لساعة الذروة."
+      },
+      "expected": 2700,
+      "tolerance": 5.4,
+      "unit": "m³/day equivalent",
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "2.7×1000=2700.",
+        "ar": "2.7×1000=2700."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 21
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 22
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "concept": "env-demand-peaks",
+      "type": "mixed",
+      "prompt": {
+        "en": "Peak rate648000 m³/day equivalent. Enter m³/s and choose the duration statement.",
+        "ar": "الذروة648000 m³/day مكافئ. أدخل m³/s واختر بيان المدة."
+      },
+      "expected": 7.5,
+      "tolerance": 0.015,
+      "unit": "m³/s",
+      "options": [
+        {
+          "en": "One hour must consume648000 m³.",
+          "ar": "تستهلك الساعة648000 m³ بالضرورة."
+        },
+        {
+          "en": "One hour at that rate is27000 m³.",
+          "ar": "ساعة واحدة بهذا المعدل تستهلك27000 m³."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "648000/86400=7.5; ×3600=27000.",
+        "ar": "648000/86400=7.5؛ ×3600=27000."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 21
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 22
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "concept": "env-demand-storage",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A short demand peak exceeds pump capacity. Must the pump always match it instantly?",
+        "ar": "ذروة قصيرة تتجاوز سعة المضخة. هل يجب أن تطابقها المضخة فورًا دائمًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Reservoirs cannot supply peak demand.",
+          "ar": "نعم. لا تستطيع الخزانات تغطية الذروة."
+        },
+        {
+          "en": "Not if usable storage supplies the deficit.",
+          "ar": "ليس إذا وفّر التخزين المتاح العجز."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "A pump can deliver a steadier flow than a town withdraws because a reservoir stores the difference. Add supply minus demand over each time block; the working equalisation storage is the range between maximum and minimum cumulative net volume. Emergency and fire reserves are separate design allowances. An old empirical fire formula is not a current adopted fire standard without a jurisdiction and edition. A balance over the whole day can be zero while significant hourly storage is still needed.",
+        "ar": "يمكن للمضخة إنتاج معدل أثبت من سحب المدينة لأن الخزان يخزن الفرق. اجمع الإمداد ناقص الطلب عبر كل فترة؛ سعة الموازنة التشغيلية هي الفرق بين أكبر وأصغر حجم تراكمي صافٍ. احتياط الطوارئ والحريق مخصصان منفصلان. معادلة حريق تجريبية قديمة ليست معيارًا حاليًا معتمدًا دون تحديد الجهة والإصدار. قد يكون الاتزان اليومي صفرًا مع الحاجة إلى تخزين ساعي كبير."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 22
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 25
+        }
+      ]
+    },
+    {
+      "id": "N05",
+      "concept": "env-demand-storage",
+      "type": "numerical",
+      "prompt": {
+        "en": "Supply80,demand120 m³/h for2 hours. Enter required drawdown volume as positive.",
+        "ar": "إمداد80 وطلب120 m³/h لمدة ساعتين. أدخل حجم السحب من التخزين موجبًا."
+      },
+      "expected": 80,
+      "tolerance": 0.16,
+      "unit": "m³",
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "(120−80)×2=80 m³.",
+        "ar": "(120−80)×2=80 m³."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 22
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 25
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "concept": "env-demand-storage",
+      "type": "mixed",
+      "prompt": {
+        "en": "Cumulative net volumes0,−30,+20,0 m³. Enter equalisation storage and identify the rule.",
+        "ar": "الأحجام الصافية التراكمية0 و−30 و+20 و0 m³. أدخل سعة الموازنة واختر القاعدة."
+      },
+      "expected": 50,
+      "tolerance": 0.1,
+      "unit": "m³",
+      "options": [
+        {
+          "en": "Use the range of the cumulative curve.",
+          "ar": "استعمل مدى المنحنى التراكمي."
+        },
+        {
+          "en": "Use only the final cumulative zero.",
+          "ar": "استعمل الصفر التراكمي النهائي فقط."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write population, per-capita demand and time units on separate lines. Identify whether the number is an average or a peak rate.",
+          "ar": "اكتب السكان ونصيب الفرد ووحدة الزمن في أسطر منفصلة. حدّد هل الرقم متوسط أم معدل ذروة."
+        },
+        {
+          "en": "1000 L=1 m³; 86400 s=1 day. A peak-hour rate expressed as m³/day is not a whole-day consumption volume.",
+          "ar": "1000 L=1 m³؛ 86400 s=يوم واحد. معدل ساعة الذروة المعبر عنه بـm³/day ليس حجم استهلاك يوم كامل."
+        }
+      ],
+      "solution": {
+        "en": "20−(−30)=50 m³.",
+        "ar": "20−(−30)=50 m³."
+      },
+      "sources": [
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 22
+        },
+        {
+          "doc": "env-demand",
+          "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+          "page": 25
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "meaning-01",
+      "concept": "env-demand-ledger",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Count demand once",
+        "ar": "اشرح: احسب كل طلب مرة واحدة"
+      },
+      "a": {
+        "en": "Write a ledger of domestic, commercial/industrial, public and unaccounted demand. A per-capita total may already include several of these. Adding the same losses again would double count. Source choice must consider dependable quantity and raw-water quality together; groundwater is not automatically untreated drinking water merely because it looks clear.",
+        "ar": "أنشئ سجلًا للطلب المنزلي والتجاري والصناعي والعام وغير المحسوب. قد يشمل مخصص الفرد الكلي عدة بنود منها. إضافة الفواقد نفسها ثانية يكرر العد. يجب اختيار المصدر وفق الكمية الموثوقة والجودة الخام معًا؛ فالماء الجوفي ليس صالحًا للشرب بلا معالجة تلقائيًا لمجرد صفائه."
+      }
+    },
+    {
+      "id": "prediction-01",
+      "concept": "env-demand-ledger",
+      "kind": "prediction",
+      "q": {
+        "en": "If20% of production is lost, is production simply delivered demand×1.20?",
+        "ar": "إذا فُقد20% من الإنتاج، هل الإنتاج يساوي الطلب المسلم×1.20؟"
+      },
+      "a": {
+        "en": "No. Divide by0.80. A percentage without its denominator is an incomplete engineering input.",
+        "ar": "لا. اقسم على0.80. النسبة دون مقامها معطى هندسي ناقص."
+      }
+    },
+    {
+      "id": "calculation-01",
+      "concept": "env-demand-ledger",
+      "kind": "calculation",
+      "q": {
+        "en": "P=10000,qpc=150 L/person/day, already inclusive of losses. Find Qavg.",
+        "ar": "P=10000 وqpc=150 L/فرد/يوم شاملة الفواقد. أوجد Qavg."
+      },
+      "a": {
+        "en": "10000×150/1000=1500 m³/day.",
+        "ar": "10000×150/1000=1500 m³/day."
+      }
+    },
+    {
+      "id": "decision-01",
+      "concept": "env-demand-ledger",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Count demand once?",
+        "ar": "متى يصح هذا النموذج: احسب كل طلب مرة واحدة؟"
+      },
+      "a": {
+        "en": "Define loss fraction’s denominator. A percentage of production differs from an additive allowance on delivered demand. Symbols: P persons; qpc m³/person/day; Q m³/day; f_loss fraction of produced water lost.",
+        "ar": "حدّد مقام نسبة الفقد؛ النسبة من الإنتاج تختلف عن مخصص يضاف إلى الطلب المسلم. الرموز: P عدد الأفراد؛ qpc بوحدة m³/فرد/يوم؛ Q بوحدة m³/day؛ f_loss كسر الماء المنتج المفقود."
+      }
+    },
+    {
+      "id": "meaning-02",
+      "concept": "env-demand-forecast",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Design for the population at the horizon",
+        "ar": "اشرح: صمّم لسكان نهاية الفترة"
+      },
+      "a": {
+        "en": "Choose a design period and a population forecast consistent with the town’s evidence and system expandability. Arithmetic growth adds a fixed number each year; geometric growth adds a fixed fraction and compounds. The supplied ElObied problem already gives the future population, so inventing an extra growth rate would replace its data.",
+        "ar": "اختر فترة تصميم وتوقعًا سكانيًا ينسجمان مع بيانات المدينة وإمكانية التوسع. يضيف النمو الحسابي عددًا ثابتًا سنويًا ويضيف الهندسي نسبة ثابتة متراكمة. تعطي مسألة الأبيض السكان المستقبليين أصلًا؛ فاختراع معدل آخر يستبدل معطياتها."
+      }
+    },
+    {
+      "id": "prediction-02",
+      "concept": "env-demand-forecast",
+      "kind": "prediction",
+      "q": {
+        "en": "The statement already supplies400000 people at30 years. Should you compound another arbitrary rate?",
+        "ar": "يعطي السؤال400000 شخص بعد30 سنة. هل تركّب معدلًا اعتباطيًا آخر؟"
+      },
+      "a": {
+        "en": "No. Use the stated design population. Forecast uncertainty belongs in the design reasoning; false precision in a calculator does not remove it.",
+        "ar": "لا. استعمل سكان التصميم المعطين. عدم يقين التوقع جزء من منطق التصميم؛ لا تلغيه دقة الحاسبة الظاهرية."
+      }
+    },
+    {
+      "id": "calculation-02",
+      "concept": "env-demand-forecast",
+      "kind": "calculation",
+      "q": {
+        "en": "Arithmetic growth: P0=20000,a=500 persons/year,n=10. Find Pn.",
+        "ar": "نمو حسابي P0=20000 وa=500 فرد/سنة وn=10. أوجد Pn."
+      },
+      "a": {
+        "en": "20000+10×500=25000.",
+        "ar": "20000+10×500=25000."
+      }
+    },
+    {
+      "id": "decision-02",
+      "concept": "env-demand-forecast",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Design for the population at the horizon?",
+        "ar": "متى يصح هذا النموذج: صمّم لسكان نهاية الفترة؟"
+      },
+      "a": {
+        "en": "These are forecasting models, not guarantees. Document the chosen method and evidence; use supplied future population if stated. Symbols: n years; a persons/year; r annual fractional growth, not a percentage number such as2.",
+        "ar": "هذه نماذج توقع لا ضمانات. وثّق الطريقة والدليل واستعمل السكان المستقبليين المعطين إذا ذُكروا. الرموز: n سنوات؛ a أفراد/سنة؛ r نسبة نمو سنوية عشرية لا رقمًا مئويًا مثل2."
+      }
+    },
+    {
+      "id": "meaning-03",
+      "concept": "env-demand-average",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Turn people into a flow rate",
+        "ar": "اشرح: حوّل السكان إلى معدل تصريف"
+      },
+      "a": {
+        "en": "Multiply the design population by the complete stated per-capita allowance. Convert litres before moving to cubic metres and seconds. In the lecture example,0.6 m³/person/day is a classroom design allowance, not a universal current requirement. Average daily demand is a volume per day; dividing by86400 gives the average continuous flow rate.",
+        "ar": "اضرب سكان التصميم في مخصص الفرد الكامل المعطى. حوّل اللترات قبل الانتقال إلى الأمتار المكعبة والثواني. المخصص0.6 m³/فرد/يوم في المثال قيمة تعليمية للتصميم لا اشتراطًا حاليًا عامًا. الطلب اليومي المتوسط حجم لكل يوم؛ قسمته على86400 تعطي معدل التدفق المستمر المتوسط."
+      }
+    },
+    {
+      "id": "prediction-03",
+      "concept": "env-demand-average",
+      "kind": "prediction",
+      "q": {
+        "en": "For400000 people at0.6 m³/person/day, is average demand24000 m³/day?",
+        "ar": "لـ400000 فرد بمخصص0.6 m³/فرد/يوم، هل المتوسط24000 m³/day؟"
+      },
+      "a": {
+        "en": "No. It is240000 m³/day. Carry units and an order-of-magnitude check through each line.",
+        "ar": "لا. يساوي240000 m³/day. احمل الوحدات وتحقق من رتبة المقدار في كل سطر."
+      }
+    },
+    {
+      "id": "calculation-03",
+      "concept": "env-demand-average",
+      "kind": "calculation",
+      "q": {
+        "en": "P=400000,qpc=0.6 m³/person/day. Find Qavg,d.",
+        "ar": "P=400000 وqpc=0.6 m³/فرد/يوم. أوجد Qavg,d."
+      },
+      "a": {
+        "en": "400000×0.6=240000.",
+        "ar": "400000×0.6=240000."
+      }
+    },
+    {
+      "id": "decision-03",
+      "concept": "env-demand-average",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Turn people into a flow rate?",
+        "ar": "متى يصح هذا النموذج: حوّل السكان إلى معدل تصريف؟"
+      },
+      "a": {
+        "en": "Use the lecture allowance only for the stated exercise; actual projects require locally justified demand data. Symbols: Qavg,d m³/day; Qavg,s m³/s; qpc must be consistent with population and demand scope.",
+        "ar": "استعمل مخصص المحاضرة للمسألة المحددة؛ المشروعات الفعلية تحتاج بيانات طلب محلية مبررة. الرموز: Qavg,d بوحدة m³/day وQavg,s بوحدة m³/s؛ يجب اتساق qpc مع السكان ونطاق الطلب."
+      }
+    },
+    {
+      "id": "meaning-04",
+      "concept": "env-demand-peaks",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Peak hour is a rate, not a day volume",
+        "ar": "اشرح: ساعة الذروة معدل لا حجم يوم"
+      },
+      "a": {
+        "en": "Use explicitly defined peak factors. Here the lecture takes maximum-day rate as1.8 times average and peak-hour rate as2.7 times the average rate. The peak-hour line is written in m³/day equivalent; divide by24 to get its one-hour volume. Do not multiply1.8 and2.7 together when2.7 is already relative to the average.",
+        "ar": "استعمل معاملات ذروة واضحة المرجع. تأخذ المحاضرة معدل أقصى يوم1.8 من المتوسط ومعدل أقصى ساعة2.7 من المتوسط. يُكتب سطر ساعة الذروة بوحدة m³/day المكافئة؛ اقسم على24 لحجم تلك الساعة. لا تضرب1.8 و2.7 معًا عندما تكون2.7 مرجعة أصلًا إلى المتوسط."
+      }
+    },
+    {
+      "id": "prediction-04",
+      "concept": "env-demand-peaks",
+      "kind": "prediction",
+      "q": {
+        "en": "The peak-hour rate is648000 m³/day equivalent. Is that the water consumed during one hour?",
+        "ar": "معدل ساعة الذروة648000 m³/day مكافئ. هل هذا حجم الاستهلاك خلال ساعة؟"
+      },
+      "a": {
+        "en": "No. One hour consumes27000 m³ at that rate. Use the rate and duration relevant to each component rather than one largest number everywhere.",
+        "ar": "لا. حجم الساعة27000 m³ بهذا المعدل. استعمل المعدل والمدة المناسبين لكل عنصر بدل أكبر رقم لكل العناصر."
+      }
+    },
+    {
+      "id": "calculation-04",
+      "concept": "env-demand-peaks",
+      "kind": "calculation",
+      "q": {
+        "en": "Qavg=1000 m³/day; peak factor2.7 relative to average. Find peak-hour equivalent rate.",
+        "ar": "Qavg=1000 m³/day ومعامل ذروة2.7 من المتوسط. أوجد المعدل اليومي المكافئ لساعة الذروة."
+      },
+      "a": {
+        "en": "2.7×1000=2700.",
+        "ar": "2.7×1000=2700."
+      }
+    },
+    {
+      "id": "decision-04",
+      "concept": "env-demand-peaks",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Peak hour is a rate, not a day volume?",
+        "ar": "متى يصح هذا النموذج: ساعة الذروة معدل لا حجم يوم؟"
+      },
+      "a": {
+        "en": "Specify factor bases. Peaks are planning assumptions, not simultaneous universal multipliers. Symbols: Factors1.8,2.7 are the supplied exercise assumptions. Vpeakhour m³ over one hour.",
+        "ar": "حدّد مرجع كل معامل؛ الذروات فروض تخطيطية لا معاملات عامة متزامنة. الرموز: المعاملان1.8 و2.7 فرضا المسألة التعليمية. Vpeakhour بالمتر المكعب خلال ساعة."
+      }
+    },
+    {
+      "id": "meaning-05",
+      "concept": "env-demand-storage",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Storage covers a cumulative deficit",
+        "ar": "اشرح: التخزين يغطي عجزًا متراكمًا"
+      },
+      "a": {
+        "en": "A pump can deliver a steadier flow than a town withdraws because a reservoir stores the difference. Add supply minus demand over each time block; the working equalisation storage is the range between maximum and minimum cumulative net volume. Emergency and fire reserves are separate design allowances. An old empirical fire formula is not a current adopted fire standard without a jurisdiction and edition.",
+        "ar": "يمكن للمضخة إنتاج معدل أثبت من سحب المدينة لأن الخزان يخزن الفرق. اجمع الإمداد ناقص الطلب عبر كل فترة؛ سعة الموازنة التشغيلية هي الفرق بين أكبر وأصغر حجم تراكمي صافٍ. احتياط الطوارئ والحريق مخصصان منفصلان. معادلة حريق تجريبية قديمة ليست معيارًا حاليًا معتمدًا دون تحديد الجهة والإصدار."
+      }
+    },
+    {
+      "id": "prediction-05",
+      "concept": "env-demand-storage",
+      "kind": "prediction",
+      "q": {
+        "en": "A short demand peak exceeds pump capacity. Must the pump always match it instantly?",
+        "ar": "ذروة قصيرة تتجاوز سعة المضخة. هل يجب أن تطابقها المضخة فورًا دائمًا؟"
+      },
+      "a": {
+        "en": "Not if usable storage supplies the deficit. A balance over the whole day can be zero while significant hourly storage is still needed.",
+        "ar": "ليس إذا وفّر التخزين المتاح العجز. قد يكون الاتزان اليومي صفرًا مع الحاجة إلى تخزين ساعي كبير."
+      }
+    },
+    {
+      "id": "calculation-05",
+      "concept": "env-demand-storage",
+      "kind": "calculation",
+      "q": {
+        "en": "Supply80,demand120 m³/h for2 hours. Enter required drawdown volume as positive.",
+        "ar": "إمداد80 وطلب120 m³/h لمدة ساعتين. أدخل حجم السحب من التخزين موجبًا."
+      },
+      "a": {
+        "en": "(120−80)×2=80 m³.",
+        "ar": "(120−80)×2=80 m³."
+      }
+    },
+    {
+      "id": "decision-05",
+      "concept": "env-demand-storage",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Storage covers a cumulative deficit?",
+        "ar": "متى يصح هذا النموذج: التخزين يغطي عجزًا متراكمًا؟"
+      },
+      "a": {
+        "en": "A complete repeating demand/supply cycle for equalisation; add operational, dead and emergency volumes separately. Symbols: Q m³/hour with Δt in hours gives volume m³; keep one sign convention.",
+        "ar": "دورة طلب وإمداد متكررة كاملة للموازنة؛ تضاف الأحجام التشغيلية والميتة والطوارئ بصورة مستقلة. الرموز: Q بوحدة m³/hour مع Δt بالساعات تعطي m³؛ حافظ على اتفاق الإشارة."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "env-demand",
+      "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+      "page": 3
+    },
+    {
+      "doc": "env-demand",
+      "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+      "page": 7
+    },
+    {
+      "doc": "env-demand",
+      "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+      "page": 8
+    },
+    {
+      "doc": "env-demand",
+      "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+      "page": 10
+    },
+    {
+      "doc": "env-demand",
+      "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+      "page": 11
+    },
+    {
+      "doc": "env-demand",
+      "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+      "page": 21
+    },
+    {
+      "doc": "env-demand",
+      "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+      "page": 23
+    },
+    {
+      "doc": "env-demand",
+      "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+      "page": 24
+    },
+    {
+      "doc": "env-demand",
+      "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+      "page": 22
+    },
+    {
+      "doc": "env-demand",
+      "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+      "page": 25
+    }
+  ]
+}

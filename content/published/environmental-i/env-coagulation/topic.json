@@ -1,0 +1,1849 @@
+{
+  "id": "env-coagulation",
+  "family": "env-treatment",
+  "title": {
+    "en": "Coagulation and flocculation: build a settleable floc",
+    "ar": "التخثير والتلبيد: ابنِ نُدفًا قابلة للترسيب"
+  },
+  "summary": {
+    "en": "Follow stable particles through chemical destabilisation, rapid mixing, gentle collisions and a checked flocculator design.",
+    "ar": "تتبّع الجسيمات المستقرة خلال زعزعة الاستقرار الكيميائية والخلط السريع والتصادم اللطيف وتصميم حوض تلبيد متحقق."
+  },
+  "outcomes": [
+    {
+      "en": "Change the interaction before forcing collisions",
+      "ar": "غيّر التفاعل قبل فرض التصادم"
+    },
+    {
+      "en": "A concentration becomes a daily mass",
+      "ar": "يصبح التركيز كتلة يومية"
+    },
+    {
+      "en": "Use mixing that grows rather than breaks",
+      "ar": "استخدم خلطًا ينمّي ولا يكسّر"
+    },
+    {
+      "en": "Time becomes a tank you can draw",
+      "ar": "يصبح الزمن حوضًا يمكن رسمه"
+    },
+    {
+      "en": "Check power and return to the jar test",
+      "ar": "تحقق من القدرة وعُد إلى اختبار الجرّة"
+    }
+  ],
+  "prereqIds": [
+    "hyd-units",
+    "env-mass",
+    "env-chemistry",
+    "course-algebra"
+  ],
+  "videoIds": [
+    "C8ghKCUfcQk",
+    "wUl5E1SZqBo"
+  ],
+  "concepts": [
+    {
+      "id": "env-coagulation-destabilise",
+      "title": {
+        "en": "Change the interaction before forcing collisions",
+        "ar": "غيّر التفاعل قبل فرض التصادم"
+      }
+    },
+    {
+      "id": "env-coagulation-dose",
+      "title": {
+        "en": "A concentration becomes a daily mass",
+        "ar": "يصبح التركيز كتلة يومية"
+      }
+    },
+    {
+      "id": "env-coagulation-gentle",
+      "title": {
+        "en": "Use mixing that grows rather than breaks",
+        "ar": "استخدم خلطًا ينمّي ولا يكسّر"
+      }
+    },
+    {
+      "id": "env-coagulation-size",
+      "title": {
+        "en": "Time becomes a tank you can draw",
+        "ar": "يصبح الزمن حوضًا يمكن رسمه"
+      }
+    },
+    {
+      "id": "env-coagulation-power",
+      "title": {
+        "en": "Check power and return to the jar test",
+        "ar": "تحقق من القدرة وعُد إلى اختبار الجرّة"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "env-coagulation-destabilise",
+      "title": {
+        "en": "Change the interaction before forcing collisions",
+        "ar": "غيّر التفاعل قبل فرض التصادم"
+      },
+      "predict": {
+        "en": "Does adding coagulant alone guarantee that particles have left the water?",
+        "ar": "هل إضافة المخثّر وحدها تضمن خروج الجسيمات من الماء؟"
+      },
+      "options": [
+        {
+          "en": "No. Destabilisation must be followed by aggregation and separation as needed.",
+          "ar": "لا. يلزم التجمع والفصل بعد الزعزعة حسب الحاجة."
+        },
+        {
+          "en": "Yes. Coagulation means every particle is destroyed.",
+          "ar": "نعم. التخثير يعني تدمير كل جسيم."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A volume calculation is only one part of a treatment mechanism.",
+        "ar": "حساب الحجم جزء واحد من آلية المعالجة."
+      },
+      "explain": {
+        "en": "A stable colloidal suspension resists aggregation through surface interactions. Coagulants can destabilise it through charge effects, adsorption, bridging and precipitate sweep. Which mechanism dominates depends on chemical, dose, pH and water composition. More chemical is not automatically better; a dose must be tested against the treatment goal.",
+        "ar": "تقاوم المعلقات الغروية المستقرة التجمع بتفاعلات سطحية. يمكن للمخثّرات زعزعتها بآثار الشحنة والامتزاز والجسور والاحتجاز داخل الراسب. تعتمد الآلية السائدة على المادة والجرعة وpH وتركيب الماء. الزيادة ليست أفضل تلقائيًا؛ يجب اختبار الجرعة وفق هدف المعالجة."
+      },
+      "formula": "t=V/Q; treatment sequence: destabilise → flocculate → separate",
+      "symbols": {
+        "en": "t nominal residence time s, V reactor volume m³, Q m³/s. The sequence is a mechanism map, not a chemical reaction balance.",
+        "ar": "t زمن مكوث اسمي بالثواني وV حجم المفاعل m³ وQ بوحدة m³/s. التسلسل خريطة آليات لا ميزان تفاعل كيميائي."
+      },
+      "assumptions": {
+        "en": "Treatment selection follows raw-water characterisation and tests; no universal dose or pH is assumed.",
+        "ar": "اختيار المعالجة يتبع توصيف الماء الخام والاختبار؛ لا تُفترض جرعة أو pH عامة."
+      },
+      "example": {
+        "en": "Q=0.5 m³/s through a10 m³ rapid-mix tank. Find nominal time.",
+        "ar": "Q=0.5 m³/s عبر حوض خلط سريع10 m³. أوجد الزمن الاسمي."
+      },
+      "calculation": {
+        "en": "t=10/0.5=20 s. This does not prove ideal contact or choose the chemical dose.",
+        "ar": "t=10/0.5=20 s. لا يثبت ذلك تلامسًا مثاليًا ولا يختار الجرعة."
+      },
+      "interpret": {
+        "en": "A volume calculation is only one part of a treatment mechanism.",
+        "ar": "حساب الحجم جزء واحد من آلية المعالجة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "A volume calculation is only one part of a treatment mechanism. Treatment selection follows raw-water characterisation and tests; no universal dose or pH is assumed.",
+          "ar": "حساب الحجم جزء واحد من آلية المعالجة. اختيار المعالجة يتبع توصيف الماء الخام والاختبار؛ لا تُفترض جرعة أو pH عامة."
+        }
+      },
+      "diagram": "course-env-mixing",
+      "concepts": [
+        "env-coagulation-destabilise"
+      ],
+      "sources": [
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 2
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 3
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 4
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "env-coagulation-dose",
+      "title": {
+        "en": "A concentration becomes a daily mass",
+        "ar": "يصبح التركيز كتلة يومية"
+      },
+      "predict": {
+        "en": "Can a40 mg/L dose be multiplied by m³/day without a litre conversion?",
+        "ar": "هل تُضرب40 mg/L في m³/day دون تحويل اللتر؟"
+      },
+      "options": [
+        {
+          "en": "Only with the combined conversion factor1/1000 to kg/day.",
+          "ar": "فقط مع معامل التحويل المجمع1/1000 إلى kg/day."
+        },
+        {
+          "en": "Yes, the product is already kg/day numerically.",
+          "ar": "نعم، الناتج kg/day عدديًا مباشرة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Keep concentration, flow and counted duration visible in chemical procurement calculations.",
+        "ar": "أظهر التركيز والتصريف والمدة في حساب شراء المادة."
+      },
+      "explain": {
+        "en": "A dose in mg/L is mass per water volume. Multiply by daily volume and convert units once. State whether the dose refers to active chemical or commercial product; dividing by purity is needed only for the latter conversion. The source’s40 mg/L and50000 m³/day give a large monthly mass, so an order-of-magnitude check matters.",
+        "ar": "الجرعة mg/L كتلة لكل حجم ماء. اضرب في الحجم اليومي وحوّل الوحدات مرة واحدة. صرّح هل الجرعة للمادة الفعالة أم المنتج التجاري؛ القسمة على النقاوة مطلوبة فقط عند التحويل إلى المنتج. تعطي40 mg/L و50000 m³/day في المصدر كتلة شهرية كبيرة، لذا يلزم تحقق رتبة المقدار."
+      },
+      "formula": "m_active=Qd C/1000 kg/day; m_product=m_active/f_active",
+      "symbols": {
+        "en": "Qd m³/day; C mg/L; f_active mass fraction of active material.",
+        "ar": "Qd بوحدة m³/day وC بوحدة mg/L؛ f_active الكسر الكتلي للمادة الفعالة."
+      },
+      "assumptions": {
+        "en": "Consistent chemical basis and constant stated flow/dose over the counted days; actual operation may vary.",
+        "ar": "أساس مادة متسق وتدفق وجرعة ثابتان خلال الأيام المعدودة؛ قد يتغير التشغيل الفعلي."
+      },
+      "example": {
+        "en": "Source flow50000 m³/day,dose40 mg/L,30-day month.",
+        "ar": "تصريف المصدر50000 m³/day وجرعة40 mg/L وشهر30 يومًا."
+      },
+      "calculation": {
+        "en": "Daily mass=50000×40/1000=2000 kg/day; monthly=60000 kg. No purity correction is introduced because the source dose basis is retained.",
+        "ar": "الكتلة اليومية=50000×40/1000=2000 kg/day؛ الشهرية60000 kg. لا نضيف تصحيح نقاوة لأن أساس جرعة المصدر محفوظ."
+      },
+      "interpret": {
+        "en": "Keep concentration, flow and counted duration visible in chemical procurement calculations.",
+        "ar": "أظهر التركيز والتصريف والمدة في حساب شراء المادة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Keep concentration, flow and counted duration visible in chemical procurement calculations. Consistent chemical basis and constant stated flow/dose over the counted days; actual operation may vary.",
+          "ar": "أظهر التركيز والتصريف والمدة في حساب شراء المادة. أساس مادة متسق وتدفق وجرعة ثابتان خلال الأيام المعدودة؛ قد يتغير التشغيل الفعلي."
+        }
+      },
+      "diagram": "course-env-mixing",
+      "concepts": [
+        "env-coagulation-dose"
+      ],
+      "sources": [
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 10
+        }
+      ]
+    },
+    {
+      "id": "env-coagulation-gentle",
+      "title": {
+        "en": "Use mixing that grows rather than breaks",
+        "ar": "استخدم خلطًا ينمّي ولا يكسّر"
+      },
+      "predict": {
+        "en": "If Gt is held fixed and G doubles, is an identical floc result guaranteed?",
+        "ar": "مع ثبات Gt ومضاعفة G، هل تُضمن الندف نفسها؟"
+      },
+      "options": [
+        {
+          "en": "No. Time halves, but breakage and collision mechanisms can change.",
+          "ar": "لا. ينخفض الزمن للنصف وقد تتغير آليات التصادم والكسر."
+        },
+        {
+          "en": "Yes. Gt captures every feature of floc formation.",
+          "ar": "نعم. Gt تمثل كل خصائص التلبيد."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A time-unit error changes tank size by60 or86400.",
+        "ar": "خطأ الزمن يغيّر حجم الحوض بمعامل60 أو86400."
+      },
+      "explain": {
+        "en": "Rapid mixing and flocculation have different jobs. Flocculation enhances collisions, but excessive shear can break large flocs; tapered G reduces intensity toward the outlet. The velocity-gradient measure G relates power dissipated in water to viscosity and volume. Gt is a useful design exposure, not proof that any G and t with the same product produce identical flocs.",
+        "ar": "للخلط السريع والتلبيد مهمتان مختلفتان. يزيد التلبيد التصادمات لكن القص الزائد قد يكسر الندف الكبيرة؛ يقلل G المتدرج شدة الخلط نحو المخرج. يربط مقياس تدرج السرعة G القدرة المبددة في الماء بلزوجته وحجمه. Gt مؤشر تعرض تصميمي مفيد لا إثبات أن كل G وt لهما الحاصل نفسه تعطيان ندفًا متطابقة."
+      },
+      "formula": "G=√[Pwater/(μV)]; Gt=G×t; t=(Gt)/G",
+      "symbols": {
+        "en": "G s⁻¹,t s,μ dynamic viscosity Pa·s,V m³,Pwater W; Gt dimensionless.",
+        "ar": "G بوحدة s⁻¹ وt بالثواني وμ اللزوجة الديناميكية Pa·s وV بالمتر المكعب وPwater بالواط؛ Gt بلا وحدة."
+      },
+      "assumptions": {
+        "en": "G is an average dissipation metric; actual mixing distribution, short-circuiting and floc strength need assessment.",
+        "ar": "G مقياس تبديد متوسط؛ يحتاج توزيع الخلط والاختصار الهيدروليكي وقوة الندف تقييمًا."
+      },
+      "example": {
+        "en": "Source Gt=40000,G=30 s⁻¹. Find time.",
+        "ar": "Gt المصدر=40000 وG=30 s⁻¹. أوجد الزمن."
+      },
+      "calculation": {
+        "en": "t=40000/30=1333.333 s=22.222 min. Keep seconds when finding volume from m³/s.",
+        "ar": "t=40000/30=1333.333 s=22.222 دقيقة. احتفظ بالثواني لحساب الحجم من m³/s."
+      },
+      "interpret": {
+        "en": "A time-unit error changes tank size by60 or86400.",
+        "ar": "خطأ الزمن يغيّر حجم الحوض بمعامل60 أو86400."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "A time-unit error changes tank size by60 or86400. G is an average dissipation metric; actual mixing distribution, short-circuiting and floc strength need assessment.",
+          "ar": "خطأ الزمن يغيّر حجم الحوض بمعامل60 أو86400. G مقياس تبديد متوسط؛ يحتاج توزيع الخلط والاختصار الهيدروليكي وقوة الندف تقييمًا."
+        }
+      },
+      "diagram": "course-env-mixing",
+      "concepts": [
+        "env-coagulation-gentle"
+      ],
+      "sources": [
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 13
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 14
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 2
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 3
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 4
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 10
+        }
+      ]
+    },
+    {
+      "id": "env-coagulation-size",
+      "title": {
+        "en": "Time becomes a tank you can draw",
+        "ar": "يصبح الزمن حوضًا يمكن رسمه"
+      },
+      "predict": {
+        "en": "With L=15,H=5 m, is the denominator for width225 m²?",
+        "ar": "مع L=15 وH=5 m، هل مقام حساب العرض225 m²؟"
+      },
+      "options": [
+        {
+          "en": "No. L×H=75 m².",
+          "ar": "لا. L×H=75 m²."
+        },
+        {
+          "en": "Yes. Multiply depth a second time.",
+          "ar": "نعم. اضرب العمق مرة ثانية."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Multiplying dimensions back is a quick independent check on a printed design.",
+        "ar": "إعادة ضرب الأبعاد تحقق مستقل سريع من التصميم المطبوع."
+      },
+      "explain": {
+        "en": "Multiply design flow by selected residence time to obtain nominal tank volume, then choose dimensions that multiply back to that volume. The lecture example assumes depth5 m and length15 m. Their plan factor is75 m², so width is771.6/75≈10.29 m. The slide prints a denominator225 beside10.3; that denominator is inconsistent and is corrected explicitly here.",
+        "ar": "اضرب تصريف التصميم في زمن المكوث المختار لتحصل على الحجم الاسمي ثم اختر أبعادًا يعود حاصل ضربها للحجم. يفترض المثال عمق5 m وطول15 m؛ حاصل هذين75 m²، لذلك العرض771.6/75≈10.29 m. تطبع الشريحة المقام225 بجانب10.3؛ وهذا غير متسق ويُصحح صراحة هنا."
+      },
+      "formula": "V=Qt; V=L B H; B=V/(LH)",
+      "symbols": {
+        "en": "V m³; Q m³/s;t s; tank length L,width B,depth H in m.",
+        "ar": "V بالمتر المكعب وQ بالمتر المكعب/ثانية وt بالثواني؛ طول الحوض L وعرضه B وعمقه H بالأمتار."
+      },
+      "assumptions": {
+        "en": "Nominal hydraulic volume; account separately for freeboard, baffles, unavailable volume and short-circuiting in a detailed design.",
+        "ar": "حجم هيدروليكي اسمي؛ تُقيّم الخلوصات والحواجز والحجم غير المتاح والاختصار الهيدروليكي منفصلة في التصميم التفصيلي."
+      },
+      "example": {
+        "en": "Source Q=50000 m³/day and t=1333.333 s.",
+        "ar": "Q المصدر=50000 m³/day وt=1333.333 s."
+      },
+      "calculation": {
+        "en": "Q=0.5787037 m³/s; V=771.60494 m³. B=771.60494/(15×5)=10.28807 m≤12 m. Check15×5×10.28807=771.60494.",
+        "ar": "Q=0.5787037 m³/s؛ V=771.60494 m³. B=771.60494/(15×5)=10.28807 m≤12 m. تحقق15×5×10.28807=771.60494."
+      },
+      "interpret": {
+        "en": "Multiplying dimensions back is a quick independent check on a printed design.",
+        "ar": "إعادة ضرب الأبعاد تحقق مستقل سريع من التصميم المطبوع."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Multiplying dimensions back is a quick independent check on a printed design. Nominal hydraulic volume; account separately for freeboard, baffles, unavailable volume and short-circuiting in a detailed design.",
+          "ar": "إعادة ضرب الأبعاد تحقق مستقل سريع من التصميم المطبوع. حجم هيدروليكي اسمي؛ تُقيّم الخلوصات والحواجز والحجم غير المتاح والاختصار الهيدروليكي منفصلة في التصميم التفصيلي."
+        }
+      },
+      "diagram": "course-env-mixing",
+      "concepts": [
+        "env-coagulation-size"
+      ],
+      "sources": [
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 10
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "env-coagulation-power",
+      "title": {
+        "en": "Check power and return to the jar test",
+        "ar": "تحقق من القدرة وعُد إلى اختبار الجرّة"
+      },
+      "predict": {
+        "en": "At fixed μ,V, double G. Does water power only double?",
+        "ar": "مع ثبات μ وV ضاعف G. هل تتضاعف قدرة الماء مرتين فقط؟"
+      },
+      "options": [
+        {
+          "en": "No. It quadruples.",
+          "ar": "لا. تتضاعف أربع مرات."
+        },
+        {
+          "en": "Yes. Power is linear in G.",
+          "ar": "نعم. القدرة خطية مع G."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Check power, residence time and chemical response separately, then join them into one operating design.",
+        "ar": "تحقق من القدرة والزمن والاستجابة الكيميائية منفصلة ثم اجمعها في تصميم تشغيلي واحد."
+      },
+      "explain": {
+        "en": "For each compartment calculate water power μViGi²; equal volumes with different G need different powers. Doubling G at fixed volume quadruples power. Motor input is larger if drive efficiency is below1. The jar test chooses a chemical operating condition for representative raw water; changing dose or pH means retesting, not merely buying a stronger motor.",
+        "ar": "احسب لكل حجرة قدرة الماء μViGi²؛ تحتاج الأحجام المتساوية ذات G المختلفة قدرات مختلفة. مضاعفة G مع ثبات الحجم تضاعف القدرة أربع مرات. يزيد دخل المحرك إذا قلت كفاءة النقل عن1. يختار اختبار الجرّة حالة تشغيل كيميائية لماء خام ممثل؛ تغيير الجرعة أو pH يحتاج اختبارًا لا مجرد محرك أقوى."
+      },
+      "formula": "Pi=μViGi²; Pmotor=Pwater/η; equal-volume train Gt_total=ΣGi ti",
+      "symbols": {
+        "en": "μ=1.139×10⁻³ Pa·s at15°C in the source; η drive efficiency fraction; P in W.",
+        "ar": "μ=1.139×10⁻³ Pa·s عند15°C في المصدر؛ η كفاءة نقل عشرية؛ P بالواط."
+      },
+      "assumptions": {
+        "en": "Water power only; motor sizing and paddle loading require actual efficiency and geometry. Jar-test optimum applies to tested water and objective.",
+        "ar": "قدرة الماء فقط؛ يتطلب حجم المحرك وأحمال الريش كفاءة وهندسة فعليتين. أفضلية الجرّة تخص الماء والهدف المختبَرين."
+      },
+      "example": {
+        "en": "Source V=771.60494 m³,3 equal compartments,G=40,30,20 s⁻¹.",
+        "ar": "V المصدر=771.60494 m³ وثلاث حجرات متساوية وG=40,30,20 s⁻¹."
+      },
+      "calculation": {
+        "en": "Vi=257.20165. Powers468.724,263.657,117.181 W; total849.563 W. Equal compartment times444.444 s giveΣGi ti=40000. A source typo in width does not change this checked hydraulic volume.",
+        "ar": "Vi=257.20165. القدرات468.724 و263.657 و117.181 W؛ المجموع849.563 W. زمن كل حجرة444.444 s فيكونΣGi ti=40000. خطأ عرض المصدر لا يغيّر الحجم الهيدروليكي المتحقق."
+      },
+      "interpret": {
+        "en": "Check power, residence time and chemical response separately, then join them into one operating design.",
+        "ar": "تحقق من القدرة والزمن والاستجابة الكيميائية منفصلة ثم اجمعها في تصميم تشغيلي واحد."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Check power, residence time and chemical response separately, then join them into one operating design. Water power only; motor sizing and paddle loading require actual efficiency and geometry. Jar-test optimum applies to tested water and objective.",
+          "ar": "تحقق من القدرة والزمن والاستجابة الكيميائية منفصلة ثم اجمعها في تصميم تشغيلي واحد. قدرة الماء فقط؛ يتطلب حجم المحرك وأحمال الريش كفاءة وهندسة فعليتين. أفضلية الجرّة تخص الماء والهدف المختبَرين."
+        }
+      },
+      "diagram": "course-env-mixing",
+      "concepts": [
+        "env-coagulation-power"
+      ],
+      "sources": [
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 22
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 25
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 26
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 27
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 28
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 29
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 11
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 14
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "C01",
+      "concept": "env-coagulation-destabilise",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does adding coagulant alone guarantee that particles have left the water?",
+        "ar": "هل إضافة المخثّر وحدها تضمن خروج الجسيمات من الماء؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Coagulation means every particle is destroyed.",
+          "ar": "نعم. التخثير يعني تدمير كل جسيم."
+        },
+        {
+          "en": "No. Destabilisation must be followed by aggregation and separation as needed.",
+          "ar": "لا. يلزم التجمع والفصل بعد الزعزعة حسب الحاجة."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "A stable colloidal suspension resists aggregation through surface interactions. Coagulants can destabilise it through charge effects, adsorption, bridging and precipitate sweep. Which mechanism dominates depends on chemical, dose, pH and water composition. More chemical is not automatically better; a dose must be tested against the treatment goal. A volume calculation is only one part of a treatment mechanism.",
+        "ar": "تقاوم المعلقات الغروية المستقرة التجمع بتفاعلات سطحية. يمكن للمخثّرات زعزعتها بآثار الشحنة والامتزاز والجسور والاحتجاز داخل الراسب. تعتمد الآلية السائدة على المادة والجرعة وpH وتركيب الماء. الزيادة ليست أفضل تلقائيًا؛ يجب اختبار الجرعة وفق هدف المعالجة. حساب الحجم جزء واحد من آلية المعالجة."
+      },
+      "sources": [
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 2
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 3
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 4
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "N01",
+      "concept": "env-coagulation-destabilise",
+      "type": "numerical",
+      "prompt": {
+        "en": "V=30 m³,Q=1.5 m³/s. Find t.",
+        "ar": "V=30 m³ وQ=1.5 m³/s. أوجد t."
+      },
+      "expected": 20,
+      "tolerance": 0.04,
+      "unit": "s",
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "30/1.5=20 s.",
+        "ar": "30/1.5=20 s."
+      },
+      "sources": [
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 2
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 3
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 4
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "concept": "env-coagulation-destabilise",
+      "type": "mixed",
+      "prompt": {
+        "en": "Q doubles with tank volume fixed. Original t=40 s. Enter new t and choose what changed.",
+        "ar": "تضاعفت Q مع ثبات الحوض. الزمن الأصلي40 s. أدخل الزمن الجديد واختر التغيّر."
+      },
+      "expected": 20,
+      "tolerance": 0.04,
+      "unit": "s",
+      "options": [
+        {
+          "en": "Nominal contact time halves.",
+          "ar": "ينخفض زمن التلامس الاسمي للنصف."
+        },
+        {
+          "en": "Chemical efficacy necessarily doubles.",
+          "ar": "تتضاعف الفعالية الكيميائية بالضرورة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "t=V/Q, hence20 s; efficacy needs testing.",
+        "ar": "t=V/Q، لذلك20 s؛ الفعالية تحتاج اختبارًا."
+      },
+      "sources": [
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 2
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 3
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 4
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 7
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "concept": "env-coagulation-dose",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can a40 mg/L dose be multiplied by m³/day without a litre conversion?",
+        "ar": "هل تُضرب40 mg/L في m³/day دون تحويل اللتر؟"
+      },
+      "options": [
+        {
+          "en": "Only with the combined conversion factor1/1000 to kg/day.",
+          "ar": "فقط مع معامل التحويل المجمع1/1000 إلى kg/day."
+        },
+        {
+          "en": "Yes, the product is already kg/day numerically.",
+          "ar": "نعم، الناتج kg/day عدديًا مباشرة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "A dose in mg/L is mass per water volume. Multiply by daily volume and convert units once. State whether the dose refers to active chemical or commercial product; dividing by purity is needed only for the latter conversion. The source’s40 mg/L and50000 m³/day give a large monthly mass, so an order-of-magnitude check matters. Keep concentration, flow and counted duration visible in chemical procurement calculations.",
+        "ar": "الجرعة mg/L كتلة لكل حجم ماء. اضرب في الحجم اليومي وحوّل الوحدات مرة واحدة. صرّح هل الجرعة للمادة الفعالة أم المنتج التجاري؛ القسمة على النقاوة مطلوبة فقط عند التحويل إلى المنتج. تعطي40 mg/L و50000 m³/day في المصدر كتلة شهرية كبيرة، لذا يلزم تحقق رتبة المقدار. أظهر التركيز والتصريف والمدة في حساب شراء المادة."
+      },
+      "sources": [
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 10
+        }
+      ]
+    },
+    {
+      "id": "N02",
+      "concept": "env-coagulation-dose",
+      "type": "numerical",
+      "prompt": {
+        "en": "Q=10000 m³/day,C=20 mg/L. Find daily active mass.",
+        "ar": "Q=10000 m³/day وC=20 mg/L. أوجد الكتلة الفعالة اليومية."
+      },
+      "expected": 200,
+      "tolerance": 0.4,
+      "unit": "kg/day",
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "10000×20/1000=200 kg/day.",
+        "ar": "10000×20/1000=200 kg/day."
+      },
+      "sources": [
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 10
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "concept": "env-coagulation-dose",
+      "type": "mixed",
+      "prompt": {
+        "en": "Active mass200 kg/day, product purity0.8. Enter product mass and choose the basis.",
+        "ar": "الكتلة الفعالة200 kg/day ونقاوة المنتج0.8. أدخل كتلة المنتج واختر الأساس."
+      },
+      "expected": 250,
+      "tolerance": 0.5,
+      "unit": "kg/day",
+      "options": [
+        {
+          "en": "Multiply by purity and supply less active mass.",
+          "ar": "اضرب في النقاوة وقدّم كتلة فعالة أقل."
+        },
+        {
+          "en": "Divide active requirement by active fraction.",
+          "ar": "اقسم الاحتياج الفعال على كسر الفعال."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "200/0.8=250 kg/day;0.8×250=200.",
+        "ar": "200/0.8=250 kg/day؛ 0.8×250=200."
+      },
+      "sources": [
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 10
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "concept": "env-coagulation-gentle",
+      "type": "conceptual",
+      "prompt": {
+        "en": "If Gt is held fixed and G doubles, is an identical floc result guaranteed?",
+        "ar": "مع ثبات Gt ومضاعفة G، هل تُضمن الندف نفسها؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Gt captures every feature of floc formation.",
+          "ar": "نعم. Gt تمثل كل خصائص التلبيد."
+        },
+        {
+          "en": "No. Time halves, but breakage and collision mechanisms can change.",
+          "ar": "لا. ينخفض الزمن للنصف وقد تتغير آليات التصادم والكسر."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "Rapid mixing and flocculation have different jobs. Flocculation enhances collisions, but excessive shear can break large flocs; tapered G reduces intensity toward the outlet. The velocity-gradient measure G relates power dissipated in water to viscosity and volume. Gt is a useful design exposure, not proof that any G and t with the same product produce identical flocs. A time-unit error changes tank size by60 or86400.",
+        "ar": "للخلط السريع والتلبيد مهمتان مختلفتان. يزيد التلبيد التصادمات لكن القص الزائد قد يكسر الندف الكبيرة؛ يقلل G المتدرج شدة الخلط نحو المخرج. يربط مقياس تدرج السرعة G القدرة المبددة في الماء بلزوجته وحجمه. Gt مؤشر تعرض تصميمي مفيد لا إثبات أن كل G وt لهما الحاصل نفسه تعطيان ندفًا متطابقة. خطأ الزمن يغيّر حجم الحوض بمعامل60 أو86400."
+      },
+      "sources": [
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 13
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 14
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 2
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 3
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 4
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 10
+        }
+      ]
+    },
+    {
+      "id": "N03",
+      "concept": "env-coagulation-gentle",
+      "type": "numerical",
+      "prompt": {
+        "en": "Gt=30000,G=25 s⁻¹. Find t in seconds.",
+        "ar": "Gt=30000 وG=25 s⁻¹. أوجد t بالثواني."
+      },
+      "expected": 1200,
+      "tolerance": 2.4,
+      "unit": "s",
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "30000/25=1200 s.",
+        "ar": "30000/25=1200 s."
+      },
+      "sources": [
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 13
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 14
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 2
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 3
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 4
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 10
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "concept": "env-coagulation-gentle",
+      "type": "mixed",
+      "prompt": {
+        "en": "G=20 s⁻¹,t=1500 s. Enter Gt and choose the interpretation.",
+        "ar": "G=20 s⁻¹ وt=1500 s. أدخل Gt واختر التفسير."
+      },
+      "expected": 30000,
+      "tolerance": 60.0,
+      "unit": "—",
+      "options": [
+        {
+          "en": "A selected mixing exposure, not a universal performance guarantee.",
+          "ar": "تعرض خلط مختار لا ضمان أداء عام."
+        },
+        {
+          "en": "A chemical concentration in mg/L.",
+          "ar": "تركيز كيميائي mg/L."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "20×1500=30000, dimensionless.",
+        "ar": "20×1500=30000 بلا وحدة."
+      },
+      "sources": [
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 13
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 14
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 2
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 3
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 4
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 6
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 10
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "concept": "env-coagulation-size",
+      "type": "conceptual",
+      "prompt": {
+        "en": "With L=15,H=5 m, is the denominator for width225 m²?",
+        "ar": "مع L=15 وH=5 m، هل مقام حساب العرض225 m²؟"
+      },
+      "options": [
+        {
+          "en": "No. L×H=75 m².",
+          "ar": "لا. L×H=75 m²."
+        },
+        {
+          "en": "Yes. Multiply depth a second time.",
+          "ar": "نعم. اضرب العمق مرة ثانية."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "Multiply design flow by selected residence time to obtain nominal tank volume, then choose dimensions that multiply back to that volume. The lecture example assumes depth5 m and length15 m. Their plan factor is75 m², so width is771.6/75≈10.29 m. The slide prints a denominator225 beside10.3; that denominator is inconsistent and is corrected explicitly here. Multiplying dimensions back is a quick independent check on a printed design.",
+        "ar": "اضرب تصريف التصميم في زمن المكوث المختار لتحصل على الحجم الاسمي ثم اختر أبعادًا يعود حاصل ضربها للحجم. يفترض المثال عمق5 m وطول15 m؛ حاصل هذين75 m²، لذلك العرض771.6/75≈10.29 m. تطبع الشريحة المقام225 بجانب10.3؛ وهذا غير متسق ويُصحح صراحة هنا. إعادة ضرب الأبعاد تحقق مستقل سريع من التصميم المطبوع."
+      },
+      "sources": [
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 10
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "N04",
+      "concept": "env-coagulation-size",
+      "type": "numerical",
+      "prompt": {
+        "en": "Q=0.5 m³/s,t=1200 s. Find V.",
+        "ar": "Q=0.5 m³/s وt=1200 s. أوجد V."
+      },
+      "expected": 600,
+      "tolerance": 1.2,
+      "unit": "m³",
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "0.5×1200=600 m³.",
+        "ar": "0.5×1200=600 m³."
+      },
+      "sources": [
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 10
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "concept": "env-coagulation-size",
+      "type": "mixed",
+      "prompt": {
+        "en": "V=600,L=15,H=5 in SI. Enter B and choose the corrected denominator.",
+        "ar": "V=600 وL=15 وH=5 بوحدات SI. أدخل B واختر المقام الصحيح."
+      },
+      "expected": 8,
+      "tolerance": 0.016,
+      "unit": "m",
+      "options": [
+        {
+          "en": "LH²=375 m³.",
+          "ar": "LH²=375 m³."
+        },
+        {
+          "en": "LH=75 m².",
+          "ar": "LH=75 m²."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "B=600/75=8 m.",
+        "ar": "B=600/75=8 m."
+      },
+      "sources": [
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 9
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 10
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "concept": "env-coagulation-power",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At fixed μ,V, double G. Does water power only double?",
+        "ar": "مع ثبات μ وV ضاعف G. هل تتضاعف قدرة الماء مرتين فقط؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Power is linear in G.",
+          "ar": "نعم. القدرة خطية مع G."
+        },
+        {
+          "en": "No. It quadruples.",
+          "ar": "لا. تتضاعف أربع مرات."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "For each compartment calculate water power μViGi²; equal volumes with different G need different powers. Doubling G at fixed volume quadruples power. Motor input is larger if drive efficiency is below1. The jar test chooses a chemical operating condition for representative raw water; changing dose or pH means retesting, not merely buying a stronger motor. Check power, residence time and chemical response separately, then join them into one operating design.",
+        "ar": "احسب لكل حجرة قدرة الماء μViGi²؛ تحتاج الأحجام المتساوية ذات G المختلفة قدرات مختلفة. مضاعفة G مع ثبات الحجم تضاعف القدرة أربع مرات. يزيد دخل المحرك إذا قلت كفاءة النقل عن1. يختار اختبار الجرّة حالة تشغيل كيميائية لماء خام ممثل؛ تغيير الجرعة أو pH يحتاج اختبارًا لا مجرد محرك أقوى. تحقق من القدرة والزمن والاستجابة الكيميائية منفصلة ثم اجمعها في تصميم تشغيلي واحد."
+      },
+      "sources": [
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 22
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 25
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 26
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 27
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 28
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 29
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 11
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "N05",
+      "concept": "env-coagulation-power",
+      "type": "numerical",
+      "prompt": {
+        "en": "μ=0.001 Pa·s,V=100 m³,G=30 s⁻¹. Find Pwater.",
+        "ar": "μ=0.001 Pa·s وV=100 m³ وG=30 s⁻¹. أوجد Pwater."
+      },
+      "expected": 90,
+      "tolerance": 0.18,
+      "unit": "W",
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "0.001×100×30²=90 W.",
+        "ar": "0.001×100×30²=90 W."
+      },
+      "sources": [
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 22
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 25
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 26
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 27
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 28
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 29
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 11
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "concept": "env-coagulation-power",
+      "type": "mixed",
+      "prompt": {
+        "en": "Pwater=90 W,η=0.75. Enter motor input and choose why it differs.",
+        "ar": "Pwater=90 W وη=0.75. أدخل دخل المحرك واختر سبب الاختلاف."
+      },
+      "expected": 120,
+      "tolerance": 0.24,
+      "unit": "W",
+      "options": [
+        {
+          "en": "Drive losses require larger motor input.",
+          "ar": "تتطلب فواقد النقل دخلًا أعلى."
+        },
+        {
+          "en": "The motor always delivers exactly its input to the water.",
+          "ar": "يسلم المحرك كامل دخله للماء دائمًا."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Separate chemical dose from mixing and residence time. Use Q in m³/s when time is in seconds.",
+          "ar": "افصل جرعة المادة عن الخلط وزمن المكوث. استعمل Q بوحدة m³/s عندما الزمن بالثواني."
+        },
+        {
+          "en": "Dose kg/day=Q(m³/day)C(mg/L)/1000; t=Gt/G; V=Qt; water power P=μVG².",
+          "ar": "الجرعة kg/day=Q(m³/day)C(mg/L)/1000؛ t=Gt/G؛ V=Qt؛ قدرة الماء P=μVG²."
+        }
+      ],
+      "solution": {
+        "en": "90/0.75=120 W.",
+        "ar": "90/0.75=120 W."
+      },
+      "sources": [
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 22
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 25
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 26
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 27
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 28
+        },
+        {
+          "doc": "env-coagulation",
+          "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+          "page": 29
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 11
+        },
+        {
+          "doc": "env-flocculation",
+          "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+          "page": 14
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "meaning-01",
+      "concept": "env-coagulation-destabilise",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Change the interaction before forcing collisions",
+        "ar": "اشرح: غيّر التفاعل قبل فرض التصادم"
+      },
+      "a": {
+        "en": "A stable colloidal suspension resists aggregation through surface interactions. Coagulants can destabilise it through charge effects, adsorption, bridging and precipitate sweep. Which mechanism dominates depends on chemical, dose, pH and water composition. More chemical is not automatically better; a dose must be tested against the treatment goal.",
+        "ar": "تقاوم المعلقات الغروية المستقرة التجمع بتفاعلات سطحية. يمكن للمخثّرات زعزعتها بآثار الشحنة والامتزاز والجسور والاحتجاز داخل الراسب. تعتمد الآلية السائدة على المادة والجرعة وpH وتركيب الماء. الزيادة ليست أفضل تلقائيًا؛ يجب اختبار الجرعة وفق هدف المعالجة."
+      }
+    },
+    {
+      "id": "prediction-01",
+      "concept": "env-coagulation-destabilise",
+      "kind": "prediction",
+      "q": {
+        "en": "Does adding coagulant alone guarantee that particles have left the water?",
+        "ar": "هل إضافة المخثّر وحدها تضمن خروج الجسيمات من الماء؟"
+      },
+      "a": {
+        "en": "No. Destabilisation must be followed by aggregation and separation as needed. A volume calculation is only one part of a treatment mechanism.",
+        "ar": "لا. يلزم التجمع والفصل بعد الزعزعة حسب الحاجة. حساب الحجم جزء واحد من آلية المعالجة."
+      }
+    },
+    {
+      "id": "calculation-01",
+      "concept": "env-coagulation-destabilise",
+      "kind": "calculation",
+      "q": {
+        "en": "V=30 m³,Q=1.5 m³/s. Find t.",
+        "ar": "V=30 m³ وQ=1.5 m³/s. أوجد t."
+      },
+      "a": {
+        "en": "30/1.5=20 s.",
+        "ar": "30/1.5=20 s."
+      }
+    },
+    {
+      "id": "decision-01",
+      "concept": "env-coagulation-destabilise",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Change the interaction before forcing collisions?",
+        "ar": "متى يصح هذا النموذج: غيّر التفاعل قبل فرض التصادم؟"
+      },
+      "a": {
+        "en": "Treatment selection follows raw-water characterisation and tests; no universal dose or pH is assumed. Symbols: t nominal residence time s, V reactor volume m³, Q m³/s. The sequence is a mechanism map, not a chemical reaction balance.",
+        "ar": "اختيار المعالجة يتبع توصيف الماء الخام والاختبار؛ لا تُفترض جرعة أو pH عامة. الرموز: t زمن مكوث اسمي بالثواني وV حجم المفاعل m³ وQ بوحدة m³/s. التسلسل خريطة آليات لا ميزان تفاعل كيميائي."
+      }
+    },
+    {
+      "id": "meaning-02",
+      "concept": "env-coagulation-dose",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: A concentration becomes a daily mass",
+        "ar": "اشرح: يصبح التركيز كتلة يومية"
+      },
+      "a": {
+        "en": "A dose in mg/L is mass per water volume. Multiply by daily volume and convert units once. State whether the dose refers to active chemical or commercial product; dividing by purity is needed only for the latter conversion. The source’s40 mg/L and50000 m³/day give a large monthly mass, so an order-of-magnitude check matters.",
+        "ar": "الجرعة mg/L كتلة لكل حجم ماء. اضرب في الحجم اليومي وحوّل الوحدات مرة واحدة. صرّح هل الجرعة للمادة الفعالة أم المنتج التجاري؛ القسمة على النقاوة مطلوبة فقط عند التحويل إلى المنتج. تعطي40 mg/L و50000 m³/day في المصدر كتلة شهرية كبيرة، لذا يلزم تحقق رتبة المقدار."
+      }
+    },
+    {
+      "id": "prediction-02",
+      "concept": "env-coagulation-dose",
+      "kind": "prediction",
+      "q": {
+        "en": "Can a40 mg/L dose be multiplied by m³/day without a litre conversion?",
+        "ar": "هل تُضرب40 mg/L في m³/day دون تحويل اللتر؟"
+      },
+      "a": {
+        "en": "Only with the combined conversion factor1/1000 to kg/day. Keep concentration, flow and counted duration visible in chemical procurement calculations.",
+        "ar": "فقط مع معامل التحويل المجمع1/1000 إلى kg/day. أظهر التركيز والتصريف والمدة في حساب شراء المادة."
+      }
+    },
+    {
+      "id": "calculation-02",
+      "concept": "env-coagulation-dose",
+      "kind": "calculation",
+      "q": {
+        "en": "Q=10000 m³/day,C=20 mg/L. Find daily active mass.",
+        "ar": "Q=10000 m³/day وC=20 mg/L. أوجد الكتلة الفعالة اليومية."
+      },
+      "a": {
+        "en": "10000×20/1000=200 kg/day.",
+        "ar": "10000×20/1000=200 kg/day."
+      }
+    },
+    {
+      "id": "decision-02",
+      "concept": "env-coagulation-dose",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: A concentration becomes a daily mass?",
+        "ar": "متى يصح هذا النموذج: يصبح التركيز كتلة يومية؟"
+      },
+      "a": {
+        "en": "Consistent chemical basis and constant stated flow/dose over the counted days; actual operation may vary. Symbols: Qd m³/day; C mg/L; f_active mass fraction of active material.",
+        "ar": "أساس مادة متسق وتدفق وجرعة ثابتان خلال الأيام المعدودة؛ قد يتغير التشغيل الفعلي. الرموز: Qd بوحدة m³/day وC بوحدة mg/L؛ f_active الكسر الكتلي للمادة الفعالة."
+      }
+    },
+    {
+      "id": "meaning-03",
+      "concept": "env-coagulation-gentle",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Use mixing that grows rather than breaks",
+        "ar": "اشرح: استخدم خلطًا ينمّي ولا يكسّر"
+      },
+      "a": {
+        "en": "Rapid mixing and flocculation have different jobs. Flocculation enhances collisions, but excessive shear can break large flocs; tapered G reduces intensity toward the outlet. The velocity-gradient measure G relates power dissipated in water to viscosity and volume. Gt is a useful design exposure, not proof that any G and t with the same product produce identical flocs.",
+        "ar": "للخلط السريع والتلبيد مهمتان مختلفتان. يزيد التلبيد التصادمات لكن القص الزائد قد يكسر الندف الكبيرة؛ يقلل G المتدرج شدة الخلط نحو المخرج. يربط مقياس تدرج السرعة G القدرة المبددة في الماء بلزوجته وحجمه. Gt مؤشر تعرض تصميمي مفيد لا إثبات أن كل G وt لهما الحاصل نفسه تعطيان ندفًا متطابقة."
+      }
+    },
+    {
+      "id": "prediction-03",
+      "concept": "env-coagulation-gentle",
+      "kind": "prediction",
+      "q": {
+        "en": "If Gt is held fixed and G doubles, is an identical floc result guaranteed?",
+        "ar": "مع ثبات Gt ومضاعفة G، هل تُضمن الندف نفسها؟"
+      },
+      "a": {
+        "en": "No. Time halves, but breakage and collision mechanisms can change. A time-unit error changes tank size by60 or86400.",
+        "ar": "لا. ينخفض الزمن للنصف وقد تتغير آليات التصادم والكسر. خطأ الزمن يغيّر حجم الحوض بمعامل60 أو86400."
+      }
+    },
+    {
+      "id": "calculation-03",
+      "concept": "env-coagulation-gentle",
+      "kind": "calculation",
+      "q": {
+        "en": "Gt=30000,G=25 s⁻¹. Find t in seconds.",
+        "ar": "Gt=30000 وG=25 s⁻¹. أوجد t بالثواني."
+      },
+      "a": {
+        "en": "30000/25=1200 s.",
+        "ar": "30000/25=1200 s."
+      }
+    },
+    {
+      "id": "decision-03",
+      "concept": "env-coagulation-gentle",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Use mixing that grows rather than breaks?",
+        "ar": "متى يصح هذا النموذج: استخدم خلطًا ينمّي ولا يكسّر؟"
+      },
+      "a": {
+        "en": "G is an average dissipation metric; actual mixing distribution, short-circuiting and floc strength need assessment. Symbols: G s⁻¹,t s,μ dynamic viscosity Pa·s,V m³,Pwater W; Gt dimensionless.",
+        "ar": "G مقياس تبديد متوسط؛ يحتاج توزيع الخلط والاختصار الهيدروليكي وقوة الندف تقييمًا. الرموز: G بوحدة s⁻¹ وt بالثواني وμ اللزوجة الديناميكية Pa·s وV بالمتر المكعب وPwater بالواط؛ Gt بلا وحدة."
+      }
+    },
+    {
+      "id": "meaning-04",
+      "concept": "env-coagulation-size",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Time becomes a tank you can draw",
+        "ar": "اشرح: يصبح الزمن حوضًا يمكن رسمه"
+      },
+      "a": {
+        "en": "Multiply design flow by selected residence time to obtain nominal tank volume, then choose dimensions that multiply back to that volume. The lecture example assumes depth5 m and length15 m. Their plan factor is75 m², so width is771.6/75≈10.29 m. The slide prints a denominator225 beside10.3; that denominator is inconsistent and is corrected explicitly here.",
+        "ar": "اضرب تصريف التصميم في زمن المكوث المختار لتحصل على الحجم الاسمي ثم اختر أبعادًا يعود حاصل ضربها للحجم. يفترض المثال عمق5 m وطول15 m؛ حاصل هذين75 m²، لذلك العرض771.6/75≈10.29 m. تطبع الشريحة المقام225 بجانب10.3؛ وهذا غير متسق ويُصحح صراحة هنا."
+      }
+    },
+    {
+      "id": "prediction-04",
+      "concept": "env-coagulation-size",
+      "kind": "prediction",
+      "q": {
+        "en": "With L=15,H=5 m, is the denominator for width225 m²?",
+        "ar": "مع L=15 وH=5 m، هل مقام حساب العرض225 m²؟"
+      },
+      "a": {
+        "en": "No. L×H=75 m². Multiplying dimensions back is a quick independent check on a printed design.",
+        "ar": "لا. L×H=75 m². إعادة ضرب الأبعاد تحقق مستقل سريع من التصميم المطبوع."
+      }
+    },
+    {
+      "id": "calculation-04",
+      "concept": "env-coagulation-size",
+      "kind": "calculation",
+      "q": {
+        "en": "Q=0.5 m³/s,t=1200 s. Find V.",
+        "ar": "Q=0.5 m³/s وt=1200 s. أوجد V."
+      },
+      "a": {
+        "en": "0.5×1200=600 m³.",
+        "ar": "0.5×1200=600 m³."
+      }
+    },
+    {
+      "id": "decision-04",
+      "concept": "env-coagulation-size",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Time becomes a tank you can draw?",
+        "ar": "متى يصح هذا النموذج: يصبح الزمن حوضًا يمكن رسمه؟"
+      },
+      "a": {
+        "en": "Nominal hydraulic volume; account separately for freeboard, baffles, unavailable volume and short-circuiting in a detailed design. Symbols: V m³; Q m³/s;t s; tank length L,width B,depth H in m.",
+        "ar": "حجم هيدروليكي اسمي؛ تُقيّم الخلوصات والحواجز والحجم غير المتاح والاختصار الهيدروليكي منفصلة في التصميم التفصيلي. الرموز: V بالمتر المكعب وQ بالمتر المكعب/ثانية وt بالثواني؛ طول الحوض L وعرضه B وعمقه H بالأمتار."
+      }
+    },
+    {
+      "id": "meaning-05",
+      "concept": "env-coagulation-power",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Check power and return to the jar test",
+        "ar": "اشرح: تحقق من القدرة وعُد إلى اختبار الجرّة"
+      },
+      "a": {
+        "en": "For each compartment calculate water power μViGi²; equal volumes with different G need different powers. Doubling G at fixed volume quadruples power. Motor input is larger if drive efficiency is below1. The jar test chooses a chemical operating condition for representative raw water; changing dose or pH means retesting, not merely buying a stronger motor.",
+        "ar": "احسب لكل حجرة قدرة الماء μViGi²؛ تحتاج الأحجام المتساوية ذات G المختلفة قدرات مختلفة. مضاعفة G مع ثبات الحجم تضاعف القدرة أربع مرات. يزيد دخل المحرك إذا قلت كفاءة النقل عن1. يختار اختبار الجرّة حالة تشغيل كيميائية لماء خام ممثل؛ تغيير الجرعة أو pH يحتاج اختبارًا لا مجرد محرك أقوى."
+      }
+    },
+    {
+      "id": "prediction-05",
+      "concept": "env-coagulation-power",
+      "kind": "prediction",
+      "q": {
+        "en": "At fixed μ,V, double G. Does water power only double?",
+        "ar": "مع ثبات μ وV ضاعف G. هل تتضاعف قدرة الماء مرتين فقط؟"
+      },
+      "a": {
+        "en": "No. It quadruples. Check power, residence time and chemical response separately, then join them into one operating design.",
+        "ar": "لا. تتضاعف أربع مرات. تحقق من القدرة والزمن والاستجابة الكيميائية منفصلة ثم اجمعها في تصميم تشغيلي واحد."
+      }
+    },
+    {
+      "id": "calculation-05",
+      "concept": "env-coagulation-power",
+      "kind": "calculation",
+      "q": {
+        "en": "μ=0.001 Pa·s,V=100 m³,G=30 s⁻¹. Find Pwater.",
+        "ar": "μ=0.001 Pa·s وV=100 m³ وG=30 s⁻¹. أوجد Pwater."
+      },
+      "a": {
+        "en": "0.001×100×30²=90 W.",
+        "ar": "0.001×100×30²=90 W."
+      }
+    },
+    {
+      "id": "decision-05",
+      "concept": "env-coagulation-power",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Check power and return to the jar test?",
+        "ar": "متى يصح هذا النموذج: تحقق من القدرة وعُد إلى اختبار الجرّة؟"
+      },
+      "a": {
+        "en": "Water power only; motor sizing and paddle loading require actual efficiency and geometry. Jar-test optimum applies to tested water and objective. Symbols: μ=1.139×10⁻³ Pa·s at15°C in the source; η drive efficiency fraction; P in W.",
+        "ar": "قدرة الماء فقط؛ يتطلب حجم المحرك وأحمال الريش كفاءة وهندسة فعليتين. أفضلية الجرّة تخص الماء والهدف المختبَرين. الرموز: μ=1.139×10⁻³ Pa·s عند15°C في المصدر؛ η كفاءة نقل عشرية؛ P بالواط."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 2
+    },
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 3
+    },
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 4
+    },
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 7
+    },
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 9
+    },
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 15
+    },
+    {
+      "doc": "env-flocculation",
+      "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+      "page": 9
+    },
+    {
+      "doc": "env-flocculation",
+      "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+      "page": 10
+    },
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 13
+    },
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 14
+    },
+    {
+      "doc": "env-flocculation",
+      "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+      "page": 2
+    },
+    {
+      "doc": "env-flocculation",
+      "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+      "page": 3
+    },
+    {
+      "doc": "env-flocculation",
+      "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+      "page": 4
+    },
+    {
+      "doc": "env-flocculation",
+      "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+      "page": 6
+    },
+    {
+      "doc": "env-flocculation",
+      "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+      "page": 11
+    },
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 22
+    },
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 25
+    },
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 26
+    },
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 27
+    },
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 28
+    },
+    {
+      "doc": "env-coagulation",
+      "filename": "10 Environmental Engineering I-9 Coagulation.pdf",
+      "page": 29
+    },
+    {
+      "doc": "env-flocculation",
+      "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+      "page": 14
+    }
+  ]
+}

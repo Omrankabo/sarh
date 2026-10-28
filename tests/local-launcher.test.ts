@@ -30,6 +30,12 @@ test('launcher detects incomplete assets even when the build timestamp looks cur
   fs.writeFileSync(path.join(root,'public/offline-assets.json'),JSON.stringify(['/_next/static/chunks/a.css','/_next/static/chunks/a.js']));
   assert(!completeBuild(root));
   fs.writeFileSync(path.join(root,'.next/static/chunks/a.css'),'body{}');fs.writeFileSync(path.join(root,'.next/static/chunks/a.js'),'void 0');assert(completeBuild(root));
+  const art='/illustrations/v1/topics/slope-beams-card.webp';
+  const code=['/_next/static/chunks/a.css','/_next/static/chunks/a.js'];
+  fs.writeFileSync(path.join(root,'public/offline-assets.json'),JSON.stringify([...code,art]));assert(!completeBuild(root));
+  fs.mkdirSync(path.join(root,'public/illustrations/v1/topics'),{recursive:true});fs.writeFileSync(path.join(root,'public'+art),'webp');assert(completeBuild(root));
+  for(const forbidden of ['/materials/source.pdf','/illustrations/v1/topics/../../secret.webp','/illustrations/v1/topics/test.png']){fs.writeFileSync(path.join(root,'public/offline-assets.json'),JSON.stringify([...code,forbidden]));assert(!completeBuild(root));}
+  fs.writeFileSync(path.join(root,'public/offline-assets.json'),JSON.stringify([...code,art]));
   fs.writeFileSync(path.join(root,'.next/static/chunks/a.css'),'');assert(!completeBuild(root));
  }finally{assert.equal(path.dirname(root),parent);assert(path.basename(root).startsWith('sarh-launcher-'));fs.rmSync(root,{recursive:true,force:true});}
 });

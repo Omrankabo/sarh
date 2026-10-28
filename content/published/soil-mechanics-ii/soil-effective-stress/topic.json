@@ -1,0 +1,2034 @@
+{
+  "id": "soil-effective-stress",
+  "family": "soil-stress",
+  "title": {
+    "en": "Effective stress: who carries the ground?",
+    "ar": "الإجهاد الفعّال: من يحمل الأرض؟"
+  },
+  "summary": {
+    "en": "A building loads the ground, but soil grains and water share that load. Follow one point down a profile, then explain and calculate what the grain skeleton actually carries.",
+    "ar": "المبنى يحمّل الأرض، لكن الحبيبات والماء يتقاسمان الحمل. اتبع نقطة داخل القطاع ثم فسّر واحسب ما يحمله هيكل التربة فعلًا."
+  },
+  "outcomes": [
+    {
+      "en": "A load needs an area",
+      "ar": "الحمل يحتاج إلى مساحة"
+    },
+    {
+      "en": "One total, two carriers",
+      "ar": "إجهاد كلي وحاملان"
+    },
+    {
+      "en": "Count only the material above your point",
+      "ar": "احسب المادة الواقعة فوق النقطة فقط"
+    },
+    {
+      "en": "Water reads head, not soil type",
+      "ar": "الماء يقرأ ارتفاع العمود لا نوع التربة"
+    },
+    {
+      "en": "Two routes must reach the same effective stress",
+      "ar": "طريقان إلى الإجهاد الفعّال نفسه"
+    },
+    {
+      "en": "Drain excess pressure, not all the water",
+      "ar": "صرّف الضغط الزائد، لا كل الماء"
+    },
+    {
+      "en": "Carry the whole profile yourself",
+      "ar": "احمل قصة القطاع كاملة بنفسك"
+    }
+  ],
+  "prereqIds": [
+    "soil-units",
+    "algebra",
+    "soil-phase",
+    "soil-hydrostatic"
+  ],
+  "concepts": [
+    {
+      "id": "soil-contact",
+      "title": {
+        "en": "A load needs an area",
+        "ar": "الحمل يحتاج إلى مساحة"
+      }
+    },
+    {
+      "id": "soil-split",
+      "title": {
+        "en": "One total, two carriers",
+        "ar": "إجهاد كلي وحاملان"
+      }
+    },
+    {
+      "id": "soil-layers",
+      "title": {
+        "en": "Count only the material above your point",
+        "ar": "احسب المادة الواقعة فوق النقطة فقط"
+      }
+    },
+    {
+      "id": "soil-water-head",
+      "title": {
+        "en": "Water reads head, not soil type",
+        "ar": "الماء يقرأ ارتفاع العمود لا نوع التربة"
+      }
+    },
+    {
+      "id": "soil-submerged",
+      "title": {
+        "en": "Two routes must reach the same effective stress",
+        "ar": "طريقان إلى الإجهاد الفعّال نفسه"
+      }
+    },
+    {
+      "id": "soil-drainage",
+      "title": {
+        "en": "Drain excess pressure, not all the water",
+        "ar": "صرّف الضغط الزائد، لا كل الماء"
+      }
+    },
+    {
+      "id": "soil-independent",
+      "title": {
+        "en": "Carry the whole profile yourself",
+        "ar": "احمل قصة القطاع كاملة بنفسك"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "soil-effective-stress-contact",
+      "title": {
+        "en": "A load needs an area",
+        "ar": "الحمل يحتاج إلى مساحة"
+      },
+      "predict": {
+        "en": "The same force acts on half the area. What happens to average stress?",
+        "ar": "تؤثر القوة نفسها على نصف المساحة. ماذا يحدث للإجهاد المتوسط؟"
+      },
+      "options": [
+        {
+          "en": "It doubles because the same force has less area to share.",
+          "ar": "يتضاعف لأن القوة نفسها تتوزع على مساحة أصغر."
+        },
+        {
+          "en": "It halves because the contact is smaller.",
+          "ar": "ينخفض للنصف لأن التلامس أصغر."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Stress is load intensity. A result in kN without dividing by area is still a force.",
+        "ar": "الإجهاد شدة حمل. إذا بقي الناتج بوحدة kN دون قسمة على المساحة، فهو قوة حتى الآن."
+      },
+      "explain": {
+        "en": "Imagine placing a broad book, then a narrow pencil, on a sponge. The force can be the same while the pressure changes. In soil, we report a force per unit of the whole cross-sectional area, not per microscopic grain contact. Compression is positive here. Start with the loading and the area: the division tells you how strongly the ground is being asked to carry the load.",
+        "ar": "تخيّل وضع كتاب عريض ثم قلم رفيع على إسفنجة. قد تتساوى القوة بينما يتغيّر الضغط. في التربة نقيس القوة على مساحة المقطع الكلية، لا على مساحة تماس حبة مجهرية. نعد الضغط موجبًا هنا. ابدأ بالحمل والمساحة؛ القسمة تخبرك بشدة الطلب على الأرض."
+      },
+      "formula": "σ = Q/A; 1 kPa = 1 kN/m²",
+      "symbols": {
+        "en": "Q: applied force in kN; A: loaded area in m²; σ: average total normal stress in kPa.",
+        "ar": "Q قوة بوحدة kN؛ وA مساحة بوحدة m²؛ وσ إجهاد عمودي كلي متوسط بوحدة kPa."
+      },
+      "assumptions": {
+        "en": "Uniform loading on the stated area. This gives average stress, not the full three-dimensional stress distribution beneath a small footing.",
+        "ar": "حمل منتظم على المساحة المحددة. الناتج إجهاد متوسط، وليس توزيع الإجهاد ثلاثي الأبعاد أسفل قاعدة صغيرة."
+      },
+      "example": {
+        "en": "A 240 kN force is uniformly applied to 4 m². Find average pressure.",
+        "ar": "قوة 240 kN موزعة بانتظام على 4 m². أوجد الضغط المتوسط."
+      },
+      "calculation": {
+        "en": "σ=240/4=60 kN/m²=60 kPa. Doubling area to 8 m² would give 30 kPa.",
+        "ar": "σ=240/4=60 kN/m²=60 kPa. مضاعفة المساحة إلى 8 m² تعطي 30 kPa."
+      },
+      "interpret": {
+        "en": "Stress is load intensity. A result in kN without dividing by area is still a force.",
+        "ar": "الإجهاد شدة حمل. إذا بقي الناتج بوحدة kN دون قسمة على المساحة، فهو قوة حتى الآن."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the result, the physical reason and one condition that would change it.",
+          "ar": "اشرح النتيجة وسببها الفيزيائي وشرطًا واحدًا قد يغيّرها."
+        },
+        "answer": {
+          "en": "Stress is load intensity. A result in kN without dividing by area is still a force.",
+          "ar": "الإجهاد شدة حمل. إذا بقي الناتج بوحدة kN دون قسمة على المساحة، فهو قوة حتى الآن."
+        }
+      },
+      "diagram": "soil-contact",
+      "concepts": [
+        "soil-contact"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "soil-effective-stress-split",
+      "title": {
+        "en": "One total, two carriers",
+        "ar": "إجهاد كلي وحاملان"
+      },
+      "predict": {
+        "en": "Hold total stress at 100 kPa and raise u from 20 to 60 kPa. What happens to skeleton stress?",
+        "ar": "ثبّت الإجهاد الكلي عند 100 kPa وارفع u من 20 إلى 60 kPa. ماذا يحدث لإجهاد الهيكل؟"
+      },
+      "options": [
+        {
+          "en": "It falls from 80 to 40 kPa.",
+          "ar": "ينخفض من 80 إلى 40 kPa."
+        },
+        {
+          "en": "It rises because more water always strengthens grain contacts.",
+          "ar": "يزيد لأن الماء الإضافي يقوّي تلامس الحبيبات دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "At unchanged total stress, increasing pore pressure reduces effective stress. This is a stress partition, not loss of equilibrium.",
+        "ar": "عند ثبات الإجهاد الكلي، زيادة ضغط المسام تقلّل الإجهاد الفعّال. إنه تغيّر في تقاسم الإجهاد، وليس فقدانًا للاتزان."
+      },
+      "explain": {
+        "en": "Now imagine the sponge is a skeleton of grains with water between them. At a cut through a saturated sample, the total load is supported by the skeleton and pore water together. Effective stress describes the skeleton contribution on the gross area. It is not a second externally applied load. Water pressure matters because it can take over part of the support without supplying grain-to-grain friction.",
+        "ar": "تخيّل الآن هيكلًا من الحبيبات والماء بين فراغاتها. عند قطع عينة مشبعة، يحمل الهيكل وماء المسام الحمل الكلي معًا. يصف الإجهاد الفعّال مساهمة الهيكل على مساحة المقطع الإجمالية، وليس حملًا خارجيًا إضافيًا. أهمية ضغط الماء أنه قد يحمل جزءًا من الحمل دون توفير احتكاك بين الحبيبات."
+      },
+      "formula": "σ = σ′ + u; σ′ = σ − u",
+      "symbols": {
+        "en": "σ: total normal stress; u: gauge pore-water pressure; σ′: effective normal stress, all in kPa.",
+        "ar": "σ الإجهاد العمودي الكلي؛ u ضغط ماء المسام المقاس بالنسبة للجو؛ σ′ الإجهاد العمودي الفعّال. جميعها kPa."
+      },
+      "assumptions": {
+        "en": "Terzaghi saturated-soil model with consistent compression-positive signs. Unsaturated soil suction needs an extended model.",
+        "ar": "نموذج ترزاغي للتربة المشبعة مع إشارة ضغط موجبة متسقة. شفط التربة غير المشبعة يحتاج نموذجًا موسعًا."
+      },
+      "example": {
+        "en": "At one point, σ=100 kPa and u=40 kPa. Find σ′.",
+        "ar": "عند نقطة واحدة σ=100 kPa وu=40 kPa. أوجد σ′."
+      },
+      "calculation": {
+        "en": "σ′=100−40=60 kPa. Check: 60+40=100.",
+        "ar": "σ′=100−40=60 kPa. التحقق: 60+40=100."
+      },
+      "interpret": {
+        "en": "At unchanged total stress, increasing pore pressure reduces effective stress. This is a stress partition, not loss of equilibrium.",
+        "ar": "عند ثبات الإجهاد الكلي، زيادة ضغط المسام تقلّل الإجهاد الفعّال. إنه تغيّر في تقاسم الإجهاد، وليس فقدانًا للاتزان."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the result, the physical reason and one condition that would change it.",
+          "ar": "اشرح النتيجة وسببها الفيزيائي وشرطًا واحدًا قد يغيّرها."
+        },
+        "answer": {
+          "en": "At unchanged total stress, increasing pore pressure reduces effective stress. This is a stress partition, not loss of equilibrium.",
+          "ar": "عند ثبات الإجهاد الكلي، زيادة ضغط المسام تقلّل الإجهاد الفعّال. إنه تغيّر في تقاسم الإجهاد، وليس فقدانًا للاتزان."
+        }
+      },
+      "diagram": "soil-split",
+      "concepts": [
+        "soil-split"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "soil-effective-stress-layers",
+      "title": {
+        "en": "Count only the material above your point",
+        "ar": "احسب المادة الواقعة فوق النقطة فقط"
+      },
+      "predict": {
+        "en": "At mid-height of a 4 m clay layer, how much of that clay contributes to overburden?",
+        "ar": "في منتصف طبقة طين سماكتها 4 m، كم من الطين يدخل في حساب الغطاء فوق النقطة؟"
+      },
+      "options": [
+        {
+          "en": "Only the upper 2 m.",
+          "ar": "المتران العلويان فقط."
+        },
+        {
+          "en": "All 4 m, including material below the point.",
+          "ar": "الأمتار الأربعة، بما فيها المادة أسفل النقطة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The total-stress profile is a running sum of actual weights. Each segment has slope γ, not γ′.",
+        "ar": "منحنى الإجهاد الكلي مجموع تراكمي للأوزان الفعلية. ميل كل جزء γ وليس γ′."
+      },
+      "explain": {
+        "en": "Walk down a soil profile carrying a ledger. Every metre adds the weight of the material just crossed. At a layer boundary, the accumulated stress stays continuous but its slope changes with unit weight. A point halfway through clay has only half that clay thickness above it. Do not use submerged unit weight when building the total-stress ledger: water contained in saturated soil still has weight.",
+        "ar": "انزل داخل قطاع التربة وأنت تسجل الأوزان. يضيف كل متر وزن المادة التي مررت بها. عند الحد بين طبقتين يبقى الإجهاد المتراكم متصلًا، لكن ميل منحناه يتغيّر بتغيّر الوزن الحجمي. في منتصف الطين لا تقع فوق النقطة إلا نصف سماكته. لا تستخدم الوزن المغمور في حساب الإجهاد الكلي؛ فالماء داخل التربة المشبعة له وزن أيضًا."
+      },
+      "formula": "σ_v(z) = q + Σ(γ_i h_i)",
+      "symbols": {
+        "en": "γ_i is actual bulk unit weight (kN/m³); h_i is the thickness above the point (m). q is a uniform surcharge (kPa).",
+        "ar": "γ_i الوزن الحجمي الكلي الفعلي للطبقة بوحدة kN/m³؛ وh_i سماكتها فوق النقطة بوحدة m؛ وq حمل سطحي منتظم بوحدة kPa."
+      },
+      "assumptions": {
+        "en": "Horizontal extensive layers. A constant q at depth assumes loading over a sufficiently large area, not a finite footing.",
+        "ar": "طبقات أفقية واسعة. اعتبار q ثابتًا مع العمق يفترض مساحة تحميل كبيرة بما يكفي، وليس قاعدة محدودة."
+      },
+      "example": {
+        "en": "Above P: 3 m sand at γ=17, then 2 m saturated sand at γ=20. Find σ_v.",
+        "ar": "فوق P: رمل 3 m بوزن حجمي 17، ثم رمل مشبع 2 m بوزن حجمي 20. أوجد σ_v."
+      },
+      "calculation": {
+        "en": "σ_v=3×17+2×20=91 kPa. The sand below P contributes nothing to this vertical overburden sum.",
+        "ar": "σ_v=3×17+2×20=91 kPa. الرمل أسفل P لا يساهم في مجموع الغطاء الرأسي فوقها."
+      },
+      "interpret": {
+        "en": "The total-stress profile is a running sum of actual weights. Each segment has slope γ, not γ′.",
+        "ar": "منحنى الإجهاد الكلي مجموع تراكمي للأوزان الفعلية. ميل كل جزء γ وليس γ′."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the result, the physical reason and one condition that would change it.",
+          "ar": "اشرح النتيجة وسببها الفيزيائي وشرطًا واحدًا قد يغيّرها."
+        },
+        "answer": {
+          "en": "The total-stress profile is a running sum of actual weights. Each segment has slope γ, not γ′.",
+          "ar": "منحنى الإجهاد الكلي مجموع تراكمي للأوزان الفعلية. ميل كل جزء γ وليس γ′."
+        }
+      },
+      "diagram": "soil-layers",
+      "concepts": [
+        "soil-layers"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 5
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 6
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "soil-effective-stress-water-head",
+      "title": {
+        "en": "Water reads head, not soil type",
+        "ar": "الماء يقرأ ارتفاع العمود لا نوع التربة"
+      },
+      "predict": {
+        "en": "P is 9 m below ground and WT is 3 m below ground. Which water head sets u?",
+        "ar": "النقطة P عند عمق 9 m والماء عند 3 m تحت الأرض. أي عمود ماء يحدد u؟"
+      },
+      "options": [
+        {
+          "en": "6 m, measured from WT to P.",
+          "ar": "6 m من منسوب الماء إلى P."
+        },
+        {
+          "en": "9 m, always measured from ground.",
+          "ar": "9 m من الأرض دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A change in soil type does not reset hydrostatic pore pressure. A change in water head does.",
+        "ar": "تغيّر نوع التربة لا يعيد ضغط الماء الهيدروستاتيكي إلى الصفر؛ تغيّر رأس الماء هو المؤثر."
+      },
+      "explain": {
+        "en": "Put a tiny pressure gauge at P and connect it to still pore water. Its reading is set by the vertical distance below the free water level. It does not care whether the surrounding grains are sand or clay. Above the water table this introductory model sets u to zero only because it deliberately ignores capillary suction. With seepage or excess pressure, the measured water head must replace a guessed hydrostatic triangle.",
+        "ar": "ضع مقياس ضغط صغيرًا عند P متصلًا بماء مسام ساكن. تتحدد قراءته بالمسافة الرأسية أسفل سطح الماء الحر، لا بكون الحبيبات رملًا أو طينًا. يفترض هذا النموذج التمهيدي u=0 فوق منسوب الماء لأنه يهمل الشفط الشعري عمدًا. عند وجود سريان أو ضغط زائد يجب استخدام الرأس الفعلي بدل افتراض مثلث هيدروستاتيكي."
+      },
+      "formula": "u = γ_w h_w = 9.81 h_w; h_w = max(0, z − z_WT)",
+      "symbols": {
+        "en": "h_w: vertical water head above P (m); z and z_WT are depths from the same datum. γ_w=9.81 kN/m³. u is gauge pressure in kPa.",
+        "ar": "h_w ارتفاع عمود الماء فوق P بالمتر؛ وz وz_WT عمقان من المرجع نفسه. γ_w=9.81 kN/m³، وu ضغط مقاس نسبة للجو بوحدة kPa."
+      },
+      "assumptions": {
+        "en": "Connected water at rest, atmospheric pressure at the water table, no excess pressure, and capillarity ignored.",
+        "ar": "ماء متصل ساكن، وضغط جوي عند منسوب الماء، دون ضغط زائد، مع إهمال الخاصية الشعرية."
+      },
+      "example": {
+        "en": "Find u at z=9 m with WT at 3 m.",
+        "ar": "أوجد u عند z=9 m ومنسوب الماء عند 3 m."
+      },
+      "calculation": {
+        "en": "h_w=9−3=6 m; u=9.81×6=58.86 kPa.",
+        "ar": "h_w=9−3=6 m؛ u=9.81×6=58.86 kPa."
+      },
+      "interpret": {
+        "en": "A change in soil type does not reset hydrostatic pore pressure. A change in water head does.",
+        "ar": "تغيّر نوع التربة لا يعيد ضغط الماء الهيدروستاتيكي إلى الصفر؛ تغيّر رأس الماء هو المؤثر."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the result, the physical reason and one condition that would change it.",
+          "ar": "اشرح النتيجة وسببها الفيزيائي وشرطًا واحدًا قد يغيّرها."
+        },
+        "answer": {
+          "en": "A change in soil type does not reset hydrostatic pore pressure. A change in water head does.",
+          "ar": "تغيّر نوع التربة لا يعيد ضغط الماء الهيدروستاتيكي إلى الصفر؛ تغيّر رأس الماء هو المؤثر."
+        }
+      },
+      "diagram": "soil-water-head",
+      "concepts": [
+        "soil-water-head"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "soil-effective-stress-submerged",
+      "title": {
+        "en": "Two routes must reach the same effective stress",
+        "ar": "طريقان إلى الإجهاد الفعّال نفسه"
+      },
+      "predict": {
+        "en": "You already used γ_sat−γ_w below WT. Should you subtract hydrostatic u again?",
+        "ar": "استخدمت γ_sat−γ_w أسفل الماء. هل تطرح u الهيدروستاتيكي مرة أخرى؟"
+      },
+      "options": [
+        {
+          "en": "No. That would subtract water support twice.",
+          "ar": "لا؛ سيعني طرح أثر الماء مرتين."
+        },
+        {
+          "en": "Yes, every effective-stress calculation always needs a second subtraction.",
+          "ar": "نعم، كل حساب فعّال يحتاج طرحًا ثانيًا دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Agreement between the two routes is a powerful error check. A disagreement usually means a wrong depth, wrong unit weight, or a repeated water subtraction.",
+        "ar": "توافق الطريقين تحقق قوي. غالبًا يكشف اختلافهما عمقًا خاطئًا أو وزنًا غير مناسب أو تكرار طرح الماء."
+      },
+      "explain": {
+        "en": "You can count the entire saturated soil weight and subtract its water pressure once. Or, under hydrostatic conditions, you can count the submerged weight directly. These are two accounting routes to the same skeleton stress. Using submerged weight and then subtracting water again makes the same correction twice. Above the water table, retain the stated moist or dry unit weight rather than subtracting water weight there.",
+        "ar": "يمكنك حساب وزن التربة المشبعة كاملًا ثم طرح ضغط الماء مرة واحدة. أو تحسب الوزن المغمور مباشرة في الحالة الهيدروستاتيكية. الطريقان يوصلان إلى إجهاد الهيكل نفسه. استعمال الوزن المغمور ثم طرح الماء مرة أخرى يكرر التصحيح. فوق الماء استخدم الوزن الرطب أو الجاف المعطى دون طرح وزن الماء منه."
+      },
+      "formula": "γ′ = γ_sat − γ_w; σ′_v = Σ_aboveWT(γ h) + Σ_belowWT(γ′ h)",
+      "symbols": {
+        "en": "γ′: submerged unit weight in kN/m³. It gives the effective-stress gradient below static WT, not total unit weight.",
+        "ar": "γ′ الوزن الحجمي المغمور بوحدة kN/m³. يعطي تدرّج الإجهاد الفعّال أسفل الماء الساكن، وليس الوزن الحجمي الكلي."
+      },
+      "assumptions": {
+        "en": "Hydrostatic saturated layers with no excess pore pressure or capillary correction. Include any wide drained surcharge separately.",
+        "ar": "طبقات مشبعة هيدروستاتيكية دون ضغط زائد أو تصحيح شعري. أضف الحمل السطحي الواسع المصروف بصورة منفصلة."
+      },
+      "example": {
+        "en": "Use the tutorial profile: 3 m at 17, 2 m saturated sand at 20, 4 m saturated clay at 19. Find σ′ at 9 m.",
+        "ar": "استخدم قطاع التمرين: 3 m بوزن 17، ثم رمل مشبع 2 m بوزن 20، ثم طين مشبع 4 m بوزن 19. احسب σ′ عند 9 m."
+      },
+      "calculation": {
+        "en": "Direct route: 3×17+2×(20−9.81)+4×(19−9.81)=108.14 kPa. Full route: σ=167; u=58.86; σ−u=108.14.",
+        "ar": "الطريق المباشر: 3×17+2×(20−9.81)+4×(19−9.81)=108.14 kPa. والطريق الكامل: σ=167 وu=58.86، فيكون الفرق 108.14."
+      },
+      "interpret": {
+        "en": "Agreement between the two routes is a powerful error check. A disagreement usually means a wrong depth, wrong unit weight, or a repeated water subtraction.",
+        "ar": "توافق الطريقين تحقق قوي. غالبًا يكشف اختلافهما عمقًا خاطئًا أو وزنًا غير مناسب أو تكرار طرح الماء."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the result, the physical reason and one condition that would change it.",
+          "ar": "اشرح النتيجة وسببها الفيزيائي وشرطًا واحدًا قد يغيّرها."
+        },
+        "answer": {
+          "en": "Agreement between the two routes is a powerful error check. A disagreement usually means a wrong depth, wrong unit weight, or a repeated water subtraction.",
+          "ar": "توافق الطريقين تحقق قوي. غالبًا يكشف اختلافهما عمقًا خاطئًا أو وزنًا غير مناسب أو تكرار طرح الماء."
+        }
+      },
+      "diagram": "soil-submerged",
+      "concepts": [
+        "soil-submerged"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 8
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "soil-effective-stress-drainage",
+      "title": {
+        "en": "Drain excess pressure, not all the water",
+        "ar": "صرّف الضغط الزائد، لا كل الماء"
+      },
+      "predict": {
+        "en": "After excess pore pressure dissipates below a water table, must total pore pressure be zero?",
+        "ar": "بعد تبدد ضغط المسام الزائد تحت منسوب الماء، هل يجب أن يصبح ضغط الماء الكلي صفرًا؟"
+      },
+      "options": [
+        {
+          "en": "No. Hydrostatic pressure remains.",
+          "ar": "لا؛ يبقى الضغط الهيدروستاتيكي."
+        },
+        {
+          "en": "Yes. Drained means the pores contain no water.",
+          "ar": "نعم؛ مصروف يعني أن المسام خالية من الماء."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Keep total pressure, baseline water pressure and excess pressure in separate ledgers. Drained describes pressure equilibration, not an empty soil.",
+        "ar": "افصل سجلات الإجهاد الكلي وضغط الماء الأساسي والضغط الزائد. يصف التصريف اتزان الضغط، لا تربة فارغة من الماء."
+      },
+      "explain": {
+        "en": "Place a broad additional load on saturated clay. In the ideal undrained instant, water can initially carry the increment; as drainage proceeds, excess pore pressure dissipates and the skeleton takes more of the increment. At the end, pore pressure can still be hydrostatic and positive. The pores do not have to become empty. The lecture’s piston description on page 4 must be read alongside page 7, which correctly separates hydrostatic and excess pressure.",
+        "ar": "ضع حملًا إضافيًا واسعًا على طين مشبع. في اللحظة غير المصروفة المثالية قد يحمل الماء الزيادة أولًا؛ ومع التصريف يتبدد ضغط المسام الزائد ويحمل الهيكل حصة أكبر. في النهاية قد يبقى ضغط الماء الهيدروستاتيكي موجبًا. لا يلزم أن تفرغ المسام. يجب قراءة وصف المكبس في صفحة 4 مع صفحة 7 التي تفصل الضغط الهيدروستاتيكي عن الزائد."
+      },
+      "formula": "u(t) = u_h + Δu(t); Δσ′(t) = Δσ − Δu(t)",
+      "symbols": {
+        "en": "u_h: baseline hydrostatic pressure; Δu: excess pressure; Δσ: applied total-stress increment. All in kPa.",
+        "ar": "u_h الضغط الهيدروستاتيكي الأساسي؛ Δu الضغط الزائد؛ Δσ زيادة الإجهاد الكلي المطبق. الوحدات kPa."
+      },
+      "assumptions": {
+        "en": "Ideal one-dimensional saturated loading with fixed total load after application and unchanged water level. The initial Δu≈Δσ assumption is not universal for all soil or stress paths.",
+        "ar": "تحميل مثالي أحادي البعد لتربة مشبعة مع ثبات الحمل بعد تطبيقه وثبات منسوب الماء. افتراض Δu≈Δσ أوليًا ليس عامًا لكل تربة أو مسار إجهاد."
+      },
+      "example": {
+        "en": "Baseline u_h=30 kPa. A 40 kPa surcharge is held fixed. Later excess Δu=10 kPa. Find the skeleton increment.",
+        "ar": "u_h الأساسي=30 kPa. طُبق حمل سطحي 40 kPa وبقي ثابتًا. لاحقًا Δu=10 kPa. احسب زيادة إجهاد الهيكل."
+      },
+      "calculation": {
+        "en": "Δσ′=40−10=30 kPa; current u=30+10=40 kPa. At full dissipation u returns to 30, not zero.",
+        "ar": "Δσ′=40−10=30 kPa؛ والضغط الحالي u=30+10=40 kPa. عند تبدد الزائد يعود u إلى 30 وليس صفرًا."
+      },
+      "interpret": {
+        "en": "Keep total pressure, baseline water pressure and excess pressure in separate ledgers. Drained describes pressure equilibration, not an empty soil.",
+        "ar": "افصل سجلات الإجهاد الكلي وضغط الماء الأساسي والضغط الزائد. يصف التصريف اتزان الضغط، لا تربة فارغة من الماء."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the result, the physical reason and one condition that would change it.",
+          "ar": "اشرح النتيجة وسببها الفيزيائي وشرطًا واحدًا قد يغيّرها."
+        },
+        "answer": {
+          "en": "Keep total pressure, baseline water pressure and excess pressure in separate ledgers. Drained describes pressure equilibration, not an empty soil.",
+          "ar": "افصل سجلات الإجهاد الكلي وضغط الماء الأساسي والضغط الزائد. يصف التصريف اتزان الضغط، لا تربة فارغة من الماء."
+        }
+      },
+      "diagram": "soil-drainage",
+      "concepts": [
+        "soil-drainage"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "soil-effective-stress-independent",
+      "title": {
+        "en": "Carry the whole profile yourself",
+        "ar": "احمل قصة القطاع كاملة بنفسك"
+      },
+      "predict": {
+        "en": "Add 1 m of still water above an already submerged soil bed. At the same soil point, what happens to σ′?",
+        "ar": "أضف 1 m ماء ساكن فوق قاع تربة مغمور أصلًا. ماذا يحدث لـσ′ عند نقطة التربة نفسها؟"
+      },
+      "options": [
+        {
+          "en": "It stays the same: σ and u both rise by 9.81 kPa.",
+          "ar": "تبقى نفسها؛ تزيد σ وu معًا 9.81 kPa."
+        },
+        {
+          "en": "It rises by 9.81 kPa because only total stress changes.",
+          "ar": "تزيد 9.81 kPa لأن الكلي وحده يتغيّر."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "You are ready when your diagram, your total-minus-water route and your submerged-weight route all agree, and you can explain which changes would break those assumptions. FE/PE relevance: effective stress and groundwater interpretation; no claim of exam-percentage coverage.",
+        "ar": "تكون مستعدًا حين يتوافق الرسم وطريق الكلي ناقص الماء وطريق الوزن المغمور، وتستطيع شرح التغيّرات التي تُبطل الفرضيات. صلة FE/PE: تفسير الإجهاد الفعّال والمياه الجوفية، دون ادعاء نسبة تغطية امتحانية."
+      },
+      "explain": {
+        "en": "For the tutorial, first mark ground, the water table at 3 m, the sand–clay boundary at 5 m and the base at 9 m. Build three columns: total, pore and effective. Plot each boundary value and join with the correct linear gradient. For the lecture lake problem, reset the datum carefully: the soil bed is below a 3.05 m water blanket, with 7.92 m sand and 3.66 m clay. The clay midpoint has 1.83 m clay above it. The water blanket adds equally to total and pore pressure, so it cancels from effective stress at a fixed point in the soil.",
+        "ar": "في التمرين حدّد الأرض ومنسوب الماء عند 3 m والحد بين الرمل والطين عند 5 m والقاع عند 9 m. أنشئ ثلاثة أعمدة: الكلي والماء والفعّال. ارسم قيم الحدود ثم صلها بالميل الخطي الصحيح. وفي مسألة البحيرة غيّر المرجع بعناية: يقع قاع التربة تحت ماء عمقه 3.05 m، ثم رمل 7.92 m وطين 3.66 m. يقع فوق منتصف الطين 1.83 m منه. يضيف غطاء الماء المقدار نفسه إلى الكلي وإلى ضغط الماء، فيُلغى من الفعّال عند نقطة ثابتة في التربة."
+      },
+      "formula": "Lake midpoint: σ = γ_w H + γ_sand·7.92 + γ_clay·1.83\nu = γ_w(H + 7.92 + 1.83); σ′ = σ − u",
+      "symbols": {
+        "en": "H=3.05 m; saturated γ_sand=19.62 and γ_clay=18.36 kN/m³. Use γ_w=9.81 kN/m³.",
+        "ar": "H=3.05 m؛ والوزن المشبع للرمل 19.62 وللطين 18.36 kN/m³. استخدم γ_w=9.81 kN/m³."
+      },
+      "assumptions": {
+        "en": "Static lake, saturated connected soil and unchanged soil density. This cancellation does not justify ignoring groundwater changes inside the soil or seepage.",
+        "ar": "بحيرة ساكنة وتربة مشبعة متصلة مع ثبات كثافة التربة. هذا الإلغاء لا يسمح بإهمال تغيّر الماء داخل التربة أو السريان."
+      },
+      "example": {
+        "en": "Calculate all three stresses at the lecture lake clay midpoint.",
+        "ar": "احسب الإجهادات الثلاثة عند منتصف طين البحيرة في المحاضرة."
+      },
+      "calculation": {
+        "en": "u=(3.05+7.92+1.83)9.81=125.568; σ=3.05×9.81+7.92×19.62+1.83×18.36=218.9097; σ′=93.3417 kPa. Check: 125.568+93.3417=218.9097. The source rounds to 125.6, 93.3 and 218.9.",
+        "ar": "u=(3.05+7.92+1.83)9.81=125.568؛ σ=3.05×9.81+7.92×19.62+1.83×18.36=218.9097؛ σ′=93.3417 kPa. التحقق: 125.568+93.3417=218.9097. قرّب المصدر إلى 125.6 و93.3 و218.9."
+      },
+      "interpret": {
+        "en": "You are ready when your diagram, your total-minus-water route and your submerged-weight route all agree, and you can explain which changes would break those assumptions. FE/PE relevance: effective stress and groundwater interpretation; no claim of exam-percentage coverage.",
+        "ar": "تكون مستعدًا حين يتوافق الرسم وطريق الكلي ناقص الماء وطريق الوزن المغمور، وتستطيع شرح التغيّرات التي تُبطل الفرضيات. صلة FE/PE: تفسير الإجهاد الفعّال والمياه الجوفية، دون ادعاء نسبة تغطية امتحانية."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the result, the physical reason and one condition that would change it.",
+          "ar": "اشرح النتيجة وسببها الفيزيائي وشرطًا واحدًا قد يغيّرها."
+        },
+        "answer": {
+          "en": "You are ready when your diagram, your total-minus-water route and your submerged-weight route all agree, and you can explain which changes would break those assumptions. FE/PE relevance: effective stress and groundwater interpretation; no claim of exam-percentage coverage.",
+          "ar": "تكون مستعدًا حين يتوافق الرسم وطريق الكلي ناقص الماء وطريق الوزن المغمور، وتستطيع شرح التغيّرات التي تُبطل الفرضيات. صلة FE/PE: تفسير الإجهاد الفعّال والمياه الجوفية، دون ادعاء نسبة تغطية امتحانية."
+        }
+      },
+      "diagram": "soil-independent",
+      "concepts": [
+        "soil-independent"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 10
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 11
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 5
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "SC01",
+      "concept": "soil-contact",
+      "type": "conceptual",
+      "prompt": {
+        "en": "The same force acts on half the area. What happens to average stress?",
+        "ar": "تؤثر القوة نفسها على نصف المساحة. ماذا يحدث للإجهاد المتوسط؟"
+      },
+      "options": [
+        {
+          "en": "It halves because the contact is smaller.",
+          "ar": "ينخفض للنصف لأن التلامس أصغر."
+        },
+        {
+          "en": "It doubles because the same force has less area to share.",
+          "ar": "يتضاعف لأن القوة نفسها تتوزع على مساحة أصغر."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "Stress is load intensity. A result in kN without dividing by area is still a force.",
+        "ar": "الإجهاد شدة حمل. إذا بقي الناتج بوحدة kN دون قسمة على المساحة، فهو قوة حتى الآن."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "SN01",
+      "concept": "soil-contact",
+      "type": "numerical",
+      "prompt": {
+        "en": "A 180 kN load acts on 3 m². Enter its average total stress.",
+        "ar": "حمل 180 kN يؤثر على 3 m². أدخل الإجهاد الكلي المتوسط."
+      },
+      "expected": 60,
+      "unit": "kPa",
+      "tolerance": 0.02,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "180/3=60 kPa.",
+        "ar": "180/3=60 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "SM01",
+      "concept": "soil-contact",
+      "type": "mixed",
+      "prompt": {
+        "en": "Keep Q=180 kN, change A from 3 to 6 m². Enter the new stress and choose its meaning.",
+        "ar": "ثبّت Q=180 kN وغيّر A من 3 إلى 6 m². أدخل الإجهاد الجديد واختر معناه."
+      },
+      "expected": 30,
+      "unit": "kPa",
+      "tolerance": 0.02,
+      "options": [
+        {
+          "en": "Larger area lowers average load intensity.",
+          "ar": "المساحة الأكبر تخفض شدة الحمل المتوسطة."
+        },
+        {
+          "en": "The total applied force must also halve.",
+          "ar": "لا بد أن تنخفض القوة الكلية أيضًا للنصف."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "180/6=30 kPa; the force remains 180 kN.",
+        "ar": "180/6=30 kPa؛ وتبقى القوة 180 kN."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "SC02",
+      "concept": "soil-split",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Hold total stress at 100 kPa and raise u from 20 to 60 kPa. What happens to skeleton stress?",
+        "ar": "ثبّت الإجهاد الكلي عند 100 kPa وارفع u من 20 إلى 60 kPa. ماذا يحدث لإجهاد الهيكل؟"
+      },
+      "options": [
+        {
+          "en": "It rises because more water always strengthens grain contacts.",
+          "ar": "يزيد لأن الماء الإضافي يقوّي تلامس الحبيبات دائمًا."
+        },
+        {
+          "en": "It falls from 80 to 40 kPa.",
+          "ar": "ينخفض من 80 إلى 40 kPa."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "At unchanged total stress, increasing pore pressure reduces effective stress. This is a stress partition, not loss of equilibrium.",
+        "ar": "عند ثبات الإجهاد الكلي، زيادة ضغط المسام تقلّل الإجهاد الفعّال. إنه تغيّر في تقاسم الإجهاد، وليس فقدانًا للاتزان."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "SN02",
+      "concept": "soil-split",
+      "type": "numerical",
+      "prompt": {
+        "en": "σ=150 kPa, u=55 kPa. Find σ′.",
+        "ar": "σ=150 kPa وu=55 kPa. أوجد σ′."
+      },
+      "expected": 95,
+      "unit": "kPa",
+      "tolerance": 0.02,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "150−55=95 kPa; 95+55=150.",
+        "ar": "150−55=95 kPa؛ و95+55=150."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "SM02",
+      "concept": "soil-split",
+      "type": "mixed",
+      "prompt": {
+        "en": "σ stays 150 kPa while u rises to 85 kPa. Enter σ′ and choose what changed.",
+        "ar": "تبقى σ=150 kPa بينما ترتفع u إلى 85 kPa. أدخل σ′ وحدد ما تغيّر."
+      },
+      "expected": 65,
+      "unit": "kPa",
+      "tolerance": 0.02,
+      "options": [
+        {
+          "en": "The skeleton carries less of the same total.",
+          "ar": "يحمل الهيكل حصة أقل من الإجهاد الكلي نفسه."
+        },
+        {
+          "en": "Total stress has disappeared.",
+          "ar": "اختفى الإجهاد الكلي."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "150−85=65 kPa. The partition changes; total remains 150.",
+        "ar": "150−85=65 kPa. تغيّر التقاسم وبقي الكلي 150."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "SC03",
+      "concept": "soil-layers",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At mid-height of a 4 m clay layer, how much of that clay contributes to overburden?",
+        "ar": "في منتصف طبقة طين سماكتها 4 m، كم من الطين يدخل في حساب الغطاء فوق النقطة؟"
+      },
+      "options": [
+        {
+          "en": "All 4 m, including material below the point.",
+          "ar": "الأمتار الأربعة، بما فيها المادة أسفل النقطة."
+        },
+        {
+          "en": "Only the upper 2 m.",
+          "ar": "المتران العلويان فقط."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "The total-stress profile is a running sum of actual weights. Each segment has slope γ, not γ′.",
+        "ar": "منحنى الإجهاد الكلي مجموع تراكمي للأوزان الفعلية. ميل كل جزء γ وليس γ′."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 5
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 6
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "SN03",
+      "concept": "soil-layers",
+      "type": "numerical",
+      "prompt": {
+        "en": "A 2 m layer has γ=18 and the next 3 m has γ=20 kN/m³. With q=10 kPa, find total stress at 5 m.",
+        "ar": "طبقة 2 m بوزن 18 تليها 3 m بوزن 20 kN/m³، مع q=10 kPa. احسب الإجهاد الكلي عند 5 m."
+      },
+      "expected": 106,
+      "unit": "kPa",
+      "tolerance": 0.02,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "10+2×18+3×20=106 kPa.",
+        "ar": "10+2×18+3×20=106 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 5
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 6
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "SM03",
+      "concept": "soil-layers",
+      "type": "mixed",
+      "prompt": {
+        "en": "At the centre of 4 m clay below 3 m sand, γsand=18 and γclay=19. Enter total overburden and choose the clay thickness used.",
+        "ar": "في مركز طين سماكته 4 m تحت رمل 3 m، γ الرمل=18 وγ الطين=19. أدخل الكلي واختر سماكة الطين المستخدمة."
+      },
+      "expected": 92,
+      "unit": "kPa",
+      "tolerance": 0.02,
+      "options": [
+        {
+          "en": "Use 2 m clay above the centre.",
+          "ar": "نستخدم 2 m من الطين فوق المنتصف."
+        },
+        {
+          "en": "Use all 4 m clay.",
+          "ar": "نستخدم كامل الطين 4 m."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "3×18+2×19=92 kPa.",
+        "ar": "3×18+2×19=92 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 5
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 6
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "SC04",
+      "concept": "soil-water-head",
+      "type": "conceptual",
+      "prompt": {
+        "en": "P is 9 m below ground and WT is 3 m below ground. Which water head sets u?",
+        "ar": "النقطة P عند عمق 9 m والماء عند 3 m تحت الأرض. أي عمود ماء يحدد u؟"
+      },
+      "options": [
+        {
+          "en": "9 m, always measured from ground.",
+          "ar": "9 m من الأرض دائمًا."
+        },
+        {
+          "en": "6 m, measured from WT to P.",
+          "ar": "6 m من منسوب الماء إلى P."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "A change in soil type does not reset hydrostatic pore pressure. A change in water head does.",
+        "ar": "تغيّر نوع التربة لا يعيد ضغط الماء الهيدروستاتيكي إلى الصفر؛ تغيّر رأس الماء هو المؤثر."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "SN04",
+      "concept": "soil-water-head",
+      "type": "numerical",
+      "prompt": {
+        "en": "P is at 10 m, WT at 2 m. Calculate u for static water.",
+        "ar": "P عند 10 m والماء عند 2 m. احسب u للماء الساكن."
+      },
+      "expected": 78.48,
+      "unit": "kPa",
+      "tolerance": 0.02,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "u=9.81(10−2)=78.48 kPa.",
+        "ar": "u=9.81(10−2)=78.48 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "SM04",
+      "concept": "soil-water-head",
+      "type": "mixed",
+      "prompt": {
+        "en": "P lies 4 m below WT and measured total stress is 100 kPa. Enter σ′ and choose the valid hydrostatic condition.",
+        "ar": "P تقع 4 m أسفل الماء والكلي المقاس 100 kPa. أدخل σ′ واختر الشرط الهيدروستاتيكي الصحيح."
+      },
+      "expected": 60.76,
+      "unit": "kPa",
+      "tolerance": 0.02,
+      "options": [
+        {
+          "en": "No seepage and no excess pore pressure.",
+          "ar": "لا سريان ولا ضغط مسام زائد."
+        },
+        {
+          "en": "Any flow condition gives the same u.",
+          "ar": "أي حالة سريان تعطي u نفسها."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "u=39.24; σ′=100−39.24=60.76 kPa.",
+        "ar": "u=39.24؛ σ′=100−39.24=60.76 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "SC05",
+      "concept": "soil-submerged",
+      "type": "conceptual",
+      "prompt": {
+        "en": "You already used γ_sat−γ_w below WT. Should you subtract hydrostatic u again?",
+        "ar": "استخدمت γ_sat−γ_w أسفل الماء. هل تطرح u الهيدروستاتيكي مرة أخرى؟"
+      },
+      "options": [
+        {
+          "en": "Yes, every effective-stress calculation always needs a second subtraction.",
+          "ar": "نعم، كل حساب فعّال يحتاج طرحًا ثانيًا دائمًا."
+        },
+        {
+          "en": "No. That would subtract water support twice.",
+          "ar": "لا؛ سيعني طرح أثر الماء مرتين."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "Agreement between the two routes is a powerful error check. A disagreement usually means a wrong depth, wrong unit weight, or a repeated water subtraction.",
+        "ar": "توافق الطريقين تحقق قوي. غالبًا يكشف اختلافهما عمقًا خاطئًا أو وزنًا غير مناسب أو تكرار طرح الماء."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 8
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "SN05",
+      "concept": "soil-submerged",
+      "type": "numerical",
+      "prompt": {
+        "en": "A saturated soil has γ_sat=20 kN/m³. Give γ′ using γ_w=9.81.",
+        "ar": "تربة مشبعة وزنها الحجمي 20 kN/m³. احسب γ′ باستخدام γ_w=9.81."
+      },
+      "expected": 10.19,
+      "unit": "kN/m³",
+      "tolerance": 0.02,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "20−9.81=10.19 kN/m³.",
+        "ar": "20−9.81=10.19 kN/m³."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 8
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "SM05",
+      "concept": "soil-submerged",
+      "type": "mixed",
+      "prompt": {
+        "en": "WT is at ground; γ_sat=20 kN/m³ and z=5 m. Give σ′ and choose the correct check.",
+        "ar": "الماء عند الأرض وγ_sat=20 kN/m³ وz=5 m. أعطِ σ′ واختر التحقق الصحيح."
+      },
+      "expected": 50.95,
+      "unit": "kPa",
+      "tolerance": 0.02,
+      "options": [
+        {
+          "en": "100−49.05=50.95 kPa; do not subtract u again.",
+          "ar": "100−49.05=50.95 kPa؛ لا تطرح u مرة أخرى."
+        },
+        {
+          "en": "Subtract another 49.05 kPa from 50.95.",
+          "ar": "اطرح 49.05 kPa أخرى من 50.95."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "(20−9.81)5=50.95 kPa.",
+        "ar": "(20−9.81)5=50.95 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 8
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "SC06",
+      "concept": "soil-drainage",
+      "type": "conceptual",
+      "prompt": {
+        "en": "After excess pore pressure dissipates below a water table, must total pore pressure be zero?",
+        "ar": "بعد تبدد ضغط المسام الزائد تحت منسوب الماء، هل يجب أن يصبح ضغط الماء الكلي صفرًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Drained means the pores contain no water.",
+          "ar": "نعم؛ مصروف يعني أن المسام خالية من الماء."
+        },
+        {
+          "en": "No. Hydrostatic pressure remains.",
+          "ar": "لا؛ يبقى الضغط الهيدروستاتيكي."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "Keep total pressure, baseline water pressure and excess pressure in separate ledgers. Drained describes pressure equilibration, not an empty soil.",
+        "ar": "افصل سجلات الإجهاد الكلي وضغط الماء الأساسي والضغط الزائد. يصف التصريف اتزان الضغط، لا تربة فارغة من الماء."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "SN06",
+      "concept": "soil-drainage",
+      "type": "numerical",
+      "prompt": {
+        "en": "A held surcharge adds 60 kPa; excess pressure remaining is 15 kPa. Find Δσ′.",
+        "ar": "حمل ثابت يضيف 60 kPa، وبقي ضغط زائد 15 kPa. أوجد Δσ′."
+      },
+      "expected": 45,
+      "unit": "kPa",
+      "tolerance": 0.02,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "60−15=45 kPa.",
+        "ar": "60−15=45 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "SM06",
+      "concept": "soil-drainage",
+      "type": "mixed",
+      "prompt": {
+        "en": "u_h=25 kPa and excess pressure has fully dissipated. Give final u and choose what drained means.",
+        "ar": "u_h=25 kPa وتبدد الضغط الزائد تمامًا. أعطِ u النهائي واختر معنى التصريف."
+      },
+      "expected": 25,
+      "unit": "kPa",
+      "tolerance": 0.02,
+      "options": [
+        {
+          "en": "Excess is zero; hydrostatic water pressure remains.",
+          "ar": "الزائد صفر، ويبقى ضغط الماء الهيدروستاتيكي."
+        },
+        {
+          "en": "All water has left the soil.",
+          "ar": "خرج الماء كله من التربة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "u=25+0=25 kPa.",
+        "ar": "u=25+0=25 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "SC07",
+      "concept": "soil-independent",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Add 1 m of still water above an already submerged soil bed. At the same soil point, what happens to σ′?",
+        "ar": "أضف 1 m ماء ساكن فوق قاع تربة مغمور أصلًا. ماذا يحدث لـσ′ عند نقطة التربة نفسها؟"
+      },
+      "options": [
+        {
+          "en": "It rises by 9.81 kPa because only total stress changes.",
+          "ar": "تزيد 9.81 kPa لأن الكلي وحده يتغيّر."
+        },
+        {
+          "en": "It stays the same: σ and u both rise by 9.81 kPa.",
+          "ar": "تبقى نفسها؛ تزيد σ وu معًا 9.81 kPa."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "You are ready when your diagram, your total-minus-water route and your submerged-weight route all agree, and you can explain which changes would break those assumptions. FE/PE relevance: effective stress and groundwater interpretation; no claim of exam-percentage coverage.",
+        "ar": "تكون مستعدًا حين يتوافق الرسم وطريق الكلي ناقص الماء وطريق الوزن المغمور، وتستطيع شرح التغيّرات التي تُبطل الفرضيات. صلة FE/PE: تفسير الإجهاد الفعّال والمياه الجوفية، دون ادعاء نسبة تغطية امتحانية."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 10
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 11
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "SN07",
+      "concept": "soil-independent",
+      "type": "numerical",
+      "prompt": {
+        "en": "For the lecture lake problem, enter effective stress at the clay midpoint using γ_w=9.81.",
+        "ar": "في مسألة بحيرة المحاضرة، أدخل الفعّال عند منتصف الطين باستخدام γ_w=9.81."
+      },
+      "expected": 93.3417,
+      "unit": "kPa",
+      "tolerance": 0.02,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "7.92(19.62−9.81)+1.83(18.36−9.81)=93.3417 kPa.",
+        "ar": "7.92(19.62−9.81)+1.83(18.36−9.81)=93.3417 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 10
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 11
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "SM07",
+      "concept": "soil-independent",
+      "type": "mixed",
+      "prompt": {
+        "en": "In that lake, add 2 m water above the same bed. Enter the new pore pressure and choose the effective-stress change.",
+        "ar": "في البحيرة نفسها أضف 2 m ماء فوق القاع نفسه. أدخل ضغط المسام الجديد واختر تغيّر الفعّال."
+      },
+      "expected": 145.188,
+      "unit": "kPa",
+      "tolerance": 0.02,
+      "options": [
+        {
+          "en": "Effective stress remains 93.3417 kPa.",
+          "ar": "يبقى الفعّال 93.3417 kPa."
+        },
+        {
+          "en": "Effective stress also rises by 19.62 kPa.",
+          "ar": "يزيد الفعّال أيضًا 19.62 kPa."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the soil surface, water table and point. Name the pressure you are being asked for before calculating.",
+          "ar": "ارسم سطح التربة ومنسوب الماء والنقطة. سمِّ الإجهاد المطلوب قبل الحساب."
+        },
+        {
+          "en": "Use actual soil unit weights for total stress and water head for pore pressure. Then check σ = σ′ + u.",
+          "ar": "استخدم الأوزان الحجمية الحقيقية للإجهاد الكلي، وعمود الماء لضغط المسام، ثم تحقق من σ = σ′ + u."
+        }
+      ],
+      "solution": {
+        "en": "New u=125.568+2×9.81=145.188; σ rises equally.",
+        "ar": "u الجديد=125.568+2×9.81=145.188؛ ويزيد الكلي بالمقدار نفسه."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 10
+        },
+        {
+          "doc": "soil-lecture-01",
+          "filename": "Lecture 1.pdf",
+          "page": 11
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-tutorial-01920",
+          "filename": "Soil II_019+020Tutorials&solutions.pdf",
+          "page": 5
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "soil-effective-stress-contact-card-1",
+      "concept": "soil-contact",
+      "kind": "interpretation",
+      "q": {
+        "en": "Why is kN/m² the same unit as kPa?",
+        "ar": "لماذا تساوي kN/m² وحدة kPa؟"
+      },
+      "a": {
+        "en": "One pascal is one N/m²; a kilopascal is 1000 N/m².",
+        "ar": "الباسكال N/m²؛ والكيلوباسكال يساوي 1000 N/m²."
+      }
+    },
+    {
+      "id": "soil-effective-stress-contact-card-2",
+      "concept": "soil-contact",
+      "kind": "prediction",
+      "q": {
+        "en": "Double force at fixed area: predict σ.",
+        "ar": "ضاعف القوة مع ثبات المساحة: توقّع σ."
+      },
+      "a": {
+        "en": "It doubles.",
+        "ar": "يتضاعف."
+      }
+    },
+    {
+      "id": "soil-effective-stress-contact-card-3",
+      "concept": "soil-contact",
+      "kind": "misconception",
+      "q": {
+        "en": "Does Q/A give every stress beneath a finite footing?",
+        "ar": "هل تعطي Q/A كل الإجهادات أسفل قاعدة محدودة؟"
+      },
+      "a": {
+        "en": "No. It gives average applied pressure; stress spreading needs another model.",
+        "ar": "لا. تعطي الضغط المطبق المتوسط؛ وانتشار الإجهاد يحتاج نموذجًا آخر."
+      }
+    },
+    {
+      "id": "soil-effective-stress-contact-card-4",
+      "concept": "soil-contact",
+      "kind": "calculation",
+      "q": {
+        "en": "100 kN on 2 m²?",
+        "ar": "100 kN على 2 m²؟"
+      },
+      "a": {
+        "en": "50 kPa.",
+        "ar": "50 kPa."
+      }
+    },
+    {
+      "id": "soil-effective-stress-split-card-1",
+      "concept": "soil-split",
+      "kind": "interpretation",
+      "q": {
+        "en": "What does the prime in σ′ tell you?",
+        "ar": "ماذا تعني الشرطة في σ′؟"
+      },
+      "a": {
+        "en": "The stress carried through the soil skeleton, on gross area.",
+        "ar": "الإجهاد المحمول عبر هيكل التربة محسوبًا على المساحة الإجمالية."
+      }
+    },
+    {
+      "id": "soil-effective-stress-split-card-2",
+      "concept": "soil-split",
+      "kind": "prediction",
+      "q": {
+        "en": "Raise u at fixed σ: what happens to σ′?",
+        "ar": "زد u مع ثبات σ: ماذا يحدث لـσ′؟"
+      },
+      "a": {
+        "en": "It falls by the same amount.",
+        "ar": "تنقص بالمقدار نفسه."
+      }
+    },
+    {
+      "id": "soil-effective-stress-split-card-3",
+      "concept": "soil-split",
+      "kind": "misconception",
+      "q": {
+        "en": "Is σ′ an extra applied pressure added to σ?",
+        "ar": "هل σ′ ضغط مطبق إضافي نجمعه مع σ؟"
+      },
+      "a": {
+        "en": "No. σ′ and u partition σ.",
+        "ar": "لا. يتقاسم σ′ وu الإجهاد σ."
+      }
+    },
+    {
+      "id": "soil-effective-stress-split-card-4",
+      "concept": "soil-split",
+      "kind": "calculation",
+      "q": {
+        "en": "σ=80, u=30 kPa. σ′?",
+        "ar": "σ=80 وu=30 kPa. ما σ′؟"
+      },
+      "a": {
+        "en": "50 kPa.",
+        "ar": "50 kPa."
+      }
+    },
+    {
+      "id": "soil-effective-stress-layers-card-1",
+      "concept": "soil-layers",
+      "kind": "interpretation",
+      "q": {
+        "en": "What is the slope of a total-stress–depth segment?",
+        "ar": "ما ميل جزء من منحنى الإجهاد الكلي مع العمق؟"
+      },
+      "a": {
+        "en": "Actual unit weight γ for that layer.",
+        "ar": "الوزن الحجمي الفعلي γ لتلك الطبقة."
+      }
+    },
+    {
+      "id": "soil-effective-stress-layers-card-2",
+      "concept": "soil-layers",
+      "kind": "prediction",
+      "q": {
+        "en": "Cross into denser soil: does σ jump?",
+        "ar": "عند دخول تربة أثقل، هل تقفز σ؟"
+      },
+      "a": {
+        "en": "Not without a concentrated layer load; its depth gradient changes.",
+        "ar": "لا دون حمل مركز على الحد؛ يتغيّر تدرّجها مع العمق."
+      }
+    },
+    {
+      "id": "soil-effective-stress-layers-card-3",
+      "concept": "soil-layers",
+      "kind": "misconception",
+      "q": {
+        "en": "Why not use γ′ in Σγh for total stress?",
+        "ar": "لماذا لا نستخدم γ′ في مجموع الكلي؟"
+      },
+      "a": {
+        "en": "γ′ removes buoyancy; total includes all soil and water weight.",
+        "ar": "لأن γ′ تخص الأثر بعد الطفو؛ والكلي يشمل وزن التربة والماء."
+      }
+    },
+    {
+      "id": "soil-effective-stress-layers-card-4",
+      "concept": "soil-layers",
+      "kind": "calculation",
+      "q": {
+        "en": "2 m at γ=18 plus 1 m at γ=20?",
+        "ar": "2 m بوزن 18 ثم 1 m بوزن 20؟"
+      },
+      "a": {
+        "en": "56 kPa total.",
+        "ar": "الإجهاد الكلي 56 kPa."
+      }
+    },
+    {
+      "id": "soil-effective-stress-water-head-card-1",
+      "concept": "soil-water-head",
+      "kind": "interpretation",
+      "q": {
+        "en": "Where does a hydrostatic u diagram start at zero?",
+        "ar": "أين يبدأ منحنى u الهيدروستاتيكي من الصفر؟"
+      },
+      "a": {
+        "en": "At the atmospheric water table, not automatically at ground.",
+        "ar": "عند سطح الماء المعرض للجو، وليس عند الأرض تلقائيًا."
+      }
+    },
+    {
+      "id": "soil-effective-stress-water-head-card-2",
+      "concept": "soil-water-head",
+      "kind": "prediction",
+      "q": {
+        "en": "At fixed P, raise static WT by 1 m. Δu?",
+        "ar": "عند P ثابتة، ارفع منسوب الماء الساكن 1 m. ما Δu؟"
+      },
+      "a": {
+        "en": "+9.81 kPa, provided P remains below WT.",
+        "ar": "+9.81 kPa إذا بقيت P تحت المنسوب."
+      }
+    },
+    {
+      "id": "soil-effective-stress-water-head-card-3",
+      "concept": "soil-water-head",
+      "kind": "misconception",
+      "q": {
+        "en": "Must u be zero everywhere above WT?",
+        "ar": "هل يجب أن يكون u صفرًا في كل موضع فوق الماء؟"
+      },
+      "a": {
+        "en": "No. Capillary suction can give negative gauge pressure; it is excluded here.",
+        "ar": "لا. قد يسبب الشفط الشعري ضغطًا سالبًا؛ وقد استُبعد هنا."
+      }
+    },
+    {
+      "id": "soil-effective-stress-water-head-card-4",
+      "concept": "soil-water-head",
+      "kind": "calculation",
+      "q": {
+        "en": "Water head 2 m: u?",
+        "ar": "ارتفاع ماء 2 m: ما u؟"
+      },
+      "a": {
+        "en": "19.62 kPa.",
+        "ar": "19.62 kPa."
+      }
+    },
+    {
+      "id": "soil-effective-stress-submerged-card-1",
+      "concept": "soil-submerged",
+      "kind": "interpretation",
+      "q": {
+        "en": "When does γ′ describe the effective-stress gradient?",
+        "ar": "متى تصف γ′ تدرّج الإجهاد الفعّال؟"
+      },
+      "a": {
+        "en": "Saturated hydrostatic soil with no excess pore pressure.",
+        "ar": "في تربة مشبعة هيدروستاتيكية دون ضغط مسام زائد."
+      }
+    },
+    {
+      "id": "soil-effective-stress-submerged-card-2",
+      "concept": "soil-submerged",
+      "kind": "prediction",
+      "q": {
+        "en": "Same γ_sat, larger γ_w in the ideal model: γ′?",
+        "ar": "نفس γ_sat مع γ_w أكبر في النموذج المثالي: ماذا يحدث لـγ′؟"
+      },
+      "a": {
+        "en": "Smaller, because buoyant support is larger.",
+        "ar": "تنقص لأن أثر الطفو أكبر."
+      }
+    },
+    {
+      "id": "soil-effective-stress-submerged-card-3",
+      "concept": "soil-submerged",
+      "kind": "misconception",
+      "q": {
+        "en": "γ′h−u for an entirely submerged column?",
+        "ar": "هل نستخدم γ′h−u لعمود مغمور بالكامل؟"
+      },
+      "a": {
+        "en": "No: either γ_sat h−u or γ′h, not both.",
+        "ar": "لا: إما γ_sat h−u أو γ′h، وليس التصحيحين معًا."
+      }
+    },
+    {
+      "id": "soil-effective-stress-submerged-card-4",
+      "concept": "soil-submerged",
+      "kind": "calculation",
+      "q": {
+        "en": "γ_sat=19.81; γ_w=9.81. γ′?",
+        "ar": "γ_sat=19.81 وγ_w=9.81. ما γ′؟"
+      },
+      "a": {
+        "en": "10 kN/m³.",
+        "ar": "10 kN/m³."
+      }
+    },
+    {
+      "id": "soil-effective-stress-drainage-card-1",
+      "concept": "soil-drainage",
+      "kind": "interpretation",
+      "q": {
+        "en": "What is excess pore pressure?",
+        "ar": "ما ضغط المسام الزائد؟"
+      },
+      "a": {
+        "en": "The departure from the baseline equilibrium water pressure.",
+        "ar": "الزيادة عن ضغط الماء الأساسي المتزن."
+      }
+    },
+    {
+      "id": "soil-effective-stress-drainage-card-2",
+      "concept": "soil-drainage",
+      "kind": "prediction",
+      "q": {
+        "en": "At fixed σ, dissipate Δu. What happens to σ′?",
+        "ar": "مع ثبات σ، بدّد Δu. ماذا يحدث لـσ′؟"
+      },
+      "a": {
+        "en": "It increases by the amount of pressure dissipated.",
+        "ar": "تزيد بمقدار الضغط المتبدد."
+      }
+    },
+    {
+      "id": "soil-effective-stress-drainage-card-3",
+      "concept": "soil-drainage",
+      "kind": "misconception",
+      "q": {
+        "en": "Does drained mean u=0?",
+        "ar": "هل مصروف يعني u=0؟"
+      },
+      "a": {
+        "en": "No. It means no remaining excess for the boundary conditions; hydrostatic u may remain.",
+        "ar": "لا. يعني عدم بقاء ضغط زائد بالنسبة للشروط الحدّية، وقد يبقى u هيدروستاتيكيًا."
+      }
+    },
+    {
+      "id": "soil-effective-stress-drainage-card-4",
+      "concept": "soil-drainage",
+      "kind": "calculation",
+      "q": {
+        "en": "Δσ=50, remaining Δu=20: Δσ′?",
+        "ar": "Δσ=50 وبقي Δu=20: ما Δσ′؟"
+      },
+      "a": {
+        "en": "30 kPa.",
+        "ar": "30 kPa."
+      }
+    },
+    {
+      "id": "soil-effective-stress-independent-card-1",
+      "concept": "soil-independent",
+      "kind": "interpretation",
+      "q": {
+        "en": "Why does a static water blanket cancel from σ′?",
+        "ar": "لماذا يُلغى غطاء ماء ساكن من σ′؟"
+      },
+      "a": {
+        "en": "It adds the same γ_w H to σ and u.",
+        "ar": "لأنه يضيف γ_w H نفسها إلى σ وu."
+      }
+    },
+    {
+      "id": "soil-effective-stress-independent-card-2",
+      "concept": "soil-independent",
+      "kind": "prediction",
+      "q": {
+        "en": "Raise WT inside a profile: can you assume σ unchanged?",
+        "ar": "ارفع الماء داخل قطاع: هل تفترض ثبات σ؟"
+      },
+      "a": {
+        "en": "No. Saturation may change bulk unit weights; calculate both ledgers.",
+        "ar": "لا. قد يغيّر التشبع الأوزان الحجمية؛ احسب السجلين."
+      }
+    },
+    {
+      "id": "soil-effective-stress-independent-card-3",
+      "concept": "soil-independent",
+      "kind": "misconception",
+      "q": {
+        "en": "Use the full 3.66 m clay thickness at its midpoint?",
+        "ar": "هل تستخدم كامل 3.66 m من الطين عند منتصفه؟"
+      },
+      "a": {
+        "en": "No; use 1.83 m above the point.",
+        "ar": "لا؛ استخدم 1.83 m فوق النقطة."
+      }
+    },
+    {
+      "id": "soil-effective-stress-independent-card-4",
+      "concept": "soil-independent",
+      "kind": "calculation",
+      "q": {
+        "en": "Tutorial 1 Q1, at 9 m: σ, u, σ′?",
+        "ar": "تمرين 1 س1 عند 9 m: ما σ وu وσ′؟"
+      },
+      "a": {
+        "en": "167, 58.86, 108.14 kPa.",
+        "ar": "167 و58.86 و108.14 kPa."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "soil-lecture-01",
+      "filename": "Lecture 1.pdf",
+      "page": 4
+    },
+    {
+      "doc": "soil-lecture-01",
+      "filename": "Lecture 1.pdf",
+      "page": 7
+    },
+    {
+      "doc": "soil-lecture-01",
+      "filename": "Lecture 1.pdf",
+      "page": 8
+    },
+    {
+      "doc": "soil-lecture-01",
+      "filename": "Lecture 1.pdf",
+      "page": 10
+    },
+    {
+      "doc": "soil-lecture-01",
+      "filename": "Lecture 1.pdf",
+      "page": 11
+    },
+    {
+      "doc": "soil-tutorial-01920",
+      "filename": "Soil II_019+020Tutorials&solutions.pdf",
+      "page": 3
+    }
+  ],
+  "videoIds": [
+    "ySUr60U6jiM"
+  ]
+}

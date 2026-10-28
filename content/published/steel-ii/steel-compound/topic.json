@@ -1,0 +1,1767 @@
+{
+  "id": "steel-compound",
+  "family": "steel-builtup",
+  "title": {
+    "en": "Compound beams: make separate pieces act together",
+    "ar": "الكمرات المجمّعة: اجعل الأجزاء تعمل معًا"
+  },
+  "summary": {
+    "en": "Place steel where bending needs it, compute the assembled properties, and follow longitudinal shear into welds before checking service behavior.",
+    "ar": "ضع الفولاذ حيث يحتاجه الانحناء واحسب خواص القطاع وتتبع القص الطولي إلى اللحام قبل فحص الخدمة."
+  },
+  "outcomes": [
+    {
+      "en": "Connections create the shared action",
+      "ar": "الوصلات تنشئ العمل المشترك"
+    },
+    {
+      "en": "Distance from the neutral axis does the work",
+      "ar": "البعد عن المحور المتعادل يصنع الفرق"
+    },
+    {
+      "en": "Add a force couple, then reclassify",
+      "ar": "أضف ازدواج قوى ثم أعد التصنيف"
+    },
+    {
+      "en": "Follow the changing plate force into welds",
+      "ar": "تتبّع قوة الصفيحة المتغيّرة إلى اللحام"
+    },
+    {
+      "en": "Plate ends and deflection complete the story",
+      "ar": "نهايات الصفائح والترخيم يكملان القصة"
+    }
+  ],
+  "prereqIds": [
+    "steel-units",
+    "steel-bending",
+    "course-algebra"
+  ],
+  "videoIds": [
+    "wjEQ6F4HCaU"
+  ],
+  "concepts": [
+    {
+      "id": "steel-compound-together",
+      "title": {
+        "en": "Connections create the shared action",
+        "ar": "الوصلات تنشئ العمل المشترك"
+      }
+    },
+    {
+      "id": "steel-compound-geometry",
+      "title": {
+        "en": "Distance from the neutral axis does the work",
+        "ar": "البعد عن المحور المتعادل يصنع الفرق"
+      }
+    },
+    {
+      "id": "steel-compound-plastic",
+      "title": {
+        "en": "Add a force couple, then reclassify",
+        "ar": "أضف ازدواج قوى ثم أعد التصنيف"
+      }
+    },
+    {
+      "id": "steel-compound-shearflow",
+      "title": {
+        "en": "Follow the changing plate force into welds",
+        "ar": "تتبّع قوة الصفيحة المتغيّرة إلى اللحام"
+      }
+    },
+    {
+      "id": "steel-compound-service",
+      "title": {
+        "en": "Plate ends and deflection complete the story",
+        "ar": "نهايات الصفائح والترخيم يكملان القصة"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "steel-compound-together",
+      "title": {
+        "en": "Connections create the shared action",
+        "ar": "الوصلات تنشئ العمل المشترك"
+      },
+      "predict": {
+        "en": "May you claim full assembled stiffness just by laying plates on a beam?",
+        "ar": "هل تدّعي صلابة القطاع المجمع بمجرد وضع صفائح على الكمرة؟"
+      },
+      "options": [
+        {
+          "en": "No. Shear-transfer connections are required.",
+          "ar": "لا. يلزم نقل القص بوصلات."
+        },
+        {
+          "en": "Yes. Contact by gravity ensures no slip under all loads.",
+          "ar": "نعم. التلامس بالوزن يمنع الانزلاق لكل الأحمال."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Compatibility is a design assumption that connections must earn.",
+        "ar": "التوافق فرض تصميم يجب أن تبرره الوصلات."
+      },
+      "explain": {
+        "en": "A cover plate can slide relative to a rolled beam unless welds or bolts transfer longitudinal force. Full interaction assumes slip is negligible and strain varies linearly through the assembled section in elastic bending. Simply adding isolated section inertias misses the benefit of separation. The load path must exist over the plate length, including its ends.",
+        "ar": "قد تنزلق صفيحة التقوية عن الكمرة المدرفلة ما لم ينقل اللحام أو البراغي قوة طولية. يفترض التفاعل الكامل انزلاقًا مهملًا وتغير الانفعال خطيًا عبر القطاع المجمع في الانحناء المرن. جمع عزوم القصور المنفردة فقط يهمل فائدة التباعد. يجب وجود مسار الحمل على طول الصفيحة وعند نهايتيها."
+      },
+      "formula": "elastic bending: ε(y)=κy; σ(y)=Eκy; no-slip interaction",
+      "symbols": {
+        "en": "ε strain dimensionless,κ curvature1/mm,y distance from neutral axis mm,E N/mm².",
+        "ar": "ε انفعال بلا وحدة وκ انحناء1/mm وy مسافة عن المحور المتعادل mm وE بوحدة N/mm²."
+      },
+      "assumptions": {
+        "en": "Compatible homogeneous steel section, elastic plane-section behavior and connections sufficient to justify full interaction.",
+        "ar": "قطاع فولاذي متجانس متوافق وسلوك مرن للمقاطع المستوية ووصلات تبرر التفاعل الكامل."
+      },
+      "example": {
+        "en": "κ=10⁻⁶ mm⁻¹,y=200 mm,E=200000 N/mm².",
+        "ar": "κ=10⁻⁶ mm⁻¹ وy=200 mm وE=200000 N/mm²."
+      },
+      "calculation": {
+        "en": "ε=0.0002; σ=40 N/mm². An interface that slips invalidates the assumed single-section strain field.",
+        "ar": "ε=0.0002 وσ=40 N/mm². انزلاق الوصلة يبطل فرض مجال الانفعال الواحد."
+      },
+      "interpret": {
+        "en": "Compatibility is a design assumption that connections must earn.",
+        "ar": "التوافق فرض تصميم يجب أن تبرره الوصلات."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Compatibility is a design assumption that connections must earn. Compatible homogeneous steel section, elastic plane-section behavior and connections sufficient to justify full interaction.",
+          "ar": "التوافق فرض تصميم يجب أن تبرره الوصلات. قطاع فولاذي متجانس متوافق وسلوك مرن للمقاطع المستوية ووصلات تبرر التفاعل الكامل."
+        }
+      },
+      "diagram": "course-steel-compound",
+      "concepts": [
+        "steel-compound-together"
+      ],
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 2
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 4
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 7
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "steel-compound-geometry",
+      "title": {
+        "en": "Distance from the neutral axis does the work",
+        "ar": "البعد عن المحور المتعادل يصنع الفرق"
+      },
+      "predict": {
+        "en": "Does adding only Bt³/12 capture a flange plate’s full stiffness benefit?",
+        "ar": "هل إضافة Bt³/12 فقط تمثل كامل فائدة صلابة صفيحة الجناح؟"
+      },
+      "options": [
+        {
+          "en": "No. The parallel-axis term often dominates.",
+          "ar": "لا. غالبًا يحكم حد المحاور المتوازية."
+        },
+        {
+          "en": "Yes. Plate location has no effect.",
+          "ar": "نعم. موقع الصفيحة غير مؤثر."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Check the neutral axis and new outer depth before calculating W.",
+        "ar": "تحقق من المحور والعمق الخارجي الجديد قبل حساب W."
+      },
+      "explain": {
+        "en": "For equal top and bottom cover plates on a symmetric beam, the neutral axis remains at middepth. Add each plate’s own inertia and its area times squared centroid distance. The new extreme-fibre distance grows too, so elastic section modulus is I divided by the new outer distance, not the original beam half-depth.",
+        "ar": "لصفائح علوية وسفلية متساوية على كمرة متماثلة يبقى المحور في المنتصف. أضف قصور كل صفيحة الذاتي ومساحتها مضروبة في مربع بعد مركزها. تكبر مسافة الليف الأبعد أيضًا، لذلك W المرن هو I على البعد الخارجي الجديد لا نصف عمق الكمرة الأصلية."
+      },
+      "formula": "Inew=IUB+2[Bt³/12+(Bt)((D+t)/2)²]; Wel=Inew/(D/2+t)",
+      "symbols": {
+        "en": "B plate width,t thickness,D original beam depth in mm; I mm⁴,Wel mm³.",
+        "ar": "B عرض الصفيحة وt سماكتها وD عمق الكمرة الأصلي mm؛ I بوحدة mm⁴ وWel بوحدة mm³."
+      },
+      "assumptions": {
+        "en": "Symmetric identical plates of the same E, full interaction and no material removed from the original section.",
+        "ar": "صفائح متماثلة متساوية من E نفسها وتفاعل كامل ودون إزالة مادة من القطاع الأصلي."
+      },
+      "example": {
+        "en": "Authored section: IUB=200×10⁶ mm⁴,D=400,B=200,t=10 mm.",
+        "ar": "قطاع تدريبي: IUB=200×10⁶ mm⁴ وD=400 وB=200 وt=10 mm."
+      },
+      "calculation": {
+        "en": "Each plate A=2000,d=205 mm. Inew=200×10⁶+2(16666.667+2000×205²)=368133333.333 mm⁴. Wel=Inew/210=1753015.873 mm³.",
+        "ar": "لكل صفيحة A=2000 وd=205 mm. Inew=200×10⁶+2(16666.667+2000×205²)=368133333.333 mm⁴. Wel=Inew/210=1753015.873 mm³."
+      },
+      "interpret": {
+        "en": "Check the neutral axis and new outer depth before calculating W.",
+        "ar": "تحقق من المحور والعمق الخارجي الجديد قبل حساب W."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Check the neutral axis and new outer depth before calculating W. Symmetric identical plates of the same E, full interaction and no material removed from the original section.",
+          "ar": "تحقق من المحور والعمق الخارجي الجديد قبل حساب W. صفائح متماثلة متساوية من E نفسها وتفاعل كامل ودون إزالة مادة من القطاع الأصلي."
+        }
+      },
+      "diagram": "course-steel-compound",
+      "concepts": [
+        "steel-compound-geometry"
+      ],
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 7
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 19
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 20
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 21
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "steel-compound-plastic",
+      "title": {
+        "en": "Add a force couple, then reclassify",
+        "ar": "أضف ازدواج قوى ثم أعد التصنيف"
+      },
+      "predict": {
+        "en": "Does a Class1 original beam automatically make the plated section Class1?",
+        "ar": "هل تجعل الفئة1 للكمرة الأصلية القطاع المقوى من الفئة1 تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "No. New plate elements require classification.",
+          "ar": "لا. تحتاج عناصر الصفائح الجديدة تصنيفًا."
+        },
+        {
+          "en": "Yes. Added steel can never introduce local buckling.",
+          "ar": "نعم. لا يمكن للفولاذ المضاف إدخال انبعاج محلي."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A larger W is useful only after local and member stability conditions are satisfied.",
+        "ar": "زيادة W مفيدة بعد تحقق الاستقرار المحلي والعام."
+      },
+      "explain": {
+        "en": "If both plates can fully yield, their areas form an added tension–compression couple. With a central plastic neutral axis the added plastic modulus is2Aplate d. However cover plates introduce new compressed outstands and panels between welds, so the assembled section must be classified afresh. A rolled beam’s old Class1 label does not automatically survive strengthening.",
+        "ar": "إذا أمكن خضوع الصفيحتين كاملًا تشكل مساحتاهما ازدواج شد وضغط إضافيًا. مع محور لدن مركزي تكون زيادة W اللدن2Aplate d. لكن الصفائح تنشئ أجزاء بارزة مضغوطة وألواحًا بين خطوط اللحام، لذلك يجب إعادة تصنيف القطاع المجمع. لا ينتقل تصنيف الكمرة المدرفلة القديم1 تلقائيًا بعد التقوية."
+      },
+      "formula": "ΔWpl=2Bt(D+t)/2=Bt(D+t); Mpl,Rd=Wpl,new fy/γM0",
+      "symbols": {
+        "en": "ΔWpl mm³,fy N/mm²; B,t,D as above. Wpl is not generally I/y.",
+        "ar": "ΔWpl بوحدة mm³ وfy بوحدة N/mm²؛ B وt وD كما سبق. Wpl ليست I/y عمومًا."
+      },
+      "assumptions": {
+        "en": "Eligible plastic Class1/2 section, full plate force development and adequate lateral restraint; otherwise use appropriate elastic/effective and stability checks.",
+        "ar": "قطاع صالح لدنًا من1/2 وتطوير كامل لقوى الصفائح وتقييد جانبي كافٍ؛ وإلا استعمل الفحوص المرنة أو الفعالة والاستقرار المناسبة."
+      },
+      "example": {
+        "en": "D=400,B=200,t=10 mm; original Wpl=1.2×10⁶ mm³.",
+        "ar": "D=400 وB=200 وt=10 mm؛ Wpl الأصلية=1.2×10⁶ mm³."
+      },
+      "calculation": {
+        "en": "ΔWpl=200×10×410=820000; Wpl,new=2020000 mm³. Withfy275 andγM0=1, Mpl=555.5 kN·m, conditional on plastic class and full interaction.",
+        "ar": "ΔWpl=200×10×410=820000؛ Wpl,new=2020000 mm³. معfy275 وγM0=1 يكونMpl=555.5 kN·m بشرط الفئة اللدنة والتفاعل الكامل."
+      },
+      "interpret": {
+        "en": "A larger W is useful only after local and member stability conditions are satisfied.",
+        "ar": "زيادة W مفيدة بعد تحقق الاستقرار المحلي والعام."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "A larger W is useful only after local and member stability conditions are satisfied. Eligible plastic Class1/2 section, full plate force development and adequate lateral restraint; otherwise use appropriate elastic/effective and stability checks.",
+          "ar": "زيادة W مفيدة بعد تحقق الاستقرار المحلي والعام. قطاع صالح لدنًا من1/2 وتطوير كامل لقوى الصفائح وتقييد جانبي كافٍ؛ وإلا استعمل الفحوص المرنة أو الفعالة والاستقرار المناسبة."
+        }
+      },
+      "diagram": "course-steel-compound",
+      "concepts": [
+        "steel-compound-plastic"
+      ],
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 10
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 11
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 19
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 20
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 21
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "steel-compound-shearflow",
+      "title": {
+        "en": "Follow the changing plate force into welds",
+        "ar": "تتبّع قوة الصفيحة المتغيّرة إلى اللحام"
+      },
+      "predict": {
+        "en": "VQ/I gives N/mm. Is it already a weld throat stress in N/mm²?",
+        "ar": "يعطي VQ/I وحدةN/mm. هل هو إجهاد حلق اللحامN/mm² جاهزًا؟"
+      },
+      "options": [
+        {
+          "en": "No. It is longitudinal force per length.",
+          "ar": "لا. هو قوة طولية لكل طول."
+        },
+        {
+          "en": "Yes. The unit difference can be ignored.",
+          "ar": "نعم. يمكن إهمال فرق الوحدة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Do not size a weld by comparing force per length directly to a material stress.",
+        "ar": "لا تصمم اللحام بمقارنة قوة لكل طول بإجهاد مادة مباشرة."
+      },
+      "explain": {
+        "en": "Bending moment varies along the beam, so the longitudinal force carried by a flange plate changes too. Its rate of change is interface shear flow VQ/I. This is force per unit length, not shear stress. If two identical weld lines share an interface demand symmetrically, each carries half the flow; converting that into throat stress requires throat area per length and the selected connection design rules.",
+        "ar": "يتغير العزم على طول الكمرة فتتغير القوة الطولية في صفيحة الجناح. معدل تغيّرها تدفق قص الوصلة VQ/I. إنه قوة لكل طول لا إجهاد قص. إذا اقتسم خطا لحام متساويان طلب الوصلة متماثلًا حمل كل منهما نصف التدفق؛ تحويله إلى إجهاد حلق يحتاج مساحة الحلق لكل طول وقواعد تصميم الوصلات المختارة."
+      },
+      "formula": "qinterface=VQ/I; Q=Aplate d; qline=qinterface/2 for two equal lines",
+      "symbols": {
+        "en": "V N,Q mm³,I mm⁴ → q N/mm. For one interface use only the connected plate’s first moment Q.",
+        "ar": "V بالنيوتن وQ بوحدة mm³ وI بوحدة mm⁴ فينتج q بوحدة N/mm. استعمل Q للصفيحة المرتبطة بتلك الوصلة فقط."
+      },
+      "assumptions": {
+        "en": "Elastic shear-flow theory, full interaction and stated symmetric load sharing; weld resistance needs separate EN1993-1-8 inputs.",
+        "ar": "نظرية تدفق قص مرنة وتفاعل كامل واقتسام متماثل معلن؛ تحتاج مقاومة اللحام مدخلات منفصلة من EN1993-1-8."
+      },
+      "example": {
+        "en": "V=100000 N,Q=2000×205=410000 mm³,I=368133333.333 mm⁴.",
+        "ar": "V=100000 N وQ=2000×205=410000 mm³ وI=368133333.333 mm⁴."
+      },
+      "calculation": {
+        "en": "qinterface=111.3727 N/mm; each of two equal welds55.6863 N/mm. Verify dimensions: N·mm³/mm⁴=N/mm.",
+        "ar": "qinterface=111.3727 N/mm؛ لكل خط من خطي اللحام55.6863 N/mm. تحقق الأبعاد: N·mm³/mm⁴=N/mm."
+      },
+      "interpret": {
+        "en": "Do not size a weld by comparing force per length directly to a material stress.",
+        "ar": "لا تصمم اللحام بمقارنة قوة لكل طول بإجهاد مادة مباشرة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Do not size a weld by comparing force per length directly to a material stress. Elastic shear-flow theory, full interaction and stated symmetric load sharing; weld resistance needs separate EN1993-1-8 inputs.",
+          "ar": "لا تصمم اللحام بمقارنة قوة لكل طول بإجهاد مادة مباشرة. نظرية تدفق قص مرنة وتفاعل كامل واقتسام متماثل معلن؛ تحتاج مقاومة اللحام مدخلات منفصلة من EN1993-1-8."
+        }
+      },
+      "diagram": "course-steel-compound",
+      "concepts": [
+        "steel-compound-shearflow"
+      ],
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 16
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "steel-compound-service",
+      "title": {
+        "en": "Plate ends and deflection complete the story",
+        "ar": "نهايات الصفائح والترخيم يكملان القصة"
+      },
+      "predict": {
+        "en": "Can constant Inew be used over the whole span when plates exist only near midspan?",
+        "ar": "هل تستعملInew ثابتة على البحر كله إذا وجدت الصفائح قرب المنتصف فقط؟"
+      },
+      "options": [
+        {
+          "en": "No. The stiffness varies along the beam.",
+          "ar": "لا. تتغير الصلابة طوليًا."
+        },
+        {
+          "en": "Yes. Any short plate strengthens the entire span identically.",
+          "ar": "نعم. أي صفيحة قصيرة تقوي البحر كله بالتساوي."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Strengthening must connect geometry, load transfer, stability and service response.",
+        "ar": "يجب أن تربط التقوية الهندسة ونقل الحمل والاستقرار واستجابة الخدمة."
+      },
+      "explain": {
+        "en": "A plate cannot develop its full force at the point where it suddenly starts without a load-transfer length. Extending beyond the theoretical bending cutoff and designing the connection develops that force; fatigue may also govern abrupt details. Under service loads use assembled elastic stiffness only if interaction is justified. The lecture’s L/250 example is a selected serviceability criterion, not a universal limit for all projects.",
+        "ar": "لا تطور الصفيحة كامل قوتها عند نقطة بدايتها المفاجئة دون طول نقل. يتيح امتدادها وراء حد الإيقاف النظري للعزم مع تصميم الوصلة تطوير القوة؛ وقد يحكم التعب التفاصيل الحادة. استعمل الصلابة المرنة المجمعة لأحمال الخدمة إذا تبرر التفاعل. قيمةL/250 في المحاضرة معيار خدمة مختار لا حدًا عامًا لكل مشروع."
+      },
+      "formula": "δmax=5wL⁴/(384EI) for a simply supported full-span UDL\ncheck δmax≤δlimit selected for the project",
+      "symbols": {
+        "en": "w N/mm,L mm,E N/mm²,I mm⁴ gives δ mm. Use service loads, not automatically factored ULS actions.",
+        "ar": "w بوحدةN/mm وL بالمليمتر وE بوحدةN/mm² وI بوحدةmm⁴ فتعطيδ بالمليمتر. استعمل أحمال الخدمة لا أحمالULS المعاملة تلقائيًا."
+      },
+      "assumptions": {
+        "en": "Linear elastic simply supported constant-EI member with a full-span UDL; partial-length plates need variable stiffness analysis.",
+        "ar": "عضو بسيط مرن خطي ثابتEI بحمل موزع على البحر كله؛ الصفائح الجزئية تحتاج تحليل صلابة متغيرة."
+      },
+      "example": {
+        "en": "Authored full-length model: w=10 N/mm,L=6000,E=200000,I=400×10⁶.",
+        "ar": "نموذج كامل الطول مؤلف: w=10 N/mm وL=6000 وE=200000 وI=400×10⁶."
+      },
+      "calculation": {
+        "en": "δ=5×10×6000⁴/(384×200000×400×10⁶)=2.109375 mm. If selected limitL/250=24 mm, this deflection check passes only under the stated model.",
+        "ar": "δ=5×10×6000⁴/(384×200000×400×10⁶)=2.109375 mm. إذا كان الحد المختارL/250=24 mm نجح فحص الترخيم وحده ضمن النموذج المعطى."
+      },
+      "interpret": {
+        "en": "Strengthening must connect geometry, load transfer, stability and service response.",
+        "ar": "يجب أن تربط التقوية الهندسة ونقل الحمل والاستقرار واستجابة الخدمة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Strengthening must connect geometry, load transfer, stability and service response. Linear elastic simply supported constant-EI member with a full-span UDL; partial-length plates need variable stiffness analysis.",
+          "ar": "يجب أن تربط التقوية الهندسة ونقل الحمل والاستقرار واستجابة الخدمة. عضو بسيط مرن خطي ثابتEI بحمل موزع على البحر كله؛ الصفائح الجزئية تحتاج تحليل صلابة متغيرة."
+        }
+      },
+      "diagram": "course-steel-compound",
+      "concepts": [
+        "steel-compound-service"
+      ],
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 15
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 16
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 18
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 24
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "C01",
+      "concept": "steel-compound-together",
+      "type": "conceptual",
+      "prompt": {
+        "en": "May you claim full assembled stiffness just by laying plates on a beam?",
+        "ar": "هل تدّعي صلابة القطاع المجمع بمجرد وضع صفائح على الكمرة؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Contact by gravity ensures no slip under all loads.",
+          "ar": "نعم. التلامس بالوزن يمنع الانزلاق لكل الأحمال."
+        },
+        {
+          "en": "No. Shear-transfer connections are required.",
+          "ar": "لا. يلزم نقل القص بوصلات."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "A cover plate can slide relative to a rolled beam unless welds or bolts transfer longitudinal force. Full interaction assumes slip is negligible and strain varies linearly through the assembled section in elastic bending. Simply adding isolated section inertias misses the benefit of separation. The load path must exist over the plate length, including its ends. Compatibility is a design assumption that connections must earn.",
+        "ar": "قد تنزلق صفيحة التقوية عن الكمرة المدرفلة ما لم ينقل اللحام أو البراغي قوة طولية. يفترض التفاعل الكامل انزلاقًا مهملًا وتغير الانفعال خطيًا عبر القطاع المجمع في الانحناء المرن. جمع عزوم القصور المنفردة فقط يهمل فائدة التباعد. يجب وجود مسار الحمل على طول الصفيحة وعند نهايتيها. التوافق فرض تصميم يجب أن تبرره الوصلات."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 2
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 4
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 7
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "N01",
+      "concept": "steel-compound-together",
+      "type": "numerical",
+      "prompt": {
+        "en": "E=200000 N/mm²,ε=0.001. Find elastic σ.",
+        "ar": "E=200000 N/mm² وε=0.001. أوجد σ المرنة."
+      },
+      "expected": 200,
+      "tolerance": 0.4,
+      "unit": "N/mm²",
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "σ=Eε=200.",
+        "ar": "σ=Eε=200."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 2
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 4
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 7
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "concept": "steel-compound-together",
+      "type": "mixed",
+      "prompt": {
+        "en": "κ=10⁻⁶ mm⁻¹,y=100 mm,E=200000. Enter σ and choose the interaction condition.",
+        "ar": "κ=10⁻⁶ mm⁻¹ وy=100 mm وE=200000. أدخل σ واختر شرط التفاعل."
+      },
+      "expected": 20,
+      "tolerance": 0.04,
+      "unit": "N/mm²",
+      "options": [
+        {
+          "en": "No significant interface slip.",
+          "ar": "لا انزلاق مؤثر على السطح البيني."
+        },
+        {
+          "en": "Completely unconnected plates.",
+          "ar": "صفائح غير متصلة إطلاقًا."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "σ=Eκy=20 N/mm².",
+        "ar": "σ=Eκy=20 N/mm²."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 2
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 4
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 7
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "concept": "steel-compound-geometry",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does adding only Bt³/12 capture a flange plate’s full stiffness benefit?",
+        "ar": "هل إضافة Bt³/12 فقط تمثل كامل فائدة صلابة صفيحة الجناح؟"
+      },
+      "options": [
+        {
+          "en": "No. The parallel-axis term often dominates.",
+          "ar": "لا. غالبًا يحكم حد المحاور المتوازية."
+        },
+        {
+          "en": "Yes. Plate location has no effect.",
+          "ar": "نعم. موقع الصفيحة غير مؤثر."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "For equal top and bottom cover plates on a symmetric beam, the neutral axis remains at middepth. Add each plate’s own inertia and its area times squared centroid distance. The new extreme-fibre distance grows too, so elastic section modulus is I divided by the new outer distance, not the original beam half-depth. Check the neutral axis and new outer depth before calculating W.",
+        "ar": "لصفائح علوية وسفلية متساوية على كمرة متماثلة يبقى المحور في المنتصف. أضف قصور كل صفيحة الذاتي ومساحتها مضروبة في مربع بعد مركزها. تكبر مسافة الليف الأبعد أيضًا، لذلك W المرن هو I على البعد الخارجي الجديد لا نصف عمق الكمرة الأصلية. تحقق من المحور والعمق الخارجي الجديد قبل حساب W."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 7
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 19
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 20
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 21
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "N02",
+      "concept": "steel-compound-geometry",
+      "type": "numerical",
+      "prompt": {
+        "en": "A=2000 mm²,d=205 mm. Find the parallel-axis term Ad² for one plate.",
+        "ar": "A=2000 mm² وd=205 mm. أوجد Ad² لصفيحة واحدة."
+      },
+      "expected": 84050000,
+      "tolerance": 168100.0,
+      "unit": "mm⁴",
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "2000×205²=84050000 mm⁴.",
+        "ar": "2000×205²=84050000 mm⁴."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 7
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 19
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 20
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 21
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "concept": "steel-compound-geometry",
+      "type": "mixed",
+      "prompt": {
+        "en": "I=368133333.333 mm⁴,outer distance210 mm. Enter Wel and choose the denominator.",
+        "ar": "I=368133333.333 mm⁴ والبعد الخارجي210 mm. أدخل Wel واختر المقام."
+      },
+      "expected": 1753015.8730142857,
+      "tolerance": 3506.0317460285714,
+      "unit": "mm³",
+      "options": [
+        {
+          "en": "Always use the original half-depth200 mm.",
+          "ar": "استعمل دائمًا نصف العمق الأصلي200 mm."
+        },
+        {
+          "en": "Use the new extreme-fibre distance.",
+          "ar": "استعمل البعد الجديد لليف الأبعد."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "I/210=1753015.873 mm³.",
+        "ar": "I/210=1753015.873 mm³."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 7
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 19
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 20
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 21
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "concept": "steel-compound-plastic",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does a Class1 original beam automatically make the plated section Class1?",
+        "ar": "هل تجعل الفئة1 للكمرة الأصلية القطاع المقوى من الفئة1 تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Added steel can never introduce local buckling.",
+          "ar": "نعم. لا يمكن للفولاذ المضاف إدخال انبعاج محلي."
+        },
+        {
+          "en": "No. New plate elements require classification.",
+          "ar": "لا. تحتاج عناصر الصفائح الجديدة تصنيفًا."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "If both plates can fully yield, their areas form an added tension–compression couple. With a central plastic neutral axis the added plastic modulus is2Aplate d. However cover plates introduce new compressed outstands and panels between welds, so the assembled section must be classified afresh. A rolled beam’s old Class1 label does not automatically survive strengthening. A larger W is useful only after local and member stability conditions are satisfied.",
+        "ar": "إذا أمكن خضوع الصفيحتين كاملًا تشكل مساحتاهما ازدواج شد وضغط إضافيًا. مع محور لدن مركزي تكون زيادة W اللدن2Aplate d. لكن الصفائح تنشئ أجزاء بارزة مضغوطة وألواحًا بين خطوط اللحام، لذلك يجب إعادة تصنيف القطاع المجمع. لا ينتقل تصنيف الكمرة المدرفلة القديم1 تلقائيًا بعد التقوية. زيادة W مفيدة بعد تحقق الاستقرار المحلي والعام."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 10
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 11
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 19
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 20
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 21
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "N03",
+      "concept": "steel-compound-plastic",
+      "type": "numerical",
+      "prompt": {
+        "en": "B=200,t=10,D=400 mm. Find ΔWpl.",
+        "ar": "B=200 وt=10 وD=400 mm. أوجد ΔWpl."
+      },
+      "expected": 820000,
+      "tolerance": 1640.0,
+      "unit": "mm³",
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "Bt(D+t)=200×10×410=820000.",
+        "ar": "Bt(D+t)=200×10×410=820000."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 10
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 11
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 19
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 20
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 21
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "concept": "steel-compound-plastic",
+      "type": "mixed",
+      "prompt": {
+        "en": "Wpl,new=2020000 mm³,fy275,γM0=1. Enter Mpl and choose the qualification.",
+        "ar": "Wpl,new=2020000 mm³ وfy275 وγM0=1. أدخل Mpl واختر الشرط."
+      },
+      "expected": 555.5,
+      "tolerance": 1.111,
+      "unit": "kN·m",
+      "options": [
+        {
+          "en": "Plastic-eligible assembled class and developed plate forces.",
+          "ar": "فئة مجمعة مؤهلة لدنًا وتطوير قوى الصفائح."
+        },
+        {
+          "en": "No need to check new plate slenderness.",
+          "ar": "لا يلزم فحص نحافة الصفائح الجديدة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "2020000×275/10⁶=555.5 kN·m.",
+        "ar": "2020000×275/10⁶=555.5 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 10
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 11
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 19
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 20
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 21
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "concept": "steel-compound-shearflow",
+      "type": "conceptual",
+      "prompt": {
+        "en": "VQ/I gives N/mm. Is it already a weld throat stress in N/mm²?",
+        "ar": "يعطي VQ/I وحدةN/mm. هل هو إجهاد حلق اللحامN/mm² جاهزًا؟"
+      },
+      "options": [
+        {
+          "en": "No. It is longitudinal force per length.",
+          "ar": "لا. هو قوة طولية لكل طول."
+        },
+        {
+          "en": "Yes. The unit difference can be ignored.",
+          "ar": "نعم. يمكن إهمال فرق الوحدة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "Bending moment varies along the beam, so the longitudinal force carried by a flange plate changes too. Its rate of change is interface shear flow VQ/I. This is force per unit length, not shear stress. If two identical weld lines share an interface demand symmetrically, each carries half the flow; converting that into throat stress requires throat area per length and the selected connection design rules. Do not size a weld by comparing force per length directly to a material stress.",
+        "ar": "يتغير العزم على طول الكمرة فتتغير القوة الطولية في صفيحة الجناح. معدل تغيّرها تدفق قص الوصلة VQ/I. إنه قوة لكل طول لا إجهاد قص. إذا اقتسم خطا لحام متساويان طلب الوصلة متماثلًا حمل كل منهما نصف التدفق؛ تحويله إلى إجهاد حلق يحتاج مساحة الحلق لكل طول وقواعد تصميم الوصلات المختارة. لا تصمم اللحام بمقارنة قوة لكل طول بإجهاد مادة مباشرة."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 16
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "N04",
+      "concept": "steel-compound-shearflow",
+      "type": "numerical",
+      "prompt": {
+        "en": "V=100000 N,Q=400000 mm³,I=400000000 mm⁴. Find interface flow.",
+        "ar": "V=100000 N وQ=400000 mm³ وI=400000000 mm⁴. أوجد تدفق الوصلة."
+      },
+      "expected": 100,
+      "tolerance": 0.2,
+      "unit": "N/mm",
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "VQ/I=100 N/mm.",
+        "ar": "VQ/I=100 N/mm."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 16
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "concept": "steel-compound-shearflow",
+      "type": "mixed",
+      "prompt": {
+        "en": "Interface flow100 N/mm shared by two equal weld lines. Enter each line demand and select units.",
+        "ar": "تدفق وصلة100 N/mm يقتسمه خطا لحام متساويان. أدخل طلب الخط واختر الوحدة."
+      },
+      "expected": 50,
+      "tolerance": 0.1,
+      "unit": "N/mm",
+      "options": [
+        {
+          "en": "Yield stress in N/mm².",
+          "ar": "إجهاد خضوعN/mm²."
+        },
+        {
+          "en": "Force per unit weld length.",
+          "ar": "قوة لكل طول لحام."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "100/2=50 N/mm per line.",
+        "ar": "100/2=50 N/mm لكل خط."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 16
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "concept": "steel-compound-service",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Can constant Inew be used over the whole span when plates exist only near midspan?",
+        "ar": "هل تستعملInew ثابتة على البحر كله إذا وجدت الصفائح قرب المنتصف فقط؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Any short plate strengthens the entire span identically.",
+          "ar": "نعم. أي صفيحة قصيرة تقوي البحر كله بالتساوي."
+        },
+        {
+          "en": "No. The stiffness varies along the beam.",
+          "ar": "لا. تتغير الصلابة طوليًا."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "A plate cannot develop its full force at the point where it suddenly starts without a load-transfer length. Extending beyond the theoretical bending cutoff and designing the connection develops that force; fatigue may also govern abrupt details. Under service loads use assembled elastic stiffness only if interaction is justified. The lecture’s L/250 example is a selected serviceability criterion, not a universal limit for all projects. Strengthening must connect geometry, load transfer, stability and service response.",
+        "ar": "لا تطور الصفيحة كامل قوتها عند نقطة بدايتها المفاجئة دون طول نقل. يتيح امتدادها وراء حد الإيقاف النظري للعزم مع تصميم الوصلة تطوير القوة؛ وقد يحكم التعب التفاصيل الحادة. استعمل الصلابة المرنة المجمعة لأحمال الخدمة إذا تبرر التفاعل. قيمةL/250 في المحاضرة معيار خدمة مختار لا حدًا عامًا لكل مشروع. يجب أن تربط التقوية الهندسة ونقل الحمل والاستقرار واستجابة الخدمة."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 15
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 16
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 18
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "N05",
+      "concept": "steel-compound-service",
+      "type": "numerical",
+      "prompt": {
+        "en": "With all other values fixed, I doubles from a case withδ=8 mm. Find newδ.",
+        "ar": "مع ثبات الباقي تضاعفتI لحالة ترخيمها8 mm. أوجدδ الجديدة."
+      },
+      "expected": 4,
+      "tolerance": 0.01,
+      "unit": "mm",
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "δ scales as1/I, hence4 mm.",
+        "ar": "δ تتناسب عكسيًا معI، فتصبح4 mm."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 15
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 16
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 18
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "concept": "steel-compound-service",
+      "type": "mixed",
+      "prompt": {
+        "en": "Selected limitL/250 atL=6000 mm. Enter the limit and select its status.",
+        "ar": "الحد المختارL/250 عندL=6000 mm. أدخل الحد واختر صفته."
+      },
+      "expected": 24,
+      "tolerance": 0.048,
+      "unit": "mm",
+      "options": [
+        {
+          "en": "A stated criterion for this exercise, not every project.",
+          "ar": "معيار معلن لهذه المسألة لا لكل مشروع."
+        },
+        {
+          "en": "A universal physical constant for every steel beam.",
+          "ar": "ثابت فيزيائي عام لكل كمرة فولاذية."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the assembled section and identify the neutral axis. Decide whether you need I, elastic W, plastic W or interface shear flow.",
+          "ar": "ارسم القطاع المجمع وحدد المحور المتعادل. اختر هل تحتاج I أمW المرن أمW اللدن أم تدفق قص الوصلة."
+        },
+        {
+          "en": "Use the parallel-axis theorem for I and VQ/I for longitudinal shear flow. N/mm is force per length, not stress N/mm².",
+          "ar": "استعمل المحاور المتوازية لـI وVQ/I لتدفق القص الطولي. N/mm قوة لكل طول لا إجهاد N/mm²."
+        }
+      ],
+      "solution": {
+        "en": "6000/250=24 mm.",
+        "ar": "6000/250=24 mm."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 15
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 16
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 18
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 22
+        },
+        {
+          "doc": "steel-lecture-02",
+          "filename": "lec 2 Design of Compound Beams.pdf",
+          "page": 24
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "meaning-01",
+      "concept": "steel-compound-together",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Connections create the shared action",
+        "ar": "اشرح: الوصلات تنشئ العمل المشترك"
+      },
+      "a": {
+        "en": "A cover plate can slide relative to a rolled beam unless welds or bolts transfer longitudinal force. Full interaction assumes slip is negligible and strain varies linearly through the assembled section in elastic bending. Simply adding isolated section inertias misses the benefit of separation. The load path must exist over the plate length, including its ends.",
+        "ar": "قد تنزلق صفيحة التقوية عن الكمرة المدرفلة ما لم ينقل اللحام أو البراغي قوة طولية. يفترض التفاعل الكامل انزلاقًا مهملًا وتغير الانفعال خطيًا عبر القطاع المجمع في الانحناء المرن. جمع عزوم القصور المنفردة فقط يهمل فائدة التباعد. يجب وجود مسار الحمل على طول الصفيحة وعند نهايتيها."
+      }
+    },
+    {
+      "id": "prediction-01",
+      "concept": "steel-compound-together",
+      "kind": "prediction",
+      "q": {
+        "en": "May you claim full assembled stiffness just by laying plates on a beam?",
+        "ar": "هل تدّعي صلابة القطاع المجمع بمجرد وضع صفائح على الكمرة؟"
+      },
+      "a": {
+        "en": "No. Shear-transfer connections are required. Compatibility is a design assumption that connections must earn.",
+        "ar": "لا. يلزم نقل القص بوصلات. التوافق فرض تصميم يجب أن تبرره الوصلات."
+      }
+    },
+    {
+      "id": "calculation-01",
+      "concept": "steel-compound-together",
+      "kind": "calculation",
+      "q": {
+        "en": "E=200000 N/mm²,ε=0.001. Find elastic σ.",
+        "ar": "E=200000 N/mm² وε=0.001. أوجد σ المرنة."
+      },
+      "a": {
+        "en": "σ=Eε=200.",
+        "ar": "σ=Eε=200."
+      }
+    },
+    {
+      "id": "decision-01",
+      "concept": "steel-compound-together",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Connections create the shared action?",
+        "ar": "متى يصح هذا النموذج: الوصلات تنشئ العمل المشترك؟"
+      },
+      "a": {
+        "en": "Compatible homogeneous steel section, elastic plane-section behavior and connections sufficient to justify full interaction. Symbols: ε strain dimensionless,κ curvature1/mm,y distance from neutral axis mm,E N/mm².",
+        "ar": "قطاع فولاذي متجانس متوافق وسلوك مرن للمقاطع المستوية ووصلات تبرر التفاعل الكامل. الرموز: ε انفعال بلا وحدة وκ انحناء1/mm وy مسافة عن المحور المتعادل mm وE بوحدة N/mm²."
+      }
+    },
+    {
+      "id": "meaning-02",
+      "concept": "steel-compound-geometry",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Distance from the neutral axis does the work",
+        "ar": "اشرح: البعد عن المحور المتعادل يصنع الفرق"
+      },
+      "a": {
+        "en": "For equal top and bottom cover plates on a symmetric beam, the neutral axis remains at middepth. Add each plate’s own inertia and its area times squared centroid distance. The new extreme-fibre distance grows too, so elastic section modulus is I divided by the new outer distance, not the original beam half-depth.",
+        "ar": "لصفائح علوية وسفلية متساوية على كمرة متماثلة يبقى المحور في المنتصف. أضف قصور كل صفيحة الذاتي ومساحتها مضروبة في مربع بعد مركزها. تكبر مسافة الليف الأبعد أيضًا، لذلك W المرن هو I على البعد الخارجي الجديد لا نصف عمق الكمرة الأصلية."
+      }
+    },
+    {
+      "id": "prediction-02",
+      "concept": "steel-compound-geometry",
+      "kind": "prediction",
+      "q": {
+        "en": "Does adding only Bt³/12 capture a flange plate’s full stiffness benefit?",
+        "ar": "هل إضافة Bt³/12 فقط تمثل كامل فائدة صلابة صفيحة الجناح؟"
+      },
+      "a": {
+        "en": "No. The parallel-axis term often dominates. Check the neutral axis and new outer depth before calculating W.",
+        "ar": "لا. غالبًا يحكم حد المحاور المتوازية. تحقق من المحور والعمق الخارجي الجديد قبل حساب W."
+      }
+    },
+    {
+      "id": "calculation-02",
+      "concept": "steel-compound-geometry",
+      "kind": "calculation",
+      "q": {
+        "en": "A=2000 mm²,d=205 mm. Find the parallel-axis term Ad² for one plate.",
+        "ar": "A=2000 mm² وd=205 mm. أوجد Ad² لصفيحة واحدة."
+      },
+      "a": {
+        "en": "2000×205²=84050000 mm⁴.",
+        "ar": "2000×205²=84050000 mm⁴."
+      }
+    },
+    {
+      "id": "decision-02",
+      "concept": "steel-compound-geometry",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Distance from the neutral axis does the work?",
+        "ar": "متى يصح هذا النموذج: البعد عن المحور المتعادل يصنع الفرق؟"
+      },
+      "a": {
+        "en": "Symmetric identical plates of the same E, full interaction and no material removed from the original section. Symbols: B plate width,t thickness,D original beam depth in mm; I mm⁴,Wel mm³.",
+        "ar": "صفائح متماثلة متساوية من E نفسها وتفاعل كامل ودون إزالة مادة من القطاع الأصلي. الرموز: B عرض الصفيحة وt سماكتها وD عمق الكمرة الأصلي mm؛ I بوحدة mm⁴ وWel بوحدة mm³."
+      }
+    },
+    {
+      "id": "meaning-03",
+      "concept": "steel-compound-plastic",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Add a force couple, then reclassify",
+        "ar": "اشرح: أضف ازدواج قوى ثم أعد التصنيف"
+      },
+      "a": {
+        "en": "If both plates can fully yield, their areas form an added tension–compression couple. With a central plastic neutral axis the added plastic modulus is2Aplate d. However cover plates introduce new compressed outstands and panels between welds, so the assembled section must be classified afresh. A rolled beam’s old Class1 label does not automatically survive strengthening.",
+        "ar": "إذا أمكن خضوع الصفيحتين كاملًا تشكل مساحتاهما ازدواج شد وضغط إضافيًا. مع محور لدن مركزي تكون زيادة W اللدن2Aplate d. لكن الصفائح تنشئ أجزاء بارزة مضغوطة وألواحًا بين خطوط اللحام، لذلك يجب إعادة تصنيف القطاع المجمع. لا ينتقل تصنيف الكمرة المدرفلة القديم1 تلقائيًا بعد التقوية."
+      }
+    },
+    {
+      "id": "prediction-03",
+      "concept": "steel-compound-plastic",
+      "kind": "prediction",
+      "q": {
+        "en": "Does a Class1 original beam automatically make the plated section Class1?",
+        "ar": "هل تجعل الفئة1 للكمرة الأصلية القطاع المقوى من الفئة1 تلقائيًا؟"
+      },
+      "a": {
+        "en": "No. New plate elements require classification. A larger W is useful only after local and member stability conditions are satisfied.",
+        "ar": "لا. تحتاج عناصر الصفائح الجديدة تصنيفًا. زيادة W مفيدة بعد تحقق الاستقرار المحلي والعام."
+      }
+    },
+    {
+      "id": "calculation-03",
+      "concept": "steel-compound-plastic",
+      "kind": "calculation",
+      "q": {
+        "en": "B=200,t=10,D=400 mm. Find ΔWpl.",
+        "ar": "B=200 وt=10 وD=400 mm. أوجد ΔWpl."
+      },
+      "a": {
+        "en": "Bt(D+t)=200×10×410=820000.",
+        "ar": "Bt(D+t)=200×10×410=820000."
+      }
+    },
+    {
+      "id": "decision-03",
+      "concept": "steel-compound-plastic",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Add a force couple, then reclassify?",
+        "ar": "متى يصح هذا النموذج: أضف ازدواج قوى ثم أعد التصنيف؟"
+      },
+      "a": {
+        "en": "Eligible plastic Class1/2 section, full plate force development and adequate lateral restraint; otherwise use appropriate elastic/effective and stability checks. Symbols: ΔWpl mm³,fy N/mm²; B,t,D as above. Wpl is not generally I/y.",
+        "ar": "قطاع صالح لدنًا من1/2 وتطوير كامل لقوى الصفائح وتقييد جانبي كافٍ؛ وإلا استعمل الفحوص المرنة أو الفعالة والاستقرار المناسبة. الرموز: ΔWpl بوحدة mm³ وfy بوحدة N/mm²؛ B وt وD كما سبق. Wpl ليست I/y عمومًا."
+      }
+    },
+    {
+      "id": "meaning-04",
+      "concept": "steel-compound-shearflow",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Follow the changing plate force into welds",
+        "ar": "اشرح: تتبّع قوة الصفيحة المتغيّرة إلى اللحام"
+      },
+      "a": {
+        "en": "Bending moment varies along the beam, so the longitudinal force carried by a flange plate changes too. Its rate of change is interface shear flow VQ/I. This is force per unit length, not shear stress. If two identical weld lines share an interface demand symmetrically, each carries half the flow; converting that into throat stress requires throat area per length and the selected connection design rules.",
+        "ar": "يتغير العزم على طول الكمرة فتتغير القوة الطولية في صفيحة الجناح. معدل تغيّرها تدفق قص الوصلة VQ/I. إنه قوة لكل طول لا إجهاد قص. إذا اقتسم خطا لحام متساويان طلب الوصلة متماثلًا حمل كل منهما نصف التدفق؛ تحويله إلى إجهاد حلق يحتاج مساحة الحلق لكل طول وقواعد تصميم الوصلات المختارة."
+      }
+    },
+    {
+      "id": "prediction-04",
+      "concept": "steel-compound-shearflow",
+      "kind": "prediction",
+      "q": {
+        "en": "VQ/I gives N/mm. Is it already a weld throat stress in N/mm²?",
+        "ar": "يعطي VQ/I وحدةN/mm. هل هو إجهاد حلق اللحامN/mm² جاهزًا؟"
+      },
+      "a": {
+        "en": "No. It is longitudinal force per length. Do not size a weld by comparing force per length directly to a material stress.",
+        "ar": "لا. هو قوة طولية لكل طول. لا تصمم اللحام بمقارنة قوة لكل طول بإجهاد مادة مباشرة."
+      }
+    },
+    {
+      "id": "calculation-04",
+      "concept": "steel-compound-shearflow",
+      "kind": "calculation",
+      "q": {
+        "en": "V=100000 N,Q=400000 mm³,I=400000000 mm⁴. Find interface flow.",
+        "ar": "V=100000 N وQ=400000 mm³ وI=400000000 mm⁴. أوجد تدفق الوصلة."
+      },
+      "a": {
+        "en": "VQ/I=100 N/mm.",
+        "ar": "VQ/I=100 N/mm."
+      }
+    },
+    {
+      "id": "decision-04",
+      "concept": "steel-compound-shearflow",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Follow the changing plate force into welds?",
+        "ar": "متى يصح هذا النموذج: تتبّع قوة الصفيحة المتغيّرة إلى اللحام؟"
+      },
+      "a": {
+        "en": "Elastic shear-flow theory, full interaction and stated symmetric load sharing; weld resistance needs separate EN1993-1-8 inputs. Symbols: V N,Q mm³,I mm⁴ → q N/mm. For one interface use only the connected plate’s first moment Q.",
+        "ar": "نظرية تدفق قص مرنة وتفاعل كامل واقتسام متماثل معلن؛ تحتاج مقاومة اللحام مدخلات منفصلة من EN1993-1-8. الرموز: V بالنيوتن وQ بوحدة mm³ وI بوحدة mm⁴ فينتج q بوحدة N/mm. استعمل Q للصفيحة المرتبطة بتلك الوصلة فقط."
+      }
+    },
+    {
+      "id": "meaning-05",
+      "concept": "steel-compound-service",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Plate ends and deflection complete the story",
+        "ar": "اشرح: نهايات الصفائح والترخيم يكملان القصة"
+      },
+      "a": {
+        "en": "A plate cannot develop its full force at the point where it suddenly starts without a load-transfer length. Extending beyond the theoretical bending cutoff and designing the connection develops that force; fatigue may also govern abrupt details. Under service loads use assembled elastic stiffness only if interaction is justified. The lecture’s L/250 example is a selected serviceability criterion, not a universal limit for all projects.",
+        "ar": "لا تطور الصفيحة كامل قوتها عند نقطة بدايتها المفاجئة دون طول نقل. يتيح امتدادها وراء حد الإيقاف النظري للعزم مع تصميم الوصلة تطوير القوة؛ وقد يحكم التعب التفاصيل الحادة. استعمل الصلابة المرنة المجمعة لأحمال الخدمة إذا تبرر التفاعل. قيمةL/250 في المحاضرة معيار خدمة مختار لا حدًا عامًا لكل مشروع."
+      }
+    },
+    {
+      "id": "prediction-05",
+      "concept": "steel-compound-service",
+      "kind": "prediction",
+      "q": {
+        "en": "Can constant Inew be used over the whole span when plates exist only near midspan?",
+        "ar": "هل تستعملInew ثابتة على البحر كله إذا وجدت الصفائح قرب المنتصف فقط؟"
+      },
+      "a": {
+        "en": "No. The stiffness varies along the beam. Strengthening must connect geometry, load transfer, stability and service response.",
+        "ar": "لا. تتغير الصلابة طوليًا. يجب أن تربط التقوية الهندسة ونقل الحمل والاستقرار واستجابة الخدمة."
+      }
+    },
+    {
+      "id": "calculation-05",
+      "concept": "steel-compound-service",
+      "kind": "calculation",
+      "q": {
+        "en": "With all other values fixed, I doubles from a case withδ=8 mm. Find newδ.",
+        "ar": "مع ثبات الباقي تضاعفتI لحالة ترخيمها8 mm. أوجدδ الجديدة."
+      },
+      "a": {
+        "en": "δ scales as1/I, hence4 mm.",
+        "ar": "δ تتناسب عكسيًا معI، فتصبح4 mm."
+      }
+    },
+    {
+      "id": "decision-05",
+      "concept": "steel-compound-service",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Plate ends and deflection complete the story?",
+        "ar": "متى يصح هذا النموذج: نهايات الصفائح والترخيم يكملان القصة؟"
+      },
+      "a": {
+        "en": "Linear elastic simply supported constant-EI member with a full-span UDL; partial-length plates need variable stiffness analysis. Symbols: w N/mm,L mm,E N/mm²,I mm⁴ gives δ mm. Use service loads, not automatically factored ULS actions.",
+        "ar": "عضو بسيط مرن خطي ثابتEI بحمل موزع على البحر كله؛ الصفائح الجزئية تحتاج تحليل صلابة متغيرة. الرموز: w بوحدةN/mm وL بالمليمتر وE بوحدةN/mm² وI بوحدةmm⁴ فتعطيδ بالمليمتر. استعمل أحمال الخدمة لا أحمالULS المعاملة تلقائيًا."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 2
+    },
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 4
+    },
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 7
+    },
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 14
+    },
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 16
+    },
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 19
+    },
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 20
+    },
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 21
+    },
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 22
+    },
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 10
+    },
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 11
+    },
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 24
+    },
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 15
+    },
+    {
+      "doc": "steel-lecture-02",
+      "filename": "lec 2 Design of Compound Beams.pdf",
+      "page": 18
+    }
+  ]
+}

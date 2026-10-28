@@ -608,5 +608,215 @@
     ],
     "reviewedAt": "2026-10-26",
     "reference": "https://www.youtube.com/watch?v=rfG8ce4nNh0"
+  },
+  {
+    "id": "ySUr60U6jiM",
+    "title": "Lecture - 17 Effective Stress - I",
+    "author": "nptelhrd · Prof. B. V. S. Viswanadham, IIT Bombay",
+    "language": "English",
+    "purpose": {
+      "en": "Understand the saturated-soil stress partition, pore-water pressure and effective stress.",
+      "ar": "افهم تقاسم الإجهاد في التربة المشبعة وضغط ماء المسام والإجهاد الفعّال."
+    },
+    "kind": "concept",
+    "topics": [
+      "soil-effective-stress"
+    ],
+    "reviewedAt": "2026-10-26",
+    "reference": "https://www.youtube.com/watch?v=ySUr60U6jiM"
+  },
+  {
+    "id": "bmpn5oNDvOs",
+    "title": "Direct Shear Test",
+    "author": "NCTEL",
+    "language": "English",
+    "purpose": {
+      "en": "Apparatus demonstration for the split box. Use the lesson’s stated area and drainage conventions when interpreting results.",
+      "ar": "عرض جهاز صندوق القص. استعمل اتفاق المساحة والتصريف المحدد في الدرس عند تفسير النتائج."
+    },
+    "kind": "concept",
+    "topics": [
+      "soil-shear"
+    ],
+    "reviewedAt": "2026-10-27",
+    "reference": "https://www.youtube.com/watch?v=bmpn5oNDvOs"
+  },
+  {
+    "id": "uGTs5O3ds7k",
+    "title": "Lec 27 : Triaxial test",
+    "author": "NPTEL IIT Guwahati",
+    "language": "English",
+    "purpose": {
+      "en": "Review confinement, ram loading and control of drainage in triaxial testing.",
+      "ar": "راجع الحصر وتحميل المكبس والتحكم بالتصريف في الاختبار ثلاثي المحاور."
+    },
+    "kind": "concept",
+    "topics": [
+      "soil-shear",
+      "soil-triaxial"
+    ],
+    "reviewedAt": "2026-10-27",
+    "reference": "https://www.youtube.com/watch?v=uGTs5O3ds7k"
+  },
+  {
+    "id": "CAZNIuQTE-0",
+    "title": "Lecture 28: Introduction to Open Channel Flow and Uniform Flow",
+    "author": "NPTEL IIT Kharagpur",
+    "language": "English",
+    "purpose": {
+      "en": "Optional explanation of open-channel flow classification and the free surface.",
+      "ar": "شرح اختياري لتصنيف جريان القنوات المفتوحة والسطح الحر."
+    },
+    "kind": "concept",
+    "topics": [
+      "hydro-geometry"
+    ],
+    "reviewedAt": "2026-10-27",
+    "reference": "https://www.youtube.com/watch?v=CAZNIuQTE-0"
+  },
+  {
+    "id": "3AekPKmEYW4",
+    "title": "Lecture 31: Introduction to Open Channel Flow and Uniform Flow (Contd.)",
+    "author": "NPTEL IIT Kharagpur",
+    "language": "English",
+    "purpose": {
+      "en": "Compare Chezy and Manning resistance and the meaning of uniform flow.",
+      "ar": "قارن مقاومة شيزي وماننج ومعنى الجريان المنتظم."
+    },
+    "kind": "concept",
+    "topics": [
+      "hydro-uniform"
+    ],
+    "reviewedAt": "2026-10-27",
+    "reference": "https://www.youtube.com/watch?v=3AekPKmEYW4"
+  },
+  {
+    "id": "Tz7EPLL4PTQ",
+    "title": "Specific energy critical flow",
+    "author": "nptelhrd",
+    "language": "English",
+    "purpose": {
+      "en": "Follow the specific-energy curve and why its minimum gives critical flow.",
+      "ar": "تتبّع منحنى الطاقة النوعية ولماذا تعطي قيمته الدنيا الجريان الحرج."
+    },
+    "kind": "concept",
+    "topics": [
+      "hydro-critical"
+    ],
+    "reviewedAt": "2026-10-27",
+    "reference": "https://www.youtube.com/watch?v=Tz7EPLL4PTQ"
+  },
+  {
+    "id": "8gu5oGySrCI",
+    "title": "Equation of continuity energy",
+    "author": "nptelhrd",
+    "language": "English",
+    "purpose": {
+      "en": "Distinguish conserving water volume from conserving energy along a channel.",
+      "ar": "ميّز حفظ حجم الماء عن حفظ الطاقة على طول القناة."
+    },
+    "kind": "concept",
+    "topics": [
+      "hydro-geometry",
+      "hydro-critical"
+    ],
+    "reviewedAt": "2026-10-27",
+    "reference": "https://www.youtube.com/watch?v=8gu5oGySrCI"
+  },
+  {
+    "id": "XTkW5_I-NA0",
+    "title": "Lecture-3 Water and WasteWater Quality Estimation",
+    "author": "nptelhrd",
+    "language": "English",
+    "purpose": {
+      "en": "Despite the historical video title, the publisher’s course sequence covers water quantity estimation here; compare demand and population assumptions with the supplied example.",
+      "ar": "رغم عنوان الفيديو التاريخي، تتناول هذه المحاضرة تقدير كمية الماء وفق تسلسل المقرر؛ قارن فروض الطلب والسكان بالمثال المعطى."
+    },
+    "kind": "concept",
+    "topics": [
+      "env-demand"
+    ],
+    "reviewedAt": "2026-10-27",
+    "reference": "https://www.youtube.com/watch?v=XTkW5_I-NA0"
+  },
+  {
+    "id": "6Ot2t9YyzKU",
+    "title": "#4 Water Quality Parameters | Environmental Quality Monitoring & Analysis",
+    "author": "NPTEL-NOC IITM",
+    "language": "English",
+    "purpose": {
+      "en": "Clarify what water-quality parameters measure and why one parameter cannot describe all contamination.",
+      "ar": "وضّح ما تقيسه معاملات جودة الماء ولماذا لا يصف معامل واحد كل التلوث."
+    },
+    "kind": "concept",
+    "topics": [
+      "env-quality"
+    ],
+    "reviewedAt": "2026-10-27",
+    "reference": "https://www.youtube.com/watch?v=6Ot2t9YyzKU"
+  },
+  {
+    "id": "C8ghKCUfcQk",
+    "title": "Lecture 10 Coagulation and Flocculation",
+    "author": "nptelhrd",
+    "language": "English",
+    "purpose": {
+      "en": "Explain particle destabilisation and the different purposes of rapid mixing and flocculation.",
+      "ar": "اشرح زعزعة استقرار الجسيمات واختلاف هدف الخلط السريع والتلبيد."
+    },
+    "kind": "concept",
+    "topics": [
+      "env-coagulation"
+    ],
+    "reviewedAt": "2026-10-27",
+    "reference": "https://www.youtube.com/watch?v=C8ghKCUfcQk"
+  },
+  {
+    "id": "wUl5E1SZqBo",
+    "title": "Lecture 11 Coagulation and Flocculation (Contd)",
+    "author": "nptelhrd",
+    "language": "English",
+    "purpose": {
+      "en": "A longer continuation for mixing and flocculation. Use the written example’s selected G, viscosity and volume.",
+      "ar": "استكمال أطول للخلط والتلبيد. استعملG واللزوجة والحجم المختارة في المثال المكتوب."
+    },
+    "kind": "concept",
+    "topics": [
+      "env-coagulation"
+    ],
+    "reviewedAt": "2026-10-27",
+    "reference": "https://www.youtube.com/watch?v=wUl5E1SZqBo"
+  },
+  {
+    "id": "kRSKLXoaN54",
+    "title": "Mod-6 Lec-4 Design of Laterally Unsupported Beams",
+    "author": "nptelhrd",
+    "language": "English",
+    "purpose": {
+      "en": "Useful for the instability mechanism. This older NPTEL course uses a different design-code context; do not copy its resistance factors into the Eurocode3 lesson.",
+      "ar": "مفيد لفهم آلية عدم الاستقرار. يستخدم مقررNPTEL القديم سياق كود مختلفًا؛ لا تنقل معاملات مقاومته إلى درسEurocode3."
+    },
+    "kind": "concept",
+    "topics": [
+      "steel-ltb"
+    ],
+    "reviewedAt": "2026-10-27",
+    "reference": "https://www.youtube.com/watch?v=kRSKLXoaN54"
+  },
+  {
+    "id": "wjEQ6F4HCaU",
+    "title": "Mod-6 Lec-7 Design of a Built-Up Beams",
+    "author": "nptelhrd",
+    "language": "English",
+    "purpose": {
+      "en": "See a built-up beam example and load transfer. The video’s design-code track differs: retain the Eurocode edition and assumptions of the written course.",
+      "ar": "شاهد مثال كمرة مجمعة ونقل الأحمال. يختلف مسار كود الفيديو؛ احتفظ بإصدار اليوروكود وفروض المقرر المكتوب."
+    },
+    "kind": "concept",
+    "topics": [
+      "steel-compound"
+    ],
+    "reviewedAt": "2026-10-27",
+    "reference": "https://www.youtube.com/watch?v=wjEQ6F4HCaU"
   }
 ]

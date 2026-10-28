@@ -1,0 +1,1563 @@
+{
+  "id": "soil-triaxial",
+  "family": "soil-strength",
+  "title": {
+    "en": "Triaxial tests: choose the drainage story",
+    "ar": "الضغط ثلاثي المحاور: اختر قصة التصريف"
+  },
+  "summary": {
+    "en": "Follow a specimen through confinement and shearing. Read total/effective Mohr circles, distinguish UU/CU/CD, and choose parameters that match field timing.",
+    "ar": "تتبّع العينة خلال الحصر والقص. اقرأ دوائر مور الكلية والفعّالة وميّز UU/CU/CD واختر معاملات تمثل زمن التحميل الموقعي."
+  },
+  "outcomes": [
+    {
+      "en": "Cell pressure plus ram increment",
+      "ar": "ضغط الخلية وزيادة المكبس"
+    },
+    {
+      "en": "The circle records all plane stresses",
+      "ar": "الدائرة تمثل إجهادات كل السطوح"
+    },
+    {
+      "en": "Pore pressure shifts; it does not resize",
+      "ar": "ضغط الماء يزيح الدائرة ولا يغير حجمها"
+    },
+    {
+      "en": "Two stages, three drainage paths",
+      "ar": "مرحلتان وثلاثة مسارات تصريف"
+    },
+    {
+      "en": "Fit failure, then test the field choice",
+      "ar": "لائم الفشل ثم اختبر اختيار الموقع"
+    }
+  ],
+  "prereqIds": [
+    "soil-units",
+    "soil-effective",
+    "soil-trig",
+    "course-algebra"
+  ],
+  "videoIds": [
+    "uGTs5O3ds7k"
+  ],
+  "concepts": [
+    {
+      "id": "soil-triaxial-loads",
+      "title": {
+        "en": "Cell pressure plus ram increment",
+        "ar": "ضغط الخلية وزيادة المكبس"
+      }
+    },
+    {
+      "id": "soil-triaxial-circle",
+      "title": {
+        "en": "The circle records all plane stresses",
+        "ar": "الدائرة تمثل إجهادات كل السطوح"
+      }
+    },
+    {
+      "id": "soil-triaxial-effective",
+      "title": {
+        "en": "Pore pressure shifts; it does not resize",
+        "ar": "ضغط الماء يزيح الدائرة ولا يغير حجمها"
+      }
+    },
+    {
+      "id": "soil-triaxial-valves",
+      "title": {
+        "en": "Two stages, three drainage paths",
+        "ar": "مرحلتان وثلاثة مسارات تصريف"
+      }
+    },
+    {
+      "id": "soil-triaxial-failure",
+      "title": {
+        "en": "Fit failure, then test the field choice",
+        "ar": "لائم الفشل ثم اختبر اختيار الموقع"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "soil-triaxial-loads",
+      "title": {
+        "en": "Cell pressure plus ram increment",
+        "ar": "ضغط الخلية وزيادة المكبس"
+      },
+      "predict": {
+        "en": "Cell pressure is 100 kPa and ram increment is 200 kPa. Is σ1=200?",
+        "ar": "ضغط الخلية 100 kPa وزيادة المكبس 200 kPa. هل σ1=200؟"
+      },
+      "options": [
+        {
+          "en": "No. σ1=300 kPa.",
+          "ar": "لا. σ1=300 kPa."
+        },
+        {
+          "en": "Yes, confinement acts only sideways.",
+          "ar": "نعم، الحصر جانبي فقط."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Keep confinement and deviator stress separate in the data table.",
+        "ar": "افصل الحصر وإجهاد الانحراف في جدول البيانات."
+      },
+      "explain": {
+        "en": "In conventional compression, the cell supplies σ3 laterally and also acts axially. The ram supplies the additional axial stress q=N/A. Therefore σ1=σ3+q. Using N/A as σ1 omits the initial axial confinement. As the specimen shortens, its cross-sectional area changes; use the test’s stated corrected area.",
+        "ar": "في الضغط التقليدي توفر الخلية σ3 جانبيًا وتؤثر محوريًا أيضًا. يضيف المكبس الإجهاد q=N/A، لذلك σ1=σ3+q. استعمال N/A كأنه σ1 يهمل الحصر المحوري الابتدائي. تتغير مساحة المقطع عندما تقصر العينة؛ استعمل مساحتها المصححة وفق بروتوكول الاختبار."
+      },
+      "formula": "q = N/A; σ1 = σ3 + q; A = (V0 − ΔV)/(L0 − ΔL)",
+      "symbols": {
+        "en": "N ram force in kN; A m²; stresses kPa. ΔV and ΔL are positive reductions.",
+        "ar": "N قوة المكبس بالكيلونيوتن؛ A بالمتر المربع؛ الإجهادات kPa. ΔV وΔL نقصانان موجبان."
+      },
+      "assumptions": {
+        "en": "Axisymmetric compression; σ2=σ3; no unaccounted piston friction or membrane correction.",
+        "ar": "ضغط متماثل محوريًا مع σ2=σ3؛ دون احتكاك مكبس أو تصحيح غشاء غير محسوب."
+      },
+      "example": {
+        "en": "N=0.6 kN, corrected A=0.003 m², σ3=100 kPa.",
+        "ar": "N=0.6 kN وA المصححة=0.003 m² وσ3=100 kPa."
+      },
+      "calculation": {
+        "en": "q=0.6/0.003=200; σ1=300 kPa. σ1−σ3=200 verifies the increment.",
+        "ar": "q=0.6/0.003=200؛ σ1=300 kPa. الفرق σ1−σ3=200 يتحقق من الزيادة."
+      },
+      "interpret": {
+        "en": "Keep confinement and deviator stress separate in the data table.",
+        "ar": "افصل الحصر وإجهاد الانحراف في جدول البيانات."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Keep confinement and deviator stress separate in the data table. Axisymmetric compression; σ2=σ3; no unaccounted piston friction or membrane correction.",
+          "ar": "افصل الحصر وإجهاد الانحراف في جدول البيانات. ضغط متماثل محوريًا مع σ2=σ3؛ دون احتكاك مكبس أو تصحيح غشاء غير محسوب."
+        }
+      },
+      "diagram": "course-soil-triaxial",
+      "concepts": [
+        "soil-triaxial-loads"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 1
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "soil-triaxial-circle",
+      "title": {
+        "en": "The circle records all plane stresses",
+        "ar": "الدائرة تمثل إجهادات كل السطوح"
+      },
+      "predict": {
+        "en": "If σ1−σ3=200 kPa, is maximum shear 200 kPa?",
+        "ar": "إذا σ1−σ3=200 kPa، فهل أكبر قص 200 kPa؟"
+      },
+      "options": [
+        {
+          "en": "No. It is 100 kPa.",
+          "ar": "لا. يساوي 100 kPa."
+        },
+        {
+          "en": "Yes. Circle radius equals the full diameter.",
+          "ar": "نعم، نصف القطر يساوي القطر كله."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Check both axis intersections before using the circle to infer a failure envelope.",
+        "ar": "تحقق من تقاطعي المحور قبل استنتاج غلاف الفشل."
+      },
+      "explain": {
+        "en": "Place σ3 and σ1 on the horizontal normal-stress axis. Their midpoint is the circle center; half their separation is its radius. Every point on the circle represents a plane orientation. The radius is the maximum shear stress on any plane, but the Mohr–Coulomb failure plane does not generally have maximum shear stress when φ is nonzero.",
+        "ar": "ضع σ3 وσ1 على محور الإجهاد العمودي. منتصفهما مركز الدائرة ونصف الفرق نصف قطرها. تمثل كل نقطة اتجاه سطح. نصف القطر أكبر إجهاد قص على أي سطح، لكن سطح فشل موهر–كولوم لا يملك أكبر إجهاد قص عمومًا عندما تكون φ غير صفرية."
+      },
+      "formula": "C = (σ1+σ3)/2; r = (σ1−σ3)/2; τmax = r",
+      "symbols": {
+        "en": "C circle center, r radius in kPa; C is not cohesion c.",
+        "ar": "C مركز الدائرة وr نصف قطرها بالكيلوباسكال؛ C ليست التماسك c."
+      },
+      "assumptions": {
+        "en": "Compression-positive convention and a consistent Mohr-axis convention. Plane rotation appears doubled on the circle.",
+        "ar": "اتفاق الضغط الموجب ومحاور مور المتسقة؛ دوران السطح يظهر مضاعفًا على الدائرة."
+      },
+      "example": {
+        "en": "σ1=300 and σ3=100 kPa: construct the circle.",
+        "ar": "σ1=300 وσ3=100 kPa: ابنِ الدائرة."
+      },
+      "calculation": {
+        "en": "C=200, r=100 kPa; intersections 100 and 300. Maximum shear acts at normal stress 200 kPa.",
+        "ar": "C=200 وr=100 kPa؛ تقاطعان عند 100 و300. يقع أكبر قص عند إجهاد عمودي 200 kPa."
+      },
+      "interpret": {
+        "en": "Check both axis intersections before using the circle to infer a failure envelope.",
+        "ar": "تحقق من تقاطعي المحور قبل استنتاج غلاف الفشل."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Check both axis intersections before using the circle to infer a failure envelope. Compression-positive convention and a consistent Mohr-axis convention. Plane rotation appears doubled on the circle.",
+          "ar": "تحقق من تقاطعي المحور قبل استنتاج غلاف الفشل. اتفاق الضغط الموجب ومحاور مور المتسقة؛ دوران السطح يظهر مضاعفًا على الدائرة."
+        }
+      },
+      "diagram": "course-soil-triaxial",
+      "concepts": [
+        "soil-triaxial-circle"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "soil-triaxial-effective",
+      "title": {
+        "en": "Pore pressure shifts; it does not resize",
+        "ar": "ضغط الماء يزيح الدائرة ولا يغير حجمها"
+      },
+      "predict": {
+        "en": "Subtract u=40 kPa from both principal stresses. Does circle radius fall by 40?",
+        "ar": "اطرح u=40 kPa من الإجهادين الرئيسيين. هل ينقص نصف القطر 40؟"
+      },
+      "options": [
+        {
+          "en": "No. Both ends shift equally.",
+          "ar": "لا. ينتقل الطرفان بالمقدار نفسه."
+        },
+        {
+          "en": "Yes. Water subtracts from the shear radius directly.",
+          "ar": "نعم. يُطرح الماء مباشرة من نصف قطر القص."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Identical radius does not mean identical strength parameters; the normal-stress location has changed.",
+        "ar": "تساوي نصف القطر لا يعني تساوي معاملات المقاومة؛ تغيّر موضع الإجهاد العمودي."
+      },
+      "explain": {
+        "en": "For a saturated specimen with uniform measured u, subtract u from both principal stresses. The effective circle moves left by u while the radius stays unchanged, because u cancels from the stress difference. A total-stress envelope and an effective-stress envelope can therefore be different even though they describe the same failure tests. The prime on c′ and φ′ identifies the stress basis.",
+        "ar": "للعينة المشبعة ذات u مقاسة ومنتظمة، اطرح u من الإجهادين الرئيسيين. تنتقل الدائرة الفعّالة لليسار بمقدار u ويبقى نصف القطر لأن u تُلغى من فرق الإجهادين. قد يختلف غلاف الكلي عن غلاف الفعّال رغم أنهما يصفان اختبارات الفشل نفسها. تشير الشرطة في c′ وφ′ إلى أساس الإجهاد."
+      },
+      "formula": "σ′1=σ1−u; σ′3=σ3−u; q′=q; C′=C−u",
+      "symbols": {
+        "en": "u, C, σ in kPa; uniform positive pore pressure shifts the circle left.",
+        "ar": "u وC وσ بالكيلوباسكال؛ ضغط مسام موجب منتظم يزيح الدائرة يسارًا."
+      },
+      "assumptions": {
+        "en": "Saturated Terzaghi effective stresses, measured u applying to the specimen; not an unsaturated-soil model.",
+        "ar": "إجهاد ترزاغي الفعّال لتربة مشبعة مع u مقاسة تمثل العينة؛ ليس نموذج التربة غير المشبعة."
+      },
+      "example": {
+        "en": "σ1=300, σ3=100 and u=40 kPa.",
+        "ar": "σ1=300 وσ3=100 وu=40 kPa."
+      },
+      "calculation": {
+        "en": "σ′1=260; σ′3=60; C′=160; r′=(260−60)/2=100 kPa.",
+        "ar": "σ′1=260 وσ′3=60 وC′=160 وr′=(260−60)/2=100 kPa."
+      },
+      "interpret": {
+        "en": "Identical radius does not mean identical strength parameters; the normal-stress location has changed.",
+        "ar": "تساوي نصف القطر لا يعني تساوي معاملات المقاومة؛ تغيّر موضع الإجهاد العمودي."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Identical radius does not mean identical strength parameters; the normal-stress location has changed. Saturated Terzaghi effective stresses, measured u applying to the specimen; not an unsaturated-soil model.",
+          "ar": "تساوي نصف القطر لا يعني تساوي معاملات المقاومة؛ تغيّر موضع الإجهاد العمودي. إجهاد ترزاغي الفعّال لتربة مشبعة مع u مقاسة تمثل العينة؛ ليس نموذج التربة غير المشبعة."
+        }
+      },
+      "diagram": "course-soil-triaxial",
+      "concepts": [
+        "soil-triaxial-effective"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "soil-triaxial-valves",
+      "title": {
+        "en": "Two stages, three drainage paths",
+        "ar": "مرحلتان وثلاثة مسارات تصريف"
+      },
+      "predict": {
+        "en": "A CU test measures u at failure. Can it supply effective failure stresses?",
+        "ar": "يقيس اختبار CU ضغط u عند الفشل. هل يمكن استخراج إجهادات الفشل الفعّالة؟"
+      },
+      "options": [
+        {
+          "en": "Yes, subtract measured u from both principal stresses.",
+          "ar": "نعم، اطرح u المقاسة من الإجهادين."
+        },
+        {
+          "en": "No, any undrained test can only use total stresses.",
+          "ar": "لا، كل اختبار غير مصروف لا يتيح إلا الكلي."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Read drainage and pore-pressure records before choosing c,φ or c′,φ′.",
+        "ar": "اقرأ سجل التصريف وضغط المسام قبل اختيار c,φ أو c′,φ′."
+      },
+      "explain": {
+        "en": "UU closes drainage during confinement and shear. CU allows consolidation first, then closes drainage for shear; measuring u permits an effective-stress analysis too. CD drains during both stages and shears slowly enough to avoid excess pressure. Drained does not mean absolutely zero pore pressure: back pressure may remain. Match the test to permeability, loading time and field stress history rather than using “clay” as an automatic UU label.",
+        "ar": "يغلق UU التصريف أثناء الحصر والقص. يسمح CU بالتصلب أولًا ثم يغلق أثناء القص؛ وقياس u يتيح تحليلًا فعّالًا أيضًا. يصرّف CD في المرحلتين ويقص ببطء يمنع الضغط الزائد. مصروف لا يعني ضغط مسام مطلقًا صفرًا؛ قد يبقى ضغط خلفي. طابق الاختبار مع النفاذية وزمن التحميل وتاريخ الإجهاد، ولا تجعل اسم «طين» اختيارًا آليًا لـUU."
+      },
+      "formula": "UU: closed → closed; CU: open → closed; CD: open → open\nΔσ′ = Δσ − Δu",
+      "symbols": {
+        "en": "Arrows separate consolidation and shearing stages; Δu is excess pore pressure.",
+        "ar": "تفصل الأسهم مرحلة التصلب عن القص؛ Δu ضغط المسام الزائد."
+      },
+      "assumptions": {
+        "en": "Ideal saturated conventional tests. Drainage requires sufficient time as well as an open valve.",
+        "ar": "اختبارات تقليدية مثالية مشبعة؛ التصريف يحتاج زمنًا كافيًا إضافة إلى فتح الصمام."
+      },
+      "example": {
+        "en": "At fixed σ1=300 and σ3=100, measured u rises from 20 to 50 kPa.",
+        "ar": "مع ثبات σ1=300 وσ3=100 زادت u المقاسة من 20 إلى 50 kPa."
+      },
+      "calculation": {
+        "en": "Effective center falls from 180 to150 kPa. Radius remains100. This stress-state comparison does not claim strength increases merely because water is added.",
+        "ar": "ينخفض المركز الفعّال من 180 إلى150 kPa ويبقى نصف القطر100. لا تعني مقارنة الحالات زيادة المقاومة بمجرد إضافة الماء."
+      },
+      "interpret": {
+        "en": "Read drainage and pore-pressure records before choosing c,φ or c′,φ′.",
+        "ar": "اقرأ سجل التصريف وضغط المسام قبل اختيار c,φ أو c′,φ′."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Read drainage and pore-pressure records before choosing c,φ or c′,φ′. Ideal saturated conventional tests. Drainage requires sufficient time as well as an open valve.",
+          "ar": "اقرأ سجل التصريف وضغط المسام قبل اختيار c,φ أو c′,φ′. اختبارات تقليدية مثالية مشبعة؛ التصريف يحتاج زمنًا كافيًا إضافة إلى فتح الصمام."
+        }
+      },
+      "diagram": "course-soil-triaxial",
+      "concepts": [
+        "soil-triaxial-valves"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 1
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 2
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "soil-triaxial-failure",
+      "title": {
+        "en": "Fit failure, then test the field choice",
+        "ar": "لائم الفشل ثم اختبر اختيار الموقع"
+      },
+      "predict": {
+        "en": "Does φu=0 prove φ′=0?",
+        "ar": "هل φu=0 تثبت φ′=0؟"
+      },
+      "options": [
+        {
+          "en": "No. Total and effective envelopes are different descriptions.",
+          "ar": "لا. غلافا الكلي والفعّال وصفان مختلفان."
+        },
+        {
+          "en": "Yes. All clay friction must vanish.",
+          "ar": "نعم. يجب أن يختفي احتكاك الطين كله."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Avoid combining undrained cu with an effective normal stress friction calculation.",
+        "ar": "تجنب دمج cu غير المصروفة مع حساب احتكاك بإجهاد عمودي فعّال."
+      },
+      "explain": {
+        "en": "At tangency to a straight envelope, the principal-stress relation combines c, φ and confinement. For φ=0 it reduces to σ1−σ3=2cu. An unconfined compression test has σ3=0 and therefore qu=2cu under that saturated undrained idealization. Real clays can have effective friction even when their short-term total-stress envelope is horizontal. The lecture’s blanket phrase “clay has φ=0” is only valid for this selected total-stress idealization.",
+        "ar": "عند تماس الدائرة مع غلاف خطي، تربط علاقة الإجهادات الرئيسية c وφ والحصر. عند φ=0 تختزل إلى σ1−σ3=2cu. في الضغط غير المحصور σ3=0، لذلك qu=2cu ضمن النموذج المشبع غير المصروف. قد يملك الطين احتكاكًا فعّالًا رغم أفقية غلافه الكلي القصير الأمد. تعميم المحاضرة «φ للطين صفر» صالح فقط لهذا التمثيل الكلي المختار."
+      },
+      "formula": "σ1 = σ3 tan²(45°+φ/2) + 2c tan(45°+φ/2)\nφu=0: cu=(σ1−σ3)/2; qu=2cu",
+      "symbols": {
+        "en": "Use either all total stresses with c,φ or all effective stresses with c′,φ′. qu and cu are kPa.",
+        "ar": "استعمل الكلي كله مع c,φ أو الفعّال كله مع c′,φ′. qu وcu بالكيلوباسكال."
+      },
+      "assumptions": {
+        "en": "Mohr–Coulomb compression tangency; qu=2cu needs saturated cohesive soil, no confinement and φu=0.",
+        "ar": "تماس موهر–كولوم في الضغط؛ qu=2cu تتطلب تربة متماسكة مشبعة دون حصر ومع φu=0."
+      },
+      "example": {
+        "en": "An unconfined saturated sample fails at qu=120 kPa; assume φu=0.",
+        "ar": "فشلت عينة مشبعة غير محصورة عند qu=120 kPa؛ افترض φu=0."
+      },
+      "calculation": {
+        "en": "cu=qu/2=60 kPa. A total-stress short-term analysis uses this cu without subtracting u again.",
+        "ar": "cu=qu/2=60 kPa. يستعمل تحليل الكلي قصير الأمد cu هذه دون طرح u مرة أخرى."
+      },
+      "interpret": {
+        "en": "Avoid combining undrained cu with an effective normal stress friction calculation.",
+        "ar": "تجنب دمج cu غير المصروفة مع حساب احتكاك بإجهاد عمودي فعّال."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Avoid combining undrained cu with an effective normal stress friction calculation. Mohr–Coulomb compression tangency; qu=2cu needs saturated cohesive soil, no confinement and φu=0.",
+          "ar": "تجنب دمج cu غير المصروفة مع حساب احتكاك بإجهاد عمودي فعّال. تماس موهر–كولوم في الضغط؛ qu=2cu تتطلب تربة متماسكة مشبعة دون حصر ومع φu=0."
+        }
+      },
+      "diagram": "course-soil-triaxial",
+      "concepts": [
+        "soil-triaxial-failure"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 5
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 6
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 5
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "C01",
+      "concept": "soil-triaxial-loads",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Cell pressure is 100 kPa and ram increment is 200 kPa. Is σ1=200?",
+        "ar": "ضغط الخلية 100 kPa وزيادة المكبس 200 kPa. هل σ1=200؟"
+      },
+      "options": [
+        {
+          "en": "Yes, confinement acts only sideways.",
+          "ar": "نعم، الحصر جانبي فقط."
+        },
+        {
+          "en": "No. σ1=300 kPa.",
+          "ar": "لا. σ1=300 kPa."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "In conventional compression, the cell supplies σ3 laterally and also acts axially. The ram supplies the additional axial stress q=N/A. Therefore σ1=σ3+q. Using N/A as σ1 omits the initial axial confinement. As the specimen shortens, its cross-sectional area changes; use the test’s stated corrected area. Keep confinement and deviator stress separate in the data table.",
+        "ar": "في الضغط التقليدي توفر الخلية σ3 جانبيًا وتؤثر محوريًا أيضًا. يضيف المكبس الإجهاد q=N/A، لذلك σ1=σ3+q. استعمال N/A كأنه σ1 يهمل الحصر المحوري الابتدائي. تتغير مساحة المقطع عندما تقصر العينة؛ استعمل مساحتها المصححة وفق بروتوكول الاختبار. افصل الحصر وإجهاد الانحراف في جدول البيانات."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 1
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "N01",
+      "concept": "soil-triaxial-loads",
+      "type": "numerical",
+      "prompt": {
+        "en": "σ3=150 kPa and q=240 kPa. Find σ1.",
+        "ar": "σ3=150 kPa وq=240 kPa. أوجد σ1."
+      },
+      "expected": 390,
+      "tolerance": 0.78,
+      "unit": "kPa",
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "150+240=390 kPa.",
+        "ar": "150+240=390 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 1
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "concept": "soil-triaxial-loads",
+      "type": "mixed",
+      "prompt": {
+        "en": "N=0.4 kN, A=0.002 m², σ3=80 kPa. Enter σ1 and identify N/A.",
+        "ar": "N=0.4 kN وA=0.002 m² وσ3=80 kPa. أدخل σ1 وحدّد N/A."
+      },
+      "expected": 280,
+      "tolerance": 0.56,
+      "unit": "kPa",
+      "options": [
+        {
+          "en": "N/A is the deviator increment q.",
+          "ar": "N/A هي زيادة الانحراف q."
+        },
+        {
+          "en": "N/A is the cell pressure.",
+          "ar": "N/A هي ضغط الخلية."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "q=200; σ1=80+200=280 kPa.",
+        "ar": "q=200؛ σ1=80+200=280 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 1
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "concept": "soil-triaxial-circle",
+      "type": "conceptual",
+      "prompt": {
+        "en": "If σ1−σ3=200 kPa, is maximum shear 200 kPa?",
+        "ar": "إذا σ1−σ3=200 kPa، فهل أكبر قص 200 kPa؟"
+      },
+      "options": [
+        {
+          "en": "No. It is 100 kPa.",
+          "ar": "لا. يساوي 100 kPa."
+        },
+        {
+          "en": "Yes. Circle radius equals the full diameter.",
+          "ar": "نعم، نصف القطر يساوي القطر كله."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "Place σ3 and σ1 on the horizontal normal-stress axis. Their midpoint is the circle center; half their separation is its radius. Every point on the circle represents a plane orientation. The radius is the maximum shear stress on any plane, but the Mohr–Coulomb failure plane does not generally have maximum shear stress when φ is nonzero. Check both axis intersections before using the circle to infer a failure envelope.",
+        "ar": "ضع σ3 وσ1 على محور الإجهاد العمودي. منتصفهما مركز الدائرة ونصف الفرق نصف قطرها. تمثل كل نقطة اتجاه سطح. نصف القطر أكبر إجهاد قص على أي سطح، لكن سطح فشل موهر–كولوم لا يملك أكبر إجهاد قص عمومًا عندما تكون φ غير صفرية. تحقق من تقاطعي المحور قبل استنتاج غلاف الفشل."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "N02",
+      "concept": "soil-triaxial-circle",
+      "type": "numerical",
+      "prompt": {
+        "en": "σ1=433, σ3=100 kPa. Find τmax.",
+        "ar": "σ1=433 وσ3=100 kPa. أوجد τmax."
+      },
+      "expected": 166.5,
+      "tolerance": 0.333,
+      "unit": "kPa",
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "(433−100)/2=166.5 kPa.",
+        "ar": "(433−100)/2=166.5 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "concept": "soil-triaxial-circle",
+      "type": "mixed",
+      "prompt": {
+        "en": "σ1=433, σ3=100 kPa. Enter center C and identify whether it is cohesion.",
+        "ar": "σ1=433 وσ3=100 kPa. أدخل المركز C وحدّد هل هو التماسك."
+      },
+      "expected": 266.5,
+      "tolerance": 0.533,
+      "unit": "kPa",
+      "options": [
+        {
+          "en": "Every circle center equals cohesion.",
+          "ar": "كل مركز دائرة يساوي التماسك."
+        },
+        {
+          "en": "Center is mean principal stress, not c.",
+          "ar": "المركز متوسط الإجهادين الرئيسيين وليس c."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "(433+100)/2=266.5 kPa.",
+        "ar": "(433+100)/2=266.5 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "concept": "soil-triaxial-effective",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Subtract u=40 kPa from both principal stresses. Does circle radius fall by 40?",
+        "ar": "اطرح u=40 kPa من الإجهادين الرئيسيين. هل ينقص نصف القطر 40؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Water subtracts from the shear radius directly.",
+          "ar": "نعم. يُطرح الماء مباشرة من نصف قطر القص."
+        },
+        {
+          "en": "No. Both ends shift equally.",
+          "ar": "لا. ينتقل الطرفان بالمقدار نفسه."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "For a saturated specimen with uniform measured u, subtract u from both principal stresses. The effective circle moves left by u while the radius stays unchanged, because u cancels from the stress difference. A total-stress envelope and an effective-stress envelope can therefore be different even though they describe the same failure tests. The prime on c′ and φ′ identifies the stress basis. Identical radius does not mean identical strength parameters; the normal-stress location has changed.",
+        "ar": "للعينة المشبعة ذات u مقاسة ومنتظمة، اطرح u من الإجهادين الرئيسيين. تنتقل الدائرة الفعّالة لليسار بمقدار u ويبقى نصف القطر لأن u تُلغى من فرق الإجهادين. قد يختلف غلاف الكلي عن غلاف الفعّال رغم أنهما يصفان اختبارات الفشل نفسها. تشير الشرطة في c′ وφ′ إلى أساس الإجهاد. تساوي نصف القطر لا يعني تساوي معاملات المقاومة؛ تغيّر موضع الإجهاد العمودي."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "N03",
+      "concept": "soil-triaxial-effective",
+      "type": "numerical",
+      "prompt": {
+        "en": "σ1=204, σ3=44, u=20 kPa. Find σ′3.",
+        "ar": "σ1=204 وσ3=44 وu=20 kPa. أوجد σ′3."
+      },
+      "expected": 24,
+      "tolerance": 0.048,
+      "unit": "kPa",
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "44−20=24 kPa.",
+        "ar": "44−20=24 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "concept": "soil-triaxial-effective",
+      "type": "mixed",
+      "prompt": {
+        "en": "For those stresses, enter effective-circle radius and choose its change.",
+        "ar": "للإجهادات نفسها أدخل نصف قطر الدائرة الفعّالة واختر تغيّره."
+      },
+      "expected": 80,
+      "tolerance": 0.16,
+      "unit": "kPa",
+      "options": [
+        {
+          "en": "Unchanged by uniform u.",
+          "ar": "لم يتغيّر بسبب u المنتظمة."
+        },
+        {
+          "en": "Reduced to total radius minus u.",
+          "ar": "يساوي نصف قطر الكلي ناقص u."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "[(204−20)−(44−20)]/2=80 kPa.",
+        "ar": "[(204−20)−(44−20)]/2=80 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "concept": "soil-triaxial-valves",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A CU test measures u at failure. Can it supply effective failure stresses?",
+        "ar": "يقيس اختبار CU ضغط u عند الفشل. هل يمكن استخراج إجهادات الفشل الفعّالة؟"
+      },
+      "options": [
+        {
+          "en": "Yes, subtract measured u from both principal stresses.",
+          "ar": "نعم، اطرح u المقاسة من الإجهادين."
+        },
+        {
+          "en": "No, any undrained test can only use total stresses.",
+          "ar": "لا، كل اختبار غير مصروف لا يتيح إلا الكلي."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "UU closes drainage during confinement and shear. CU allows consolidation first, then closes drainage for shear; measuring u permits an effective-stress analysis too. CD drains during both stages and shears slowly enough to avoid excess pressure. Drained does not mean absolutely zero pore pressure: back pressure may remain. Match the test to permeability, loading time and field stress history rather than using “clay” as an automatic UU label. Read drainage and pore-pressure records before choosing c,φ or c′,φ′.",
+        "ar": "يغلق UU التصريف أثناء الحصر والقص. يسمح CU بالتصلب أولًا ثم يغلق أثناء القص؛ وقياس u يتيح تحليلًا فعّالًا أيضًا. يصرّف CD في المرحلتين ويقص ببطء يمنع الضغط الزائد. مصروف لا يعني ضغط مسام مطلقًا صفرًا؛ قد يبقى ضغط خلفي. طابق الاختبار مع النفاذية وزمن التحميل وتاريخ الإجهاد، ولا تجعل اسم «طين» اختيارًا آليًا لـUU. اقرأ سجل التصريف وضغط المسام قبل اختيار c,φ أو c′,φ′."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 1
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 2
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "N04",
+      "concept": "soil-triaxial-valves",
+      "type": "numerical",
+      "prompt": {
+        "en": "σ1=300, σ3=100, u=50 kPa. Find effective-circle center.",
+        "ar": "σ1=300 وσ3=100 وu=50 kPa. أوجد مركز الدائرة الفعّالة."
+      },
+      "expected": 150,
+      "tolerance": 0.3,
+      "unit": "kPa",
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "(300+100)/2−50=150 kPa.",
+        "ar": "(300+100)/2−50=150 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 1
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 2
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "concept": "soil-triaxial-valves",
+      "type": "mixed",
+      "prompt": {
+        "en": "A slow drained increment Δσ=60 kPa has no excess Δu. Enter Δσ′ and select what “drained” means.",
+        "ar": "زيادة بطيئة مصروفة Δσ=60 kPa دون Δu زائدة. أدخل Δσ′ واختر معنى مصروف."
+      },
+      "expected": 60,
+      "tolerance": 0.12,
+      "unit": "kPa",
+      "options": [
+        {
+          "en": "All pore water must leave.",
+          "ar": "يجب أن يخرج ماء المسام كله."
+        },
+        {
+          "en": "Excess pressure equilibrates; baseline u may remain.",
+          "ar": "يتزن الضغط الزائد وقد تبقى u الأساسية."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "Δσ′=60−0=60 kPa.",
+        "ar": "Δσ′=60−0=60 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 1
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 2
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 3
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "concept": "soil-triaxial-failure",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does φu=0 prove φ′=0?",
+        "ar": "هل φu=0 تثبت φ′=0؟"
+      },
+      "options": [
+        {
+          "en": "Yes. All clay friction must vanish.",
+          "ar": "نعم. يجب أن يختفي احتكاك الطين كله."
+        },
+        {
+          "en": "No. Total and effective envelopes are different descriptions.",
+          "ar": "لا. غلافا الكلي والفعّال وصفان مختلفان."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "At tangency to a straight envelope, the principal-stress relation combines c, φ and confinement. For φ=0 it reduces to σ1−σ3=2cu. An unconfined compression test has σ3=0 and therefore qu=2cu under that saturated undrained idealization. Real clays can have effective friction even when their short-term total-stress envelope is horizontal. The lecture’s blanket phrase “clay has φ=0” is only valid for this selected total-stress idealization. Avoid combining undrained cu with an effective normal stress friction calculation.",
+        "ar": "عند تماس الدائرة مع غلاف خطي، تربط علاقة الإجهادات الرئيسية c وφ والحصر. عند φ=0 تختزل إلى σ1−σ3=2cu. في الضغط غير المحصور σ3=0، لذلك qu=2cu ضمن النموذج المشبع غير المصروف. قد يملك الطين احتكاكًا فعّالًا رغم أفقية غلافه الكلي القصير الأمد. تعميم المحاضرة «φ للطين صفر» صالح فقط لهذا التمثيل الكلي المختار. تجنب دمج cu غير المصروفة مع حساب احتكاك بإجهاد عمودي فعّال."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 5
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 6
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "N05",
+      "concept": "soil-triaxial-failure",
+      "type": "numerical",
+      "prompt": {
+        "en": "qu=180 kPa, φu=0. Find cu.",
+        "ar": "qu=180 kPa وφu=0. أوجد cu."
+      },
+      "expected": 90,
+      "tolerance": 0.18,
+      "unit": "kPa",
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "180/2=90 kPa.",
+        "ar": "180/2=90 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 5
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 6
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "concept": "soil-triaxial-failure",
+      "type": "mixed",
+      "prompt": {
+        "en": "c′=0, φ′=30°, σ′3=100 kPa. Enter failure σ′1 and choose the correct basis.",
+        "ar": "c′=0 وφ′=30° وσ′3=100 kPa. أدخل σ′1 عند الفشل واختر الأساس."
+      },
+      "expected": 300,
+      "tolerance": 0.6,
+      "unit": "kPa",
+      "options": [
+        {
+          "en": "Use effective stresses consistently.",
+          "ar": "استعمل الإجهادات الفعّالة باتساق."
+        },
+        {
+          "en": "Insert total σ3 with effective φ′.",
+          "ar": "أدخل σ3 الكلية مع φ′ الفعّالة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Write σ3, the axial increment q and σ1 separately; then subtract the same measured u from both principal stresses.",
+          "ar": "اكتب σ3 وزيادة المحور q وσ1 منفصلة، ثم اطرح u المقاسة نفسها من الإجهادين الرئيسيين."
+        },
+        {
+          "en": "A Mohr circle has center (σ1+σ3)/2 and radius (σ1−σ3)/2. Identify which two stages are drained.",
+          "ar": "مركز دائرة مور (σ1+σ3)/2 ونصف قطرها (σ1−σ3)/2. حدّد أي مرحلتي الاختبار مصروفة."
+        }
+      ],
+      "solution": {
+        "en": "tan²60°=3; σ′1=100×3=300 kPa.",
+        "ar": "tan²60°=3؛ σ′1=100×3=300 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 5
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 6
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-04",
+          "filename": "Lecture 4-1.pdf",
+          "page": 5
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "meaning-01",
+      "concept": "soil-triaxial-loads",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Cell pressure plus ram increment",
+        "ar": "اشرح: ضغط الخلية وزيادة المكبس"
+      },
+      "a": {
+        "en": "In conventional compression, the cell supplies σ3 laterally and also acts axially. The ram supplies the additional axial stress q=N/A. Therefore σ1=σ3+q. Using N/A as σ1 omits the initial axial confinement. As the specimen shortens, its cross-sectional area changes; use the test’s stated corrected area.",
+        "ar": "في الضغط التقليدي توفر الخلية σ3 جانبيًا وتؤثر محوريًا أيضًا. يضيف المكبس الإجهاد q=N/A، لذلك σ1=σ3+q. استعمال N/A كأنه σ1 يهمل الحصر المحوري الابتدائي. تتغير مساحة المقطع عندما تقصر العينة؛ استعمل مساحتها المصححة وفق بروتوكول الاختبار."
+      }
+    },
+    {
+      "id": "prediction-01",
+      "concept": "soil-triaxial-loads",
+      "kind": "prediction",
+      "q": {
+        "en": "Cell pressure is 100 kPa and ram increment is 200 kPa. Is σ1=200?",
+        "ar": "ضغط الخلية 100 kPa وزيادة المكبس 200 kPa. هل σ1=200؟"
+      },
+      "a": {
+        "en": "No. σ1=300 kPa. Keep confinement and deviator stress separate in the data table.",
+        "ar": "لا. σ1=300 kPa. افصل الحصر وإجهاد الانحراف في جدول البيانات."
+      }
+    },
+    {
+      "id": "calculation-01",
+      "concept": "soil-triaxial-loads",
+      "kind": "calculation",
+      "q": {
+        "en": "σ3=150 kPa and q=240 kPa. Find σ1.",
+        "ar": "σ3=150 kPa وq=240 kPa. أوجد σ1."
+      },
+      "a": {
+        "en": "150+240=390 kPa.",
+        "ar": "150+240=390 kPa."
+      }
+    },
+    {
+      "id": "decision-01",
+      "concept": "soil-triaxial-loads",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Cell pressure plus ram increment?",
+        "ar": "متى يصح هذا النموذج: ضغط الخلية وزيادة المكبس؟"
+      },
+      "a": {
+        "en": "Axisymmetric compression; σ2=σ3; no unaccounted piston friction or membrane correction. Symbols: N ram force in kN; A m²; stresses kPa. ΔV and ΔL are positive reductions.",
+        "ar": "ضغط متماثل محوريًا مع σ2=σ3؛ دون احتكاك مكبس أو تصحيح غشاء غير محسوب. الرموز: N قوة المكبس بالكيلونيوتن؛ A بالمتر المربع؛ الإجهادات kPa. ΔV وΔL نقصانان موجبان."
+      }
+    },
+    {
+      "id": "meaning-02",
+      "concept": "soil-triaxial-circle",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: The circle records all plane stresses",
+        "ar": "اشرح: الدائرة تمثل إجهادات كل السطوح"
+      },
+      "a": {
+        "en": "Place σ3 and σ1 on the horizontal normal-stress axis. Their midpoint is the circle center; half their separation is its radius. Every point on the circle represents a plane orientation. The radius is the maximum shear stress on any plane, but the Mohr–Coulomb failure plane does not generally have maximum shear stress when φ is nonzero.",
+        "ar": "ضع σ3 وσ1 على محور الإجهاد العمودي. منتصفهما مركز الدائرة ونصف الفرق نصف قطرها. تمثل كل نقطة اتجاه سطح. نصف القطر أكبر إجهاد قص على أي سطح، لكن سطح فشل موهر–كولوم لا يملك أكبر إجهاد قص عمومًا عندما تكون φ غير صفرية."
+      }
+    },
+    {
+      "id": "prediction-02",
+      "concept": "soil-triaxial-circle",
+      "kind": "prediction",
+      "q": {
+        "en": "If σ1−σ3=200 kPa, is maximum shear 200 kPa?",
+        "ar": "إذا σ1−σ3=200 kPa، فهل أكبر قص 200 kPa؟"
+      },
+      "a": {
+        "en": "No. It is 100 kPa. Check both axis intersections before using the circle to infer a failure envelope.",
+        "ar": "لا. يساوي 100 kPa. تحقق من تقاطعي المحور قبل استنتاج غلاف الفشل."
+      }
+    },
+    {
+      "id": "calculation-02",
+      "concept": "soil-triaxial-circle",
+      "kind": "calculation",
+      "q": {
+        "en": "σ1=433, σ3=100 kPa. Find τmax.",
+        "ar": "σ1=433 وσ3=100 kPa. أوجد τmax."
+      },
+      "a": {
+        "en": "(433−100)/2=166.5 kPa.",
+        "ar": "(433−100)/2=166.5 kPa."
+      }
+    },
+    {
+      "id": "decision-02",
+      "concept": "soil-triaxial-circle",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: The circle records all plane stresses?",
+        "ar": "متى يصح هذا النموذج: الدائرة تمثل إجهادات كل السطوح؟"
+      },
+      "a": {
+        "en": "Compression-positive convention and a consistent Mohr-axis convention. Plane rotation appears doubled on the circle. Symbols: C circle center, r radius in kPa; C is not cohesion c.",
+        "ar": "اتفاق الضغط الموجب ومحاور مور المتسقة؛ دوران السطح يظهر مضاعفًا على الدائرة. الرموز: C مركز الدائرة وr نصف قطرها بالكيلوباسكال؛ C ليست التماسك c."
+      }
+    },
+    {
+      "id": "meaning-03",
+      "concept": "soil-triaxial-effective",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Pore pressure shifts; it does not resize",
+        "ar": "اشرح: ضغط الماء يزيح الدائرة ولا يغير حجمها"
+      },
+      "a": {
+        "en": "For a saturated specimen with uniform measured u, subtract u from both principal stresses. The effective circle moves left by u while the radius stays unchanged, because u cancels from the stress difference. A total-stress envelope and an effective-stress envelope can therefore be different even though they describe the same failure tests. The prime on c′ and φ′ identifies the stress basis.",
+        "ar": "للعينة المشبعة ذات u مقاسة ومنتظمة، اطرح u من الإجهادين الرئيسيين. تنتقل الدائرة الفعّالة لليسار بمقدار u ويبقى نصف القطر لأن u تُلغى من فرق الإجهادين. قد يختلف غلاف الكلي عن غلاف الفعّال رغم أنهما يصفان اختبارات الفشل نفسها. تشير الشرطة في c′ وφ′ إلى أساس الإجهاد."
+      }
+    },
+    {
+      "id": "prediction-03",
+      "concept": "soil-triaxial-effective",
+      "kind": "prediction",
+      "q": {
+        "en": "Subtract u=40 kPa from both principal stresses. Does circle radius fall by 40?",
+        "ar": "اطرح u=40 kPa من الإجهادين الرئيسيين. هل ينقص نصف القطر 40؟"
+      },
+      "a": {
+        "en": "No. Both ends shift equally. Identical radius does not mean identical strength parameters; the normal-stress location has changed.",
+        "ar": "لا. ينتقل الطرفان بالمقدار نفسه. تساوي نصف القطر لا يعني تساوي معاملات المقاومة؛ تغيّر موضع الإجهاد العمودي."
+      }
+    },
+    {
+      "id": "calculation-03",
+      "concept": "soil-triaxial-effective",
+      "kind": "calculation",
+      "q": {
+        "en": "σ1=204, σ3=44, u=20 kPa. Find σ′3.",
+        "ar": "σ1=204 وσ3=44 وu=20 kPa. أوجد σ′3."
+      },
+      "a": {
+        "en": "44−20=24 kPa.",
+        "ar": "44−20=24 kPa."
+      }
+    },
+    {
+      "id": "decision-03",
+      "concept": "soil-triaxial-effective",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Pore pressure shifts; it does not resize?",
+        "ar": "متى يصح هذا النموذج: ضغط الماء يزيح الدائرة ولا يغير حجمها؟"
+      },
+      "a": {
+        "en": "Saturated Terzaghi effective stresses, measured u applying to the specimen; not an unsaturated-soil model. Symbols: u, C, σ in kPa; uniform positive pore pressure shifts the circle left.",
+        "ar": "إجهاد ترزاغي الفعّال لتربة مشبعة مع u مقاسة تمثل العينة؛ ليس نموذج التربة غير المشبعة. الرموز: u وC وσ بالكيلوباسكال؛ ضغط مسام موجب منتظم يزيح الدائرة يسارًا."
+      }
+    },
+    {
+      "id": "meaning-04",
+      "concept": "soil-triaxial-valves",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Two stages, three drainage paths",
+        "ar": "اشرح: مرحلتان وثلاثة مسارات تصريف"
+      },
+      "a": {
+        "en": "UU closes drainage during confinement and shear. CU allows consolidation first, then closes drainage for shear; measuring u permits an effective-stress analysis too. CD drains during both stages and shears slowly enough to avoid excess pressure. Drained does not mean absolutely zero pore pressure: back pressure may remain. Match the test to permeability, loading time and field stress history rather than using “clay” as an automatic UU label.",
+        "ar": "يغلق UU التصريف أثناء الحصر والقص. يسمح CU بالتصلب أولًا ثم يغلق أثناء القص؛ وقياس u يتيح تحليلًا فعّالًا أيضًا. يصرّف CD في المرحلتين ويقص ببطء يمنع الضغط الزائد. مصروف لا يعني ضغط مسام مطلقًا صفرًا؛ قد يبقى ضغط خلفي. طابق الاختبار مع النفاذية وزمن التحميل وتاريخ الإجهاد، ولا تجعل اسم «طين» اختيارًا آليًا لـUU."
+      }
+    },
+    {
+      "id": "prediction-04",
+      "concept": "soil-triaxial-valves",
+      "kind": "prediction",
+      "q": {
+        "en": "A CU test measures u at failure. Can it supply effective failure stresses?",
+        "ar": "يقيس اختبار CU ضغط u عند الفشل. هل يمكن استخراج إجهادات الفشل الفعّالة؟"
+      },
+      "a": {
+        "en": "Yes, subtract measured u from both principal stresses. Read drainage and pore-pressure records before choosing c,φ or c′,φ′.",
+        "ar": "نعم، اطرح u المقاسة من الإجهادين. اقرأ سجل التصريف وضغط المسام قبل اختيار c,φ أو c′,φ′."
+      }
+    },
+    {
+      "id": "calculation-04",
+      "concept": "soil-triaxial-valves",
+      "kind": "calculation",
+      "q": {
+        "en": "σ1=300, σ3=100, u=50 kPa. Find effective-circle center.",
+        "ar": "σ1=300 وσ3=100 وu=50 kPa. أوجد مركز الدائرة الفعّالة."
+      },
+      "a": {
+        "en": "(300+100)/2−50=150 kPa.",
+        "ar": "(300+100)/2−50=150 kPa."
+      }
+    },
+    {
+      "id": "decision-04",
+      "concept": "soil-triaxial-valves",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Two stages, three drainage paths?",
+        "ar": "متى يصح هذا النموذج: مرحلتان وثلاثة مسارات تصريف؟"
+      },
+      "a": {
+        "en": "Ideal saturated conventional tests. Drainage requires sufficient time as well as an open valve. Symbols: Arrows separate consolidation and shearing stages; Δu is excess pore pressure.",
+        "ar": "اختبارات تقليدية مثالية مشبعة؛ التصريف يحتاج زمنًا كافيًا إضافة إلى فتح الصمام. الرموز: تفصل الأسهم مرحلة التصلب عن القص؛ Δu ضغط المسام الزائد."
+      }
+    },
+    {
+      "id": "meaning-05",
+      "concept": "soil-triaxial-failure",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Fit failure, then test the field choice",
+        "ar": "اشرح: لائم الفشل ثم اختبر اختيار الموقع"
+      },
+      "a": {
+        "en": "At tangency to a straight envelope, the principal-stress relation combines c, φ and confinement. For φ=0 it reduces to σ1−σ3=2cu. An unconfined compression test has σ3=0 and therefore qu=2cu under that saturated undrained idealization. Real clays can have effective friction even when their short-term total-stress envelope is horizontal. The lecture’s blanket phrase “clay has φ=0” is only valid for this selected total-stress idealization.",
+        "ar": "عند تماس الدائرة مع غلاف خطي، تربط علاقة الإجهادات الرئيسية c وφ والحصر. عند φ=0 تختزل إلى σ1−σ3=2cu. في الضغط غير المحصور σ3=0، لذلك qu=2cu ضمن النموذج المشبع غير المصروف. قد يملك الطين احتكاكًا فعّالًا رغم أفقية غلافه الكلي القصير الأمد. تعميم المحاضرة «φ للطين صفر» صالح فقط لهذا التمثيل الكلي المختار."
+      }
+    },
+    {
+      "id": "prediction-05",
+      "concept": "soil-triaxial-failure",
+      "kind": "prediction",
+      "q": {
+        "en": "Does φu=0 prove φ′=0?",
+        "ar": "هل φu=0 تثبت φ′=0؟"
+      },
+      "a": {
+        "en": "No. Total and effective envelopes are different descriptions. Avoid combining undrained cu with an effective normal stress friction calculation.",
+        "ar": "لا. غلافا الكلي والفعّال وصفان مختلفان. تجنب دمج cu غير المصروفة مع حساب احتكاك بإجهاد عمودي فعّال."
+      }
+    },
+    {
+      "id": "calculation-05",
+      "concept": "soil-triaxial-failure",
+      "kind": "calculation",
+      "q": {
+        "en": "qu=180 kPa, φu=0. Find cu.",
+        "ar": "qu=180 kPa وφu=0. أوجد cu."
+      },
+      "a": {
+        "en": "180/2=90 kPa.",
+        "ar": "180/2=90 kPa."
+      }
+    },
+    {
+      "id": "decision-05",
+      "concept": "soil-triaxial-failure",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Fit failure, then test the field choice?",
+        "ar": "متى يصح هذا النموذج: لائم الفشل ثم اختبر اختيار الموقع؟"
+      },
+      "a": {
+        "en": "Mohr–Coulomb compression tangency; qu=2cu needs saturated cohesive soil, no confinement and φu=0. Symbols: Use either all total stresses with c,φ or all effective stresses with c′,φ′. qu and cu are kPa.",
+        "ar": "تماس موهر–كولوم في الضغط؛ qu=2cu تتطلب تربة متماسكة مشبعة دون حصر ومع φu=0. الرموز: استعمل الكلي كله مع c,φ أو الفعّال كله مع c′,φ′. qu وcu بالكيلوباسكال."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "soil-lecture-03",
+      "filename": "Lecture 3.pdf",
+      "page": 1
+    },
+    {
+      "doc": "soil-lecture-03",
+      "filename": "Lecture 3.pdf",
+      "page": 2
+    },
+    {
+      "doc": "soil-lecture-03",
+      "filename": "Lecture 3.pdf",
+      "page": 3
+    },
+    {
+      "doc": "soil-lecture-03",
+      "filename": "Lecture 3.pdf",
+      "page": 4
+    },
+    {
+      "doc": "soil-lecture-03",
+      "filename": "Lecture 3.pdf",
+      "page": 5
+    },
+    {
+      "doc": "soil-lecture-03",
+      "filename": "Lecture 3.pdf",
+      "page": 7
+    },
+    {
+      "doc": "soil-lecture-04",
+      "filename": "Lecture 4-1.pdf",
+      "page": 6
+    },
+    {
+      "doc": "soil-lecture-04",
+      "filename": "Lecture 4-1.pdf",
+      "page": 1
+    },
+    {
+      "doc": "soil-lecture-04",
+      "filename": "Lecture 4-1.pdf",
+      "page": 2
+    },
+    {
+      "doc": "soil-lecture-04",
+      "filename": "Lecture 4-1.pdf",
+      "page": 3
+    },
+    {
+      "doc": "soil-lecture-04",
+      "filename": "Lecture 4-1.pdf",
+      "page": 4
+    },
+    {
+      "doc": "soil-lecture-03",
+      "filename": "Lecture 3.pdf",
+      "page": 6
+    },
+    {
+      "doc": "soil-lecture-04",
+      "filename": "Lecture 4-1.pdf",
+      "page": 5
+    }
+  ]
+}

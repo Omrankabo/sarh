@@ -1,0 +1,1793 @@
+{
+  "id": "steel-ltb",
+  "family": "steel-stability",
+  "title": {
+    "en": "Unrestrained beams: stop the sideways escape",
+    "ar": "الكمرات غير المقيّدة: امنع الهروب الجانبي"
+  },
+  "summary": {
+    "en": "Connect bending to compression-flange instability. Map restraints, classify the section and follow the lecture’s Eurocode3 general LTB calculation without mixing older British Standards.",
+    "ar": "اربط الانحناء بعدم استقرار جناح الضغط. حدّد القيود وصنّف القطاع واتبع حساب الانبعاج العام في Eurocode3 بالمحاضرة دون خلط المواصفات البريطانية القديمة."
+  },
+  "outcomes": [
+    {
+      "en": "A vertical support is not a lateral brace",
+      "ar": "المسند الرأسي ليس دعامة جانبية"
+    },
+    {
+      "en": "Demand and local class come before resistance",
+      "ar": "الطلب وفئة القطاع يسبقان المقاومة"
+    },
+    {
+      "en": "Compare yield with elastic instability",
+      "ar": "قارن الخضوع بعدم الاستقرار المرن"
+    },
+    {
+      "en": "Use the chosen curve, then restore units",
+      "ar": "استعمل المنحنى المختار ثم استعد الوحدات"
+    },
+    {
+      "en": "One passing check is not the whole beam",
+      "ar": "نجاح فحص واحد لا يعني نجاح الكمرة"
+    }
+  ],
+  "prereqIds": [
+    "steel-units",
+    "steel-bending",
+    "supports",
+    "course-algebra"
+  ],
+  "videoIds": [
+    "kRSKLXoaN54"
+  ],
+  "concepts": [
+    {
+      "id": "steel-ltb-restraint",
+      "title": {
+        "en": "A vertical support is not a lateral brace",
+        "ar": "المسند الرأسي ليس دعامة جانبية"
+      }
+    },
+    {
+      "id": "steel-ltb-actions",
+      "title": {
+        "en": "Demand and local class come before resistance",
+        "ar": "الطلب وفئة القطاع يسبقان المقاومة"
+      }
+    },
+    {
+      "id": "steel-ltb-slenderness",
+      "title": {
+        "en": "Compare yield with elastic instability",
+        "ar": "قارن الخضوع بعدم الاستقرار المرن"
+      }
+    },
+    {
+      "id": "steel-ltb-reduction",
+      "title": {
+        "en": "Use the chosen curve, then restore units",
+        "ar": "استعمل المنحنى المختار ثم استعد الوحدات"
+      }
+    },
+    {
+      "id": "steel-ltb-checks",
+      "title": {
+        "en": "One passing check is not the whole beam",
+        "ar": "نجاح فحص واحد لا يعني نجاح الكمرة"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "steel-ltb-restraint",
+      "title": {
+        "en": "A vertical support is not a lateral brace",
+        "ar": "المسند الرأسي ليس دعامة جانبية"
+      },
+      "predict": {
+        "en": "A point load acts at midspan. Does that automatically provide lateral restraint?",
+        "ar": "يؤثر حمل مركز عند المنتصف. هل يوفر قيدًا جانبيًا تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "No. Restraint needs an effective physical connection.",
+          "ar": "لا. يحتاج التقييد وصلة فيزيائية فعالة."
+        },
+        {
+          "en": "Yes. Every downward force prevents twist.",
+          "ar": "نعم. كل قوة هابطة تمنع الالتواء."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Draw brace positions and compression flange before selecting any reduction factor.",
+        "ar": "ارسم مواضع التدعيم وجناح الضغط قبل اختيار معامل تخفيض."
+      },
+      "explain": {
+        "en": "A support may hold vertical displacement while allowing sideways movement or twist. A lateral restraint must restrain the relevant compression-flange movement and transmit its forces into a stable system. For a restrained segment the distance between effective restraints matters; the whole9 m beam is not always the unbraced length. Sagging and hogging can swap which flange is compressed.",
+        "ar": "قد يمنع المسند الحركة الرأسية ويسمح بالحركة الجانبية أو الالتواء. يجب أن يقيد التثبيت الجانبي حركة جناح الضغط المعنية وينقل قواه إلى نظام مستقر. يهم طول الجزء بين القيود الفعالة؛ ليس طول الكمرة9 m دائمًا طولها غير المدعم. قد يبدل العزم الموجب والسالب جناح الضغط."
+      },
+      "formula": "L_LT = distance between effective lateral restraints",
+      "symbols": {
+        "en": "L_LT in m or mm consistent with the stability calculation; restraint effectiveness is a physical input.",
+        "ar": "L_LT بالمتر أو المليمتر بما يتسق مع حساب الاستقرار؛ كفاية التقييد معطى فيزيائي."
+      },
+      "assumptions": {
+        "en": "Actual restraints must have adequate stiffness, strength and a load path; point-load location alone does not create restraint.",
+        "ar": "يجب أن تملك القيود الفعلية صلابة ومقاومة ومسار حمل كافيين؛ موقع الحمل وحده لا ينشئ قيدًا."
+      },
+      "example": {
+        "en": "Source beam9 m with effective lateral restraints at0,3,6,9 m.",
+        "ar": "كمرة المصدر9 m مع قيود جانبية فعالة عند0 و3 و6 و9 m."
+      },
+      "calculation": {
+        "en": "Three restrained segments are each3 m. With only end restraint the unbraced length would be9 m, a different stability problem.",
+        "ar": "ثلاثة أجزاء مقيّدة طول كل منها3 m. مع قيدي الطرفين وحدهما يصبح الطول غير المدعم9 m وهي مسألة استقرار مختلفة."
+      },
+      "interpret": {
+        "en": "Draw brace positions and compression flange before selecting any reduction factor.",
+        "ar": "ارسم مواضع التدعيم وجناح الضغط قبل اختيار معامل تخفيض."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Draw brace positions and compression flange before selecting any reduction factor. Actual restraints must have adequate stiffness, strength and a load path; point-load location alone does not create restraint.",
+          "ar": "ارسم مواضع التدعيم وجناح الضغط قبل اختيار معامل تخفيض. يجب أن تملك القيود الفعلية صلابة ومقاومة ومسار حمل كافيين؛ موقع الحمل وحده لا ينشئ قيدًا."
+        }
+      },
+      "diagram": "course-steel-ltb",
+      "concepts": [
+        "steel-ltb-restraint"
+      ],
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 3
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 4
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 5
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 6
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "steel-ltb-actions",
+      "title": {
+        "en": "Demand and local class come before resistance",
+        "ar": "الطلب وفئة القطاع يسبقان المقاومة"
+      },
+      "predict": {
+        "en": "A Class1 section passes local slenderness. Does this remove the need for LTB checking?",
+        "ar": "نجح قطاع فئة1 في النحافة المحلية. هل يلغي ذلك فحص LTB؟"
+      },
+      "options": [
+        {
+          "en": "No. Local plate behavior and member instability are separate.",
+          "ar": "لا. سلوك الصفائح المحلي وعدم استقرار العضو منفصلان."
+        },
+        {
+          "en": "Yes. Class1 means every failure mode is safe.",
+          "ar": "نعم. الفئة1 تعني أمان جميع آليات الفشل."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Check reactions sum to237.8 kN, matching200+37.8 applied load.",
+        "ar": "تحقق أن مجموع الردود237.8 kN يطابق الحمل200+37.8."
+      },
+      "explain": {
+        "en": "Calculate reactions, moment and shear from the stated design loads. Then classify compression plates because local buckling controls whether plastic, elastic or effective section modulus is available. Class1/2 may use Wpl, Class3 uses Wel and Class4 requires effective properties. A steel grade name alone does not fix fy for every thickness, and local class does not certify global LTB safety.",
+        "ar": "احسب ردود الأفعال والعزم والقص من أحمال التصميم المعطاة. ثم صنّف الصفائح المضغوطة لأن الانبعاج المحلي يحدد إتاحة معامل القطاع اللدن أو المرن أو الفعّال. تسمح الفئتان1/2 بـWpl وتستعمل3 معاملWel وتتطلب4 خواص فعّالة. اسم درجة الفولاذ لا يحدد fy لكل سماكة، والفئة المحلية لا تثبت أمان الانبعاج العام."
+      },
+      "formula": "MEd,mid=P L/3 + w L²/8; RA=RB=P+wL/2\nclasses1/2: Wy=Wpl; class3: Wy=Wel; class4: effective modulus",
+      "symbols": {
+        "en": "Two equal point loads P at L/3,2L/3; w UDL; kN,m produce kN·m. Wy in mm³ with fy N/mm².",
+        "ar": "حملان متساويان P عند L/3 و2L/3 وحمل موزع w؛ kN وm تعطي kN·m. Wy بوحدة mm³ مع fy بوحدة N/mm²."
+      },
+      "assumptions": {
+        "en": "Simply supported symmetric loading as drawn; section class must use the correct plate widths, stress state, code and thickness-dependent fy.",
+        "ar": "كمرة بسيطة وأحمال متماثلة كما بالرسم؛ تصنيف القطاع يحتاج عروض الصفائح وحالة الإجهاد والكود وfy حسب السماكة."
+      },
+      "example": {
+        "en": "Source L=9 m,P=100 kN each,w=4.2 kN/m.",
+        "ar": "L المصدر=9 m وP=100 kN لكل حمل وw=4.2 kN/m."
+      },
+      "calculation": {
+        "en": "RA=RB=100+4.2×9/2=118.9 kN. Midspan M=100×3+4.2×81/8=342.525 kN·m. Atx=3: M=118.9×3−4.2×3²/2=337.8. Maximum is atmidspan where shear crosses zero.",
+        "ar": "RA=RB=100+4.2×9/2=118.9 kN. عزم المنتصف=100×3+4.2×81/8=342.525 kN·m. عندx=3: M=118.9×3−4.2×3²/2=337.8. الأكبر عند المنتصف حيث يعبر القص الصفر."
+      },
+      "interpret": {
+        "en": "Check reactions sum to237.8 kN, matching200+37.8 applied load.",
+        "ar": "تحقق أن مجموع الردود237.8 kN يطابق الحمل200+37.8."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Check reactions sum to237.8 kN, matching200+37.8 applied load. Simply supported symmetric loading as drawn; section class must use the correct plate widths, stress state, code and thickness-dependent fy.",
+          "ar": "تحقق أن مجموع الردود237.8 kN يطابق الحمل200+37.8. كمرة بسيطة وأحمال متماثلة كما بالرسم؛ تصنيف القطاع يحتاج عروض الصفائح وحالة الإجهاد والكود وfy حسب السماكة."
+        }
+      },
+      "diagram": "course-steel-ltb",
+      "concepts": [
+        "steel-ltb-actions"
+      ],
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 10
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 11
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 16
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 17
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 19
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "steel-ltb-slenderness",
+      "title": {
+        "en": "Compare yield with elastic instability",
+        "ar": "قارن الخضوع بعدم الاستقرار المرن"
+      },
+      "predict": {
+        "en": "At fixed Wyfy, if Mcr falls to one quarter, what happens to λ̄LT?",
+        "ar": "مع ثبات Wyfy، إذا انخفض Mcr إلى الربع فماذا يحدث لـλ̄LT؟"
+      },
+      "options": [
+        {
+          "en": "It doubles.",
+          "ar": "تتضاعف."
+        },
+        {
+          "en": "It becomes one quarter.",
+          "ar": "تصبح ربعًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A ratio should be dimensionless before you take its square root.",
+        "ar": "يجب أن تكون النسبة بلا وحدة قبل أخذ جذرها."
+      },
+      "explain": {
+        "en": "Mcr is the elastic critical moment for the actual lateral/torsional boundary conditions and moment distribution. It is not the design resistance. Compare Wyfy with Mcr to form nondimensional slenderness. A smaller Mcr means a more vulnerable member and a larger slenderness. The lecture’s L/iz shortcut is limited to its specified doubly symmetric restrained-segment conditions; it cannot replace a verified Mcr model for any arbitrary beam.",
+        "ar": "Mcr العزم الحرج المرن لشروط الحركة والالتواء وتوزيع العزم الفعلية، وليس مقاومة التصميم. قارن Wyfy مع Mcr لتكوين النحافة اللابعدية. انخفاض Mcr يعني عضوًا أكثر عرضة ونحافة أكبر. تقريب L/iz في المحاضرة محدود بشروط الجزء المتماثل والمقيد المحددة؛ لا يعوض نموذج Mcr متحققًا لأي كمرة اعتباطية."
+      },
+      "formula": "λ̄LT=√(Wy fy/Mcr)",
+      "symbols": {
+        "en": "Wyfy and Mcr must use identical moment units; λ̄LT has no units.",
+        "ar": "يجب أن تكون وحدة العزم نفسها لـWyfy وMcr؛ λ̄LT بلا وحدة."
+      },
+      "assumptions": {
+        "en": "Lecture general-case EC3 path. Mcr must account for actual restraint, load height, section and moment shape; do not infer it solely from span.",
+        "ar": "مسار الحالة العامة في EC3 بالمحاضرة. يجب أن يمثل Mcr التقييد وارتفاع الحمل والقطاع وشكل العزم؛ لا تستخرجه من البحر وحده."
+      },
+      "example": {
+        "en": "Authored model: Wyfy=500 kN·m,Mcr=800 kN·m.",
+        "ar": "نموذج تدريبي مؤلف: Wyfy=500 kN·m وMcr=800 kN·m."
+      },
+      "calculation": {
+        "en": "λ̄LT=√(500/800)=0.790569. This is an input to the selected buckling curve, not a capacity by itself.",
+        "ar": "λ̄LT=√(500/800)=0.790569. هي مدخل لمنحنى الانبعاج المختار وليست مقاومة بمفردها."
+      },
+      "interpret": {
+        "en": "A ratio should be dimensionless before you take its square root.",
+        "ar": "يجب أن تكون النسبة بلا وحدة قبل أخذ جذرها."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "A ratio should be dimensionless before you take its square root. Lecture general-case EC3 path. Mcr must account for actual restraint, load height, section and moment shape; do not infer it solely from span.",
+          "ar": "يجب أن تكون النسبة بلا وحدة قبل أخذ جذرها. مسار الحالة العامة في EC3 بالمحاضرة. يجب أن يمثل Mcr التقييد وارتفاع الحمل والقطاع وشكل العزم؛ لا تستخرجه من البحر وحده."
+        }
+      },
+      "diagram": "course-steel-ltb",
+      "concepts": [
+        "steel-ltb-slenderness"
+      ],
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 12
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 13
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "steel-ltb-reduction",
+      "title": {
+        "en": "Use the chosen curve, then restore units",
+        "ar": "استعمل المنحنى المختار ثم استعد الوحدات"
+      },
+      "predict": {
+        "en": "May χLT exceed1 and increase the basic cross-section resistance?",
+        "ar": "هل يمكن أن تتجاوز χLT الواحد فتزيد مقاومة القطاع الأساسية؟"
+      },
+      "options": [
+        {
+          "en": "No. Cap it at1 in this procedure.",
+          "ar": "لا. حدها الأعلى1 في هذا الإجراء."
+        },
+        {
+          "en": "Yes. Larger slenderness always increases strength.",
+          "ar": "نعم. زيادة النحافة تزيد المقاومة دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A reduction factor is only defensible with its curve, restraint model and parameter basis.",
+        "ar": "لا يُبرر معامل التخفيض دون منحناه ونموذج تقييده وأساس معاملاته."
+      },
+      "explain": {
+        "en": "The general-case buckling curve turns slenderness and imperfection factor into a reduction χLT≤1. Multiplying that by Wyfy and dividing by γM1 gives design buckling resistance. A different EC3 special-case procedure uses different curve choices and expressions; do not mix it with the lecture general case. The numerical practice explicitly supplies α and partial factors so the computation is reviewable.",
+        "ar": "يحوّل منحنى الحالة العامة النحافة ومعامل العيوب إلى تخفيض χLT≤1. ضربه في Wyfy وقسمته على γM1 يعطي مقاومة الانبعاج التصميمية. لإجراء الحالة الخاصة في EC3 اختيارات ومعادلات مختلفة؛ لا تخلطها بالحالة العامة بالمحاضرة. توفر المسائل α والمعاملات الجزئية صراحة حتى يمكن تدقيق الحساب."
+      },
+      "formula": "ΦLT=0.5[1+αLT(λ̄LT−0.2)+λ̄LT²]\nχLT=min(1,1/[ΦLT+√(ΦLT²−λ̄LT²)])\nMb,Rd=χLT Wy fy/γM1",
+      "symbols": {
+        "en": "αLT imperfection factor; ΦLT and χLT dimensionless; γM1 selected partial factor. Mb,Rd in kN·m after dividing N·mm by10⁶.",
+        "ar": "αLT معامل العيوب؛ ΦLT وχLT بلا وحدة؛ γM1 معامل جزئي مختار. لتحويل N·mm إلى kN·m اقسم على10⁶."
+      },
+      "assumptions": {
+        "en": "General case of the stated2005+A1:2014 lecture track; correct curve and National Annex are explicit inputs. No axial force/biaxial interaction is included here.",
+        "ar": "الحالة العامة لمسار محاضرة2005+A1:2014؛ المنحنى والملحق الوطني مدخلان صريحان. لا يشمل المثال تفاعل قوة محورية أو انحناء ثنائي."
+      },
+      "example": {
+        "en": "λ̄LT=0.8,αLT=0.34,Wyfy=400 kN·m,γM1=1.",
+        "ar": "λ̄LT=0.8 وαLT=0.34 وWyfy=400 kN·m وγM1=1."
+      },
+      "calculation": {
+        "en": "Φ=0.922; χ=1/(0.922+√(0.922²−0.8²))≈0.72445; Mb,Rd≈289.78 kN·m. Use unrounded values in the final check.",
+        "ar": "Φ=0.922؛ χ=1/(0.922+√(0.922²−0.8²))≈0.72445؛ Mb,Rd≈289.78 kN·m. استعمل القيم غير المقربة في التحقق النهائي."
+      },
+      "interpret": {
+        "en": "A reduction factor is only defensible with its curve, restraint model and parameter basis.",
+        "ar": "لا يُبرر معامل التخفيض دون منحناه ونموذج تقييده وأساس معاملاته."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "A reduction factor is only defensible with its curve, restraint model and parameter basis. General case of the stated2005+A1:2014 lecture track; correct curve and National Annex are explicit inputs. No axial force/biaxial interaction is included here.",
+          "ar": "لا يُبرر معامل التخفيض دون منحناه ونموذج تقييده وأساس معاملاته. الحالة العامة لمسار محاضرة2005+A1:2014؛ المنحنى والملحق الوطني مدخلان صريحان. لا يشمل المثال تفاعل قوة محورية أو انحناء ثنائي."
+        }
+      },
+      "diagram": "course-steel-ltb",
+      "concepts": [
+        "steel-ltb-reduction"
+      ],
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 12
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 13
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 15
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "steel-ltb-checks",
+      "title": {
+        "en": "One passing check is not the whole beam",
+        "ar": "نجاح فحص واحد لا يعني نجاح الكمرة"
+      },
+      "predict": {
+        "en": "If MEd<Mb,Rd, may you omit shear, local web and deflection checks?",
+        "ar": "إذا MEd<Mb,Rd، هل تهمل القص وفحص الجِسر الموضعي والترخيم؟"
+      },
+      "options": [
+        {
+          "en": "No. Each can govern a different failure/service limit.",
+          "ar": "لا. قد يحكم كل منها حد فشل أو خدمة مختلفًا."
+        },
+        {
+          "en": "Yes. Bending resistance covers all limits.",
+          "ar": "نعم. مقاومة العزم تغطي جميع الحدود."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Report the limiting mechanism and any unverified input, not merely “safe”.",
+        "ar": "اذكر الآلية الحاكمة وكل مدخل غير متحقق بدل كلمة «آمن» وحدها."
+      },
+      "explain": {
+        "en": "Compare moment demand to both cross-section and member bending resistance, and check shear with the correct shear area. Large shear can reduce bending resistance; concentrated reactions can trigger local web checks. Then check deflection, restraint and connections. In the supplied exampleχ≈0.8 comes from a graph/shortcut; the arithmetic using it can be verified, but treating that approximate input as a complete certified stability analysis would overstate the source.",
+        "ar": "قارن طلب العزم بمقاومة القطاع ومقاومة العضو وتحقق من القص بمساحته الصحيحة. قد يقلل القص المرتفع مقاومة العزم وقد تستلزم ردود الأفعال المركزة فحصًا موضعيًا للجِسر. ثم تحقق من الترخيم والتدعيم والوصلات. تأتيχ≈0.8 في مثال المصدر من رسم وتقريب؛ يمكن تدقيق الحساب بها لكن اعتبارها تحليل استقرار كاملًا معتمدًا يبالغ في المصدر."
+      },
+      "formula": "Mc,Rd=Wy fy/γM0; Vpl,Rd=Av fy/(√3 γM0)\nMEd/Mb,Rd≤1 and cross-section/shear/service checks",
+      "symbols": {
+        "en": "Av shear area mm²; fy N/mm²; Vpl,Rd N before dividing1000. γM0 and γM1 must be stated.",
+        "ar": "Av مساحة قص mm² وfy بوحدة N/mm²؛ Vpl,Rd بالنيوتن قبل القسمة1000. يجب التصريح بـγM0 وγM1."
+      },
+      "assumptions": {
+        "en": "Plastic shear expression for an eligible section without governing shear buckling or torsion; apply required interaction/local checks separately.",
+        "ar": "صيغة القص اللدن لقطاع صالح دون تحكم انبعاج قص أو التواء؛ طبّق التفاعل والفحوص الموضعية المطلوبة منفصلة."
+      },
+      "example": {
+        "en": "Source Wpl=1830 cm³,Av=4763 mm²,fy=275,γM0=1; compare VEd=118.9 kN.",
+        "ar": "Wpl المصدر=1830 cm³ وAv=4763 mm² وfy=275 وγM0=1؛ قارن VEd=118.9 kN."
+      },
+      "calculation": {
+        "en": "Mc,Rd=503.25 kN·m; Vpl,Rd=4763×275/√3/1000=756.22 kN. VEd/Vpl≈0.157; it is below0.5 in this plastic check. This does not bypass web or LTB checks.",
+        "ar": "Mc,Rd=503.25 kN·m؛ Vpl,Rd=4763×275/√3/1000=756.22 kN. VEd/Vpl≈0.157 وأقل من0.5 في هذا الفحص اللدن. لا يلغي ذلك فحص الجِسر أوLTB."
+      },
+      "interpret": {
+        "en": "Report the limiting mechanism and any unverified input, not merely “safe”.",
+        "ar": "اذكر الآلية الحاكمة وكل مدخل غير متحقق بدل كلمة «آمن» وحدها."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Report the limiting mechanism and any unverified input, not merely “safe”. Plastic shear expression for an eligible section without governing shear buckling or torsion; apply required interaction/local checks separately.",
+          "ar": "اذكر الآلية الحاكمة وكل مدخل غير متحقق بدل كلمة «آمن» وحدها. صيغة القص اللدن لقطاع صالح دون تحكم انبعاج قص أو التواء؛ طبّق التفاعل والفحوص الموضعية المطلوبة منفصلة."
+        }
+      },
+      "diagram": "course-steel-ltb",
+      "concepts": [
+        "steel-ltb-checks"
+      ],
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 7
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 8
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 9
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 21
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 22
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "C01",
+      "concept": "steel-ltb-restraint",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A point load acts at midspan. Does that automatically provide lateral restraint?",
+        "ar": "يؤثر حمل مركز عند المنتصف. هل يوفر قيدًا جانبيًا تلقائيًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Every downward force prevents twist.",
+          "ar": "نعم. كل قوة هابطة تمنع الالتواء."
+        },
+        {
+          "en": "No. Restraint needs an effective physical connection.",
+          "ar": "لا. يحتاج التقييد وصلة فيزيائية فعالة."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "A support may hold vertical displacement while allowing sideways movement or twist. A lateral restraint must restrain the relevant compression-flange movement and transmit its forces into a stable system. For a restrained segment the distance between effective restraints matters; the whole9 m beam is not always the unbraced length. Sagging and hogging can swap which flange is compressed. Draw brace positions and compression flange before selecting any reduction factor.",
+        "ar": "قد يمنع المسند الحركة الرأسية ويسمح بالحركة الجانبية أو الالتواء. يجب أن يقيد التثبيت الجانبي حركة جناح الضغط المعنية وينقل قواه إلى نظام مستقر. يهم طول الجزء بين القيود الفعالة؛ ليس طول الكمرة9 m دائمًا طولها غير المدعم. قد يبدل العزم الموجب والسالب جناح الضغط. ارسم مواضع التدعيم وجناح الضغط قبل اختيار معامل تخفيض."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 3
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 4
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 5
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 6
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "N01",
+      "concept": "steel-ltb-restraint",
+      "type": "numerical",
+      "prompt": {
+        "en": "A12 m beam has effective braces at0,4,8,12 m. Enter longest unbraced length.",
+        "ar": "كمرة12 m لها قيود فعالة عند0 و4 و8 و12 m. أدخل أكبر طول غير مدعم."
+      },
+      "expected": 4,
+      "tolerance": 0.01,
+      "unit": "m",
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "Maximum gap=4 m.",
+        "ar": "أكبر مسافة بين القيود4 m."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 3
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 4
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 5
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 6
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "concept": "steel-ltb-restraint",
+      "type": "mixed",
+      "prompt": {
+        "en": "For the source9 m beam restrained at third points, enter L_LT and select what must be verified.",
+        "ar": "لكمرة المصدر9 m المقيدة عند الثلثين أدخل L_LT واختر ما يجب التحقق منه."
+      },
+      "expected": 3,
+      "tolerance": 0.01,
+      "unit": "m",
+      "options": [
+        {
+          "en": "Brace effectiveness and compression-flange restraint.",
+          "ar": "فعالية التدعيم وتقييد جناح الضغط."
+        },
+        {
+          "en": "Only the visual presence of a point load.",
+          "ar": "وجود حمل مركز في الرسم فقط."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "9/3=3 m, conditional on real effective restraints.",
+        "ar": "9/3=3 m بشرط القيود الحقيقية الفعالة."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 3
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 4
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 5
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 6
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "concept": "steel-ltb-actions",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A Class1 section passes local slenderness. Does this remove the need for LTB checking?",
+        "ar": "نجح قطاع فئة1 في النحافة المحلية. هل يلغي ذلك فحص LTB؟"
+      },
+      "options": [
+        {
+          "en": "No. Local plate behavior and member instability are separate.",
+          "ar": "لا. سلوك الصفائح المحلي وعدم استقرار العضو منفصلان."
+        },
+        {
+          "en": "Yes. Class1 means every failure mode is safe.",
+          "ar": "نعم. الفئة1 تعني أمان جميع آليات الفشل."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "Calculate reactions, moment and shear from the stated design loads. Then classify compression plates because local buckling controls whether plastic, elastic or effective section modulus is available. Class1/2 may use Wpl, Class3 uses Wel and Class4 requires effective properties. A steel grade name alone does not fix fy for every thickness, and local class does not certify global LTB safety. Check reactions sum to237.8 kN, matching200+37.8 applied load.",
+        "ar": "احسب ردود الأفعال والعزم والقص من أحمال التصميم المعطاة. ثم صنّف الصفائح المضغوطة لأن الانبعاج المحلي يحدد إتاحة معامل القطاع اللدن أو المرن أو الفعّال. تسمح الفئتان1/2 بـWpl وتستعمل3 معاملWel وتتطلب4 خواص فعّالة. اسم درجة الفولاذ لا يحدد fy لكل سماكة، والفئة المحلية لا تثبت أمان الانبعاج العام. تحقق أن مجموع الردود237.8 kN يطابق الحمل200+37.8."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 10
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 11
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 16
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 17
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 19
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "N02",
+      "concept": "steel-ltb-actions",
+      "type": "numerical",
+      "prompt": {
+        "en": "For the source loads, find maximum MEd.",
+        "ar": "لأحمال المصدر أوجد أكبر MEd."
+      },
+      "expected": 342.525,
+      "tolerance": 0.6850499999999999,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "300+42.525=342.525 kN·m.",
+        "ar": "300+42.525=342.525 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 10
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 11
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 16
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 17
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 19
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "concept": "steel-ltb-actions",
+      "type": "mixed",
+      "prompt": {
+        "en": "For the same loads enter RA and choose the equilibrium check.",
+        "ar": "للأحمال نفسها أدخل RA واختر تحقق الاتزان."
+      },
+      "expected": 118.9,
+      "tolerance": 0.2378,
+      "unit": "kN",
+      "options": [
+        {
+          "en": "RA equals the entire total load.",
+          "ar": "RA تساوي الحمل الكلي كله."
+        },
+        {
+          "en": "RA+RB=2P+wL=237.8 kN.",
+          "ar": "RA+RB=2P+wL=237.8 kN."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "Each symmetric reaction is118.9.",
+        "ar": "كل رد فعل متماثل118.9."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 10
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 11
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 16
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 17
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 19
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "concept": "steel-ltb-slenderness",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At fixed Wyfy, if Mcr falls to one quarter, what happens to λ̄LT?",
+        "ar": "مع ثبات Wyfy، إذا انخفض Mcr إلى الربع فماذا يحدث لـλ̄LT؟"
+      },
+      "options": [
+        {
+          "en": "It becomes one quarter.",
+          "ar": "تصبح ربعًا."
+        },
+        {
+          "en": "It doubles.",
+          "ar": "تتضاعف."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "Mcr is the elastic critical moment for the actual lateral/torsional boundary conditions and moment distribution. It is not the design resistance. Compare Wyfy with Mcr to form nondimensional slenderness. A smaller Mcr means a more vulnerable member and a larger slenderness. The lecture’s L/iz shortcut is limited to its specified doubly symmetric restrained-segment conditions; it cannot replace a verified Mcr model for any arbitrary beam. A ratio should be dimensionless before you take its square root.",
+        "ar": "Mcr العزم الحرج المرن لشروط الحركة والالتواء وتوزيع العزم الفعلية، وليس مقاومة التصميم. قارن Wyfy مع Mcr لتكوين النحافة اللابعدية. انخفاض Mcr يعني عضوًا أكثر عرضة ونحافة أكبر. تقريب L/iz في المحاضرة محدود بشروط الجزء المتماثل والمقيد المحددة؛ لا يعوض نموذج Mcr متحققًا لأي كمرة اعتباطية. يجب أن تكون النسبة بلا وحدة قبل أخذ جذرها."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 12
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 13
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "N03",
+      "concept": "steel-ltb-slenderness",
+      "type": "numerical",
+      "prompt": {
+        "en": "Wyfy=400 kN·m,Mcr=625 kN·m. Find λ̄LT.",
+        "ar": "Wyfy=400 kN·m وMcr=625 kN·m. أوجد λ̄LT."
+      },
+      "expected": 0.8,
+      "tolerance": 0.01,
+      "unit": "—",
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "√(400/625)=0.8.",
+        "ar": "√(400/625)=0.8."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 12
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 13
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "concept": "steel-ltb-slenderness",
+      "type": "mixed",
+      "prompt": {
+        "en": "Wyfy=400 kN·m,Mcr=100 kN·m. Enter λ̄LT and choose the implication.",
+        "ar": "Wyfy=400 kN·m وMcr=100 kN·m. أدخل λ̄LT واختر الدلالة."
+      },
+      "expected": 2,
+      "tolerance": 0.01,
+      "unit": "—",
+      "options": [
+        {
+          "en": "Greater vulnerability to LTB than λ̄=0.8, other inputs equal.",
+          "ar": "قابلية أكبر لـLTB مقارنة بـλ̄=0.8 مع ثبات الباقي."
+        },
+        {
+          "en": "A design resistance of2 kN·m.",
+          "ar": "مقاومة تصميم2 kN·m."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "√4=2; it is a dimensionless slenderness.",
+        "ar": "√4=2؛ إنها نحافة بلا وحدة."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 12
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 13
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "concept": "steel-ltb-reduction",
+      "type": "conceptual",
+      "prompt": {
+        "en": "May χLT exceed1 and increase the basic cross-section resistance?",
+        "ar": "هل يمكن أن تتجاوز χLT الواحد فتزيد مقاومة القطاع الأساسية؟"
+      },
+      "options": [
+        {
+          "en": "No. Cap it at1 in this procedure.",
+          "ar": "لا. حدها الأعلى1 في هذا الإجراء."
+        },
+        {
+          "en": "Yes. Larger slenderness always increases strength.",
+          "ar": "نعم. زيادة النحافة تزيد المقاومة دائمًا."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "The general-case buckling curve turns slenderness and imperfection factor into a reduction χLT≤1. Multiplying that by Wyfy and dividing by γM1 gives design buckling resistance. A different EC3 special-case procedure uses different curve choices and expressions; do not mix it with the lecture general case. The numerical practice explicitly supplies α and partial factors so the computation is reviewable. A reduction factor is only defensible with its curve, restraint model and parameter basis.",
+        "ar": "يحوّل منحنى الحالة العامة النحافة ومعامل العيوب إلى تخفيض χLT≤1. ضربه في Wyfy وقسمته على γM1 يعطي مقاومة الانبعاج التصميمية. لإجراء الحالة الخاصة في EC3 اختيارات ومعادلات مختلفة؛ لا تخلطها بالحالة العامة بالمحاضرة. توفر المسائل α والمعاملات الجزئية صراحة حتى يمكن تدقيق الحساب. لا يُبرر معامل التخفيض دون منحناه ونموذج تقييده وأساس معاملاته."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 12
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 13
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 15
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "N04",
+      "concept": "steel-ltb-reduction",
+      "type": "numerical",
+      "prompt": {
+        "en": "Given χLT=0.8,W=1830 cm³,fy=275 N/mm²,γM1=1, find Mb,Rd.",
+        "ar": "معطى χLT=0.8 وW=1830 cm³ وfy=275 N/mm² وγM1=1، أوجد Mb,Rd."
+      },
+      "expected": 402.6,
+      "tolerance": 0.8052,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "0.8×1830×1000×275/10⁶=402.6. χ is supplied, not independently derived here.",
+        "ar": "0.8×1830×1000×275/10⁶=402.6. قيمةχ معطاة وليست مستخرجة مستقلًا هنا."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 12
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 13
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 15
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "concept": "steel-ltb-reduction",
+      "type": "mixed",
+      "prompt": {
+        "en": "Givenχ=0.6,Wyfy=500 kN·m,γM1=1. Enter Mb,Rd and choose what it includes.",
+        "ar": "معطىχ=0.6 وWyfy=500 kN·m وγM1=1. أدخل Mb,Rd واختر ما يشمله."
+      },
+      "expected": 300,
+      "tolerance": 0.6,
+      "unit": "kN·m",
+      "options": [
+        {
+          "en": "A complete connection and serviceability design.",
+          "ar": "تصميم كامل للوصلات والخدمة."
+        },
+        {
+          "en": "The selected lateral-torsional reduction.",
+          "ar": "تخفيض الانبعاج الجانبي الالتوائي المختار."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "0.6×500/1=300 kN·m.",
+        "ar": "0.6×500/1=300 kN·m."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 12
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 13
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 14
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 15
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "concept": "steel-ltb-checks",
+      "type": "conceptual",
+      "prompt": {
+        "en": "If MEd<Mb,Rd, may you omit shear, local web and deflection checks?",
+        "ar": "إذا MEd<Mb,Rd، هل تهمل القص وفحص الجِسر الموضعي والترخيم؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Bending resistance covers all limits.",
+          "ar": "نعم. مقاومة العزم تغطي جميع الحدود."
+        },
+        {
+          "en": "No. Each can govern a different failure/service limit.",
+          "ar": "لا. قد يحكم كل منها حد فشل أو خدمة مختلفًا."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "Compare moment demand to both cross-section and member bending resistance, and check shear with the correct shear area. Large shear can reduce bending resistance; concentrated reactions can trigger local web checks. Then check deflection, restraint and connections. In the supplied exampleχ≈0.8 comes from a graph/shortcut; the arithmetic using it can be verified, but treating that approximate input as a complete certified stability analysis would overstate the source. Report the limiting mechanism and any unverified input, not merely “safe”.",
+        "ar": "قارن طلب العزم بمقاومة القطاع ومقاومة العضو وتحقق من القص بمساحته الصحيحة. قد يقلل القص المرتفع مقاومة العزم وقد تستلزم ردود الأفعال المركزة فحصًا موضعيًا للجِسر. ثم تحقق من الترخيم والتدعيم والوصلات. تأتيχ≈0.8 في مثال المصدر من رسم وتقريب؛ يمكن تدقيق الحساب بها لكن اعتبارها تحليل استقرار كاملًا معتمدًا يبالغ في المصدر. اذكر الآلية الحاكمة وكل مدخل غير متحقق بدل كلمة «آمن» وحدها."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 7
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 8
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 9
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 21
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "N05",
+      "concept": "steel-ltb-checks",
+      "type": "numerical",
+      "prompt": {
+        "en": "W=1830 cm³,fy=275,γM0=1. Find cross-section resistance.",
+        "ar": "W=1830 cm³ وfy=275 وγM0=1. أوجد مقاومة القطاع."
+      },
+      "expected": 503.25,
+      "tolerance": 1.0065,
+      "unit": "kN·m",
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "1830×1000×275/10⁶=503.25.",
+        "ar": "1830×1000×275/10⁶=503.25."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 7
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 8
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 9
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 21
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "concept": "steel-ltb-checks",
+      "type": "mixed",
+      "prompt": {
+        "en": "MEd=300,Mb,Rd=400 kN·m. Enter utilisation and choose the conclusion.",
+        "ar": "MEd=300 وMb,Rd=400 kN·m. أدخل نسبة الاستغلال واختر الاستنتاج."
+      },
+      "expected": 0.75,
+      "tolerance": 0.01,
+      "unit": "—",
+      "options": [
+        {
+          "en": "This member bending check passes; other checks remain.",
+          "ar": "ينجح فحص عزم العضو هذا؛ وتبقى الفحوص الأخرى."
+        },
+        {
+          "en": "All beam and connection design is complete.",
+          "ar": "اكتمل تصميم الكمرة والوصلات كله."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw loads and real lateral restraints. State the code edition, section class, steel grade and partial factors before calculating resistance.",
+          "ar": "ارسم الأحمال والقيود الجانبية الحقيقية. صرّح بإصدار الكود وفئة القطاع ودرجة الفولاذ والمعاملات الجزئية قبل حساب المقاومة."
+        },
+        {
+          "en": "Use N,mm consistently:1 kN·m=10⁶ N·mm;1 cm³=1000 mm³. A cross-section check alone cannot certify member stability.",
+          "ar": "استعمل N وmm باتساق:1 kN·m=10⁶ N·mm و1 cm³=1000 mm³. فحص القطاع وحده لا يثبت استقرار العضو."
+        }
+      ],
+      "solution": {
+        "en": "300/400=0.75≤1.",
+        "ar": "300/400=0.75≤1."
+      },
+      "sources": [
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 7
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 8
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 9
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 21
+        },
+        {
+          "doc": "steel-lecture-01",
+          "filename": "lec 1 Design of Unrestrained Beams .pdf",
+          "page": 22
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "meaning-01",
+      "concept": "steel-ltb-restraint",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: A vertical support is not a lateral brace",
+        "ar": "اشرح: المسند الرأسي ليس دعامة جانبية"
+      },
+      "a": {
+        "en": "A support may hold vertical displacement while allowing sideways movement or twist. A lateral restraint must restrain the relevant compression-flange movement and transmit its forces into a stable system. For a restrained segment the distance between effective restraints matters; the whole9 m beam is not always the unbraced length. Sagging and hogging can swap which flange is compressed.",
+        "ar": "قد يمنع المسند الحركة الرأسية ويسمح بالحركة الجانبية أو الالتواء. يجب أن يقيد التثبيت الجانبي حركة جناح الضغط المعنية وينقل قواه إلى نظام مستقر. يهم طول الجزء بين القيود الفعالة؛ ليس طول الكمرة9 m دائمًا طولها غير المدعم. قد يبدل العزم الموجب والسالب جناح الضغط."
+      }
+    },
+    {
+      "id": "prediction-01",
+      "concept": "steel-ltb-restraint",
+      "kind": "prediction",
+      "q": {
+        "en": "A point load acts at midspan. Does that automatically provide lateral restraint?",
+        "ar": "يؤثر حمل مركز عند المنتصف. هل يوفر قيدًا جانبيًا تلقائيًا؟"
+      },
+      "a": {
+        "en": "No. Restraint needs an effective physical connection. Draw brace positions and compression flange before selecting any reduction factor.",
+        "ar": "لا. يحتاج التقييد وصلة فيزيائية فعالة. ارسم مواضع التدعيم وجناح الضغط قبل اختيار معامل تخفيض."
+      }
+    },
+    {
+      "id": "calculation-01",
+      "concept": "steel-ltb-restraint",
+      "kind": "calculation",
+      "q": {
+        "en": "A12 m beam has effective braces at0,4,8,12 m. Enter longest unbraced length.",
+        "ar": "كمرة12 m لها قيود فعالة عند0 و4 و8 و12 m. أدخل أكبر طول غير مدعم."
+      },
+      "a": {
+        "en": "Maximum gap=4 m.",
+        "ar": "أكبر مسافة بين القيود4 m."
+      }
+    },
+    {
+      "id": "decision-01",
+      "concept": "steel-ltb-restraint",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: A vertical support is not a lateral brace?",
+        "ar": "متى يصح هذا النموذج: المسند الرأسي ليس دعامة جانبية؟"
+      },
+      "a": {
+        "en": "Actual restraints must have adequate stiffness, strength and a load path; point-load location alone does not create restraint. Symbols: L_LT in m or mm consistent with the stability calculation; restraint effectiveness is a physical input.",
+        "ar": "يجب أن تملك القيود الفعلية صلابة ومقاومة ومسار حمل كافيين؛ موقع الحمل وحده لا ينشئ قيدًا. الرموز: L_LT بالمتر أو المليمتر بما يتسق مع حساب الاستقرار؛ كفاية التقييد معطى فيزيائي."
+      }
+    },
+    {
+      "id": "meaning-02",
+      "concept": "steel-ltb-actions",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Demand and local class come before resistance",
+        "ar": "اشرح: الطلب وفئة القطاع يسبقان المقاومة"
+      },
+      "a": {
+        "en": "Calculate reactions, moment and shear from the stated design loads. Then classify compression plates because local buckling controls whether plastic, elastic or effective section modulus is available. Class1/2 may use Wpl, Class3 uses Wel and Class4 requires effective properties. A steel grade name alone does not fix fy for every thickness, and local class does not certify global LTB safety.",
+        "ar": "احسب ردود الأفعال والعزم والقص من أحمال التصميم المعطاة. ثم صنّف الصفائح المضغوطة لأن الانبعاج المحلي يحدد إتاحة معامل القطاع اللدن أو المرن أو الفعّال. تسمح الفئتان1/2 بـWpl وتستعمل3 معاملWel وتتطلب4 خواص فعّالة. اسم درجة الفولاذ لا يحدد fy لكل سماكة، والفئة المحلية لا تثبت أمان الانبعاج العام."
+      }
+    },
+    {
+      "id": "prediction-02",
+      "concept": "steel-ltb-actions",
+      "kind": "prediction",
+      "q": {
+        "en": "A Class1 section passes local slenderness. Does this remove the need for LTB checking?",
+        "ar": "نجح قطاع فئة1 في النحافة المحلية. هل يلغي ذلك فحص LTB؟"
+      },
+      "a": {
+        "en": "No. Local plate behavior and member instability are separate. Check reactions sum to237.8 kN, matching200+37.8 applied load.",
+        "ar": "لا. سلوك الصفائح المحلي وعدم استقرار العضو منفصلان. تحقق أن مجموع الردود237.8 kN يطابق الحمل200+37.8."
+      }
+    },
+    {
+      "id": "calculation-02",
+      "concept": "steel-ltb-actions",
+      "kind": "calculation",
+      "q": {
+        "en": "For the source loads, find maximum MEd.",
+        "ar": "لأحمال المصدر أوجد أكبر MEd."
+      },
+      "a": {
+        "en": "300+42.525=342.525 kN·m.",
+        "ar": "300+42.525=342.525 kN·m."
+      }
+    },
+    {
+      "id": "decision-02",
+      "concept": "steel-ltb-actions",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Demand and local class come before resistance?",
+        "ar": "متى يصح هذا النموذج: الطلب وفئة القطاع يسبقان المقاومة؟"
+      },
+      "a": {
+        "en": "Simply supported symmetric loading as drawn; section class must use the correct plate widths, stress state, code and thickness-dependent fy. Symbols: Two equal point loads P at L/3,2L/3; w UDL; kN,m produce kN·m. Wy in mm³ with fy N/mm².",
+        "ar": "كمرة بسيطة وأحمال متماثلة كما بالرسم؛ تصنيف القطاع يحتاج عروض الصفائح وحالة الإجهاد والكود وfy حسب السماكة. الرموز: حملان متساويان P عند L/3 و2L/3 وحمل موزع w؛ kN وm تعطي kN·m. Wy بوحدة mm³ مع fy بوحدة N/mm²."
+      }
+    },
+    {
+      "id": "meaning-03",
+      "concept": "steel-ltb-slenderness",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Compare yield with elastic instability",
+        "ar": "اشرح: قارن الخضوع بعدم الاستقرار المرن"
+      },
+      "a": {
+        "en": "Mcr is the elastic critical moment for the actual lateral/torsional boundary conditions and moment distribution. It is not the design resistance. Compare Wyfy with Mcr to form nondimensional slenderness. A smaller Mcr means a more vulnerable member and a larger slenderness. The lecture’s L/iz shortcut is limited to its specified doubly symmetric restrained-segment conditions; it cannot replace a verified Mcr model for any arbitrary beam.",
+        "ar": "Mcr العزم الحرج المرن لشروط الحركة والالتواء وتوزيع العزم الفعلية، وليس مقاومة التصميم. قارن Wyfy مع Mcr لتكوين النحافة اللابعدية. انخفاض Mcr يعني عضوًا أكثر عرضة ونحافة أكبر. تقريب L/iz في المحاضرة محدود بشروط الجزء المتماثل والمقيد المحددة؛ لا يعوض نموذج Mcr متحققًا لأي كمرة اعتباطية."
+      }
+    },
+    {
+      "id": "prediction-03",
+      "concept": "steel-ltb-slenderness",
+      "kind": "prediction",
+      "q": {
+        "en": "At fixed Wyfy, if Mcr falls to one quarter, what happens to λ̄LT?",
+        "ar": "مع ثبات Wyfy، إذا انخفض Mcr إلى الربع فماذا يحدث لـλ̄LT؟"
+      },
+      "a": {
+        "en": "It doubles. A ratio should be dimensionless before you take its square root.",
+        "ar": "تتضاعف. يجب أن تكون النسبة بلا وحدة قبل أخذ جذرها."
+      }
+    },
+    {
+      "id": "calculation-03",
+      "concept": "steel-ltb-slenderness",
+      "kind": "calculation",
+      "q": {
+        "en": "Wyfy=400 kN·m,Mcr=625 kN·m. Find λ̄LT.",
+        "ar": "Wyfy=400 kN·m وMcr=625 kN·m. أوجد λ̄LT."
+      },
+      "a": {
+        "en": "√(400/625)=0.8.",
+        "ar": "√(400/625)=0.8."
+      }
+    },
+    {
+      "id": "decision-03",
+      "concept": "steel-ltb-slenderness",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Compare yield with elastic instability?",
+        "ar": "متى يصح هذا النموذج: قارن الخضوع بعدم الاستقرار المرن؟"
+      },
+      "a": {
+        "en": "Lecture general-case EC3 path. Mcr must account for actual restraint, load height, section and moment shape; do not infer it solely from span. Symbols: Wyfy and Mcr must use identical moment units; λ̄LT has no units.",
+        "ar": "مسار الحالة العامة في EC3 بالمحاضرة. يجب أن يمثل Mcr التقييد وارتفاع الحمل والقطاع وشكل العزم؛ لا تستخرجه من البحر وحده. الرموز: يجب أن تكون وحدة العزم نفسها لـWyfy وMcr؛ λ̄LT بلا وحدة."
+      }
+    },
+    {
+      "id": "meaning-04",
+      "concept": "steel-ltb-reduction",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Use the chosen curve, then restore units",
+        "ar": "اشرح: استعمل المنحنى المختار ثم استعد الوحدات"
+      },
+      "a": {
+        "en": "The general-case buckling curve turns slenderness and imperfection factor into a reduction χLT≤1. Multiplying that by Wyfy and dividing by γM1 gives design buckling resistance. A different EC3 special-case procedure uses different curve choices and expressions; do not mix it with the lecture general case. The numerical practice explicitly supplies α and partial factors so the computation is reviewable.",
+        "ar": "يحوّل منحنى الحالة العامة النحافة ومعامل العيوب إلى تخفيض χLT≤1. ضربه في Wyfy وقسمته على γM1 يعطي مقاومة الانبعاج التصميمية. لإجراء الحالة الخاصة في EC3 اختيارات ومعادلات مختلفة؛ لا تخلطها بالحالة العامة بالمحاضرة. توفر المسائل α والمعاملات الجزئية صراحة حتى يمكن تدقيق الحساب."
+      }
+    },
+    {
+      "id": "prediction-04",
+      "concept": "steel-ltb-reduction",
+      "kind": "prediction",
+      "q": {
+        "en": "May χLT exceed1 and increase the basic cross-section resistance?",
+        "ar": "هل يمكن أن تتجاوز χLT الواحد فتزيد مقاومة القطاع الأساسية؟"
+      },
+      "a": {
+        "en": "No. Cap it at1 in this procedure. A reduction factor is only defensible with its curve, restraint model and parameter basis.",
+        "ar": "لا. حدها الأعلى1 في هذا الإجراء. لا يُبرر معامل التخفيض دون منحناه ونموذج تقييده وأساس معاملاته."
+      }
+    },
+    {
+      "id": "calculation-04",
+      "concept": "steel-ltb-reduction",
+      "kind": "calculation",
+      "q": {
+        "en": "Given χLT=0.8,W=1830 cm³,fy=275 N/mm²,γM1=1, find Mb,Rd.",
+        "ar": "معطى χLT=0.8 وW=1830 cm³ وfy=275 N/mm² وγM1=1، أوجد Mb,Rd."
+      },
+      "a": {
+        "en": "0.8×1830×1000×275/10⁶=402.6. χ is supplied, not independently derived here.",
+        "ar": "0.8×1830×1000×275/10⁶=402.6. قيمةχ معطاة وليست مستخرجة مستقلًا هنا."
+      }
+    },
+    {
+      "id": "decision-04",
+      "concept": "steel-ltb-reduction",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Use the chosen curve, then restore units?",
+        "ar": "متى يصح هذا النموذج: استعمل المنحنى المختار ثم استعد الوحدات؟"
+      },
+      "a": {
+        "en": "General case of the stated2005+A1:2014 lecture track; correct curve and National Annex are explicit inputs. No axial force/biaxial interaction is included here. Symbols: αLT imperfection factor; ΦLT and χLT dimensionless; γM1 selected partial factor. Mb,Rd in kN·m after dividing N·mm by10⁶.",
+        "ar": "الحالة العامة لمسار محاضرة2005+A1:2014؛ المنحنى والملحق الوطني مدخلان صريحان. لا يشمل المثال تفاعل قوة محورية أو انحناء ثنائي. الرموز: αLT معامل العيوب؛ ΦLT وχLT بلا وحدة؛ γM1 معامل جزئي مختار. لتحويل N·mm إلى kN·m اقسم على10⁶."
+      }
+    },
+    {
+      "id": "meaning-05",
+      "concept": "steel-ltb-checks",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: One passing check is not the whole beam",
+        "ar": "اشرح: نجاح فحص واحد لا يعني نجاح الكمرة"
+      },
+      "a": {
+        "en": "Compare moment demand to both cross-section and member bending resistance, and check shear with the correct shear area. Large shear can reduce bending resistance; concentrated reactions can trigger local web checks. Then check deflection, restraint and connections. In the supplied exampleχ≈0.8 comes from a graph/shortcut; the arithmetic using it can be verified, but treating that approximate input as a complete certified stability analysis would overstate the source.",
+        "ar": "قارن طلب العزم بمقاومة القطاع ومقاومة العضو وتحقق من القص بمساحته الصحيحة. قد يقلل القص المرتفع مقاومة العزم وقد تستلزم ردود الأفعال المركزة فحصًا موضعيًا للجِسر. ثم تحقق من الترخيم والتدعيم والوصلات. تأتيχ≈0.8 في مثال المصدر من رسم وتقريب؛ يمكن تدقيق الحساب بها لكن اعتبارها تحليل استقرار كاملًا معتمدًا يبالغ في المصدر."
+      }
+    },
+    {
+      "id": "prediction-05",
+      "concept": "steel-ltb-checks",
+      "kind": "prediction",
+      "q": {
+        "en": "If MEd<Mb,Rd, may you omit shear, local web and deflection checks?",
+        "ar": "إذا MEd<Mb,Rd، هل تهمل القص وفحص الجِسر الموضعي والترخيم؟"
+      },
+      "a": {
+        "en": "No. Each can govern a different failure/service limit. Report the limiting mechanism and any unverified input, not merely “safe”.",
+        "ar": "لا. قد يحكم كل منها حد فشل أو خدمة مختلفًا. اذكر الآلية الحاكمة وكل مدخل غير متحقق بدل كلمة «آمن» وحدها."
+      }
+    },
+    {
+      "id": "calculation-05",
+      "concept": "steel-ltb-checks",
+      "kind": "calculation",
+      "q": {
+        "en": "W=1830 cm³,fy=275,γM0=1. Find cross-section resistance.",
+        "ar": "W=1830 cm³ وfy=275 وγM0=1. أوجد مقاومة القطاع."
+      },
+      "a": {
+        "en": "1830×1000×275/10⁶=503.25.",
+        "ar": "1830×1000×275/10⁶=503.25."
+      }
+    },
+    {
+      "id": "decision-05",
+      "concept": "steel-ltb-checks",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: One passing check is not the whole beam?",
+        "ar": "متى يصح هذا النموذج: نجاح فحص واحد لا يعني نجاح الكمرة؟"
+      },
+      "a": {
+        "en": "Plastic shear expression for an eligible section without governing shear buckling or torsion; apply required interaction/local checks separately. Symbols: Av shear area mm²; fy N/mm²; Vpl,Rd N before dividing1000. γM0 and γM1 must be stated.",
+        "ar": "صيغة القص اللدن لقطاع صالح دون تحكم انبعاج قص أو التواء؛ طبّق التفاعل والفحوص الموضعية المطلوبة منفصلة. الرموز: Av مساحة قص mm² وfy بوحدة N/mm²؛ Vpl,Rd بالنيوتن قبل القسمة1000. يجب التصريح بـγM0 وγM1."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 3
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 4
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 5
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 6
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 16
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 10
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 11
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 17
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 19
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 20
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 12
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 13
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 14
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 15
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 21
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 7
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 8
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 9
+    },
+    {
+      "doc": "steel-lecture-01",
+      "filename": "lec 1 Design of Unrestrained Beams .pdf",
+      "page": 22
+    }
+  ]
+}

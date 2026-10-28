@@ -6,14 +6,15 @@ import {text} from '@/lib/types';
 import type {report} from '@/lib/study';
 import {subjects} from '@/lib/subjects';
 import Poetry from './Poetry';
+import {RecallWidget} from './ReviewCenter';
 import AnimatedNumber from './AnimatedNumber';
+import {reviewSummary,nextStudy} from '@/lib/study-views';
 
 type Stats=ReturnType<typeof report>;
-export default function Dashboard({lang,topics,book,stats,due,now,timer}:{lang:Lang;topics:Topic[];book:Notebook;stats:Stats;due:number;now:number;timer:React.ReactNode}){
+export default function Dashboard({lang,topics,book,stats,now,timer}:{lang:Lang;topics:Topic[];book:Notebook;stats:Stats;now:number;timer:React.ReactNode}){
  const ar=lang==='ar',say=(en:string,arabic:string)=>ar?arabic:en;
- const recent=[...book.attempts].reverse().find(a=>topics.some(t=>t.id===a.topic));
- const next=topics.find(t=>t.id===(recent?.topic||Object.keys(book.topics).find(id=>(book.topics[id]?.completed.length||0)<(topics.find(t=>t.id===id)?.steps.length||0))))||topics[0];
- const progress=book.topics[next.id],step=Math.min(progress?.step||0,next.steps.length-1),completed=progress?.completed.length||0;
+ const {topic:next,step,completed,tab}=nextStudy(topics,book);
+ const {due}=reviewSummary(topics,book,now);
  const metrics=[
   {icon:Flame,label:say('Streak','التزام'),value:stats.streak,unit:say('days','أيام'),color:'warm'},
   {icon:Clock3,label:say('Focus','تركيز'),value:Math.round(stats.minutes),unit:say('min','دقيقة'),color:'sage'},
@@ -27,12 +28,13 @@ export default function Dashboard({lang,topics,book,stats,due,now,timer}:{lang:L
   <section className="metric-grid" aria-label={say('Study summary · last 7 days','ملخص الدراسة · آخر ٧ أيام')}>
    {metrics.map(m=><article className="metric-row" key={m.label}><span className={'metric-icon '+m.color}><m.icon size={19}/></span><span className="metric-label">{m.label}</span><strong dir="ltr">{typeof m.value==='number'?<AnimatedNumber value={m.value} suffix={m.suffix}/>:m.value}</strong>{m.unit&&<span className="metric-unit">{m.unit}</span>}</article>)}
   </section>
+  <RecallWidget topics={topics} book={book} now={now} lang={lang}/>
   <div className="dashboard-columns">
    <section className="dashboard-chart dashboard-panel"><div className="panel-title"><h2><TrendingUp size={19}/>{say('Focus activity','نشاط التركيز')}</h2><span>{say('Last 7 days','آخر ٧ أيام')}</span></div><div className="chart-total"><strong><AnimatedNumber value={Math.round(stats.minutes)}/></strong><span>{say('minutes','دقيقة')}</span></div><FocusChart stats={stats} lang={lang}/><details className="chart-details"><summary>{say('Daily details','تفاصيل الأيام')}</summary><table><thead><tr><th>{say('Date','التاريخ')}</th><th>{say('Minutes','دقائق')}</th><th>{say('Questions','محاولات')}</th><th>{say('Reviews','مراجعات')}</th></tr></thead><tbody>{stats.days.map(d=><tr key={d.date}><td>{d.date}</td><td>{d.minutes.toFixed(1)}</td><td>{d.attempts}</td><td>{d.reviews}</td></tr>)}</tbody></table><p>{say('Streak: 20 focus minutes and a question attempt or card review per Riyadh day. Accuracy: first independent attempts in these seven days.','الالتزام: ٢٠ دقيقة تركيز ومحاولة سؤال أو مراجعة بطاقة في اليوم بتوقيت الرياض. الدقة: المحاولات الأولى المستقلة خلال الأيام السبعة.')}</p></details></section>
    {timer}
   </div>
-  <section className="continue-panel dashboard-panel"><div className="panel-title"><h2><BookOpen size={19}/>{say('Continue studying','متابعة الدراسة')}</h2><span>{completed} / {next.steps.length}</span></div><div className="continue-content"><div><p className="continue-topic">{text(next.title,lang)}</p><p className="continue-step">{step+1}. {text(next.steps[step]?.title,lang)}</p></div><Link className="button primary" href={`/${lang}/topics/${next.id}?tab=story&step=${step}`}>{say('Continue','متابعة')}<ArrowUpRight size={17}/></Link></div></section>
-  <section className="dashboard-topics"><div className="panel-title"><h2><Layers3 size={19}/>{say('Subjects','المواد الدراسية')}</h2><Link className="text-link" href={`/${lang}/subjects`}>{say('Browse subjects','تصفّح المواد')}<ArrowUpRight size={15}/></Link></div><div className="journey-rows subject-rows">{subjects.map(s=><Link href={`/${lang}/subjects/${s.id}`} className="journey-row" key={s.id}><BookOpen size={18}/><span>{text(s.title,lang)}</span><span className="journey-count">{topics.filter(t=>s.topicIds.includes(t.id)).length} {say('topics','موضوعًا')}</span><ArrowUpRight size={16}/></Link>)}</div></section>
+  <section className="continue-panel dashboard-panel"><div className="panel-title"><h2><BookOpen size={19}/>{say('Continue studying','متابعة الدراسة')}</h2><span>{completed} / {next.steps.length}</span></div><div className="continue-content"><div><p className="continue-topic">{text(next.title,lang)}</p><p className="continue-step">{step+1}. {text(next.steps[step]?.title,lang)}</p></div><Link className="button primary" href={`/${lang}/topics/${next.id}?tab=${tab}&step=${step}`}>{say('Continue','متابعة')}<ArrowUpRight size={17}/></Link></div></section>
+  <section className="dashboard-topics"><div className="panel-title"><h2><Layers3 size={19}/>{say('Subjects','المواد الدراسية')}</h2><Link className="text-link" href={`/${lang}/subjects`}>{say('Browse subjects','تصفّح المواد')}<ArrowUpRight size={15}/></Link></div><div className="journey-rows subject-rows">{subjects.map(s=><Link href={`/${lang}/subjects/${s.id}`} className="journey-row" key={s.id}><BookOpen size={18}/><span>{text(s.title,lang)}</span><span className="journey-count">{s.publication==='planned'?say('Course plan','خطة الإعداد'):`${topics.filter(t=>s.topicIds.includes(t.id)).length} ${say('topics','موضوعًا')}`}</span><ArrowUpRight size={16}/></Link>)}</div></section>
  </div>;
 }
 

@@ -1,0 +1,1623 @@
+{
+  "id": "hydro-geometry",
+  "family": "hyd-foundations",
+  "title": {
+    "en": "Open channels: read the water section",
+    "ar": "القنوات المفتوحة: اقرأ قطاع الماء"
+  },
+  "summary": {
+    "en": "Follow water through a changing channel. Measure the right geometry, conserve flow and classify behavior before choosing an energy or resistance equation.",
+    "ar": "تتبّع الماء خلال قناة متغيّرة. قِس الهندسة الصحيحة واحفظ التصريف وصنّف السلوك قبل اختيار معادلة الطاقة أو المقاومة."
+  },
+  "outcomes": [
+    {
+      "en": "A free surface makes depth a response",
+      "ar": "السطح الحر يجعل العمق استجابة"
+    },
+    {
+      "en": "Trace the water, wall and top separately",
+      "ar": "تتبّع الماء والجدار والسطح منفصلة"
+    },
+    {
+      "en": "Two lengths answer different questions",
+      "ar": "طولان لسؤالين مختلفين"
+    },
+    {
+      "en": "The same water must pass both sections",
+      "ar": "الماء نفسه يجب أن يعبر القطاعين"
+    },
+    {
+      "en": "Space and time are different changes",
+      "ar": "المكان والزمن تغيّران مختلفان"
+    }
+  ],
+  "prereqIds": [
+    "hyd-units",
+    "hyd-geometry",
+    "course-algebra"
+  ],
+  "videoIds": [
+    "CAZNIuQTE-0",
+    "8gu5oGySrCI"
+  ],
+  "concepts": [
+    {
+      "id": "hydro-geometry-surface",
+      "title": {
+        "en": "A free surface makes depth a response",
+        "ar": "السطح الحر يجعل العمق استجابة"
+      }
+    },
+    {
+      "id": "hydro-geometry-section",
+      "title": {
+        "en": "Trace the water, wall and top separately",
+        "ar": "تتبّع الماء والجدار والسطح منفصلة"
+      }
+    },
+    {
+      "id": "hydro-geometry-lengths",
+      "title": {
+        "en": "Two lengths answer different questions",
+        "ar": "طولان لسؤالين مختلفين"
+      }
+    },
+    {
+      "id": "hydro-geometry-continuity",
+      "title": {
+        "en": "The same water must pass both sections",
+        "ar": "الماء نفسه يجب أن يعبر القطاعين"
+      }
+    },
+    {
+      "id": "hydro-geometry-classify",
+      "title": {
+        "en": "Space and time are different changes",
+        "ar": "المكان والزمن تغيّران مختلفان"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "hydro-geometry-surface",
+      "title": {
+        "en": "A free surface makes depth a response",
+        "ar": "السطح الحر يجعل العمق استجابة"
+      },
+      "predict": {
+        "en": "A covered drain is only half full. Must it be analysed as a pressurised full pipe?",
+        "ar": "مجرى مغطى ممتلئ للنصف. هل يجب تحليله كأنبوب مضغوط ممتلئ؟"
+      },
+      "options": [
+        {
+          "en": "No. Its free surface permits open-channel behavior.",
+          "ar": "لا. سطحه الحر يسمح بسلوك القناة المفتوحة."
+        },
+        {
+          "en": "Yes. Every roof eliminates a free surface.",
+          "ar": "نعم. كل سقف يلغي السطح الحر."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Channel classification depends on the flow state, not merely the presence of a cover.",
+        "ar": "يعتمد تصنيف القناة على حالة الجريان لا على وجود غطاء وحده."
+      },
+      "explain": {
+        "en": "Open-channel flow has a free surface exposed approximately to atmospheric pressure. The conduit need not be uncovered: a partially full sewer can behave as an open channel. A prismatic reach has unchanged cross-section shape and bed slope along its length; that geometric property does not itself guarantee uniform flow.",
+        "ar": "للجريان المفتوح سطح حر معرض تقريبًا للضغط الجوي. لا يلزم أن تكون القناة مكشوفة؛ يمكن لمجرور ممتلئ جزئيًا أن يتصرف كقناة مفتوحة. المجرى المنشوري ثابت شكل القطاع وميل القاع طوليًا؛ وهذه صفة هندسية لا تضمن انتظام الجريان."
+      },
+      "formula": "p_gauge = 0 at free surface; p/γ = h below a hydrostatic surface",
+      "symbols": {
+        "en": "p gauge pressure in kPa; γ water unit weight 9.81 kN/m³; h vertical depth below the surface in m.",
+        "ar": "p ضغط مقاس بالنسبة للجو بالكيلوباسكال؛ γ وزن الماء 9.81 kN/m³؛ h عمق رأسي تحت السطح بالمتر."
+      },
+      "assumptions": {
+        "en": "Hydrostatic pressure away from sharp vertical accelerations; steep/curved flow can require corrections.",
+        "ar": "ضغط هيدروستاتيكي بعيدًا عن التسارعات الرأسية الحادة؛ الجريان شديد الانحدار أو الانحناء قد يحتاج تصحيحًا."
+      },
+      "example": {
+        "en": "Find gauge pressure 2 m below a hydrostatic free surface.",
+        "ar": "أوجد الضغط النسبي على عمق 2 m تحت سطح حر هيدروستاتيكي."
+      },
+      "calculation": {
+        "en": "p=γh=9.81×2=19.62 kPa. The surface itself has zero gauge pressure.",
+        "ar": "p=γh=9.81×2=19.62 kPa. ضغط السطح النسبي صفر."
+      },
+      "interpret": {
+        "en": "Channel classification depends on the flow state, not merely the presence of a cover.",
+        "ar": "يعتمد تصنيف القناة على حالة الجريان لا على وجود غطاء وحده."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Channel classification depends on the flow state, not merely the presence of a cover. Hydrostatic pressure away from sharp vertical accelerations; steep/curved flow can require corrections.",
+          "ar": "يعتمد تصنيف القناة على حالة الجريان لا على وجود غطاء وحده. ضغط هيدروستاتيكي بعيدًا عن التسارعات الرأسية الحادة؛ الجريان شديد الانحدار أو الانحناء قد يحتاج تصحيحًا."
+        }
+      },
+      "diagram": "course-hydro-section",
+      "concepts": [
+        "hydro-geometry-surface"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 14
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 15
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 19
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "hydro-geometry-section",
+      "title": {
+        "en": "Trace the water, wall and top separately",
+        "ar": "تتبّع الماء والجدار والسطح منفصلة"
+      },
+      "predict": {
+        "en": "Do you include the free surface in wetted perimeter?",
+        "ar": "هل تُدرج السطح الحر في المحيط المبتل؟"
+      },
+      "options": [
+        {
+          "en": "No. It is not a solid friction boundary.",
+          "ar": "لا. ليس حدًا صلبًا للاحتكاك."
+        },
+        {
+          "en": "Yes. P is the complete geometric perimeter.",
+          "ar": "نعم. P هو المحيط الهندسي الكامل."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The same water section supplies three different geometric measures.",
+        "ar": "يوفر قطاع الماء نفسه ثلاثة مقاييس هندسية مختلفة."
+      },
+      "explain": {
+        "en": "In a trapezoid with side slope m horizontal to one vertical, the bottom rectangle contributes by and the side triangles together contribute my². The wetted perimeter follows the bed and submerged walls; it excludes the free surface. Top width includes both side extensions. A number such as 2H:1V means m=2, not one half.",
+        "ar": "في شبه منحرف بميل جانبي m أفقي لكل واحد رأسي، يعطي مستطيل القاع by ويعطي المثلثان my². يتبع المحيط المبتل القاع والجدارين المغمورين ويستبعد السطح الحر. يشمل العرض السطحي امتدادي الجانبين. الميل 2H:1V يعني m=2 لا نصفًا."
+      },
+      "formula": "A=y(b+my); P=b+2y√(1+m²); T=b+2my",
+      "symbols": {
+        "en": "b bed width, y depth and T,P in m; A in m²; m side slope H/V.",
+        "ar": "b عرض القاع وy العمق وT,P بالأمتار؛ A بالمتر المربع؛ m الميل H/V."
+      },
+      "assumptions": {
+        "en": "Symmetric trapezoid, vertical flow depth and straight sides. Use separate side slopes if asymmetric.",
+        "ar": "شبه منحرف متماثل وعمق رأسي وجوانب مستقيمة؛ استعمل ميلين منفصلين إذا كان غير متماثل."
+      },
+      "example": {
+        "en": "b=3 m, y=2 m, m=1. Find A,P,T.",
+        "ar": "b=3 m وy=2 m وm=1. أوجد A,P,T."
+      },
+      "calculation": {
+        "en": "A=2(3+2)=10 m²; P=3+4√2=8.657 m; T=3+4=7 m.",
+        "ar": "A=2(3+2)=10 m²؛ P=3+4√2=8.657 m؛ T=3+4=7 m."
+      },
+      "interpret": {
+        "en": "The same water section supplies three different geometric measures.",
+        "ar": "يوفر قطاع الماء نفسه ثلاثة مقاييس هندسية مختلفة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "The same water section supplies three different geometric measures. Symmetric trapezoid, vertical flow depth and straight sides. Use separate side slopes if asymmetric.",
+          "ar": "يوفر قطاع الماء نفسه ثلاثة مقاييس هندسية مختلفة. شبه منحرف متماثل وعمق رأسي وجوانب مستقيمة؛ استعمل ميلين منفصلين إذا كان غير متماثل."
+        }
+      },
+      "diagram": "course-hydro-section",
+      "concepts": [
+        "hydro-geometry-section"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 16
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 17
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "hydro-geometry-lengths",
+      "title": {
+        "en": "Two lengths answer different questions",
+        "ar": "طولان لسؤالين مختلفين"
+      },
+      "predict": {
+        "en": "A 4 m wide rectangle is 2 m deep. Is R=2 m exactly?",
+        "ar": "مستطيل عرضه 4 m وعمقه 2 m. هل R=2 m تمامًا؟"
+      },
+      "options": [
+        {
+          "en": "No. R=1 m, while D=2 m.",
+          "ar": "لا. R=1 m بينما D=2 m."
+        },
+        {
+          "en": "Yes. Both hydraulic lengths always equal y.",
+          "ar": "نعم. كلا الطولين يساوي y دائمًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Choose the length from the mechanism: boundary resistance or free-surface response.",
+        "ar": "اختر الطول وفق الآلية: مقاومة الحدود أم استجابة السطح الحر."
+      },
+      "explain": {
+        "en": "Hydraulic radius compares water area with frictional contact, so R=A/P belongs in resistance laws. Hydraulic depth compares area with surface width, so D=A/T belongs in gravity-wave and critical-flow reasoning. For a rectangle D=y exactly, while R=by/(b+2y) only approaches y when the channel is very wide. Calling both “depth” causes many wrong substitutions.",
+        "ar": "يقارن نصف القطر الهيدروليكي مساحة الماء بحد الاحتكاك، لذلك R=A/P في قوانين المقاومة. يقارن العمق الهيدروليكي المساحة بعرض السطح، لذلك D=A/T في الموجات والجريان الحرج. للمستطيل D=y تمامًا، بينما تقترب R=by/(b+2y) من y فقط عندما تكون القناة عريضة جدًا. الخلط بين الطولين يسبب تعويضات خاطئة."
+      },
+      "formula": "R=A/P; D=A/T; rectangular D=y, R=by/(b+2y)",
+      "symbols": {
+        "en": "R and D have length units (m) but different physical meanings.",
+        "ar": "R وD بوحدة طول m لكن معناهما الفيزيائي مختلف."
+      },
+      "assumptions": {
+        "en": "Small bed slope and hydrostatic depth for gravity-wave interpretation. The wide-channel R≈y shortcut needs b≫y.",
+        "ar": "ميل قاع صغير وعمق هيدروستاتيكي لتفسير الموجة؛ تقريب R≈y يحتاج b≫y."
+      },
+      "example": {
+        "en": "For b=3,y=2,m=1 find R and D.",
+        "ar": "إذا b=3 وy=2 وm=1 فأوجد R وD."
+      },
+      "calculation": {
+        "en": "R=10/8.65685=1.1552 m; D=10/7=1.4286 m. Neither equals the actual 2 m depth.",
+        "ar": "R=10/8.65685=1.1552 m؛ D=10/7=1.4286 m. لا يساوي أيهما العمق الحقيقي 2 m."
+      },
+      "interpret": {
+        "en": "Choose the length from the mechanism: boundary resistance or free-surface response.",
+        "ar": "اختر الطول وفق الآلية: مقاومة الحدود أم استجابة السطح الحر."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Choose the length from the mechanism: boundary resistance or free-surface response. Small bed slope and hydrostatic depth for gravity-wave interpretation. The wide-channel R≈y shortcut needs b≫y.",
+          "ar": "اختر الطول وفق الآلية: مقاومة الحدود أم استجابة السطح الحر. ميل قاع صغير وعمق هيدروستاتيكي لتفسير الموجة؛ تقريب R≈y يحتاج b≫y."
+        }
+      },
+      "diagram": "course-hydro-section",
+      "concepts": [
+        "hydro-geometry-lengths"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "id": "hydro-geometry-continuity",
+      "title": {
+        "en": "The same water must pass both sections",
+        "ar": "الماء نفسه يجب أن يعبر القطاعين"
+      },
+      "predict": {
+        "en": "At constant Q, double area A. What happens to mean velocity?",
+        "ar": "مع ثبات Q ضاعف A. ماذا يحدث للسرعة المتوسطة؟"
+      },
+      "options": [
+        {
+          "en": "It halves.",
+          "ar": "تنخفض للنصف."
+        },
+        {
+          "en": "It doubles.",
+          "ar": "تتضاعف."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The specified lower rectangular velocity requires a sufficiently large flow area.",
+        "ar": "تحتاج السرعة المستطيلة الأقل المعطاة إلى مساحة جريان كافية."
+      },
+      "explain": {
+        "en": "For steady incompressible flow with no side inflow or outflow, the volume passing each section per second is the same. A larger area therefore means a smaller mean velocity for fixed discharge. Continuity does not by itself conserve energy: a transition can dissipate energy while conserving water. The source transition supplies enough data to solve area and velocity without guessing a water-surface shape.",
+        "ar": "في جريان ثابت غير قابل للانضغاط دون دخول أو خروج جانبي، يعبر الحجم نفسه كل ثانية جميع القطاعات. لذلك تعني مساحة أكبر سرعة متوسطة أقل عند تصريف ثابت. الاستمرارية لا تحفظ الطاقة وحدها؛ فقد يبدد الانتقال طاقة مع حفظ الماء. توفر مسألة الانتقال معطيات كافية لحساب المساحة والسرعة دون تخمين شكل سطح الماء."
+      },
+      "formula": "Q=VA; Q1=Q2; V1=Q/A1; y2=Q/(b2V2)",
+      "symbols": {
+        "en": "Q m³/s, V m/s, A m²; b2 is rectangular receiving width in m.",
+        "ar": "Q بالمتر المكعب/ثانية وV بالمتر/ثانية وA بالمتر المربع؛ b2 عرض المستطيل المستقبل بالمتر."
+      },
+      "assumptions": {
+        "en": "Steady incompressible flow without storage change or lateral exchange between sections.",
+        "ar": "جريان ثابت غير قابل للانضغاط دون تغير تخزين أو تبادل جانبي بين القطاعين."
+      },
+      "example": {
+        "en": "Source: trapezoid b=3,y=2.4,m=2, Q=13.1 m³/s. Rectangle b2=4 m, V2=0.9 m/s.",
+        "ar": "المصدر: شبه منحرف b=3 وy=2.4 وm=2 وQ=13.1 m³/s. مستطيل b2=4 m وV2=0.9 m/s."
+      },
+      "calculation": {
+        "en": "A1=18.72; V1=13.1/18.72=0.6998 m/s. A2=13.1/0.9=14.5556 m²; y2=14.5556/4=3.6389 m. Check 4×3.6389×0.9≈13.1.",
+        "ar": "A1=18.72؛ V1=13.1/18.72=0.6998 m/s. A2=13.1/0.9=14.5556 m²؛ y2=14.5556/4=3.6389 m. تحقق 4×3.6389×0.9≈13.1."
+      },
+      "interpret": {
+        "en": "The specified lower rectangular velocity requires a sufficiently large flow area.",
+        "ar": "تحتاج السرعة المستطيلة الأقل المعطاة إلى مساحة جريان كافية."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "The specified lower rectangular velocity requires a sufficiently large flow area. Steady incompressible flow without storage change or lateral exchange between sections.",
+          "ar": "تحتاج السرعة المستطيلة الأقل المعطاة إلى مساحة جريان كافية. جريان ثابت غير قابل للانضغاط دون تغير تخزين أو تبادل جانبي بين القطاعين."
+        }
+      },
+      "diagram": "course-hydro-section",
+      "concepts": [
+        "hydro-geometry-continuity"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-lecture-02",
+          "filename": "lec  العلاقات الاساسية2.pdf",
+          "page": 2
+        },
+        {
+          "doc": "hyd-lecture-02",
+          "filename": "lec  العلاقات الاساسية2.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "hydro-geometry-classify",
+      "title": {
+        "en": "Space and time are different changes",
+        "ar": "المكان والزمن تغيّران مختلفان"
+      },
+      "predict": {
+        "en": "Depth differs along a channel but is unchanged at each gauge all day. What is the flow?",
+        "ar": "يختلف العمق على طول القناة لكنه ثابت طوال اليوم عند كل مقياس. ما التصنيف؟"
+      },
+      "options": [
+        {
+          "en": "Steady and nonuniform.",
+          "ar": "ثابت وغير منتظم."
+        },
+        {
+          "en": "Unsteady because two stations have different depths.",
+          "ar": "غير ثابت لأن عمقي المحطتين مختلفان."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Froude regime, steadiness and uniformity answer three different questions.",
+        "ar": "نظام فرود والثبات والانتظام تجيب عن ثلاثة أسئلة مختلفة."
+      },
+      "explain": {
+        "en": "A depth that changes between two stations is nonuniform. A depth that changes with time at one gauge is unsteady. A steady backwater profile can be nonuniform, and a flood wave is generally both. Count the independent comparisons before selecting an equation; a channel may be geometrically prismatic while its water depth varies along it.",
+        "ar": "العمق المتغيّر بين محطتين غير منتظم، والمتغيّر مع الزمن عند مقياس واحد غير ثابت. قد يكون منحنى الماء الخلفي ثابتًا وغير منتظم، وموجة الفيضان غالبًا الاثنان معًا. حدّد نوع المقارنة قبل اختيار المعادلة؛ قد تكون القناة منشورية بينما يتغير عمق الماء طوليًا."
+      },
+      "formula": "steady: ∂y/∂t=0; uniform: ∂y/∂x=0\nFr=V/√(gD)",
+      "symbols": {
+        "en": "x distance along channel, t time, g=9.81 m/s², D=A/T. Fr is dimensionless.",
+        "ar": "x المسافة الطولية وt الزمن وg=9.81 m/s² وD=A/T. عدد Fr بلا وحدة."
+      },
+      "assumptions": {
+        "en": "Section-averaged classification; Fr uses hydraulic depth and small-slope gravity-wave assumptions.",
+        "ar": "تصنيف بمقادير القطاع المتوسطة؛ يستعمل Fr العمق الهيدروليكي مع فرضيات موجات الجاذبية والميل الصغير."
+      },
+      "example": {
+        "en": "V=2 m/s in a rectangular section y=1 m.",
+        "ar": "V=2 m/s في مستطيل بعمق y=1 m."
+      },
+      "calculation": {
+        "en": "D=1; Fr=2/√9.81=0.6386<1, subcritical. Time/space classification still requires observations, not Fr alone.",
+        "ar": "D=1؛ Fr=2/√9.81=0.6386<1، دون حرج. يظل تصنيف الزمن والمكان محتاجًا إلى الرصد ولا يحسمه Fr."
+      },
+      "interpret": {
+        "en": "Froude regime, steadiness and uniformity answer three different questions.",
+        "ar": "نظام فرود والثبات والانتظام تجيب عن ثلاثة أسئلة مختلفة."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Froude regime, steadiness and uniformity answer three different questions. Section-averaged classification; Fr uses hydraulic depth and small-slope gravity-wave assumptions.",
+          "ar": "نظام فرود والثبات والانتظام تجيب عن ثلاثة أسئلة مختلفة. تصنيف بمقادير القطاع المتوسطة؛ يستعمل Fr العمق الهيدروليكي مع فرضيات موجات الجاذبية والميل الصغير."
+        }
+      },
+      "diagram": "course-hydro-section",
+      "concepts": [
+        "hydro-geometry-classify"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 26
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 27
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 28
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 29
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 30
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 12
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "C01",
+      "concept": "hydro-geometry-surface",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A covered drain is only half full. Must it be analysed as a pressurised full pipe?",
+        "ar": "مجرى مغطى ممتلئ للنصف. هل يجب تحليله كأنبوب مضغوط ممتلئ؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Every roof eliminates a free surface.",
+          "ar": "نعم. كل سقف يلغي السطح الحر."
+        },
+        {
+          "en": "No. Its free surface permits open-channel behavior.",
+          "ar": "لا. سطحه الحر يسمح بسلوك القناة المفتوحة."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "Open-channel flow has a free surface exposed approximately to atmospheric pressure. The conduit need not be uncovered: a partially full sewer can behave as an open channel. A prismatic reach has unchanged cross-section shape and bed slope along its length; that geometric property does not itself guarantee uniform flow. Channel classification depends on the flow state, not merely the presence of a cover.",
+        "ar": "للجريان المفتوح سطح حر معرض تقريبًا للضغط الجوي. لا يلزم أن تكون القناة مكشوفة؛ يمكن لمجرور ممتلئ جزئيًا أن يتصرف كقناة مفتوحة. المجرى المنشوري ثابت شكل القطاع وميل القاع طوليًا؛ وهذه صفة هندسية لا تضمن انتظام الجريان. يعتمد تصنيف القناة على حالة الجريان لا على وجود غطاء وحده."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 14
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 15
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 19
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "N01",
+      "concept": "hydro-geometry-surface",
+      "type": "numerical",
+      "prompt": {
+        "en": "Find gauge pressure 1.5 m below still water.",
+        "ar": "أوجد الضغط النسبي على عمق 1.5 m تحت ماء ساكن."
+      },
+      "expected": 14.715,
+      "tolerance": 0.02943,
+      "unit": "kPa",
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "9.81×1.5=14.715 kPa.",
+        "ar": "9.81×1.5=14.715 kPa."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 14
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 15
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 19
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "concept": "hydro-geometry-surface",
+      "type": "mixed",
+      "prompt": {
+        "en": "At an atmospheric free surface enter gauge pressure and identify the regime.",
+        "ar": "عند سطح حر جوي أدخل الضغط النسبي وحدّد الحالة."
+      },
+      "expected": 0,
+      "tolerance": 0.01,
+      "unit": "kPa",
+      "options": [
+        {
+          "en": "Open-channel flow can occur inside a partly full conduit.",
+          "ar": "قد يحدث جريان مفتوح داخل قناة ممتلئة جزئيًا."
+        },
+        {
+          "en": "Gauge pressure must equal atmospheric absolute pressure.",
+          "ar": "يجب أن يساوي الضغط النسبي الضغط الجوي المطلق."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "Gauge reference is atmosphere, hence zero.",
+        "ar": "مرجع القياس هو الجو، لذلك القيمة صفر."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 14
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 15
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 19
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "concept": "hydro-geometry-section",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Do you include the free surface in wetted perimeter?",
+        "ar": "هل تُدرج السطح الحر في المحيط المبتل؟"
+      },
+      "options": [
+        {
+          "en": "No. It is not a solid friction boundary.",
+          "ar": "لا. ليس حدًا صلبًا للاحتكاك."
+        },
+        {
+          "en": "Yes. P is the complete geometric perimeter.",
+          "ar": "نعم. P هو المحيط الهندسي الكامل."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "In a trapezoid with side slope m horizontal to one vertical, the bottom rectangle contributes by and the side triangles together contribute my². The wetted perimeter follows the bed and submerged walls; it excludes the free surface. Top width includes both side extensions. A number such as 2H:1V means m=2, not one half. The same water section supplies three different geometric measures.",
+        "ar": "في شبه منحرف بميل جانبي m أفقي لكل واحد رأسي، يعطي مستطيل القاع by ويعطي المثلثان my². يتبع المحيط المبتل القاع والجدارين المغمورين ويستبعد السطح الحر. يشمل العرض السطحي امتدادي الجانبين. الميل 2H:1V يعني m=2 لا نصفًا. يوفر قطاع الماء نفسه ثلاثة مقاييس هندسية مختلفة."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 16
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 17
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "N02",
+      "concept": "hydro-geometry-section",
+      "type": "numerical",
+      "prompt": {
+        "en": "b=3 m, y=2.4 m, m=2. Find A.",
+        "ar": "b=3 m وy=2.4 m وm=2. أوجد A."
+      },
+      "expected": 18.72,
+      "tolerance": 0.03744,
+      "unit": "m²",
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "A=2.4(3+2×2.4)=18.72 m².",
+        "ar": "A=2.4(3+2×2.4)=18.72 m²."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 16
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 17
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "concept": "hydro-geometry-section",
+      "type": "mixed",
+      "prompt": {
+        "en": "For b=3,y=2,m=1 enter top width and choose its role.",
+        "ar": "إذا b=3 وy=2 وm=1 أدخل العرض السطحي واختر دوره."
+      },
+      "expected": 7,
+      "tolerance": 0.014,
+      "unit": "m",
+      "options": [
+        {
+          "en": "Top width is always the wetted perimeter.",
+          "ar": "العرض السطحي هو المحيط المبتل دائمًا."
+        },
+        {
+          "en": "Top width defines hydraulic depth with A.",
+          "ar": "العرض السطحي يحدد العمق الهيدروليكي مع A."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "T=3+2×1×2=7 m.",
+        "ar": "T=3+2×1×2=7 m."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 16
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 17
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "concept": "hydro-geometry-lengths",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A 4 m wide rectangle is 2 m deep. Is R=2 m exactly?",
+        "ar": "مستطيل عرضه 4 m وعمقه 2 m. هل R=2 m تمامًا؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Both hydraulic lengths always equal y.",
+          "ar": "نعم. كلا الطولين يساوي y دائمًا."
+        },
+        {
+          "en": "No. R=1 m, while D=2 m.",
+          "ar": "لا. R=1 m بينما D=2 m."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "Hydraulic radius compares water area with frictional contact, so R=A/P belongs in resistance laws. Hydraulic depth compares area with surface width, so D=A/T belongs in gravity-wave and critical-flow reasoning. For a rectangle D=y exactly, while R=by/(b+2y) only approaches y when the channel is very wide. Calling both “depth” causes many wrong substitutions. Choose the length from the mechanism: boundary resistance or free-surface response.",
+        "ar": "يقارن نصف القطر الهيدروليكي مساحة الماء بحد الاحتكاك، لذلك R=A/P في قوانين المقاومة. يقارن العمق الهيدروليكي المساحة بعرض السطح، لذلك D=A/T في الموجات والجريان الحرج. للمستطيل D=y تمامًا، بينما تقترب R=by/(b+2y) من y فقط عندما تكون القناة عريضة جدًا. الخلط بين الطولين يسبب تعويضات خاطئة. اختر الطول وفق الآلية: مقاومة الحدود أم استجابة السطح الحر."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "id": "N03",
+      "concept": "hydro-geometry-lengths",
+      "type": "numerical",
+      "prompt": {
+        "en": "Rectangular b=4,y=2 m. Find R.",
+        "ar": "مستطيل b=4 وy=2 m. أوجد R."
+      },
+      "expected": 1,
+      "tolerance": 0.01,
+      "unit": "m",
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "A=8,P=8; R=1 m.",
+        "ar": "A=8 وP=8؛ R=1 m."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "concept": "hydro-geometry-lengths",
+      "type": "mixed",
+      "prompt": {
+        "en": "Same rectangle: enter D and choose the denominator.",
+        "ar": "للمستطيل نفسه أدخل D واختر المقام."
+      },
+      "expected": 2,
+      "tolerance": 0.01,
+      "unit": "m",
+      "options": [
+        {
+          "en": "Divide by free-surface width T=4.",
+          "ar": "اقسم على عرض السطح T=4."
+        },
+        {
+          "en": "Divide by wetted perimeter P=8.",
+          "ar": "اقسم على المحيط المبتل P=8."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "D=8/4=2 m.",
+        "ar": "D=8/4=2 m."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "concept": "hydro-geometry-continuity",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At constant Q, double area A. What happens to mean velocity?",
+        "ar": "مع ثبات Q ضاعف A. ماذا يحدث للسرعة المتوسطة؟"
+      },
+      "options": [
+        {
+          "en": "It halves.",
+          "ar": "تنخفض للنصف."
+        },
+        {
+          "en": "It doubles.",
+          "ar": "تتضاعف."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "For steady incompressible flow with no side inflow or outflow, the volume passing each section per second is the same. A larger area therefore means a smaller mean velocity for fixed discharge. Continuity does not by itself conserve energy: a transition can dissipate energy while conserving water. The source transition supplies enough data to solve area and velocity without guessing a water-surface shape. The specified lower rectangular velocity requires a sufficiently large flow area.",
+        "ar": "في جريان ثابت غير قابل للانضغاط دون دخول أو خروج جانبي، يعبر الحجم نفسه كل ثانية جميع القطاعات. لذلك تعني مساحة أكبر سرعة متوسطة أقل عند تصريف ثابت. الاستمرارية لا تحفظ الطاقة وحدها؛ فقد يبدد الانتقال طاقة مع حفظ الماء. توفر مسألة الانتقال معطيات كافية لحساب المساحة والسرعة دون تخمين شكل سطح الماء. تحتاج السرعة المستطيلة الأقل المعطاة إلى مساحة جريان كافية."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-02",
+          "filename": "lec  العلاقات الاساسية2.pdf",
+          "page": 2
+        },
+        {
+          "doc": "hyd-lecture-02",
+          "filename": "lec  العلاقات الاساسية2.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "N04",
+      "concept": "hydro-geometry-continuity",
+      "type": "numerical",
+      "prompt": {
+        "en": "Q=12 m³/s, A=6 m². Find V.",
+        "ar": "Q=12 m³/s وA=6 m². أوجد V."
+      },
+      "expected": 2,
+      "tolerance": 0.01,
+      "unit": "m/s",
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "V=12/6=2 m/s.",
+        "ar": "V=12/6=2 m/s."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-02",
+          "filename": "lec  العلاقات الاساسية2.pdf",
+          "page": 2
+        },
+        {
+          "doc": "hyd-lecture-02",
+          "filename": "lec  العلاقات الاساسية2.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "concept": "hydro-geometry-continuity",
+      "type": "mixed",
+      "prompt": {
+        "en": "Q=13.1, b=4,V=0.9 in SI. Enter y and choose the conservation law used.",
+        "ar": "Q=13.1 وb=4 وV=0.9 بوحدات SI. أدخل y واختر قانون الحفظ المستعمل."
+      },
+      "expected": 3.638888888888889,
+      "tolerance": 0.01,
+      "unit": "m",
+      "options": [
+        {
+          "en": "No energy loss is implied by continuity.",
+          "ar": "الاستمرارية تعني انعدام فقد الطاقة."
+        },
+        {
+          "en": "Mass/volume continuity for steady incompressible flow.",
+          "ar": "استمرارية الكتلة/الحجم لجريان ثابت غير قابل للانضغاط."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "y=Q/(bV)=3.63889 m; energy losses have not been assessed.",
+        "ar": "y=Q/(bV)=3.63889 m؛ لم تُقيّم فواقد الطاقة."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-02",
+          "filename": "lec  العلاقات الاساسية2.pdf",
+          "page": 2
+        },
+        {
+          "doc": "hyd-lecture-02",
+          "filename": "lec  العلاقات الاساسية2.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "concept": "hydro-geometry-classify",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Depth differs along a channel but is unchanged at each gauge all day. What is the flow?",
+        "ar": "يختلف العمق على طول القناة لكنه ثابت طوال اليوم عند كل مقياس. ما التصنيف؟"
+      },
+      "options": [
+        {
+          "en": "Unsteady because two stations have different depths.",
+          "ar": "غير ثابت لأن عمقي المحطتين مختلفان."
+        },
+        {
+          "en": "Steady and nonuniform.",
+          "ar": "ثابت وغير منتظم."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "A depth that changes between two stations is nonuniform. A depth that changes with time at one gauge is unsteady. A steady backwater profile can be nonuniform, and a flood wave is generally both. Count the independent comparisons before selecting an equation; a channel may be geometrically prismatic while its water depth varies along it. Froude regime, steadiness and uniformity answer three different questions.",
+        "ar": "العمق المتغيّر بين محطتين غير منتظم، والمتغيّر مع الزمن عند مقياس واحد غير ثابت. قد يكون منحنى الماء الخلفي ثابتًا وغير منتظم، وموجة الفيضان غالبًا الاثنان معًا. حدّد نوع المقارنة قبل اختيار المعادلة؛ قد تكون القناة منشورية بينما يتغير عمق الماء طوليًا. نظام فرود والثبات والانتظام تجيب عن ثلاثة أسئلة مختلفة."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 26
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 27
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 28
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 29
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 30
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 12
+        }
+      ]
+    },
+    {
+      "id": "N05",
+      "concept": "hydro-geometry-classify",
+      "type": "numerical",
+      "prompt": {
+        "en": "V=3 m/s,D=1 m. Find Fr.",
+        "ar": "V=3 m/s وD=1 m. أوجد Fr."
+      },
+      "expected": 0.9578262852211513,
+      "tolerance": 0.01,
+      "unit": "—",
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "Fr=3/√9.81=0.95783.",
+        "ar": "Fr=3/√9.81=0.95783."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 26
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 27
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 28
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 29
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 30
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 12
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "concept": "hydro-geometry-classify",
+      "type": "mixed",
+      "prompt": {
+        "en": "V=4,D=1 in SI. Enter Fr and choose the regime.",
+        "ar": "V=4 وD=1 بوحدات SI. أدخل Fr واختر النظام."
+      },
+      "expected": 1.277101713628202,
+      "tolerance": 0.01,
+      "unit": "—",
+      "options": [
+        {
+          "en": "Supercritical: Fr>1.",
+          "ar": "فوق حرج: Fr>1."
+        },
+        {
+          "en": "Subcritical because the channel is steady.",
+          "ar": "دون حرج لأن القناة ثابتة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Sketch the wetted section. Distinguish area A, wetted perimeter P and free-surface width T before substituting.",
+          "ar": "ارسم القطاع المبتل. ميّز المساحة A والمحيط المبتل P وعرض سطح الماء T قبل التعويض."
+        },
+        {
+          "en": "Keep metres and seconds throughout. R=A/P belongs to resistance; D=A/T belongs to the Froude number.",
+          "ar": "استعمل الأمتار والثواني. R=A/P للمقاومة، وD=A/T لعدد فرود."
+        }
+      ],
+      "solution": {
+        "en": "Fr=1.2771; steady does not imply subcritical.",
+        "ar": "Fr=1.2771؛ الثبات لا يعني دون الحرج."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 26
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 27
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 28
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 29
+        },
+        {
+          "doc": "hyd-lecture-01",
+          "filename": "lec 1 مقدمة واساسيات.pdf",
+          "page": 30
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 8
+        },
+        {
+          "doc": "hyd-lecture-04",
+          "filename": "lec 4 تحليل الجريان الحرج .pdf",
+          "page": 12
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "meaning-01",
+      "concept": "hydro-geometry-surface",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: A free surface makes depth a response",
+        "ar": "اشرح: السطح الحر يجعل العمق استجابة"
+      },
+      "a": {
+        "en": "Open-channel flow has a free surface exposed approximately to atmospheric pressure. The conduit need not be uncovered: a partially full sewer can behave as an open channel. A prismatic reach has unchanged cross-section shape and bed slope along its length; that geometric property does not itself guarantee uniform flow.",
+        "ar": "للجريان المفتوح سطح حر معرض تقريبًا للضغط الجوي. لا يلزم أن تكون القناة مكشوفة؛ يمكن لمجرور ممتلئ جزئيًا أن يتصرف كقناة مفتوحة. المجرى المنشوري ثابت شكل القطاع وميل القاع طوليًا؛ وهذه صفة هندسية لا تضمن انتظام الجريان."
+      }
+    },
+    {
+      "id": "prediction-01",
+      "concept": "hydro-geometry-surface",
+      "kind": "prediction",
+      "q": {
+        "en": "A covered drain is only half full. Must it be analysed as a pressurised full pipe?",
+        "ar": "مجرى مغطى ممتلئ للنصف. هل يجب تحليله كأنبوب مضغوط ممتلئ؟"
+      },
+      "a": {
+        "en": "No. Its free surface permits open-channel behavior. Channel classification depends on the flow state, not merely the presence of a cover.",
+        "ar": "لا. سطحه الحر يسمح بسلوك القناة المفتوحة. يعتمد تصنيف القناة على حالة الجريان لا على وجود غطاء وحده."
+      }
+    },
+    {
+      "id": "calculation-01",
+      "concept": "hydro-geometry-surface",
+      "kind": "calculation",
+      "q": {
+        "en": "Find gauge pressure 1.5 m below still water.",
+        "ar": "أوجد الضغط النسبي على عمق 1.5 m تحت ماء ساكن."
+      },
+      "a": {
+        "en": "9.81×1.5=14.715 kPa.",
+        "ar": "9.81×1.5=14.715 kPa."
+      }
+    },
+    {
+      "id": "decision-01",
+      "concept": "hydro-geometry-surface",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: A free surface makes depth a response?",
+        "ar": "متى يصح هذا النموذج: السطح الحر يجعل العمق استجابة؟"
+      },
+      "a": {
+        "en": "Hydrostatic pressure away from sharp vertical accelerations; steep/curved flow can require corrections. Symbols: p gauge pressure in kPa; γ water unit weight 9.81 kN/m³; h vertical depth below the surface in m.",
+        "ar": "ضغط هيدروستاتيكي بعيدًا عن التسارعات الرأسية الحادة؛ الجريان شديد الانحدار أو الانحناء قد يحتاج تصحيحًا. الرموز: p ضغط مقاس بالنسبة للجو بالكيلوباسكال؛ γ وزن الماء 9.81 kN/m³؛ h عمق رأسي تحت السطح بالمتر."
+      }
+    },
+    {
+      "id": "meaning-02",
+      "concept": "hydro-geometry-section",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Trace the water, wall and top separately",
+        "ar": "اشرح: تتبّع الماء والجدار والسطح منفصلة"
+      },
+      "a": {
+        "en": "In a trapezoid with side slope m horizontal to one vertical, the bottom rectangle contributes by and the side triangles together contribute my². The wetted perimeter follows the bed and submerged walls; it excludes the free surface. Top width includes both side extensions. A number such as 2H:1V means m=2, not one half.",
+        "ar": "في شبه منحرف بميل جانبي m أفقي لكل واحد رأسي، يعطي مستطيل القاع by ويعطي المثلثان my². يتبع المحيط المبتل القاع والجدارين المغمورين ويستبعد السطح الحر. يشمل العرض السطحي امتدادي الجانبين. الميل 2H:1V يعني m=2 لا نصفًا."
+      }
+    },
+    {
+      "id": "prediction-02",
+      "concept": "hydro-geometry-section",
+      "kind": "prediction",
+      "q": {
+        "en": "Do you include the free surface in wetted perimeter?",
+        "ar": "هل تُدرج السطح الحر في المحيط المبتل؟"
+      },
+      "a": {
+        "en": "No. It is not a solid friction boundary. The same water section supplies three different geometric measures.",
+        "ar": "لا. ليس حدًا صلبًا للاحتكاك. يوفر قطاع الماء نفسه ثلاثة مقاييس هندسية مختلفة."
+      }
+    },
+    {
+      "id": "calculation-02",
+      "concept": "hydro-geometry-section",
+      "kind": "calculation",
+      "q": {
+        "en": "b=3 m, y=2.4 m, m=2. Find A.",
+        "ar": "b=3 m وy=2.4 m وm=2. أوجد A."
+      },
+      "a": {
+        "en": "A=2.4(3+2×2.4)=18.72 m².",
+        "ar": "A=2.4(3+2×2.4)=18.72 m²."
+      }
+    },
+    {
+      "id": "decision-02",
+      "concept": "hydro-geometry-section",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Trace the water, wall and top separately?",
+        "ar": "متى يصح هذا النموذج: تتبّع الماء والجدار والسطح منفصلة؟"
+      },
+      "a": {
+        "en": "Symmetric trapezoid, vertical flow depth and straight sides. Use separate side slopes if asymmetric. Symbols: b bed width, y depth and T,P in m; A in m²; m side slope H/V.",
+        "ar": "شبه منحرف متماثل وعمق رأسي وجوانب مستقيمة؛ استعمل ميلين منفصلين إذا كان غير متماثل. الرموز: b عرض القاع وy العمق وT,P بالأمتار؛ A بالمتر المربع؛ m الميل H/V."
+      }
+    },
+    {
+      "id": "meaning-03",
+      "concept": "hydro-geometry-lengths",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Two lengths answer different questions",
+        "ar": "اشرح: طولان لسؤالين مختلفين"
+      },
+      "a": {
+        "en": "Hydraulic radius compares water area with frictional contact, so R=A/P belongs in resistance laws. Hydraulic depth compares area with surface width, so D=A/T belongs in gravity-wave and critical-flow reasoning. For a rectangle D=y exactly, while R=by/(b+2y) only approaches y when the channel is very wide. Calling both “depth” causes many wrong substitutions.",
+        "ar": "يقارن نصف القطر الهيدروليكي مساحة الماء بحد الاحتكاك، لذلك R=A/P في قوانين المقاومة. يقارن العمق الهيدروليكي المساحة بعرض السطح، لذلك D=A/T في الموجات والجريان الحرج. للمستطيل D=y تمامًا، بينما تقترب R=by/(b+2y) من y فقط عندما تكون القناة عريضة جدًا. الخلط بين الطولين يسبب تعويضات خاطئة."
+      }
+    },
+    {
+      "id": "prediction-03",
+      "concept": "hydro-geometry-lengths",
+      "kind": "prediction",
+      "q": {
+        "en": "A 4 m wide rectangle is 2 m deep. Is R=2 m exactly?",
+        "ar": "مستطيل عرضه 4 m وعمقه 2 m. هل R=2 m تمامًا؟"
+      },
+      "a": {
+        "en": "No. R=1 m, while D=2 m. Choose the length from the mechanism: boundary resistance or free-surface response.",
+        "ar": "لا. R=1 m بينما D=2 m. اختر الطول وفق الآلية: مقاومة الحدود أم استجابة السطح الحر."
+      }
+    },
+    {
+      "id": "calculation-03",
+      "concept": "hydro-geometry-lengths",
+      "kind": "calculation",
+      "q": {
+        "en": "Rectangular b=4,y=2 m. Find R.",
+        "ar": "مستطيل b=4 وy=2 m. أوجد R."
+      },
+      "a": {
+        "en": "A=8,P=8; R=1 m.",
+        "ar": "A=8 وP=8؛ R=1 m."
+      }
+    },
+    {
+      "id": "decision-03",
+      "concept": "hydro-geometry-lengths",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Two lengths answer different questions?",
+        "ar": "متى يصح هذا النموذج: طولان لسؤالين مختلفين؟"
+      },
+      "a": {
+        "en": "Small bed slope and hydrostatic depth for gravity-wave interpretation. The wide-channel R≈y shortcut needs b≫y. Symbols: R and D have length units (m) but different physical meanings.",
+        "ar": "ميل قاع صغير وعمق هيدروستاتيكي لتفسير الموجة؛ تقريب R≈y يحتاج b≫y. الرموز: R وD بوحدة طول m لكن معناهما الفيزيائي مختلف."
+      }
+    },
+    {
+      "id": "meaning-04",
+      "concept": "hydro-geometry-continuity",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: The same water must pass both sections",
+        "ar": "اشرح: الماء نفسه يجب أن يعبر القطاعين"
+      },
+      "a": {
+        "en": "For steady incompressible flow with no side inflow or outflow, the volume passing each section per second is the same. A larger area therefore means a smaller mean velocity for fixed discharge. Continuity does not by itself conserve energy: a transition can dissipate energy while conserving water. The source transition supplies enough data to solve area and velocity without guessing a water-surface shape.",
+        "ar": "في جريان ثابت غير قابل للانضغاط دون دخول أو خروج جانبي، يعبر الحجم نفسه كل ثانية جميع القطاعات. لذلك تعني مساحة أكبر سرعة متوسطة أقل عند تصريف ثابت. الاستمرارية لا تحفظ الطاقة وحدها؛ فقد يبدد الانتقال طاقة مع حفظ الماء. توفر مسألة الانتقال معطيات كافية لحساب المساحة والسرعة دون تخمين شكل سطح الماء."
+      }
+    },
+    {
+      "id": "prediction-04",
+      "concept": "hydro-geometry-continuity",
+      "kind": "prediction",
+      "q": {
+        "en": "At constant Q, double area A. What happens to mean velocity?",
+        "ar": "مع ثبات Q ضاعف A. ماذا يحدث للسرعة المتوسطة؟"
+      },
+      "a": {
+        "en": "It halves. The specified lower rectangular velocity requires a sufficiently large flow area.",
+        "ar": "تنخفض للنصف. تحتاج السرعة المستطيلة الأقل المعطاة إلى مساحة جريان كافية."
+      }
+    },
+    {
+      "id": "calculation-04",
+      "concept": "hydro-geometry-continuity",
+      "kind": "calculation",
+      "q": {
+        "en": "Q=12 m³/s, A=6 m². Find V.",
+        "ar": "Q=12 m³/s وA=6 m². أوجد V."
+      },
+      "a": {
+        "en": "V=12/6=2 m/s.",
+        "ar": "V=12/6=2 m/s."
+      }
+    },
+    {
+      "id": "decision-04",
+      "concept": "hydro-geometry-continuity",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: The same water must pass both sections?",
+        "ar": "متى يصح هذا النموذج: الماء نفسه يجب أن يعبر القطاعين؟"
+      },
+      "a": {
+        "en": "Steady incompressible flow without storage change or lateral exchange between sections. Symbols: Q m³/s, V m/s, A m²; b2 is rectangular receiving width in m.",
+        "ar": "جريان ثابت غير قابل للانضغاط دون تغير تخزين أو تبادل جانبي بين القطاعين. الرموز: Q بالمتر المكعب/ثانية وV بالمتر/ثانية وA بالمتر المربع؛ b2 عرض المستطيل المستقبل بالمتر."
+      }
+    },
+    {
+      "id": "meaning-05",
+      "concept": "hydro-geometry-classify",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Space and time are different changes",
+        "ar": "اشرح: المكان والزمن تغيّران مختلفان"
+      },
+      "a": {
+        "en": "A depth that changes between two stations is nonuniform. A depth that changes with time at one gauge is unsteady. A steady backwater profile can be nonuniform, and a flood wave is generally both. Count the independent comparisons before selecting an equation; a channel may be geometrically prismatic while its water depth varies along it.",
+        "ar": "العمق المتغيّر بين محطتين غير منتظم، والمتغيّر مع الزمن عند مقياس واحد غير ثابت. قد يكون منحنى الماء الخلفي ثابتًا وغير منتظم، وموجة الفيضان غالبًا الاثنان معًا. حدّد نوع المقارنة قبل اختيار المعادلة؛ قد تكون القناة منشورية بينما يتغير عمق الماء طوليًا."
+      }
+    },
+    {
+      "id": "prediction-05",
+      "concept": "hydro-geometry-classify",
+      "kind": "prediction",
+      "q": {
+        "en": "Depth differs along a channel but is unchanged at each gauge all day. What is the flow?",
+        "ar": "يختلف العمق على طول القناة لكنه ثابت طوال اليوم عند كل مقياس. ما التصنيف؟"
+      },
+      "a": {
+        "en": "Steady and nonuniform. Froude regime, steadiness and uniformity answer three different questions.",
+        "ar": "ثابت وغير منتظم. نظام فرود والثبات والانتظام تجيب عن ثلاثة أسئلة مختلفة."
+      }
+    },
+    {
+      "id": "calculation-05",
+      "concept": "hydro-geometry-classify",
+      "kind": "calculation",
+      "q": {
+        "en": "V=3 m/s,D=1 m. Find Fr.",
+        "ar": "V=3 m/s وD=1 m. أوجد Fr."
+      },
+      "a": {
+        "en": "Fr=3/√9.81=0.95783.",
+        "ar": "Fr=3/√9.81=0.95783."
+      }
+    },
+    {
+      "id": "decision-05",
+      "concept": "hydro-geometry-classify",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Space and time are different changes?",
+        "ar": "متى يصح هذا النموذج: المكان والزمن تغيّران مختلفان؟"
+      },
+      "a": {
+        "en": "Section-averaged classification; Fr uses hydraulic depth and small-slope gravity-wave assumptions. Symbols: x distance along channel, t time, g=9.81 m/s², D=A/T. Fr is dimensionless.",
+        "ar": "تصنيف بمقادير القطاع المتوسطة؛ يستعمل Fr العمق الهيدروليكي مع فرضيات موجات الجاذبية والميل الصغير. الرموز: x المسافة الطولية وt الزمن وg=9.81 m/s² وD=A/T. عدد Fr بلا وحدة."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "hyd-lecture-01",
+      "filename": "lec 1 مقدمة واساسيات.pdf",
+      "page": 14
+    },
+    {
+      "doc": "hyd-lecture-01",
+      "filename": "lec 1 مقدمة واساسيات.pdf",
+      "page": 15
+    },
+    {
+      "doc": "hyd-lecture-01",
+      "filename": "lec 1 مقدمة واساسيات.pdf",
+      "page": 19
+    },
+    {
+      "doc": "hyd-lecture-01",
+      "filename": "lec 1 مقدمة واساسيات.pdf",
+      "page": 20
+    },
+    {
+      "doc": "hyd-lecture-01",
+      "filename": "lec 1 مقدمة واساسيات.pdf",
+      "page": 16
+    },
+    {
+      "doc": "hyd-lecture-01",
+      "filename": "lec 1 مقدمة واساسيات.pdf",
+      "page": 17
+    },
+    {
+      "doc": "hyd-uniform-notes",
+      "filename": "uni flow hyd.pdf",
+      "page": 5
+    },
+    {
+      "doc": "hyd-lecture-01",
+      "filename": "lec 1 مقدمة واساسيات.pdf",
+      "page": 18
+    },
+    {
+      "doc": "hyd-lecture-02",
+      "filename": "lec  العلاقات الاساسية2.pdf",
+      "page": 2
+    },
+    {
+      "doc": "hyd-lecture-02",
+      "filename": "lec  العلاقات الاساسية2.pdf",
+      "page": 4
+    },
+    {
+      "doc": "hyd-lecture-01",
+      "filename": "lec 1 مقدمة واساسيات.pdf",
+      "page": 26
+    },
+    {
+      "doc": "hyd-lecture-01",
+      "filename": "lec 1 مقدمة واساسيات.pdf",
+      "page": 27
+    },
+    {
+      "doc": "hyd-lecture-01",
+      "filename": "lec 1 مقدمة واساسيات.pdf",
+      "page": 28
+    },
+    {
+      "doc": "hyd-lecture-01",
+      "filename": "lec 1 مقدمة واساسيات.pdf",
+      "page": 29
+    },
+    {
+      "doc": "hyd-lecture-01",
+      "filename": "lec 1 مقدمة واساسيات.pdf",
+      "page": 30
+    },
+    {
+      "doc": "hyd-lecture-04",
+      "filename": "lec 4 تحليل الجريان الحرج .pdf",
+      "page": 8
+    },
+    {
+      "doc": "hyd-lecture-04",
+      "filename": "lec 4 تحليل الجريان الحرج .pdf",
+      "page": 12
+    }
+  ]
+}

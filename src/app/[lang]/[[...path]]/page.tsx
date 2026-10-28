@@ -10,6 +10,7 @@ export default async function Page({params}:{params:Promise<{lang:string;path?:s
  if(parts[0]==='subjects'){if(parts[1]&&!subjects.some(s=>s.id===parts[1]))notFound();}
  else if(parts[0]==='topics'){if(parts[1]&&!topics.some(t=>t.id===parts[1]))notFound();}
  else if(parts[0]==='materials'){if(parts[1]&&!subjects.some(s=>s.id===parts[1]))notFound();}
+ else if(parts[0]==='review'){if(parts.length>1)notFound();}
  else if(parts.length)notFound();
  return <StudyApp lang={p.lang as 'ar'|'en'} topics={topics} prerequisites={prerequisites} videos={videos} problems={problems}/>;
 }

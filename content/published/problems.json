@@ -7691,5 +7691,764 @@
       "gjCbIiDERXY",
       "96GcUS4FieU"
     ]
+  },
+  {
+    "id": "soil-t1-q1",
+    "topic": "soil-effective-stress",
+    "title": {
+      "en": "Tutorial 1 Q1 — plot the three stress ledgers",
+      "ar": "تمرين 1 س1 — ارسم سجلات الإجهاد الثلاثة"
+    },
+    "givens": {
+      "en": "5 m sand over 4 m saturated clay. WT=3 m. Sand γdry=17, γsat=20; clay γsat=19 kN/m³. No surcharge, suction or seepage. Plot total and effective stresses.",
+      "ar": "رمل 5 m فوق طين مشبع 4 m. الماء عند 3 m. وزن الرمل الجاف 17 والمشبع 20، والطين المشبع 19 kN/m³. دون حمل سطحي أو شفط أو سريان. ارسم الكلي والفعّال."
+    },
+    "solution": {
+      "en": "At z=0: σ=u=σ′=0. At 3 m: σ=3×17=51; u=0; σ′=51. At 5 m: σ=51+2×20=91; u=2×9.81=19.62; σ′=71.38. At 9 m: σ=91+4×19=167; u=6×9.81=58.86; σ′=108.14 kPa. Join boundary values linearly. Total slopes: 17,20,19. Effective slopes: 17,10.19,9.19 kN/m³. Independent submerged route at base: 51+2×10.19+4×9.19=108.14. All three curves satisfy σ=σ′+u.",
+      "ar": "عند z=0 الجميع صفر. عند 3 m: σ=3×17=51 وu=0 وσ′=51. عند 5 m: σ=51+2×20=91 وu=2×9.81=19.62 وσ′=71.38. عند 9 m: σ=91+4×19=167 وu=6×9.81=58.86 وσ′=108.14 kPa. صل قيم الحدود بخطوط مستقيمة. ميول الكلي 17 و20 و19؛ وميول الفعّال 17 و10.19 و9.19 kN/m³. التحقق المستقل عند القاع: 51+2×10.19+4×9.19=108.14. تحقق σ=σ′+u في كل موضع."
+    },
+    "soilProfile": {
+      "layers": [
+        {
+          "name": {
+            "en": "Dry sand",
+            "ar": "رمل جاف"
+          },
+          "thickness": 3,
+          "unitWeight": 17
+        },
+        {
+          "name": {
+            "en": "Saturated sand",
+            "ar": "رمل مشبع"
+          },
+          "thickness": 2,
+          "unitWeight": 20
+        },
+        {
+          "name": {
+            "en": "Saturated clay",
+            "ar": "طين مشبع"
+          },
+          "thickness": 4,
+          "unitWeight": 19
+        }
+      ],
+      "waterDepth": 3,
+      "waterAbove": 0,
+      "points": [
+        {
+          "name": "P",
+          "depth": 9
+        }
+      ],
+      "note": {
+        "en": "Geometry checked against Tutorial 1 Q1 figure, PDF page 3. Stress values checked independently.",
+        "ar": "فُحصت الهندسة من رسم س1 في صفحة PDF رقم 3، وحُسبت الإجهادات بصورة مستقلة."
+      }
+    },
+    "sources": [
+      {
+        "doc": "soil-tutorial-01920",
+        "filename": "Soil II_019+020Tutorials&solutions.pdf",
+        "page": 3
+      },
+      {
+        "doc": "soil-tutorial-01920",
+        "filename": "Soil II_019+020Tutorials&solutions.pdf",
+        "page": 4
+      },
+      {
+        "doc": "soil-tutorial-01920",
+        "filename": "Soil II_019+020Tutorials&solutions.pdf",
+        "page": 5
+      }
+    ],
+    "videoIds": [
+      "ySUr60U6jiM"
+    ],
+    "status": "verified"
+  },
+  {
+    "id": "soil-t1-q2",
+    "topic": "soil-effective-stress",
+    "title": {
+      "en": "Tutorial 1 Q2 — recover unit weight from water content",
+      "ar": "تمرين 1 س2 — استخرج الوزن الحجمي من المحتوى المائي"
+    },
+    "givens": {
+      "en": "Sand depth 6 m; clay thickness 8 m; target at clay midpoint z=10 m. WT=2 m. Sand γmoist=18.68, γ′=10.5 kN/m³. Clay w=56%, Gs=2.75; assume S=1.",
+      "ar": "عمق الرمل 6 m وسماكة الطين 8 m؛ النقطة في منتصف الطين z=10 m. الماء عند 2 m. الرمل الرطب 18.68 والمغمور 10.5 kN/m³. للطين w=56% وGs=2.75 مع افتراض S=1."
+    },
+    "solution": {
+      "en": "e=wGs=0.56×2.75=1.54. γsat,clay=9.81(2.75+1.54)/(1+1.54)=16.56885827 kN/m³. σ′=2×18.68+4×10.5+4×(γsat,clay−9.81)=106.39543307 kPa. u=9.81(10−2)=78.48 kPa. σ=184.87543307 kPa. Independent total route: 2×18.68+4×(10.5+9.81)+4×γsat,clay gives the same total. Source clarification: the handwritten diagram labels 18.68 as γsat, but the statement says moist above WT; use 18.68 only above WT. Below WT, saturated sand is 10.5+9.81=20.31. The handwritten clay intermediate 16.557 is corrected to 16.568858; final σ′ rounds to the same 106.4. No silent change of source data.",
+      "ar": "e=wGs=0.56×2.75=1.54. γsat للطين=9.81(2.75+1.54)/(1+1.54)=16.56885827 kN/m³. σ′=2×18.68+4×10.5+4×(γsat−9.81)=106.39543307 kPa. u=9.81(10−2)=78.48 kPa. σ=184.87543307 kPa. يتحقق الكلي مستقلاً من 2×18.68+4×(10.5+9.81)+4×γsat. توضيح المصدر: يسمي الرسم اليدوي 18.68 وزنًا مشبعًا، بينما ينص السؤال أنه رطب فوق الماء؛ نستخدمه فوق الماء فقط. تحته يكون الرمل المشبع 10.5+9.81=20.31. صُحح الوسيط المكتوب للطين 16.557 إلى 16.568858؛ ويبقى تقريب الفعّال النهائي 106.4. لم تُغيَّر المعطيات بصمت."
+    },
+    "soilProfile": {
+      "layers": [
+        {
+          "name": {
+            "en": "Moist sand",
+            "ar": "رمل رطب"
+          },
+          "thickness": 2,
+          "unitWeight": 18.68
+        },
+        {
+          "name": {
+            "en": "Saturated sand",
+            "ar": "رمل مشبع"
+          },
+          "thickness": 4,
+          "unitWeight": 20.31
+        },
+        {
+          "name": {
+            "en": "Saturated clay",
+            "ar": "طين مشبع"
+          },
+          "thickness": 8,
+          "unitWeight": 16.568858267716536
+        }
+      ],
+      "waterDepth": 2,
+      "waterAbove": 0,
+      "points": [
+        {
+          "name": "P",
+          "depth": 10
+        }
+      ],
+      "note": {
+        "en": "Statement and handwritten setup inspected on PDF pages 3 and 6. P is 4 m into the 8 m clay.",
+        "ar": "فُحص نص السؤال والرسم اليدوي في صفحتي PDF رقم 3 و6. تقع P على بُعد 4 m داخل الطين ذي السماكة 8 m."
+      }
+    },
+    "sources": [
+      {
+        "doc": "soil-tutorial-01920",
+        "filename": "Soil II_019+020Tutorials&solutions.pdf",
+        "page": 3
+      },
+      {
+        "doc": "soil-tutorial-01920",
+        "filename": "Soil II_019+020Tutorials&solutions.pdf",
+        "page": 6
+      }
+    ],
+    "videoIds": [
+      "ySUr60U6jiM"
+    ],
+    "status": "verified"
+  },
+  {
+    "id": "soil-l1-example2",
+    "topic": "soil-effective-stress",
+    "title": {
+      "en": "Lecture 1 Example 2 — beneath the lake",
+      "ar": "محاضرة 1 مثال 2 — أسفل البحيرة"
+    },
+    "givens": {
+      "en": "Water blanket 3.05 m; saturated sand 7.92 m at γ=19.62; clay 3.66 m at γ=18.36 kN/m³. Find stresses at clay midpoint; γw=9.81.",
+      "ar": "ماء بعمق 3.05 m، ثم رمل مشبع 7.92 m بوزن 19.62 وطين 3.66 m بوزن 18.36 kN/m³. أوجد الإجهادات في منتصف الطين مع γw=9.81."
+    },
+    "solution": {
+      "en": "u=(3.05+7.92+1.83)9.81=125.568; σ=3.05×9.81+7.92×19.62+1.83×18.36=218.9097; σ′=93.3417 kPa. Check: 125.568+93.3417=218.9097. The source rounds to 125.6, 93.3 and 218.9.",
+      "ar": "u=(3.05+7.92+1.83)9.81=125.568؛ σ=3.05×9.81+7.92×19.62+1.83×18.36=218.9097؛ σ′=93.3417 kPa. التحقق: 125.568+93.3417=218.9097. قرّب المصدر إلى 125.6 و93.3 و218.9."
+    },
+    "soilProfile": {
+      "layers": [
+        {
+          "name": {
+            "en": "Saturated sand",
+            "ar": "رمل مشبع"
+          },
+          "thickness": 7.92,
+          "unitWeight": 19.62
+        },
+        {
+          "name": {
+            "en": "Saturated clay",
+            "ar": "طين مشبع"
+          },
+          "thickness": 3.66,
+          "unitWeight": 18.36
+        }
+      ],
+      "waterDepth": 0,
+      "waterAbove": 3.05,
+      "points": [
+        {
+          "name": "P",
+          "depth": 9.75
+        }
+      ],
+      "note": {
+        "en": "Redrawn from inspected lecture page 10; midpoint is 9.75 m below soil bed, 12.80 m below water surface.",
+        "ar": "أعيد الرسم من صفحة المحاضرة 10 المفحوصة؛ المنتصف 9.75 m تحت قاع التربة و12.80 m تحت سطح الماء."
+      }
+    },
+    "sources": [
+      {
+        "doc": "soil-lecture-01",
+        "filename": "Lecture 1.pdf",
+        "page": 10
+      },
+      {
+        "doc": "soil-lecture-01",
+        "filename": "Lecture 1.pdf",
+        "page": 11
+      }
+    ],
+    "videoIds": [
+      "ySUr60U6jiM"
+    ],
+    "status": "verified"
+  },
+  {
+    "id": "soil-l2-direct",
+    "topic": "soil-shear",
+    "title": {
+      "en": "Lecture2: direct-shear fit and the dry-sand inconsistency",
+      "ar": "محاضرة2: ملاءمة القص وتعارض الرمل الجاف"
+    },
+    "givens": {
+      "en": "60×60×20 mm specimens. Normal forces360,720,1260,1800 N; failure shear414,522,702,864 N. Fit c andφ; audit the dry-sand label.",
+      "ar": "عينات60×60×20 mm. القوى العمودية360 و720 و1260 و1800 N؛ قص الفشل414 و522 و702 و864 N. لائمc وφ ودقّق اسم الرمل الجاف."
+    },
+    "solution": {
+      "en": "Nominal area0.0036 m² givesσ=[100,200,350,500],τ=[115,145,195,240]kPa. Least-squares slope0.3149659864 and intercept83.19727891 kPa;φ=17.48265439°. The source graphical85 kPa,17° is a rough fit. Predictions114.694,146.190,193.435,240.680 kPa show small scatter. A large intercept is incompatible with an automatic “clean uncemented dry sand,c=0” interpretation. Retain the data; the material label/test preparation needs clarification. No silent adjustment is made.",
+      "ar": "المساحة الاسمية0.0036 m² تعطيσ=[100,200,350,500] وτ=[115,145,195,240]kPa. ميل الانحدار0.3149659864 والمقطع83.19727891 kPa وφ=17.48265439°. تقريب المصدر البياني85 kPa و17° تقريبي. التوقعات114.694 و146.190 و193.435 و240.680 kPa تظهر تشتتًا صغيرًا. يتعارض المقطع الكبير مع تفسير تلقائي «رمل جاف نظيف غير مترابط وc=0». تُحفظ البيانات وتحتاج تسمية المادة أو تحضيرها توضيحًا دون تعديل صامت."
+    },
+    "sources": [
+      {
+        "doc": "soil-lecture-02",
+        "filename": "Lecture 2.pdf",
+        "page": 7
+      },
+      {
+        "doc": "soil-lecture-02",
+        "filename": "Lecture 2.pdf",
+        "page": 8
+      },
+      {
+        "doc": "soil-lecture-02",
+        "filename": "Lecture 2.pdf",
+        "page": 9
+      }
+    ],
+    "status": "verified",
+    "origin": "source",
+    "videoIds": [
+      "bmpn5oNDvOs",
+      "uGTs5O3ds7k"
+    ],
+    "courseSketch": {
+      "kind": "envelope",
+      "values": {
+        "c": 83.19727891,
+        "phi": 17.48265439,
+        "normal": 200
+      },
+      "caption": {
+        "en": "Fitted envelope of the four stated measurements; not a general clean-sand model.",
+        "ar": "غلاف ملائم للقياسات الأربع؛ ليس نموذجًا عامًا للرمل النظيف."
+      }
+    }
+  },
+  {
+    "id": "soil-l4-principal-fit",
+    "topic": "soil-triaxial",
+    "title": {
+      "en": "Lecture4 Example2: recover strength from principal stresses",
+      "ar": "محاضرة4 مثال2: استخرج المقاومة من الإجهادات الرئيسية"
+    },
+    "givens": {
+      "en": "Cellσ3=100,200,400 kPa; failureσ1=619,761,1045 kPa. Determine the envelope on the stated stress basis. Pore pressure is not supplied.",
+      "ar": "ضغط الخليةσ3=100 و200 و400 kPa؛ والفشلσ1=619 و761 و1045 kPa. حدّد الغلاف على أساس الإجهاد المعطى. لم يُعطَ ضغط المسام."
+    },
+    "solution": {
+      "en": "All points satisfyσ1=477+1.42σ3. LetNφ=1.42=tan²(45+φ/2). Then sinφ=(1.42−1)/(1.42+1),φ=9.99450447°. c=477/(2√1.42)=200.14475395 kPa. Source200 kPa,9.9° is rounded. Substituting eachσ3 reproduces all threeσ1 exactly. Withoutu,do not claim these are effective-stress parameters.",
+      "ar": "تحقق النقاطσ1=477+1.42σ3. ضعNφ=1.42=tan²(45+φ/2). إذنsinφ=(1.42−1)/(1.42+1) وφ=9.99450447°. c=477/(2√1.42)=200.14475395 kPa. قيمتا المصدر200 kPa و9.9° مقربتان. يُعيد تعويضσ3 القيم الثلاث لـσ1 تمامًا. دونu لا تدّعِ أنها معاملات فعّالة."
+    },
+    "sources": [
+      {
+        "doc": "soil-lecture-03",
+        "filename": "Lecture 3.pdf",
+        "page": 6
+      },
+      {
+        "doc": "soil-lecture-04",
+        "filename": "Lecture 4-1.pdf",
+        "page": 6
+      }
+    ],
+    "status": "verified",
+    "origin": "source",
+    "videoIds": [
+      "uGTs5O3ds7k"
+    ],
+    "courseSketch": {
+      "kind": "mohr",
+      "values": {
+        "major": 619,
+        "minor": 100
+      },
+      "caption": {
+        "en": "First supplied principal-stress circle. u is not measured here; solid/dashed overlap at the stated basis.",
+        "ar": "دائرة الإجهادين الأولين. لا قياس لـu هنا؛ يتطابق الخطان على الأساس المعطى."
+      }
+    }
+  },
+  {
+    "id": "soil-l4-plane",
+    "topic": "soil-triaxial",
+    "title": {
+      "en": "Lecture4 Example4: failure-plane shear is not maximum shear",
+      "ar": "محاضرة4 مثال4: قص سطح الفشل ليس أكبر قص"
+    },
+    "givens": {
+      "en": "σ1=433,σ3=100 kPa; failure plane angleα=55° to the major principal plane as in the lecture relation. Findφ,c,normal and shear on that plane andτmax.",
+      "ar": "σ1=433 وσ3=100 kPa وزاوية سطح الفشلα=55° مع السطح الرئيسي الأكبر وفق علاقة المحاضرة. أوجدφ وc والعمودي والقص على السطح وτmax."
+    },
+    "solution": {
+      "en": "φ=2(55−45)=20°. Center266.5,radius166.5 kPa. σn=σ3+(σ1−σ3)cos²55°=209.55364614 kPa. τf=(σ1−σ3)sin110°/2=156.45882136 kPa. c=τf−σn tan20°=80.18753169 kPa. Maximum shear on any plane is radius166.5,not156.4. The source labels156.4 asτmax but it is the failure-plane shear. Normal stress atτmax is266.5 kPa.",
+      "ar": "φ=2(55−45)=20°. المركز266.5 ونصف القطر166.5 kPa. σn=σ3+(σ1−σ3)cos²55°=209.55364614 kPa. τf=(σ1−σ3)sin110°/2=156.45882136 kPa. c=τf−σn tan20°=80.18753169 kPa. أكبر قص على أي سطح هو نصف القطر166.5 لا156.4. يسمي المصدر156.4 أكبر قص لكنها قص سطح الفشل. العمودي عند أكبر قص266.5 kPa."
+    },
+    "sources": [
+      {
+        "doc": "soil-lecture-03",
+        "filename": "Lecture 3.pdf",
+        "page": 5
+      },
+      {
+        "doc": "soil-lecture-03",
+        "filename": "Lecture 3.pdf",
+        "page": 6
+      },
+      {
+        "doc": "soil-lecture-04",
+        "filename": "Lecture 4-1.pdf",
+        "page": 7
+      }
+    ],
+    "status": "verified",
+    "origin": "source",
+    "videoIds": [
+      "uGTs5O3ds7k"
+    ],
+    "courseSketch": {
+      "kind": "mohr",
+      "values": {
+        "major": 433,
+        "minor": 100
+      },
+      "caption": {
+        "en": "Radius gives maximum shear; envelope tangency gives the different failure-plane shear.",
+        "ar": "يعطي نصف القطر أكبر قص، ويعطي تماس الغلاف قص سطح الفشل المختلف."
+      }
+    }
+  },
+  {
+    "id": "hyd-l2-transition",
+    "topic": "hydro-geometry",
+    "title": {
+      "en": "Lecture2: trapezoid-to-rectangle continuity",
+      "ar": "محاضرة2: استمرارية الانتقال من شبه منحرف إلى مستطيل"
+    },
+    "givens": {
+      "en": "Q=13.1 m³/s; trapezoidb=3 m,y=2.4 m,sides2H:1V. Receiving rectangleb=4 m,V=0.9 m/s. Find approach velocity and receiving depth.",
+      "ar": "Q=13.1 m³/s؛ شبه منحرفb=3 m وy=2.4 m وجانبان2H:1V. مستطيل مستقبلb=4 m وV=0.9 m/s. أوجد سرعة الاقتراب وعمق المستقبل."
+    },
+    "solution": {
+      "en": "A1=2.4(3+2×2.4)=18.72 m²;V1=13.1/18.72=0.69978632 m/s. A2=13.1/0.9=14.55555556 m²;y2=A2/4=3.63888889 m. CheckA1V1=A2V2=13.1. The result uses continuity only; energy loss and the transition surface profile are not solved by this equation.",
+      "ar": "A1=2.4(3+2×2.4)=18.72 m²؛ V1=13.1/18.72=0.69978632 m/s. A2=13.1/0.9=14.55555556 m²؛ y2=A2/4=3.63888889 m. تحققA1V1=A2V2=13.1. النتيجة من الاستمرارية وحدها؛ لم تُحل فواقد الطاقة ومنحنى الماء بهذه المعادلة."
+    },
+    "sources": [
+      {
+        "doc": "hyd-lecture-02",
+        "filename": "lec  العلاقات الاساسية2.pdf",
+        "page": 4
+      }
+    ],
+    "status": "verified",
+    "origin": "source",
+    "videoIds": [
+      "CAZNIuQTE-0",
+      "8gu5oGySrCI"
+    ],
+    "courseSketch": {
+      "kind": "channel",
+      "values": {
+        "b": 3,
+        "y": 2.4,
+        "m": 2
+      },
+      "caption": {
+        "en": "Approach section redrawn from the inspected lecture statement; receiving rectangle is specified in the text.",
+        "ar": "أعيد رسم قطاع الاقتراب من نص المحاضرة المفحوص؛ المستطيل المستقبل محدد في النص."
+      }
+    }
+  },
+  {
+    "id": "hyd-l4-critical-table",
+    "topic": "hydro-critical",
+    "title": {
+      "en": "Lecture4 table: locate the critical minimum",
+      "ar": "محاضرة4: حدّد القيمة الحرجة في الجدول"
+    },
+    "givens": {
+      "en": "Rectangular discharge per widthq=5.5 m²/s;α=1,g=9.81. Calculateyc,Emin and the state aty=2 m.",
+      "ar": "التصريف المستطيلي لكل عرضq=5.5 m²/s وα=1 وg=9.81. احسبyc وEmin والحالة عندy=2 m."
+    },
+    "solution": {
+      "en": "yc=(5.5²/9.81)^(1/3)=1.45552206 m;Emin=2.18328308 m. Aty=2,V=2.75,E=2.38544852 m,Fr=0.62084501. The table’s rounded2.385449 and0.62 agree. Checkq²=gyc³ andFr(yc)=1. Raising the bed by0.20216544 m with negligible loss reaches critical at the crest for this unchanged approach state.",
+      "ar": "yc=(5.5²/9.81)^(1/3)=1.45552206 m وEmin=2.18328308 m. عندy=2 تكونV=2.75 وE=2.38544852 m وFr=0.62084501. يوافق ذلك تقريب الجدول2.385449 و0.62. تحققq²=gyc³ وFr(yc)=1. رفع القاع0.20216544 m دون فقد يحقق الحرج عند القمة لهذه الحالة الأصلية الثابتة."
+    },
+    "sources": [
+      {
+        "doc": "hyd-lecture-04",
+        "filename": "lec 4 تحليل الجريان الحرج .pdf",
+        "page": 2
+      },
+      {
+        "doc": "hyd-lecture-04",
+        "filename": "lec 4 تحليل الجريان الحرج .pdf",
+        "page": 5
+      },
+      {
+        "doc": "hyd-lecture-04",
+        "filename": "lec 4 تحليل الجريان الحرج .pdf",
+        "page": 8
+      },
+      {
+        "doc": "hyd-lecture-04",
+        "filename": "lec 4 تحليل الجريان الحرج .pdf",
+        "page": 12
+      }
+    ],
+    "status": "verified",
+    "origin": "source",
+    "videoIds": [
+      "Tz7EPLL4PTQ",
+      "8gu5oGySrCI"
+    ],
+    "courseSketch": {
+      "kind": "channel",
+      "values": {
+        "b": 1,
+        "y": 2,
+        "m": 0
+      },
+      "caption": {
+        "en": "One-metre rectangular strip: Q=5.5 m³/s; width-normalised q=5.5 m²/s.",
+        "ar": "شريط مستطيلي بعرض متر:Q=5.5 m³/s وq=5.5 m²/s."
+      }
+    }
+  },
+  {
+    "id": "env-elobied",
+    "topic": "env-demand",
+    "title": {
+      "en": "ElObied source example: average, peaks and fire comparison",
+      "ar": "مثال الأبيض: المتوسط والذروات ومقارنة الحريق"
+    },
+    "givens": {
+      "en": "Design population400000 at30 years; lecture allowance0.6 m³/person/day; factors1.8 and2.7 relative to average. Use the lecture fire formula withP in thousands only for this exercise.",
+      "ar": "سكان التصميم400000 بعد30 سنة؛ المخصص التعليمي0.6 m³/فرد/يوم؛ معاملا الذروة1.8 و2.7 من المتوسط. استعمل معادلة حريق المحاضرة معP بالآلاف لهذه المسألة فقط."
+    },
+    "solution": {
+      "en": "Average240000 m³/day=2.77777778 m³/s. Maximum day432000 m³/day=5 m³/s. Peak-hour rate648000 m³/day equivalent=7.5 m³/s; one-hour volume27000 m³. The slide’s24000 intermediate is a missing-zero typo. Fire formulaQf=3.86√400(1−0.01√400)=61.76 m³/min=88934.4 m³/day equivalent,not8893.4. Max-day+fire=520934.4 m³/day equivalent<648000,so the source comparison still selects the peak-hour rate. No fire-storage duration is supplied; do not call88934.4 a required storage volume. The historical empirical formula is not adopted as a current fire standard here.",
+      "ar": "المتوسط240000 m³/day=2.77777778 m³/s. أقصى يوم432000 m³/day=5 m³/s. معدل أقصى ساعة648000 m³/day مكافئ=7.5 m³/s وحجم الساعة27000 m³. الوسيط24000 خطأ صفر مفقود. معادلة الحريقQf=3.86√400(1−0.01√400)=61.76 m³/min=88934.4 m³/day مكافئ وليس8893.4. مجموع أقصى يوم والحريق520934.4 أقل من648000 فيبقى اختيار معدل الذروة الساعي. لم تُعطَ مدة حريق، فلا تُسمِّ88934.4 حجم تخزين مطلوبًا. لا تُعتمد المعادلة التاريخية كمعيار حريق حالي."
+    },
+    "sources": [
+      {
+        "doc": "env-demand",
+        "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+        "page": 18
+      },
+      {
+        "doc": "env-demand",
+        "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+        "page": 23
+      },
+      {
+        "doc": "env-demand",
+        "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+        "page": 24
+      },
+      {
+        "doc": "env-demand",
+        "filename": "3 Env. Eng. I-Unit -2A- Water Sources N Demand.pdf",
+        "page": 25
+      }
+    ],
+    "status": "verified",
+    "origin": "source",
+    "videoIds": [
+      "XTkW5_I-NA0"
+    ]
+  },
+  {
+    "id": "env-charge-audit",
+    "topic": "env-quality",
+    "title": {
+      "en": "Water-quality analysis: charge balance",
+      "ar": "تحليل جودة الماء: اتزان الشحنة"
+    },
+    "givens": {
+      "en": "mg/L:Ca93.8,Mg28,Na13.7,K30.2;HCO3 167.4,SO4 134,Cl92.5. Use lecture equivalent weights20,12.2,23,39.1,61,48,35.5 mg/meq.",
+      "ar": "mg/L:Ca93.8 وMg28 وNa13.7 وK30.2؛ HCO3 167.4 وSO4 134 وCl92.5. استعمل الأوزان المكافئة20 و12.2 و23 و39.1 و61 و48 و35.5 mg/meq."
+    },
+    "solution": {
+      "en": "C=93.8/20+28/12.2+13.7/23+30.2/39.1=8.35311266 meq/L. A=167.4/61+134/48+92.5/35.5=8.14156276. Absolute difference0.21154989. Lecture acceptance bound0.1065+0.0155A=0.23269422 meq/L,so it passes that classroom audit. Rounding each ion first gives the slide8.36,8.14. Signed balance error100(C−A)/(C+A)=1.28253444%. This checks electrical consistency,not drinking-water safety or absence of unmeasured pollutants.",
+      "ar": "C=93.8/20+28/12.2+13.7/23+30.2/39.1=8.35311266 meq/L. A=167.4/61+134/48+92.5/35.5=8.14156276. الفرق المطلق0.21154989. حد المحاضرة0.1065+0.0155A=0.23269422 meq/L، فينجح التدقيق التعليمي. يعطي تقريب الأيونات أولًا8.36 و8.14 كما بالشريحة. الخطأ الموقع100(C−A)/(C+A)=1.28253444%. يفحص ذلك الاتساق الكهربائي لا سلامة الشرب أو غياب ملوثات غير مقاسة."
+    },
+    "sources": [
+      {
+        "doc": "env-quality",
+        "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+        "page": 16
+      },
+      {
+        "doc": "env-quality",
+        "filename": "5 Env. Eng. I-Unit 3 -Water Quality.pdf",
+        "page": 17
+      }
+    ],
+    "status": "verified",
+    "origin": "source",
+    "videoIds": [
+      "6Ot2t9YyzKU"
+    ]
+  },
+  {
+    "id": "env-floc-design",
+    "topic": "env-coagulation",
+    "title": {
+      "en": "Flocculator example: corrected volume, dimensions and water power",
+      "ar": "مثال التلبيد: الحجم والأبعاد والقدرة المصححة"
+    },
+    "givens": {
+      "en": "Q50000 m³/day,alum40 mg/L,30 days,Gt40000,Gmean30 s⁻¹,15°C μ0.001139 Pa·s. Depth5,length15 m,width≤12 m;3 equal compartmentsG40,30,20.",
+      "ar": "Q50000 m³/day وجرعة شب40 mg/L و30 يومًا وGt40000 وGمتوسطة30 s⁻¹ وعند15°C μ0.001139 Pa·s. العمق5 والطول15 m والعرض≤12 m؛ ثلاث حجرات متساويةG40 و30 و20."
+    },
+    "solution": {
+      "en": "Chemical2000 kg/day,60000 kg/month. t=40000/30=1333.333333 s=22.222222 min. V=(50000/86400)t=771.604938 m³. B=V/(5×15)=10.288066 m; the slide denominator225 is wrong,75 gives its10.3 m answer. Each compartment257.201646 m³ and444.444444 s. PowersμViGi²=468.724280,263.657407,117.181070 W; total849.562757 W of water power. SumGi ti=40000. At selected efficiencyη,motor input is849.562757/η W. Paddle dimensions,local hydraulics and force-development details need their own verified inputs; this solution covers dose,nominal sizing and water power only.",
+      "ar": "المادة2000 kg/day و60000 kg/month. t=40000/30=1333.333333 s=22.222222 دقيقة. V=(50000/86400)t=771.604938 m³. B=V/(5×15)=10.288066 m؛ المقام225 بالشريحة خاطئ،75 يعطي جوابها10.3 m. لكل حجرة257.201646 m³ و444.444444 s. القدراتμViGi² تساوي468.724280 و263.657407 و117.181070 W والمجموع849.562757 W للماء. مجموعGi ti=40000. عند كفاءة مختارةη يكون دخل المحرك849.562757/η W. أبعاد الريش والهيدروليكا الموضعية وتفاصيل القوة تحتاج معطيات متحققة؛ يغطي هذا الحل الجرعة والحجم الاسمي وقدرة الماء فقط."
+    },
+    "sources": [
+      {
+        "doc": "env-flocculation",
+        "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+        "page": 9
+      },
+      {
+        "doc": "env-flocculation",
+        "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+        "page": 10
+      },
+      {
+        "doc": "env-flocculation",
+        "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+        "page": 11
+      },
+      {
+        "doc": "env-flocculation",
+        "filename": "11 EnvEng1_unit 10-Flocculation.pdf",
+        "page": 14
+      }
+    ],
+    "status": "verified",
+    "origin": "source",
+    "videoIds": [
+      "C8ghKCUfcQk",
+      "wUl5E1SZqBo"
+    ],
+    "courseSketch": {
+      "kind": "treatment",
+      "values": {
+        "flow": 50000,
+        "volume": 771.604938,
+        "g1": 40,
+        "g2": 30,
+        "g3": 20
+      },
+      "caption": {
+        "en": "Three equal-volume stages; total dimensions15×10.288×5 m are nominal water dimensions.",
+        "ar": "ثلاث مراحل متساوية الحجم؛ الأبعاد15×10.288×5 m أبعاد الماء الاسمية."
+      }
+    }
+  },
+  {
+    "id": "steel-l1-actions",
+    "topic": "steel-ltb",
+    "title": {
+      "en": "Lecture beam: checked actions and conditional resistance arithmetic",
+      "ar": "كمرة المحاضرة: تأثيرات متحققة وحساب مقاومة مشروط"
+    },
+    "givens": {
+      "en": "L9 m,two100 kN design loads atx3 and6 m,w4.2 kN/m. Given lecture Wpl1830 cm³,Av4763 mm²,fy275 N/mm²,γM0=γM1=1 and approximate suppliedχ0.8.",
+      "ar": "L9 m وحملان تصميميان100 kN عندx3 و6 m وw4.2 kN/m. معطى Wpl1830 cm³ وAv4763 mm² وfy275 N/mm² وγM0=γM1=1 وχ المصدر التقريبية0.8."
+    },
+    "solution": {
+      "en": "RA=RB=118.9 kN. Equilibrium:2×118.9=200+4.2×9. Mmid=300+4.2×81/8=342.525 kN·m; derivative shear crosseszero at4.5 m. Cross-section moment503.25 kN·m; conditional member moment using suppliedχ=402.6 kN·m; utilisation0.85078241. Plastic shear4763×275/√3/1000=756.227816 kN; ratio0.15722775. This verifies actions and arithmetic using supplied properties/χ. The source shortcut and rounded graphχ are not an independently validatedMcr/restraint model; a final member design must verify those,section class,web effects,serviceability and connections.",
+      "ar": "RA=RB=118.9 kN. الاتزان2×118.9=200+4.2×9. عزم المنتصف300+4.2×81/8=342.525 kN·m ويعبر القص الصفر عند4.5 m. عزم القطاع503.25 kN·m وعزم العضو المشروط بـχ المعطاة402.6 kN·m والاستغلال0.85078241. القص اللدن4763×275/√3/1000=756.227816 kN ونسبته0.15722775. يُتحقق هنا من التأثيرات والحساب باستعمال الخواص وχ المعطاة. لا يمثل تقريب المصدر والرسم نموذجMcr وتقييدًا متحققًا مستقلًا؛ يلزم في التصميم النهائي التحقق منها ومن الفئة والجِسر والخدمة والوصلات."
+    },
+    "sources": [
+      {
+        "doc": "steel-lecture-01",
+        "filename": "lec 1 Design of Unrestrained Beams .pdf",
+        "page": 16
+      },
+      {
+        "doc": "steel-lecture-01",
+        "filename": "lec 1 Design of Unrestrained Beams .pdf",
+        "page": 17
+      },
+      {
+        "doc": "steel-lecture-01",
+        "filename": "lec 1 Design of Unrestrained Beams .pdf",
+        "page": 18
+      },
+      {
+        "doc": "steel-lecture-01",
+        "filename": "lec 1 Design of Unrestrained Beams .pdf",
+        "page": 20
+      },
+      {
+        "doc": "steel-lecture-01",
+        "filename": "lec 1 Design of Unrestrained Beams .pdf",
+        "page": 21
+      },
+      {
+        "doc": "steel-lecture-01",
+        "filename": "lec 1 Design of Unrestrained Beams .pdf",
+        "page": 22
+      }
+    ],
+    "status": "verified",
+    "origin": "source",
+    "videoIds": [
+      "kRSKLXoaN54"
+    ],
+    "sketch": {
+      "description": {
+        "en": "Inspected9 m lecture beam: two100 kN design loads at third points plus4.2 kN/m assumed design self-weight. Lateral braces at supports and loads are a separate stated condition.",
+        "ar": "كمرة المحاضرة المفحوصة9 m: حملان تصميميان100 kN عند الثلثين وحمل ذاتي تصميمي مفترض4.2 kN/m. التدعيم الجانبي عند المساند والأحمال شرط مستقل معلن."
+      },
+      "nodes": [
+        {
+          "id": "A",
+          "x": 0,
+          "y": 0,
+          "support": "pin"
+        },
+        {
+          "id": "B",
+          "x": 9,
+          "y": 0,
+          "support": "roller"
+        }
+      ],
+      "members": [
+        {
+          "to": "B",
+          "from": "A"
+        }
+      ],
+      "loads": [
+        {
+          "member": 0,
+          "at": 0.3333333333333333,
+          "kind": "point",
+          "label": "100 kN"
+        },
+        {
+          "member": 0,
+          "at": 0.6666666666666666,
+          "kind": "point",
+          "label": "100 kN"
+        },
+        {
+          "member": 0,
+          "kind": "udl",
+          "label": "4.2 kN/m"
+        }
+      ],
+      "dimensions": [
+        {
+          "to": "B",
+          "label": "9 m (3 + 3 + 3)",
+          "from": "A"
+        }
+      ]
+    }
+  },
+  {
+    "id": "steel-compound-transfer",
+    "topic": "steel-compound",
+    "title": {
+      "en": "Authored transfer: two cover plates and their shear connection",
+      "ar": "تطبيق مؤلف: صفيحتا تقوية ووصلة القص"
+    },
+    "givens": {
+      "en": "Full-length symmetric platesB200,t10 mm on steel beamD400 mm,Ibase200×10⁶ mm⁴,Wpl,base1.2×10⁶ mm³. V100 kN;assume full interaction and separately eligible plastic class.",
+      "ar": "صفيحتان متماثلتان كاملتا الطول B200 وt10 mm لكمرة D400 mm وIbase200×10⁶ mm⁴ وWpl,base1.2×10⁶ mm³. V100 kN مع افتراض تفاعل كامل وفئة مؤهلة لدنًا متحققة منفصلة."
+    },
+    "solution": {
+      "en": "Aplate2000 mm²,d205 mm. Inew=200×10⁶+2(200×10³/12+2000×205²)=368133333.333 mm⁴. Wel=Inew/210=1753015.873 mm³. ΔWpl=2×2000×205=820000;Wpl,new2020000 mm³. Atfy275,γM0=1,conditionalMpl555.5 kN·m. Qplate=410000 mm³;qinterface=100000Q/I=111.372691 N/mm;two equal weld lines55.686346 N/mm each. This is force/length,not throat stress. Verify weld resistance,plate classification,LTB and plate-end force development before claiming a complete design. These numbers are an authored variation,not a source exam question.",
+      "ar": "Aplate2000 mm² وd205 mm. Inew=200×10⁶+2(200×10³/12+2000×205²)=368133333.333 mm⁴. Wel=Inew/210=1753015.873 mm³. ΔWpl=2×2000×205=820000 وWpl,new2020000 mm³. عندfy275 وγM0=1 يكونMpl المشروط555.5 kN·m. Qplate=410000 mm³ وqinterface=100000Q/I=111.372691 N/mm ولكل خطين متساويين55.686346 N/mm. هذه قوة/طول لا إجهاد حلق. تحقق من مقاومة اللحام والفئة وLTB وتطوير قوى الأطراف قبل إعلان التصميم الكامل. الأرقام تطبيق مؤلف وليست سؤال اختبار بالمصدر."
+    },
+    "sources": [
+      {
+        "doc": "steel-lecture-02",
+        "filename": "lec 2 Design of Compound Beams.pdf",
+        "page": 14
+      },
+      {
+        "doc": "steel-lecture-02",
+        "filename": "lec 2 Design of Compound Beams.pdf",
+        "page": 19
+      },
+      {
+        "doc": "steel-lecture-02",
+        "filename": "lec 2 Design of Compound Beams.pdf",
+        "page": 20
+      },
+      {
+        "doc": "steel-lecture-02",
+        "filename": "lec 2 Design of Compound Beams.pdf",
+        "page": 21
+      },
+      {
+        "doc": "steel-lecture-02",
+        "filename": "lec 2 Design of Compound Beams.pdf",
+        "page": 22
+      },
+      {
+        "doc": "steel-lecture-02",
+        "filename": "lec 2 Design of Compound Beams.pdf",
+        "page": 24
+      }
+    ],
+    "status": "verified",
+    "origin": "authored",
+    "videoIds": [
+      "wjEQ6F4HCaU"
+    ],
+    "courseSketch": {
+      "kind": "plated-section",
+      "values": {
+        "width": 200,
+        "depth": 400,
+        "thickness": 10,
+        "baseI": 200000000.0
+      },
+      "caption": {
+        "en": "Original schematic for the authored symmetric full-interaction model.",
+        "ar": "رسم أصلي للنموذج المؤلف المتماثل كامل التفاعل."
+      }
+    }
   }
 ]

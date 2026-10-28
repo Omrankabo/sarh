@@ -1,0 +1,1542 @@
+{
+  "id": "hydro-uniform",
+  "family": "hyd-resistance",
+  "title": {
+    "en": "Uniform flow: the depth gravity can sustain",
+    "ar": "الجريان المنتظم: العمق الذي تحافظ عليه الجاذبية"
+  },
+  "summary": {
+    "en": "Balance downslope weight against boundary drag, then use Chezy and Manning to find normal depth and test channel capacity.",
+    "ar": "وازن مركبة الوزن الطولية مع مقاومة الحدود ثم استعمل شيزي وماننج لحساب العمق العادي واختبار سعة القناة."
+  },
+  "outcomes": [
+    {
+      "en": "Weight and drag reach a truce",
+      "ar": "الوزن والمقاومة يتوازنان"
+    },
+    {
+      "en": "Turn resistance into velocity",
+      "ar": "حوّل المقاومة إلى سرعة"
+    },
+    {
+      "en": "Give the section its carrying capacity",
+      "ar": "احسب سعة القطاع"
+    },
+    {
+      "en": "Find normal depth by a checked trial",
+      "ar": "استخرج العمق العادي بتجربة متحققة"
+    },
+    {
+      "en": "Improve a section without hiding assumptions",
+      "ar": "حسّن القطاع دون إخفاء الفرضيات"
+    }
+  ],
+  "prereqIds": [
+    "hyd-units",
+    "hyd-geometry",
+    "course-algebra"
+  ],
+  "videoIds": [
+    "3AekPKmEYW4"
+  ],
+  "concepts": [
+    {
+      "id": "hydro-uniform-balance",
+      "title": {
+        "en": "Weight and drag reach a truce",
+        "ar": "الوزن والمقاومة يتوازنان"
+      }
+    },
+    {
+      "id": "hydro-uniform-resistance",
+      "title": {
+        "en": "Turn resistance into velocity",
+        "ar": "حوّل المقاومة إلى سرعة"
+      }
+    },
+    {
+      "id": "hydro-uniform-capacity",
+      "title": {
+        "en": "Give the section its carrying capacity",
+        "ar": "احسب سعة القطاع"
+      }
+    },
+    {
+      "id": "hydro-uniform-normal",
+      "title": {
+        "en": "Find normal depth by a checked trial",
+        "ar": "استخرج العمق العادي بتجربة متحققة"
+      }
+    },
+    {
+      "id": "hydro-uniform-design",
+      "title": {
+        "en": "Improve a section without hiding assumptions",
+        "ar": "حسّن القطاع دون إخفاء الفرضيات"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "hydro-uniform-balance",
+      "title": {
+        "en": "Weight and drag reach a truce",
+        "ar": "الوزن والمقاومة يتوازنان"
+      },
+      "predict": {
+        "en": "At uniform depth, must gravity vanish because velocity is constant?",
+        "ar": "عند عمق منتظم، هل تختفي الجاذبية لأن السرعة ثابتة؟"
+      },
+      "options": [
+        {
+          "en": "No. Gravity balances boundary resistance.",
+          "ar": "لا. تتوازن الجاذبية مع مقاومة الحدود."
+        },
+        {
+          "en": "Yes. No force acts on moving water.",
+          "ar": "نعم. لا تؤثر قوى على الماء المتحرك."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Small slope can still generate enough boundary stress to move sediment.",
+        "ar": "قد يولد ميل صغير قصًا كافيًا لتحريك الرواسب."
+      },
+      "explain": {
+        "en": "For a long control volume in steady uniform flow, upstream and downstream hydrostatic pressure forces cancel. The remaining downslope weight balances the total resisting boundary shear. Dividing by wetted boundary area produces a mean boundary shear γRS0. It is an average over walls and bed, not the exact local bed stress everywhere.",
+        "ar": "لحجم سيطرة طويل في جريان ثابت منتظم، تتعادل قوتا الضغط الهيدروستاتيكي عند الطرفين. تتوازن مركبة الوزن المتبقية مع قص الحدود المقاوم. بالقسمة على مساحة الحدود المبتلة نحصل على متوسط القص γRS0. إنه متوسط الجدارين والقاع لا إجهاد القاع المحلي الدقيق في كل موضع."
+      },
+      "formula": "τ̄0=γ R S0; R=A/P; uniform: S0=Sw=Sf",
+      "symbols": {
+        "en": "τ̄0 kPa if γ=9.81 kN/m³; R m; positive downward slope S0 as m/m.",
+        "ar": "τ̄0 بالكيلوباسكال إذا γ=9.81 kN/m³؛ R بالمتر؛ S0 ميل موجب باتجاه الهبوط m/m."
+      },
+      "assumptions": {
+        "en": "Steady, uniform, small bed slope, prismatic reach; nonuniform flow need not have parallel bed, water and energy lines.",
+        "ar": "جريان ثابت منتظم وميل صغير وقناة منشورية؛ لا تتوازى خطوط القاع والماء والطاقة بالضرورة في غير المنتظم."
+      },
+      "example": {
+        "en": "R=1 m and S0=0.001; calculate mean boundary shear.",
+        "ar": "R=1 m وS0=0.001؛ احسب متوسط قص الحدود."
+      },
+      "calculation": {
+        "en": "τ̄0=9.81×1×0.001=0.00981 kPa=9.81 Pa.",
+        "ar": "τ̄0=9.81×1×0.001=0.00981 kPa=9.81 Pa."
+      },
+      "interpret": {
+        "en": "Small slope can still generate enough boundary stress to move sediment.",
+        "ar": "قد يولد ميل صغير قصًا كافيًا لتحريك الرواسب."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Small slope can still generate enough boundary stress to move sediment. Steady, uniform, small bed slope, prismatic reach; nonuniform flow need not have parallel bed, water and energy lines.",
+          "ar": "قد يولد ميل صغير قصًا كافيًا لتحريك الرواسب. جريان ثابت منتظم وميل صغير وقناة منشورية؛ لا تتوازى خطوط القاع والماء والطاقة بالضرورة في غير المنتظم."
+        }
+      },
+      "diagram": "course-hydro-uniform",
+      "concepts": [
+        "hydro-uniform-balance"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 7
+        },
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 8
+        },
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 9
+        },
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 11
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "hydro-uniform-resistance",
+      "title": {
+        "en": "Turn resistance into velocity",
+        "ar": "حوّل المقاومة إلى سرعة"
+      },
+      "predict": {
+        "en": "At fixed R and slope, double n. What happens to V?",
+        "ar": "مع ثبات R والميل ضاعف n. ماذا يحدث لـV؟"
+      },
+      "options": [
+        {
+          "en": "It halves.",
+          "ar": "تنخفض للنصف."
+        },
+        {
+          "en": "It doubles because roughness accelerates flow.",
+          "ar": "تتضاعف لأن الخشونة تسرّع الماء."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The inverse dependence on n is a capacity effect at fixed depth; a prescribed Q may instead force a different normal depth.",
+        "ar": "اعتماد السرعة عكسيًا على n أثر على السعة عند عمق ثابت؛ أما Q المفروضة فقد تستلزم عمقًا عاديًا مختلفًا."
+      },
+      "explain": {
+        "en": "Chezy represents mean velocity with a resistance coefficient C and the square root of hydraulic radius times energy slope. Manning expresses the same velocity using roughness n and a different power of R. Their coefficients are related, not numerically interchangeable. Use the SI form here; the common US customary multiplier belongs to another unit system.",
+        "ar": "يمثل شيزي السرعة المتوسطة بمعامل C والجذر التربيعي لحاصل نصف القطر الهيدروليكي وميل الطاقة. يعبّر ماننج عنها بخشونة n وأُس مختلف لـR. المعاملان مرتبطان لكن لا يمكن تبديلهما عدديًا. نستعمل صيغة SI هنا؛ معامل الوحدات الأمريكية الشائع ينتمي إلى نظام آخر."
+      },
+      "formula": "V=C√(RSf); V=(1/n)R^(2/3)Sf^(1/2); C=R^(1/6)/n",
+      "symbols": {
+        "en": "V m/s; R m; C in m^(1/2)/s; Manning n in s/m^(1/3) in this SI expression; Sf head loss per length.",
+        "ar": "V بالمتر/ثانية وR بالمتر وC بوحدة m^(1/2)/s؛ n بوحدة s/m^(1/3) في هذه الصيغة؛ Sf فقد الرأس لكل طول."
+      },
+      "assumptions": {
+        "en": "Empirical turbulent open-channel resistance; select n for actual surface and conditions. Do not use laminar-flow assumptions interchangeably.",
+        "ar": "مقاومة تجريبية لجريان مفتوح مضطرب؛ اختر n للسطح والظروف الفعلية ولا تخلطها بفرضيات الجريان الصفحي."
+      },
+      "example": {
+        "en": "R=1 m,n=0.02,Sf=0.0004.",
+        "ar": "R=1 m وn=0.02 وSf=0.0004."
+      },
+      "calculation": {
+        "en": "V=50×1×0.02=1 m/s; C=1/0.02=50 m^(1/2)/s. Both equations give the same V.",
+        "ar": "V=50×1×0.02=1 m/s؛ C=1/0.02=50 m^(1/2)/s. المعادلتان تعطيان V نفسها."
+      },
+      "interpret": {
+        "en": "The inverse dependence on n is a capacity effect at fixed depth; a prescribed Q may instead force a different normal depth.",
+        "ar": "اعتماد السرعة عكسيًا على n أثر على السعة عند عمق ثابت؛ أما Q المفروضة فقد تستلزم عمقًا عاديًا مختلفًا."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "The inverse dependence on n is a capacity effect at fixed depth; a prescribed Q may instead force a different normal depth. Empirical turbulent open-channel resistance; select n for actual surface and conditions. Do not use laminar-flow assumptions interchangeably.",
+          "ar": "اعتماد السرعة عكسيًا على n أثر على السعة عند عمق ثابت؛ أما Q المفروضة فقد تستلزم عمقًا عاديًا مختلفًا. مقاومة تجريبية لجريان مفتوح مضطرب؛ اختر n للسطح والظروف الفعلية ولا تخلطها بفرضيات الجريان الصفحي."
+        }
+      },
+      "diagram": "course-hydro-uniform",
+      "concepts": [
+        "hydro-uniform-resistance"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 3
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "hydro-uniform-capacity",
+      "title": {
+        "en": "Give the section its carrying capacity",
+        "ar": "احسب سعة القطاع"
+      },
+      "predict": {
+        "en": "If energy slope is quadrupled at fixed section and n, does Q quadruple?",
+        "ar": "إذا ضُوعف ميل الطاقة أربع مرات مع ثبات القطاع وn، هل يتضاعف Q أربع مرات؟"
+      },
+      "options": [
+        {
+          "en": "No. It doubles through the square root.",
+          "ar": "لا. يتضاعف مرتين بسبب الجذر."
+        },
+        {
+          "en": "Yes. Q is linear in slope.",
+          "ar": "نعم. Q خطية مع الميل."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Capacity is conditional on the selected depth and slope; it is not automatically the actual discharge.",
+        "ar": "السعة مشروطة بالعمق والميل المختارين وليست التصريف الفعلي تلقائيًا."
+      },
+      "explain": {
+        "en": "Multiply the mean velocity by wetted area to obtain discharge. A depth change changes A and R together, so discharge is not generally proportional to depth. Use real wall lengths in P. The tempting R≈y approximation would overpredict capacity in a narrow deep rectangular channel.",
+        "ar": "اضرب السرعة المتوسطة في المساحة المبتلة لتحصل على التصريف. يغيّر العمق A وR معًا، لذلك لا يتناسب التصريف مع العمق عمومًا. استعمل أطوال الجدران الحقيقية في P. تقريب R≈y المغري يبالغ في سعة مستطيل ضيق وعميق."
+      },
+      "formula": "Q=(A/n)R^(2/3)√Sf; K=(A/n)R^(2/3); Q=K√Sf",
+      "symbols": {
+        "en": "Q m³/s; K is conveyance, m³/s for Sf dimensionless; A m².",
+        "ar": "Q بالمتر المكعب/ثانية؛ K ناقلية بوحدة m³/s عندما Sf بلا وحدة؛ A بالمتر المربع."
+      },
+      "assumptions": {
+        "en": "Same roughness and slope assumptions as the selected Manning model; full cross-section treated with one n only if appropriate.",
+        "ar": "فرضيات الخشونة والميل نفسها لنموذج ماننج؛ استعمل n واحدة للقطاع كله فقط إذا كان مناسبًا."
+      },
+      "example": {
+        "en": "Rectangle b=4,y=2 m,n=0.02,Sf=0.0004.",
+        "ar": "مستطيل b=4 وy=2 m وn=0.02 وSf=0.0004."
+      },
+      "calculation": {
+        "en": "A=8,P=8,R=1; Q=(8/0.02)×1×0.02=8 m³/s. Velocity is1 m/s.",
+        "ar": "A=8 وP=8 وR=1؛ Q=(8/0.02)×1×0.02=8 m³/s. السرعة1 m/s."
+      },
+      "interpret": {
+        "en": "Capacity is conditional on the selected depth and slope; it is not automatically the actual discharge.",
+        "ar": "السعة مشروطة بالعمق والميل المختارين وليست التصريف الفعلي تلقائيًا."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Capacity is conditional on the selected depth and slope; it is not automatically the actual discharge. Same roughness and slope assumptions as the selected Manning model; full cross-section treated with one n only if appropriate.",
+          "ar": "السعة مشروطة بالعمق والميل المختارين وليست التصريف الفعلي تلقائيًا. فرضيات الخشونة والميل نفسها لنموذج ماننج؛ استعمل n واحدة للقطاع كله فقط إذا كان مناسبًا."
+        }
+      },
+      "diagram": "course-hydro-uniform",
+      "concepts": [
+        "hydro-uniform-capacity"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 4
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "hydro-uniform-normal",
+      "title": {
+        "en": "Find normal depth by a checked trial",
+        "ar": "استخرج العمق العادي بتجربة متحققة"
+      },
+      "predict": {
+        "en": "A trial depth carries less than target Q in a fixed rectangular channel. Which way should y move?",
+        "ar": "عمق تجريبي يمرر أقل من Q المطلوبة في مستطيل ثابت. بأي اتجاه تغيّر y؟"
+      },
+      "options": [
+        {
+          "en": "Increase it and recompute both A and R.",
+          "ar": "زده وأعد حساب A وR معًا."
+        },
+        {
+          "en": "Decrease area while holding velocity fixed.",
+          "ar": "قلل المساحة مع تثبيت السرعة."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Use the root only after identifying what physical conditions make it a normal depth.",
+        "ar": "استعمل الجذر بعد تحديد الشروط التي تجعله عمقًا عاديًا."
+      },
+      "explain": {
+        "en": "When Q is prescribed, y is hidden inside both area and hydraulic radius. Choose a trial depth, compute its carrying discharge, then increase depth if capacity is too small. A bracket around the desired Q is safer than an unexplained calculator root. Recompute Q from your final y as an independent residual check.",
+        "ar": "عندما تكون Q مفروضة، يختبئ y داخل المساحة ونصف القطر معًا. اختر عمقًا تجريبيًا واحسب تصريفه، ثم زد العمق إذا كانت السعة أقل من المطلوب. حصر التصريف المطلوب بين تجربتين أوثق من جذر حاسبة بلا تفسير. أعد حساب Q من y النهائية كتحقق مستقل للباقي."
+      },
+      "formula": "F(y)=(A(y)/n)[A(y)/P(y)]^(2/3)√S0−Qtarget=0",
+      "symbols": {
+        "en": "F residual in m³/s; normal depth yn in m; use A(y),P(y) for the actual shape.",
+        "ar": "F الباقي بوحدة m³/s؛ yn العمق العادي بالمتر؛ استعمل A(y),P(y) للشكل الفعلي."
+      },
+      "assumptions": {
+        "en": "Positive slope, steady uniform flow and no downstream control dominating the reach. A computed yn is not a full water profile.",
+        "ar": "ميل موجب وجريان ثابت منتظم دون تحكم مصب يهيمن على المجرى. yn المحسوبة ليست منحنى الماء الكامل."
+      },
+      "example": {
+        "en": "Find yn for b=4,n=0.02,S0=0.0004,Q=8 in SI.",
+        "ar": "أوجد yn إذا b=4 وn=0.02 وS0=0.0004 وQ=8 بوحدات SI."
+      },
+      "calculation": {
+        "en": "Trial y=1 gives Q≈3.0526; y=3 gives Q≈13.5509, bracketing8. At y=2, A=8,R=1 and Q=8 exactly. Residual zero.",
+        "ar": "تجربة y=1 تعطي Q≈3.0526 وy=3 تعطي Q≈13.5509، فتحصران8. عند y=2 تكون A=8 وR=1 وQ=8 تمامًا. الباقي صفر."
+      },
+      "interpret": {
+        "en": "Use the root only after identifying what physical conditions make it a normal depth.",
+        "ar": "استعمل الجذر بعد تحديد الشروط التي تجعله عمقًا عاديًا."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Use the root only after identifying what physical conditions make it a normal depth. Positive slope, steady uniform flow and no downstream control dominating the reach. A computed yn is not a full water profile.",
+          "ar": "استعمل الجذر بعد تحديد الشروط التي تجعله عمقًا عاديًا. ميل موجب وجريان ثابت منتظم دون تحكم مصب يهيمن على المجرى. yn المحسوبة ليست منحنى الماء الكامل."
+        }
+      },
+      "diagram": "course-hydro-uniform",
+      "concepts": [
+        "hydro-uniform-normal"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "hydro-uniform-design",
+      "title": {
+        "en": "Improve a section without hiding assumptions",
+        "ar": "حسّن القطاع دون إخفاء الفرضيات"
+      },
+      "predict": {
+        "en": "Does b=2y guarantee the lowest total project cost?",
+        "ar": "هل b=2y تضمن أقل تكلفة كلية للمشروع؟"
+      },
+      "options": [
+        {
+          "en": "No. It minimises wetted perimeter at fixed rectangular area.",
+          "ar": "لا. تقلل المحيط المبتل لمستطيل ثابت المساحة."
+        },
+        {
+          "en": "Yes. Hydraulic and economic optima are identical.",
+          "ar": "نعم. التحسين الهيدروليكي والاقتصادي متطابقان."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "State the optimisation constraint before calling a section “best”.",
+        "ar": "صرّح بقيد التحسين قبل وصف القطاع بأنه «الأفضل»."
+      },
+      "explain": {
+        "en": "For a rectangular channel with fixed flow area and one roughness, reducing wetted perimeter increases R and capacity. Differentiating P=b+2y with A=by fixed gives the hydraulically efficient proportion b=2y. This is a friction optimum, not a universal cheapest or safest construction: freeboard, lining, land, erosion, maintenance and side stability still matter.",
+        "ar": "لمستطيل ثابت المساحة وبخشونة واحدة، يقلل خفض المحيط المبتل المقاومة ويزيد R والسعة. باشتقاق P=b+2y مع ثبات A=by نجد النسبة الكفؤة هيدروليكيًا b=2y. هذا تحسين احتكاك لا ضمان لأرخص أو آمن إنشاء؛ يظل الخلوص والتبطين والأرض والنحر والصيانة وثبات الجوانب مهمًا."
+      },
+      "formula": "fixed A: P=A/y+2y; dP/dy=0 → b=2y; R=y/2",
+      "symbols": {
+        "en": "b,y,R in m; fixed A in m². This optimum is for rectangles only.",
+        "ar": "b وy وR بالأمتار؛ A ثابتة بالمتر المربع. التحسين هنا للمستطيل فقط."
+      },
+      "assumptions": {
+        "en": "One n, fixed area and hydraulic efficiency as the objective; do not transfer the ratio unchanged to trapezoids.",
+        "ar": "n واحدة ومساحة ثابتة وكفاءة هيدروليكية كهدف؛ لا تنقل النسبة كما هي لشبه المنحرف."
+      },
+      "example": {
+        "en": "A=8 m². Find the efficient rectangular b and y.",
+        "ar": "A=8 m². أوجد b وy للمستطيل الكفؤ."
+      },
+      "calculation": {
+        "en": "A=2y²=8 gives y=2 m, b=4 m; P=8,R=1 m. Compare b=8,y=1: P=10,R=0.8, lower capacity at the same n,Sf.",
+        "ar": "A=2y²=8 تعطي y=2 m وb=4 m؛ P=8 وR=1 m. للمقارنة b=8 وy=1 تعطي P=10 وR=0.8 وسعة أقل مع n,Sf نفسيهما."
+      },
+      "interpret": {
+        "en": "State the optimisation constraint before calling a section “best”.",
+        "ar": "صرّح بقيد التحسين قبل وصف القطاع بأنه «الأفضل»."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "State the optimisation constraint before calling a section “best”. One n, fixed area and hydraulic efficiency as the objective; do not transfer the ratio unchanged to trapezoids.",
+          "ar": "صرّح بقيد التحسين قبل وصف القطاع بأنه «الأفضل». n واحدة ومساحة ثابتة وكفاءة هيدروليكية كهدف؛ لا تنقل النسبة كما هي لشبه المنحرف."
+        }
+      },
+      "diagram": "course-hydro-uniform",
+      "concepts": [
+        "hydro-uniform-design"
+      ],
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 4
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 6
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "C01",
+      "concept": "hydro-uniform-balance",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At uniform depth, must gravity vanish because velocity is constant?",
+        "ar": "عند عمق منتظم، هل تختفي الجاذبية لأن السرعة ثابتة؟"
+      },
+      "options": [
+        {
+          "en": "Yes. No force acts on moving water.",
+          "ar": "نعم. لا تؤثر قوى على الماء المتحرك."
+        },
+        {
+          "en": "No. Gravity balances boundary resistance.",
+          "ar": "لا. تتوازن الجاذبية مع مقاومة الحدود."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "For a long control volume in steady uniform flow, upstream and downstream hydrostatic pressure forces cancel. The remaining downslope weight balances the total resisting boundary shear. Dividing by wetted boundary area produces a mean boundary shear γRS0. It is an average over walls and bed, not the exact local bed stress everywhere. Small slope can still generate enough boundary stress to move sediment.",
+        "ar": "لحجم سيطرة طويل في جريان ثابت منتظم، تتعادل قوتا الضغط الهيدروستاتيكي عند الطرفين. تتوازن مركبة الوزن المتبقية مع قص الحدود المقاوم. بالقسمة على مساحة الحدود المبتلة نحصل على متوسط القص γRS0. إنه متوسط الجدارين والقاع لا إجهاد القاع المحلي الدقيق في كل موضع. قد يولد ميل صغير قصًا كافيًا لتحريك الرواسب."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 7
+        },
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 8
+        },
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 9
+        },
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 11
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "N01",
+      "concept": "hydro-uniform-balance",
+      "type": "numerical",
+      "prompt": {
+        "en": "R=2 m,S0=0.001. Find τ̄0 in Pa.",
+        "ar": "R=2 m وS0=0.001. أوجد τ̄0 بوحدة Pa."
+      },
+      "expected": 19.62,
+      "tolerance": 0.039240000000000004,
+      "unit": "Pa",
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "9810×2×0.001=19.62 Pa.",
+        "ar": "9810×2×0.001=19.62 Pa."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 7
+        },
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 8
+        },
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 9
+        },
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 11
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "concept": "hydro-uniform-balance",
+      "type": "mixed",
+      "prompt": {
+        "en": "A bed falls 1 m in 1000 m, R=1. Enter τ̄0 in Pa and choose the slope.",
+        "ar": "ينخفض القاع 1 m خلال 1000 m وR=1. أدخل τ̄0 بوحدة Pa واختر الميل."
+      },
+      "expected": 9.81,
+      "tolerance": 0.019620000000000002,
+      "unit": "Pa",
+      "options": [
+        {
+          "en": "S0=0.001, dimensionless.",
+          "ar": "S0=0.001 بلا وحدة."
+        },
+        {
+          "en": "S0=1 because the drop is one metre.",
+          "ar": "S0=1 لأن الهبوط متر واحد."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "S0=1/1000; τ̄0=9.81 Pa.",
+        "ar": "S0=1/1000؛ τ̄0=9.81 Pa."
+      },
+      "sources": [
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 7
+        },
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 8
+        },
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 9
+        },
+        {
+          "doc": "hyd-lecture-03",
+          "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+          "page": 11
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "concept": "hydro-uniform-resistance",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At fixed R and slope, double n. What happens to V?",
+        "ar": "مع ثبات R والميل ضاعف n. ماذا يحدث لـV؟"
+      },
+      "options": [
+        {
+          "en": "It halves.",
+          "ar": "تنخفض للنصف."
+        },
+        {
+          "en": "It doubles because roughness accelerates flow.",
+          "ar": "تتضاعف لأن الخشونة تسرّع الماء."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "Chezy represents mean velocity with a resistance coefficient C and the square root of hydraulic radius times energy slope. Manning expresses the same velocity using roughness n and a different power of R. Their coefficients are related, not numerically interchangeable. Use the SI form here; the common US customary multiplier belongs to another unit system. The inverse dependence on n is a capacity effect at fixed depth; a prescribed Q may instead force a different normal depth.",
+        "ar": "يمثل شيزي السرعة المتوسطة بمعامل C والجذر التربيعي لحاصل نصف القطر الهيدروليكي وميل الطاقة. يعبّر ماننج عنها بخشونة n وأُس مختلف لـR. المعاملان مرتبطان لكن لا يمكن تبديلهما عدديًا. نستعمل صيغة SI هنا؛ معامل الوحدات الأمريكية الشائع ينتمي إلى نظام آخر. اعتماد السرعة عكسيًا على n أثر على السعة عند عمق ثابت؛ أما Q المفروضة فقد تستلزم عمقًا عاديًا مختلفًا."
+      },
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 3
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "N02",
+      "concept": "hydro-uniform-resistance",
+      "type": "numerical",
+      "prompt": {
+        "en": "R=1,n=0.025,Sf=0.0004. Find V.",
+        "ar": "R=1 وn=0.025 وSf=0.0004. أوجد V."
+      },
+      "expected": 0.8,
+      "tolerance": 0.01,
+      "unit": "m/s",
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "(1/0.025)×1×0.02=0.8 m/s.",
+        "ar": "(1/0.025)×1×0.02=0.8 m/s."
+      },
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 3
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "concept": "hydro-uniform-resistance",
+      "type": "mixed",
+      "prompt": {
+        "en": "R=1,n=0.02. Enter equivalent Chezy C and choose its role.",
+        "ar": "R=1 وn=0.02. أدخل C المكافئة لشيزي واختر دورها."
+      },
+      "expected": 50,
+      "tolerance": 0.1,
+      "unit": "m^(1/2)/s",
+      "options": [
+        {
+          "en": "It is Manning n in another label.",
+          "ar": "هي n لماننج باسم آخر."
+        },
+        {
+          "en": "A resistance coefficient, not a velocity.",
+          "ar": "معامل مقاومة وليس سرعة."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "C=R^(1/6)/n=50.",
+        "ar": "C=R^(1/6)/n=50."
+      },
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 3
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "concept": "hydro-uniform-capacity",
+      "type": "conceptual",
+      "prompt": {
+        "en": "If energy slope is quadrupled at fixed section and n, does Q quadruple?",
+        "ar": "إذا ضُوعف ميل الطاقة أربع مرات مع ثبات القطاع وn، هل يتضاعف Q أربع مرات؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Q is linear in slope.",
+          "ar": "نعم. Q خطية مع الميل."
+        },
+        {
+          "en": "No. It doubles through the square root.",
+          "ar": "لا. يتضاعف مرتين بسبب الجذر."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "Multiply the mean velocity by wetted area to obtain discharge. A depth change changes A and R together, so discharge is not generally proportional to depth. Use real wall lengths in P. The tempting R≈y approximation would overpredict capacity in a narrow deep rectangular channel. Capacity is conditional on the selected depth and slope; it is not automatically the actual discharge.",
+        "ar": "اضرب السرعة المتوسطة في المساحة المبتلة لتحصل على التصريف. يغيّر العمق A وR معًا، لذلك لا يتناسب التصريف مع العمق عمومًا. استعمل أطوال الجدران الحقيقية في P. تقريب R≈y المغري يبالغ في سعة مستطيل ضيق وعميق. السعة مشروطة بالعمق والميل المختارين وليست التصريف الفعلي تلقائيًا."
+      },
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 4
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "N03",
+      "concept": "hydro-uniform-capacity",
+      "type": "numerical",
+      "prompt": {
+        "en": "Same rectangle at Sf=0.0016. Find Q.",
+        "ar": "المستطيل نفسه عند Sf=0.0016. أوجد Q."
+      },
+      "expected": 16,
+      "tolerance": 0.032,
+      "unit": "m³/s",
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "√Sf=0.04; Q=400×0.04=16.",
+        "ar": "√Sf=0.04؛ Q=400×0.04=16."
+      },
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 4
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "concept": "hydro-uniform-capacity",
+      "type": "mixed",
+      "prompt": {
+        "en": "Original section n rises from0.02 to0.04. Enter Q and choose what was held fixed.",
+        "ar": "ارتفعت n للقطاع الأصلي من0.02 إلى0.04. أدخل Q واختر الثابت."
+      },
+      "expected": 4,
+      "tolerance": 0.01,
+      "unit": "m³/s",
+      "options": [
+        {
+          "en": "Depth, shape and energy slope.",
+          "ar": "العمق والشكل وميل الطاقة."
+        },
+        {
+          "en": "Discharge must remain8 whatever the depth.",
+          "ar": "يجب أن يبقى التصريف8 مهما كان العمق."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "At fixed geometry Q scales as1/n, hence4 m³/s.",
+        "ar": "مع ثبات الهندسة Q تتناسب عكسيًا مع n، فتصبح4 m³/s."
+      },
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 4
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "concept": "hydro-uniform-normal",
+      "type": "conceptual",
+      "prompt": {
+        "en": "A trial depth carries less than target Q in a fixed rectangular channel. Which way should y move?",
+        "ar": "عمق تجريبي يمرر أقل من Q المطلوبة في مستطيل ثابت. بأي اتجاه تغيّر y؟"
+      },
+      "options": [
+        {
+          "en": "Increase it and recompute both A and R.",
+          "ar": "زده وأعد حساب A وR معًا."
+        },
+        {
+          "en": "Decrease area while holding velocity fixed.",
+          "ar": "قلل المساحة مع تثبيت السرعة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "When Q is prescribed, y is hidden inside both area and hydraulic radius. Choose a trial depth, compute its carrying discharge, then increase depth if capacity is too small. A bracket around the desired Q is safer than an unexplained calculator root. Recompute Q from your final y as an independent residual check. Use the root only after identifying what physical conditions make it a normal depth.",
+        "ar": "عندما تكون Q مفروضة، يختبئ y داخل المساحة ونصف القطر معًا. اختر عمقًا تجريبيًا واحسب تصريفه، ثم زد العمق إذا كانت السعة أقل من المطلوب. حصر التصريف المطلوب بين تجربتين أوثق من جذر حاسبة بلا تفسير. أعد حساب Q من y النهائية كتحقق مستقل للباقي. استعمل الجذر بعد تحديد الشروط التي تجعله عمقًا عاديًا."
+      },
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "N04",
+      "concept": "hydro-uniform-normal",
+      "type": "numerical",
+      "prompt": {
+        "en": "For that checked b=4,n=0.02,S0=0.0004,Q=8 case, enter yn.",
+        "ar": "للحالة المتحققة b=4 وn=0.02 وS0=0.0004 وQ=8 أدخل yn."
+      },
+      "expected": 2,
+      "tolerance": 0.01,
+      "unit": "m",
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "Substitution y=2 givesQ=8.",
+        "ar": "تعويض y=2 يعطيQ=8."
+      },
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "concept": "hydro-uniform-normal",
+      "type": "mixed",
+      "prompt": {
+        "en": "Trial capacity is6 and target is8 m³/s. Enter residual F and choose the next trial direction.",
+        "ar": "السعة التجريبية6 والمطلوب8 m³/s. أدخل F واختر اتجاه التجربة التالية."
+      },
+      "expected": -2,
+      "tolerance": 0.01,
+      "unit": "m³/s",
+      "options": [
+        {
+          "en": "Lower depth to add carrying area.",
+          "ar": "اخفض العمق لزيادة المساحة."
+        },
+        {
+          "en": "Raise depth for this fixed rectangular section.",
+          "ar": "ارفع العمق لهذا المستطيل الثابت."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "F=6−8=−2; insufficient carrying capacity.",
+        "ar": "F=6−8=−2؛ السعة غير كافية."
+      },
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "concept": "hydro-uniform-design",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Does b=2y guarantee the lowest total project cost?",
+        "ar": "هل b=2y تضمن أقل تكلفة كلية للمشروع؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Hydraulic and economic optima are identical.",
+          "ar": "نعم. التحسين الهيدروليكي والاقتصادي متطابقان."
+        },
+        {
+          "en": "No. It minimises wetted perimeter at fixed rectangular area.",
+          "ar": "لا. تقلل المحيط المبتل لمستطيل ثابت المساحة."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "For a rectangular channel with fixed flow area and one roughness, reducing wetted perimeter increases R and capacity. Differentiating P=b+2y with A=by fixed gives the hydraulically efficient proportion b=2y. This is a friction optimum, not a universal cheapest or safest construction: freeboard, lining, land, erosion, maintenance and side stability still matter. State the optimisation constraint before calling a section “best”.",
+        "ar": "لمستطيل ثابت المساحة وبخشونة واحدة، يقلل خفض المحيط المبتل المقاومة ويزيد R والسعة. باشتقاق P=b+2y مع ثبات A=by نجد النسبة الكفؤة هيدروليكيًا b=2y. هذا تحسين احتكاك لا ضمان لأرخص أو آمن إنشاء؛ يظل الخلوص والتبطين والأرض والنحر والصيانة وثبات الجوانب مهمًا. صرّح بقيد التحسين قبل وصف القطاع بأنه «الأفضل»."
+      },
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 4
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "N05",
+      "concept": "hydro-uniform-design",
+      "type": "numerical",
+      "prompt": {
+        "en": "Efficient rectangle with A=18 m²: find y.",
+        "ar": "مستطيل كفؤ مساحته18 m²: أوجد y."
+      },
+      "expected": 3,
+      "tolerance": 0.01,
+      "unit": "m",
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "2y²=18 → y=3 m; b=6 m.",
+        "ar": "2y²=18 ← y=3 m وb=6 m."
+      },
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 4
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "concept": "hydro-uniform-design",
+      "type": "mixed",
+      "prompt": {
+        "en": "For that rectangle enter R and choose the scope of the optimum.",
+        "ar": "للمستطيل نفسه أدخل R واختر نطاق التحسين."
+      },
+      "expected": 1.5,
+      "tolerance": 0.01,
+      "unit": "m",
+      "options": [
+        {
+          "en": "Minimum wetted perimeter at fixed area.",
+          "ar": "أقل محيط مبتل عند مساحة ثابتة."
+        },
+        {
+          "en": "A rule for all side-slope shapes.",
+          "ar": "قاعدة لكل الأشكال الجانبية."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Compute A and P from the actual section, then R=A/P. Use the energy slope unless uniform flow justifies Sf=S0.",
+          "ar": "احسب A وP للقطاع الفعلي ثم R=A/P. استعمل ميل الطاقة ما لم يبرر الانتظام Sf=S0."
+        },
+        {
+          "en": "Manning SI: Q=A R^(2/3) √Sf / n. Put slope as a decimal and bracket an unknown depth by checking trial discharges.",
+          "ar": "ماننج بوحدات SI: Q=A R^(2/3) √Sf / n. اكتب الميل ككسر عشري واحصر العمق بتصريفات تجريبية."
+        }
+      ],
+      "solution": {
+        "en": "R=y/2=1.5 m; A/P=18/12.",
+        "ar": "R=y/2=1.5 m؛ A/P=18/12."
+      },
+      "sources": [
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 4
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 5
+        },
+        {
+          "doc": "hyd-uniform-notes",
+          "filename": "uni flow hyd.pdf",
+          "page": 6
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "meaning-01",
+      "concept": "hydro-uniform-balance",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Weight and drag reach a truce",
+        "ar": "اشرح: الوزن والمقاومة يتوازنان"
+      },
+      "a": {
+        "en": "For a long control volume in steady uniform flow, upstream and downstream hydrostatic pressure forces cancel. The remaining downslope weight balances the total resisting boundary shear. Dividing by wetted boundary area produces a mean boundary shear γRS0. It is an average over walls and bed, not the exact local bed stress everywhere.",
+        "ar": "لحجم سيطرة طويل في جريان ثابت منتظم، تتعادل قوتا الضغط الهيدروستاتيكي عند الطرفين. تتوازن مركبة الوزن المتبقية مع قص الحدود المقاوم. بالقسمة على مساحة الحدود المبتلة نحصل على متوسط القص γRS0. إنه متوسط الجدارين والقاع لا إجهاد القاع المحلي الدقيق في كل موضع."
+      }
+    },
+    {
+      "id": "prediction-01",
+      "concept": "hydro-uniform-balance",
+      "kind": "prediction",
+      "q": {
+        "en": "At uniform depth, must gravity vanish because velocity is constant?",
+        "ar": "عند عمق منتظم، هل تختفي الجاذبية لأن السرعة ثابتة؟"
+      },
+      "a": {
+        "en": "No. Gravity balances boundary resistance. Small slope can still generate enough boundary stress to move sediment.",
+        "ar": "لا. تتوازن الجاذبية مع مقاومة الحدود. قد يولد ميل صغير قصًا كافيًا لتحريك الرواسب."
+      }
+    },
+    {
+      "id": "calculation-01",
+      "concept": "hydro-uniform-balance",
+      "kind": "calculation",
+      "q": {
+        "en": "R=2 m,S0=0.001. Find τ̄0 in Pa.",
+        "ar": "R=2 m وS0=0.001. أوجد τ̄0 بوحدة Pa."
+      },
+      "a": {
+        "en": "9810×2×0.001=19.62 Pa.",
+        "ar": "9810×2×0.001=19.62 Pa."
+      }
+    },
+    {
+      "id": "decision-01",
+      "concept": "hydro-uniform-balance",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Weight and drag reach a truce?",
+        "ar": "متى يصح هذا النموذج: الوزن والمقاومة يتوازنان؟"
+      },
+      "a": {
+        "en": "Steady, uniform, small bed slope, prismatic reach; nonuniform flow need not have parallel bed, water and energy lines. Symbols: τ̄0 kPa if γ=9.81 kN/m³; R m; positive downward slope S0 as m/m.",
+        "ar": "جريان ثابت منتظم وميل صغير وقناة منشورية؛ لا تتوازى خطوط القاع والماء والطاقة بالضرورة في غير المنتظم. الرموز: τ̄0 بالكيلوباسكال إذا γ=9.81 kN/m³؛ R بالمتر؛ S0 ميل موجب باتجاه الهبوط m/m."
+      }
+    },
+    {
+      "id": "meaning-02",
+      "concept": "hydro-uniform-resistance",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Turn resistance into velocity",
+        "ar": "اشرح: حوّل المقاومة إلى سرعة"
+      },
+      "a": {
+        "en": "Chezy represents mean velocity with a resistance coefficient C and the square root of hydraulic radius times energy slope. Manning expresses the same velocity using roughness n and a different power of R. Their coefficients are related, not numerically interchangeable. Use the SI form here; the common US customary multiplier belongs to another unit system.",
+        "ar": "يمثل شيزي السرعة المتوسطة بمعامل C والجذر التربيعي لحاصل نصف القطر الهيدروليكي وميل الطاقة. يعبّر ماننج عنها بخشونة n وأُس مختلف لـR. المعاملان مرتبطان لكن لا يمكن تبديلهما عدديًا. نستعمل صيغة SI هنا؛ معامل الوحدات الأمريكية الشائع ينتمي إلى نظام آخر."
+      }
+    },
+    {
+      "id": "prediction-02",
+      "concept": "hydro-uniform-resistance",
+      "kind": "prediction",
+      "q": {
+        "en": "At fixed R and slope, double n. What happens to V?",
+        "ar": "مع ثبات R والميل ضاعف n. ماذا يحدث لـV؟"
+      },
+      "a": {
+        "en": "It halves. The inverse dependence on n is a capacity effect at fixed depth; a prescribed Q may instead force a different normal depth.",
+        "ar": "تنخفض للنصف. اعتماد السرعة عكسيًا على n أثر على السعة عند عمق ثابت؛ أما Q المفروضة فقد تستلزم عمقًا عاديًا مختلفًا."
+      }
+    },
+    {
+      "id": "calculation-02",
+      "concept": "hydro-uniform-resistance",
+      "kind": "calculation",
+      "q": {
+        "en": "R=1,n=0.025,Sf=0.0004. Find V.",
+        "ar": "R=1 وn=0.025 وSf=0.0004. أوجد V."
+      },
+      "a": {
+        "en": "(1/0.025)×1×0.02=0.8 m/s.",
+        "ar": "(1/0.025)×1×0.02=0.8 m/s."
+      }
+    },
+    {
+      "id": "decision-02",
+      "concept": "hydro-uniform-resistance",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Turn resistance into velocity?",
+        "ar": "متى يصح هذا النموذج: حوّل المقاومة إلى سرعة؟"
+      },
+      "a": {
+        "en": "Empirical turbulent open-channel resistance; select n for actual surface and conditions. Do not use laminar-flow assumptions interchangeably. Symbols: V m/s; R m; C in m^(1/2)/s; Manning n in s/m^(1/3) in this SI expression; Sf head loss per length.",
+        "ar": "مقاومة تجريبية لجريان مفتوح مضطرب؛ اختر n للسطح والظروف الفعلية ولا تخلطها بفرضيات الجريان الصفحي. الرموز: V بالمتر/ثانية وR بالمتر وC بوحدة m^(1/2)/s؛ n بوحدة s/m^(1/3) في هذه الصيغة؛ Sf فقد الرأس لكل طول."
+      }
+    },
+    {
+      "id": "meaning-03",
+      "concept": "hydro-uniform-capacity",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Give the section its carrying capacity",
+        "ar": "اشرح: احسب سعة القطاع"
+      },
+      "a": {
+        "en": "Multiply the mean velocity by wetted area to obtain discharge. A depth change changes A and R together, so discharge is not generally proportional to depth. Use real wall lengths in P. The tempting R≈y approximation would overpredict capacity in a narrow deep rectangular channel.",
+        "ar": "اضرب السرعة المتوسطة في المساحة المبتلة لتحصل على التصريف. يغيّر العمق A وR معًا، لذلك لا يتناسب التصريف مع العمق عمومًا. استعمل أطوال الجدران الحقيقية في P. تقريب R≈y المغري يبالغ في سعة مستطيل ضيق وعميق."
+      }
+    },
+    {
+      "id": "prediction-03",
+      "concept": "hydro-uniform-capacity",
+      "kind": "prediction",
+      "q": {
+        "en": "If energy slope is quadrupled at fixed section and n, does Q quadruple?",
+        "ar": "إذا ضُوعف ميل الطاقة أربع مرات مع ثبات القطاع وn، هل يتضاعف Q أربع مرات؟"
+      },
+      "a": {
+        "en": "No. It doubles through the square root. Capacity is conditional on the selected depth and slope; it is not automatically the actual discharge.",
+        "ar": "لا. يتضاعف مرتين بسبب الجذر. السعة مشروطة بالعمق والميل المختارين وليست التصريف الفعلي تلقائيًا."
+      }
+    },
+    {
+      "id": "calculation-03",
+      "concept": "hydro-uniform-capacity",
+      "kind": "calculation",
+      "q": {
+        "en": "Same rectangle at Sf=0.0016. Find Q.",
+        "ar": "المستطيل نفسه عند Sf=0.0016. أوجد Q."
+      },
+      "a": {
+        "en": "√Sf=0.04; Q=400×0.04=16.",
+        "ar": "√Sf=0.04؛ Q=400×0.04=16."
+      }
+    },
+    {
+      "id": "decision-03",
+      "concept": "hydro-uniform-capacity",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Give the section its carrying capacity?",
+        "ar": "متى يصح هذا النموذج: احسب سعة القطاع؟"
+      },
+      "a": {
+        "en": "Same roughness and slope assumptions as the selected Manning model; full cross-section treated with one n only if appropriate. Symbols: Q m³/s; K is conveyance, m³/s for Sf dimensionless; A m².",
+        "ar": "فرضيات الخشونة والميل نفسها لنموذج ماننج؛ استعمل n واحدة للقطاع كله فقط إذا كان مناسبًا. الرموز: Q بالمتر المكعب/ثانية؛ K ناقلية بوحدة m³/s عندما Sf بلا وحدة؛ A بالمتر المربع."
+      }
+    },
+    {
+      "id": "meaning-04",
+      "concept": "hydro-uniform-normal",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Find normal depth by a checked trial",
+        "ar": "اشرح: استخرج العمق العادي بتجربة متحققة"
+      },
+      "a": {
+        "en": "When Q is prescribed, y is hidden inside both area and hydraulic radius. Choose a trial depth, compute its carrying discharge, then increase depth if capacity is too small. A bracket around the desired Q is safer than an unexplained calculator root. Recompute Q from your final y as an independent residual check.",
+        "ar": "عندما تكون Q مفروضة، يختبئ y داخل المساحة ونصف القطر معًا. اختر عمقًا تجريبيًا واحسب تصريفه، ثم زد العمق إذا كانت السعة أقل من المطلوب. حصر التصريف المطلوب بين تجربتين أوثق من جذر حاسبة بلا تفسير. أعد حساب Q من y النهائية كتحقق مستقل للباقي."
+      }
+    },
+    {
+      "id": "prediction-04",
+      "concept": "hydro-uniform-normal",
+      "kind": "prediction",
+      "q": {
+        "en": "A trial depth carries less than target Q in a fixed rectangular channel. Which way should y move?",
+        "ar": "عمق تجريبي يمرر أقل من Q المطلوبة في مستطيل ثابت. بأي اتجاه تغيّر y؟"
+      },
+      "a": {
+        "en": "Increase it and recompute both A and R. Use the root only after identifying what physical conditions make it a normal depth.",
+        "ar": "زده وأعد حساب A وR معًا. استعمل الجذر بعد تحديد الشروط التي تجعله عمقًا عاديًا."
+      }
+    },
+    {
+      "id": "calculation-04",
+      "concept": "hydro-uniform-normal",
+      "kind": "calculation",
+      "q": {
+        "en": "For that checked b=4,n=0.02,S0=0.0004,Q=8 case, enter yn.",
+        "ar": "للحالة المتحققة b=4 وn=0.02 وS0=0.0004 وQ=8 أدخل yn."
+      },
+      "a": {
+        "en": "Substitution y=2 givesQ=8.",
+        "ar": "تعويض y=2 يعطيQ=8."
+      }
+    },
+    {
+      "id": "decision-04",
+      "concept": "hydro-uniform-normal",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Find normal depth by a checked trial?",
+        "ar": "متى يصح هذا النموذج: استخرج العمق العادي بتجربة متحققة؟"
+      },
+      "a": {
+        "en": "Positive slope, steady uniform flow and no downstream control dominating the reach. A computed yn is not a full water profile. Symbols: F residual in m³/s; normal depth yn in m; use A(y),P(y) for the actual shape.",
+        "ar": "ميل موجب وجريان ثابت منتظم دون تحكم مصب يهيمن على المجرى. yn المحسوبة ليست منحنى الماء الكامل. الرموز: F الباقي بوحدة m³/s؛ yn العمق العادي بالمتر؛ استعمل A(y),P(y) للشكل الفعلي."
+      }
+    },
+    {
+      "id": "meaning-05",
+      "concept": "hydro-uniform-design",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Improve a section without hiding assumptions",
+        "ar": "اشرح: حسّن القطاع دون إخفاء الفرضيات"
+      },
+      "a": {
+        "en": "For a rectangular channel with fixed flow area and one roughness, reducing wetted perimeter increases R and capacity. Differentiating P=b+2y with A=by fixed gives the hydraulically efficient proportion b=2y. This is a friction optimum, not a universal cheapest or safest construction: freeboard, lining, land, erosion, maintenance and side stability still matter.",
+        "ar": "لمستطيل ثابت المساحة وبخشونة واحدة، يقلل خفض المحيط المبتل المقاومة ويزيد R والسعة. باشتقاق P=b+2y مع ثبات A=by نجد النسبة الكفؤة هيدروليكيًا b=2y. هذا تحسين احتكاك لا ضمان لأرخص أو آمن إنشاء؛ يظل الخلوص والتبطين والأرض والنحر والصيانة وثبات الجوانب مهمًا."
+      }
+    },
+    {
+      "id": "prediction-05",
+      "concept": "hydro-uniform-design",
+      "kind": "prediction",
+      "q": {
+        "en": "Does b=2y guarantee the lowest total project cost?",
+        "ar": "هل b=2y تضمن أقل تكلفة كلية للمشروع؟"
+      },
+      "a": {
+        "en": "No. It minimises wetted perimeter at fixed rectangular area. State the optimisation constraint before calling a section “best”.",
+        "ar": "لا. تقلل المحيط المبتل لمستطيل ثابت المساحة. صرّح بقيد التحسين قبل وصف القطاع بأنه «الأفضل»."
+      }
+    },
+    {
+      "id": "calculation-05",
+      "concept": "hydro-uniform-design",
+      "kind": "calculation",
+      "q": {
+        "en": "Efficient rectangle with A=18 m²: find y.",
+        "ar": "مستطيل كفؤ مساحته18 m²: أوجد y."
+      },
+      "a": {
+        "en": "2y²=18 → y=3 m; b=6 m.",
+        "ar": "2y²=18 ← y=3 m وb=6 m."
+      }
+    },
+    {
+      "id": "decision-05",
+      "concept": "hydro-uniform-design",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Improve a section without hiding assumptions?",
+        "ar": "متى يصح هذا النموذج: حسّن القطاع دون إخفاء الفرضيات؟"
+      },
+      "a": {
+        "en": "One n, fixed area and hydraulic efficiency as the objective; do not transfer the ratio unchanged to trapezoids. Symbols: b,y,R in m; fixed A in m². This optimum is for rectangles only.",
+        "ar": "n واحدة ومساحة ثابتة وكفاءة هيدروليكية كهدف؛ لا تنقل النسبة كما هي لشبه المنحرف. الرموز: b وy وR بالأمتار؛ A ثابتة بالمتر المربع. التحسين هنا للمستطيل فقط."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "hyd-lecture-03",
+      "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+      "page": 7
+    },
+    {
+      "doc": "hyd-lecture-03",
+      "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+      "page": 8
+    },
+    {
+      "doc": "hyd-lecture-03",
+      "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+      "page": 9
+    },
+    {
+      "doc": "hyd-lecture-03",
+      "filename": "lec 3 partالجريان المنتظم وقوانينه1.pdf",
+      "page": 11
+    },
+    {
+      "doc": "hyd-uniform-notes",
+      "filename": "uni flow hyd.pdf",
+      "page": 2
+    },
+    {
+      "doc": "hyd-uniform-notes",
+      "filename": "uni flow hyd.pdf",
+      "page": 3
+    },
+    {
+      "doc": "hyd-uniform-notes",
+      "filename": "uni flow hyd.pdf",
+      "page": 4
+    },
+    {
+      "doc": "hyd-uniform-notes",
+      "filename": "uni flow hyd.pdf",
+      "page": 5
+    },
+    {
+      "doc": "hyd-uniform-notes",
+      "filename": "uni flow hyd.pdf",
+      "page": 6
+    }
+  ]
+}

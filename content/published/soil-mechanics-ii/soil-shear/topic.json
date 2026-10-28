@@ -1,0 +1,1479 @@
+{
+  "id": "soil-shear",
+  "family": "soil-strength",
+  "title": {
+    "en": "Shear strength: why grains slide",
+    "ar": "مقاومة القص: لماذا تنزلق الحبيبات؟"
+  },
+  "summary": {
+    "en": "Turn a sliding block into a soil shear test. Separate the stress being applied from the strength available, then extract a failure envelope from measured loads.",
+    "ar": "حوّل الكتلة المنزلقة إلى اختبار قص للتربة. ميّز الإجهاد المطبق عن المقاومة المتاحة ثم استخرج غلاف الفشل من الأحمال المقاسة."
+  },
+  "outcomes": [
+    {
+      "en": "A sliding surface has demand and capacity",
+      "ar": "لسطح الانزلاق طلب ومقاومة"
+    },
+    {
+      "en": "Normal stress buys frictional resistance",
+      "ar": "الإجهاد العمودي يضيف مقاومة احتكاك"
+    },
+    {
+      "en": "Read a line, not just two numbers",
+      "ar": "اقرأ الخط لا رقمين فقط"
+    },
+    {
+      "en": "The box chooses the failure plane",
+      "ar": "الصندوق يختار سطح الفشل"
+    },
+    {
+      "en": "Challenge the “dry sand” answer",
+      "ar": "اختبر نتيجة «الرمل الجاف»"
+    }
+  ],
+  "prereqIds": [
+    "soil-units",
+    "soil-effective",
+    "soil-trig",
+    "course-algebra"
+  ],
+  "videoIds": [
+    "bmpn5oNDvOs",
+    "uGTs5O3ds7k"
+  ],
+  "concepts": [
+    {
+      "id": "soil-shear-demand",
+      "title": {
+        "en": "A sliding surface has demand and capacity",
+        "ar": "لسطح الانزلاق طلب ومقاومة"
+      }
+    },
+    {
+      "id": "soil-shear-envelope",
+      "title": {
+        "en": "Normal stress buys frictional resistance",
+        "ar": "الإجهاد العمودي يضيف مقاومة احتكاك"
+      }
+    },
+    {
+      "id": "soil-shear-fit",
+      "title": {
+        "en": "Read a line, not just two numbers",
+        "ar": "اقرأ الخط لا رقمين فقط"
+      }
+    },
+    {
+      "id": "soil-shear-apparatus",
+      "title": {
+        "en": "The box chooses the failure plane",
+        "ar": "الصندوق يختار سطح الفشل"
+      }
+    },
+    {
+      "id": "soil-shear-audit",
+      "title": {
+        "en": "Challenge the “dry sand” answer",
+        "ar": "اختبر نتيجة «الرمل الجاف»"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "soil-shear-demand",
+      "title": {
+        "en": "A sliding surface has demand and capacity",
+        "ar": "لسطح الانزلاق طلب ومقاومة"
+      },
+      "predict": {
+        "en": "If the same shear force acts on half the area, what happens to τ?",
+        "ar": "إذا أثرت قوة القص نفسها على نصف المساحة، ماذا يحدث لـτ؟"
+      },
+      "options": [
+        {
+          "en": "It doubles.",
+          "ar": "تتضاعف."
+        },
+        {
+          "en": "It halves.",
+          "ar": "تنخفض للنصف."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Both loads must use the same area convention. Strength exceeding normal stress is possible when a fitted cohesion intercept is present.",
+        "ar": "يجب استعمال اتفاق مساحة واحد للحملين. يمكن أن تتجاوز المقاومة الإجهاد العمودي إذا وُجد مقطع تماسك ملائم للبيانات."
+      },
+      "explain": {
+        "en": "A horizontal force tries to slide the upper half of the box while a normal load presses the two halves together. Shear stress is force divided by the area carrying it. Strength is the limiting shear stress reached at failure, not the shear stress at every earlier load. Keep demand τ and capacity τf separate so that a safe sample is not mistakenly assumed to be failing.",
+        "ar": "تحاول قوة أفقية إزلاق نصف الصندوق، بينما يضغط الحمل العمودي النصفين معًا. إجهاد القص هو القوة مقسومة على المساحة التي تحملها. المقاومة هي إجهاد القص المحدِّد عند الفشل، وليست إجهاد كل حمل سابق. افصل الطلب τ عن المقاومة τf كي لا تفترض فشل عينة آمنة."
+      },
+      "formula": "σn = N/A; τ = T/A; at failure τ = τf",
+      "symbols": {
+        "en": "N normal force and T shear force in kN; A shear-plane area in m²; stresses in kPa.",
+        "ar": "N القوة العمودية وT قوة القص بوحدة kN؛ A مساحة سطح القص بالمتر المربع؛ والإجهادات kPa."
+      },
+      "assumptions": {
+        "en": "Uniform average stresses on the stated area; note whether nominal or corrected overlap area is used.",
+        "ar": "إجهادات متوسطة على المساحة المعطاة؛ صرّح هل استُعملت المساحة الاسمية أم مساحة التراكب المصححة."
+      },
+      "example": {
+        "en": "A 60×60 mm box carries N=360 N and failure T=414 N.",
+        "ar": "صندوق 60×60 mm يحمل N=360 N وقص فشل T=414 N."
+      },
+      "calculation": {
+        "en": "A=0.06²=0.0036 m². σn=0.360/0.0036=100; τf=0.414/0.0036=115 kPa.",
+        "ar": "A=0.06²=0.0036 m². σn=0.360/0.0036=100 وτf=0.414/0.0036=115 kPa."
+      },
+      "interpret": {
+        "en": "Both loads must use the same area convention. Strength exceeding normal stress is possible when a fitted cohesion intercept is present.",
+        "ar": "يجب استعمال اتفاق مساحة واحد للحملين. يمكن أن تتجاوز المقاومة الإجهاد العمودي إذا وُجد مقطع تماسك ملائم للبيانات."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Both loads must use the same area convention. Strength exceeding normal stress is possible when a fitted cohesion intercept is present. Uniform average stresses on the stated area; note whether nominal or corrected overlap area is used.",
+          "ar": "يجب استعمال اتفاق مساحة واحد للحملين. يمكن أن تتجاوز المقاومة الإجهاد العمودي إذا وُجد مقطع تماسك ملائم للبيانات. إجهادات متوسطة على المساحة المعطاة؛ صرّح هل استُعملت المساحة الاسمية أم مساحة التراكب المصححة."
+        }
+      },
+      "diagram": "course-soil-shear",
+      "concepts": [
+        "soil-shear-demand"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "soil-shear-envelope",
+      "title": {
+        "en": "Normal stress buys frictional resistance",
+        "ar": "الإجهاد العمودي يضيف مقاومة احتكاك"
+      },
+      "predict": {
+        "en": "At fixed σn, increasing u changes the frictional resistance in which direction?",
+        "ar": "مع ثبات σn، بأي اتجاه يغيّر ارتفاع u مقاومة الاحتكاك؟"
+      },
+      "options": [
+        {
+          "en": "It decreases.",
+          "ar": "تنخفض."
+        },
+        {
+          "en": "It increases automatically.",
+          "ar": "تزداد تلقائيًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "Water pressure affects available grain friction; it does not subtract directly from shear stress.",
+        "ar": "يؤثر ضغط الماء في الاحتكاك المتاح بين الحبيبات؛ ولا يُطرح مباشرة من إجهاد القص."
+      },
+      "explain": {
+        "en": "Draw measured failure points with effective normal stress horizontally and shear strength vertically. A straight Mohr–Coulomb approximation has an intercept c′ and slope tan φ′. The intercept is a fitted parameter over the tested stress range; it is not proof that every clay is purely cohesive or every soil has permanent bonding. Raising pore pressure at fixed total stress reduces the frictional part by reducing contact stress.",
+        "ar": "ارسم نقاط الفشل مقابل الإجهاد العمودي الفعّال أفقيًا ومقاومة القص رأسيًا. لتقريب موهر–كولوم الخطي مقطع c′ وميل tan φ′. المقطع معامل ملاءمة ضمن مجال الاختبار؛ لا يثبت أن كل طين مقاومته تماسك فقط أو أن كل تربة مترابطة دائمًا. رفع ضغط المسام مع ثبات الكلي يقلل جزء الاحتكاك لأنه يقلل إجهاد التلامس."
+      },
+      "formula": "τf = c′ + (σn − u) tan φ′",
+      "symbols": {
+        "en": "c′ in kPa; φ′ effective friction angle in degrees; u pore pressure and σn total normal stress in kPa.",
+        "ar": "c′ بالكيلوباسكال؛ φ′ زاوية الاحتكاك الفعّالة بالدرجات؛ u ضغط المسام وσn الإجهاد العمودي الكلي بالكيلوباسكال."
+      },
+      "assumptions": {
+        "en": "A selected effective-stress failure envelope and relevant drained/known-u conditions; do not mix total-stress parameters with σ′.",
+        "ar": "غلاف فشل فعّال مختار وتصريف مناسب أو u معلومة؛ لا تخلط معاملات الكلي مع σ′."
+      },
+      "example": {
+        "en": "c′=10 kPa, φ′=30°, σn=120 kPa and u=40 kPa.",
+        "ar": "c′=10 kPa وφ′=30° وσn=120 kPa وu=40 kPa."
+      },
+      "calculation": {
+        "en": "σ′n=80; τf=10+80 tan30°=56.19 kPa. If u rises by 20, capacity falls by 20 tan30°=11.55 kPa.",
+        "ar": "σ′n=80؛ τf=10+80 tan30°=56.19 kPa. إذا زاد u بمقدار 20 انخفضت المقاومة 20 tan30°=11.55 kPa."
+      },
+      "interpret": {
+        "en": "Water pressure affects available grain friction; it does not subtract directly from shear stress.",
+        "ar": "يؤثر ضغط الماء في الاحتكاك المتاح بين الحبيبات؛ ولا يُطرح مباشرة من إجهاد القص."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "Water pressure affects available grain friction; it does not subtract directly from shear stress. A selected effective-stress failure envelope and relevant drained/known-u conditions; do not mix total-stress parameters with σ′.",
+          "ar": "يؤثر ضغط الماء في الاحتكاك المتاح بين الحبيبات؛ ولا يُطرح مباشرة من إجهاد القص. غلاف فشل فعّال مختار وتصريف مناسب أو u معلومة؛ لا تخلط معاملات الكلي مع σ′."
+        }
+      },
+      "diagram": "course-soil-shear",
+      "concepts": [
+        "soil-shear-envelope"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 5
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "soil-shear-fit",
+      "title": {
+        "en": "Read a line, not just two numbers",
+        "ar": "اقرأ الخط لا رقمين فقط"
+      },
+      "predict": {
+        "en": "An envelope rises 50 kPa over 100 kPa normal stress. Is φ=0.5°?",
+        "ar": "غلاف يرتفع 50 kPa لكل 100 kPa عمودي. هل φ=0.5°؟"
+      },
+      "options": [
+        {
+          "en": "No. tanφ=0.5, so φ≈26.57°.",
+          "ar": "لا. tanφ=0.5، إذن φ≈26.57°."
+        },
+        {
+          "en": "Yes. Slope equals the friction angle numerically.",
+          "ar": "نعم، الميل يساوي الزاوية عدديًا."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "The independent second-point check catches a wrong intercept or mixed units.",
+        "ar": "يكشف التحقق بالنقطة الثانية مقطعًا خاطئًا أو خلط وحدات."
+      },
+      "explain": {
+        "en": "One test supplies one failure point. Several normal loads let you estimate a slope and intercept and see whether a straight line is reasonable. For two exact points, slope is rise divided by run. For scattered measurements use regression or a clearly stated graphical fit. Never take the angle itself as the slope; calculate the inverse tangent after fitting.",
+        "ar": "يوفر اختبار واحد نقطة فشل واحدة. تتيح أحمال عمودية متعددة تقدير الميل والمقطع والحكم على مناسبة الخط المستقيم. لنقطتين دقيقتين الميل هو التغيّر الرأسي على الأفقي. للقياسات المتشتتة استعمل الانحدار أو صرّح بالملاءمة البيانية. لا تجعل الزاوية نفسها ميلًا؛ احسب معكوس الظل بعد الملاءمة."
+      },
+      "formula": "m = Δτf/Δσ′n; φ′ = atan(m); c′ = τf − mσ′n",
+      "symbols": {
+        "en": "m is dimensionless; c′ and τf use the same pressure units. atan returns degrees only if the calculator is in degree mode.",
+        "ar": "m بلا وحدة؛ c′ وτf لهما وحدة الضغط نفسها. يعطي atan درجات فقط عند ضبط الحاسبة لذلك."
+      },
+      "assumptions": {
+        "en": "Same soil preparation, density and drainage condition across tests; fit only the relevant stress range.",
+        "ar": "تحضير وكثافة وتصريف متماثلة بين الاختبارات؛ تُلائم البيانات ضمن مجال الإجهاد الملائم فقط."
+      },
+      "example": {
+        "en": "Two tests: (σ′,τf)=(100,70),(200,120) kPa.",
+        "ar": "اختباران: (σ′,τf)=(100,70),(200,120) kPa."
+      },
+      "calculation": {
+        "en": "m=(120−70)/(200−100)=0.5; φ′=26.565°; c′=70−50=20 kPa. Check the second point:20+0.5×200=120.",
+        "ar": "m=(120−70)/(200−100)=0.5؛ φ′=26.565°؛ c′=70−50=20 kPa. تحقق بالنقطة الثانية:20+0.5×200=120."
+      },
+      "interpret": {
+        "en": "The independent second-point check catches a wrong intercept or mixed units.",
+        "ar": "يكشف التحقق بالنقطة الثانية مقطعًا خاطئًا أو خلط وحدات."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "The independent second-point check catches a wrong intercept or mixed units. Same soil preparation, density and drainage condition across tests; fit only the relevant stress range.",
+          "ar": "يكشف التحقق بالنقطة الثانية مقطعًا خاطئًا أو خلط وحدات. تحضير وكثافة وتصريف متماثلة بين الاختبارات؛ تُلائم البيانات ضمن مجال الإجهاد الملائم فقط."
+        }
+      },
+      "diagram": "course-soil-shear",
+      "concepts": [
+        "soil-shear-fit"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 8
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "soil-shear-apparatus",
+      "title": {
+        "en": "The box chooses the failure plane",
+        "ar": "الصندوق يختار سطح الفشل"
+      },
+      "predict": {
+        "en": "As overlap shrinks at fixed T, does corrected τ increase?",
+        "ar": "مع تقلص التراكب وثبات T، هل تزيد τ المصححة؟"
+      },
+      "options": [
+        {
+          "en": "Yes, the carrying area decreases.",
+          "ar": "نعم، لأن المساحة الحاملة تقل."
+        },
+        {
+          "en": "No, the area is always the box thickness.",
+          "ar": "لا، المساحة دائمًا سماكة الصندوق."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A laboratory result needs its procedure and stress basis, not just a final angle.",
+        "ar": "تحتاج نتيجة المختبر إلى بروتوكولها وأساس إجهادها، لا الزاوية النهائية وحدها."
+      },
+      "explain": {
+        "en": "A split box forces relative movement along its horizontal split. Record normal force, horizontal force and both horizontal and vertical displacement. Dense sand may dilate while loose sand may contract; the change is information about packing, not a broken test. Drainage rate and overlap area matter. The simple apparatus does not directly reveal principal stresses or measure pore pressure, so fast tests on low-permeability soil need careful interpretation.",
+        "ar": "يفرض الصندوق المشقوق الحركة النسبية على شق أفقي. سجّل القوة العمودية والأفقية والإزاحتين الأفقية والرأسية. قد يتمدد الرمل الكثيف وينكمش المفكك؛ وهذا دليل على التراص لا على فساد التجربة. يهم معدل التصريف ومساحة التراكب. لا يكشف الجهاز البسيط الإجهادات الرئيسية مباشرة ولا يقيس ضغط المسام، لذا يلزم الحذر في الاختبارات السريعة للتربة ضعيفة النفاذية."
+      },
+      "formula": "A_overlap = B(L − δ); τ = T/A_overlap",
+      "symbols": {
+        "en": "B and L box plan dimensions; δ relative horizontal displacement, all in m; use T in kN for kPa.",
+        "ar": "B وL بعدا الصندوق الأفقيان وδ الإزاحة الأفقية النسبية بالمتر؛ استعمل T بالكيلونيوتن للحصول على kPa."
+      },
+      "assumptions": {
+        "en": "Rectangular overlap correction if required by the test procedure; not a universal replacement for the source’s nominal-area convention.",
+        "ar": "تصحيح تراكب مستطيل إذا تطلبه بروتوكول الاختبار؛ ليس بديلًا عامًا لاتفاق المساحة الاسمية في المصدر."
+      },
+      "example": {
+        "en": "B=L=60 mm, δ=5 mm, T=0.33 kN.",
+        "ar": "B=L=60 mm وδ=5 mm وT=0.33 kN."
+      },
+      "calculation": {
+        "en": "A=0.060×0.055=0.00330 m²; τ=100 kPa. Nominal-area stress is 91.67 kPa. State which one you report.",
+        "ar": "A=0.060×0.055=0.00330 m²؛ τ=100 kPa. الإجهاد بالمساحة الاسمية 91.67 kPa. صرّح بالقيمة التي تبلغ عنها."
+      },
+      "interpret": {
+        "en": "A laboratory result needs its procedure and stress basis, not just a final angle.",
+        "ar": "تحتاج نتيجة المختبر إلى بروتوكولها وأساس إجهادها، لا الزاوية النهائية وحدها."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "A laboratory result needs its procedure and stress basis, not just a final angle. Rectangular overlap correction if required by the test procedure; not a universal replacement for the source’s nominal-area convention.",
+          "ar": "تحتاج نتيجة المختبر إلى بروتوكولها وأساس إجهادها، لا الزاوية النهائية وحدها. تصحيح تراكب مستطيل إذا تطلبه بروتوكول الاختبار؛ ليس بديلًا عامًا لاتفاق المساحة الاسمية في المصدر."
+        }
+      },
+      "diagram": "course-soil-shear",
+      "concepts": [
+        "soil-shear-apparatus"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 8
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 2
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "soil-shear-audit",
+      "title": {
+        "en": "Challenge the “dry sand” answer",
+        "ar": "اختبر نتيجة «الرمل الجاف»"
+      },
+      "predict": {
+        "en": "Should you silently set c=0 because the question says dry sand?",
+        "ar": "هل تفرض c=0 بصمت لأن السؤال يقول رمل جاف؟"
+      },
+      "options": [
+        {
+          "en": "No. Report the fitted data and flag the inconsistency.",
+          "ar": "لا. اعرض ملاءمة البيانات وصرّح بالتعارض."
+        },
+        {
+          "en": "Yes. Alter the shear forces until the line passes through zero.",
+          "ar": "نعم. غيّر قوى القص حتى يمر الخط بالصفر."
+        }
+      ],
+      "correct": 0,
+      "observe": {
+        "en": "A credible solution reports both the numerical fit and the reason its physical interpretation may be wrong.",
+        "ar": "الحل الموثوق يعرض الملاءمة العددية وسبب احتمال خطأ تفسيرها الفيزيائي معًا."
+      },
+      "explain": {
+        "en": "The supplied lecture labels four specimens dry sand but reports a positive cohesion intercept near 85 kPa. The force-to-stress conversions are consistent. A least-squares line through the four given points gives an intercept near 83.20 kPa and φ near 17.48°. This is a fit to those data, not evidence that clean dry sand has true cohesion. Preserve the measured values and flag the labeling or test/model issue before using the parameters in a field calculation.",
+        "ar": "تسمي المحاضرة العينات الأربع رملًا جافًا، لكنها تعطي مقطع تماسك موجبًا قرب 85 kPa. تحويلات القوة إلى الإجهاد متسقة. يعطي الانحدار الخطي للنقاط المعطاة مقطعًا قرب 83.20 kPa وφ قرب 17.48°. هذه ملاءمة للبيانات وليست إثباتًا لتماسك حقيقي في الرمل الجاف النظيف. احتفظ بالقياسات ووضّح مشكلة التسمية أو الاختبار أو النموذج قبل استخدام المعاملات موقعيًا."
+      },
+      "formula": "m = Σ[(σ−σ̄)(τ−τ̄)] / Σ(σ−σ̄)²; c = τ̄ − mσ̄",
+      "symbols": {
+        "en": "Four source points: σ=[100,200,350,500], τ=[115,145,195,240] kPa. Bars denote means.",
+        "ar": "نقاط المصدر: σ=[100,200,350,500] وτ=[115,145,195,240] kPa. الشرطة تعني المتوسط."
+      },
+      "assumptions": {
+        "en": "A statistical classroom fit only. The source’s soil label and large intercept remain unresolved; do not silently force c=0.",
+        "ar": "ملاءمة إحصائية تعليمية فقط. تعارض اسم التربة مع المقطع الكبير لم يُحسم؛ لا تفرض c=0 بصمت."
+      },
+      "example": {
+        "en": "Use the source’s rounded graphical fit c=85 kPa and φ=17°. Predict τ at σ=300 kPa.",
+        "ar": "استعمل ملاءمة المصدر البيانية المقربة c=85 kPa وφ=17°. توقّع τ عند σ=300 kPa."
+      },
+      "calculation": {
+        "en": "τ=85+300tan17°=176.72 kPa. This is an interpolation of that fitted line; it does not resolve the soil-label inconsistency.",
+        "ar": "τ=85+300tan17°=176.72 kPa. هذا استيفاء لخط الملاءمة ولا يحسم تعارض اسم التربة."
+      },
+      "interpret": {
+        "en": "A credible solution reports both the numerical fit and the reason its physical interpretation may be wrong.",
+        "ar": "الحل الموثوق يعرض الملاءمة العددية وسبب احتمال خطأ تفسيرها الفيزيائي معًا."
+      },
+      "check": {
+        "prompt": {
+          "en": "Explain the response, show the calculation and name one limit of the model.",
+          "ar": "فسّر الاستجابة، وبيّن الحساب، واذكر حدًا واحدًا للنموذج."
+        },
+        "answer": {
+          "en": "A credible solution reports both the numerical fit and the reason its physical interpretation may be wrong. A statistical classroom fit only. The source’s soil label and large intercept remain unresolved; do not silently force c=0.",
+          "ar": "الحل الموثوق يعرض الملاءمة العددية وسبب احتمال خطأ تفسيرها الفيزيائي معًا. ملاءمة إحصائية تعليمية فقط. تعارض اسم التربة مع المقطع الكبير لم يُحسم؛ لا تفرض c=0 بصمت."
+        }
+      },
+      "diagram": "course-soil-shear",
+      "concepts": [
+        "soil-shear-audit"
+      ],
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 9
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "C01",
+      "concept": "soil-shear-demand",
+      "type": "conceptual",
+      "prompt": {
+        "en": "If the same shear force acts on half the area, what happens to τ?",
+        "ar": "إذا أثرت قوة القص نفسها على نصف المساحة، ماذا يحدث لـτ؟"
+      },
+      "options": [
+        {
+          "en": "It halves.",
+          "ar": "تنخفض للنصف."
+        },
+        {
+          "en": "It doubles.",
+          "ar": "تتضاعف."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "A horizontal force tries to slide the upper half of the box while a normal load presses the two halves together. Shear stress is force divided by the area carrying it. Strength is the limiting shear stress reached at failure, not the shear stress at every earlier load. Keep demand τ and capacity τf separate so that a safe sample is not mistakenly assumed to be failing. Both loads must use the same area convention. Strength exceeding normal stress is possible when a fitted cohesion intercept is present.",
+        "ar": "تحاول قوة أفقية إزلاق نصف الصندوق، بينما يضغط الحمل العمودي النصفين معًا. إجهاد القص هو القوة مقسومة على المساحة التي تحملها. المقاومة هي إجهاد القص المحدِّد عند الفشل، وليست إجهاد كل حمل سابق. افصل الطلب τ عن المقاومة τf كي لا تفترض فشل عينة آمنة. يجب استعمال اتفاق مساحة واحد للحملين. يمكن أن تتجاوز المقاومة الإجهاد العمودي إذا وُجد مقطع تماسك ملائم للبيانات."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "N01",
+      "concept": "soil-shear-demand",
+      "type": "numerical",
+      "prompt": {
+        "en": "N=720 N on a 60×60 mm box. Find σn.",
+        "ar": "N=720 N على صندوق 60×60 mm. أوجد σn."
+      },
+      "expected": 200,
+      "tolerance": 0.4,
+      "unit": "kPa",
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "0.720/0.0036=200 kPa.",
+        "ar": "0.720/0.0036=200 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "concept": "soil-shear-demand",
+      "type": "mixed",
+      "prompt": {
+        "en": "T=522 N on the same box. Enter τf and choose the area convention.",
+        "ar": "T=522 N على الصندوق نفسه. أدخل τf واختر اتفاق المساحة."
+      },
+      "expected": 145,
+      "tolerance": 0.29,
+      "unit": "kPa",
+      "options": [
+        {
+          "en": "Use 0.0036 m² nominal area as stated.",
+          "ar": "استعمل المساحة الاسمية المعطاة 0.0036 m²."
+        },
+        {
+          "en": "Use the 2 cm specimen thickness as area.",
+          "ar": "استعمل سماكة العينة 2 cm كمساحة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "0.522/0.0036=145 kPa; thickness is not the shear-plane area.",
+        "ar": "0.522/0.0036=145 kPa؛ السماكة ليست مساحة سطح القص."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "concept": "soil-shear-envelope",
+      "type": "conceptual",
+      "prompt": {
+        "en": "At fixed σn, increasing u changes the frictional resistance in which direction?",
+        "ar": "مع ثبات σn، بأي اتجاه يغيّر ارتفاع u مقاومة الاحتكاك؟"
+      },
+      "options": [
+        {
+          "en": "It decreases.",
+          "ar": "تنخفض."
+        },
+        {
+          "en": "It increases automatically.",
+          "ar": "تزداد تلقائيًا."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "Draw measured failure points with effective normal stress horizontally and shear strength vertically. A straight Mohr–Coulomb approximation has an intercept c′ and slope tan φ′. The intercept is a fitted parameter over the tested stress range; it is not proof that every clay is purely cohesive or every soil has permanent bonding. Raising pore pressure at fixed total stress reduces the frictional part by reducing contact stress. Water pressure affects available grain friction; it does not subtract directly from shear stress.",
+        "ar": "ارسم نقاط الفشل مقابل الإجهاد العمودي الفعّال أفقيًا ومقاومة القص رأسيًا. لتقريب موهر–كولوم الخطي مقطع c′ وميل tan φ′. المقطع معامل ملاءمة ضمن مجال الاختبار؛ لا يثبت أن كل طين مقاومته تماسك فقط أو أن كل تربة مترابطة دائمًا. رفع ضغط المسام مع ثبات الكلي يقلل جزء الاحتكاك لأنه يقلل إجهاد التلامس. يؤثر ضغط الماء في الاحتكاك المتاح بين الحبيبات؛ ولا يُطرح مباشرة من إجهاد القص."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 5
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "N02",
+      "concept": "soil-shear-envelope",
+      "type": "numerical",
+      "prompt": {
+        "en": "c′=0, φ′=30°, σ′n=100 kPa. Find τf.",
+        "ar": "c′=0 وφ′=30° وσ′n=100 kPa. أوجد τf."
+      },
+      "expected": 57.73502691896258,
+      "tolerance": 0.11547005383792516,
+      "unit": "kPa",
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "100 tan30°=57.735 kPa.",
+        "ar": "100 tan30°=57.735 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 5
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "concept": "soil-shear-envelope",
+      "type": "mixed",
+      "prompt": {
+        "en": "σn=100, u=40, c′=0, φ′=30°. Enter capacity and choose the stress basis.",
+        "ar": "σn=100 وu=40 وc′=0 وφ′=30°. أدخل المقاومة واختر أساس الإجهاد."
+      },
+      "expected": 34.64101615137755,
+      "tolerance": 0.0692820323027551,
+      "unit": "kPa",
+      "options": [
+        {
+          "en": "Use 100 kPa and subtract u from the final shear strength.",
+          "ar": "استعمل 100 kPa ثم اطرح u من مقاومة القص النهائية."
+        },
+        {
+          "en": "Effective normal stress is 60 kPa.",
+          "ar": "الإجهاد العمودي الفعّال 60 kPa."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "τf=(100−40)tan30°=34.641 kPa.",
+        "ar": "τf=(100−40)tan30°=34.641 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 4
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 5
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "concept": "soil-shear-fit",
+      "type": "conceptual",
+      "prompt": {
+        "en": "An envelope rises 50 kPa over 100 kPa normal stress. Is φ=0.5°?",
+        "ar": "غلاف يرتفع 50 kPa لكل 100 kPa عمودي. هل φ=0.5°؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Slope equals the friction angle numerically.",
+          "ar": "نعم، الميل يساوي الزاوية عدديًا."
+        },
+        {
+          "en": "No. tanφ=0.5, so φ≈26.57°.",
+          "ar": "لا. tanφ=0.5، إذن φ≈26.57°."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "One test supplies one failure point. Several normal loads let you estimate a slope and intercept and see whether a straight line is reasonable. For two exact points, slope is rise divided by run. For scattered measurements use regression or a clearly stated graphical fit. Never take the angle itself as the slope; calculate the inverse tangent after fitting. The independent second-point check catches a wrong intercept or mixed units.",
+        "ar": "يوفر اختبار واحد نقطة فشل واحدة. تتيح أحمال عمودية متعددة تقدير الميل والمقطع والحكم على مناسبة الخط المستقيم. لنقطتين دقيقتين الميل هو التغيّر الرأسي على الأفقي. للقياسات المتشتتة استعمل الانحدار أو صرّح بالملاءمة البيانية. لا تجعل الزاوية نفسها ميلًا؛ احسب معكوس الظل بعد الملاءمة. يكشف التحقق بالنقطة الثانية مقطعًا خاطئًا أو خلط وحدات."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 8
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "N03",
+      "concept": "soil-shear-fit",
+      "type": "numerical",
+      "prompt": {
+        "en": "Failure points (100,80),(200,130) kPa. Find c′.",
+        "ar": "نقطتا فشل (100,80),(200,130) kPa. أوجد c′."
+      },
+      "expected": 30,
+      "tolerance": 0.06,
+      "unit": "kPa",
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "m=0.5; c′=80−0.5×100=30.",
+        "ar": "m=0.5؛ c′=80−0.5×100=30."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 8
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "concept": "soil-shear-fit",
+      "type": "mixed",
+      "prompt": {
+        "en": "m=0.5. Enter φ in degrees and select the correct meaning.",
+        "ar": "m=0.5. أدخل φ بالدرجات واختر المعنى الصحيح."
+      },
+      "expected": 26.56505117707799,
+      "tolerance": 0.05313010235415598,
+      "unit": "°",
+      "options": [
+        {
+          "en": "Slope is tanφ, not φ.",
+          "ar": "الميل tanφ وليس φ."
+        },
+        {
+          "en": "The slope must be entered as 50°.",
+          "ar": "يجب إدخال الميل 50°."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "atan0.5=26.565°.",
+        "ar": "atan0.5=26.565°."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 8
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "concept": "soil-shear-apparatus",
+      "type": "conceptual",
+      "prompt": {
+        "en": "As overlap shrinks at fixed T, does corrected τ increase?",
+        "ar": "مع تقلص التراكب وثبات T، هل تزيد τ المصححة؟"
+      },
+      "options": [
+        {
+          "en": "Yes, the carrying area decreases.",
+          "ar": "نعم، لأن المساحة الحاملة تقل."
+        },
+        {
+          "en": "No, the area is always the box thickness.",
+          "ar": "لا، المساحة دائمًا سماكة الصندوق."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "A split box forces relative movement along its horizontal split. Record normal force, horizontal force and both horizontal and vertical displacement. Dense sand may dilate while loose sand may contract; the change is information about packing, not a broken test. Drainage rate and overlap area matter. The simple apparatus does not directly reveal principal stresses or measure pore pressure, so fast tests on low-permeability soil need careful interpretation. A laboratory result needs its procedure and stress basis, not just a final angle.",
+        "ar": "يفرض الصندوق المشقوق الحركة النسبية على شق أفقي. سجّل القوة العمودية والأفقية والإزاحتين الأفقية والرأسية. قد يتمدد الرمل الكثيف وينكمش المفكك؛ وهذا دليل على التراص لا على فساد التجربة. يهم معدل التصريف ومساحة التراكب. لا يكشف الجهاز البسيط الإجهادات الرئيسية مباشرة ولا يقيس ضغط المسام، لذا يلزم الحذر في الاختبارات السريعة للتربة ضعيفة النفاذية. تحتاج نتيجة المختبر إلى بروتوكولها وأساس إجهادها، لا الزاوية النهائية وحدها."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 8
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 2
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "N04",
+      "concept": "soil-shear-apparatus",
+      "type": "numerical",
+      "prompt": {
+        "en": "B=L=60 mm, δ=10 mm, T=0.30 kN. Find corrected τ.",
+        "ar": "B=L=60 mm وδ=10 mm وT=0.30 kN. أوجد τ المصححة."
+      },
+      "expected": 100,
+      "tolerance": 0.2,
+      "unit": "kPa",
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "0.30/(0.06×0.05)=100 kPa.",
+        "ar": "0.30/(0.06×0.05)=100 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 8
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 2
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "concept": "soil-shear-apparatus",
+      "type": "mixed",
+      "prompt": {
+        "en": "A dry 60 mm square box has T=360 N, δ=0. Enter nominal τ and choose what the apparatus fixes.",
+        "ar": "صندوق جاف مربع 60 mm له T=360 N وδ=0. أدخل τ الاسمية واختر ما يفرضه الجهاز."
+      },
+      "expected": 100,
+      "tolerance": 0.2,
+      "unit": "kPa",
+      "options": [
+        {
+          "en": "The naturally weakest plane in every soil.",
+          "ar": "أضعف سطح طبيعي في كل تربة."
+        },
+        {
+          "en": "A prescribed horizontal shear plane.",
+          "ar": "سطح قص أفقي مفروض."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "0.36/0.0036=100 kPa; the split imposes the plane.",
+        "ar": "0.36/0.0036=100 kPa؛ الشق يفرض سطح القص."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 7
+        },
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 8
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 2
+        },
+        {
+          "doc": "soil-lecture-03",
+          "filename": "Lecture 3.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "concept": "soil-shear-audit",
+      "type": "conceptual",
+      "prompt": {
+        "en": "Should you silently set c=0 because the question says dry sand?",
+        "ar": "هل تفرض c=0 بصمت لأن السؤال يقول رمل جاف؟"
+      },
+      "options": [
+        {
+          "en": "Yes. Alter the shear forces until the line passes through zero.",
+          "ar": "نعم. غيّر قوى القص حتى يمر الخط بالصفر."
+        },
+        {
+          "en": "No. Report the fitted data and flag the inconsistency.",
+          "ar": "لا. اعرض ملاءمة البيانات وصرّح بالتعارض."
+        }
+      ],
+      "correct": 1,
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "The supplied lecture labels four specimens dry sand but reports a positive cohesion intercept near 85 kPa. The force-to-stress conversions are consistent. A least-squares line through the four given points gives an intercept near 83.20 kPa and φ near 17.48°. This is a fit to those data, not evidence that clean dry sand has true cohesion. Preserve the measured values and flag the labeling or test/model issue before using the parameters in a field calculation. A credible solution reports both the numerical fit and the reason its physical interpretation may be wrong.",
+        "ar": "تسمي المحاضرة العينات الأربع رملًا جافًا، لكنها تعطي مقطع تماسك موجبًا قرب 85 kPa. تحويلات القوة إلى الإجهاد متسقة. يعطي الانحدار الخطي للنقاط المعطاة مقطعًا قرب 83.20 kPa وφ قرب 17.48°. هذه ملاءمة للبيانات وليست إثباتًا لتماسك حقيقي في الرمل الجاف النظيف. احتفظ بالقياسات ووضّح مشكلة التسمية أو الاختبار أو النموذج قبل استخدام المعاملات موقعيًا. الحل الموثوق يعرض الملاءمة العددية وسبب احتمال خطأ تفسيرها الفيزيائي معًا."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "N05",
+      "concept": "soil-shear-audit",
+      "type": "numerical",
+      "prompt": {
+        "en": "For c=85 kPa, φ=17°, σ=300 kPa, calculate τf.",
+        "ar": "إذا c=85 kPa وφ=17° وσ=300 kPa، احسب τf."
+      },
+      "expected": 176.71920443759814,
+      "tolerance": 0.3534384088751963,
+      "unit": "kPa",
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "85+300tan17°=176.719 kPa.",
+        "ar": "85+300tan17°=176.719 kPa."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "concept": "soil-shear-audit",
+      "type": "mixed",
+      "prompt": {
+        "en": "The source’s fourth normal load is 1800 N on 60×60 mm. Enter σ and choose the correct conclusion.",
+        "ar": "حمل المصدر العمودي الرابع 1800 N على 60×60 mm. أدخل σ واختر الاستنتاج الصحيح."
+      },
+      "expected": 500,
+      "tolerance": 1.0,
+      "unit": "kPa",
+      "options": [
+        {
+          "en": "The stress conversion is valid; the soil interpretation still needs clarification.",
+          "ar": "تحويل الإجهاد صحيح؛ تفسير التربة ما زال يحتاج توضيحًا."
+        },
+        {
+          "en": "A valid conversion proves the soil really has permanent cohesion.",
+          "ar": "صحة التحويل تثبت تماسكًا دائمًا للتربة."
+        }
+      ],
+      "correct": 0,
+      "hints": [
+        {
+          "en": "Draw the normal force and the force trying to slide the grains. Use effective normal stress for a drained friction envelope.",
+          "ar": "ارسم القوة العمودية والقوة التي تحاول إزلاق الحبيبات. استخدم الإجهاد العمودي الفعّال لغلاف الاحتكاك المصروف."
+        },
+        {
+          "en": "Convert area to m² and forces to kN; use degrees for φ. The envelope slope is tan φ, not φ.",
+          "ar": "حوّل المساحة إلى m² والقوى إلى kN؛ واستخدم الدرجات لـφ. ميل الغلاف tan φ وليس φ نفسها."
+        }
+      ],
+      "solution": {
+        "en": "1.8/0.0036=500 kPa; arithmetic cannot validate the material label.",
+        "ar": "1.8/0.0036=500 kPa؛ الحساب لا يثبت صحة اسم المادة."
+      },
+      "sources": [
+        {
+          "doc": "soil-lecture-02",
+          "filename": "Lecture 2.pdf",
+          "page": 9
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "meaning-01",
+      "concept": "soil-shear-demand",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: A sliding surface has demand and capacity",
+        "ar": "اشرح: لسطح الانزلاق طلب ومقاومة"
+      },
+      "a": {
+        "en": "A horizontal force tries to slide the upper half of the box while a normal load presses the two halves together. Shear stress is force divided by the area carrying it. Strength is the limiting shear stress reached at failure, not the shear stress at every earlier load. Keep demand τ and capacity τf separate so that a safe sample is not mistakenly assumed to be failing.",
+        "ar": "تحاول قوة أفقية إزلاق نصف الصندوق، بينما يضغط الحمل العمودي النصفين معًا. إجهاد القص هو القوة مقسومة على المساحة التي تحملها. المقاومة هي إجهاد القص المحدِّد عند الفشل، وليست إجهاد كل حمل سابق. افصل الطلب τ عن المقاومة τf كي لا تفترض فشل عينة آمنة."
+      }
+    },
+    {
+      "id": "prediction-01",
+      "concept": "soil-shear-demand",
+      "kind": "prediction",
+      "q": {
+        "en": "If the same shear force acts on half the area, what happens to τ?",
+        "ar": "إذا أثرت قوة القص نفسها على نصف المساحة، ماذا يحدث لـτ؟"
+      },
+      "a": {
+        "en": "It doubles. Both loads must use the same area convention. Strength exceeding normal stress is possible when a fitted cohesion intercept is present.",
+        "ar": "تتضاعف. يجب استعمال اتفاق مساحة واحد للحملين. يمكن أن تتجاوز المقاومة الإجهاد العمودي إذا وُجد مقطع تماسك ملائم للبيانات."
+      }
+    },
+    {
+      "id": "calculation-01",
+      "concept": "soil-shear-demand",
+      "kind": "calculation",
+      "q": {
+        "en": "N=720 N on a 60×60 mm box. Find σn.",
+        "ar": "N=720 N على صندوق 60×60 mm. أوجد σn."
+      },
+      "a": {
+        "en": "0.720/0.0036=200 kPa.",
+        "ar": "0.720/0.0036=200 kPa."
+      }
+    },
+    {
+      "id": "decision-01",
+      "concept": "soil-shear-demand",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: A sliding surface has demand and capacity?",
+        "ar": "متى يصح هذا النموذج: لسطح الانزلاق طلب ومقاومة؟"
+      },
+      "a": {
+        "en": "Uniform average stresses on the stated area; note whether nominal or corrected overlap area is used. Symbols: N normal force and T shear force in kN; A shear-plane area in m²; stresses in kPa.",
+        "ar": "إجهادات متوسطة على المساحة المعطاة؛ صرّح هل استُعملت المساحة الاسمية أم مساحة التراكب المصححة. الرموز: N القوة العمودية وT قوة القص بوحدة kN؛ A مساحة سطح القص بالمتر المربع؛ والإجهادات kPa."
+      }
+    },
+    {
+      "id": "meaning-02",
+      "concept": "soil-shear-envelope",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Normal stress buys frictional resistance",
+        "ar": "اشرح: الإجهاد العمودي يضيف مقاومة احتكاك"
+      },
+      "a": {
+        "en": "Draw measured failure points with effective normal stress horizontally and shear strength vertically. A straight Mohr–Coulomb approximation has an intercept c′ and slope tan φ′. The intercept is a fitted parameter over the tested stress range; it is not proof that every clay is purely cohesive or every soil has permanent bonding. Raising pore pressure at fixed total stress reduces the frictional part by reducing contact stress.",
+        "ar": "ارسم نقاط الفشل مقابل الإجهاد العمودي الفعّال أفقيًا ومقاومة القص رأسيًا. لتقريب موهر–كولوم الخطي مقطع c′ وميل tan φ′. المقطع معامل ملاءمة ضمن مجال الاختبار؛ لا يثبت أن كل طين مقاومته تماسك فقط أو أن كل تربة مترابطة دائمًا. رفع ضغط المسام مع ثبات الكلي يقلل جزء الاحتكاك لأنه يقلل إجهاد التلامس."
+      }
+    },
+    {
+      "id": "prediction-02",
+      "concept": "soil-shear-envelope",
+      "kind": "prediction",
+      "q": {
+        "en": "At fixed σn, increasing u changes the frictional resistance in which direction?",
+        "ar": "مع ثبات σn، بأي اتجاه يغيّر ارتفاع u مقاومة الاحتكاك؟"
+      },
+      "a": {
+        "en": "It decreases. Water pressure affects available grain friction; it does not subtract directly from shear stress.",
+        "ar": "تنخفض. يؤثر ضغط الماء في الاحتكاك المتاح بين الحبيبات؛ ولا يُطرح مباشرة من إجهاد القص."
+      }
+    },
+    {
+      "id": "calculation-02",
+      "concept": "soil-shear-envelope",
+      "kind": "calculation",
+      "q": {
+        "en": "c′=0, φ′=30°, σ′n=100 kPa. Find τf.",
+        "ar": "c′=0 وφ′=30° وσ′n=100 kPa. أوجد τf."
+      },
+      "a": {
+        "en": "100 tan30°=57.735 kPa.",
+        "ar": "100 tan30°=57.735 kPa."
+      }
+    },
+    {
+      "id": "decision-02",
+      "concept": "soil-shear-envelope",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Normal stress buys frictional resistance?",
+        "ar": "متى يصح هذا النموذج: الإجهاد العمودي يضيف مقاومة احتكاك؟"
+      },
+      "a": {
+        "en": "A selected effective-stress failure envelope and relevant drained/known-u conditions; do not mix total-stress parameters with σ′. Symbols: c′ in kPa; φ′ effective friction angle in degrees; u pore pressure and σn total normal stress in kPa.",
+        "ar": "غلاف فشل فعّال مختار وتصريف مناسب أو u معلومة؛ لا تخلط معاملات الكلي مع σ′. الرموز: c′ بالكيلوباسكال؛ φ′ زاوية الاحتكاك الفعّالة بالدرجات؛ u ضغط المسام وσn الإجهاد العمودي الكلي بالكيلوباسكال."
+      }
+    },
+    {
+      "id": "meaning-03",
+      "concept": "soil-shear-fit",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Read a line, not just two numbers",
+        "ar": "اشرح: اقرأ الخط لا رقمين فقط"
+      },
+      "a": {
+        "en": "One test supplies one failure point. Several normal loads let you estimate a slope and intercept and see whether a straight line is reasonable. For two exact points, slope is rise divided by run. For scattered measurements use regression or a clearly stated graphical fit. Never take the angle itself as the slope; calculate the inverse tangent after fitting.",
+        "ar": "يوفر اختبار واحد نقطة فشل واحدة. تتيح أحمال عمودية متعددة تقدير الميل والمقطع والحكم على مناسبة الخط المستقيم. لنقطتين دقيقتين الميل هو التغيّر الرأسي على الأفقي. للقياسات المتشتتة استعمل الانحدار أو صرّح بالملاءمة البيانية. لا تجعل الزاوية نفسها ميلًا؛ احسب معكوس الظل بعد الملاءمة."
+      }
+    },
+    {
+      "id": "prediction-03",
+      "concept": "soil-shear-fit",
+      "kind": "prediction",
+      "q": {
+        "en": "An envelope rises 50 kPa over 100 kPa normal stress. Is φ=0.5°?",
+        "ar": "غلاف يرتفع 50 kPa لكل 100 kPa عمودي. هل φ=0.5°؟"
+      },
+      "a": {
+        "en": "No. tanφ=0.5, so φ≈26.57°. The independent second-point check catches a wrong intercept or mixed units.",
+        "ar": "لا. tanφ=0.5، إذن φ≈26.57°. يكشف التحقق بالنقطة الثانية مقطعًا خاطئًا أو خلط وحدات."
+      }
+    },
+    {
+      "id": "calculation-03",
+      "concept": "soil-shear-fit",
+      "kind": "calculation",
+      "q": {
+        "en": "Failure points (100,80),(200,130) kPa. Find c′.",
+        "ar": "نقطتا فشل (100,80),(200,130) kPa. أوجد c′."
+      },
+      "a": {
+        "en": "m=0.5; c′=80−0.5×100=30.",
+        "ar": "m=0.5؛ c′=80−0.5×100=30."
+      }
+    },
+    {
+      "id": "decision-03",
+      "concept": "soil-shear-fit",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Read a line, not just two numbers?",
+        "ar": "متى يصح هذا النموذج: اقرأ الخط لا رقمين فقط؟"
+      },
+      "a": {
+        "en": "Same soil preparation, density and drainage condition across tests; fit only the relevant stress range. Symbols: m is dimensionless; c′ and τf use the same pressure units. atan returns degrees only if the calculator is in degree mode.",
+        "ar": "تحضير وكثافة وتصريف متماثلة بين الاختبارات؛ تُلائم البيانات ضمن مجال الإجهاد الملائم فقط. الرموز: m بلا وحدة؛ c′ وτf لهما وحدة الضغط نفسها. يعطي atan درجات فقط عند ضبط الحاسبة لذلك."
+      }
+    },
+    {
+      "id": "meaning-04",
+      "concept": "soil-shear-apparatus",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: The box chooses the failure plane",
+        "ar": "اشرح: الصندوق يختار سطح الفشل"
+      },
+      "a": {
+        "en": "A split box forces relative movement along its horizontal split. Record normal force, horizontal force and both horizontal and vertical displacement. Dense sand may dilate while loose sand may contract; the change is information about packing, not a broken test. Drainage rate and overlap area matter. The simple apparatus does not directly reveal principal stresses or measure pore pressure, so fast tests on low-permeability soil need careful interpretation.",
+        "ar": "يفرض الصندوق المشقوق الحركة النسبية على شق أفقي. سجّل القوة العمودية والأفقية والإزاحتين الأفقية والرأسية. قد يتمدد الرمل الكثيف وينكمش المفكك؛ وهذا دليل على التراص لا على فساد التجربة. يهم معدل التصريف ومساحة التراكب. لا يكشف الجهاز البسيط الإجهادات الرئيسية مباشرة ولا يقيس ضغط المسام، لذا يلزم الحذر في الاختبارات السريعة للتربة ضعيفة النفاذية."
+      }
+    },
+    {
+      "id": "prediction-04",
+      "concept": "soil-shear-apparatus",
+      "kind": "prediction",
+      "q": {
+        "en": "As overlap shrinks at fixed T, does corrected τ increase?",
+        "ar": "مع تقلص التراكب وثبات T، هل تزيد τ المصححة؟"
+      },
+      "a": {
+        "en": "Yes, the carrying area decreases. A laboratory result needs its procedure and stress basis, not just a final angle.",
+        "ar": "نعم، لأن المساحة الحاملة تقل. تحتاج نتيجة المختبر إلى بروتوكولها وأساس إجهادها، لا الزاوية النهائية وحدها."
+      }
+    },
+    {
+      "id": "calculation-04",
+      "concept": "soil-shear-apparatus",
+      "kind": "calculation",
+      "q": {
+        "en": "B=L=60 mm, δ=10 mm, T=0.30 kN. Find corrected τ.",
+        "ar": "B=L=60 mm وδ=10 mm وT=0.30 kN. أوجد τ المصححة."
+      },
+      "a": {
+        "en": "0.30/(0.06×0.05)=100 kPa.",
+        "ar": "0.30/(0.06×0.05)=100 kPa."
+      }
+    },
+    {
+      "id": "decision-04",
+      "concept": "soil-shear-apparatus",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: The box chooses the failure plane?",
+        "ar": "متى يصح هذا النموذج: الصندوق يختار سطح الفشل؟"
+      },
+      "a": {
+        "en": "Rectangular overlap correction if required by the test procedure; not a universal replacement for the source’s nominal-area convention. Symbols: B and L box plan dimensions; δ relative horizontal displacement, all in m; use T in kN for kPa.",
+        "ar": "تصحيح تراكب مستطيل إذا تطلبه بروتوكول الاختبار؛ ليس بديلًا عامًا لاتفاق المساحة الاسمية في المصدر. الرموز: B وL بعدا الصندوق الأفقيان وδ الإزاحة الأفقية النسبية بالمتر؛ استعمل T بالكيلونيوتن للحصول على kPa."
+      }
+    },
+    {
+      "id": "meaning-05",
+      "concept": "soil-shear-audit",
+      "kind": "meaning",
+      "q": {
+        "en": "Explain: Challenge the “dry sand” answer",
+        "ar": "اشرح: اختبر نتيجة «الرمل الجاف»"
+      },
+      "a": {
+        "en": "The supplied lecture labels four specimens dry sand but reports a positive cohesion intercept near 85 kPa. The force-to-stress conversions are consistent. A least-squares line through the four given points gives an intercept near 83.20 kPa and φ near 17.48°. This is a fit to those data, not evidence that clean dry sand has true cohesion. Preserve the measured values and flag the labeling or test/model issue before using the parameters in a field calculation.",
+        "ar": "تسمي المحاضرة العينات الأربع رملًا جافًا، لكنها تعطي مقطع تماسك موجبًا قرب 85 kPa. تحويلات القوة إلى الإجهاد متسقة. يعطي الانحدار الخطي للنقاط المعطاة مقطعًا قرب 83.20 kPa وφ قرب 17.48°. هذه ملاءمة للبيانات وليست إثباتًا لتماسك حقيقي في الرمل الجاف النظيف. احتفظ بالقياسات ووضّح مشكلة التسمية أو الاختبار أو النموذج قبل استخدام المعاملات موقعيًا."
+      }
+    },
+    {
+      "id": "prediction-05",
+      "concept": "soil-shear-audit",
+      "kind": "prediction",
+      "q": {
+        "en": "Should you silently set c=0 because the question says dry sand?",
+        "ar": "هل تفرض c=0 بصمت لأن السؤال يقول رمل جاف؟"
+      },
+      "a": {
+        "en": "No. Report the fitted data and flag the inconsistency. A credible solution reports both the numerical fit and the reason its physical interpretation may be wrong.",
+        "ar": "لا. اعرض ملاءمة البيانات وصرّح بالتعارض. الحل الموثوق يعرض الملاءمة العددية وسبب احتمال خطأ تفسيرها الفيزيائي معًا."
+      }
+    },
+    {
+      "id": "calculation-05",
+      "concept": "soil-shear-audit",
+      "kind": "calculation",
+      "q": {
+        "en": "For c=85 kPa, φ=17°, σ=300 kPa, calculate τf.",
+        "ar": "إذا c=85 kPa وφ=17° وσ=300 kPa، احسب τf."
+      },
+      "a": {
+        "en": "85+300tan17°=176.719 kPa.",
+        "ar": "85+300tan17°=176.719 kPa."
+      }
+    },
+    {
+      "id": "decision-05",
+      "concept": "soil-shear-audit",
+      "kind": "decision",
+      "q": {
+        "en": "When may you use this model: Challenge the “dry sand” answer?",
+        "ar": "متى يصح هذا النموذج: اختبر نتيجة «الرمل الجاف»؟"
+      },
+      "a": {
+        "en": "A statistical classroom fit only. The source’s soil label and large intercept remain unresolved; do not silently force c=0. Symbols: Four source points: σ=[100,200,350,500], τ=[115,145,195,240] kPa. Bars denote means.",
+        "ar": "ملاءمة إحصائية تعليمية فقط. تعارض اسم التربة مع المقطع الكبير لم يُحسم؛ لا تفرض c=0 بصمت. الرموز: نقاط المصدر: σ=[100,200,350,500] وτ=[115,145,195,240] kPa. الشرطة تعني المتوسط."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "doc": "soil-lecture-02",
+      "filename": "Lecture 2.pdf",
+      "page": 7
+    },
+    {
+      "doc": "soil-lecture-02",
+      "filename": "Lecture 2.pdf",
+      "page": 9
+    },
+    {
+      "doc": "soil-lecture-02",
+      "filename": "Lecture 2.pdf",
+      "page": 4
+    },
+    {
+      "doc": "soil-lecture-02",
+      "filename": "Lecture 2.pdf",
+      "page": 5
+    },
+    {
+      "doc": "soil-lecture-02",
+      "filename": "Lecture 2.pdf",
+      "page": 6
+    },
+    {
+      "doc": "soil-lecture-02",
+      "filename": "Lecture 2.pdf",
+      "page": 8
+    },
+    {
+      "doc": "soil-lecture-03",
+      "filename": "Lecture 3.pdf",
+      "page": 2
+    },
+    {
+      "doc": "soil-lecture-03",
+      "filename": "Lecture 3.pdf",
+      "page": 3
+    }
+  ]
+}

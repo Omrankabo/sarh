@@ -118,5 +118,60 @@
   {
     "id": "ee-risk-inventory",
     "file": "engineering-economics/ee-risk-inventory/topic.json"
+  },
+  {
+    "id": "soil-effective-stress",
+    "subject": "soil-mechanics-ii",
+    "file": "soil-mechanics-ii/soil-effective-stress/topic.json"
+  },
+  {
+    "id": "soil-shear",
+    "subject": "soil-mechanics-ii",
+    "file": "soil-mechanics-ii/soil-shear/topic.json"
+  },
+  {
+    "id": "steel-ltb",
+    "subject": "steel-ii",
+    "file": "steel-ii/steel-ltb/topic.json"
+  },
+  {
+    "id": "steel-compound",
+    "subject": "steel-ii",
+    "file": "steel-ii/steel-compound/topic.json"
+  },
+  {
+    "id": "env-demand",
+    "subject": "environmental-i",
+    "file": "environmental-i/env-demand/topic.json"
+  },
+  {
+    "id": "env-quality",
+    "subject": "environmental-i",
+    "file": "environmental-i/env-quality/topic.json"
+  },
+  {
+    "id": "env-coagulation",
+    "subject": "environmental-i",
+    "file": "environmental-i/env-coagulation/topic.json"
+  },
+  {
+    "id": "hydro-geometry",
+    "subject": "hydraulics",
+    "file": "hydraulics/hydro-geometry/topic.json"
+  },
+  {
+    "id": "hydro-uniform",
+    "subject": "hydraulics",
+    "file": "hydraulics/hydro-uniform/topic.json"
+  },
+  {
+    "id": "hydro-critical",
+    "subject": "hydraulics",
+    "file": "hydraulics/hydro-critical/topic.json"
+  },
+  {
+    "id": "soil-triaxial",
+    "subject": "soil-mechanics-ii",
+    "file": "soil-mechanics-ii/soil-triaxial/topic.json"
   }
 ]
