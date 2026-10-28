@@ -72,17 +72,17 @@ npm run build
 
 Numerical source checks are recorded under `reports/`. The additional frame solutions have been checked using both an exact inextensional formulation and an independently assembled conventional planar-frame element, with global force and moment audits.
 
-## Prepared Firebase integration
+## Personal study accounts
 
-`src/lib/firebase.ts` provides lazy Authentication/Firestore initialization and an owner-scoped repository. The UI uses the local repository by default. `.env.example` documents optional emulator/cloud settings; production activation and deployment have not been performed. Cloud synchronization still needs its explicit activation flow and conflict policy before it is exposed to the learner.
+Google and email/password accounts use separate local notebooks and private Firestore records. Guests keep their original notebook. Importing guest progress requires an explicit choice. Password accounts must verify their email before cloud syncing. See [account setup and validation](docs/ACCOUNTS.md) for configuration, syncing behavior and remaining live acceptance checks. Without Firebase environment variables, the app remains available in local guest mode.
 
-The owner-only Firestore rules were verified against the local emulator: owner read/write succeeds; other users, guests and unspecified paths are denied.
+The owner-only Firestore rules were verified against the local emulator and published to `sarh-ba9c3` in `europe-west1`: verified-owner read/write succeeds; other users, guests, unverified users and unspecified paths are denied.
 
 For the existing project-local Windows test runtime:
 
 ```powershell
-$env:JAVA_HOME = (Resolve-Path -LiteralPath '.runtime/jdk-11.0.28+6-jre').Path
-$env:PATH = "$env:JAVA_HOME\bin;$env:PATH"
+$taskJava = (Get-ChildItem '.runtime/java11' -Recurse -Filter java.exe | Select-Object -First 1).DirectoryName
+$env:PATH = "$taskJava;$env:PATH"
 npm run firebase:test
 ```
 
@@ -92,7 +92,7 @@ The pinned Firebase CLI supports this Java runtime. Java 21/17 hit a Windows Uni
 
 See `DESIGN-SYSTEM.md` for tokens and component conventions. Fonts are bundled locally with their licenses in `public/fonts`. The splash artwork is `public/sarh-hero.png`; it was generated with the built-in image tool. The complete course/topic collection is in `public/illustrations/v1`; its final prompts and delivery details are in [the illustration guide](docs/ILLUSTRATIONS.md). Calculation and experiment figures remain code-drawn SVGs.
 
-Course PDFs remain in the original university folder; no copies are included in the repository or app public directory. Production Firebase synchronization remains unactivated.
+Course PDFs remain in the original university folder; no copies are included in the repository or app public directory.
 
 ## Adding a future subject
 

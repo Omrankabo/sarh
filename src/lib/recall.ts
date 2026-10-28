@@ -42,7 +42,16 @@ export function mergeRecall(a:RecallState|undefined,b:RecallState|undefined):Rec
  const cards={...a.cards};for(const [k,v]of Object.entries(b.cards)){const old=cards[k];if(!old||v.revision>old.revision)cards[k]=v;}
  const priorities={...a.priorities};for(const [k,v]of Object.entries(b.priorities))if(!priorities[k]||v.at>=priorities[k].at)priorities[k]=v;
  const session=b.sessionUpdatedAt>=a.sessionUpdatedAt?b:a;
- return {version:1,cards,priorities,events:[...new Map([...a.events,...b.events].map(e=>[e.id,e])).values()],dismissed:[...new Set([...a.dismissed,...b.dismissed])],session:session.session,sessionUpdatedAt:session.sessionUpdatedAt};
+ const events=[...new Map([...a.events,...b.events].map(e=>[e.id,e])).values()].sort((x,y)=>x.at-y.at||x.id.localeCompare(y.id));
+ // Replay complete event histories, including concurrent offline reviews of the same revision.
+ // Legacy schedules without a first review retain their imported memory state.
+ for(const [key,card]of Object.entries(cards)){
+  const history=events.filter(e=>e.key===key);if(!history.some(e=>e.revision===1))continue;
+  let next:RecallCard={topic:card.topic,card:card.card,enrolledAt:Math.min(card.enrolledAt,a.cards[key]?.enrolledAt??Infinity,b.cards[key]?.enrolledAt??Infinity),revision:0};
+  for(const e of history){const outcome=previews(next,e.at).find(p=>p.rating===e.rating)!;next={...next,revision:next.revision+1,memory:outcome.memory,rating:e.rating};}
+  cards[key]=next;
+ }
+ return {version:1,cards,priorities,events,dismissed:[...new Set([...a.dismissed,...b.dismissed])],session:session.session,sessionUpdatedAt:session.sessionUpdatedAt};
 }
 export function projectRecall(book:Notebook){for(const c of Object.values(book.recall?.cards||{}))if(c.memory){const p=book.topics[c.topic]??=freshProgress();p.cards[c.card]={due:c.memory.due,interval:c.memory.scheduled_days};}return book;}
 export type RecallItem={key:string;topic:Topic;card:Card;record?:RecallCard;due:number|null;group:'overdue'|'today'|'new'|'upcoming';priority:number;weakness:number};

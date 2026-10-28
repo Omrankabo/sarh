@@ -1,25 +1,56 @@
-Imagine a long ruler resting on two books. Press down and it bends. Slide a third book underneath the middle. The ruler now touches another support, and its shape and the shares of load change together. That extra support is the whole reason this topic exists: equilibrium tells us what balances, while compatibility tells us which balanced answer the actual beam can adopt.
+Imagine a ruler resting on two books. Press gently and it bends. Slide a third book under the middle. Does each book now carry one third of the load? Not necessarily. The new book changes the bend, which changes the forces at all three books.
 
-A continuous beam passes over a support without being cut into separate pieces. The support may stop vertical movement while allowing the beam to rotate. The material on both sides of that joint still has to meet with one common direction. A roller is therefore not automatically an internal hinge. A real hinge releases the transmitted bending moment; a roller under an unbroken beam does not.
+We need two things at once: **the forces must balance, and the beam must fit its supports.** The second requirement is called compatibility. Connected pieces must move together where they meet.
 
-Before calculating, sketch where the beam sags between supports and where continuity may create hogging over a support. The calculation will test and refine that prediction. Our outputs are end moments, support reactions and shear/bending diagrams. The unknown joint rotations are the means of finding those outputs.
+## A support is not automatically a hinge
 
-Hold a member's ends against rotation: loading produces fixed-end moments. Let the ends rotate or move relative to each other: additional moments are needed to make the member fit those movements. Slope-deflection adds those effects. For a prismatic member, using the course's clockwise-positive member-end convention:
+An unbroken beam continues across its middle support. Both spans share one joint rotation there. A roller can allow that rotation while the beam still carries an internal bending moment over the support.
+
+A real internal hinge lets the two pieces turn relative to one another and transfers no bending moment in the ideal model. Sketch that difference before calculating anything.
+
+## What are we trying to find?
+
+We want end moments, support reactions, and the shear and bending-moment diagrams. First we find the small joint rotations. The symbol θ simply means a small turning angle, measured in radians.
+
+Hold both ends of a ruler against rotation and load it: end moments develop. Let an end turn and those moments change. Move one support down and they change again. Slope-deflection adds these effects together.
+
+## Read the equation as a story
+
+For a prismatic member with constant EI, using clockwise-positive member-end moments and rotations:
 
 $$
 M_{ij}=M^F_{ij}+\frac{2EI}{L}(2\theta_i+\theta_j-3\psi),\qquad
 M_{ji}=M^F_{ji}+\frac{2EI}{L}(\theta_i+2\theta_j-3\psi).
 $$
 
-Here $M$ is an end moment in kN·m, $M^F$ is its fully restrained loading contribution, $E$ is elastic modulus in kN/m², $I$ is second moment of area in m⁴, and $L$ is member length in m. The joint rotations $\theta$ and signed chord rotation $\psi$ are in radians; a radian is dimensionless, so $(EI/L)\theta$ has moment units. Define $\psi$ from the actual relative end movement and the same clockwise convention; do not insert an unsigned settlement magnitude.
+Read this as: **final end moment = load effect with rotations restrained + effect of the end movements**.
 
-The factor 2 on the near-end rotation says that turning this end has twice the local end-moment effect of the same far-end rotation under these member assumptions. Doubling EI doubles the moment needed for an imposed rotation; doubling L halves that rotational stiffness. Those comparisons hold for prescribed rotations. Under fixed loads, the rotations themselves also change, so do not assume doubling EI doubles every final force.
+- Mᶠ is the fixed-end moment caused by the load, in kN·m.
+- θᵢ and θⱼ are the end rotations, in radians.
+- ψ is the signed rotation of the straight line joining the ends, caused by their relative movement. Derive its sign from the movement; do not insert an unsigned settlement.
+- E measures the material’s elastic stiffness, in kN/m².
+- I is the second moment of area about the bending axis, in m⁴.
+- L is the member length in metres. EI/L multiplied by an angle has moment units.
 
-For a member whose far end is held, a small imposed rotation gives $M=4EI\theta/L$. With EI = 12,000 kN·m², L = 6 m and clockwise rotation 0.001 rad, the required near-end moment is 8 kN·m and the far-end moment contribution is 4 kN·m. This is a stiffness demonstration, not yet the answer for an entire loaded beam. A released far-end hinge changes the stiffness to 3EI/L and its moment must be zero.
+## Make it tangible with one small turn
 
-Now reconnect the spans. At an unloaded joint B, the signed member-end moments acting on that joint must sum to zero. Solve that balance for its shared rotation, then put the rotation back into both member equations. Finally take each span as a free body to find reactions. Check the whole beam's force and moment balance and all actual boundary conditions. End couples in the member convention must be translated consistently into the sagging-positive bending diagram.
+Hold the far end against rotation. With EI = 12,000 kN·m², L = 6 m and an imposed clockwise rotation θ = 0.001 rad at the near end:
 
-This model assumes small deformations, linear elasticity and a prismatic Euler–Bernoulli member with constant EI within the member. Include settlement, imposed support rotation and overhang actions explicitly. If these assumptions no longer describe the structure, change the model before trusting the arithmetic.
+$$
+M_{near}=\frac{4EI}{L}\theta=8\text{ kN·m},\qquad
+M_{far}=\frac{2EI}{L}\theta=4\text{ kN·m}.
+$$
+
+This is an imposed-rotation experiment, not a complete loaded-beam solution. Double EI while imposing the same rotation and the required moment doubles. Under a fixed load, the rotation can also change, so do not double every final moment automatically. A true far-end hinge changes the near stiffness to 3EI/L and keeps the far-end moment at zero.
+
+## Reconnect the spans
+
+At a joint without an external couple, the signed member-end moments must sum to zero. Use that balance to find the shared rotation, then substitute into the member equations. Isolate each span to find reactions and check equilibrium of the whole beam.
+
+Translate the member-end sign convention into the sagging-positive diagram convention before drawing the bending-moment diagram.
+
+The model assumes small deformations, linear elasticity and prismatic Euler–Bernoulli members. Include settlement, imposed support rotation and overhang effects where present. The calculation is useful only when the model matches the structure.
+
 
 ## Follow the whole solution
 

@@ -11,7 +11,7 @@
     "test": "tsx --test tests/*.test.ts",
     "content:check": "node scripts/check-published.mjs",
     "release:check": "node scripts/check-release.mjs",
-    "firebase:test": "firebase emulators:exec --project demo-sarh --only firestore \"node tests/firestore-rules.mjs\"",
+    "firebase:test": "firebase emulators:exec --project demo-sarh --only auth,firestore \"node tests/firestore-rules.mjs && tsx tests/firebase-integration.ts\"",
     "postbuild": "node scripts/offline-assets.mjs && node scripts/check-traces.mjs"
   },
   "dependencies": {

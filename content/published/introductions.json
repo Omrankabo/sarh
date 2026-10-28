@@ -1,0 +1,574 @@
+{
+  "slope-beams": {
+    "question": {
+      "en": "Does a third support carry one third of the weight?",
+      "ar": "هل يحمل المسند الثالث ثلث الوزن؟"
+    },
+    "scene": {
+      "en": "Rest a ruler on two books and press gently. Now slide another book under the middle. The ruler bends differently, so the books share the load differently.",
+      "ar": "ضع مسطرة فوق كتابين واضغط عليها برفق. الآن ضع كتابًا ثالثًا تحت منتصفها. تغيّر شكل الانحناء، ولذلك تغيّرت حصة كل كتاب من الحمل."
+    },
+    "meaning": {
+      "en": "We need a set of forces that balances the load AND lets the beam fit its supports. We use the small turns at the joints to find those forces. A roller below an unbroken beam is not a cut in the beam.",
+      "ar": "نبحث عن قوى توازن الحمل وتجعل الكمرة تستقر على مساندها في الوقت نفسه. نستخدم دورانًا صغيرًا عند نقاط الاتصال لنحسب هذه القوى. وجود مسند متحرك تحت الكمرة لا يعني أنها مقطوعة عنده."
+    },
+    "videoStatus": "reviewed-short-introduction",
+    "videoId": "pJlbSEc-shg"
+  },
+  "slope-nonsway": {
+    "question": {
+      "en": "Can a frame bend without sliding sideways?",
+      "ar": "هل ينحني الإطار من غير أن يتحرك جانبًا؟"
+    },
+    "scene": {
+      "en": "Imagine a goalpost whose top corners cannot move sideways. A load on the crossbar can still make the corners turn a little. Preventing movement does not prevent every kind of bending.",
+      "ar": "تخيّل إطار مرمى مُنع ركناه العلويان من الحركة الجانبية. عند تحميل العارضة يمكن أن يدور الركنان قليلًا. منع الحركة لا يعني منع الانحناء كله."
+    },
+    "meaning": {
+      "en": "Follow the turns at the connected corners. Each beam and column resists a turn according to its stiffness. Balance their end moments at every joint.",
+      "ar": "تتبّع دوران كل ركن متصل. تقاوم الكمرة والعمود هذا الدوران بحسب صلابة كل منهما. ثم نجعل عزوم الأطراف عند كل عقدة متزنة."
+    },
+    "videoStatus": "reviewed-short-introduction",
+    "videoId": "pJlbSEc-shg"
+  },
+  "slope-sway": {
+    "question": {
+      "en": "What changes when the whole storey leans?",
+      "ar": "ماذا يتغيّر عندما يميل الطابق كله؟"
+    },
+    "scene": {
+      "en": "Push the side of a frame. Its top moves sideways and its members bend. Now a corner rotation alone cannot describe the movement: the columns also lean between their ends.",
+      "ar": "ادفع إطارًا من جانبه. يتحرك أعلاه وتنحني أعضاؤه. دوران الركن وحده لا يصف ما حدث؛ فالخط الواصل بين طرفي كل عمود يميل أيضًا."
+    },
+    "meaning": {
+      "en": "Track both joint rotation and sideways movement. The extra movement needs an extra balance equation. A symmetric shape can still sway under an asymmetric load.",
+      "ar": "نتتبّع دوران العقد والحركة الجانبية معًا. الحركة الإضافية تحتاج معادلة اتزان إضافية. وقد يتحرك إطار متماثل جانبًا إذا كان الحمل غير متماثل."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "slope-inclined": {
+    "question": {
+      "en": "Does a sloping roof change the direction of bending?",
+      "ar": "كيف يغيّر ميل السقف حساب الانحناء؟"
+    },
+    "scene": {
+      "en": "A roof rafter is a beam turned on an angle. A vertical load is no longer purely sideways to that member. Draw a little coordinate system along the rafter before writing forces.",
+      "ar": "عضو السقف المائل يشبه كمرة أدرناها بزاوية. الحمل الرأسي لم يعد عموديًا تمامًا على العضو. ارسم اتجاهًا مع العضو وآخر عموديًا عليه قبل الحساب."
+    },
+    "meaning": {
+      "en": "Separate movement along the member from movement across it. Use the actual member length and compatible joint movements; do not replace the slope with its horizontal projection.",
+      "ar": "افصل الحركة في اتجاه العضو عن الحركة العمودية عليه. استخدم طوله الحقيقي وحركات عقد تتفق مع بعضها، لا طول إسقاطه الأفقي."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "distribution-beams": {
+    "question": {
+      "en": "Can we balance a beam one joint at a time?",
+      "ar": "هل نوازن الكمرة عقدة بعد عقدة؟"
+    },
+    "scene": {
+      "en": "Imagine several people holding the ends of connected rulers. Release one joint briefly. Its unbalanced moment is shared between the connected spans, and some effect reaches their far ends.",
+      "ar": "تخيّل أشخاصًا يمسكون أطراف مساطر متصلة. اسمح لعقدة واحدة بالدوران قليلًا. يتوزع العزم غير المتزن على البحور المتصلة، وينتقل جزء من الأثر إلى أطرافها البعيدة."
+    },
+    "meaning": {
+      "en": "Moment distribution repeats this small balancing move. Stiffer members take a larger share. The carry-over rule depends on the far-end restraint.",
+      "ar": "توزيع العزوم يكرر خطوة الاتزان الصغيرة هذه. يأخذ العضو الأشد صلابة حصة أكبر. أما العزم المنقول للطرف البعيد فيعتمد على طريقة تثبيت ذلك الطرف."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "distribution-nonsway": {
+    "question": {
+      "en": "Who takes the larger share at a frame corner?",
+      "ar": "من يأخذ الحصة الأكبر من العزم عند الركن؟"
+    },
+    "scene": {
+      "en": "A beam and a column meet at a corner. If the corner turns, both resist it. Imagine two springs: the stiffer one needs more force for the same movement.",
+      "ar": "تلتقي كمرة بعمود عند ركن. إذا دار الركن قاوم العضوان الدوران. تخيّل نابضين: الأشد صلابة يحتاج قوة أكبر ليحدث فيه مقدار الحركة نفسه."
+    },
+    "meaning": {
+      "en": "Distribute each joint imbalance using relative rotational stiffness. Then carry the appropriate moment to the far ends and repeat until the remaining imbalance is small.",
+      "ar": "وزّع العزم غير المتزن بحسب صلابة الأعضاء في مقاومة الدوران. انقل الأثر المناسب إلى الأطراف البعيدة، ثم كرر حتى يصبح الفرق المتبقي صغيرًا."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "distribution-sway": {
+    "question": {
+      "en": "What if a balanced corner still lets the frame drift?",
+      "ar": "ماذا لو اتزنت العزوم وظل الإطار يتحرك جانبًا؟"
+    },
+    "scene": {
+      "en": "A frame can have balanced joints but still fail the horizontal force check. The missing part may be the sideways movement of the whole storey.",
+      "ar": "قد تتزن عزوم العقد، ومع ذلك لا يتحقق اتزان القوى الأفقية. قد تكون الخطوة الناقصة هي حساب حركة الطابق إلى الجانب."
+    },
+    "meaning": {
+      "en": "Separate a restrained case from a sway case, then combine them using horizontal equilibrium. For inclined members, first work out how the joint movement changes each member chord.",
+      "ar": "افصل حالة منع الحركة الجانبية عن حالة السماح بها، ثم اجمعهما بما يحقق الاتزان الأفقي. وللعضو المائل حدّد أولًا كيف تغيّر حركة العقدة اتجاه الخط بين طرفيه."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "influence-qualitative": {
+    "question": {
+      "en": "Where should a truck stand to affect one support most?",
+      "ar": "أين تقف الشاحنة لتؤثر أكثر على مسند معين؟"
+    },
+    "scene": {
+      "en": "Move a toy car along a bridge and watch just one support. Its reaction changes as the car moves. An influence line records that change for a moving unit load.",
+      "ar": "حرّك سيارة صغيرة فوق جسر، وراقب مسندًا واحدًا فقط. يتغير رد فعله مع موضع السيارة. خط التأثير يرسم هذا التغيّر لحمل متحرك مقداره وحدة واحدة."
+    },
+    "meaning": {
+      "en": "Choose ONE response first: a reaction, shear or moment at a fixed location. The horizontal axis is the load position, not the location where you measure the response.",
+      "ar": "اختر نتيجة واحدة أولًا: رد فعل، أو قص، أو عزم عند موضع ثابت. المحور الأفقي يحدد مكان الحمل المتحرك، لا مكان قياس النتيجة."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "influence-numerical": {
+    "question": {
+      "en": "How do we put numbers on an influence line?",
+      "ar": "كيف نضع أرقامًا على خط التأثير؟"
+    },
+    "scene": {
+      "en": "A sketch can show where a load helps or hurts, but it cannot tell us the exact response. We need the height of the influence line at the load position.",
+      "ar": "قد يوضح الرسم أين يزيد الحمل النتيجة أو يقللها، لكنه لا يعطينا مقدارها. نحتاج ارتفاع خط التأثير عند مكان الحمل."
+    },
+    "meaning": {
+      "en": "Use compatibility or a suitable conjugate-beam calculation to find ordinates. Keep the chosen response, sign and unit-load definition fixed throughout.",
+      "ar": "نستخدم التوافق أو حسابًا مناسبًا بالكمرة المرافقة لإيجاد قيم الخط. حافظ على تعريف النتيجة وإشارتها وحمل الوحدة طوال الحل."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "influence-moving": {
+    "question": {
+      "en": "Is the worst truck position always the middle?",
+      "ar": "هل أخطر مكان للشاحنة هو منتصف الجسر دائمًا؟"
+    },
+    "scene": {
+      "en": "A truck has several axles. When one axle reaches a high point on an influence line, another may be on a low or negative part. We must move the whole group together.",
+      "ar": "للشاحنة عدة محاور. عندما يصل محور إلى أعلى خط التأثير قد يقع آخر فوق جزء منخفض أو سالب. لذلك نحرّك مجموعة الأحمال معًا."
+    },
+    "meaning": {
+      "en": "For point loads, add load times ordinate. For a distributed load, use the signed area under the influence line. Check candidate positions rather than guessing from the picture.",
+      "ar": "للحمل المركز نضربه في قيمة الخط عنده ثم نجمع. وللحمل الموزع نستخدم المساحة بإشارتها تحت الخط. نختبر المواضع المحتملة بدل التخمين من الرسم."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "models-beams": {
+    "question": {
+      "en": "Can a beautiful model still give the wrong answer?",
+      "ar": "هل يعطي نموذج مرتب نتيجة خاطئة؟"
+    },
+    "scene": {
+      "en": "Put the wrong support under a beam model and the software will solve a different structure perfectly. The result can look convincing while answering the wrong question.",
+      "ar": "اختر مسندًا غير صحيح في نموذج كمرة، وسيحل البرنامج منشأ آخر بدقة. قد يبدو الرسم مقنعًا، لكنه يجيب عن سؤال مختلف."
+    },
+    "meaning": {
+      "en": "Translate the physical beam into nodes, members, restraints and loads. Before trusting results, check units, support freedoms and whole-beam equilibrium.",
+      "ar": "حوّل الكمرة الحقيقية إلى عقد وأعضاء ومساند وأحمال. قبل قبول النتائج تحقّق من الوحدات والحركات المسموحة عند المساند واتزان الكمرة كلها."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "models-frames": {
+    "question": {
+      "en": "How can one small release change the whole frame?",
+      "ar": "كيف يغيّر تحرير صغير سلوك الإطار كله؟"
+    },
+    "scene": {
+      "en": "A rigid corner transfers bending between a beam and a column. Replace it with a hinge and the path of the load changes. That tiny model setting describes a big physical decision.",
+      "ar": "ينقل الركن الصلب الانحناء بين الكمرة والعمود. إذا استبدلته بمفصل تغيّر مسار الحمل. إعداد صغير في النموذج يعبّر عن تغيير حقيقي كبير."
+    },
+    "meaning": {
+      "en": "Check the deformed shape before reading force tables. Ask whether the frame can move in ways its supports should prevent, and whether its joints match the real connections.",
+      "ar": "انظر إلى شكل التشوه قبل جداول القوى. هل يتحرك الإطار في اتجاه يفترض أن يمنعه المسند؟ وهل تمثل العقد الوصلات الحقيقية؟"
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-foundations": {
+    "question": {
+      "en": "Is the cheapest machine really the cheapest choice?",
+      "ar": "هل الآلة الأقل سعرًا هي الاختيار الأرخص؟"
+    },
+    "scene": {
+      "en": "Two pumps do the same job. One costs less today but uses more electricity every month. The price tag tells only the beginning of the story.",
+      "ar": "مضختان تؤديان العمل نفسه. إحداهما أرخص اليوم، لكنها تستهلك كهرباء أكثر كل شهر. سعر الشراء هو بداية القصة فقط."
+    },
+    "meaning": {
+      "en": "List the alternatives, the costs that actually change, and when money moves. Compare choices that deliver the required service over a fair study period.",
+      "ar": "اكتب البدائل والتكاليف التي تختلف بينها وموعد دفع كل مبلغ. قارن بدائل تحقق الخدمة المطلوبة خلال فترة دراسة عادلة."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-markets": {
+    "question": {
+      "en": "Why does a scarce material become more expensive?",
+      "ar": "لماذا يرتفع سعر مادة عندما تقل كميتها؟"
+    },
+    "scene": {
+      "en": "A construction site needs steel, but deliveries slow down while many projects still want it. Buyers and sellers adjust their decisions, and the market price can move.",
+      "ar": "يحتاج موقع البناء إلى الحديد، لكن التوريد يقل بينما تستمر مشاريع كثيرة في طلبه. يغيّر المشترون والبائعون قراراتهم، وقد يتغيّر السعر."
+    },
+    "meaning": {
+      "en": "Separate a movement along a demand curve from a shift of the whole curve. State what changed and what you are holding constant before drawing a conclusion.",
+      "ar": "فرّق بين التحرك على منحنى الطلب وانتقال المنحنى كله. حدّد ما الذي تغيّر وما الذي افترضت ثباته قبل استنتاج النتيجة."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-interest-context": {
+    "question": {
+      "en": "Why does the date of a payment matter?",
+      "ar": "لماذا يهم موعد دفع المبلغ؟"
+    },
+    "scene": {
+      "en": "Paying for a machine now ties up money that could serve another purpose. Paying later changes both the cash plan and the agreement between the parties.",
+      "ar": "دفع ثمن آلة اليوم يشغل مالًا كان يمكن استخدامه لغرض آخر. الدفع لاحقًا يغيّر خطة المال وشروط الاتفاق بين الطرفين."
+    },
+    "meaning": {
+      "en": "Distinguish the mathematics of growth and discounting from legal, ethical and contractual judgments. Identify the cash flows and the stated rate convention before calculating.",
+      "ar": "افصل حساب نمو المال وخصمه عن الحكم القانوني أو الأخلاقي وشروط العقد. حدّد التدفقات النقدية ومعنى المعدل المستخدم قبل الحساب."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-single-payments": {
+    "question": {
+      "en": "Can we move one payment through time?",
+      "ar": "هل نستطيع نقل مبلغ واحد عبر الزمن؟"
+    },
+    "scene": {
+      "en": "Put one amount at the start of a timeline and let it grow each period. In the next period, growth applies to the amount already accumulated.",
+      "ar": "ضع مبلغًا في بداية خط زمني واتركه ينمو كل فترة. في الفترة التالية يُحسب النمو على المبلغ الذي أصبح موجودًا، لا على البداية فقط."
+    },
+    "meaning": {
+      "en": "Compounding moves money forward; discounting moves an equivalent value backward. Match the number of periods to the period used by the interest rate.",
+      "ar": "التركيب ينقل القيمة إلى المستقبل، والخصم يعيد القيمة المكافئة إلى الحاضر. يجب أن تكون وحدة الفترة في عدد الفترات هي نفسها وحدة المعدل."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-uniform-series": {
+    "question": {
+      "en": "What does a monthly payment add up to today?",
+      "ar": "كم تساوي دفعات شهرية متساوية اليوم؟"
+    },
+    "scene": {
+      "en": "Imagine paying the same amount every month. The amounts look identical, but each payment sits at a different point on the timeline.",
+      "ar": "تخيّل أنك تدفع المبلغ نفسه كل شهر. المبالغ متساوية، لكن لكل دفعة موعدًا مختلفًا على الخط الزمني."
+    },
+    "meaning": {
+      "en": "A series factor is a shortcut for adding equivalent values of equal payments. Check whether the first payment is now, one period later, or delayed.",
+      "ar": "معامل الدفعات المنتظمة يختصر جمع القيم المكافئة لدفعات متساوية. تحقّق: هل الدفعة الأولى الآن، أم بعد فترة واحدة، أم بعد تأخير؟"
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-gradients": {
+    "question": {
+      "en": "What if the bill grows a little every year?",
+      "ar": "ماذا لو زادت الفاتورة قليلًا كل سنة؟"
+    },
+    "scene": {
+      "en": "Maintenance may cost more as a machine ages. Sometimes the increase is the same amount each year; sometimes it is the same percentage. Those are different patterns.",
+      "ar": "قد تزيد تكلفة الصيانة مع عمر الآلة. أحيانًا تكون الزيادة مبلغًا ثابتًا كل سنة، وأحيانًا تكون نسبة ثابتة. هذان نمطان مختلفان."
+    },
+    "meaning": {
+      "en": "Draw the first few payments before choosing a formula. An arithmetic gradient adds a fixed amount; a geometric gradient multiplies by a fixed growth factor.",
+      "ar": "ارسم أول دفعات قبل اختيار المعادلة. التدرج الحسابي يضيف مبلغًا ثابتًا، أما التدرج الهندسي فيضرب في معامل نمو ثابت."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-rates": {
+    "question": {
+      "en": "Does 12% per year always mean the same growth?",
+      "ar": "هل تعني نسبة ١٢٪ سنويًا النمو نفسه دائمًا؟"
+    },
+    "scene": {
+      "en": "One account compounds once a year; another compounds every month. Even with the same quoted annual rate, the money may grow differently.",
+      "ar": "حساب يضيف العائد مرة في السنة، وآخر يضيفه كل شهر. حتى مع المعدل السنوي المعلن نفسه قد يختلف نمو المبلغ."
+    },
+    "meaning": {
+      "en": "Distinguish a quoted nominal rate from the effective rate over the period you actually need. Convert the rate before using a cash-flow factor.",
+      "ar": "فرّق بين المعدل الاسمي المعلن والمعدل الفعلي خلال الفترة المطلوبة. حوّل المعدل أولًا ثم استخدم معامل التدفق النقدي."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-continuous-flows": {
+    "question": {
+      "en": "What if money arrives continuously instead of once a year?",
+      "ar": "ماذا لو وصل المال باستمرار بدل دفعة سنوية؟"
+    },
+    "scene": {
+      "en": "A process earns money throughout the day. Pretending that all the money arrives at the end of the year changes when it can begin growing.",
+      "ar": "عملية إنتاج تحقق دخلًا طوال اليوم. اعتبار الدخل كله دفعة تصل في نهاية السنة يغيّر الوقت المتاح لنمو هذا المال."
+    },
+    "meaning": {
+      "en": "Treat each tiny payment at its own time and add the equivalent values with an integral. Keep the cash-flow rate separate from the interest rate.",
+      "ar": "نتعامل مع كل دفعة صغيرة في موعدها، ثم نجمع القيم المكافئة بالتكامل. لا تخلط بين معدل تدفق المال ومعدل الفائدة."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-equivalence": {
+    "question": {
+      "en": "Can different payment plans be equal?",
+      "ar": "هل يمكن أن تتكافأ خطتان مختلفتان للدفع؟"
+    },
+    "scene": {
+      "en": "One supplier wants a payment now; another offers several payments later. Adding the printed amounts is not a fair comparison when timing matters.",
+      "ar": "يطلب مورد مبلغًا الآن، ويعرض آخر دفعات لاحقة. جمع الأرقام المكتوبة لا يكفي للمقارنة إذا كان للزمن أثر."
+    },
+    "meaning": {
+      "en": "Choose one comparison date and move every cash flow to it using the same agreed rate. Equivalent means equal value under those assumptions, not identical payments.",
+      "ar": "اختر تاريخًا واحدًا للمقارنة وانقل إليه كل التدفقات بالمعدل المتفق عليه. التكافؤ يعني تساوي القيمة تحت هذه الفروض، لا تطابق الدفعات."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-depreciation": {
+    "question": {
+      "en": "Where did the machine’s book value go?",
+      "ar": "إلى أين ذهبت القيمة الدفترية للآلة؟"
+    },
+    "scene": {
+      "en": "A machine bought years ago may still work well, yet its accounting value is lower. The accounting record and the cash you could sell it for are different things.",
+      "ar": "قد تعمل آلة قديمة جيدًا رغم انخفاض قيمتها في الدفاتر. القيمة المحاسبية ليست بالضرورة المبلغ الذي ستحصل عليه عند بيعها."
+    },
+    "meaning": {
+      "en": "Depreciation allocates the depreciable cost over time. Identify cost, salvage value, life and method; do not treat depreciation itself as a new cash payment.",
+      "ar": "الإهلاك يوزع الجزء القابل للإهلاك من التكلفة على الزمن. حدّد تكلفة الشراء والقيمة المتبقية والعمر والطريقة. الإهلاك نفسه ليس دفعة نقدية جديدة."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-worth": {
+    "question": {
+      "en": "Which project gives more value after all costs?",
+      "ar": "أي مشروع يعطي قيمة أكبر بعد التكاليف؟"
+    },
+    "scene": {
+      "en": "Two designs provide the same service but spend and earn money at different times. We need a common measuring stick before picking one.",
+      "ar": "تصميمان يقدمان الخدمة نفسها، لكن مواعيد تكاليفهما وإيراداتهما مختلفة. نحتاج مقياسًا واحدًا قبل الاختيار."
+    },
+    "meaning": {
+      "en": "Present worth and annual worth express the same cash-flow story in different forms. Use a consistent study period and state the required return.",
+      "ar": "القيمة الحالية والقيمة السنوية تعبّران عن التدفقات نفسها بطريقتين. استخدم فترة دراسة متسقة وحدّد العائد المطلوب."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-irr-payback": {
+    "question": {
+      "en": "Can a quick payback hide a weak investment?",
+      "ar": "هل يخفي الاسترداد السريع استثمارًا ضعيفًا؟"
+    },
+    "scene": {
+      "en": "A project may recover its initial cost quickly and then earn very little. Another may recover later but keep generating value for years.",
+      "ar": "قد يسترد مشروع تكلفته بسرعة ثم يحقق دخلًا قليلًا. وقد يتأخر آخر في الاسترداد لكنه يستمر في تحقيق قيمة سنوات طويلة."
+    },
+    "meaning": {
+      "en": "Payback asks when cost is recovered. IRR asks which rate makes net present worth zero. They answer different questions; unusual cash flows can produce more than one IRR.",
+      "ar": "فترة الاسترداد تسأل: متى نستعيد التكلفة؟ ومعدل العائد الداخلي يسأل: عند أي معدل تصبح صافي القيمة الحالية صفرًا؟ وقد تعطي التدفقات غير المعتادة أكثر من معدل عائد داخلي."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-capitalized-prospective": {
+    "question": {
+      "en": "How much money supports a service for a very long time?",
+      "ar": "كم نحتاج لتمويل خدمة تستمر زمنًا طويلًا؟"
+    },
+    "scene": {
+      "en": "A bridge needs recurring maintenance. Instead of looking at one year, imagine a fund meant to support repeated costs under a stated long-term model.",
+      "ar": "يحتاج جسر إلى صيانة متكررة. بدل النظر إلى سنة واحدة، تخيّل صندوقًا يمول هذه التكاليف وفق نموذج زمني طويل محدد."
+    },
+    "meaning": {
+      "en": "State whether the horizon is finite or perpetual before choosing a factor. A perpetuity assumes a positive rate and a payment pattern that continues; it is a model, not a guarantee.",
+      "ar": "حدّد أولًا هل المدة محدودة أم مستمرة بلا نهاية في النموذج. الدفعات الدائمة تفترض معدلًا موجبًا ونمط دفع مستمرًا؛ هذا فرض حسابي وليس ضمانًا للمستقبل."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-fe-pe": {
+    "question": {
+      "en": "Can you recognize the model before hunting for a formula?",
+      "ar": "هل تتعرف على النموذج قبل البحث عن المعادلة؟"
+    },
+    "scene": {
+      "en": "A short exam problem may hide a familiar timeline behind unfamiliar wording. Sketching the payments can reveal what the question actually asks.",
+      "ar": "قد تخفي صياغة جديدة في سؤال قصير خطًا زمنيًا تعرفه. رسم الدفعات يكشف المطلوب الحقيقي من السؤال."
+    },
+    "meaning": {
+      "en": "Identify the unknown, rate period and payment timing first. Then select a factor and check the scale of the answer. These are transfer exercises, not a promise of exam coverage.",
+      "ar": "حدّد المجهول وفترة المعدل ومواعيد الدفع أولًا. بعدها اختر المعامل وتحقق من معقولية الناتج. هذه تمارين لنقل الفهم إلى أسئلة جديدة، لا ضمان لتغطية امتحان معين."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "ee-risk-inventory": {
+    "question": {
+      "en": "Should you order more stock just to avoid running out?",
+      "ar": "هل تطلب مخزونًا كبيرًا فقط لتتفادى نفاده؟"
+    },
+    "scene": {
+      "en": "Too little stock can stop work. Too much ties up money and storage space. Uncertain demand makes the choice more interesting than simply buying more.",
+      "ar": "قلة المخزون قد توقف العمل. وكثرته تشغل المال ومساحة التخزين. ومع عدم اليقين في الطلب يصبح القرار أكبر من مجرد شراء كمية إضافية."
+    },
+    "meaning": {
+      "en": "Separate expected outcomes from guaranteed outcomes. For inventory models, name the assumptions about demand, ordering and holding costs before using the result.",
+      "ar": "فرّق بين النتيجة المتوقعة والنتيجة المضمونة. وفي نموذج المخزون حدّد فروض الطلب وتكلفة الطلب والتخزين قبل اعتماد النتيجة."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "soil-effective-stress": {
+    "question": {
+      "en": "Who carries the weight: water or soil grains?",
+      "ar": "من يحمل الوزن: الماء أم حبيبات التربة؟"
+    },
+    "scene": {
+      "en": "Imagine a stack of wet sand grains. Some of the total pressure is carried by water in the gaps. The force passed through grain contacts is what we call effective stress.",
+      "ar": "تخيّل حبيبات رمل وبينها ماء. يحمل الماء جزءًا من الضغط الكلي، بينما ينتقل جزء آخر عبر تلامس الحبيبات. هذا الجزء الثاني هو الإجهاد الفعّال."
+    },
+    "meaning": {
+      "en": "Start with total stress, then subtract pore-water pressure using the same reference level. A change in water level can change both terms, not only the water pressure.",
+      "ar": "ابدأ بالإجهاد الكلي ثم اطرح ضغط ماء المسام باستخدام المنسوب المرجعي نفسه. تغيّر مستوى الماء قد يغيّر الحدين، لا ضغط الماء وحده."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "soil-shear": {
+    "question": {
+      "en": "Why is a pressed-down sand pile harder to slide?",
+      "ar": "لماذا يصعب تحريك الرمل عند الضغط عليه؟"
+    },
+    "scene": {
+      "en": "Try sliding one rough surface over another while pressing down. Greater contact force can create more resistance. Soil strength often follows a similar idea, with important limits.",
+      "ar": "حاول تحريك سطح خشن فوق آخر مع الضغط عليه. قد تزداد مقاومة الانزلاق بزيادة قوة التلامس. تساعدنا هذه الفكرة في فهم مقاومة التربة، لكن لها حدود."
+    },
+    "meaning": {
+      "en": "Relate shear strength to normal effective stress using the stated drainage condition. Cohesion and friction angle describe a chosen model; they are not interchangeable constants for every test.",
+      "ar": "نربط مقاومة القص بالإجهاد العمودي الفعّال مع تحديد حالة التصريف. التماسك وزاوية الاحتكاك يصفان نموذجًا محددًا، ولا نستخدم قيمهما بالطريقة نفسها في كل اختبار."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "soil-triaxial": {
+    "question": {
+      "en": "What can squeezing a soil cylinder tell us?",
+      "ar": "ماذا نتعلم من ضغط أسطوانة تربة؟"
+    },
+    "scene": {
+      "en": "Wrap a soil sample, press around its sides, then increase the load from above. Watching its failure tells us how confinement and drainage affect strength.",
+      "ar": "نغلف عينة تربة أسطوانية، ونضغط على جوانبها، ثم نزيد الحمل من أعلى. تساعدنا لحظة الفشل على فهم أثر الضغط المحيط والتصريف في المقاومة."
+    },
+    "meaning": {
+      "en": "Keep cell pressure, deviator stress and pore pressure separate. Choose total or effective stresses to match the test, then interpret the stress circle and failure condition.",
+      "ar": "افصل ضغط الخلية عن الإجهاد الانحرافي وضغط المسام. اختر الإجهادات الكلية أو الفعّالة بحسب الاختبار، ثم فسّر دائرة الإجهاد وشرط الفشل."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "hydro-geometry": {
+    "question": {
+      "en": "Why does channel shape change the flow?",
+      "ar": "لماذا يغيّر شكل القناة سلوك الماء؟"
+    },
+    "scene": {
+      "en": "The same amount of water can pass through a narrow deep channel or a wide shallow one. The area touching the water and the boundary rubbing against it will differ.",
+      "ar": "قد تمر كمية الماء نفسها في قناة ضيقة عميقة أو عريضة ضحلة. تختلف مساحة الجريان وطول السطح الذي يحتك به الماء."
+    },
+    "meaning": {
+      "en": "Draw the wetted shape first. Area, wetted perimeter and top width measure different things. From them we form hydraulic radius and hydraulic depth.",
+      "ar": "ارسم الجزء المبتل أولًا. مساحة الجريان والمحيط المبتل وعرض السطح مقادير مختلفة. منها نحسب نصف القطر الهيدروليكي والعمق الهيدروليكي."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "hydro-uniform": {
+    "question": {
+      "en": "When can water keep the same depth along a channel?",
+      "ar": "متى يحافظ الماء على العمق نفسه بطول القناة؟"
+    },
+    "scene": {
+      "en": "In a long regular channel, gravity pushes the water forward while resistance slows it. Under uniform-flow conditions, the depth and mean velocity stay constant along the reach.",
+      "ar": "في قناة طويلة منتظمة تدفع الجاذبية الماء وتقاومه خشونة القاع والجوانب. في الجريان المنتظم يبقى العمق ومتوسط السرعة ثابتين على طول الجزء المدروس."
+    },
+    "meaning": {
+      "en": "Normal depth is the depth that makes the resistance relation match the given discharge, shape and slope. Do not assume every real channel reach is uniform.",
+      "ar": "العمق العادي هو العمق الذي يجعل علاقة المقاومة تحقق التصريف والشكل والميل المعطى. لا تفترض أن كل جزء من قناة حقيقية يحقق الجريان المنتظم."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "hydro-critical": {
+    "question": {
+      "en": "Can the same energy give two different water depths?",
+      "ar": "هل تعطي الطاقة نفسها عمقين مختلفين للماء؟"
+    },
+    "scene": {
+      "en": "Water can be shallow and fast or deeper and slower. For a fixed discharge, both states can sometimes have the same specific energy.",
+      "ar": "قد يكون الماء ضحلًا سريعًا أو أعمق وأبطأ. عند تصريف ثابت قد تتساوى الطاقة النوعية في الحالتين."
+    },
+    "meaning": {
+      "en": "Critical flow sits at the minimum specific energy for the stated discharge and geometry. Use the Froude number to distinguish the flow regimes.",
+      "ar": "يقع الجريان الحرج عند أقل طاقة نوعية للتصريف والشكل المحددين. نستخدم عدد فرود للتمييز بين حالات الجريان."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "env-demand": {
+    "question": {
+      "en": "How much water should a town’s system supply?",
+      "ar": "كم ماء يجب أن توفره شبكة المدينة؟"
+    },
+    "scene": {
+      "en": "A town does not use the same amount of water every hour. Morning demand, losses and occasional emergencies make a single average misleading for design.",
+      "ar": "لا تستهلك المدينة كمية الماء نفسها كل ساعة. ذروة الصباح والفواقد والحالات الطارئة تجعل المتوسط وحده غير كافٍ للتصميم."
+    },
+    "meaning": {
+      "en": "Build the estimate from population and per-person demand, then apply only the peak and loss conventions stated in the problem. Keep daily volumes separate from flow rates.",
+      "ar": "ابدأ بعدد السكان واستهلاك الفرد، ثم طبّق معاملات الذروة والفواقد المذكورة في المسألة. لا تخلط حجم الماء اليومي بمعدل التدفق."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "env-quality": {
+    "question": {
+      "en": "Can clear water still need treatment?",
+      "ar": "هل يحتاج الماء الصافي إلى معالجة؟"
+    },
+    "scene": {
+      "en": "A glass can look clean while containing dissolved substances or microbes you cannot see. Appearance is only one clue about water quality.",
+      "ar": "قد يبدو الماء في الكوب صافيًا رغم وجود مواد ذائبة أو كائنات دقيقة لا تراها. المظهر مؤشر واحد فقط على الجودة."
+    },
+    "meaning": {
+      "en": "Read what each measurement actually means and which units it uses. For an ion balance, compare electrical equivalents rather than adding unlike mass concentrations.",
+      "ar": "افهم ما الذي يقيسه كل اختبار ووحدته. وعند موازنة الأيونات قارن المكافئات الكهربائية، لا تجمع تراكيز كتلية مختلفة مباشرة."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "env-coagulation": {
+    "question": {
+      "en": "How do we persuade tiny particles to gather?",
+      "ar": "كيف نجمع الجسيمات الصغيرة لتسهل إزالتها؟"
+    },
+    "scene": {
+      "en": "Very small particles may stay suspended instead of settling. Treatment first destabilizes them, then gentle mixing helps them meet and form larger flocs.",
+      "ar": "قد تبقى الجسيمات الدقيقة معلقة بدل أن تترسب. تبدأ المعالجة بتقليل استقرارها، ثم يساعد الخلط الهادئ على تجميعها في ندف أكبر."
+    },
+    "meaning": {
+      "en": "Separate chemical dose, rapid mixing and flocculation. Mixing intensity and time must work together; stronger stirring is not automatically better.",
+      "ar": "افصل الجرعة الكيميائية عن الخلط السريع والتلبيد. شدة الخلط وزمنه يعملان معًا؛ زيادة التقليب ليست أفضل دائمًا."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "steel-ltb": {
+    "question": {
+      "en": "Can a beam fail by twisting before it bends too much?",
+      "ar": "هل تفشل الكمرة بالالتواء قبل أن تنحني كثيرًا؟"
+    },
+    "scene": {
+      "en": "A slender steel beam may move sideways and twist while carrying a vertical load. Its bending strength depends on the restraints that stop that sideways motion.",
+      "ar": "قد تتحرك كمرة فولاذية نحيفة جانبًا وتلتوي تحت حمل رأسي. تتأثر مقاومتها بقيود الحركة التي تمنع هذا السلوك."
+    },
+    "meaning": {
+      "en": "Identify the compression flange, unrestrained length and restraint conditions before selecting a resistance formula. Keep the design code and edition explicit.",
+      "ar": "حدّد الجناح المضغوط والطول غير المقيّد وشروط التقييد قبل اختيار معادلة المقاومة. اذكر كود التصميم وإصداره بوضوح."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  },
+  "steel-compound": {
+    "question": {
+      "en": "What makes separate steel pieces behave as one beam?",
+      "ar": "ما الذي يجعل قطع الفولاذ تعمل ككمرة واحدة؟"
+    },
+    "scene": {
+      "en": "Stack two pieces without connecting them and they can slip. Connect them properly and they can share bending, but the connections must transfer forces between the pieces.",
+      "ar": "ضع قطعتين فوق بعضهما من غير وصل، وقد تنزلق إحداهما بالنسبة للأخرى. الوصل الجيد يسمح لهما بالمشاركة في مقاومة الانحناء، لكنه يجب أن ينقل القوى بينهما."
+    },
+    "meaning": {
+      "en": "Find the combined section properties, then check the shear flow along the interfaces and the connections that carry it. A large section alone does not guarantee composite action.",
+      "ar": "احسب خصائص القطاع المجمّع، ثم افحص تدفق القص عند أسطح التلامس والوصلات التي تنقله. كِبر القطاع وحده لا يضمن أن تعمل أجزاؤه معًا."
+    },
+    "videoStatus": "needs-duration-and-embed-review"
+  }
+}

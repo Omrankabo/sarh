@@ -1,4 +1,4 @@
-const CACHE='sarh-app-v8-course-artwork';
+const CACHE='sarh-app-v9-private-accounts';
 function validAsset(url,response){
  if(!response.ok)return false;
  const pathname=new URL(url,self.location.origin).pathname,type=response.headers.get('content-type')||'';

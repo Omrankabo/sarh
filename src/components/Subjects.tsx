@@ -10,7 +10,9 @@ export default function Subjects({lang,topics,book,destination='subjects'}:{lang
  const ar=lang==='ar';
  return <>
   <div className="page-heading"><div><p className="eyebrow">{ar?'مساحتك الدراسية':'YOUR STUDY SPACE'}</p><h1>{destination==='materials'?(ar?'مكتبة الدراسة':'Study library'):(ar?'المواد الدراسية':'Subjects')}</h1><p className="muted">{destination==='materials'?(ar?'اختر المادة للوصول إلى شروحها ومعادلاتها ومسائلها.':'Choose a subject to find its explanations, formulas and worked problems.'):(ar?'اختر المادة، ثم انطلق في موضوع واحد كل مرة.':'Choose a subject, then explore one topic at a time.')}</p></div></div>
-  <div className="subject-grid">{subjects.map(subject=>{
+  {[...new Set(subjects.map(s=>s.semester))].sort((a,b)=>a-b).map(semester=><section className="semester-group" id={`semester-${semester}`} key={semester} aria-labelledby={`semester-title-${semester}`}>
+  <div className="semester-heading"><h2 id={`semester-title-${semester}`}>{ar?'الفصل الدراسي':'Semester'} {semester.toLocaleString(ar?'ar':'en')}</h2><span className="muted">{subjects.filter(s=>s.semester===semester).length} {ar?'مواد':'subjects'}</span></div>
+  <div className="subject-grid">{subjects.filter(s=>s.semester===semester).map(subject=>{
    const journeys=topics.filter(t=>subject.topicIds.includes(t.id));
    const steps=journeys.reduce((n,t)=>n+t.steps.length,0);
    const completed=journeys.reduce((n,t)=>n+t.steps.filter(s=>book.topics[t.id]?.completed.includes(s.id)).length,0);
@@ -26,6 +28,6 @@ export default function Subjects({lang,topics,book,destination='subjects'}:{lang
     <div className="progress-track" role="progressbar" aria-label={ar?'تقدّم المادة':'Subject progress'} aria-valuemin={0} aria-valuemax={100} aria-valuenow={percent}><span style={{width:`${percent}%`}}/></div>
     <Link className="button primary" href={`/${lang}/${destination}/${subject.id}`}>{!journeys.length?(ar?'اطّلع على خطة المادة':'View course plan'):destination==='materials'?(ar?'افتح مكتبة المادة':'Open subject library'):(ar?'افتح المادة':'Explore subject')}<ArrowUpRight size={17}/></Link>
    </article>;
-  })}</div>
+  })}</div></section>)}
  </>;
 }

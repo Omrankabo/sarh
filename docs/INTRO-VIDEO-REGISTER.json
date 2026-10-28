@@ -1,0 +1,60 @@
+{
+  "reviewedAt": "2026-10-28",
+  "reviewed": [
+    {
+      "id": "pJlbSEc-shg",
+      "durationSeconds": 569,
+      "topics": [
+        "slope-beams",
+        "slope-nonsway"
+      ],
+      "identity": "YouTube title and channel match",
+      "duration": "Visible player: 9:29",
+      "embedding": "YouTube Share → Embed is available",
+      "language": "English",
+      "captions": "Player reports subtitles unavailable",
+      "purpose": {
+        "en": "Which movements are unknown, and how do they change the end moments? Compare the video’s sign convention with the one stated in this lesson.",
+        "ar": "ما الحركات المجهولة؟ وكيف تغيّر عزوم الأطراف؟ قارن اتفاقية الإشارات في الفيديو بالاتفاقية المذكورة في الدرس."
+      }
+    }
+  ],
+  "pendingTopics": [
+    "slope-sway",
+    "slope-inclined",
+    "distribution-beams",
+    "distribution-nonsway",
+    "distribution-sway",
+    "influence-qualitative",
+    "influence-numerical",
+    "influence-moving",
+    "models-beams",
+    "models-frames",
+    "ee-foundations",
+    "ee-markets",
+    "ee-interest-context",
+    "ee-single-payments",
+    "ee-uniform-series",
+    "ee-gradients",
+    "ee-rates",
+    "ee-continuous-flows",
+    "ee-equivalence",
+    "ee-depreciation",
+    "ee-worth",
+    "ee-irr-payback",
+    "ee-capitalized-prospective",
+    "ee-fe-pe",
+    "ee-risk-inventory",
+    "soil-effective-stress",
+    "soil-shear",
+    "soil-triaxial",
+    "hydro-geometry",
+    "hydro-uniform",
+    "hydro-critical",
+    "env-demand",
+    "env-quality",
+    "env-coagulation",
+    "steel-ltb",
+    "steel-compound"
+  ]
+}

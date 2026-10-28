@@ -818,5 +818,33 @@
     ],
     "reviewedAt": "2026-10-27",
     "reference": "https://www.youtube.com/watch?v=wjEQ6F4HCaU"
+  },
+  {
+    "id": "pJlbSEc-shg",
+    "title": "Slope Deflection Method Introduction",
+    "author": "Simmy Sigma",
+    "language": "English",
+    "kind": "concept",
+    "topics": [
+      "slope-beams",
+      "slope-nonsway"
+    ],
+    "introTopics": [
+      "slope-beams",
+      "slope-nonsway"
+    ],
+    "durationSeconds": 569,
+    "embedVerifiedAt": "2026-10-28",
+    "captions": [],
+    "watchFor": {
+      "en": "Which movements are unknown, and how do they change the end moments? Compare the video’s sign convention with the one stated in this lesson.",
+      "ar": "ما الحركات المجهولة؟ وكيف تغيّر عزوم الأطراف؟ قارن اتفاقية الإشارات في الفيديو بالاتفاقية المذكورة في الدرس."
+    },
+    "purpose": {
+      "en": "A short overview of the method and its variables before working through the joint equations.",
+      "ar": "تمهيد قصير يوضح فكرة الطريقة ورموزها قبل تطبيق معادلات العقد."
+    },
+    "reviewedAt": "2026-10-28",
+    "reference": "https://www.youtube.com/watch?v=pJlbSEc-shg"
   }
 ]

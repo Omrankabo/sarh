@@ -1,17 +1,28 @@
+'use client';
+import {useRef,useState} from 'react';
 import type {Lang,Topic,Video} from '@/lib/types';
 import {text} from '@/lib/types';
 import StudyMarkdown from './StudyMarkdown';
 import VideoHelp from './VideoHelp';
+import IntroVideo from './IntroVideo';
 import CourseArtwork from './CourseArtwork';
-
-export default function TopicChapter({topic,lang,videos,resume,onStory,onPrerequisites}:{topic:Topic;lang:Lang;videos:Video[];resume:boolean;onStory:()=>void;onPrerequisites:()=>void}){
- const ar=lang==='ar';
+const ids=['scene','idea','first-step','ready'];
+export default function TopicChapter({topic,lang,videos,resume,onStory,onPrerequisites,block='scene',onBlock,prediction:savedPrediction,onPrediction}:{topic:Topic;lang:Lang;videos:Video[];resume:boolean;onStory:()=>void;onPrerequisites:()=>void;block?:string;onBlock?:(id:string)=>void;prediction?:number;onPrediction?:(choice:number)=>void}){
+ const ar=lang==='ar',intro=topic.introduction,step=topic.steps[0],index=Math.max(0,ids.indexOf(block));
+ const [localPrediction,setPrediction]=useState<number|null>(null),[revealed,setRevealed]=useState(false);const heading=useRef<HTMLHeadingElement>(null);
+ const prediction=savedPrediction??localPrediction;
+ const titles=ar?['تخيّل المشهد','ما الذي يحدث؟','جرّب فكرة صغيرة','ماذا ستتعلم؟']:['Picture the scene','What is happening?','Try one small idea','Where we are going'];
+ function go(n:number){onBlock?.(ids[n]);requestAnimationFrame(()=>{heading.current?.focus({preventScroll:true});heading.current?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'})})}
  return <article className="chapter surface">
-  <div className="chapter-intro"><p className="eyebrow">{ar?'الفكرة كاملة، قبل التطبيق':'THE WHOLE IDEA, BEFORE APPLICATION'}</p><h2>{ar?'افهم ما يحدث، ثم تعلّم كيف تحسبه.':'Understand what happens. Then learn to calculate it.'}</h2><p>{text(topic.summary,lang)}</p><div className="actions"><button onClick={onPrerequisites}>{ar?'راجع ما تحتاجه أولًا':'Check the foundations'}</button><a className="text-link" href="#chapter-to-story">{ar?'إلى خطوات التطبيق':'Go to the guided application'}</a></div></div>
-  <details className="chapter-contents"><summary>{ar?'ماذا ستفهم في هذا الفصل؟':'What will you understand in this chapter?'}</summary><ol>{topic.concepts.map(c=><li key={c.id}>{text(c.title,lang)}</li>)}</ol></details>
-  <CourseArtwork topic={topic.id} lang={lang}/>
-  <StudyMarkdown>{text(topic.chapter,lang)}</StudyMarkdown>
-  <VideoHelp videos={videos} lang={lang}/>
-  <div id="chapter-to-story" className="chapter-next"><h3>{ar?'حوّل الفهم إلى خطوات تحلها بنفسك.':'Turn understanding into steps you can solve.'}</h3><p>{ar?'احتفظ بتوقعك للشكل والاستجابة. ستختبره الآن خطوة بخطوة.':'Keep your prediction of the shape and response. Now test it one step at a time.'}</p><button className="primary" onClick={onStory}>{resume?(ar?'استأنف خريطة الفهم':'Resume the story map'):(ar?'ابدأ خريطة الفهم':'Begin the story map')}</button></div>
+  <div className="chapter-intro"><p className="eyebrow">{ar?'افهم الفكرة، خطوة صغيرة كل مرة':'UNDERSTAND IT, ONE SMALL STEP AT A TIME'}</p><h2>{text(intro?.question??topic.title,lang)}</h2><p className="muted">{ar?'تخيّل أولًا. توقّع ما سيحدث. ثم اكتشف كيف نحسبه.':'Picture it. Make a prediction. Then discover how to calculate it.'}</p><button onClick={onPrerequisites}>{ar?'أحتاج تذكيرًا بالأساسيات':'Refresh the foundations'}</button></div>
+  <nav className="intro-outline" aria-label={ar?'خطوات المقدمة':'Introduction steps'}>{ids.map((id,i)=><button key={id} aria-current={index===i?'step':undefined} onClick={()=>go(i)}>{i+1}. {titles[i]}</button>)}</nav>
+  <section className="intro-block" aria-labelledby={`intro-${topic.id}`}><p className="small muted">{ar?'الجزء':'Part'} {index+1} / {ids.length} · {ar?'نحو دقيقة أو دقيقتين':'About 1–2 minutes'}</p><h3 ref={heading} tabIndex={-1} id={`intro-${topic.id}`}>{titles[index]}</h3>
+   {index===0&&<><IntroVideo videos={videos} topic={topic.id} lang={lang}/><p className="intro-reading">{text(intro?.scene??topic.summary,lang)}</p><CourseArtwork topic={topic.id} lang={lang}/></>}
+   {index===1&&<><p className="intro-reading">{text(intro?.meaning??step.explain,lang)}</p><div className="intro-check"><strong>{ar?'قبل الأرقام':'Before the numbers'}</strong><p>{text(step.predict,lang)}</p>{step.options.map((option,i)=><button key={i} className={prediction===i?'selected':''} aria-pressed={prediction===i} onClick={()=>{setPrediction(i);onPrediction?.(i);setRevealed(false)}}>{text(option,lang)}</button>)}<button disabled={prediction===null} className="primary" onClick={()=>setRevealed(true)}>{ar?'اكتشف ما يحدث':'See what happens'}</button>{revealed&&<div role="status"><p>{prediction===step.correct?(ar?'توقّعك مناسب.':'That prediction fits.'):(ar?'لنفحص الفكرة معًا.':'Let’s examine the idea together.')}</p><StudyMarkdown>{text(step.observe,lang)}</StudyMarkdown></div>}</div></>}
+   {index===2&&<><p>{ar?'نستخدم علاقة صغيرة لربط المشهد بالحساب. اقرأ معناها قبل التعويض.':'Use one relationship to connect the scene to a calculation. Read its meaning before substituting numbers.'}</p><StudyMarkdown>{text(step.explain,lang)}</StudyMarkdown><details className="intro-check"><summary>{ar?'افتح العلاقة ومعنى رموزها':'Open the relationship and its symbols'}</summary><div className="formula-box" dir="ltr">{step.formula}</div><StudyMarkdown>{text(step.symbols,lang)}</StudyMarkdown><p>{text(step.assumptions,lang)}</p></details><details className="intro-check"><summary>{ar?'جرّب ثم افتح الحل: ':'Try, then reveal: '}{text(step.check.prompt,lang)}</summary><StudyMarkdown>{text(step.check.answer,lang)}</StudyMarkdown></details><p className="callout">{text(step.interpret,lang)}</p></>}
+   {index===3&&<><div className="intro-pause"><strong>{ar?'استراحة صغيرة، إذا احتجتها':'A small pause, if you need it'}</strong><p>{ar?'أبعد عينيك عن الشاشة لحظة. كيف تشرح الفكرة لصديق في جملة واحدة؟ لا تحتاج إلى صياغة مثالية.':'Look away for a moment. How would you explain the idea to a friend in one sentence? It does not need to sound perfect.'}</p></div><h4>{ar?'في نهاية الرحلة تستطيع أن:':'By the end, you can:'}</h4><ul>{topic.outcomes.map((outcome,i)=><li key={i}>{text(outcome,lang)}</li>)}</ul><div id="chapter-to-story" className="chapter-next"><h3>{ar?'الآن لنطبّقها خطوة بخطوة':'Now let’s put it to work'}</h3><p>{ar?'سنربط كل معادلة بما يحدث، ونحل ثم نفحص معنى الناتج.':'Connect each equation to what happens, calculate, then check what the answer means.'}</p><button className="primary" onClick={onStory}>{resume?(ar?'استأنف خريطة الفهم':'Resume the story map'):(ar?'ابدأ خريطة الفهم':'Begin the story map')}</button></div></>}
+  </section>
+  <div className="intro-controls"><button disabled={index===0} onClick={()=>go(index-1)}>{ar?'السابق':'Previous'}</button>{index<ids.length-1&&<button className="primary" onClick={()=>go(index+1)}>{ar?'الخطوة التالية':'Next small step'}</button>}</div>
+  <details className="intro-full"><summary>{ar?'الشرح الكامل للرجوع إليه':'Full explanation for reference'}</summary><StudyMarkdown>{text(topic.chapter,lang)}</StudyMarkdown></details><VideoHelp videos={videos} lang={lang}/>
  </article>;
 }
