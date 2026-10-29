@@ -68,3 +68,24 @@ html[data-theme=burgundy] .minimal-header{background:#f8f1f3c7}html[data-theme=b
 @media(prefers-reduced-transparency:reduce){.dashboard-panel,.metric-row,.subject-card,.topic-card,.surface,.family-card,.journey-row,.problem-register>details,.modal,.learning-context,.topic-tabs{background:#fafcfb;backdrop-filter:none;-webkit-backdrop-filter:none}}
 @media(prefers-reduced-motion:reduce){.subject-card:hover,.topic-card:hover,.journey-row:hover,.profile-button:hover{transform:none}}
 .floating-timer{direction:ltr}
+/* Color cues use contrast and labels as well as color; the palette stays quiet around study text. */
+:root{--study-action:#0f4e36;--study-progress:#167951;--study-focus:#235e79;--study-warm:#934624;--study-soft-blue:#e1f4f5;--study-soft-green:#dcf2e1;--study-soft-orange:#ffebde}
+html[data-theme=burgundy]{--study-action:#6d001a;--study-progress:#277c5a;--study-focus:#365c79;--study-warm:#934624;--study-soft-blue:#e7f0f5;--study-soft-green:#dff1e5;--study-soft-orange:#fbe7df}
+button.primary,.button.primary{background:var(--study-action);border-color:var(--study-action);color:#fff}
+button.primary:hover,.button.primary:hover{background:var(--ink);border-color:var(--ink)}
+.progress-track>span{background:var(--study-progress)}
+.metric-icon{background:var(--study-soft-green);color:#155c3d}.metric-icon.warm{background:var(--study-soft-orange);color:var(--study-warm)}.metric-icon.sand{background:var(--study-soft-blue);color:var(--study-focus)}
+.session-status.is-running:before{background:var(--study-progress)}.ring-value{stroke:var(--study-progress)}
+.filter-pills button.selected,.topic-tabs button[aria-selected=true],.topic-tabs>a.selected{background:var(--study-soft-green);color:#174e36}
+.pill.green,.feedback.success{background:var(--study-soft-green);color:#174e36}.feedback.error{background:var(--study-soft-orange);color:#79391e}
+.theme-picker>div+div{margin-top:10px}.theme-picker button[aria-pressed=true]{background:var(--study-action);border-color:var(--study-action);color:white}
+
+/* The solid option removes translucency and blur while keeping the chosen color palette. */
+html[data-finish=solid]{--glass-fill:#fff;--glass-edge:var(--line);--glass-shadow:0 2px 10px #24493c0a;--surface:#fff}
+html[data-finish=solid] body{background:var(--background);background-attachment:scroll}
+html[data-finish=solid] *,html[data-finish=solid] *::before,html[data-finish=solid] *::after{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+html[data-finish=solid] .minimal-shell .minimal-header,html[data-finish=solid] .navigation-popover,html[data-finish=solid] .session-widget,html[data-finish=solid] .dashboard-panel,html[data-finish=solid] .metric-row,html[data-finish=solid] .subject-card,html[data-finish=solid] .topic-card,html[data-finish=solid] .surface,html[data-finish=solid] .family-card,html[data-finish=solid] .journey-row,html[data-finish=solid] .review-overview a,html[data-finish=solid] .problem-register>details,html[data-finish=solid] .modal,html[data-finish=solid] .learning-context,html[data-finish=solid] .topic-tabs,html[data-finish=solid] .story-content,html[data-finish=solid] .chapter,html[data-finish=solid] .question-stage,html[data-finish=solid] .recall-card,html[data-finish=solid] .auth-card{background:#fff;border-color:var(--line)}
+html[data-finish=solid] .hamburger,html[data-finish=solid] .header-language,html[data-finish=solid] .profile-button,html[data-finish=solid] .auth-close,html[data-finish=solid] .session-widget,html[data-finish=solid] .session-widget-actions button{background:#fff;border-color:var(--line)}
+html[data-finish=solid] .auth-backdrop,html[data-finish=solid] .account-stage{background:var(--background)}
+html[data-finish=solid] .auth-backdrop .edge-colors,html[data-finish=solid] .auth-backdrop::after{display:none}
+html[data-finish=solid] .auth-submit{background:#253b31;color:white}
