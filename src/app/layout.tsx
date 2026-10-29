@@ -9,6 +9,7 @@ import './semester-seven.css';
 import './recall.css';
 import './artwork.css';
 import './engagement.css';
+import './accounts.css';
 import 'katex/dist/katex.min.css';
 import {AccountProvider} from '@/components/AccountProvider';
 import StartupSplash from '@/components/StartupSplash';
