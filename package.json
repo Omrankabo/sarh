@@ -34,6 +34,6 @@
     "fake-indexeddb": "^6.2.6",
     "firebase-tools": "^14.0.0",
     "tsx": "^4.20.0",
-    "typescript": "^5.9.0"
+    "typescript": "^7.0.2"
   }
 }
