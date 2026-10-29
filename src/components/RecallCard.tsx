@@ -1,7 +1,8 @@
 'use client';
+import ReportIssue from './ReportIssue';
 import {useEffect,useRef,useState} from 'react';
 import Link from 'next/link';
-import type {Lang,Notebook,Topic,Card} from '@/lib/types';
+import type {Lang,Notebook,TopicIndex,Card} from '@/lib/types';
 import {text} from '@/lib/types';
 import {previews,recallKey,type Rating,type RateCommand} from '@/lib/recall';
 import {uid} from '@/lib/study';
@@ -10,7 +11,7 @@ import StudyMarkdown from './StudyMarkdown';
 export type RateCard=(command:RateCommand)=>Promise<boolean>;
 export function nextInterval(due:number,now:number,lang:Lang){const minutes=Math.max(1,Math.round((due-now)/60000));return new Intl.NumberFormat(lang).format(minutes<60?minutes:minutes<1440?Math.round(minutes/60):Math.round(minutes/1440))+' '+(minutes<60?(lang==='ar'?'دقيقة':'min'):minutes<1440?(lang==='ar'?'ساعة':'h'):(lang==='ar'?'يوم':'days'));}
 export function reviewDate(at:number,lang:Lang){return new Intl.DateTimeFormat(lang==='ar'?'ar-SA':'en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Asia/Riyadh',calendar:'gregory'}).format(at);}
-export default function RecallCard({topic,card,lang,book,now,revealed,onReveal,onRate,session,onDone}:{topic:Topic;card:Card;lang:Lang;book:Notebook;now:number;revealed:boolean;onReveal:()=>void;onRate:RateCard;session?:string;onDone?:()=>void}){
+export default function RecallCard({topic,card,lang,book,now,revealed,onReveal,onRate,session,onDone}:{topic:TopicIndex;card:Card;lang:Lang;book:Notebook;now:number;revealed:boolean;onReveal:()=>void;onRate:RateCard;session?:string;onDone?:()=>void}){
  const ar=lang==='ar',say=(en:string,arabic:string)=>ar?arabic:en;
  const [busy,setBusy]=useState(false),[error,setError]=useState(''),[stale,setStale]=useState(false);const question=useRef<HTMLDivElement>(null);
  useEffect(()=>{question.current?.focus({preventScroll:true})},[card.id]);
@@ -24,5 +25,6 @@ export default function RecallCard({topic,card,lang,book,now,revealed,onReveal,o
   <p className="small muted">{say('Again = incorrect or forgotten. Hard = correct with effort. These ratings are self-assessed.','مجددًا = إجابة خاطئة أو منسية. بصعوبة = إجابة صحيحة بجهد. هذه تقييمات ذاتية.')}</p>
   {error&&<p role="alert" className="feedback error">{error}</p>}
   {step>=0&&<Link className="text-link" href={`/${lang}/topics/${topic.id}?tab=story&step=${step}`}>{say('Revisit this idea in the story','ارجع إلى شرح هذه الفكرة')}</Link>}
+ <ReportIssue topic={topic.id} item={card.id} lang={lang} kind="card"/>
  </article>;
 }

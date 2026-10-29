@@ -2,7 +2,7 @@ import type {Attempt,FocusSession,Notebook,Progress,Timer} from './types';
 import {validRecall} from './recall';
 export const uid=()=>globalThis.crypto.randomUUID();
 export const freshProgress=():Progress=>({step:0,tab:'start',completed:[],answers:{},cards:{},prereqs:{},predictions:{},errors:[]});
-export const freshNotebook=():Notebook=>({version:1,topics:{},attempts:[],sessions:[],timer:null,settings:{language:'ar',focus:25,break:5},imports:[],updatedAt:Date.now()});
+export const freshNotebook=():Notebook=>({version:1,topics:{},attempts:[],sessions:[],timer:null,settings:{language:'en',focus:25,break:5},imports:[],updatedAt:Date.now()});
 const dayFormatter=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Riyadh',year:'numeric',month:'2-digit',day:'2-digit'});
 export const day=(at:number)=>dayFormatter.format(at);
 export function dates(now:number,count:number,offset=0){const today=new Date(day(now)+'T12:00:00+03:00');return Array.from({length:count},(_,i)=>day(today.getTime()-(count-1-i+offset)*86400000));}

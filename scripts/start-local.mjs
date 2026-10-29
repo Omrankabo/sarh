@@ -85,6 +85,6 @@ try{
   }
   if(!healthy)throw spawnError||lastError||Error('Sarh could not start.');
   releaseLock();
-  console.log(`Open ${origin}/ar — refresh any already-open Sarh tabs. Keep this window open while studying.`);
+  console.log(`Open ${origin}/en — refresh any already-open Sarh tabs. Keep this window open while studying.`);
   process.exitCode=await completion;
 }catch(error){server?.kill();releaseLock();console.error(`Sarh could not start: ${error.message}`);process.exitCode=1;}

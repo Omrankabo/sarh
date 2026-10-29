@@ -4,9 +4,9 @@ import {RecallStatus} from './ReviewCenter';
 import {ArrowUpRight,BookOpen} from 'lucide-react';
 import {subjects} from '@/lib/subjects';
 import {text} from '@/lib/types';
-import type {Lang,Notebook,Topic} from '@/lib/types';
+import type {Lang,Notebook,TopicIndex} from '@/lib/types';
 
-export default function Subjects({lang,topics,book,destination='subjects'}:{lang:Lang;topics:Topic[];book:Notebook;destination?:'subjects'|'materials'}){
+export default function Subjects({lang,topics,book,destination='subjects'}:{lang:Lang;topics:TopicIndex[];book:Notebook;destination?:'subjects'|'materials'}){
  const ar=lang==='ar';
  return <>
   <div className="page-heading"><div><p className="eyebrow">{ar?'مساحتك الدراسية':'YOUR STUDY SPACE'}</p><h1>{destination==='materials'?(ar?'مكتبة الدراسة':'Study library'):(ar?'المواد الدراسية':'Subjects')}</h1><p className="muted">{destination==='materials'?(ar?'اختر المادة للوصول إلى شروحها ومعادلاتها ومسائلها.':'Choose a subject to find its explanations, formulas and worked problems.'):(ar?'اختر المادة، ثم انطلق في موضوع واحد كل مرة.':'Choose a subject, then explore one topic at a time.')}</p></div></div>

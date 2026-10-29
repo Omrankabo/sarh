@@ -1,0 +1,24 @@
+import localFont from 'next/font/local';
+import '../globals.css';
+import '../dashboard.css';
+import '../learning.css';
+import '../motion.css';
+import '../session-widget.css';
+import '../polish.css';
+import '../semester-seven.css';
+import '../recall.css';
+import '../artwork.css';
+import '../engagement.css';
+import '../accounts.css';
+import '../glass.css';
+import 'katex/dist/katex.min.css';
+import {AccountProvider} from '@/components/AccountProvider';
+import StartupSplash from '@/components/StartupSplash';
+import NavigationMotion from '@/components/NavigationMotion';
+import {Suspense} from 'react';
+const arabic=localFont({src:[{path:'../../../public/fonts/arabic-regular.woff2',weight:'400'},{path:'../../../public/fonts/arabic-semibold.woff2',weight:'600 800'}],variable:'--font-ar',display:'swap'});
+const english=localFont({src:'../../../public/fonts/latin.woff2',variable:'--font-en',display:'swap'});
+const poetry=localFont({src:'../../../public/fonts/poetry.woff2',variable:'--font-poetry',display:'swap',preload:false});
+export const viewport={themeColor:'#F0F7F6'};
+export const metadata={metadataBase:new URL('https://sarh-sigma.vercel.app'),manifest:'/manifest.webmanifest',title:'صَرح | Build understanding',description:'A bilingual visual study space for engineering: understand, calculate, practice and explain.',icons:{icon:'/icon.svg'}};
+export default async function Layout({children,params}:{children:React.ReactNode;params:Promise<{lang:string}>}){const {lang}=await params;return <html lang={lang==='en'?'en':'ar'} dir={lang==='en'?'ltr':'rtl'}><body className={`${arabic.variable} ${english.variable} ${poetry.variable}`}><Suspense fallback={null}><StartupSplash/><NavigationMotion/></Suspense><AccountProvider>{children}</AccountProvider></body></html>}

@@ -1,3 +1,4 @@
+import {validCloudRecord} from './cloud-validation';
 import {initializeApp,getApps} from 'firebase/app';
 import {getAuth,connectAuthEmulator} from 'firebase/auth';
 import {getFirestore,connectFirestoreEmulator,doc,getDocsFromServer,collection,runTransaction,onSnapshot} from 'firebase/firestore';
@@ -37,6 +38,7 @@ export function cloudRecords(book:Notebook,deviceId?:string){
 }
 export function mergeCloudRecord(old:RecordValue|undefined,next:RecordValue):RecordValue{
  if(!old)return next;
+ if(!Array.isArray(old.value)&&(/\/(completed|errors)$/.test(next.key)))throw Error('Invalid cloud collection');
  if(next.key.endsWith('/completed'))return{...next,at:Math.max(old.at,next.at),value:[...new Set([...old.value,...next.value])]};
  if(next.key.endsWith('/errors'))return{...next,at:Math.max(old.at,next.at),value:[...new Map([...old.value,...next.value].map((v:any)=>[v.id,v])).values()]};
  return next.at>old.at||(next.at===old.at&&JSON.stringify(next.value)>JSON.stringify(old.value))?next:old;
@@ -51,7 +53,7 @@ export function firebaseRepository(userId:string,deviceId?:string):StudyReposito
  return{deviceTimers:()=>timers.filter(t=>t.device!==deviceId),async load(){
   requireOwner();const result=freshNotebook();result.updatedAt=0;result.fieldTimes={};result.recall=emptyRecall();
   const loaded=listening?(await ready,kinds.map(kind=>snapshots.get(kind)!)):await Promise.all(kinds.map(kind=>getDocsFromServer(collection(db,'users',userId,kind))));requireOwner();
-  timers=[];loaded.forEach((snapshot,index)=>{const kind=kinds[index];for(const row of snapshot.docs){const r=row.data() as RecordValue;known.set(`${kind}/${encodeURIComponent(r.key)}`,JSON.stringify(r));result.updatedAt=Math.max(result.updatedAt,r.at);
+  timers=[];loaded.forEach((snapshot,index)=>{const kind=kinds[index];for(const row of snapshot.docs){const r=row.data();if(!validCloudRecord(kind,r))throw Error('Cloud record could not be validated. Local progress has been preserved.');known.set(`${kind}/${encodeURIComponent(r.key)}`,JSON.stringify(r));result.updatedAt=Math.max(result.updatedAt,r.at);
    if(kind==='settings'||kind==='progress'){const parts=r.key.split('/');if(kind==='progress'&&parts[0]==='topics'&&parts[1])result.topics[parts[1]]??=freshProgress();if(parts.some(k=>['__proto__','constructor','prototype'].includes(k)))throw Error('Invalid progress key');let target:any=result;for(const key of parts.slice(0,-1))target=target[key]??={};target[parts.at(-1)!]=r.value;result.fieldTimes![r.key]=r.at;}
    else if(kind==='devices')timers.push(r.value);
    else if(kind==='attempts')result.attempts.push(r.value);

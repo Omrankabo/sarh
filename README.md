@@ -4,7 +4,7 @@ A personal, bilingual Next.js study app for six Semester 7 civil-engineering sub
 
 ## Open the app
 
-On Windows, double-click **Start-Sarh.cmd** in this folder. Then open **http://127.0.0.1:3000/ar**. The launcher checks the app, study content and assets and rebuilds when needed. It safely stops an existing Next server belonging to this exact Sarh folder before rebuilding/restarting, leaves other applications alone, and checks the actual stylesheet/script responses before reporting ready. A startup lock prevents simultaneous builds. Refresh already-open tabs after an update. Keep the app's terminal open while studying. Stop it with Ctrl+C when finished.
+On Windows, double-click **Start-Sarh.cmd** in this folder. Then open **http://127.0.0.1:3000/en**. The launcher checks the app, study content and assets and rebuilds when needed. It safely stops an existing Next server belonging to this exact Sarh folder before rebuilding/restarting, leaves other applications alone, and checks the actual stylesheet/script responses before reporting ready. A startup lock prevents simultaneous builds. Refresh already-open tabs after an update. Keep the app's terminal open while studying. Stop it with Ctrl+C when finished.
 
 For development:
 

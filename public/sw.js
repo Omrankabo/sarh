@@ -1,20 +1,27 @@
-const CACHE='sarh-app-v9-private-accounts';
+const CACHE='sarh-app-v10-glass';
+function cacheable(input){
+ try{const u=new URL(input,self.location.origin);if(u.origin!==self.location.origin||u.search||u.hash)return false;
+ return /^\/(ar|en)(\/(subjects|topics|materials)(\/[a-z0-9-]+)?|\/review)?$/.test(u.pathname)||/^\/_next\/static\/[a-zA-Z0-9_./~-]+\.(js|css|woff2?|ttf)$/.test(u.pathname)||/^\/illustrations\/[a-zA-Z0-9_/-]+\.webp$/.test(u.pathname)||['/sarh-hero.webp','/icon.svg','/icon-192.png','/icon-512.png','/manifest.webmanifest'].includes(u.pathname);
+ }catch{return false;}
+}
 function validAsset(url,response){
  if(!response.ok)return false;
  const pathname=new URL(url,self.location.origin).pathname,type=response.headers.get('content-type')||'';
  if(pathname.startsWith('/illustrations/')&&pathname.endsWith('.webp'))return /image\/webp/i.test(type);
  if(pathname.startsWith('/_next/static/')&&pathname.endsWith('.css'))return /text\/css/i.test(type);
  if(pathname.startsWith('/_next/static/')&&pathname.endsWith('.js'))return /(?:java|ecma)script/i.test(type);
+ if(/^\/(ar|en)(\/|$)/.test(pathname))return /text\/html/i.test(type);
  return true;
 }
 self.addEventListener('install',()=>self.skipWaiting());
 self.addEventListener('activate',e=>e.waitUntil((async()=>{for(const key of await caches.keys())if(key==='sarh-materials-v1'||(key.startsWith('sarh-app-v')&&key!==CACHE))await caches.delete(key);await self.clients.claim();})()));
-self.addEventListener('message',e=>{if(e.data?.type==='CACHE')e.waitUntil((async()=>{const cache=await caches.open(CACHE);let failed=0;for(const url of [...new Set(e.data.urls)])try{const r=await fetch(url);if(validAsset(url,r))await cache.put(new Request(url),r);else failed++;}catch{failed++;}if(!failed)e.source?.postMessage({type:'CACHED'});})());});
+self.addEventListener('message',e=>{if(e.data?.type==='CACHE'&&Array.isArray(e.data.urls))e.waitUntil((async()=>{const cache=await caches.open(CACHE);let failed=0;for(const url of [...new Set(e.data.urls.filter(u=>typeof u==='string'&&cacheable(u)))].slice(0,2000))try{const r=await fetch(url);if(validAsset(url,r))await cache.put(new Request(new URL(url,self.location.origin)),r);else failed++;}catch{failed++;}if(!failed)e.source?.postMessage({type:'CACHED'});})());});
 self.addEventListener('fetch',e=>{
  const u=new URL(e.request.url);
  if(e.request.method!=='GET'||u.origin!==self.location.origin||u.pathname.includes('/api/')||u.pathname.startsWith('/__'))return;
  if(u.pathname.startsWith('/materials/')||u.pathname.endsWith('.pdf')){e.respondWith(new Response('Not available',{status:404}));return;}
  if(e.request.headers.get('RSC')==='1')return;
+ if(!cacheable(e.request.mode==='navigate'?u.origin+u.pathname:u.href))return;
  const key=e.request.mode==='navigate'?new Request(u.origin+u.pathname):e.request;
  e.respondWith((async()=>{
   try{

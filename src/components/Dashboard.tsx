@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import {ArrowUpRight,BookOpen,Clock3,Flame,Layers3,Target,TrendingUp} from 'lucide-react';
-import type {Lang,Notebook,Topic} from '@/lib/types';
+import type {Lang,Notebook,TopicIndex} from '@/lib/types';
 import {text} from '@/lib/types';
 import type {report} from '@/lib/study';
 import {subjects} from '@/lib/subjects';
@@ -11,7 +11,7 @@ import AnimatedNumber from './AnimatedNumber';
 import {reviewSummary,nextStudy} from '@/lib/study-views';
 
 type Stats=ReturnType<typeof report>;
-export default function Dashboard({lang,topics,book,stats,now,timer}:{lang:Lang;topics:Topic[];book:Notebook;stats:Stats;now:number;timer:React.ReactNode}){
+export default function Dashboard({lang,topics,book,stats,now,timer}:{lang:Lang;topics:TopicIndex[];book:Notebook;stats:Stats;now:number;timer:React.ReactNode}){
  const ar=lang==='ar',say=(en:string,arabic:string)=>ar?arabic:en;
  const {topic:next,step,completed,tab}=nextStudy(topics,book);
  const {due}=reviewSummary(topics,book,now);

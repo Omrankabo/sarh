@@ -1,0 +1,2 @@
+import type {MetadataRoute} from 'next';
+export default function manifest():MetadataRoute.Manifest{return {name:'صَرح — Sarh',short_name:'صَرح',description:'Understand, practice and recall engineering concepts.',start_url:'/en',scope:'/',display:'standalone',background_color:'#F0F7F6',theme_color:'#F0F7F6',icons:[{src:'/icon-192.png',sizes:'192x192',type:'image/png',purpose:'any'},{src:'/icon-512.png',sizes:'512x512',type:'image/png',purpose:'any'}]};}

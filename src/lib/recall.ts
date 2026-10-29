@@ -1,5 +1,5 @@
 import {createEmptyCard,fsrs,type Card as MemoryCard,type Grade} from 'ts-fsrs';
-import type {Notebook,Topic,Card} from './types';
+import type {Notebook,TopicIndex,Card} from './types';
 import {day,freshProgress} from './study';
 
 export type Rating=1|2|3|4;
@@ -17,7 +17,7 @@ const serialize=(c:MemoryCard):StoredMemory=>({...c,due:c.due.getTime(),last_rev
 export function previews(card:RecallCard|undefined,at:number){const result=scheduler.repeat(memory(card?.memory,at),new Date(at));return ([1,2,3,4] as Rating[]).map(rating=>({rating,memory:serialize(result[rating as Grade].card)}));}
 
 /** Enrollment is separate from a rated review: no invented success or overdue history. */
-export function enroll(book:Notebook,topics:Topic[],at=Date.now()){
+export function enroll(book:Notebook,topics:TopicIndex[],at=Date.now()){
  const r=book.recall??=emptyRecall();
  for(const t of topics){const p=book.topics[t.id];if(!p)continue;const concepts=new Set(t.steps.filter(s=>p.completed.includes(s.id)).flatMap(s=>s.concepts));
   for(const c of t.cards)if(concepts.has(c.concept)||p.cards[c.id]){const key=recallKey(t.id,c.id);r.cards[key]??={topic:t.id,card:c.id,enrolledAt:at,revision:0};}
@@ -54,8 +54,8 @@ export function mergeRecall(a:RecallState|undefined,b:RecallState|undefined):Rec
  return {version:1,cards,priorities,events,dismissed:[...new Set([...a.dismissed,...b.dismissed])],session:session.session,sessionUpdatedAt:session.sessionUpdatedAt};
 }
 export function projectRecall(book:Notebook){for(const c of Object.values(book.recall?.cards||{}))if(c.memory){const p=book.topics[c.topic]??=freshProgress();p.cards[c.card]={due:c.memory.due,interval:c.memory.scheduled_days};}return book;}
-export type RecallItem={key:string;topic:Topic;card:Card;record?:RecallCard;due:number|null;group:'overdue'|'today'|'new'|'upcoming';priority:number;weakness:number};
-export function recallItems(topics:Topic[],book:Notebook,now:number):RecallItem[]{
+export type RecallItem={key:string;topic:TopicIndex;card:Card;record?:RecallCard;due:number|null;group:'overdue'|'today'|'new'|'upcoming';priority:number;weakness:number};
+export function recallItems(topics:TopicIndex[],book:Notebook,now:number):RecallItem[]{
  const items:RecallItem[]=[];for(const t of topics){const p=book.topics[t.id],concepts=new Set(t.steps.filter(s=>p?.completed.includes(s.id)).flatMap(s=>s.concepts));for(const card of t.cards){const key=recallKey(t.id,card.id),record=book.recall?.cards[key],legacy=p?.cards[card.id];if(!record&&!legacy&&!concepts.has(card.concept))continue;const due=record?.memory?.due??legacy?.due??null;
   items.push({key,topic:t,card,record,due,group:due===null?'new':due<=now?(day(due)<day(now)?'overdue':'today'):'upcoming',priority:book.recall?.priorities[t.id]?.value??2,weakness:record?.rating===1?3:record?.rating===2?2:record?.memory?.lapses?1:0});
  }}

@@ -14,6 +14,8 @@ export type Question={id:string;concept:string;type:'conceptual'|'numerical'|'mi
 export type Card={id:string;concept:string;kind:string;q:T;a:T};
 export type Introduction={question:T;scene:T;meaning:T;videoId?:string;videoStatus?:string};
 export type Topic={introduction?:Introduction;id:string;family:string;title:T;summary:T;chapter:T;videoIds:string[];outcomes:T[];prereqIds:string[];concepts:{id:string;title:T}[];steps:Step[];questions:Question[];cards:Card[];sources:Ref[]};
+/** The catalog also carries recall cards so saved reviews work on every route offline. */
+export type TopicIndex=Pick<Topic,'id'|'family'|'title'|'summary'|'cards'|'concepts'> & {steps:Pick<Step,'id'|'title'|'concepts'>[];questions:Pick<Question,'id'>[]};
 export type Attempt={id:string;at:number;topic:string;item:string;correct:boolean;assisted:boolean;kind:'question'|'review'|'prediction'|'readiness'|'step';selfAssessed?:boolean};
 export type FocusSession={id:string;start:number;end:number;topic:string;milliseconds:number};
 export type Timer={id:string;mode:'focus'|'stopwatch'|'break';status:'running'|'paused'|'finished';topic:string;duration:number;accumulated:number;startedAt:number;segments:{start:number;end:number}[]};

@@ -2,7 +2,7 @@
 import {useState} from 'react';
 import type {Lang,Video} from '@/lib/types';
 import {text} from '@/lib/types';
-export function qualifiesAsIntroduction(video:Video){const start=video.startSeconds??0,end=video.endSeconds??video.durationSeconds;return !!video.embedVerifiedAt&&!!video.watchFor&&!!video.durationSeconds&&end!==undefined&&start>=0&&end>start&&end<=video.durationSeconds&&end-start<600;}
+export function qualifiesAsIntroduction(video:Video){const start=video.startSeconds??0,end=video.endSeconds??video.durationSeconds;return /^[A-Za-z0-9_-]{11}$/.test(video.id)&&Number.isFinite(start)&&Number.isFinite(end)&&Number.isFinite(video.durationSeconds)&&!!video.embedVerifiedAt&&!!video.watchFor&&!!video.durationSeconds&&end!==undefined&&start>=0&&end>start&&end<=video.durationSeconds&&end-start<600;}
 export default function IntroVideo({videos,topic,lang}:{videos:Video[];topic:string;lang:Lang}){
  const [loaded,setLoaded]=useState(false),ar=lang==='ar';
  const v=[...videos].filter(v=>v.introTopics?.includes(topic)&&qualifiesAsIntroduction(v)).sort((a,b)=>Number(b.language==='Arabic')-Number(a.language==='Arabic'))[0];
