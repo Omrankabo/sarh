@@ -12,7 +12,7 @@ export default function TopicChapter({topic,lang,videos,resume,onStory,onPrerequ
  const [localPrediction,setPrediction]=useState<number|null>(null),[revealed,setRevealed]=useState(false);const heading=useRef<HTMLHeadingElement>(null);
  const prediction=savedPrediction??localPrediction;
  const titles=ar?['تخيّل المشهد','ما الذي يحدث؟','جرّب فكرة صغيرة','ماذا ستتعلم؟']:['Picture the scene','What is happening?','Try one small idea','Where we are going'];
- function go(n:number){onBlock?.(ids[n]);requestAnimationFrame(()=>{heading.current?.focus({preventScroll:true});heading.current?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'})})}
+ function go(n:number){onBlock?.(ids[n]);requestAnimationFrame(()=>{heading.current?.focus({preventScroll:true});heading.current?.scrollIntoView({behavior:'instant',block:'start'})})}
  return <article className="chapter surface">
   <div className="chapter-intro"><p className="eyebrow">{ar?'افهم الفكرة، خطوة صغيرة كل مرة':'UNDERSTAND IT, ONE SMALL STEP AT A TIME'}</p><h2>{text(intro?.question??topic.title,lang)}</h2><p className="muted">{ar?'تخيّل أولًا. توقّع ما سيحدث. ثم اكتشف كيف نحسبه.':'Picture it. Make a prediction. Then discover how to calculate it.'}</p><button onClick={onPrerequisites}>{ar?'أحتاج تذكيرًا بالأساسيات':'Refresh the foundations'}</button></div>
   <nav className="intro-outline" aria-label={ar?'خطوات المقدمة':'Introduction steps'}>{ids.map((id,i)=><button key={id} aria-current={index===i?'step':undefined} onClick={()=>go(i)}>{i+1}. {titles[i]}</button>)}</nav>

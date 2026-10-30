@@ -1,39 +1,47 @@
-# صَرح design system
+# صَرح — Guided Study Desk (Concept A)
 
-The app uses an architectural notebook: cream paper, sage surfaces, dark green ink and precise structural sketches. Blue marks the next action and current location; green marks learning progress; orange highlights intention and feedback. Bright colors are accents with accessible darker foregrounds. `src/app/polish.css` defines the shared refinement layer over the original shell.
+The learner should always know where they are, what they are trying to understand, and what to do next. The user selected Concept A on 30 October 2026.
 
-| Role | Color | Use |
-|---|---|---|
-| Paper | #F7F4EC | Main canvas |
-| Surface | #FFFDF7 | Cards and learning panels |
-| Ink | #263C35 | Text and primary buttons |
-| Primary | #355E49 | Links and selected controls |
-| Sage | #E3EEE4 | Selected tabs and navigation |
-| Progress | #799477 | Progress indicators |
-| Terracotta | #BD6D3A | Small highlights |
-| Peach | #FAE9DB | Warm supporting cards |
-| Border | #D9DFD2 | Dividers and card edges |
-| Muted | #5D6A61 | Supporting text |
-| Focus blue | #0054D6 | Keyboard focus, links, selected answers |
-| Focus tint | #E7EFFF | Selected tabs and next action icon |
-| Success ink / tint | #086342 / #E0F5E9 | Correct answers and progress |
-| Action ink / tint | #A4401B / #FFF0E6 | Intention and useful correction |
-| Achievement | #FFD700 | Tiny decorative details |
+## Appearance ownership
 
-Use dark foregrounds on tinted backgrounds. State labels, icons and values accompany color cues. Preserve visible keyboard focus and reduced-motion support.
+`src/lib/appearance.ts` owns the browser appearance record and validation. `AppearanceProvider` applies changes and listens for appearance changes in other tabs. It never accesses learner notebooks. A layout effect applies saved preferences before interactive content appears; the startup script also restores document attributes without persisting defaults. The readiness splash covers server-rendered content while the notebook initializes. Invalid/unavailable storage falls back safely. Explicit legacy Mint/Burgundy and Solid/Glass preferences are read without overwriting them.
 
-Typography: locally bundled IBM Plex Sans Arabic and IBM Plex Sans for reading and controls, Amiri for poetry, Georgia for English editorial headings and Cambria/Georgia for equations. Learning copy is 16 px with generous line height; most interface labels are 12–14 px. Equations and numerical diagrams retain left-to-right direction in Arabic.
+Interface: theme `mint | burgundy`, finish `solid | glass`, typography `default | proxima-sailors`. New/unset preferences use Solid Mint and bundled IBM Plex. Licensed Proxima Nova/Sailors webfont kits are still required; the custom control remains disabled. No font purchase or unlicensed download is included. Arabic keeps IBM Plex Sans Arabic; poetry keeps Amiri. Math remains LTR.
 
-Spacing follows 4, 8, 12, 16, 24, 32, 48 and 64 px. Cards have 14–18 px corners, quiet borders and restrained shadows. Summary cards use one row: icon, label, number and unit. They switch from four columns to two on smaller screens. A thin line graph shows seven real days of focus time. Learning tabs and step maps scroll within their own rows on phones.
+`tokens.css` owns colors, radii, spacing, dimensions and easing. `appearance.css` owns shared controls, selection, feedback and panels. `dashboard.css`, `learning.css`, `session-widget.css`, `recall.css` and `accounts.css` own their respective layouts. The conflicting glass/polish override sheets were removed.
 
-The persistent header contains the wordmark صَرح and hamburger navigation. The compact timer remains at the physical top right outside Home. Home has its full timer panel, with no duplicate widget. Navigation, language and settings live in the hamburger popover. Home retains the original compact poetry panel, summary row, chart with full timer, and Continue section beneath them. The later illustrated hero was removed at the user’s request. New learners start with the topic introduction; returning learners resume their saved section and step. Subject cards retain a maximum width of 380 px and explicit New journey / In progress / Complete labels.
+## Composition and geometry
 
-The existing raster artwork remains in the first-visit splash: a complete 3.2-second watercolor reveal on a fresh load/reload and the first entry to each main area in that visit. Revisiting an area uses a short progress cue; language switching stays immediate. The dashboard uses its original poetry treatment, with no added illustration.
+- Canvas 60%: Mint #F0F7F6 / Burgundy #F5F1F2.
+- Surfaces 30%: white, supporting Mint #DCF2E1 / Burgundy #F4DCE2.
+- Emphasis budget 10%: Mint #0F4E36 / Burgundy #6D001A, with small orange #FF8A4C cues.
+- Main text #1F2933 / #2D2528; secondary #58665F / #665C61.
+- Selection follows the theme. Success/error/attention have their own labeled semantic states.
+- Shell capped at 1440px, outer padding 12px. Scale: 4, 8, 12, 16, 24, 32, 48, 64.
+- Header minimum 72px desktop / 64px phone. The non-home timer reserves additional header space; it stays at physical top right in either language. Home uses its main timer.
+- Controls 44px minimum, horizontal padding 16px, radius 12px. Cards 20px radius; dialogs 24px. Circular avatars and pill badges are deliberate exceptions.
+- Panels 24px padding desktop / 16px phone. Grid gaps 24px / 12px. Course cards cap at 360px and never stretch a final row.
+- Phones show two course cards above 359px. A 390px layout has 177px cards where the browser uses overlay scrollbars; a desktop browser's reserved scrollbar reduces the available content width. Narrow screens or an enlarged effective viewport use one column.
+- Reading measure capped at 720px. English lessons 16/26px; Arabic lessons 18/32px. Titles 32/40px desktop, 28/36px phone. Labels 14/20px.
 
-Motion uses `cubic-bezier(.16,1,.3,1)`: 180 ms controls, 220 ms sliding tab selection, 280 ms reveals, 500 ms progress fills. Feedback combines a symbol, words and color. Native details reveal gently; flashcards reserve answer space and keep review controls in place before disclosure. Review queues distinguish new cards from cards with a real due date. Reduced-motion preferences replace movement with short fades and remove sliding, drawing and hover translation. The first-visit splash retains a gentle fade for the requested duration.
+## Screen behavior
 
-Weekly summaries compare today and six preceding Riyadh dates with the preceding seven. Show longest commitment, real attempts and reviews, and first independent accuracy. Never manufacture activity or call unseen cards overdue. All secondary labels should be at least 12 px except the compact timer caption (10 px); touch controls are at least 44 px.
+Dashboard: Continue/Start and Recall lead, then compact poetry, real metrics, weekly focus report and main timer. Empty records remain empty; screenshots use a new guest notebook, not fabricated activity.
 
-Dashboard reference: https://in.pinterest.com/pin/185632815880799653/
+Courses/library: Semester 7 course collections. Course overviews use compact topic rows and family filters. Existing `/subjects` paths, stable course IDs and topic IDs remain intact; displayed vocabulary is Courses / المقررات.
 
-Header direction: the hamburger and its popover use the selected language’s logical start edge. English places them left; Arabic places them at the right edge on every page. The timer stays in the upper-right area, immediately inside the Arabic menu button so both controls remain reachable. Actual header, context and tab heights determine sticky offsets, including after wrapping or font loading; no fixed empty gap separates those rows.
+Learning: Understand, Prerequisites, Story Map, Practice and Flashcards show only the selected content. The course/topic/location bar stays visible. On phones duplicate display headings are visually hidden while remaining available to assistive technology. Step/question outlines become disclosures. Previous/Next, drafts and grading retain their existing behavior.
+
+Accounts: 440px form, opaque in Solid mode; glass is optional. Existing authentication and account scoping are unchanged.
+
+## Motion contract
+
+Easing: cubic-bezier(.23,1,.32,1). Press 100ms, release 140ms, hamburger/menu 180ms, timer state 200ms, dialog entrance 220ms, confirmation 200ms. Timer digits stay stable. No repeated page/card entrances or icon jumping. Reading/topic/language navigation stays immediate. Reduced motion removes movement. Hover effects require a fine pointer.
+
+Fresh document visits retain readiness-based progress and a skippable 300ms edge-color completion splash. Topic subtabs and language changes do not replay it. No runtime motion assets are fetched from reference sites.
+
+Reference intent: useAnimations menu/play-pause/check/notification; Ripplix tab switching. Implemented locally with CSS/SVG, without redistributing third-party animation assets.
+
+## Validation
+
+Run `npm run check`, `npm test`, `npm run build`. The build includes content, release, offline-asset and deployment-trace checks. Browser evidence and local comparison/motion previews live outside the app in `../ui/sarh-design-review`; raw source PDFs and private learner records remain excluded.

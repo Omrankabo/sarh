@@ -12,7 +12,7 @@ function valid(lang:string,path:string[]){return ['ar','en'].includes(lang)&&stu
 export async function generateMetadata({params}:Props){
  const {lang,path=[]}=await params;if(!valid(lang,path))return {};
  const data=loadStudyContent(path,lang as Lang),topic=data.topics.find(t=>path[0]==='topics'&&t.id===path[1]),subject=subjects.find(s=>s.id===path[1]);
- const titles=lang==='ar'?{home:'لوحة الدراسة',subjects:'المواد الدراسية',topics:'رحلات التعلم',review:'المراجعة',materials:'مكتبة الدراسة'}:{home:'Dashboard',subjects:'Subjects',topics:'Learning journeys',review:'Review',materials:'Study library'};
+ const titles=lang==='ar'?{home:'لوحة الدراسة',subjects:'المقررات',topics:'رحلات التعلم',review:'المراجعة',materials:'مكتبة الدراسة'}:{home:'Dashboard',subjects:'Courses',topics:'Learning journeys',review:'Review',materials:'Study library'};
  const title=topic?text(topic.title,lang as Lang):subject?text(subject.title,lang as Lang):titles[(path[0]||'home') as keyof typeof titles];
  const description=topic?text(topic.summary,lang as Lang):lang==='ar'?'افهم الفكرة، طبّقها، ثم استرجعها. مساحة دراسة مرئية لطلاب الهندسة.':'Understand, apply, then recall. A visual study space for engineering students.';
  const suffix=path.length?'/'+path.join('/'):'';

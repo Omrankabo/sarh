@@ -1,0 +1,16 @@
+/* Guided Study Desk — one source of appearance, geometry and motion. */
+:root{
+ --background:#f0f7f6;--surface:#fff;--surface-soft:#dcf2e1;--ink:#1f2933;--muted:#58665f;--muted-readable:var(--muted);--line:#d3e2dc;
+ --primary:#0f4e36;--primary-hover:#093e2a;--selection-bg:#dcf2e1;--selection-ink:#0f4e36;--selection-line:#83ab91;
+ --accent:#ff8a4c;--accent-ink:#803b16;--attention-bg:#fff0e4;--attention-ink:#80451c;--success-bg:#e6f4ea;--success-ink:#165d36;--error-bg:#fcebea;--error-ink:#922f33;
+ --focus-ring:var(--primary);--shadow:0 2px 8px #18382a06,0 8px 24px #18382a04;--shadow-menu:0 12px 40px #18382a14;
+ --blue:var(--primary);--green:#277c50;--orange:var(--accent);--yellow:#ffd700;--mint:var(--selection-bg);--focus-blue:var(--primary);--focus-tint:var(--selection-bg);--success-tint:var(--success-bg);--action-tint:var(--attention-bg);--action-ink:var(--attention-ink);
+ --radius-control:12px;--radius-card:20px;--radius-modal:24px;--radius:var(--radius-card);--control-height:44px;--icon-size:20px;--reading-width:720px;--shell-width:1440px;--page-gutter:12px;--panel-padding:24px;
+ --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--space-16:64px;
+ --ease-out:cubic-bezier(.23,1,.32,1);--motion-press:100ms;--motion-release:140ms;--motion-menu:180ms;--motion-dialog:220ms;--motion-exit:140ms;
+ --panel-fill:var(--surface);--panel-edge:var(--line);--panel-blur:none;
+}
+html[data-theme=burgundy]{--background:#f5f1f2;--surface-soft:#f4dce2;--ink:#2d2528;--muted:#665c61;--line:#e3d5db;--primary:#6d001a;--primary-hover:#510013;--selection-bg:#f4dce2;--selection-ink:#6d001a;--selection-line:#c294a2;--shadow:0 2px 8px #490f1d06,0 8px 24px #490f1d04;--shadow-menu:0 12px 40px #490f1d14}
+html[data-finish=glass]{--panel-fill:color-mix(in srgb,var(--surface) 82%,transparent);--panel-edge:color-mix(in srgb,var(--line) 65%,white);--panel-blur:blur(20px)}
+@media(prefers-reduced-transparency:reduce){html[data-finish=glass]{--panel-fill:var(--surface);--panel-edge:var(--line);--panel-blur:none}}
+@media(max-width:700px){:root{--panel-padding:16px}}

@@ -11,7 +11,7 @@ export default function AnimatedNumber({value,suffix=''}:{value:number;suffix?:s
    const from=previous.current;previous.current=value;
    if(matchMedia('(prefers-reduced-motion: reduce)').matches){setDisplay(value);return;}
    const start=performance.now();
-   const tick=(at:number)=>{const p=Math.min(1,(at-start)/760);setDisplay(Math.round(from+(value-from)*(1-Math.pow(1-p,3))));if(p<1)frame=requestAnimationFrame(tick)};
+   const tick=(at:number)=>{const p=Math.min(1,(at-start)/240);setDisplay(Math.round(from+(value-from)*(1-Math.pow(1-p,3))));if(p<1)frame=requestAnimationFrame(tick)};
    frame=requestAnimationFrame(tick);
   };
   let waiting=false;
